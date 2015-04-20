@@ -1,0 +1,82 @@
+# Compiled Python scripts
+*.pyc
+*.pyo
+__pycache__
+
+# Compiled Java classes
+*.class
+
+# Compiled C files
+*.a
+*.o
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary or runtime files
+*.dmg
+*.msi
+*.exe
+*.box
+*.old
+*.bak
+*.swp
+*.swo
+*.swn
+*.local
+*.log
+*.pid
+*.cache
+*.orig
+*~
+*.lock
+*.sass-cache
+*(Autosaved)*
+*.out/
+*pom.xml.releaseBackup
+*release.properties
+
+# Python Sphinx and setuptools files
+/doc/_build
+/build
+/dist
+*.egg-info
+
+# OS specific
+.DS_Store
+*Thumbs.db
+*node_modules/
+
+# All hidden files
+.*
+
+# Project temporary directories
+data/
+contrib/
+public/
+venv/
+virtualenv/
+
+# Eclipse files
+*.classpath
+*.project
+*.settings
+
+# Intellij files
+.idea
+*.iml
+*.eml
+*.ipr
+*.iws
+out/
+.home*/
+atlassian-ide-plugin.xml
+
+# maven stuff
+target
+
+#custom checks
+etc/lib/*checkstyle*.jar
+
