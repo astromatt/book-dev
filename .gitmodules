@@ -1,0 +1,3 @@
+[submodule "src/sonar-examples"]
+	path = src/sonar-examples
+	url = https://github.com/SonarSource/sonar-examples.git
