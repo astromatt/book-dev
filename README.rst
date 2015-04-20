@@ -2,15 +2,28 @@ Developer Tools Ecosystem Workshop
 ==================================
 
 
-Install
--------
+Clone the Repository with Submodules
+------------------------------------
+
+.. code-block:: bash
+
+    git clone --recursive https://github.com/MattAgile/ecosystem-workshop.git
+
+
+Install Dependencies
+--------------------
 
 - Download and install Virtualbox_ == 4.3
 - Download and install Vagrant_ == 1.7
 
+.. _Virtualbox: https://www.virtualbox.org/wiki/Downloads
+.. _Vagrant: https://www.vagrantup.com/downloads.html
 
-Configure
----------
+
+Configure Guest Environment
+---------------------------
+
+Edit :code:`Vagrantfile`.
 
 Adjust number of CPUs and RAM for your new host.
 Remember that each tool while running takes around 700MB of RAM.
@@ -22,44 +35,82 @@ Default settings are:
 - RAM = 8196
 
 
-Run Host
---------
+Run Guest
+---------
+
+At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
+Then to run this you have to simply type:
 
 .. code-block:: bash
 
     vagrant up
 
+If you want to setup your own ecosystem from scratch, read the following instructions in :code:`docs/how-to-setup-new-box.rst` file.
+
 
 Run Selected Tool
 -----------------
 
+If you set small amount of RAM, your machine might be killed.
+Remember that each tool while running takes around 700MB of RAM.
+Please run only one/two selected services for small RAM sizes.
+8196 MB RAM should be enough to handle load for each of this machines run simultaneously.
+
 .. code-block:: bash
 
-    vagrant ssh -c 'service jira start'
-    vagrant ssh -c 'service confluence start'
-    vagrant ssh -c 'service stash start'
-    vagrant ssh -c 'service jenkins start'
-    vagrant ssh -c 'service sonar start'
+    vagrant ssh -c 'sudo service confluence start'
+    vagrant ssh -c 'sudo service jenkins start'
+    vagrant ssh -c 'sudo service jira start'
+    vagrant ssh -c 'sudo service sonar start'
+    vagrant ssh -c 'sudo service stash start'
+
+If you have a Windows operating system you might not have SSH installed.
+Go ahead and download Putty_ and then connect to:
+
+- host: :code:`127.0.0.1`
+- port: :code:`2222`
+- username: :code:`vagrant`
+- password: :code:`vagrant`
+
+First thing you do after connecting to the new host might be to switch to the root:
+
+.. code-block:: bash
+
+    sudo su -
+
+Then you do not need to run commands with :code:`sudo` prefix.
+To run services type one of the following:
+
+.. code-block:: bash
+
+    service confluence start
+    service jenkins start
+    service jira start
+    service sonar start
+    service stash start
+
+.. _Putty: http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
 
 
-Ports and services
+Ports and Services
 ------------------
 
 +------------+------+------+
 | Service    | HTTP | SSH  |
 +============+======+======+
-| Jira       | 8080 | n/a  |
-+------------+------+------+
 | Confluence | 8090 | n/a  |
-+------------+------+------+
-| Stash      | 7990 | 7999 |
 +------------+------+------+
 | Jenkins    | 8081 | n/a  |
 +------------+------+------+
+| Jira       | 8080 | n/a  |
++------------+------+------+
 | SonarQube  | 9000 | n/a  |
++------------+------+------+
+| Stash      | 7990 | 7999 |
 +------------+------+------+
 | PostgreSQL | 5432 | n/a  |
 +------------+------+------+
+
 
 Access
 ------
@@ -71,7 +122,32 @@ You may access your started service at:
 Where PORT is an value from table.
 
 
+Stop Service
+------------
 
-.. _Virtualbox: https://www.virtualbox.org/wiki/Downloads
-.. _Vagrant: https://www.vagrantup.com/downloads.html
+When you do not need the service anymore you may kill the instance to save some RAM for other tools.
+
+.. code-block:: bash
+
+    vagrant ssh -c 'service confluence stop'
+    vagrant ssh -c 'service jenkins stop'
+    vagrant ssh -c 'service jira stop'
+    vagrant ssh -c 'service sonar stop'
+    vagrant ssh -c 'service stash stop'
+
+
+Stop Guest Machine
+------------------
+
+This will preserve state of the machine.
+
+.. code-block:: bash
+
+    vagrant halt
+
+This will destroy the machine and free some space from your hard drive.
+
+.. code-block:: bash
+
+    vagrant destroy
 

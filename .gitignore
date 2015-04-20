@@ -90,6 +90,7 @@ out/
 #############
 ## Project ##
 #############
+install/
 log/
 temp/
 tmp/
