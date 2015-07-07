@@ -56,12 +56,15 @@ Install and Setup Database
     CREATE USER confluence WITH PASSWORD 'confluence';
     CREATE DATABASE confluence;
     GRANT ALL PRIVILEGES ON DATABASE confluence TO confluence;
+    
     CREATE USER jira WITH PASSWORD 'jira';
     CREATE DATABASE jira;
     GRANT ALL PRIVILEGES ON DATABASE jira TO jira;
+    
     CREATE USER sonar WITH PASSWORD 'sonar';
     CREATE DATABASE sonar;
     GRANT ALL PRIVILEGES ON DATABASE stash TO sonar;
+    
     CREATE USER stash WITH PASSWORD 'stash';
     CREATE DATABASE stash;
     GRANT ALL PRIVILEGES ON DATABASE stash TO stash;
@@ -72,10 +75,10 @@ Install Jira
 
 .. code-block:: bash
 
-    wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.2-x64.bin
-    chmod +x atlassian-jira-6.4.2-x64.bin
-    ./atlassian-jira-6.4.2-x64.bin
-    rm -fr atlassian-jira-6.4.2-x64.bin
+    wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-6.4.7-x64.bin
+    chmod +x atlassian-jira-6.4.7-x64.bin
+    ./atlassian-jira-6.4.7-x64.bin
+    rm -fr atlassian-jira-6.4.7-x64.bin
 
 
 Install Confluence
