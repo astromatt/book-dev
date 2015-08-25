@@ -13,8 +13,8 @@ Clone the Repository with Submodules
 Install Dependencies
 --------------------
 
-- Download and install Virtualbox_ == 4.3
-- Download and install Vagrant_ == 1.7
+- Download and install Virtualbox_ >= 4.3
+- Download and install Vagrant_ >= 1.7
 
 .. _Virtualbox: https://www.virtualbox.org/wiki/Downloads
 .. _Vagrant: https://www.vagrantup.com/downloads.html
