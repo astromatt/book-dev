@@ -13,8 +13,8 @@ Clone the Repository with Submodules
 Install Dependencies
 --------------------
 
-- Download and install Virtualbox_ >= 4.3
-- Download and install Vagrant_ >= 1.7
+- Download and install Virtualbox_ == 4.3
+- Download and install Vagrant_ == 1.7
 
 .. _Virtualbox: https://www.virtualbox.org/wiki/Downloads
 .. _Vagrant: https://www.vagrantup.com/downloads.html
@@ -39,8 +39,11 @@ Run Guest
 ---------
 
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
-All you need is cloned git repository and ecosystem.box image in root folder (./ecosystem-workshop), 
-and open those ports:
+All you need is cloned git repository and ecosystem.box image in root folder (./ecosystem-workshop).
+Otherwise you can set up your own ecosystem-workshop. 
+For that check documentation in ./docs folder and follow those instructions for each service you want to install.
+
+Be sure that no services on the host machine is running on those ports:
 	- 7990 (Stash)
 	- 7999 (SSH Stash)
 	- 8080 (Jira)
@@ -48,12 +51,21 @@ and open those ports:
 	- 8090 (Confluence)
 	- 9000 (SonarQube)
 	- 5432 (PostgreSQL)
-Otherwise you will not be able to run Guest Ecosystem.
+
+Otherwise you will not be able to run Guest Ecosystem or you have to change `Vagrantfile`.
+
 Then to run this you have to simply type:
 
 .. code-block:: bash
 
     vagrant up
+
+
+Warning: if you see warning message like this: `Warning: Authentication failure. Retrying...` exit the process(ctrl+c on linux/window or cmd+c on Mac) and start ssh connection by: 
+
+.. code-block:: bash
+
+    vagrant ssh
 
 If you want to setup your own ecosystem from scratch, read the following instructions in :code:`docs/how-to-setup-new-box.rst` file.
 
