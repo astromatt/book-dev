@@ -1,6 +1,12 @@
 How to setup a new box
 ======================
 
+Warning : If you are using Linux and provided pendrive cannot be mounted on your system, install exfat-fuse and exfat-util by typing in your console:
+
+.. code-block:: bash
+
+    sudo apt-get install exfat-fuse exfat-utils
+
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
 Then to run this you have to simply type:
 
@@ -56,15 +62,15 @@ Install and Setup Database
     CREATE USER confluence WITH PASSWORD 'confluence';
     CREATE DATABASE confluence;
     GRANT ALL PRIVILEGES ON DATABASE confluence TO confluence;
-    
+
     CREATE USER jira WITH PASSWORD 'jira';
     CREATE DATABASE jira;
     GRANT ALL PRIVILEGES ON DATABASE jira TO jira;
-    
+
     CREATE USER sonar WITH PASSWORD 'sonar';
     CREATE DATABASE sonar;
     GRANT ALL PRIVILEGES ON DATABASE stash TO sonar;
-    
+
     CREATE USER stash WITH PASSWORD 'stash';
     CREATE DATABASE stash;
     GRANT ALL PRIVILEGES ON DATABASE stash TO stash;
@@ -143,4 +149,3 @@ Create Box
 .. code-block:: bash
 
     vagrant package --base ecosystem.local --output ecosystem.box
-
