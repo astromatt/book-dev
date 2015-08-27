@@ -39,6 +39,7 @@ Run Guest
 ---------
 
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
+All you need is cloned git repository and ecosystem.box image in root folder (./ecosystem-workshop)
 Then to run this you have to simply type:
 
 .. code-block:: bash
