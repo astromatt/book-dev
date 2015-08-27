@@ -39,7 +39,16 @@ Run Guest
 ---------
 
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
-All you need is cloned git repository and ecosystem.box image in root folder (./ecosystem-workshop)
+All you need is cloned git repository and ecosystem.box image in root folder (./ecosystem-workshop), 
+and open those ports:
+	- 7990 (Stash)
+	- 7999 (SSH Stash)
+	- 8080 (Jira)
+	- 8081 (Jenkins)
+	- 8090 (Confluence)
+	- 9000 (SonarQube)
+	- 5432 (PostgreSQL)
+Otherwise you will not be able to run Guest Ecosystem.
 Then to run this you have to simply type:
 
 .. code-block:: bash
