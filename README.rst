@@ -157,6 +157,7 @@ When you do not need the service anymore you may kill the instance to save some 
     vagrant ssh -c 'service sonar stop'
     vagrant ssh -c 'service stash stop'
 
+Be patient, service should start in around 60 sek. (per service)
 
 Stop Guest Machine
 ------------------
