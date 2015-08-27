@@ -13,8 +13,8 @@ Clone the Repository with Submodules
 Install Dependencies
 --------------------
 
-- Download and install Virtualbox_ >= 4.3
-- Download and install Vagrant_ >= 1.7
+- Download and install Virtualbox_ == 4.3
+- Download and install Vagrant_ == 1.7
 
 .. _Virtualbox: https://www.virtualbox.org/wiki/Downloads
 .. _Vagrant: https://www.vagrantup.com/downloads.html
@@ -39,12 +39,18 @@ Run Guest
 ---------
 
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
-All you need is cloned git repository and ecosystem.box image in root folder (./ecosystem-workshop)
 Then to run this you have to simply type:
 
 .. code-block:: bash
 
     vagrant up
+
+
+Warning: if you see warning message like this: `Warning: Authentication failure. Retrying...` exit the process(ctrl+c on linux/window or cmd+c on Mac) and start ssh connection by: 
+
+.. code-block:: bash
+
+    vagrant ssh
 
 If you want to setup your own ecosystem from scratch, read the following instructions in :code:`docs/how-to-setup-new-box.rst` file.
 
