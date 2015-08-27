@@ -1,7 +1,7 @@
 How to setup a new box
 ======================
 
-Warning : If you are using Linux and provided pendrive cannot be mounted on your system, install exfat-fuse and exfat-util by typing in your console:
+Warning: If you are using Linux and provided pendrive cannot be mounted on your system, install exfat-fuse and exfat-util by typing in your console:
 
 .. code-block:: bash
 
@@ -48,8 +48,8 @@ Install VirtualBox Guest Additions
     rmdir /media/VBoxGuestAdditions
 
 
-Install and Setup Database
---------------------------
+Install and Setup Database For All Tools
+----------------------------------------
 
 .. code-block:: bash
 
@@ -76,8 +76,8 @@ Install and Setup Database
     GRANT ALL PRIVILEGES ON DATABASE stash TO stash;
 
 
-Create Box
-----------
+Create New Box
+--------------
 
 .. code-block:: bash
 
