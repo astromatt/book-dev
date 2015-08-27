@@ -8,4 +8,3 @@ Install Stash
     ./atlassian-stash-3.8.0-x64.bin
     rm -fr atlassian-stash-3.8.0-x64.bin
 
-
