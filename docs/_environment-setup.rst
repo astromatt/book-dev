@@ -1,14 +1,6 @@
 Environment Access
 ==================
 
-
-Server Access
--------------
-
-  .. code-block: bash
-
-    ssh -i workshop.pem -l ubuntu HOST_IP_ADDRESS
-
 Environment Setup
 -----------------
 
