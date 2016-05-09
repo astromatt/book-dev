@@ -5,12 +5,12 @@
 ### Zadanie
 
 - Stwórz maszynę z obrazu ubuntu32lts oficjalnego ze strony Ubuntu
-- Ustaw hostname na ubuntu.local
+- Ustaw hostname na `ubuntu.local`
 - Zrób by maszyna miała 128 MB RAM
 - Przydziel maszynie 1 Core
 - Zrób by maszyna była stawiana z manifestu Puppeta
 - Ustaw forwarding portu 80 na 8080 hosta oraz 443 na 8443
-- Ustaw aby ten katalog był synchronizowany na maszynie gościa w /var/www/host
+- Ustaw aby ten katalog był synchronizowany na maszynie gościa w `/var/www/host`
 
 ### Rozwiązanie
 
