@@ -2,7 +2,7 @@
 
 ## Instalacja Puppet
 
-	sudo apt-get install puppet
+	$ sudo apt-get install puppet
 
 ## Konfiguracja
 
@@ -57,12 +57,12 @@ user { 'www-data':
 ### Zadanie
 
 - Zainstaluj Puppeta
-- Zrób by Puppet wykonał polecenie apt-get update
-- Skonfiguruj IP maszyny na 192.168.0.1
+- Zrób by Puppet wykonał polecenie `apt-get update`
+- Skonfiguruj IP maszyny na `192.168.0.1`
 - Upewnij się, że następujące paczki są zainstalowane:
-    - nmap
-    - htop
-    - git
+    - `nmap`
+    - `htop`
+    - `git`
 
 ### Rozwiązanie
 
@@ -84,14 +84,14 @@ package { ['htop', 'nmap', 'git']:
 
 ### Zadanie
 
-- Za pomocą Puppet upewnij się by był użytkownik www-data i miał uid=33
-- Za pomocą Puppet upewnij się by była grupa www-data i miała gid=33
-- Upewnij się że katalog /var/www istnieje i właścicielem jego są user www-data i grupa www-data i że ma uprawnienia rwxr-xr-x
+- Za pomocą Puppet upewnij się by był użytkownik `www-data` i miał `uid=33`
+- Za pomocą Puppet upewnij się by była grupa `www-data` i miała `gid=33`
+- Upewnij się że katalog `/var/www` istnieje i właścicielem jego są user `www-data` i grupa `www-data` i że ma uprawnienia `rwxr-xr-x`
 - Zainstaluj i skonfiguruj Apache2 wykorzystując moduł Puppet
-- Z terminala wygeneruj certyfikaty self signed OpenSSL (.cert i .key) (za pomocą i umieść je w /etc/ssl/...)
+- Z terminala wygeneruj certyfikaty self signed OpenSSL (`.cert` i `.key`) (za pomocą i umieść je w `/etc/ssl/`)
 - Za pomocą Puppet Stwórz dwa vhosty
-    - insecure.example.com na porcie 80 i z katalogiem domowym /var/www/insecure.example.com
-    - ssl.example.com na porcie 443 i z katalogiem domowym /var/www/ssl.example.com + używanie certyfikatów SSL wcześniej wygenerowanych
+    - `insecure.example.com` na porcie 80 i z katalogiem domowym `/var/www/insecure.example.com`
+    - `ssl.example.com` na porcie 443 i z katalogiem domowym `/var/www/ssl.example.com` + używanie certyfikatów SSL wcześniej wygenerowanych
 
 ### Rozwiązanie
 
@@ -141,13 +141,13 @@ apache::vhost { 'ssl.example.com':
 
 ### Zadanie
 
-- zainstaluj moduł mysql przez puppet
+- zainstaluj moduł bazy MySQL wykorzystując Puppeta
 - ustaw hasło roota na mypassword
-- ustaw nasłuchiwanie serwera mysqld na 0.0.0.0
-- stwórz bazę danych mydb z utf-8
-- stwórz usera myusername z hasłem mypassword
-- nadaj wszystkie uprawnienia dla usera myusername dla bazy mydb
-- ustaw backupowanie bazy danych do /tmp/mysql-backup
+- ustaw nasłuchiwanie serwera `mysqld` na `0.0.0.0`
+- stwórz bazę danych `mydb` z `utf-8`
+- stwórz usera `myusername` z hasłem `mypassword`
+- nadaj wszystkie uprawnienia dla usera `myusername` dla bazy `mydb`
+- ustaw backupowanie bazy danych do `/tmp/mysql-backup`
 
 ### Rozwiązanie
 
@@ -197,17 +197,16 @@ class { "mysql::server::backup":
 
 ### Zadanie
 
-- zainstaluj Javę za pomocą puppeta
-- zainstaluj Tomcat8 za pomocą Puppeta do /opt/tomcat8
-- Skonfiguruj dwie instancje Tomcata
+- zainstaluj Javę za pomocą Puppeta
+- zainstaluj Tomcat8 za pomocą Puppeta do `/opt/tomcat8`
+- Skonfiguruj dwie instancje Tomcata działające jednocześnie
     - Jedna uruchamiana na domyślnych portach
     - Druga uruchamiana na 8006 a connector z portu 8081 przekierowywał na 8443
-    - Pierwszej instancji zapodaj WAR z lokacji /opt/tomcat8/webapps/docs/appdev/sample/sample.war
+    - Na pierwszej uruchom WAR z lokacji `/opt/tomcat8/webapps/docs/appdev/sample/sample.war`
 
 	$ puppet module install puppetlabs/java
 	$ puppet module install puppetlabs/tomcat
 	$ cat /etc/puppet/manifests/tomcat.pp
-
 
 ```puppet
 class { 'java': }

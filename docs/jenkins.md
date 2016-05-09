@@ -27,5 +27,5 @@ service jenkins start
 
 - Postaw Jenkins za pomocą paczek DEB
 - Zaciągnij repo git https://github.com/SonarSource/sonar-examples.git
-- Zacznij budować różne projekty sonar-examples/projects/languages/java
+- Zacznij budować różne projekty `sonar-examples/projects/languages/java`
 - Wyniki upublicznij w SonarQube
