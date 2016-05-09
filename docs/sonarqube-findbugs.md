@@ -4,8 +4,8 @@
 
 Add this to your `pom.xml`
 
-    <project>
-    ...
+```xml
+<project>
     <reporting>
         <plugins>
         <plugin>
@@ -15,10 +15,9 @@ Add this to your `pom.xml`
         </plugin>
         </plugins>
     </reporting>
-    ...
-    </project>
+</project>
+```
 
 ## Run
 
-    mvn site
-
+    $ mvn site
