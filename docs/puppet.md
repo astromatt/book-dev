@@ -13,13 +13,11 @@ Przejdź do katalogu `/etc/puppet/manifests`.
 
 ## Facter
 
-Przyjrzyj się wynikom polecenia:
+Przyjrzyj się wynikom poleceń:
 
-```sh
-facter
-facter ipaddress
-facter lsbdistdescription
-```
+    $ facter
+    $ facter ipaddress
+    $ facter lsbdistdescription
 
 Co zauważyłeś? Jak można wykorzystać te informacje?
 
