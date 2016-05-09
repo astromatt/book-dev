@@ -45,4 +45,3 @@ JIRA User Server
 # Go to Jira User Server (g+g and type JIRA User Server)
 # Add application
 # Set application name, password and IP Addresses (paste adresses from instances which you want connect with Jira User Server)
-

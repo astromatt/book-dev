@@ -61,4 +61,3 @@ Set JIRA User Directory
 # Test connetion
 # Save configuration
 # Synchronize directory
-
