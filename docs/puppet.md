@@ -202,9 +202,11 @@ class { "mysql::server::backup":
     - Druga uruchamiana na 8006 a connector z portu 8081 przekierowywał na 8443
     - Na pierwszej uruchom WAR z lokacji `/opt/tomcat8/webapps/docs/appdev/sample/sample.war`
 
-	$ puppet module install puppetlabs/java
-	$ puppet module install puppetlabs/tomcat
-	$ cat /etc/puppet/manifests/tomcat.pp
+```sh
+$ puppet module install puppetlabs/java
+$ puppet module install puppetlabs/tomcat
+$ cat /etc/puppet/manifests/tomcat.pp
+```
 
 ```puppet
 class { 'java': }
