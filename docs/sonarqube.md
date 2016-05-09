@@ -1,7 +1,6 @@
-Install SonarQube
------------------
+# SonarQube
 
-.. code-block:: bash
+## Install using DEB on Ubuntu
 
     echo "deb http://downloads.sourceforge.net/project/sonar-pkg/deb binary/" >> /etc/apt/sources.list
     apt-get update
@@ -12,4 +11,8 @@ Install SonarQube
     sed -i 's(#sonar.jdbc.username=sonar(sonar.jdbc.username=sonar(g' /opt/sonar/conf/sonar.properties
     sed -i 's(#sonar.jdbc.password=sonar(sonar.jdbc.password=sonar(g' /opt/sonar/conf/sonar.properties
     service sonar start
+
+## Install using Docker
+
+    docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
 

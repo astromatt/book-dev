@@ -1,0 +1,2 @@
+# SonarSource Squid
+

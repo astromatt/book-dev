@@ -1,5 +1,8 @@
-Install Confluence
-==================
+Confluence
+==========
+
+Install
+-------
 
 .. code-block:: bash
 

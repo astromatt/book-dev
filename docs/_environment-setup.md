@@ -1,17 +1,10 @@
-Environment Access
-==================
+# Environment Access
 
-Environment Setup
------------------
-
-.. code-block: bash
+## Environment Setup
 
     apt-get install --yes git vim nmap htop wget curl unzip
 
-Locale
-------
-
-.. code-block: bash
+## Locale
 
     echo 'LANG="en_US.UTF-8"' >> /etc/default/locale
     echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
@@ -19,13 +12,9 @@ Locale
     locale-gen en_US.UTF-8
     dpkg-reconfigure locales
 
-TODO
-----
+## TODO
 
-* Enable password login in /etc/ssh/sshd_config (easy for windows users with putty)
-
-.. code-block: bash
-
+Enable password login in /etc/ssh/sshd_config (easy for windows users with putty)
 
     ssh -i workshop.pem -l ubuntu HOST_IP_ADDRESS
     apt-get install --yes git vim nmap htop wget curl unzip
@@ -34,11 +23,5 @@ TODO
     echo 'LANG="en_US.UTF-8"' >> /etc/default/locale
     locale-gen en_US.UTF-8
     dpkg-reconfigure locales
-    TODO
-
-    Enable
-        password login in /etc/ssh/sshd_config (easy for windows users with putty)
-    sudo passwd ubuntu
-
     sudo passwd ubuntu
 
