@@ -25,7 +25,7 @@ Co zauważyłeś? Jak można wykorzystać te informacje?
 
 ### Zadanie
 
-Stwórz plik `/etc/puppet/manifests/www-data.pp`:
+- Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 - Upewnij się że instnieje grupa www-data i ma gid=33
 - Upewnij się, że istnieje user www-data i należy do grupy www-data i ma uid=33
 
