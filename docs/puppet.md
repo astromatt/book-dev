@@ -48,8 +48,6 @@ user { 'www-data':
 	shell            => '/usr/sbin/nologin',
 	uid              => '33',
 }
-
-
 ```
 
 ## Podstawowa konfiguracja maszyny
