@@ -14,7 +14,6 @@
 - Ustaw aby ten katalog był synchronizowany na maszynie gościa w `/var/www/host`
 - Podnieś maszynę i rozpocznij pobieranie obrazu
 
-
 # Puppet
 
 ## Podstawowa konfiguracja maszyny
@@ -76,7 +75,7 @@
 - Edytuj plik `Vagrantfile` i dopisz, by maszyna była stawiana z manifestów Puppeta
 - W pliku `Vagrantfile` trzymaj jak najmniej logiki i wszystko rób za pomocą Puppeta
 - Zrób by certyfikaty były przenoszone z Twojego laptopa na maszynę gościa (nie generuj nowych, tylko wykorzystaj stare!) oczywiście za pomocą Puppeta
-- Każdy z manifestów powinien być w osobnych plikach a jeden `default.pp` powinien includować pozostałe
+- Każdy z manifestów powinien być w osobnych plikach a jeden `main.pp` powinien includować pozostałe
 
 # Jenkins
 
