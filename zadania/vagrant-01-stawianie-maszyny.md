@@ -1,0 +1,13 @@
+# Tworzenie i konfigurowanie maszyny
+- Poniższe polecenia wykonaj w pliku Vagrantfile
+- Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji Ubuntu LTS (Long Time Support)
+- Ustaw hostname na `ubuntu.local`
+- Jeżeli masz słabszą maszynę (2 CPU core, 4 GB RAM):
+	- 1 CPU core
+	- 1024 MB Ram
+- Jeżeli masz lepszy komputer:
+	- 2 CPU core
+	- 4096 MB RAM
+- Ustaw forwarding portu 80 na 8080 hosta oraz 443 na 8443
+- Ustaw aby ten katalog był synchronizowany na maszynie gościa w `/var/www/host`
+- Podnieś maszynę i rozpocznij pobieranie obrazu
