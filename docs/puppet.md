@@ -5,14 +5,12 @@
 	$ sudo apt-get install puppet
 
 ## Konfiguracja
-
 Zaglądnij do katalogu `/etc/puppet`.
 Co się tam znajduje?
 
 Przejdź do katalogu `/etc/puppet/manifests`.
 
 ## Facter
-
 Przyjrzyj się wynikom poleceń:
 
     $ facter
@@ -22,14 +20,9 @@ Przyjrzyj się wynikom poleceń:
 Co zauważyłeś? Jak można wykorzystać te informacje?
 
 ## Zarządzanie użytkownikami i grupami
-
-### Zadanie
-
 - Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 - Upewnij się że instnieje grupa www-data i ma gid=33
 - Upewnij się, że istnieje user www-data i należy do grupy www-data i ma uid=33
-
-### Rozwiązanie
 
 ```puppet
 group { 'www-data':
@@ -51,17 +44,12 @@ user { 'www-data':
 ```
 
 ## Podstawowa konfiguracja maszyny
-
-### Zadanie
-
 - Zainstaluj Puppeta
 - Zrób by Puppet wykonał polecenie `apt-get update`
 - Upewnij się, że następujące paczki są zainstalowane:
     - `nmap`
     - `htop`
     - `git`
-
-### Rozwiązanie
 
 ```puppet
 exec { 'apt-get update':
@@ -112,13 +100,8 @@ package { ['nmap', 'htop', 'git']:
 
 
 ## Zmiana hostname
-
-### Zadanie
-
 - Za pomocą manifestu Puppeta zmień hostname maszyny na `ecosystem.local`
 - Upewnij się, że po wpisaniu polecenia `hostname` będzie ustawiona na odpowiednią wartość.
-
-### Rozwiązanie
 
 ```puppet
 file { "/etc/hostname":
@@ -146,9 +129,6 @@ exec { 'set hostname':
 
 
 ## Konfiguracja Apache2
-
-### Zadanie
-
 - Za pomocą Puppet upewnij się by był użytkownik `www-data` i miał `uid=33`
 - Za pomocą Puppet upewnij się by była grupa `www-data` i miała `gid=33`
 - Upewnij się że katalog `/var/www` istnieje i właścicielem jego są user `www-data` i grupa `www-data` i że ma uprawnienia `rwxr-xr-x`
@@ -157,8 +137,6 @@ exec { 'set hostname':
 - Za pomocą Puppet Stwórz dwa vhosty
     - `insecure.example.com` na porcie 80 i z katalogiem domowym `/var/www/insecure.example.com`
     - `ssl.example.com` na porcie 443 i z katalogiem domowym `/var/www/ssl.example.com` + używanie certyfikatów SSL wcześniej wygenerowanych
-
-### Rozwiązanie
 
 ```puppet
 file {
@@ -203,9 +181,6 @@ apache::vhost { 'ssl.example.com':
 
 
 ## Instalacja i konfiguracja MySQL
-
-### Zadanie
-
 - zainstaluj moduł bazy MySQL wykorzystując Puppeta
 - ustaw hasło roota na mypassword
 - ustaw nasłuchiwanie serwera `mysqld` na `0.0.0.0`
@@ -213,8 +188,6 @@ apache::vhost { 'ssl.example.com':
 - stwórz usera `myusername` z hasłem `mypassword`
 - nadaj wszystkie uprawnienia dla usera `myusername` dla bazy `mydb`
 - ustaw backupowanie bazy danych do `/tmp/mysql-backup`
-
-### Rozwiązanie
 
 	$ puppet module install puppetlabs-mysql
 
@@ -259,9 +232,6 @@ class { "mysql::server::backup":
 ```
 
 ## Instalacja Java i Tomcat
-
-### Zadanie
-
 - zainstaluj Javę za pomocą Puppeta
 - zainstaluj Tomcat8 za pomocą Puppeta do `/opt/tomcat8`
 - Skonfiguruj dwie instancje Tomcata działające jednocześnie

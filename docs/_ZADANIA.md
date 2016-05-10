@@ -15,13 +15,13 @@
 - Zrób by maszyna była stawiana z manifestu Puppeta
 - Podnieś maszynę i rozpocznij pobieranie obrazu
 
+
 # Puppet
 
 ## Zarządzanie użytkownikami i grupami
 - Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 - Upewnij się że instnieje grupa www-data i ma gid=33
 - Upewnij się, że istnieje user www-data i należy do grupy www-data i ma uid=33
-
 
 ## Podstawowa konfiguracja maszyny
 - Zainstaluj Puppeta
@@ -31,11 +31,9 @@
     - `htop`
     - `git`
 
-
 ## Zmiana hostname
 - Za pomocą manifestu Puppeta zmień hostname maszyny na `ecosystem.local`
 - Upewnij się, że po wpisaniu polecenia `hostname` będzie ustawiona na odpowiednią wartość.
-
 
 ## Konfiguracja Apache2
 - Za pomocą Puppet upewnij się by był użytkownik `www-data` i miał `uid=33`
@@ -47,7 +45,6 @@
     - `insecure.example.com` na porcie 80 i z katalogiem domowym `/var/www/insecure.example.com`
     - `ssl.example.com` na porcie 443 i z katalogiem domowym `/var/www/ssl.example.com` + używanie certyfikatów SSL wcześniej wygenerowanych
 
-
 ## Instalacja i konfiguracja MySQL
 - zainstaluj moduł bazy MySQL wykorzystując Puppeta
 - ustaw hasło roota na mypassword
@@ -56,7 +53,6 @@
 - stwórz usera `myusername` z hasłem `mypassword`
 - nadaj wszystkie uprawnienia dla usera `myusername` dla bazy `mydb`
 - ustaw backupowanie bazy danych do `/tmp/mysql-backup`
-
 
 ## Instalacja Java i Tomcat
 - zainstaluj Javę za pomocą Puppeta
@@ -73,4 +69,14 @@
 - Postaw Jenkins za pomocą paczek DEB
 - Zaciągnij repo git https://github.com/SonarSource/sonar-examples.git
 - Zacznij budować różne projekty `sonar-examples/projects/languages/java`
+
+## Budowanie Pull Requestów
+- Skonfiguruj plan by budował pull requesty
+
+## Budowanie Checkstyle, PMD, Findbugs i Jacoco
+- Zaciągnij repo git https://github.com/SonarSource/sonar-examples.git
+- Zacznij budować różne projekty `sonar-examples/projects/languages/java`
 - Wyniki upublicznij w SonarQube
+
+## Jenkins DSL
+- Przepisz całą konfigurację wykorzustując plik Jenkins DSL

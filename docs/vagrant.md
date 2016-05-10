@@ -1,9 +1,6 @@
 # Vagrant
 
 ## Tworzenie i konfigurowanie maszyny
-
-### Zadanie
-
 - Poniższe polecenia wykonaj w pliku Vagrantfile
 - Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji Ubuntu LTS (Long Time Support)
 - Ustaw hostname na `ubuntu.local`
@@ -17,8 +14,6 @@
 - Ustaw aby ten katalog był synchronizowany na maszynie gościa w `/var/www/host`
 - Zrób by maszyna była stawiana z manifestu Puppeta
 - Podnieś maszynę i rozpocznij pobieranie obrazu
-
-### Rozwiązanie
 
 	$ vagrant init ubuntu/trusty32
 
