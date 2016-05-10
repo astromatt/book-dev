@@ -1,0 +1,141 @@
+---
+author: Matt Harasymczuk <matt@mr-wolf.org>
+---
+
+@import "../reveal.js/css/theme/template/mixins";
+@import "../reveal.js/css/theme/template/settings";
+@import "../reveal.js/lib/font/source-sans-pro/source-sans-pro.css";
+
+
+$backgroundColor: #fff;
+$mainColor: #383838;
+$headingColor: #f33;
+$linkColor: #333;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$mainFont: 'Source Sans Pro', 'Arial', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', 'Arial', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: bold;
+
+$mainFontSize: 2em;
+
+$heading1Size: 2.0em;
+$heading2Size: 1.8em;
+$heading3Size: 1.6em;
+$heading4Size: 1.3em;
+
+
+@import "../reveal.js/css/theme/template/theme";
+@import "header.css";
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+section {
+    margin-bottom: 3em;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $headingColor;
+	}
+
+    img {
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    table td {
+        font-size: 0.7em !important;
+    }
+
+    ul li ul {
+        font-size: 0.8em !important;
+        color: #aaa;
+    }
+}
+
+#today {
+        position: fixed;
+        display: block;
+        bottom: 8px;
+        z-index: 31;
+        font-family: Helvetica, sans-serif;
+        font-size: 12px;
+        line-height: 1;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 5px;
+        display: block;
+        left: 8px !important;
+    }
+
+@media print {
+
+    #today { display: none; }
+
+    table td, table th {
+        font-size: 0.5em !important;
+    }
+
+    img {
+        border: 0 !important;
+        max-width: 75% !important;
+        max-height: 75% !important;
+        box-shadow: 0 !important;
+    }
+
+    h1 {
+        font-size: 2em !important;
+    }
+
+    blockquote {
+        border: 0 !important;
+    }
+
+    header {
+      font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
+      margin-right: 0;
+      margin-top: 0;
+      padding-top: 0.5em;
+      padding-right: 1em;
+      text-align: right;
+      height: 1.5em;
+      font-size: 1.2em;
+      background-color: #383838;
+      color: #fcfcfc;
+      position: absolute;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header ul {
+        margin: 0;
+    }
+
+    header ul li {
+          margin-right: 1em;
+          list-style: none;
+          display: inline;
+    }
+
+    header a {
+        font-size: 1.0em;
+        text-decoration: none;
+        color: #fcfcfc;
+    }
+
+    header a:hover {
+        text-decoration: underline !important;
+    }
+
+
+    .reveal .slide-number-pdf {
+      display: none;
+    }
+}

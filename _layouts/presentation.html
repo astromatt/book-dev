@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default:'en' }}">
+
+<head>
+	<meta charset="utf-8">
+
+    <title>{{ page.title |defaut: site.title }}</title>
+
+    <meta name="author" content="{{ page.author }}">
+	<meta name="description" content="{{ page.description }}">
+    <link rel="cannonical" href="{{ site.url }}{{ default: page.permalink |default: page.url }}">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="{{ site.reveal.path }}lib/css/zenburn.css" id="syntax-highlight">
+	<link rel="stylesheet" href="{{ site.reveal.path }}css/reveal.css">
+	<link rel="stylesheet" href="{{ site.reveal.path }}css/print/pdf.css" media="print">
+	<link rel="stylesheet" href="/src/css/reveal-theme-{{ page.theme |default:'black' }}.css" id="theme">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li style="float: left"><a href="http://{{ page.domain }}">{{ page.domain }}</a></li>
+            <li><a href="http://mattagile.com">MattAgile.com</a></li>
+            <li><a href="https://twitter.com/MattAgile">@MattAgile</a></li>
+        </ul>
+    </header>
+
+	<div class="reveal">
+        <div class="slides">
+
+            <section data-markdown
+                     data-separator="^\n\n"
+                     data-separator-vertical="^\n\n\n"
+                     data-separator-notes="^---$"
+                     data-charset="utf-8">
+
+                     <script type="text/template">
+ {{ content }}
+                     </script>
+            </section>
+
+
+        </div>
+        {% if page.show_date %}
+            <div id="today"></div>
+            <script>document.getElementById("today").innerHTML = new Date().toISOString().substr(0, 10);</script>
+        {% endif %}
+	</div>
+
+    <script src="{{ site.reveal.path }}lib/js/head.min.js"></script>
+    <script src="{{ site.reveal.path }}js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+        width: {{ page.width |default: "1024" }},
+        height: {{ page.height |default: "768" }},
+        autoSlide: 0,
+
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        hideAddressBar: true,
+        slideNumber: "c/t",
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+        transitionSpeed: 'fast', // default/fast/slow
+        backgroundTransition: 'none', // none/fade/slide/convex/concave/zoom
+
+        dependencies: [
+            // Interpret Markdown in <section> elements
+            { src: '{{ site.reveal.path }}plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '{{ site.reveal.path }}plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+            // Syntax highlight for <code> elements
+            { src: '{{ site.reveal.path }}plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+            // Zoom
+            { src: '{{ site.reveal.path }}plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+            // Speaker notes
+            //{ src: '{{ site.reveal.path }}plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+    });
+</script>
+
+<!--
+    <script src="/js/google-analytics.js"></script>
+    <script>
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+        // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        ga('send', 'event', 'Slide', 'click', event.currentSlide);
+    } );
+    </script>
+-->
+</body>
+</html>
