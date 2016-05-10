@@ -21,22 +21,22 @@ Przyjrzyj się wynikom poleceń:
 
 Co zauważyłeś? Jak można wykorzystać te informacje?
 
-## Zarządzanie grupami
+## Zarządzanie użytkownikami i grupami
 
-	$ puppet resource -e group www-data
+### Zadanie
+
+Stwórz plik `/etc/puppet/manifests/www-data.pp`:
+- Upewnij się że instnieje grupa www-data i ma gid=33
+- Upewnij się, że istnieje user www-data i należy do grupy www-data i ma uid=33
+
+### Rozwiązanie
 
 ```puppet
 group { 'www-data':
 	ensure => 'present',
 	gid    => '33',
 }
-```
 
-## Zarządzenie użytkownikami
-
-	$ puppet resource -e user www-data
-
-```puppet
 user { 'www-data':
 	ensure           => 'present',
 	comment          => 'www-data',
@@ -48,6 +48,8 @@ user { 'www-data':
 	shell            => '/usr/sbin/nologin',
 	uid              => '33',
 }
+
+
 ```
 
 ## Podstawowa konfiguracja maszyny
@@ -68,10 +70,48 @@ exec { 'apt-get update':
   command => '/usr/bin/apt-get update';
 }
 
+Exec['apt-get update'] -> Package <| |>
+
 package { ['htop', 'nmap', 'git']:
   ensure => present;
 }
 ```
+
+Alternatywnie instalację paczek można zapisać nie jako listę a osobne zasoby:
+
+```puppet
+exec { 'apt-get update':
+  command => '/usr/bin/apt-get update',
+}
+
+Exec['apt-get update'] -> Package <| |>
+
+package { 'htop':
+	ensure => 'latest',
+}
+
+package { 'nmap':
+	ensure => 'latest',
+}
+
+package { 'git':
+	ensure => 'latest',
+}
+```
+
+Możesz też podać update listy jako wymaganie do wykonania istalacji
+
+```puppet
+exec { 'package definition update':
+	command => 'apt-get update',
+}
+
+package { ['nmap', 'htop', 'git']:
+	ensure	=> 'latest',
+	require => Exec['package definition update'],
+}
+```
+
 
 ## Zmiana hostname
 
@@ -95,6 +135,14 @@ file { "/etc/hostname":
 exec { "set-hostname":
         command => '/bin/hostname -F /etc/hostname',
         unless  => "/usr/bin/test `hostname` = `/bin/cat /etc/hostname`",
+}
+```
+
+Alternatywnie
+
+```puppet
+exec { 'set hostname':
+	command => '/usr/bin/hostnamectl set-hostname ecosystem.local'
 }
 ```
 
