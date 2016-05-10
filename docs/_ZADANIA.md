@@ -1,9 +1,6 @@
 # Vagrant
 
 ## Tworzenie i konfigurowanie maszyny
-
-### Zadanie
-
 - Poniższe polecenia wykonaj w pliku Vagrantfile
 - Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji Ubuntu LTS (Long Time Support)
 - Ustaw hostname na `ubuntu.local`
@@ -21,18 +18,12 @@
 # Puppet
 
 ## Zarządzanie użytkownikami i grupami
-
-### Zadanie
-
-Stwórz plik `/etc/puppet/manifests/www-data.pp`:
+- Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 - Upewnij się że instnieje grupa www-data i ma gid=33
 - Upewnij się, że istnieje user www-data i należy do grupy www-data i ma uid=33
 
 
 ## Podstawowa konfiguracja maszyny
-
-### Zadanie
-
 - Zainstaluj Puppeta
 - Zrób by Puppet wykonał polecenie `apt-get update`
 - Upewnij się, że następujące paczki są zainstalowane:
@@ -42,17 +33,11 @@ Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 
 
 ## Zmiana hostname
-
-### Zadanie
-
 - Za pomocą manifestu Puppeta zmień hostname maszyny na `ecosystem.local`
 - Upewnij się, że po wpisaniu polecenia `hostname` będzie ustawiona na odpowiednią wartość.
 
 
 ## Konfiguracja Apache2
-
-### Zadanie
-
 - Za pomocą Puppet upewnij się by był użytkownik `www-data` i miał `uid=33`
 - Za pomocą Puppet upewnij się by była grupa `www-data` i miała `gid=33`
 - Upewnij się że katalog `/var/www` istnieje i właścicielem jego są user `www-data` i grupa `www-data` i że ma uprawnienia `rwxr-xr-x`
@@ -64,9 +49,6 @@ Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 
 
 ## Instalacja i konfiguracja MySQL
-
-### Zadanie
-
 - zainstaluj moduł bazy MySQL wykorzystując Puppeta
 - ustaw hasło roota na mypassword
 - ustaw nasłuchiwanie serwera `mysqld` na `0.0.0.0`
@@ -77,9 +59,6 @@ Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 
 
 ## Instalacja Java i Tomcat
-
-### Zadanie
-
 - zainstaluj Javę za pomocą Puppeta
 - zainstaluj Tomcat8 za pomocą Puppeta do `/opt/tomcat8`
 - Skonfiguruj dwie instancje Tomcata działające jednocześnie
@@ -91,9 +70,6 @@ Stwórz plik `/etc/puppet/manifests/www-data.pp`:
 # Jenkins
 
 ## Instalacja i konfiguracja Jenkinsa
-
-### Zadanie
-
 - Postaw Jenkins za pomocą paczek DEB
 - Zaciągnij repo git https://github.com/SonarSource/sonar-examples.git
 - Zacznij budować różne projekty `sonar-examples/projects/languages/java`
