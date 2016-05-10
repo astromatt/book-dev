@@ -1,0 +1,29 @@
+author: Matt Harasymczuk
+title: Matt Harasymczuk
+url: http://mattagile.com
+description: >
+    Helping organizations with Agile (Scrum, Kanban, XP), Lean Start­up, Lean Enterprise and software engineering techniques and good practises: XP, DevOps processes: CI, CD, Quality, ChM, RM, BDD, TDD, Risk Management and GIT Flow.
+
+contact:
+    phone: +48 7332 31337
+    email: contact@mattagile.com
+
+destination: .site
+includes_dir: docs
+
+reveal:
+    path: /src/reveal.js/
+    theme_path: /src/reveal.js/css/theme/
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+   input: GFM
+   hard_wrap: false
+
+sass:
+  style: compressed
+  sass_dir: css
+
+gems:
+  - jekyll-sitemap

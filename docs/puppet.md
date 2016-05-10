@@ -40,7 +40,7 @@ group { 'www-data':
 user { 'www-data':
 	ensure           => 'present',
 	comment          => 'www-data',
-	gid              => '33',
+	groups           => ['www-data'],
 	home             => '/var/www',
 	password         => '*',
 	password_max_age => '99999',
@@ -56,7 +56,6 @@ user { 'www-data':
 
 - Zainstaluj Puppeta
 - Zrób by Puppet wykonał polecenie `apt-get update`
-- Skonfiguruj IP maszyny na `192.168.0.1`
 - Upewnij się, że następujące paczki są zainstalowane:
     - `nmap`
     - `htop`
@@ -69,14 +68,36 @@ exec { 'apt-get update':
   command => '/usr/bin/apt-get update';
 }
 
-host { 'hostmachine':
-  ip => '192.168.0.1';
-}
-
 package { ['htop', 'nmap', 'git']:
   ensure => present;
 }
 ```
+
+## Zmiana hostname
+
+### Zadanie
+
+- Za pomocą manifestu Puppeta zmień hostname maszyny na `ecosystem.local`
+- Upewnij się, że po wpisaniu polecenia `hostname` będzie ustawiona na odpowiednią wartość.
+
+### Rozwiązanie
+
+```puppet
+file { "/etc/hostname":
+        ensure  => present,
+        owner   => root,
+        group   => root,
+        mode    => '0644',
+        content => "ecosystem.local\n",
+        notify  => Exec["set-hostname"],
+}
+
+exec { "set-hostname":
+        command => '/bin/hostname -F /etc/hostname',
+        unless  => "/usr/bin/test `hostname` = `/bin/cat /etc/hostname`",
+}
+```
+
 
 ## Konfiguracja Apache2
 
