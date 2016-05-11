@@ -67,4 +67,4 @@ GRANT ALL PRIVILEGES ON DATABASE stash TO stash;
 
 ## Create New Box
 
-    vagrant package --base ecosystem.local --output ecosystem.box
+    $ vagrant package --base ecosystem.local --output ecosystem.box
