@@ -1,3 +1,9 @@
-# Budowanie Pull Requestów
+# Pull Requests builds
 
-- Skonfiguruj plan by budował pull requesty
+## English
+
+- Configure plan to build `Pull Requests`
+
+## Polish
+
+- Skonfiguruj plan by budował `Pull Requesty`

@@ -1,10 +1,17 @@
 # Heroku
 
+## English
+
+- Download repository https://github.com/heroku/java-sample.git
+- Create `Heroku` account
+- Create a new application
+- Add `heroku` repository URL to your local `GIT` repository remotes
+- Push application to the `Heroku`
 
 ## Polish
 
-- Ściągnij aplikację z GIT Huba https://github.com/heroku/java-sample.git
-- Załóż konto na Heroku
+- Ściągnij repozytorium https://github.com/heroku/java-sample.git
+- Załóż konto na `Heroku`
 - Stwórz nową aplikację
-- Dodaj remote heroku do repozytorium GITa
-- Uruchom aplikację na Heroku
+- Dodaj remote `Heroku` do lokalnego repozytorium `GIT`
+- Uruchom aplikację na `Heroku`
