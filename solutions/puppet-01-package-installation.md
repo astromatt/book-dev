@@ -1,8 +1,8 @@
-# Instalacja pakietów za pomocą Puppet
+# Puppet package installation
 
     $ cat /etc/puppet/manifests/packages.pp
 
-## Rozwiązanie 1
+## Method 1
 
 ```puppet
 exec { 'package definition update':
@@ -15,7 +15,7 @@ package { ['nmap', 'htop', 'git']:
 }
 ```
 
-## Rozwiązanie 2
+## Method 2
 
 ```puppet
 exec { 'package definition update':
@@ -29,7 +29,7 @@ package { ['htop', 'nmap', 'git']:
 }
 ```
 
-## Rozwiązanie 3
+## Method 3
 
 ```puppet
 exec { 'package definition update':

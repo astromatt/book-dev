@@ -1,4 +1,4 @@
-# Tomcat installation and confiruration using Puppet
+# Puppet Tomcat installation and configuration
 
 ```puppet
 class { 'java': }

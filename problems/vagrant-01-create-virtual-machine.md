@@ -7,10 +7,18 @@
 - Set the hostname to `ubuntu.local`
 - Adjust virtual machine resources according to your computer power:
     - 1 CPU core, 1024 MB RAM (if your computer has around 2 CPU core, 4 GB RAM)
-    - 2 CPU core, 4096 MB RAM (if you have more powerfull machine)
+    - 2 CPU core, 8196 MB RAM (if you have more powerfull machine)
 - Setup port forwarding
-    - 80 -> 8080
+    - 80 -> 8888
     - 443 -> 8443
+    - 7990 -> 7990
+    - 7999 -> 7999
+    - 8080 -> 8080
+    - 8081 -> 8081
+    - 8090 -> 8090
+    - 9000 -> 9000
+    - 5432 -> 5432
+    - 3306 -> 3306
 - Synchronize current directory to `/var/www/host`
 - Run machine from `Vagrantfile` and start downloading an `Ubuntu` image
 
@@ -21,9 +29,17 @@
 - Ustaw hostname na `ubuntu.local`
 - Ustaw zasoby przydzielane towjej maszynie wirtialnej w zależności od mocy komputera
     - 1 CPU core, 1024 MB RAM (jeżeli masz około 2 CPU core, 4 GB RAM)
-    - 2 CPU core, 4096 MB RAM (jeżeli masz mocniejszą maszynę)
+    - 2 CPU core, 8196 MB RAM (jeżeli masz mocniejszą maszynę)
 - Ustaw forwarding portów
-    - 80 -> 8080
+    - 80 -> 8888
     - 443 -> 8443
+    - 7990 -> 7990
+    - 7999 -> 7999
+    - 8080 -> 8080
+    - 8081 -> 8081
+    - 8090 -> 8090
+    - 9000 -> 9000
+    - 5432 -> 5432
+    - 3306 -> 3306
 - Ustaw aby ten katalog był synchronizowany na maszynie gościa w `/var/www/host`
 - Podnieś maszynę z `Vagrantfile` i rozpocznij pobieranie obrazu `Ubuntu`

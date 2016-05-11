@@ -1,6 +1,6 @@
 # Puppet Tomcat installation and configuration
 
-## Polish
+## English
 
 - Create manifest in `/etc/puppet/manifests/mysql.pp`
 - Install `Java` using `Puppet` module
@@ -10,7 +10,7 @@
     - Another instance is using `8006` port for connector and `8081` to redirect to `8443`
     - On the first instance deploy `WAR` from `/opt/tomcat8/webapps/docs/appdev/sample/sample.war`
 
-## English
+## Polish
 
 - Manifest do tego zadania zapisz w pliku `/etc/puppet/manifests/tomcat.pp`
 - Zainstaluj język `Java` za pomocą modułu `Puppet`

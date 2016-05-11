@@ -1,25 +1,26 @@
+# Users, Groups and Directories management
+
 ```puppet
-group { 'www-data':
+group { 'mygroup':
 	ensure => 'present',
-	gid    => 33,
+	gid    => 99,
 }
 
-user { 'www-data':
+user { 'myuser':
 	ensure           => 'present',
-	comment          => 'www-data',
-	groups           => ['www-data'],
-	home             => '/var/www',
+	groups           => ['mygroup'],
+	home             => '/home/myuser',
 	password         => '*',
 	password_max_age => 99999,
 	password_min_age => 0,
 	shell            => '/usr/sbin/nologin',
-	uid              => 33,
+	uid              => 1337,
 }
 
 file { '/var/www':
   ensure => 'directory',
-  owner  => 'www-data',
-  group  => 'www-data',
+  owner  => 'myuser',
+  group  => 'mygroup',
   mode   => 0755
 }
 ```

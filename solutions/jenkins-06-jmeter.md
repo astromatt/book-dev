@@ -1,4 +1,4 @@
-# Jenkins i JMeter
+# Jenkins and JMeter
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
