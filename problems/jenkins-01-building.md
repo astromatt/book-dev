@@ -1,4 +1,4 @@
-# Jenkinsa installation, configuration and builds
+# Jenkins installation, configuration and builds
 
 ## English
 
