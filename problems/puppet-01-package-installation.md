@@ -1,8 +1,19 @@
-# Instalacja pakietów za pomocą Puppet
+# Puppet package installation
 
-- manifest do tego zadania zapisz w katalogu `/etc/puppet/manifests/packages.pp`
-- Zrób by Puppet wykonał polecenie `apt-get update`
-- Upewnij się, że następujące paczki są zainstalowane:
+## English
+
+- Create manifest in `/etc/puppet/manifests/packages.pp`
+- `Puppet` should install those packages:
     - `nmap`
     - `htop`
     - `git`
+- Make sure that `apt-get update` command is run before
+
+## Polish
+
+- Manifest do tego zadania zapisz w pliku `/etc/puppet/manifests/packages.pp`
+- Zainstaluj następujące pakiety za pomocą `Puppet`:
+    - `nmap`
+    - `htop`
+    - `git`
+- Upewnij się by `Puppet` wykonał polecenie `apt-get update` na początku

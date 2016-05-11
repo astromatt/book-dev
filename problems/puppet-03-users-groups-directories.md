@@ -1,5 +1,23 @@
-# Zarządzanie użytkownikami, grupami i katalogami
-- manifest do tego zadania zapisz w katalogu `/etc/puppet/manifests/www-data.pp`
-- Za pomocą Puppet upewnij się by był użytkownik `www-data` i miał `uid=33`
-- Za pomocą Puppet upewnij się by była grupa `www-data` i miała `gid=33`
-- Upewnij się że katalog `/var/www` istnieje i właścicielem jego są user `www-data` i grupa `www-data` i że ma uprawnienia `rwxr-xr-x`
+# Users, Groups and Directories management
+
+## English
+
+- Create manifest in `/etc/puppet/manifests/users.pp`
+- Make sure user `myuser` exists and has `uid=1337`
+- Make suer group `mygroup` exists and has `gid=99`
+- Make sure:
+    - Directory `/var/www` exists
+    - Owner is set to `myuser`
+    - Group is set to `mygroup`
+    - Has `rwxr-xr-x` permissions
+
+## Polish
+
+- Manifest do tego zadania zapisz w pliku `/etc/puppet/manifests/users.pp`
+- Upewnij się, że użytkownik `myuser` istnieje i ma `uid=1337`
+- Upewnij się, że grupa `mygroup` istnieje i ma `gid=99`
+- Upewnij się, że:
+    - Katalog `/var/www` istnieje
+    - Właścicielem jego jest user `myuser`
+    - Właścicielem jego jest grupa `mygroup`
+    - Ma uprawnienia `rwxr-xr-x`
