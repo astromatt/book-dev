@@ -12,17 +12,14 @@ Optimal:
 - 8 GB RAM
 - 20 GB free disk space
 
-
 ## Clone the Repository with Submodules
 
     $ git clone --recursive https://github.com/MattAgile/ecosystem-workshop.git
-
 
 ## Install Dependencies
 
 - Download and install [Virtualbox](https://www.virtualbox.org/wiki/Downloads) == 5.0
 - Download and install [Vagrant](https://www.vagrantup.com/downloads.html) == 1.8
-
 
 ## Configure Guest Environment
 
@@ -33,7 +30,6 @@ If you have one or two Cores in your laptop, adjust number of Guest OS cores.
 Default settings are:
 - CPU = 2
 - RAM = 8196
-
 
 ## Test your configuration and run
 
