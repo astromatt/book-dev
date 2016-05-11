@@ -15,7 +15,7 @@ Optimal:
 
 ## Clone the Repository with Submodules
 
-    git clone --recursive https://github.com/MattAgile/ecosystem-workshop.git
+    $ git clone --recursive https://github.com/MattAgile/ecosystem-workshop.git
 
 
 ## Install Dependencies
@@ -45,6 +45,8 @@ For that check documentation in `./docs` folder and follow those instructions fo
 
 Be sure that no services on the host machine is running on those ports:
 
+- 8088
+- 8443
 - 7990 (Stash)
 - 7999 (SSH Stash)
 - 8080 (Jira)
@@ -52,15 +54,16 @@ Be sure that no services on the host machine is running on those ports:
 - 8090 (Confluence)
 - 9000 (SonarQube)
 - 5432 (PostgreSQL)
+- 3306 (MySQL)
 
 Otherwise you will not be able to run Guest Ecosystem or you have to change `Vagrantfile`.
 
 Then to run this you have to simply type:
 
-    vagrant up
+    $ vagrant up
 
-Warning: if you see warning message like this: `Warning: Authentication failure. Retrying...` exit the process(ctrl+c on linux/window or cmd+c on Mac) and start ssh connection by:
+Warning: if you see warning message like this: `Warning: Authentication failure. Retrying...` exit the process(`ctrl+c` on `Linux/Windows` or `cmd+c` on `OS X`) and start `ssh` connection by:
 
-    vagrant ssh
+    $ vagrant ssh
 
-If you want to setup your own ecosystem from scratch, read the following instructions in `docs/how-to-setup-new-box.rst` file.
+If you want to setup your own ecosystem from scratch, read the following instructions in `docs/how-to-setup-new-box.md` file.
