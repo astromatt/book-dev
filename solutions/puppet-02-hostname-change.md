@@ -1,6 +1,8 @@
-# Zmiana hostname za pomocą Puppet
+# Change hostname
 
-## Rozwiązanie 1
+    $ cat /etc/puppet/manifests/hostname.pp
+
+## Method 1
 
 ```puppet
 file { "/etc/hostname":
@@ -18,7 +20,7 @@ exec { "set hostname":
 }
 ```
 
-## Rozwiązanie 2
+## Method 2
 
 ```puppet
 exec { 'set hostname':

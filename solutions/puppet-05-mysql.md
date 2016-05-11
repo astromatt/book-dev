@@ -1,4 +1,4 @@
-# Install and configure MySQL
+# Puppet MySQL installation and configuration
 
 ```puppet
 class { "mysql::server":
