@@ -1,5 +1,5 @@
 # Uruchamianie aplikacji w Docker
-- Ściągnij aplikację z GITa
-- Uruchom aplikację wykorzystując Docker
-- W pliku `Dockerfile` zdefiniuj środowisko uruchomieniowe aplikacji
-- 
+
+- Ściągnij repozytorium https://github.com/spring-guides/gs-spring-boot-docker.git
+- Zbuduj projekt za pomocą `gradle`
+- Uruchom aplikację wykorzystując `Docker`
