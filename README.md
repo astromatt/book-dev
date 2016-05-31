@@ -37,7 +37,7 @@ At the workshop you'll receive an Developer Tools Ecosystem already set-up and c
 All you need is cloned git repository and `ecosystem.box` image in root folder (`./ecosystem-workshop`).
 Otherwise you can set up your own ecosystem-workshop.
 
-For that check documentation in `./docs` folder and follow those instructions for each service you want to install.
+For that check documentation in `./setup` folder and follow those instructions for each service you want to install.
 
 Be sure that no services on the host machine is running on those ports:
 
@@ -62,4 +62,4 @@ Warning: if you see warning message like this: `Warning: Authentication failure.
 
     $ vagrant ssh
 
-If you want to setup your own ecosystem from scratch, read the following instructions in `docs/how-to-setup-new-box.md` file.
+If you want to setup your own ecosystem from scratch, read the following instructions in `setup/_how-to-setup-new-box.md` file.
