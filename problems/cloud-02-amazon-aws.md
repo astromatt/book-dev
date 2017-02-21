@@ -4,7 +4,7 @@
 
 - Download repository https://github.com/heroku/java-sample.git
 - Create an `Amazon AWS` account
-- From the dashboard run the `Frie Tier` `Ubuntu LTS` AMI
+- From the dashboard run the `Free Tier` `Ubuntu LTS` AMI
 - In the `Security Groups` configuration allow connections from ports
     - 80
     - 443
