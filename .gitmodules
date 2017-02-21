@@ -1,6 +1,6 @@
 [submodule "src/sonar-examples"]
-	path = src/sonar-examples
+	path = contrib/sonar-examples
 	url = https://github.com/SonarSource/sonar-examples.git
 [submodule "src/reveal.js"]
-	path = src/reveal.js
+	path = contrib/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
