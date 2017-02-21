@@ -13,7 +13,7 @@ author = 'Matt Harasymczuk'
 
 extensions = [
     'sphinx.ext.todo',
-    'sphinx.ext.githubpages'
+    # 'sphinx.ext.githubpages'
 ]
 
 def get_version():
