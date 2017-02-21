@@ -19,13 +19,37 @@ Author
     :numbered:
     :caption: Wstęp
 
-    teoria/wstep.rst
-    teoria/agile-vs-devops.rst
-    teoria/community.rst
+    wstep/wstep.rst
+    wstep/agile-vs-devops.rst
+    wstep/community.rst
+
+.. toctree::
+    :maxdepth: 3
+    :numbered:
+    :caption: Proces wytwarzania oprogramowania
+
+    proces-wytwarzania-oprogramowania/standardy-projektu.rst
+    proces-wytwarzania-oprogramowania/wersjonowanie.rst
+    proces-wytwarzania-oprogramowania/procesy-ci-cd.rst
+    proces-wytwarzania-oprogramowania/standardy-pracy-zespolu.rst
+    proces-wytwarzania-oprogramowania/jakosc-oprogramowania.rst
+    proces-wytwarzania-oprogramowania/user-centric-design.rst
+    proces-wytwarzania-oprogramowania/dobre-praktyki.rst
+    proces-wytwarzania-oprogramowania/zarzadzanie-zmiana.rst
+    proces-wytwarzania-oprogramowania/bezpieczenstwo-kodu.rst
+
+.. toctree::
+    :maxdepth: 3
+    :numbered:
+    :caption: Zalaczniki
+
+    zalaczniki/manifest-agile.rst
+    zalaczniki/scrum.rst
+    zalaczniki/technologie.rst
 
 .. toctree::
     :maxdepth: 1
     :numbered:
     :caption: Ecosystem
 
-    ecosystem/index.rst
+    ##odkomentowac## ecosystem/index.rst
