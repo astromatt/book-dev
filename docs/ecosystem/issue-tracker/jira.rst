@@ -1,15 +1,14 @@
-Install Jira
-============
+****
+JIRA
+****
 
 Documentation
 -------------
-
 * https://confluence.atlassian.com/display/JIRA/JIRA+Documentation
 
 
 Download Page
 -------------
-
 * https://www.atlassian.com/software/jira/download?b=a#allDownloads
 
 

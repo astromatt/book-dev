@@ -1,16 +1,31 @@
+***************
 DevOps Workshop
-===============
+***************
+
+
+Author
+======
+
+:name: `Matt Harasymczuk <http://astrotech.io>`_
+:email: `devops@astrotech.io <mailto:devops@astrotech.io>`_
+:www: `http://www.astrotech.io <http://astrotech.io>`_
+:facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
+:linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
+
+
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 3
+    :numbered:
+    :caption: Wstęp
 
-   setup/jira.rst
-   setup/confluence.rst
+    teoria/wstep.rst
+    teoria/agile-vs-devops.rst
+    teoria/community.rst
 
-Indices and tables
-==================
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+    :caption: Ecosystem
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    ecosystem/index.rst
