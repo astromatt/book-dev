@@ -17,8 +17,9 @@ extensions = [
 ]
 
 def get_version():
+    command = subprocess.Popen('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True)
     return '{date:%Y-%m-%d}, #{sha1}'.format(
-        sha1=subprocess.Popen('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True).stdout.read().decode().replace('\n', ''),
+        sha1=command.stdout.read().decode().replace('\n', ''),
         date=datetime.date.today(),
     )
 
