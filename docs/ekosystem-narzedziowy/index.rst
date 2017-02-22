@@ -4,6 +4,14 @@
 .. toctree::
     :maxdepth: 3
     :numbered:
+    :caption: Database
+
+    database/flyway.rst
+    database/postgresql.rst
+
+.. toctree::
+    :maxdepth: 3
+    :numbered:
     :caption: Cloud
 
     cloud/amazon-aws.rst
@@ -62,6 +70,7 @@
     :numbered:
     :caption: Quality
 
+    quality/findbugs.rst
     quality/pitest.rst
     quality/selenium.rst
     quality/soap-ui.rst
