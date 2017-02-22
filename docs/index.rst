@@ -54,6 +54,7 @@ Zalaczniki
     zalaczniki/manifest-agile.rst
     zalaczniki/scrum.rst
     zalaczniki/technologie.rst
+    zalaczniki/stawianie-srodowiska.rst
 
 .. toctree::
     :maxdepth: 3
@@ -68,3 +69,13 @@ Zalaczniki
     :caption: Rozwiązania
 
     rozwiazania/_.rst
+
+Ekosystem
+=========
+
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+    :caption: Ekosystem
+
+    ekosystem-narzedziowy/index.rst

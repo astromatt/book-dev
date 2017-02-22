@@ -1,8 +1,13 @@
-# PostgreSQL
+**********
+PostgreSQL
+**********
+
+.. code-block:: sh
 
     $ apt-get install --yes postgresql
-
     $ cat /etc/postgresql/9.3/main/pg_hba.conf
+
+.. code-block:: config
 
     # TYPE DATABASE USER        ADDRESS         METHOD
     local   all     postgres                    peer
@@ -11,7 +16,11 @@
     host    all     all         0.0.0.0/0       md5
     host    all     all         ::1/128         md5
 
+.. code-block:: sh
+
     $ cat /etc/postgresql/9.3/main/postgresql.conf
+
+.. code-block:: config
 
     data_directory = '/var/lib/postgresql/9.3/main'
     hba_file = '/etc/postgresql/9.3/main/pg_hba.conf'
@@ -34,5 +43,7 @@
     lc_numeric = 'en_US.UTF-8'
     lc_time = 'en_US.UTF-8'
     default_text_search_config = 'pg_catalog.english'
+
+.. code-block:: sh
 
     $ service postgresql restart
