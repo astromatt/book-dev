@@ -28,6 +28,7 @@ Author
     :numbered:
     :caption: Proces wytwarzania oprogramowania
 
+    proces-wytwarzania-oprogramowania/wstep.rst
     proces-wytwarzania-oprogramowania/standardy-projektu.rst
     proces-wytwarzania-oprogramowania/wersjonowanie.rst
     proces-wytwarzania-oprogramowania/procesy-ci-cd.rst
@@ -36,7 +37,7 @@ Author
     proces-wytwarzania-oprogramowania/user-centric-design.rst
     proces-wytwarzania-oprogramowania/dobre-praktyki.rst
     proces-wytwarzania-oprogramowania/zarzadzanie-zmiana.rst
-    proces-wytwarzania-oprogramowania/bezpieczenstwo-kodu.rst
+    proces-wytwarzania-oprogramowania/polityki-bezpieczenstwa.rst
 
 .. toctree::
     :maxdepth: 3
