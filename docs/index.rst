@@ -2,7 +2,6 @@
 DevOps Workshop
 ***************
 
-
 Author
 ======
 
@@ -13,6 +12,8 @@ Author
 :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
 
 
+Spis Treści
+===========
 
 .. toctree::
     :maxdepth: 3
