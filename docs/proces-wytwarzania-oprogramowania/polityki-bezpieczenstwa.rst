@@ -9,7 +9,7 @@ Istotą ataków bardzo często jest wprowadzenie takich danych, które system i
 Bez względu na charakter jaki posiadają niedozwolone dane wprowadzane do systemu - w zabezpieczaniu systemów przed atakami kluczowe jest weryfikowanie danych wejściowych.
 
 Ogólne środki zaradcze
-----------------------
+======================
 Akceptacja tylko tych danych, które zostały przewidziane w fazie projektowania systemu. 
 
 Metoda ta polega na weryfikacji danych wejściowych i zbadaniu czy spełniają one założone z reguły biznesowe kryteria jakości. Jeżeli nie - są odrzucane i nie mogą dostać się głębiej do struktur systemu. Jednym z przykładów może być zaimplementowanie w systemie weryfikacji poprawności danych w polu reprezentującym PESEL, która sprawdzi i wykluczy możliwości wprowadzenia w tym polu innych znaków niż cyfry (np. litery, znak plus).
@@ -476,6 +476,7 @@ Niewłaściwa obsługa błędnego kodu umożliwia napastnikowi uzyskanie informa
 
 Wyliczenie pliku / aplikacji
 ----------------------------
+
 Jest to powszechna technika stosowana do identyfikacji aplikacji  i plików, które mogą być podatne na wykorzystanie lub mogą stanowić podstawę ataku. Napastnicy poszukują: 
 
 * plików lub aplikacji wrażliwych,
@@ -511,6 +512,7 @@ Przeglądarki często zachowują historię ostatnio odwiedzonych witryn, które 
 
 Autouzupełnianie
 ----------------
+
 Przeglądarki internetowe obsługują funkcję Autouzupełniania. Dzięki niej dane wejściowe użytkowników mogą być zachowane dla przyszłego użycia i prezentowane użytkownikowi komputera po kliknięciu na pole formularza sieciowego z tą samą nazwą. 
 
 Jeżeli funkcja ta jest uruchomiona na komputerach wspólnych (w bibliotekach, biurach, kawiarenkach internetowych), informacja wprowadzana przez klientów do pól wejściowych (mogąca też zawierać dane osobowe czy finansowe), może być widzialna dla innych użytkowników korzystających z komputera. 
@@ -553,6 +555,7 @@ Ukryte pola mogą być przydatne, jednak mogą też stanowić znaczące ryzyko d
 
 Historia konta
 --------------
+
 Użytkownicy aplikacji nie mogą sprawdzać, czy nieupoważnione osoby uzyskały dostęp do ich konta lub czy posługiwały się nim w sposób niewłaściwy. 
 
 :Środki kontrolno-zaradcze:

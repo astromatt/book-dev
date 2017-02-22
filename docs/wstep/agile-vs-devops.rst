@@ -5,7 +5,23 @@ Agile vs. DevOps
 Agile vs DevOps
 ===============
 
-.. image:: ../../_static/img/agile-division-chart.png
+Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
+
+* miękkie:
+
+    * zarządzanie projektami,
+    * biznes i produkty,
+    * komunikacja i organizacja,
+
+* techniczne:
+
+    * devops,
+    * architektura IT,
+    * jakość i praktyki.
+
+.. figure:: ../../_static/img/agile-division-chart.png
+
+    Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
 
 Lean Startup
 ============
@@ -57,12 +73,14 @@ History
 
 Introduction
 ------------
+
 * Iterative approach
 * What’s sprint?
 * Short sprints
 
 Roles
 -----
+
 * Scrum Master
 * Product Owner
 * Developer
@@ -72,12 +90,14 @@ Roles
 
 Issues
 ------
+
 * User Stories
 * Epics
 * Technical Tasks
 
 Artifacts
 ---------
+
 * Backlog
 * Sprintlog
 * Task board
@@ -87,12 +107,14 @@ Artifacts
 
 Metrics
 -------
+
 * Velocity
 * Capacity
 * Maturity
 
 Meetings
 --------
+
 * Daily Meeting
 * Planning
 * Retrospective
@@ -101,6 +123,7 @@ Meetings
 
 Planning and Refinement
 -----------------------
+
 * Estimation
 * How big your tasks should be?
 * Estimation support systems
@@ -110,6 +133,7 @@ Planning and Refinement
 
 Sprint Review
 -------------
+
 * Product Owners role
 * Stakeholders
 * Releasable functionality
@@ -117,6 +141,7 @@ Sprint Review
 
 Charts
 ------
+
 * Burn-down Chart
 * Burn-up Chart
 * Control Chart
@@ -128,6 +153,7 @@ Charts
 
 Team Interaction
 ----------------
+
 * Transparency
 * Retrospective
 * Management role and team
@@ -137,11 +163,13 @@ Team Interaction
 
 Kanban
 ======
+
 * What’s Kanban?
 * History
 
 Introduction
 ------------
+
 * Pull system
 * JIT
 * Context switching
@@ -149,6 +177,7 @@ Introduction
 
 Improvement
 -----------
+
 * Muda
 * Jidoka
 * Kaizen
@@ -158,6 +187,7 @@ Improvement
 
 Workflow
 --------
+
 * Columns
 * Swimlanes
 * Expedite
@@ -172,12 +202,14 @@ Extreme Programming
 
 Practices
 ---------
+
 * Test Driven Development (TDD)
 * Behavior Driven Development (BDD)
 * Pair Programming
 
 Quality
 -------
+
 * Best Practices
 * Coding Standards
 * Clean Code

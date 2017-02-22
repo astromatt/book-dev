@@ -26,14 +26,11 @@ Dokładną listę technologii precyzuje stosowny załącznik do dokumentu.
 Procedury wprowadzania nowych technologii w projektach
 ======================================================
 
-W przypadku zapotrzebowania na zmianę technologii, architektury lub podziału aplikacji zgodnie z innym schematem przewidziana jest następująca procedura.
+W przypadku zapotrzebowania na zmianę technologii, architektury lub podziału aplikacji zgodnie z innym schematem przewidziana jest następująca procedura:
 
 1. Wniosek zgłaszany jest do przełożonego liniowego lub lidera zespołu,
-
 2. Lider lub przełożony wydaje opinię czy zmiana jest uzasadniona i czy należy ją rozważyć na szczeblu projektowym
-
 3. Jeżeli zmiana jest uzasadniona lider przedstawia ją na cyklicznym spotkaniu projektowym pozostałym liderom lub kierownikom.
-
 4. Jeżeli zmiana zostanie określona jako istotnie i pozytywnie wpływająca na jakość, szybkość wytwarzania lub działania aplikacji, ewentualnie znacząco przyczyni się do zwiększenia wartości biznesowych dopuszcza się możliwość jej wprowadzenia po uprzednim skonsultowaniu się z architektami aplikacji oraz poinformowaniu kierownika projektu i stosownego dyrektora działu. Stosowna zmiana wraz z uzasadnieniem powinna również znaleźć się w dokumentacji technicznej projektu.
 
 System kontroli wersji

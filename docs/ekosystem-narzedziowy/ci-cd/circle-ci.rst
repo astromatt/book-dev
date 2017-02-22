@@ -1,3 +1,3 @@
 *********
-Solutions
+Circle CI
 *********

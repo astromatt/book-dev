@@ -60,9 +60,10 @@ Scrum
 Scrum jest systemem zarządzania pracą oraz frameworkiem komunikacyjnym. System ten przyjął się na świecie jako najpopularniejszy sposób prowadzenia projektów informatycznych. Obecnie wykorzystują go największe firmy z branży IT i nie tylko.
 
 W myśl SCRUMu, oprogramowanie wytwarzane jest iteracyjnie i przyrostowo, a projekt jest podzielony na mniejsze, tygodniowe lub dwu tygodniowe fazy, zwane iteracjami lub Sprintami, następujące bezpośrednio po sobie. Cały proces produkcji oparty jest na 3 filarach:
-Przezroczystości - istotne informacje widoczne są dla odpowiedzialnych osób oraz stosowany jest wspólny język,
-Weryfikacji - dokonuje się regularnych przeglądów postępów prac, wyszukiwania artefaktów oraz identyfikacji wszelkich odchyleń,
-Adaptacji - dotyczy procesu i produktów, wprowadzana jest natychmiast.
+
+* Przezroczystości - istotne informacje widoczne są dla odpowiedzialnych osób oraz stosowany jest wspólny język,
+* Weryfikacji - dokonuje się regularnych przeglądów postępów prac, wyszukiwania artefaktów oraz identyfikacji wszelkich odchyleń,
+* Adaptacji - dotyczy procesu i produktów, wprowadzana jest natychmiast.
 
 Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze stadiów przygotowania i realizowania projektu, mając na uwadze jego indywidualną specyfikę, interakcje i współpracę z Klientami, dynamicznie zmieniające się otoczenie i dostosowywanie się do zmian oraz potencjał ludzki.
 
