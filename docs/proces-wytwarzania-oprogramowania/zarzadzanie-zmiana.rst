@@ -48,7 +48,8 @@ Klasyfikacja obejmuje następujące czynności:
 * próba rozwiązania incydentu na podstawie gotowego rozwiązania lub własnego doświadczenia,
 * jeśli rozwiązania nie ma lub jest nieskuteczne – wybór i przypisanie kompetentnej grupy wsparcia, mogącej rozwiązać incydent.
 
-Kolejnym krokiem jest zamknięcie incydentu, polegające na zapewnieniu: 
+Kolejnym krokiem jest zamknięcie incydentu, polegające na zapewnieniu:
+
 * (jeżeli zastosowano rozwiązanie zastępcze nieznajdujące się dotychczas w Bazie Wiedzy) poprawności wpisu w Bazie Wiedzy dotyczącego zastosowanego rozwiązania (czy wpis jest zwięzły i zrozumiały?),
 * poprawnej klasyfikacji incydentu ze względu na przyczynę jego wystąpienia,
 * sprawdzenia czy zastosowane rozwiązanie jest uzgodnione i zatwierdzone przez Klienta,
@@ -77,7 +78,8 @@ Zmiana, to dodanie, modyfikacja lub usunięcie czegokolwiek, co mogłyby mieć w
 
 Celem procesu jest zapewnienie, aby na każdym etapie cyklu życia aplikacji i jej usług, wszelkie zmiany kontrolowane były poprzez standardowe metody i procedury, które pozwalają minimalizować zakłócenia w jakości świadczonych usług. Za proces zarządzania zmianą jest odpowiedzialna Firma.
 
-Ogólny sposób obsługi zmian przedstawiony jest na schemacie poniżej. 
+Ogólny sposób obsługi zmian przedstawiony jest na schemacie poniżej.
+
 Wejściem do procesu jest zgłoszenie Incydentu, lub złożony przez ITSM wniosek o zmianę (RFC, z ang. Request of Change). 
 
 Na etapie tworzenia aplikacji, większość zmian wynika ze zgłoszonych Incydentów, natomiast wniosek o zmianę dotyczy tylko procesu wdrożeniowego i może być zgłoszony tylko przez wskazanych pracowników Firmy (w szczególności dotyczy to zmian standardowych, dla których decyzja jest preautoryzowana). 
@@ -136,9 +138,7 @@ W Firmie prowadzona jest Baza Wiedzy i każdy pracownik realizujący zadania zwi
 Zakres informacji utrzymywanych w Bazie Wiedzy w zakresie Projektu obejmuje następujące elementy:
 
 * Dokumentacja systemu - całość dokumentacji wytwarzanej przez Firmę wraz z budową systemu.
-
 * Informacje dotyczące eksploatacji Projektu, w tym obejścia, znane błędy i ich rozwiązania.
-
 * Inna dokumentacja powstająca w trakcie wytwarzania i eksploatacji.
 
 Podział odpowiedzialności

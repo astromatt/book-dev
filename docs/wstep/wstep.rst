@@ -13,6 +13,7 @@ Wszystko o czym będzie mowa w następnych rozdziałach jest dostępne w interne
 
 Development processes
 =====================
+
 Rozpoczynając pracę jako Coach w nowej firmie zwykle proszę o wprowadzenie w aktualny stan procesów i produktów. Tego co najcenniejsze dla firmy. To co stanowi corowy biznes i innowacyjność przedsiębiorstwa na rynku. Wg. mnie jedyny sposób aby dobrze dopasować procesy do organizacji to postarać się wniknąć w jej codzienną egzystencję. Zdarza się, iż właściciele firm nieufnie podchodzą do tematu dzielenia się tajemnicami biznesowymi lecz w miarę postępu szkoleń jesteśmy w stanie znaleźć porozumienie a co najważniejsze zaufanie do siebie.
 
 Jednym z najczęstszych problemów jakie spotykam w organizacjach szczególnie młodych i "zwinnych" jest brak jakichkolwiek procesów. Organizacje, w których u podstaw leży Agile dochodzą do ekstremum i "brzydzą" się ich wprowadzaniem. Uważają, że to jedynie spowolni development, spowoduje bariery komunikacyjne między ludźmi a przede wszystkim zniszczy ich luźną i zwykle młodzieżową atmosferę.
@@ -25,6 +26,7 @@ Proszę nie zrozum mnie źle: jestem daleki od wprowadzania tych metodyk jako st
 
 Team management
 ===============
+
 Praktycznie nie zdarza się abym pracując z jakimś zespołem nie natrafił na problem komunikacyjny między członkami zespołu. Zwykle wynika to z niedojrzałości zespołu, sposobu jego pracy oraz po prostu z problemów z jego zarządzaniem.
 
 Aby stać się dobrym managerem nie konieczne jest wieloletnie doświadczenie w wytwarzaniu oprogramowania. Nie każdy Senior czy Ekspert developer będzie nadawał się na kierownika projektu, lidera zespołu czy szefa działu. W zadziwiającej większości przypadków osoby techniczne, które awansują na kierownicze stanowisko po prostu nie sprawdzają się w tej roli. Czasami jest to związane z umiejętnościami interpersonalnymi, tzw. miękkimi, takimi jak np. charakter introwertyczny. Czasami problem jest trudniejszy do zlokalizowania i wynika z polityki, zwykłej zawiści lub innych bardzo często prozaicznych problemów.
@@ -39,6 +41,7 @@ Jeżeli jesteś managerem, bądź takim człowiekiem za którym inni będą chci
 
 Team technical skills
 =====================
+
 Czasami niestety dobra wola nie wystarcza. Czasami brak doświadczenia daje we znaki i projekt mimo iż dobrze się zapowiadał zaczyna być, tym "kroczącym ku klęsce". Ten brak doświadczenia i umiejętności jest charakterystyczny dla młodych firm, których nie stać na zatrudnienie wysoko się ceniących specjalistów.
 
 Firmy tego typu nie są jednak skazane na niepowodzenie. Wręcz przeciwnie: mają ogromny potencjał innowacji, która dobrze ukierunkowana i wyegzekwowana z należytą starannością może urosnąć w niebotyczne przedsięwzięcie przerastające swym ogromem nawet najśmielsze wyobrażenia założycieli. Pamiętaj, że takie potęgi jak Google, Microsoft, Amazon, Apple ale również i te nie związane z IT jak Boeing, Lockheed Martin, Wall Mart też zaczynały od niewielkich, niedoświadczonych przedsięwzięć. Dobre sterowanie, odpowiedni ludzie i trafione decyzje spowodowały, że dziś możemy tylko pozazdrościć ich potędze.
@@ -49,10 +52,12 @@ Jest powiedzenie: "jest jedna gorsza rzecz od pracownika, któremu zapłaciliśm
 
 Technical debt analysis
 =======================
+
 Z pozoru wydaje się, że nasze oprogramowanie go nie posiada. To projekty innych ludzi są narażone na dług techniczny. To inni mają z tym problem nie ja… Tak niewiele potrzeba aby się przekonać, że ten problem dotyczy nawet naszego kodu i projektu. Zwykle przez brak pokory tkwimy w fałszywym przekonaniu.
 
 Narzędzia, które pozwolą nam przeanalizować nasze oprogramowanie pod kątem występowania, a raczej określania wielkości długu technicznego są darmowe i dostępne od zaraz dla wszystkich popularnych języków programowania. W celu przybliżenia metod statycznej analizy kodu oraz liczenia długu zapraszam do kolejnych rozdziałów książki związanych z narzędziami developerskimi takimi jak SonarQube, Checkstyle, PMD i Findbugs.
 
 Scrum/Kanban implementation maturity
 ====================================
+
 Ileż to razy miałem doczynienia z zespołami, które twierdziły, że ich proces jest w pełni dojrzały, że robią SCRUMa, a problem leży gdzieś indziej...
