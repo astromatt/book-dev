@@ -8,6 +8,7 @@ Zespół User Experience prowadzi badania potrzeb użytkowników, prace analityc
 
 .. figure:: ../../_static/img/user-centered-design-phases.png
     :scale: 50%
+    :align: center
 
     Znaczenie User Experience
 
@@ -15,6 +16,7 @@ Rozwiązania tworzone są zgodnie z metodologią User-centered design,  w któr
 
 .. figure:: ../../_static/img/user-centered-design-iterations.jpg
     :scale: 50%
+    :align: center
 
     Projektowanie zorientowane na użytkownika w iteracyjnym systemie wytwarzania oprogramowania
  

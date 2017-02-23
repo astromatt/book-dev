@@ -63,6 +63,7 @@ Dopuszcza się możliwość niewykorzystywania gałęzi ``develop`` w projekcie,
 
 .. figure:: ../../_static/img/git-flow-paper-04.jpg
     :scale: 50%
+    :align: center
 
     Schemat scalania funkcjonalności z gałęzią ``master``.
 
@@ -77,6 +78,7 @@ Stan powyżej opisany jest wysoce pożądany w przypadku każdego projektu bez w
 
 .. figure:: ../../_static/img/git-flow-paper-10.jpg
     :scale: 50%
+    :align: center
 
     Schemat scalania funkcjonalności z gałęzią ``develop``.
 
@@ -89,6 +91,7 @@ Obrazek poniżej przedstawia graficzną reprezentację procesu wdrożenia, tj. s
 
 .. figure:: ../../_static/img/git-flow-paper-22.jpg
     :scale: 50%
+    :align: center
 
     Schemat scalania gałęzi ``develop`` z ``master`` za pośrednictwem ``release``.
 
@@ -118,6 +121,7 @@ Branche ``hotfix/*`` natomiast odpowiadają za poprawkę błędów znalezionych 
 
 .. figure:: ../../_static/img/git-flow-paper-29.jpg
     :scale: 50%
+    :align: center
 
     Schemat scalania zmian z gałęzi z rodziny ``bugfix/*`` i ``hotfix/*`` do kodu źródłowego aplikacji.
 
@@ -128,11 +132,13 @@ Branche z rodziny ``feature/*`` służą do wprowadzania funkcjonalności do sys
 
 .. figure:: ../../_static/img/git-flow-paper-04.jpg
     :scale: 50%
+    :align: center
 
     Schemat scalania funkcjonalności ``feature/*`` z gałęzią ``master``.
 
 .. figure:: ../../_static/img/git-flow-paper-10.jpg
     :scale: 50%
+    :align: center
 
     Schemat scalania funkcjonalności ``feature/*`` z gałęzią ``develop``.
 
@@ -161,10 +167,12 @@ Przed wprowadzeniem jakichkolwiek zmian do gałęzi integracyjnych wymagany jest
 
 .. figure:: ../../_static/img/git-pull-request-05.jpg
     :scale: 50%
+    :align: center
 
     Schemat momentu tworzenia `Pull Requesta` przy scalaniu zmian.
 
 .. figure:: ../../_static/img/git-pull-request-09.jpg
     :scale: 50%
+    :align: center
 
     Karta podsumowania `Pull Request` z informacjami wynikowymi z systemu budowania.

@@ -11,6 +11,9 @@ Author
 :facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
 :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
 
+Informacje o dokumencie i szkoleniu
+===================================
+
 .. tip:: Pamiętaj, że zawsze najbardziej aktualna wersja znajduje się na http://devops.astrotech.io
 
 .. note:: Szkolenie obejmuje 32 godziny wykładów oraz warsztatów i pokrywa zagadnienia związane z ruchem i metodyką DevOps oraz praktyczną wiedzą na temat wykorzystania i zaadaptowania jej w nowoczesnych organizacjach IT. Uczestnik szkolenia opanuje używanie systemów i narzędzi DevOps m.in. Puppet, Docker, Vagrant oraz współpracę w duchu Agile.
@@ -43,6 +46,8 @@ Author
         vagrant init ubuntu/xenial64
         vagrant up --provider virtualbox
 
+Wprowadzenie
+============
 
 .. toctree::
     :maxdepth: 2
@@ -54,10 +59,12 @@ Author
     wprowadzenie/agile-vs-devops.rst
     wprowadzenie/srodowisko-wirtualne.rst
 
+Proces wytwarzania oprogramowania
+=================================
+
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :name: Proces wytwarzania oprogramowania
     :caption: Proces wytwarzania oprogramowania
 
     proces-wytwarzania-oprogramowania/wstep.rst
@@ -73,6 +80,9 @@ Author
     proces-wytwarzania-oprogramowania/manifest-agile.rst
     proces-wytwarzania-oprogramowania/scrum.rst
     proces-wytwarzania-oprogramowania/technologie.rst
+
+Ekosystem narzędziowy
+=====================
 
 .. toctree::
     :maxdepth: 2
