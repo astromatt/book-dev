@@ -1,8 +1,9 @@
-Vagrant
-=======
+******
+Puppet
+******
 
 .. include:: pl-wyklad.rst
-.. include:: pl-zadania.rst
+.. include:: pl-cwiczenia.rst
 
 
 .. toctree::
