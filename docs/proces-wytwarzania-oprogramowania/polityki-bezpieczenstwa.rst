@@ -2,9 +2,9 @@
 Bezpieczeństwo aplikacji, kodu źródłowego i danych
 **************************************************
 
-Ataki na systemy informatyczne mają z reguły u swoich podstaw wprowadzenie do systemu danych, których typ nie został przewidziany w czasie jego tworzenia.
+Ataki na systemy informatyczne mają z reguły u swoich podstaw wprowadzenie do systemu danych, których typ nie został przewidziany w czasie jego tworzenia.
 
-Istotą ataków bardzo często jest wprowadzenie takich danych, które system informatyczny, w którejś ze swoich warstw, zinterpretuje jako komendy lub polecenia, zmieniając w ten sposób jego działanie. Dane te wówczas mogą̨: nie wpływać bezpośrednio na działanie systemu, ale powodować udostepnienie danych, które nie miały być dostępne, przekształcać działanie systemu na skutek modyfikacji parametrów kontrolujących jego działanie.
+Istotą ataków bardzo często jest wprowadzenie takich danych, które system informatyczny, w którejś ze swoich warstw, zinterpretuje jako komendy lub polecenia, zmieniając w ten sposób jego działanie. Dane te wówczas mogą̨: nie wpływać bezpośrednio na działanie systemu, ale powodować udostepnienie danych, które nie miały być dostępne, przekształcać działanie systemu na skutek modyfikacji parametrów kontrolujących jego działanie.
 
 Bez względu na charakter jaki posiadają niedozwolone dane wprowadzane do systemu - w zabezpieczaniu systemów przed atakami kluczowe jest weryfikowanie danych wejściowych.
 
