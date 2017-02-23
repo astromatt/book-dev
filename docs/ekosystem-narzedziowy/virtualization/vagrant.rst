@@ -1,9 +1,8 @@
-*******
 Vagrant
-*******
+=======
 
 Tworzenie i konfigurowanie maszyny
-==================================
+----------------------------------
 
 - Poniższe polecenia wykonaj w pliku Vagrantfile
 - Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji Ubuntu LTS (Long Time Support)
@@ -62,10 +61,11 @@ Tworzenie i konfigurowanie maszyny
 
 
 Exercises
-=========
+---------
 
 Vagrant create virtual machine
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - Use ``Vagrantfile`` to store following configuration
 - Create virtual machine from the official 32 bits `Ununtu LTS` (Long Time Support) image
 - Set the hostname to ``ubuntu.local``
@@ -91,7 +91,8 @@ Vagrant create virtual machine
 - Run machine from ``Vagrantfile`` and start downloading an `Ubuntu` image
 
 Vagrant + Puppet
-----------------
+^^^^^^^^^^^^^^^^
+
 - Copy manifests from the previous tasks (stored in ``/etc/puppet/manifests/*``) to ``puppet/manifests/`` directory on your local machine
 - Copy SSL certificates generated to ``ssl/`` directory on your local machine
 - Power-off machine ``vagrant halt`` and destroy it ``vagrant destroy``
@@ -101,10 +102,11 @@ Vagrant + Puppet
 - Use one ``puppet/main.pp`` to include others manifests from ``puppet/manifests/*`` - do not put everything in the onefile
 
 Ćwiczenia
-=========
+---------
 
 Automatyzacja tworzenia wirtualnej maszyny
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - Użyj pliku ``Vagrantfile`` do przetrzymywania następującej konfiguracji
 - Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji `Ubuntu LTS` (Long Time Support)
 - Ustaw hostname na ``ubuntu.local``
@@ -131,7 +133,8 @@ Automatyzacja tworzenia wirtualnej maszyny
 
 
 Vagrant + Puppet
-----------------
+^^^^^^^^^^^^^^^^
+
 - Skopiuj dotychczasowe manifesty z poprzednich zadań (``/etc/puppet/manifests/*``) na swój komputer do katalogu ``puppet/manifests/``
 - Skopiuj certyfikaty SSL, które wygenerowałeś na swój komputer do katalogu ``ssl/``
 - Wyłącz maszynę ``vagrant halt``, a następnie ją usuń ``vagrant destroy``
