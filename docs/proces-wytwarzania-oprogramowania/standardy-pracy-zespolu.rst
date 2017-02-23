@@ -30,7 +30,7 @@ Scrum jest systemem zarządzania pracą oraz frameworkiem komunikacyjnym. System
 
  W myśl SCRUMu, oprogramowanie wytwarzane jest iteracyjnie i przyrostowo, a projekt jest podzielony na mniejsze, tygodniowe lub dwu tygodniowe fazy, zwane iteracjami lub Sprintami, następujące bezpośrednio po sobie.
 
-Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze stadiów przygotowania i realizowania projektu, mając na uwadze jego indywidualną specyfikę̨, interakcje i współpracę z Klientami, dynamicznie zmieniające się otoczenie i dostosowywanie się do zmian oraz potencjał ludzki.
+Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze stadiów przygotowania i realizowania projektu, mając na uwadze jego indywidualną specyfikę interakcje i współpracę z Klientami, dynamicznie zmieniające się otoczenie i dostosowywanie się do zmian oraz potencjał ludzki.
 
 W Firmie zespoły odpowiedzialne za rozwój oprogramowania tworzą samoorganizujący i wielofunkcyjny zespół, tzw. SCRUM Team, w którego w skład wchodzą: Product Owner, Development Team, SCRUM Master.
 
