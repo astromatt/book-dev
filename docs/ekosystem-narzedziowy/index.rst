@@ -66,8 +66,8 @@ Ecosystem Narzędziowy
     :numbered:
     :caption: Virtualization
 
-    virtualization/docker.rst
-    virtualization/vagrant.rst
+    virtualization/docker/index.rst
+    virtualization/vagrant/index.rst
 
 .. toctree::
     :maxdepth: 3
