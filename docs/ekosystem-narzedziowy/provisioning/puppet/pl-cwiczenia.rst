@@ -75,4 +75,4 @@ Instalacja i konfiguracja Tomcat
 
     - Jedna uruchamiana na domyślnych portach
     - Druga uruchamiana na ``8006`` a connector z portu ``8081`` przekierowywał na ``8443``
-    - Na pierwszej uruchom `WAR` z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
+    - Na pierwszej uruchom ``war`` z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
