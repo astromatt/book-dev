@@ -6,5 +6,5 @@ Provisioning
 
     ansible/ansible.rst
     chef/chef.rst
-    puppet/puppet.rst
+    puppet/index.rst
     salt-stack/salt-stack.rst
