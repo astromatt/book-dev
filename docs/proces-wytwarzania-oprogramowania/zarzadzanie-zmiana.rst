@@ -4,6 +4,7 @@ Proces zarządzania zmianą
 
 .. figure:: ../../_static/img/processes.png
     :scale: 50%
+    :align: center
 
     Procesy zarządzania zmianą.
 
@@ -95,6 +96,7 @@ Po autoryzacji planowanej zmiany kolejnym krokiem jest przygotowanie i realizacj
 
 .. figure:: ../../_static/img/processes-change-management-01.png
     :scale: 50%
+    :align: center
 
     Schemat obsługi wniosku o zmianę.
  

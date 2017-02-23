@@ -51,6 +51,7 @@ Poszczególne mniejsze fragmenty wytwarzanego oprogramowania muszą przejść ok
 
 .. figure:: ../../_static/img/cicd-loop.png
     :scale: 50%
+    :align: center
 
     Koncepcja metody Continuous Delivery. Poszczególne kroki procesu zapętlają się tworząc niekończącą się pętlę.
 

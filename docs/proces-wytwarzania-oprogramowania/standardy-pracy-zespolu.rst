@@ -18,6 +18,7 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
 
 .. figure:: ../../_static/img/agile-division-chart.png
     :scale: 50%
+    :align: center
 
     Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
 
@@ -44,6 +45,7 @@ Agile
 
 .. figure:: ../../_static/img/agile-division-methods.png
     :scale: 50%
+    :align: center
 
     Podział Agile ze względu na metody.
 
@@ -71,6 +73,7 @@ Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze st
 
 .. figure:: ../../_static/img/scrum-week-01.png
     :scale: 50%
+    :align: center
 
     Rozłożenie spotkań w tygodniu pracy zespołu SCRUM.
 

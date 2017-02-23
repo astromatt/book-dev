@@ -19,7 +19,8 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
     * jakość i praktyki.
 
 .. figure:: ../../_static/img/agile-division-chart.png
-   :scale: 50%
+    :scale: 50%
+    :align: center
 
     Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
 
