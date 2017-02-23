@@ -2,7 +2,7 @@ Rozwiązania
 ===========
 
 Pull Requests builds
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Connect Jenkins with Stash:
 
@@ -19,7 +19,7 @@ Stash Password  ``jenkins``
 
 
 Pull Request Build Configuration
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dashboard -> New Item -> "Freestyle project"
 
@@ -38,7 +38,7 @@ Post-build Actions       Notify Stash Instance
 
 
 Master Branch Build Configuration
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dashboard -> New Item -> "Freestyle project"
 
@@ -55,7 +55,7 @@ Post-build Actions       Notify Stash Instance
 ======================== ======================== =============================================
 
 Feature Branch Build Configuration
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dashboard -> New Item -> "Freestyle project"
 
@@ -72,7 +72,7 @@ Post-build Actions       Notify Stash Instance
 ======================== ======================== =============================================
 
 Bugfix Branch Build Configuration
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dashboard -> New Item -> "Freestyle project"
 
@@ -89,7 +89,7 @@ Post-build Actions       Notify Stash Instance
 ======================== ======================== =============================================
 
 Jenkins i testy wydajnościowe JMeter
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: xml
 
