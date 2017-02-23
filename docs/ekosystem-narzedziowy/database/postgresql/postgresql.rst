@@ -7,7 +7,7 @@ PostgreSQL
     apt-get install --yes postgresql
     cat /etc/postgresql/9.3/main/pg_hba.conf
 
-.. code-block:: cfg
+.. code-block:: text
 
     # TYPE DATABASE USER        ADDRESS         METHOD
     local   all     postgres                    peer
