@@ -23,7 +23,7 @@ Budowanie Checkstyle, PMD, JaCoCo, Findbugs i PITest
 - Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
 - Wyniki upublicznij w `SonarQube`
-    - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
+- Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 
 Pipeline DSL
