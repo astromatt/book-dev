@@ -53,13 +53,13 @@ latex_elements = {
 }
 
 latex_documents = [
-    (master_doc, 'DevOpsWorkshop.tex', 'DevOps Workshop Documentation', 'Matt Harasymczuk', 'manual'),
+    (master_doc, 'DevOpsWorkshop.tex', 'DevOps Workshop', 'Matt Harasymczuk', 'manual'),
 ]
 
 man_pages = [
-    (master_doc, 'devopsworkshop', 'DevOps Workshop Documentation', [author], 1)
+    (master_doc, 'devopsworkshop', 'DevOps Workshop', [author], 1)
 ]
 
 texinfo_documents = [
-    (master_doc, 'DevOpsWorkshop', 'DevOps Workshop Documentation', author, 'DevOpsWorkshop', 'DevOps Workshop Documentation', 'Miscellaneous'),
+    (master_doc, 'DevOpsWorkshop', 'DevOps Workshop', author, 'DevOpsWorkshop', 'DevOps Workshop', 'Miscellaneous'),
 ]
