@@ -6,14 +6,14 @@ How to setup a new box
 
 .. code-block:: sh
 
-    $ sudo apt-get install exfat-fuse exfat-utils
+    sudo apt-get install exfat-fuse exfat-utils
 
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
 Then to run this you have to simply type:
 
 .. code-block:: sh
 
-    $ vagrant up
+    vagrant up
 
 If you want to setup your own ecosystem from scratch, read and execute the following instructions.
 
@@ -78,4 +78,6 @@ Install and Setup Database For All Tools
 Create New Box
 ==============
 
-    $ vagrant package --base ecosystem.local --output ecosystem.box
+.. code-block:: sh
+
+    vagrant package --base ecosystem.local --output ecosystem.box

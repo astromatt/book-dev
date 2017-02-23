@@ -8,7 +8,7 @@ Installation
 
 .. code-block:: sh
 
-	$ sudo apt-get install puppet
+    sudo apt-get install puppet
 
 Confugration
 ============
@@ -18,8 +18,8 @@ Co się tam znajduje?
 
 Przejdź do katalogu ``/etc/puppet/manifests``.
 
-Ćwiczenia
-=========
+Ćwiczenia Praktyczne
+====================
 
 Facter
 ------
@@ -27,20 +27,21 @@ Przyjrzyj się wynikom poleceń:
 
 .. code-block:: sh
 
-    $ facter
-    $ facter ipaddress
-    $ facter lsbdistdescription
+    facter
+    facter ipaddress
+    facter lsbdistdescription
 
 Co zauważyłeś? Jak można wykorzystać te informacje?
 
-
-## Konfiguracja Apache2
+Konfiguracja Apache2
+--------------------
 - Za pomocą Puppet upewnij się by był użytkownik ``www-data`` i miał ``uid=33``
 - Za pomocą Puppet upewnij się by była grupa ``www-data`` i miała ``gid=33``
 - Upewnij się że katalog ``/var/www`` istnieje i właścicielem jego są user ``www-data`` i grupa ``www-data`` i że ma uprawnienia ``rwxr-xr-x``
 - Zainstaluj i skonfiguruj Apache2 wykorzystując moduł Puppet
 - Z terminala wygeneruj certyfikaty self signed OpenSSL (``.cert`` i ``.key``) (za pomocą i umieść je w ``/etc/ssl/``)
-- Za pomocą Puppet Stwórz dwa vhosty
+- Za pomocą Puppet Stwórz dwa vhosty:
+
     - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure.example.com``
     - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl.example.com`` + używanie certyfikatów SSL wcześniej wygenerowanych
 
@@ -67,7 +68,7 @@ Instalacja i konfiguracja MySQL
 
 .. code-block:: sh
 
-	$ puppet module install puppetlabs-mysql
+    puppet module install puppetlabs-mysql
 
 .. code-block:: puppet
 
@@ -114,16 +115,17 @@ Instalacja Java i Tomcat
 
 - zainstaluj Javę za pomocą Puppeta
 - zainstaluj Tomcat8 za pomocą Puppeta do ``/opt/tomcat8``
-- Skonfiguruj dwie instancje Tomcata działające jednocześnie
+- Skonfiguruj dwie instancje Tomcata działające jednocześnie:
+
     - Jedna uruchamiana na domyślnych portach
     - Druga uruchamiana na 8006 a connector z portu 8081 przekierowywał na 8443
     - Na pierwszej uruchom WAR z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
 
 .. code-block:: sh
 
-    $ puppet module install puppetlabs/java
-    $ puppet module install puppetlabs/tomcat
-    $ cat /etc/puppet/manifests/tomcat.pp
+    puppet module install puppetlabs/java
+    puppet module install puppetlabs/tomcat
+    cat /etc/puppet/manifests/tomcat.pp
 
 .. code-block:: puppet
 
@@ -157,3 +159,161 @@ Instalacja Java i Tomcat
             'redirectPort' => '8443'
         },
     }
+
+Tasks to solve
+==============
+
+Puppet package installation
+---------------------------
+- Create manifest in ``/etc/puppet/manifests/packages.pp``
+- `Puppet` should install those packages:
+
+    - ``nmap``
+    - ``htop``
+    - ``git``
+
+- Make sure that ``apt-get update`` command is run before
+
+Hostname change
+---------------
+- Create manifest in ``/etc/puppet/manifests/hostname.pp``
+- Using manifest change the hostname to ``ecosystem.local``
+- Make sure that command ``hostname`` returns valid output
+- Make sure that ``hostname`` do not restores to default after reboot
+
+Users, Groups and Directories management
+----------------------------------------
+- Create manifest in ``/etc/puppet/manifests/users.pp``
+- Make suer group ``mygroup`` exists and has ``gid=99``
+- Make sure user ``myuser`` exists and has ``uid=1337`` and belongs to ``mygroup``
+- Make sure:
+
+    - Directory ``/var/www`` exists
+    - Owner is set to ``myuser``
+    - Group is set to ``mygroup``
+    - Has ``rwxr-xr-x`` permissions
+
+Puppet Apache2 installation
+---------------------------
+- Create manifest in ``/etc/puppet/manifests/apache.pp``
+- Install and confugure `Apache 2` using `Puppet` module
+- Using terminal generate self-signed OpenSSL certificates and put them in ``/etc/ssl/``:
+
+    - ``/etc/ssl/ssl.example.com.cert``
+    - ``/etc/ssl/ssl.example.com.key``
+
+- Using `Puppet` create two vhosts:
+
+    - ``insecure.example.com`` using port ``80`` and with document root in ``/var/www/insecure.example.com``
+    - ``ssl.example.com` using port ``443`` with document root in ``/var/www/ssl.example.com`` using certificates from ``/etc/ssl/``
+
+- Create file:
+
+    - ``/var/www/insecure.example.com/index.html`` with content ``Ehlo World! - Insecure``
+    - ``/var/www/ssl.example.com/index.html`` with content ``Ehlo World! - SSL!``
+
+- Run browser on your localhost:
+
+    - http://127.0.0.1:8080
+    - https://127.0.0.1:8443
+
+Puppet MySQL installation and configuration
+-------------------------------------------
+- Create manifest in ``/etc/puppet/manifests/mysql.pp``
+- Install `MySQL` database using `Puppet` module
+- Set ``root`` password to ``mypassword``
+- Set ``mysqld`` to listen on all interfaces (``0.0.0.0``)
+- Create database ``mydb`` with ``utf-8``
+- Create user ``myusername`` with password ``mypassword``
+- Grant all privileges to ``myusername`` for ``mydb``
+- Setup database backup to ``/tmp/mysql-backup``
+
+Puppet Tomcat installation and configuration
+--------------------------------------------
+- Create manifest in ``/etc/puppet/manifests/mysql.pp``
+- Install `Java` using `Puppet` module
+- Install `Tomcat 8` using `Puppet` module in ``/opt/tomcat8``
+- Configure to `Tomcat` instances running simultanously on your hostname:
+
+    - One instance is running on default ports
+    - Another instance is using ``8006`` port for connector and ``8081`` to redirect to ``8443``
+    - On the first instance deploy `WAR` from ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
+
+Zadania do rozwiązania
+======================
+
+Instalacja pakietów za pomocą `Puppet`
+--------------------------------------
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/packages.pp``
+- Zainstaluj następujące pakiety za pomocą `Puppet`:
+
+    - ``nmap``
+    - ``htop``
+    - ``git``
+
+- Upewnij się by `Puppet` wykonał polecenie ``apt-get update`` na początku
+
+Zmiana hostname
+---------------
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/hostname.pp``
+- Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
+- Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
+- Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
+
+Zarządzanie użytkownikami, grupami i katalogami
+-----------------------------------------------
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/users.pp``
+- Upewnij się, że użytkownik ``myuser`` istnieje, ma ``uid=1337`` i należy do grupy ``mygroup``
+- Upewnij się, że grupa ``mygroup`` istnieje i ma ``gid=99``
+- Upewnij się, że:
+
+    - Katalog ``/var/www`` istnieje
+    - Właścicielem jego jest user ``myuser``
+    - Właścicielem jego jest grupa ``mygroup``
+    - Ma uprawnienia ``rwxr-xr-x``
+
+Instalacja i konfiguracja Apache2
+---------------------------------
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/apache.pp``
+- Zainstaluj i skonfiguruj `Apache 2` wykorzystując moduł `Puppet`
+- Z terminala wygeneruj certyfikaty self signed OpenSSL i umieść je w ``/etc/ssl/``:
+
+    - ``/etc/ssl/ssl.example.com.cert``
+    - ``/etc/ssl/ssl.example.com.key``
+
+- Za pomocą `Puppet` stwórz dwa vhosty:
+
+    - ``insecure.example.com`` na porcie ``80`` i z katalogiem domowym ``/var/www/insecure.example.com``
+    - ``ssl.example.com`` na porcie ``443`` i z katalogiem domowym ``/var/www/ssl.example.com`` + używanie certyfikatów SSL wcześniej wygenerowanych
+
+- Stwórz pliki z treścią:
+
+    - ``/var/www/insecure.example.com/index.html`` z treścią ``Ehlo World! - Insecure``
+    - ``/var/www/ssl.example.com/index.html`` z treścią ``Ehlo World! - SSL!``
+
+- W przeglądarce na komputerze lokalnym wejdź na stronę:
+
+    - http://127.0.0.1:8080
+    - https://127.0.0.1:8443
+
+Instalacja i konfiguracja MySQL
+-------------------------------
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/mysql.pp``
+- Zainstaluj bazę danych `MySQL` wykorzystując moduł `Puppet`
+- Ustaw hasło dla użytkownika ``root`` na ``mypassword``
+- Ustaw nasłuchiwanie serwera ``mysqld`` na wszystkich interfejsach (``0.0.0.0``)
+- Stwórz bazę danych ``mydb`` z ``utf-8``
+- Stwórz usera ``myusername`` z hasłem ``mypassword``
+- Nadaj wszystkie uprawnienia dla usera ``myusername`` dla bazy ``mydb``
+- Ustaw backupowanie bazy danych do ``/tmp/mysql-backup``
+
+Instalacja i konfiguracja Tomcat
+--------------------------------
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/tomcat.pp``
+- Zainstaluj język `Java` za pomocą modułu `Puppet`
+- Zainstaluj `Tomcat 8` za pomocą `Puppet` w katalogu ``/opt/tomcat8``
+- Skonfiguruj dwie instancje `Tomcat` działające jednocześnie:
+
+    - Jedna uruchamiana na domyślnych portach
+    - Druga uruchamiana na ``8006`` a connector z portu ``8081`` przekierowywał na ``8443``
+    - Na pierwszej uruchom `WAR` z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``

@@ -1,52 +1,59 @@
-# Puppet package installation
+Puppet package installation
+---------------------------
 
-    $ cat /etc/puppet/manifests/packages.pp
+.. code-block:: sh
 
-## Method 1
+    cat /etc/puppet/manifests/packages.pp
 
-```puppet
-exec { 'package definition update':
-	command => '/usr/bin/apt-get update',
-}
+Method 1
+--------
 
-package { ['nmap', 'htop', 'git']:
-	ensure	=> 'latest',
-	require => Exec['package definition update'],
-}
-```
+.. code-block:: puppet
 
-## Method 2
+    exec { 'package definition update':
+        command => '/usr/bin/apt-get update',
+    }
 
-```puppet
-exec { 'package definition update':
-  command => '/usr/bin/apt-get update';
-}
+    package { ['nmap', 'htop', 'git']:
+        ensure => 'latest',
+        require => Exec['package definition update'],
+    }
 
-Exec['package definition update'] -> Package <| |>
 
-package { ['htop', 'nmap', 'git']:
-  ensure => present;
-}
-```
+Method 2
+--------
 
-## Method 3
+.. code-block:: puppet
 
-```puppet
-exec { 'package definition update':
-  command => '/usr/bin/apt-get update',
-}
+    exec { 'package definition update':
+      command => '/usr/bin/apt-get update';
+    }
 
-Exec['package definition update'] -> Package <| |>
+    Exec['package definition update'] -> Package <| |>
 
-package { 'htop':
-	ensure => 'latest',
-}
+    package { ['htop', 'nmap', 'git']:
+      ensure => present;
+    }
 
-package { 'nmap':
-	ensure => 'latest',
-}
+Method 3
+--------
 
-package { 'git':
-	ensure => 'latest',
-}
-```
+.. code-block:: puppet
+
+    exec { 'package definition update':
+      command => '/usr/bin/apt-get update',
+    }
+
+    Exec['package definition update'] -> Package <| |>
+
+    package { 'htop':
+        ensure => 'latest',
+    }
+
+    package { 'nmap':
+        ensure => 'latest',
+    }
+
+    package { 'git':
+        ensure => 'latest',
+    }

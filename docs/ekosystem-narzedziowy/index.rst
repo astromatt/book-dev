@@ -1,3 +1,7 @@
+*********************
+Ecosystem Narzędziowy
+*********************
+
 .. image:: ../../_static/img/ecosystem-big-picture-01.png
 
 

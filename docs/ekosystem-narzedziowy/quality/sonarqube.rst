@@ -23,4 +23,6 @@ Install using DEB on Ubuntu
 Install using Docker
 --------------------
 
-    $ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+.. code-block:: sh
+
+    docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
