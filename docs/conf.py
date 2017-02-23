@@ -2,17 +2,19 @@
 
 import sys
 import os
-import shlex
 import subprocess
 import datetime
 
+
+sys.path.append(os.path.abspath('.'))
 
 project = 'DevOps Workshop'
 author = 'Matt Harasymczuk'
 
 extensions = [
+    #'sphinx.ext.githubpages', # not compatible with Sphinx 1.3 (readthedocs.org)
     'sphinx.ext.todo',
-    #'sphinx.ext.githubpages'
+    'toggle_code_block',
 ]
 
 def get_version():

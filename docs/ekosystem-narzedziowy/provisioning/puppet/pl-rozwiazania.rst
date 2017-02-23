@@ -1,3 +1,6 @@
+Rozwiązanie zadań
+=================
+
 Puppet package installation
 ---------------------------
 .. code-block:: sh
