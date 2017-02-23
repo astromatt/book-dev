@@ -2,7 +2,7 @@
 Procesy Continuous Integration i Delivery
 *****************************************
 
-Proces ciągłej integracji polega na automatycznym uruchamianiu testów aplikacji tj. testów jednostkowych, testów integracyjnych, testów regresyjnych i funkcjonalnych dla każdej wprowadzonej zmiany. Dzięki zastosowaniu Continuous Integration (CI) programiści otrzymują̨ natychmiastową informację czy ich zmiany w kodzie nie destabilizują pracy systemu oraz negatywnie wpływają na całą aplikację.
+Proces ciągłej integracji polega na automatycznym uruchamianiu testów aplikacji tj. testów jednostkowych, testów integracyjnych, testów regresyjnych i funkcjonalnych dla każdej wprowadzonej zmiany. Dzięki zastosowaniu Continuous Integration (CI) programiści otrzymują natychmiastową informację czy ich zmiany w kodzie nie destabilizują pracy systemu oraz negatywnie wpływają na całą aplikację.
 
 W zależności od kategorii definiuje się inny zestaw testów uruchamianych dla budowania i sprawdzania aplikacji.
 
@@ -10,7 +10,7 @@ Proces ciągłego dostarczania polega na doprowadzeniu procedury wdrożenia oraz
 
 Continous Delivery jest sposobem dostarczania oprogramowania służącym zautomatyzowaniu i polepszeniu tego procesu.
 
-Automatyczne testowanie, ciągłe scalanie i wdrażanie oprogramowania pozwalają̨ przygotować je w przejrzystej formie, aby mogły zostać poddane dalszym testom. To pozwala szybko, niezawodnie i wielokrotnie ulepszać produkt i naprawiać pojawiające się na różnych etapach produkcji błędy, uwzględniając opinie użytkowników, zmiany na rynku oraz zmiany w strategii biznesowej. Należy podkreślić, że zachowane jest przy tym minimalne ryzyko poważnej usterki oraz konieczność minimalnej poprawy instrukcji użytkowania.
+Automatyczne testowanie, ciągłe scalanie i wdrażanie oprogramowania pozwalają przygotować je w przejrzystej formie, aby mogły zostać poddane dalszym testom. To pozwala szybko, niezawodnie i wielokrotnie ulepszać produkt i naprawiać pojawiające się na różnych etapach produkcji błędy, uwzględniając opinie użytkowników, zmiany na rynku oraz zmiany w strategii biznesowej. Należy podkreślić, że zachowane jest przy tym minimalne ryzyko poważnej usterki oraz konieczność minimalnej poprawy instrukcji użytkowania.
 
 Poszczególne mniejsze fragmenty wytwarzanego oprogramowania muszą przejść określone etapy walidacji na swojej drodze do publikacji. Kod jest kompilowany i pakowany za każdym razem, gdy dokonywana jest zmiana w systemie kontroli wersji. Następnie jest wielokrotnie testowany. Dopiero po tym może zostać wdrożony.
 
