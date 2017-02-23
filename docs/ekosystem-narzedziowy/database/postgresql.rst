@@ -4,10 +4,10 @@ PostgreSQL
 
 .. code-block:: sh
 
-    $ apt-get install --yes postgresql
-    $ cat /etc/postgresql/9.3/main/pg_hba.conf
+    apt-get install --yes postgresql
+    cat /etc/postgresql/9.3/main/pg_hba.conf
 
-.. code-block:: config
+.. code-block:: cfg
 
     # TYPE DATABASE USER        ADDRESS         METHOD
     local   all     postgres                    peer
@@ -18,9 +18,9 @@ PostgreSQL
 
 .. code-block:: sh
 
-    $ cat /etc/postgresql/9.3/main/postgresql.conf
+    cat /etc/postgresql/9.3/main/postgresql.conf
 
-.. code-block:: config
+.. code-block:: cfg
 
     data_directory = '/var/lib/postgresql/9.3/main'
     hba_file = '/etc/postgresql/9.3/main/pg_hba.conf'
@@ -46,4 +46,4 @@ PostgreSQL
 
 .. code-block:: sh
 
-    $ service postgresql restart
+    service postgresql restart
