@@ -48,6 +48,7 @@ Author
 .. toctree::
     :maxdepth: 2
     :numbered:
+    :titlesonly:
     :caption: Ekosystem narzędziowy
 
     ekosystem-narzedziowy/api/index.rst

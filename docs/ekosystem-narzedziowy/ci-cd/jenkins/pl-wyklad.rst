@@ -1,11 +1,10 @@
-Jenkins
-=======
+Wykład
+======
 
 Installation and configuration
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install Using DEB on Ubuntu
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
@@ -22,7 +21,6 @@ Install Using DEB on Ubuntu
     service jenkins start
 
 Install Using Docker
-^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
