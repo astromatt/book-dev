@@ -7,12 +7,14 @@ W Firmie znajduje się specjalna komórka zajmująca się opracowywaniem oprogr
 Zespół User Experience prowadzi badania potrzeb użytkowników, prace analityczne i optymalizujące procesy biznesowe, opracowuje e-usługi, prowadzi  prace nad ergonomią rozwiązań (usability, architektura informacji), tworzy projekty graficzne interfejsu użytkownika (`GUI`), implementacje stworzonych rozwiązań (`front-end development`), a także zapewnia testowanie powstałych rozwiązań z udziałem użytkowników (usability testing). Zespół dba również o dostosowywanie produktów do potrzeb osób niepełnosprawnych, co jest szczególnie istotne w kontekście publicznego dostępu do wybranych systemów informatycznych.
 
 .. figure:: ../../_static/img/user-centered-design-phases.png
+    :scale: 50%
 
     Znaczenie User Experience
 
 Rozwiązania tworzone są zgodnie z metodologią User-centered design,  w której potrzeby, wymagania i ograniczenia końcowego użytkownika są szczegółowo badane na każdym etapie procesu projektowego. Ze względu na swoją specyfikę, zespół stale współpracuje z zespołami programistycznymi i włącza się w ich prace. Zajmuje się także wewnętrznym odbiorem stworzonych przez programistów systemów i sprawdza je pod kątem użyteczności. Całość działań jest możliwa dzięki iteracyjnemu systemowi tworzenia oprogramowania stosowanemu w Firmie.
 
 .. figure:: ../../_static/img/user-centered-design-iterations.jpg
+    :scale: 50%
 
     Projektowanie zorientowane na użytkownika w iteracyjnym systemie wytwarzania oprogramowania
  
