@@ -8,7 +8,7 @@ import datetime
 
 
 project = 'DevOps Workshop'
-copyright = '2017, Matt Harasymczuk'
+copyright = f'2012-{datetime.date.today():%Y}, Matt Harasymczuk <matt@astrotech.io>'
 author = 'Matt Harasymczuk'
 
 extensions = [
@@ -32,6 +32,7 @@ exclude_patterns = ['Thumbs.db', '.DS_Store']
 pygments_style = 'vs'
 todo_include_todos = True
 today_fmt = '%Y-%m-%d'
+highlight_language = 'python3'
 
 version = get_version()
 release = get_version()

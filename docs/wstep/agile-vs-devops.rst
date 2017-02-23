@@ -23,195 +23,150 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
 
     Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
 
-Lean Startup
-============
-
-Build
------
-
-Measure
--------
-
-Learn
------
-
-The Team
-========
-
-Heroes
-------
-
-Cross-functional team
----------------------
-
 Agile
 =====
+* What is Agile?
+* History
+* Agile Manifesto
+* Be Agile
+* That’s so wrong on so many levels
 
-What is Agile?
---------------
-
-History
--------
-
-Agile Manifesto
----------------
-
-Be Agile
---------
-
-That’s so wrong on so many levels
----------------------------------
+Lean Startup
+============
+* Build
+* Measure
+* Learn
 
 Scrum
 =====
+* What is Scrum?
+* History
+* Introduction:
 
-What is Scrum?
---------------
+    * Iterative approach
+    * What’s sprint?
+    * Short sprints
 
-History
--------
+* Roles:
 
-Introduction
-------------
+    * Scrum Master
+    * Product Owner
+    * Developer
+    * Managers?
+    * Flat structure?
+    * Bubble organization chart
+    * Heroes
+    * Cross-functional team
 
-* Iterative approach
-* What’s sprint?
-* Short sprints
+* Issues:
 
-Roles
------
+    * User Stories
+    * Epics
+    * Technical Tasks
 
-* Scrum Master
-* Product Owner
-* Developer
-* Managers?
-* Flat structure?
-* Bubble organization chart
+* Artifacts:
 
-Issues
-------
+    * Backlog
+    * Sprintlog
+    * Task board
+    * Units
+    * Story Points
+    * Business Value
 
-* User Stories
-* Epics
-* Technical Tasks
+* Metrics:
 
-Artifacts
----------
+    * Velocity
+    * Capacity
+    * Maturity
 
-* Backlog
-* Sprintlog
-* Task board
-* Units
-* Story Points
-* Business Value
+* Meetings:
 
-Metrics
--------
+    * Daily Meeting
+    * Planning
+    * Retrospective
+    * Refinement
+    * Review
 
-* Velocity
-* Capacity
-* Maturity
+* Planning and Refinement:
 
-Meetings
---------
+    * Estimation
+    * How big your tasks should be?
+    * Estimation support systems
+    * Sprint goal
+    * Acceptance Criteria
+    * Definition of Done
 
-* Daily Meeting
-* Planning
-* Retrospective
-* Refinement
-* Review
+* Sprint Review:
 
-Planning and Refinement
------------------------
+    * Product Owners role
+    * Stakeholders
+    * Releasable functionality
+    * Sprint Impediments
 
-* Estimation
-* How big your tasks should be?
-* Estimation support systems
-* Sprint goal
-* Acceptance Criteria
-* Definition of Done
+* Charts:
 
-Sprint Review
--------------
+    * Burn-down Chart
+    * Burn-up Chart
+    * Control Chart
+    * Cumulative Flow Diagram
+    * Epic Report
+    * Sprint Report
+    * Velocity Chart
+    * Version Report
 
-* Product Owners role
-* Stakeholders
-* Releasable functionality
-* Sprint Impediments
+* Team Interaction:
 
-Charts
-------
-
-* Burn-down Chart
-* Burn-up Chart
-* Control Chart
-* Cumulative Flow Diagram
-* Epic Report
-* Sprint Report
-* Velocity Chart
-* Version Report
-
-Team Interaction
-----------------
-
-* Transparency
-* Retrospective
-* Management role and team
-* Scrum, but...
-* Scrum, and...
-* Most common mistakes while Scrum implementation
+    * Transparency
+    * Retrospective
+    * Management role and team
+    * Scrum, but...
+    * Scrum, and...
+    * Most common mistakes while Scrum implementation
 
 Kanban
 ======
 
 * What’s Kanban?
 * History
+* Introduction:
 
-Introduction
-------------
+    * Pull system
+    * JIT
+    * Context switching
+    * Kanban Board
 
-* Pull system
-* JIT
-* Context switching
-* Kanban Board
+* Improvement:
 
-Improvement
------------
+    * Muda
+    * Jidoka
+    * Kaizen
+    * Bottlenecks
+    * Metrics
+    * Lean
 
-* Muda
-* Jidoka
-* Kaizen
-* Bottlenecks
-* Metrics
-* Lean
+* Workflow:
 
-Workflow
---------
-
-* Columns
-* Swimlanes
-* Expedite
-* Priority
-* SLA
+    * Columns
+    * Swimlanes
+    * Expedite
+    * Priority
+    * SLA
 
 Extreme Programming
 ===================
 
 * What is Extreme Programming?
 * History
+* Practices:
 
-Practices
----------
+    * Test Driven Development (TDD)
+    * Behavior Driven Development (BDD)
+    * Pair Programming
 
-* Test Driven Development (TDD)
-* Behavior Driven Development (BDD)
-* Pair Programming
+* Quality:
 
-Quality
--------
-
-* Best Practices
-* Coding Standards
-* Clean Code
-* Code Review
-* Pull Requests
+    * Best Practices
+    * Coding Standards
+    * Clean Code
+    * Code Review
+    * Pull Requests
