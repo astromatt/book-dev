@@ -66,7 +66,7 @@ Author
     proces-wytwarzania-oprogramowania/procesy-ci-cd.rst
     proces-wytwarzania-oprogramowania/standardy-pracy-zespolu.rst
     proces-wytwarzania-oprogramowania/jakosc-oprogramowania.rst
-    proces-wytwarzania-oprogramowania/user-centric-design.rst
+    proces-wytwarzania-oprogramowania/user-centered-design.rst
     proces-wytwarzania-oprogramowania/dobre-praktyki.rst
     proces-wytwarzania-oprogramowania/zarzadzanie-zmiana.rst
     proces-wytwarzania-oprogramowania/polityki-bezpieczenstwa.rst
