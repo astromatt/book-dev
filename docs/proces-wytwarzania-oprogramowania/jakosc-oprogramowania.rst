@@ -19,9 +19,9 @@ Zaletami testowania automatycznego są m.in.:
 
 Firma stosuje testy jednostkowe dla poszczególnych jednostek oprogramowania, lekkie testy integracyjne, służące wykryciu błędów w interakcjach pomiędzy modułami, oraz testy interfejsu, służące wykryciu błędów w interfejsach użytkownika.
 
-W procesie testowania pomocne są Firmie również̇ narzędzia pozwalające budować, gromadzić i umieszczać na serwerze archiwa, a także zapewniające przykładowe dane dla testów do łatwego wykorzystania i ponownego użycia.
+W procesie testowania pomocne są Firmie również narzędzia pozwalające budować, gromadzić i umieszczać na serwerze archiwa, a także zapewniające przykładowe dane dla testów do łatwego wykorzystania i ponownego użycia.
 
-Testy automatyczne są zatem świetnym uzupełnieniem testów manualnych, a ogólny zestaw testów znacząco wpływa na poprawę̨ wydajności wytwarzanych produktów. W trakcie przeprowadzania testów następuje wdrożenie demonstracyjne prototypu projektu powstałego w danym Sprincie.
+Testy automatyczne są zatem świetnym uzupełnieniem testów manualnych, a ogólny zestaw testów znacząco wpływa na poprawę wydajności wytwarzanych produktów. W trakcie przeprowadzania testów następuje wdrożenie demonstracyjne prototypu projektu powstałego w danym Sprincie.
 
 Firma w ramach przygotowania Projektu, określiła, że jednym z kluczowych elementów poprawnego działania aplikacji jest jego wydajność.
 

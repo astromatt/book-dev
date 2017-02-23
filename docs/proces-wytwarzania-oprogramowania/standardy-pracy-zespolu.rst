@@ -20,7 +20,7 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
 
     Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
 
-Firma dostrzegając zalety wytwarzania oprogramowania w sposób zwinny wprowadził usprawnienia w swoim procesie mające na celu umiejscowienie go w czołówce firm IT. Metodyki prowadzenia projektów i współpracy tj. Scrum i Kanban pozwalają firmie dostarczać wartość zamawiającemu zgodną z jego oczekiwaniem.
+Firma dostrzegając zalety wytwarzania oprogramowania w sposób zwinny wprowadził usprawnienia w swoim procesie mające na celu umiejscowienie go w czołówce firm IT. Metodyki prowadzenia projektów i współpracy tj. Scrum i Kanban pozwalają firmie dostarczać wartość zamawiającemu zgodną z jego oczekiwaniem.
 
 U podstaw adaptacji powyższych szkieletów organizacyjnych leży iteracyjność oraz stała współpraca z klientem. Do codziennych zastosowań stosowane jest połączenie metodyk Scrum i Kanban w zależności od projektu oraz zapotrzebowania.
 
