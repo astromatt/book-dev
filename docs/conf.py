@@ -8,7 +8,7 @@ import datetime
 
 
 project = 'DevOps Workshop'
-copyright = f'2012-{datetime.date.today():%Y}, Matt Harasymczuk <matt@astrotech.io>'
+copyright = '2012-{date:%Y}, Matt Harasymczuk <matt@astrotech.io>'.format(date=datetime.date.today())
 author = 'Matt Harasymczuk'
 
 extensions = [
