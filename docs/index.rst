@@ -41,9 +41,9 @@ Author
     proces-wytwarzania-oprogramowania/dobre-praktyki.rst
     proces-wytwarzania-oprogramowania/zarzadzanie-zmiana.rst
     proces-wytwarzania-oprogramowania/polityki-bezpieczenstwa.rst
-    roces-wytwarzania-oprogramowania/manifest-agile.rst
-    roces-wytwarzania-oprogramowania/scrum.rst
-    roces-wytwarzania-oprogramowania/technologie.rst
+    proces-wytwarzania-oprogramowania/manifest-agile.rst
+    proces-wytwarzania-oprogramowania/scrum.rst
+    proces-wytwarzania-oprogramowania/technologie.rst
 
 .. toctree::
     :maxdepth: 1

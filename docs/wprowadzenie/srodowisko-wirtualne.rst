@@ -56,7 +56,7 @@ Then to run this you have to simply type:
 
 Warning: if you see warning message like this: ``Warning: Authentication failure. Retrying...`` exit the process(``ctrl+c`` on `Linux/Windows` or `cmd+c` on `OS X`) and start `ssh` connection by:
 
-.. code-block::
+.. code-block:: sh
 
     vagrant ssh
 
