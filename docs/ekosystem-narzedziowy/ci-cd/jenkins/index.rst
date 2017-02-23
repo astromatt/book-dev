@@ -8,7 +8,6 @@ Jenkins
 
 .. toctree::
     :titlesonly:
-    :numbered: 2
     :caption: Rozwiązania
 
     pl-rozwiazania.rst

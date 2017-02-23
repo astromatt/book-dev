@@ -12,7 +12,7 @@ Zespół User Experience prowadzi badania potrzeb użytkowników, prace analityc
 
 Rozwiązania tworzone są zgodnie z metodologią User-centered design,  w której potrzeby, wymagania i ograniczenia końcowego użytkownika są szczegółowo badane na każdym etapie procesu projektowego. Ze względu na swoją specyfikę, zespół stale współpracuje z zespołami programistycznymi i włącza się w ich prace. Zajmuje się także wewnętrznym odbiorem stworzonych przez programistów systemów i sprawdza je pod kątem użyteczności. Całość działań jest możliwa dzięki iteracyjnemu systemowi tworzenia oprogramowania stosowanemu w Firmie.
 
-.. figure:: ../../_static/img/user-centered-design-iterations.png
+.. figure:: ../../_static/img/user-centered-design-iterations.jpg
 
     Projektowanie zorientowane na użytkownika w iteracyjnym systemie wytwarzania oprogramowania
  
