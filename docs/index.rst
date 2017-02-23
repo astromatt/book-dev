@@ -16,21 +16,21 @@ TODO
 - instalkach i tekst na certyfikaty
 
 
-I. Jenkins Job DSL and cloud slaves (approx. 0.5 day):
+1. Jenkins Job DSL and cloud slaves (approx. 0.5 day):
 
 - Groovy basics
 - Jenkins Job DSL plugin and its ecosystem
 - Job DSL and it's testing
 - On Demand cloud slaves with jClouds
 
-II. Continuous Delivery (approx. 1 day):
+2. Continuous Delivery (approx. 1 day):
 
 - Strategies and best practices of defining Continuous Delivery in an organization
 - Technologies and processes supporting Continuous Delivery
 - High level of parallelism in Continuous Delivery
 - Attention will be paid to how automated testing is embedded in the pipeline and the cycle speed
 
-III. Microservices and Docker (approx. 1 day):
+3. Microservices and Docker (approx. 1 day):
 
 - Microservices basics - why? how? what?
 - Docker:
@@ -42,7 +42,7 @@ III. Microservices and Docker (approx. 1 day):
     - Running containers as services, administration and security of containers
     - Management of interconnected containers using Docker Compose and SystemD g) Introduction to clustering
 
-IV. DevOps in the cloud (approx. 0.5 day):
+4. DevOps in the cloud (approx. 0.5 day):
 
 - IaaS vs PaaS
 - IaaS examples:
@@ -55,14 +55,14 @@ IV. DevOps in the cloud (approx. 0.5 day):
     - CloudFoundry
     - Heroku
 
-V. Automation of infrastructure and Infrastructure as a Code (IaaC) (approx. 1 day):
+5. Automation of infrastructure and Infrastructure as a Code (IaaC) (approx. 1 day):
 
 - Vagrant
 - Ansible
 - Puppet (and comparison with Ansible)
 - Terraform
 
-VI. Tematy z ankiety:
+6. Tematy z ankiety:
 
 - Groovy, Job DSL, Docker, AWS
 - ogolnego spojrzenia na szeroki aspekt tematow, podpowiedzi jakie rozwiazania beda pasowac do naszych potrzeb
