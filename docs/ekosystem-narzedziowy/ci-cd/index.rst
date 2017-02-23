@@ -5,5 +5,5 @@ CI/CD
     :titlesonly:
 
     circle-ci/circle-ci.rst
-    jenkins/jenkins.rst
+    jenkins/index.rst
     travis/travis.rst
