@@ -2,23 +2,16 @@
 DevOps Workshop
 ***************
 
-Author
-======
-
-:name: `Matt Harasymczuk <http://astrotech.io>`_
-:email: `devops@astrotech.io <mailto:devops@astrotech.io>`_
-:www: `http://www.astrotech.io <http://astrotech.io>`_
-:facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
-:linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
-
 Informacje o dokumencie i szkoleniu
 ===================================
 
+.. include:: informacje-o-szkoleniu/autor.rst
+
 .. tip:: Pamiętaj, że zawsze najbardziej aktualna wersja znajduje się na http://devops.astrotech.io
 
-.. include:: szkolenie/opis.rst
-.. include:: szkolenie/wymagania.rst
-.. include:: szkolenie/program.rst
+.. include:: informacje-o-szkoleniu/opis.rst
+.. include:: informacje-o-szkoleniu/wymagania.rst
+.. include:: informacje-o-szkoleniu/program.rst
 
 Wprowadzenie
 ============
