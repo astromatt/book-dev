@@ -1,5 +1,11 @@
 .. title:: Ekosystem narzędziowy
 
+.. figure:: ../../_static/img/ecosystem-big-picture-01.png
+    :scale: 100%
+    :align: center
+
+    Ecosystem Big Picture
+
 API
 ---
 .. toctree::
