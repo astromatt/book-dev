@@ -50,4 +50,15 @@ Author
     :numbered:
     :caption: Ekosystem narzędziowy
 
-    ekosystem-narzedziowy/index.rst
+    ekosystem-narzedziowy/api/index.rst
+    ekosystem-narzedziowy/binary-repository/index.rst
+    ekosystem-narzedziowy/ci-cd/index.rst
+    ekosystem-narzedziowy/cloud/index.rst
+    ekosystem-narzedziowy/code-repository/index.rst
+    ekosystem-narzedziowy/database/index.rst
+    ekosystem-narzedziowy/instant-messenger/index.rst
+    ekosystem-narzedziowy/issue-tracker/index.rst
+    ekosystem-narzedziowy/knowledge-base/index.rst
+    ekosystem-narzedziowy/provisioning/index.rst
+    ekosystem-narzedziowy/quality/index.rst
+    ekosystem-narzedziowy/virtualization/index.rst
