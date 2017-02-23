@@ -18,14 +18,12 @@ Author
 .. toctree::
     :maxdepth: 1
     :numbered:
-    :caption: Wstęp
+    :caption: Wprowadzenie
 
-    wstep/wstep.rst
-    wstep/program-szkolenia.rst
-    wstep/agile-vs-devops.rst
-    wstep/backlog-transformacji.rst
-    wstep/community.rst
-    wstep/korzystanie-z-wirtualki.rst
+    wprowadzenie/program-szkolenia.rst
+    wprowadzenie/wstep.rst
+    wprowadzenie/agile-vs-devops.rst
+    wprowadzenie/srodowisko-wirtualne.rst
 
 .. toctree::
     :maxdepth: 1
@@ -43,36 +41,12 @@ Author
     proces-wytwarzania-oprogramowania/dobre-praktyki.rst
     proces-wytwarzania-oprogramowania/zarzadzanie-zmiana.rst
     proces-wytwarzania-oprogramowania/polityki-bezpieczenstwa.rst
+    roces-wytwarzania-oprogramowania/manifest-agile.rst
+    roces-wytwarzania-oprogramowania/scrum.rst
+    roces-wytwarzania-oprogramowania/technologie.rst
 
 .. toctree::
     :maxdepth: 1
-    :numbered:
-    :caption: Zalaczniki
-
-    zalaczniki/manifest-agile.rst
-    zalaczniki/scrum.rst
-    zalaczniki/technologie.rst
-    zalaczniki/stawianie-srodowiska.rst
-
-.. toctree::
-    :maxdepth: 1
-    :numbered:
-    :caption: Rozwiązania
-
-    rozwiazania/_.rst
-
-..
-    Ekosystem narzędziowy
-    =====================
-
-    .. toctree::
-        :maxdepth: 1
-        :caption: Ekosystem
-
-        ekosystem-narzedziowy/index.rst
-
-.. toctree::
-    :maxdepth: 1
-    :caption: Virtualization
+    :caption: Ekosystem narzędziowy
 
     ekosystem-narzedziowy/virtualization/vagrant/index.rst
