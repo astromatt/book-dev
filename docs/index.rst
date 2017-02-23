@@ -14,29 +14,23 @@ Author
 .. note:: Szkolenie obejmuje 32 godziny wykładów oraz warsztatów i pokrywa zagadnienia związane z ruchem i metodyką DevOps oraz praktyczną wiedzą na temat wykorzystania i zaadaptowania jej w nowoczesnych organizacjach IT. Uczestnik szkolenia opanuje używanie systemów i narzędzi DevOps m.in. Puppet, Docker, Vagrant oraz współpracę w duchu Agile.
 
 .. include:: ../README.rst
-.. include:: todo.rst
-
-
-Wstęp
-=====
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Wstęp
 
     wstep/wstep.rst
+    wstep/program-szkolenia.rst
     wstep/agile-vs-devops.rst
     wstep/backlog-transformacji.rst
     wstep/community.rst
     wstep/korzystanie-z-wirtualki.rst
 
-Proces wytwarzania oprogramowania
-=================================
-
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
+    :name: Proces wytwarzania oprogramowania
     :caption: Proces wytwarzania oprogramowania
 
     proces-wytwarzania-oprogramowania/wstep.rst
@@ -50,11 +44,8 @@ Proces wytwarzania oprogramowania
     proces-wytwarzania-oprogramowania/zarzadzanie-zmiana.rst
     proces-wytwarzania-oprogramowania/polityki-bezpieczenstwa.rst
 
-Zalaczniki
-==========
-
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Zalaczniki
 
@@ -64,7 +55,7 @@ Zalaczniki
     zalaczniki/stawianie-srodowiska.rst
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Rozwiązania
 
@@ -75,17 +66,13 @@ Zalaczniki
     =====================
 
     .. toctree::
-        :maxdepth: 2
+        :maxdepth: 1
         :caption: Ekosystem
 
         ekosystem-narzedziowy/index.rst
 
-
-Ekosystem narzędziowy
-=====================
-
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Virtualization
 
     ekosystem-narzedziowy/virtualization/vagrant/index.rst

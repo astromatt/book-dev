@@ -1,3 +1,6 @@
-.. include:: pl-wyklad
-.. include:: pl-zadania
-.. include:: pl-rozwiazania
+Vagrant
+=======
+
+.. include:: pl-wyklad.rst
+.. include:: pl-zadania.rst
+.. include:: pl-rozwiazania.rst
