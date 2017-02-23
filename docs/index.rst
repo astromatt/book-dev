@@ -16,35 +16,53 @@ TODO
 - instalkach i tekst na certyfikaty
 
 
-I. Jenkins Job DSL and cloud slaves (approx. 0.5 day)
-1. Groovy basics
-2. Jenkins Job DSL plugin and its ecosystem
-3. Job DSL and it's testing
-4. On Demand cloud slaves with jClouds
+I. Jenkins Job DSL and cloud slaves (approx. 0.5 day):
 
-II. Continuous Delivery (approx. 1 day)
-1. Strategies and best practices of defining Continuous Delivery in an organization
-2. Technologies and processes supporting Continuous Delivery
-3. High level of parallelism in Continuous Delivery
-4. Attention will be paid to how automated testing is embedded in the pipeline and the cycle speed
+- Groovy basics
+- Jenkins Job DSL plugin and its ecosystem
+- Job DSL and it's testing
+- On Demand cloud slaves with jClouds
 
-III. Microservices and Docker (approx. 1 day) 1. Microservices basics - why? how? what? 2. Docker
-a) introduction to containers and Docker
-b) Docker images and repositories
-c) Working with container
-d) Building images using Dockerfile
-e) Running containers as services, administration and security of containers
-f) Management of interconnected containers using Docker Compose and SystemD g) Introduction to clustering
+II. Continuous Delivery (approx. 1 day):
 
-IV. DevOps in the cloud (approx. 0.5 day)
-1. IaaS vs PaaS
-2. IaaS examples: Amazon (i.e. EC2), Google Cloud 3. PaaS examples: CloudFoundry, Heroku
-V. Automation of infrastructure and Infrastructure as a Code (IaaC) (approx. 1 day) 1. Vagrant
-2. Ansible
-3. Puppet (and comparison with Ansible)
-4. Terraform
+- Strategies and best practices of defining Continuous Delivery in an organization
+- Technologies and processes supporting Continuous Delivery
+- High level of parallelism in Continuous Delivery
+- Attention will be paid to how automated testing is embedded in the pipeline and the cycle speed
 
+III. Microservices and Docker (approx. 1 day):
 
+- Microservices basics - why? how? what?
+- Docker:
+
+    - introduction to containers and Docker
+    - Docker images and repositories
+    - Working with container
+    - Building images using Dockerfile
+    - Running containers as services, administration and security of containers
+    - Management of interconnected containers using Docker Compose and SystemD g) Introduction to clustering
+
+IV. DevOps in the cloud (approx. 0.5 day):
+
+- IaaS vs PaaS
+- IaaS examples:
+
+    - Amazon (i.e. EC2)
+    - Google Cloud
+
+- PaaS examples:
+
+    - CloudFoundry
+    - Heroku
+
+V. Automation of infrastructure and Infrastructure as a Code (IaaC) (approx. 1 day):
+
+- Vagrant
+- Ansible
+- Puppet (and comparison with Ansible)
+- Terraform
+
+VI. Tematy z ankiety:
 
 - Groovy, Job DSL, Docker, AWS
 - ogolnego spojrzenia na szeroki aspekt tematow, podpowiedzi jakie rozwiazania beda pasowac do naszych potrzeb
@@ -56,6 +74,7 @@ V. Automation of infrastructure and Infrastructure as a Code (IaaC) (approx. 1 d
 - Podstawy Powershella
 - automatyzacja w Jenkins, best practices
 - Architektura Microservices
+
 
 Wstęp
 =====
