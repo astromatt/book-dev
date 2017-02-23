@@ -19,6 +19,7 @@ Wprowadzenie
 .. toctree::
     :maxdepth: 2
     :numbered:
+    :hidden:
     :caption: Wprowadzenie
 
     wprowadzenie/wstep.rst
@@ -31,6 +32,7 @@ Proces wytwarzania oprogramowania
 .. toctree::
     :maxdepth: 2
     :numbered:
+    :hidden:
     :caption: Proces wytwarzania oprogramowania
 
     proces-wytwarzania-oprogramowania/wstep.rst
@@ -49,22 +51,9 @@ Proces wytwarzania oprogramowania
 
 Ekosystem narzędziowy
 =====================
-
 .. toctree::
-    :maxdepth: 2
     :titlesonly:
-    :numbered:
     :caption: Ekosystem narzędziowy
+    :glob:
 
-    ekosystem-narzedziowy/api/index.rst
-    ekosystem-narzedziowy/binary-repository/index.rst
-    ekosystem-narzedziowy/ci-cd/index.rst
-    ekosystem-narzedziowy/cloud/index.rst
-    ekosystem-narzedziowy/code-repository/index.rst
-    ekosystem-narzedziowy/database/index.rst
-    ekosystem-narzedziowy/instant-messenger/index.rst
-    ekosystem-narzedziowy/issue-tracker/index.rst
-    ekosystem-narzedziowy/knowledge-base/index.rst
-    ekosystem-narzedziowy/provisioning/index.rst
-    ekosystem-narzedziowy/quality/index.rst
-    ekosystem-narzedziowy/virtualization/index.rst
+    ekosystem-narzedziowy/index.rst

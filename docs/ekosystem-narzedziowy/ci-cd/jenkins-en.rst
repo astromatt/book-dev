@@ -1,5 +1,5 @@
-Practical Exercises
-===================
+Jenkins
+=======
 
 Jenkins Installation and Build Configuration
 --------------------------------------------
