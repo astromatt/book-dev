@@ -16,35 +16,9 @@ Informacje o dokumencie i szkoleniu
 
 .. tip:: Pamiętaj, że zawsze najbardziej aktualna wersja znajduje się na http://devops.astrotech.io
 
-.. note:: Szkolenie obejmuje 32 godziny wykładów oraz warsztatów i pokrywa zagadnienia związane z ruchem i metodyką DevOps oraz praktyczną wiedzą na temat wykorzystania i zaadaptowania jej w nowoczesnych organizacjach IT. Uczestnik szkolenia opanuje używanie systemów i narzędzi DevOps m.in. Puppet, Docker, Vagrant oraz współpracę w duchu Agile.
-
-.. warning::
-
-    Minimalne wymagania sprzętowe:
-
-    - 2 CPU Cores
-    - 4 GB RAM
-    - 10 GB free disk space
-
-    Zalecane wymagania sprzętowe:
-
-    - 4 CPU Cores
-    - 8 GB RAM
-    - 20 GB free disk space
-
-    Oprogramowanie:
-
-    - Najnowsza wersja Virtualbox
-    - Najnowsza wersja Vagrant
-    - Najnowsza wersja GIT
-    - Najnowsza wersja Putty (jeżeli osoba korzysta z Windows)
-
-    Po instalacji proszę o uruchomienie poleceń
-
-    .. code-block:: sh
-
-        vagrant init ubuntu/xenial64
-        vagrant up --provider virtualbox
+.. include:: szkolenie/opis.rst
+.. include:: szkolenie/wymagania.rst
+.. include:: szkolenie/program.rst
 
 Wprowadzenie
 ============
@@ -54,7 +28,6 @@ Wprowadzenie
     :numbered:
     :caption: Wprowadzenie
 
-    wprowadzenie/program-szkolenia.rst
     wprowadzenie/wstep.rst
     wprowadzenie/agile-vs-devops.rst
     wprowadzenie/srodowisko-wirtualne.rst
