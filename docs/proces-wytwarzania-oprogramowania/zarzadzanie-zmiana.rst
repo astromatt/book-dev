@@ -3,7 +3,7 @@ Proces zarządzania zmianą
 *************************
 
 .. figure:: ../../_static/img/processes.png
-    :scale: 50%
+    :scale: 75%
     :align: center
 
     Procesy zarządzania zmianą.
@@ -95,7 +95,7 @@ Dotyczy to szczególnie zmian, które wiążą się np. z krytycznymi poprawkami
 Po autoryzacji planowanej zmiany kolejnym krokiem jest przygotowanie i realizacja zatwierdzonej zmiany. Zakres przeprowadzanej zmiany zawiera dokumentacja związana z obsługa Incydentu, lub dokument RFC. Dokumenty te w szczególności muszą uwzględniać przygotowanie planu implementacji zmiany oraz aktualizacji dokumentacji oraz systemu zarządzania konfiguracją.
 
 .. figure:: ../../_static/img/processes-change-management-01.png
-    :scale: 50%
+    :scale: 100%
     :align: center
 
     Schemat obsługi wniosku o zmianę.

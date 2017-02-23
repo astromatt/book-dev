@@ -54,13 +54,11 @@ Then to run this you have to simply type:
 
     vagrant up
 
-Warning: if you see warning message like this: ``Warning: Authentication failure. Retrying...`` exit the process(``ctrl+c`` on `Linux/Windows` or `cmd+c` on `OS X`) and start `ssh` connection by:
+Warning: if you see warning message like this: ``Warning: Authentication failure. Retrying...`` exit the process (``ctrl+c`` on `Linux/Windows` or `cmd+c` on `OS X`) and start `ssh` connection by:
 
 .. code-block:: sh
 
     vagrant ssh
-
-If you want to setup your own ecosystem from scratch, read the following instructions in ``setup/_how-to-setup-new-box.md`` file.
 
 Run Selected Tool
 ^^^^^^^^^^^^^^^^^

@@ -17,7 +17,7 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
     * jakość i praktyki.
 
 .. figure:: ../../_static/img/agile-division-chart.png
-    :scale: 50%
+    :scale: 33%
     :align: center
 
     Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
@@ -44,7 +44,7 @@ Agile
 =====
 
 .. figure:: ../../_static/img/agile-division-methods.png
-    :scale: 50%
+    :scale: 100%
     :align: center
 
     Podział Agile ze względu na metody.
@@ -72,7 +72,7 @@ W myśl SCRUMu, oprogramowanie wytwarzane jest iteracyjnie i przyrostowo, a proj
 Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze stadiów przygotowania i realizowania projektu, mając na uwadze jego indywidualną specyfikę, interakcje i współpracę z Klientami, dynamicznie zmieniające się otoczenie i dostosowywanie się do zmian oraz potencjał ludzki.
 
 .. figure:: ../../_static/img/scrum-week-01.png
-    :scale: 50%
+    :scale: 100%
     :align: center
 
     Rozłożenie spotkań w tygodniu pracy zespołu SCRUM.
