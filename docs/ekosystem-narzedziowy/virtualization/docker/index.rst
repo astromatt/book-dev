@@ -1,5 +1,5 @@
-Vagrant
-=======
+Docker
+======
 
 .. include:: pl-wyklad.rst
 .. include:: pl-zadania.rst

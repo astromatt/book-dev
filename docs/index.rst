@@ -16,7 +16,7 @@ Author
 .. include:: ../README.rst
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Wprowadzenie
 
@@ -26,7 +26,7 @@ Author
     wprowadzenie/srodowisko-wirtualne.rst
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :name: Proces wytwarzania oprogramowania
     :caption: Proces wytwarzania oprogramowania
@@ -46,7 +46,8 @@ Author
     proces-wytwarzania-oprogramowania/technologie.rst
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
+    :numbered:
     :caption: Ekosystem narzędziowy
 
-    ekosystem-narzedziowy/virtualization/vagrant/index.rst
+    ekosystem-narzedziowy/index.rst

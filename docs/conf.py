@@ -8,7 +8,6 @@ import datetime
 
 
 project = 'DevOps Workshop'
-copyright = '2012-{date:%Y}, Matt Harasymczuk <matt@astrotech.io>'.format(date=datetime.date.today())
 author = 'Matt Harasymczuk'
 
 extensions = [
@@ -24,15 +23,15 @@ def get_version():
     )
 
 language = 'pl'
-#templates_path = ['../_templates']
-source_suffix = ['.rst']
-#source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
+copyright = '2012-{date:%Y}, Matt Harasymczuk <matt@astrotech.io>'.format(date=datetime.date.today())
 master_doc = 'index'
 exclude_patterns = ['Thumbs.db', '.DS_Store']
 pygments_style = 'vs'
 todo_include_todos = True
 today_fmt = '%Y-%m-%d'
 highlight_language = 'python3'
+source_suffix = ['.rst']
+#source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
 
 version = get_version()
 release = get_version()
