@@ -52,8 +52,8 @@ Database
 .. toctree::
     :titlesonly:
 
-    flyway/flyway.rst
-    postgresql/postgresql.rst
+    database/flyway/flyway.rst
+    database/postgresql/postgresql.rst
 
 Instant Messenger
 -----------------
@@ -106,5 +106,5 @@ Virtualization
 .. toctree::
     :titlesonly:
 
-    docker/index.rst
-    vagrant/index.rst
+    virtualization/docker/index.rst
+    virtualization/vagrant/index.rst
