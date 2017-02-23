@@ -12,6 +12,54 @@ Instalacja pakietów za pomocą `Puppet`
 
 - Upewnij się by `Puppet` wykonał polecenie ``apt-get update`` na początku
 
+
+.. toggle-code-block:: ruby
+    :label: Pokaż rozwiązanie 1
+
+    exec { 'package definition update':
+        command => '/usr/bin/apt-get update',
+    }
+
+    package { ['nmap', 'htop', 'git']:
+        ensure => 'latest',
+        require => Exec['package definition update'],
+    }
+
+.. toggle-code-block:: ruby
+    :label: Pokaż rozwiązanie 2
+
+    exec { 'package definition update':
+      command => '/usr/bin/apt-get update';
+    }
+
+    Exec['package definition update'] -> Package <| |>
+
+    package { ['htop', 'nmap', 'git']:
+      ensure => present;
+    }
+
+.. toggle-code-block:: ruby
+    :label: Pokaż rozwiązanie 3
+
+    exec { 'package definition update':
+      command => '/usr/bin/apt-get update',
+    }
+
+    Exec['package definition update'] -> Package <| |>
+
+    package { 'htop':
+        ensure => 'latest',
+    }
+
+    package { 'nmap':
+        ensure => 'latest',
+    }
+
+    package { 'git':
+        ensure => 'latest',
+    }
+
+
 Zmiana hostname
 ---------------
 - Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/hostname.pp``
