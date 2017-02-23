@@ -6,7 +6,7 @@ Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wy
 
 Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla poprawy kodu aplikacji stworzonego w ramach działań operacyjnych mają zastosowanie ogólnie przyjęte dobre praktyki wytwarzania oprogramowania oraz konwencje nazewnicze zgodne o ogólnoświatowym standardem dla danej technologii. Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. `commit`) oraz gałęzi (ang. `branch`) z nowymi funkcjonalnościami z poprawkami błędów. Przyjęta konwencja jest standardem opartym na uproszczonym schemacie `GIT Flow`, zwanym dalej `Lean GIT Flow`.
 
-Dzięki zastosowaniu takiej konstrukcji system do przechowywania repozytorium może wymieniać informacje z aplikacją do zarządzania zadaniami oraz przyporządkowywać dany kod odpowiednim zadaniom. Umożliwia to także łatwą weryfikację oraz śledzenie postępu pracy nad konkretną funkcjonalnością.
+Dzięki zastosowaniu takiej konstrukcji system do przechowywania repozytorium może wymieniać informacje z aplikacją do zarządzania zadaniami oraz przyporządkowywać dany kod odpowiednim zadaniom. Umożliwia to także łatwą weryfikację oraz śledzenie postępu pracy nad konkretną funkcjonalnością.
 
 Konwencja opisu zmian w systemie kontroli wersji
 ================================================

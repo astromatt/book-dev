@@ -20,17 +20,17 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
 
     Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
 
-Firma dostrzegając zalety wytwarzania oprogramowania w sposób zwinny wprowadził usprawnienia w swoim procesie mające na celu umiejscowienie go w czołówce firm IT. Metodyki prowadzenia projektów i współpracy tj. Scrum i Kanban pozwalają firmie dostarczać wartość zamawiającemu zgodną z jego oczekiwaniem.
+Firma dostrzegając zalety wytwarzania oprogramowania w sposób zwinny wprowadził usprawnienia w swoim procesie mające na celu umiejscowienie go w czołówce firm IT. Metodyki prowadzenia projektów i współpracy tj. Scrum i Kanban pozwalają firmie dostarczać wartość zamawiającemu zgodną z jego oczekiwaniem.
 
 U podstaw adaptacji powyższych szkieletów organizacyjnych leży iteracyjność oraz stała współpraca z klientem. Do codziennych zastosowań stosowane jest połączenie metodyk Scrum i Kanban w zależności od projektu oraz zapotrzebowania.
 
 W Agile w wytwarzaniu oprogramowania nacisk kładziony jest na dostarczanie software'u dostosowanego do potrzeb klienta w stałej współpracy z nim. W porównaniu z tradycyjnymi metodykami zarządzania projektami podejście to cechuje się odpowiedzią na zmiany wymagań, priorytetów oraz zakresów w trakcie trwania projektu.
 
-Scrum jest systemem zarządzania pracą oraz frameworkiem komunikacyjnym. System ten przyjął się na świecie jako najpopularniejszy sposób prowadzenia projektów informatycznych. Obecnie wykorzystują go największe firmy z branży IT i nie tylko. 
+Scrum jest systemem zarządzania pracą oraz frameworkiem komunikacyjnym. System ten przyjął się na świecie jako najpopularniejszy sposób prowadzenia projektów informatycznych. Obecnie wykorzystują go największe firmy z branży IT i nie tylko. 
 
  W myśl SCRUMu, oprogramowanie wytwarzane jest iteracyjnie i przyrostowo, a projekt jest podzielony na mniejsze, tygodniowe lub dwu tygodniowe fazy, zwane iteracjami lub Sprintami, następujące bezpośrednio po sobie.
 
-Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze stadiów przygotowania i realizowania projektu, mając na uwadze jego indywidualną specyfikę̨, interakcje i współpracę z Klientami, dynamicznie zmieniające się otoczenie i dostosowywanie się do zmian oraz potencjał ludzki.
+Podstawowym celem metodyki SCRUM jest zatem kreowanie wartości na każdym ze stadiów przygotowania i realizowania projektu, mając na uwadze jego indywidualną specyfikę̨, interakcje i współpracę z Klientami, dynamicznie zmieniające się otoczenie i dostosowywanie się do zmian oraz potencjał ludzki.
 
 W Firmie zespoły odpowiedzialne za rozwój oprogramowania tworzą samoorganizujący i wielofunkcyjny zespół, tzw. SCRUM Team, w którego w skład wchodzą: Product Owner, Development Team, SCRUM Master.
 

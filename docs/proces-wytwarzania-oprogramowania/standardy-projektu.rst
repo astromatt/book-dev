@@ -4,7 +4,7 @@ Technologie i standardy projektu
 
 W ramach prowadzenia swojej działalności należy wybrać standardy technologii prowadzenia projektów. Wybór ten ma na celu uporządkowanie i zmniejszenie liczby wykorzystywanych technologii. Dzięki czemu wsparcie narzędziowe oraz operacyjne może zostać zapewnione w najlepszy możliwy sposób. Dla każdego projektu wybierane są stosowne technologie zapewniające jak najlepsze zrealizowanie założeń biznesowych. Wykaz technologii znajduje się w załączniku do dokumentu.
 
-Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla poprawy kodu aplikacji stworzonych w ramach działań operacyjnych Firmy zdecydowano się na wprowadzenie nowoczesnych rozwiązań, w ramach czego wprowadzone i kultywowane zostały standardy wytwarzania oprogramowania, tj.:
+Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla poprawy kodu aplikacji stworzonych w ramach działań operacyjnych Firmy zdecydowano się na wprowadzenie nowoczesnych rozwiązań, w ramach czego wprowadzone i kultywowane zostały standardy wytwarzania oprogramowania, tj.:
 
 * wykorzystanie systemu kontroli wersji,
 * wdrożenie systemów i metodyk zwinnych w zarządzaniu projektami i oprogramowaniem,
