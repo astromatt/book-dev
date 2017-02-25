@@ -79,6 +79,15 @@ Knowledge Base
 
     knowledge-base/*
 
+Logging
+-------
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    logging/*
+
+
 Provisioning
 ------------
 .. toctree::
