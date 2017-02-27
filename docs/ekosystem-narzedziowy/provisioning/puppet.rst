@@ -146,6 +146,10 @@ Druga metoda tworzenia faktów:
 
     export FACTER_system_role=$(cat /etc/system_role); facter
 
+Przydatny linki
+---------------
+* https://docs.puppet.com/puppet/4.9/lang_facts_and_builtin_vars.html#language:-facts-and-built-in-variables
+
 
 Zadania do rozwiązania
 ----------------------
