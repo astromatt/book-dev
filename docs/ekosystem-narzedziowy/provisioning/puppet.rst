@@ -182,6 +182,52 @@ Druga metoda tworzenia faktów:
 
     export FACTER_system_role=$(cat /etc/system_role); facter
 
+Przykłady
+---------
+.. code-block:: ruby
+
+    Exec    { path => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" }
+    group   { "vagrant": ensure => present }
+    user    { "vagrant": ensure => present, gid => "vagrant" }
+    exec    { "apt-get update": command => "/usr/bin/apt-get update" }
+
+    package { [
+        "git",
+        "vim",
+        "nmap",
+        "htop",
+        "wget",
+        "curl",
+        "nginx",
+        "python3",
+        "python3-dev",
+        "python3-pip",
+        "p7zip-full",
+        "uwsgi",
+        "uwsgi-plugin-python3",
+        "postgresql-9.3",
+        "postgresql-server-dev-9.3",
+        "libmemcached-dev"
+      ] :
+        ensure => latest,
+        require => Exec["apt-get update"],
+    }
+
+    file { [
+        "/var/www",
+        "/var/www/log",
+        "/var/www/public",
+        "/var/www/public/media",
+        "/var/www/public/static",
+        "/var/www/tmp",
+        "/var/www/src"
+      ]:
+        ensure => directory,
+        owner => "vagrant",
+        group => "vagrant",
+        mode => 0755,
+    }
+
 
 JBoss
 -----
