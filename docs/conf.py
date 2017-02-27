@@ -12,7 +12,6 @@ project = 'DevOps Workshop'
 author = 'Matt Harasymczuk'
 
 extensions = [
-    #'sphinx.ext.githubpages', # not compatible with Sphinx 1.3 (readthedocs.org)
     'sphinx.ext.todo',
     'toggle_code_block',
 ]
@@ -29,11 +28,10 @@ copyright = '2012-{date:%Y}, Matt Harasymczuk <matt@astrotech.io>'.format(date=d
 master_doc = 'index'
 exclude_patterns = ['Thumbs.db', '.DS_Store']
 pygments_style = 'vs'
-todo_include_todos = True
+todo_include_todos = False
 today_fmt = '%Y-%m-%d'
 highlight_language = 'python3'
 source_suffix = ['.rst']
-#source_parsers = {'.md': 'recommonmark.parser.CommonMarkParser'}
 
 version = get_version()
 release = get_version()
