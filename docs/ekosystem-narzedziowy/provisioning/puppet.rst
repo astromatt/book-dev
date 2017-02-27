@@ -1,5 +1,7 @@
-Jenkins
-=======
+Puppet
+======
+
+.. contents::
 
 Architektura
 ------------
@@ -57,8 +59,6 @@ Puppet language
 * ruby ERD templates
 
 
-
-.. contents::
 
 Instalacja i konfiguracja
 -------------------------
