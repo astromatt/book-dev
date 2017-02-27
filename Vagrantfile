@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/trusty32"
 
 	# config.vm.box = "ecosystem.box"
-    # config.vm.box = "ubuntu32lts"
-    # config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+    config.vm.box = "ubuntu/xenial64"
+    # config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/xenial64/versions/20170224.0.0/providers/virtualbox.box"
 
     config.vm.host_name = "ecosystem.local"
 
