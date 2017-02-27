@@ -5,6 +5,10 @@ Puppet
 .. todo:: sprawdzić jak zachowa się to z Facterem
 .. todo:: sprawdzić deklarowanie i używanie zmiennych
 .. todo:: podzielić puppeta na osobne pliki per temat (zadanie do rozwiązania)
+.. todo:: co z tematem odpalania jako user a nie root?
+.. todo:: uspójnić wszędzie nazwy userów i grup (vagrant, ubuntu, www-data, myuser) wybrać jeden
+.. todo:: błąd ze sprawdzaniem czy user i grupa www-data istnieją, kiedy wykorzystujemy moduł apache
+
 
 .. contents::
 
@@ -128,7 +132,6 @@ Co zauważyłeś? Jak można wykorzystać te informacje?
 
 .. code-block:: ruby
 
-    # facter
     architecture => i386
     ...
     ipaddress => 172.16.182.129
@@ -245,11 +248,22 @@ Przykłady
     }
 
 
+Moduły
+------
+
+.. code-block:: sh
+
+    puppet module search apache
+    puppet module install puppetlabs-apache
+
 JBoss
------
+^^^^^
+* https://github.com/coi-gov-pl/puppet-jboss
+
 To install JBoss Application Server you can use just, it will install Wildfly 8.2.0.Final by default:
 
 .. code-block:: ruby
+
     include jboss
 
 To install JBoss EAP or older JBoss AS use:
@@ -282,10 +296,6 @@ or use hiera:
       }
     }
 
-Moduły
-------
-
-puppet
 
 Przydatny linki
 ---------------
