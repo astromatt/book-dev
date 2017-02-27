@@ -3,6 +3,7 @@
 .site
 .jekyll-metadata
 .vagrant
+.log
 
 *.pyc
 *.icloud
