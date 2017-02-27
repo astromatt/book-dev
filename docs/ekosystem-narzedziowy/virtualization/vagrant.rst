@@ -42,17 +42,33 @@ Tworzenie i konfigurowanie maszyny
         config.vm.network :forwarded_port, guest: 443, host: 8443
         config.vm.synced_folder ".", "/var/www/host"
 
+        config.ssh.username = 'vagrant'
+        config.ssh.password = 'vagrant'
+
         config.vm.provider "virtualbox" do |v|
             v.name = "ubuntu.local"
             v.cpus = CPU
             v.memory = RAM
         end
 
-        config.vm.provision :puppet do |puppet|
-            puppet.manifests_path = "puppet/manifests"
-            puppet.manifest_file = "site.pp"
-            puppet.module_path = "puppet/modules"
-        end
+        config.vm.provision "shell", inline: <<- SHELL
+            apt-get install -y expect
+            echo '#!/usr/bin/expect
+              set timeout 20
+              spawn sudo passwd ubuntu
+              expect "Enter new UNIX password:" {send "ubuntu\\r"}
+              expect "Retype new UNIX password:" {send "ubuntu\\r"}
+              interact' > change_ubuntu_password
+            chmod +x change_ubuntu_password
+          ./change_ubuntu_password
+        SHELL
+
+
+        # config.vm.provision :puppet do |puppet|
+        #    puppet.manifests_path = "puppet/manifests"
+        #    puppet.manifest_file = "site.pp"
+        #    puppet.module_path = "puppet/modules"
+        # end
     end
 
 .. code-block:: shell
