@@ -2,7 +2,7 @@
 .sass-cache
 .site
 .jekyll-metadata
-
+.vagrant
 
 *.pyc
 *.icloud

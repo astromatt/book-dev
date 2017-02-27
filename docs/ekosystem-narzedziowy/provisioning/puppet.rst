@@ -1,6 +1,63 @@
 Jenkins
 =======
 
+Architektura
+------------
+
+* zasada działania
+* infrastructure as a code
+* ad hoc changes
+* scaling
+* wprowadzanie zmian w zależności od faktów
+* developer env changes
+* instalacja ręczna pakietów
+
+Jak działa
+^^^^^^^^^^
+manifest.pp
+
+.. code-block:: puppet
+
+    file {
+      '/var/www':
+        ensure => 'directory',
+        owner => 'www-data',
+        group => 'www-data',
+        mode  => '0755',
+    }
+
+.. code-block:: puppet
+
+    exec { 'package definition update':
+        command => '/usr/bin/apt-get update',
+    }
+
+    package { ['nmap', 'htop', 'git']:
+        ensure => 'latest',
+        require => Exec['package definition update'],
+    }
+
+Model
+^^^^^
+* klient server
+* standalone - puppet apply
+
+Components
+^^^^^^^^^^
+
+* factrs
+* manifests
+* classes
+* resources
+
+Puppet language
+^^^^^^^^^^^^^^^
+* DSL
+* rubby
+* ruby ERD templates
+
+
+
 .. contents::
 
 Instalacja i konfiguracja
