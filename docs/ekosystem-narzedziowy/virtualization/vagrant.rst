@@ -140,6 +140,10 @@ Automatyzacja tworzenia wirtualnej maszyny
             v.memory = RAM
         end
 
+        config.vm.provision "shell", inline: <<- SHELL
+            (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
+        SHELL
+
     end
 
 
@@ -155,18 +159,28 @@ Vagrant + Puppet
 - Każdy z manifestów powinien być w osobnych plikach a jeden ``puppet/main.pp`` powinien includować pozostałe z katalogu ``puppet/manifests/*``
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie puppet
+    :label: Pokaż rozwiązanie Vagrant
+
+    config.vm.provision :puppet do |puppet|
+        puppet.options = "--verbose"
+        puppet.manifests_path = "puppet/"
+        puppet.manifest_file  = "main.pp"
+    end
+
+
+.. toggle-code-block:: ruby
+    :label: Pokaż rozwiązanie Puppet
 
     # cat puppet/manifests/certificates.pp
 
-    file { "/etc/ssl/ssl.example.com.cert":
+    file { "/etc/ssl/ssl-example-com.cert":
         ensure => present,
-        source => "/var/www/host/ssl/ssl.example.com.cert",
+        source => "/var/www/host/ssl/ssl-example-com.cert",
     }
 
-    file { "/etc/ssl/ssl.example.com.key":
+    file { "/etc/ssl/ssl-example-com.key":
         ensure => present,
-        source => "/var/www/host/ssl/ssl.example.com.key",
+        source => "/var/www/host/ssl/ssl-example-com.key",
     }
 
     # cat puppet/main.pp
