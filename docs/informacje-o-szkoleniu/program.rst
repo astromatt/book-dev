@@ -1,9 +1,11 @@
 Program Szkolenia
------------------
+=================
 
 .. todo:: stworzyć podział na dni szkolenia i bardziej dokładny opis agendy
-.. todo:: stworzyć ankietę nie tylko do poszczególnych osób, ale także do grupy, poziom zaawansowania, zainteresowanie technologiami, doświadczenie zespołu,\
+.. todo:: stworzyć ankietę nie tylko do poszczególnych osób, ale także do grupy, poziom zaawansowania, zainteresowanie technologiami, doświadczenie zespołu, technologie w których zespół robi, grupa docelowa
 
+Tematy na szkolenie
+-------------------
 
 Jenkins Job DSL and cloud slaves
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -22,7 +24,12 @@ Continuous Delivery
 
 Microservices and Docker
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- Microservices basics - why? how? what?
+- Microservices basics:
+
+    - why?
+    - how?
+    - what?
+
 - Docker:
 
     - introduction to containers and Docker
@@ -59,3 +66,17 @@ Dodatkowe tematy
 - Tworzenie środowisk przy pomocy dockera
 - Best practices. Przykłady rzeczywiste.
 - automatyzacja w Jenkins, best practices
+
+- ELK i logowanie (pisanie filtrów Logstash)
+- statsd i graphite
+
+
+Agenda
+------
+
+Dzień 1
+^^^^^^^
+* Agile i DevOps
+* Vagrant
+* Puppet
+* Git Flow
