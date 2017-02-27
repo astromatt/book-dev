@@ -67,6 +67,16 @@ Tworzenie i konfigurowanie maszyny
 
     vagrant up
 
+Inne polecenia:
+
+.. code-block:: shell
+
+    vagrant halt
+    vagrant destroy
+    vagrant provision
+
+
+
 Zadania do rozwiązania
 ----------------------
 
