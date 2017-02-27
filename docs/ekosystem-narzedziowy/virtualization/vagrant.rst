@@ -6,8 +6,8 @@ Vagrant
 Tworzenie i konfigurowanie maszyny
 ----------------------------------
 
-- Poniższe polecenia wykonaj w pliku Vagrantfile
-- Stwórz maszynę z oficjalnego obrazu 64 bitowej wersji Ubuntu LTS (Long Time Support)
+- Poniższe polecenia wykonaj w pliku ``Vagrantfile``
+- Stwórz maszynę z oficjalnego obrazu 64 bitowej wersji `Ubuntu LTS` (`Long Time Support`)
 - Ustaw hostname na ``ubuntu.local``
 - Jeżeli masz słabszą maszynę (2 CPU core, 4 GB RAM):
 
@@ -19,7 +19,7 @@ Tworzenie i konfigurowanie maszyny
     - 2 CPU core
     - 4096 MB RAM
 
-- Ustaw forwarding portu 80 na 8080 hosta oraz 443 na 8443
+- Ustaw forwarding portu ``80`` na ``8080`` hosta oraz ``443`` na ``8443``
 - Ustaw aby ten katalog był synchronizowany na maszynie gościa w ``/var/www/host``
 - Zrób by maszyna była stawiana z manifestu `Puppet`
 - Podnieś maszynę i rozpocznij pobieranie obrazu
@@ -36,7 +36,7 @@ Ustawianie hasła
 ^^^^^^^^^^^^^^^^
 
 .. warning:: `Ubunutu` w nowych wersjach zmieniło hasło na użytkownika i nie da się tak łatwo na niego dostać. Użyj wtedy:
-.. note:: Basically the ubuntu/xenial32 and ubuntu/xenial64 images are flawed as they don't come with the vagrant user out of the box. This is against the Vagrant specifications!
+.. note:: Basically the ``ubuntu/xenial32`` and ``ubuntu/xenial64`` images are flawed as they don't come with the vagrant user out of the box. This is against the `Vagrant` specifications!
 
 .. tip:: Rozwiązanie: http://askubuntu.com/a/854849/427956
 
