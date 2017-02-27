@@ -23,6 +23,11 @@ Oprogramowanie
 - Najnowsza wersja GIT
 - Najnowsza wersja Putty (jeżeli osoba korzysta z Windows)
 
+Konta
+-----
+
+* Konto na github.com
+
 Po instalacji
 ^^^^^^^^^^^^^
 
