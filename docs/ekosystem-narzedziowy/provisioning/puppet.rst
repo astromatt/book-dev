@@ -71,6 +71,28 @@ Co się tam znajduje?
 
 Przejdź do katalogu ``/etc/puppet/manifests``.
 
+HTTPS problem
+-------------
+Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należy:
+
+- postaw maszynę w Amazonie (Ubuntu LTS)
+- zainstaluj squid
+
+.. code-block:: sh
+
+    sudo apt-get install squid
+
+- na maszynie gościa (tam gdzie chcesz instalować moduł puppeta ustaw:
+
+
+.. code-block:: sh
+
+    export http_proxy=http://<IP>:3128
+    export https_proxy=http://<IP>:3128
+
+Alternatively, you can set these two proxy settings inside the [user] config section in the puppet.conf file: http_proxy_host and http_proxy_port.
+
+
 Ćwiczenia Praktyczne
 --------------------
 
@@ -183,6 +205,11 @@ or use hiera:
         password => $passwd,
       }
     }
+
+Moduły
+------
+
+puppet
 
 Przydatny linki
 ---------------
