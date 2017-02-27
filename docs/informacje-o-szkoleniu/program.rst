@@ -50,13 +50,8 @@ Automation of infrastructure and Infrastructure as a Code (IaaC)
 
 Dodatkowe tematy
 ^^^^^^^^^^^^^^^^
-- Groovy, Job DSL, Docker, AWS
 - ogolnego spojrzenia na szeroki aspekt tematow, podpowiedzi jakie rozwiazania beda pasowac do naszych potrzeb
-- Puppet, Chef, Ansible
 - ekosystem narzędziowy
 - Tworzenie środowisk przy pomocy dockera
 - Best practices. Przykłady rzeczywiste.
-- Provisioning środowiska
-- Podstawy Powershella
 - automatyzacja w Jenkins, best practices
-- Architektura Microservices
