@@ -5,8 +5,8 @@ Tworzenie i konfigurowanie maszyny
 ----------------------------------
 
 - Poniższe polecenia wykonaj w pliku Vagrantfile
-- Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji Ubuntu LTS (Long Time Support)
-- Ustaw hostname na `ubuntu.local`
+- Stwórz maszynę z oficjalnego obrazu 64 bitowej wersji Ubuntu LTS (Long Time Support)
+- Ustaw hostname na ``ubuntu.local``
 - Jeżeli masz słabszą maszynę (2 CPU core, 4 GB RAM):
 
     - 1 CPU core
@@ -18,13 +18,94 @@ Tworzenie i konfigurowanie maszyny
     - 4096 MB RAM
 
 - Ustaw forwarding portu 80 na 8080 hosta oraz 443 na 8443
-- Ustaw aby ten katalog był synchronizowany na maszynie gościa w `/var/www/host`
-- Zrób by maszyna była stawiana z manifestu Puppeta
+- Ustaw aby ten katalog był synchronizowany na maszynie gościa w ``/var/www/host``
+- Zrób by maszyna była stawiana z manifestu `Puppet`
 - Podnieś maszynę i rozpocznij pobieranie obrazu
+
+Uruchamianie maszyny
+^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: shell
 
-    vagrant init ubuntu/trusty32
+    vagrant init ubuntu/xenial64
+    vagrant up
+
+Ustawianie hasła
+^^^^^^^^^^^^^^^^
+
+.. warning:: `Ubunutu` w nowych wersjach zmieniło hasło na użytkownika i nie da się tak łatwo na niego dostać. Użyj wtedy:
+.. note:: Basically the ubuntu/xenial32 and ubuntu/xenial64 images are flawed as they don't come with the vagrant user out of the box. This is against the Vagrant specifications!
+
+.. tip:: Rozwiązanie: http://askubuntu.com/a/854849/427956
+
+.. code-block::
+
+    Vagrant.configure("2") do |config|
+
+        apt-get install -y expect
+        echo '#!/usr/bin/expect
+          set timeout 20
+          spawn sudo passwd ubuntu
+          expect "Enter new UNIX password:" {send "ubuntu\\r"}
+          expect "Retype new UNIX password:" {send "ubuntu\\r"}
+          interact' > change_ubuntu_password
+        chmod +x change_ubuntu_password
+      ./change_ubuntu_password
+
+    end
+
+Usuwanie maszyny
+^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    vagrant halt
+    vagrant destroy
+
+
+Konfiguracja forwardingu portów
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: ruby
+
+    config.vm.network :forwarded_port, guest: 80, host: 8080
+    config.vm.network :forwarded_port, guest: 443, host: 8443
+
+Synchronizowanie katalogów
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: ruby
+
+    config.vm.synced_folder ".", "/var/www/host"
+
+
+Provisioning za pomocą shell
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: ruby
+
+Vagrant.configure("2") do |config|
+
+        config.vm.provision "shell", inline: <<- SHELL
+            (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
+        SHELL
+
+Provisioning za pomocą `Puppet`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: ruby
+
+    config.vm.provision :puppet do |puppet|
+        puppet.module_path = "puppet/modules"
+        puppet.manifests_path = "puppet/manifests"
+        puppet.manifest_file = "default.pp"
+    end
+
+
+Finalna konfiguracja
+^^^^^^^^^^^^^^^^^^^^
+
+Twoja konfuguracja `Vagrant` powinna wyglądać tak:
 
 .. code-block:: ruby
 
@@ -42,9 +123,6 @@ Tworzenie i konfigurowanie maszyny
         config.vm.network :forwarded_port, guest: 443, host: 8443
         config.vm.synced_folder ".", "/var/www/host"
 
-        config.ssh.username = 'vagrant'
-        config.ssh.password = 'vagrant'
-
         config.vm.provider "virtualbox" do |v|
             v.name = "ubuntu.local"
             v.cpus = CPU
@@ -54,27 +132,11 @@ Tworzenie i konfigurowanie maszyny
         config.vm.provision "shell", inline: <<- SHELL
             (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
         SHELL
-
-
-        # config.vm.provision :puppet do |puppet|
-        #    puppet.manifests_path = "puppet/manifests"
-        #    puppet.manifest_file = "site.pp"
-        #    puppet.module_path = "puppet/modules"
-        # end
     end
 
-.. code-block:: shell
+.. code-block:: sh
 
-    vagrant up
-
-Inne polecenia:
-
-.. code-block:: shell
-
-    vagrant halt
-    vagrant destroy
     vagrant provision
-
 
 
 Zadania do rozwiązania
