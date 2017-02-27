@@ -48,7 +48,7 @@ Components
 ^^^^^^^^^^
 
 * facts
-* manifests
+* manifests (pliki z rozszerzeniem ``.pp``)
 * classes
 * resources
 
@@ -103,7 +103,7 @@ Instalacja pakietów za pomocą `Puppet`
 
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie 1
+    :label: Pokaż rozwiązanie 1 - Instalacja pakietów za pomocą Puppet
 
     exec { 'package definition update':
         command => '/usr/bin/apt-get update',
@@ -115,7 +115,7 @@ Instalacja pakietów za pomocą `Puppet`
     }
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie 2
+    :label: Pokaż rozwiązanie 2 - Instalacja pakietów za pomocą Puppet
 
     exec { 'package definition update':
       command => '/usr/bin/apt-get update';
@@ -128,7 +128,7 @@ Instalacja pakietów za pomocą `Puppet`
     }
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie 3
+    :label: Pokaż rozwiązanie 3 - Instalacja pakietów za pomocą Puppet
 
     exec { 'package definition update':
       command => '/usr/bin/apt-get update',
@@ -158,7 +158,7 @@ Zmiana hostname
 
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie 1
+    :label: Pokaż rozwiązanie 1 - Zmiana hostname
 
     file { "/etc/hostname":
             ensure  => present,
@@ -176,7 +176,7 @@ Zmiana hostname
 
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie 2
+    :label: Pokaż rozwiązanie 2 - Zmiana hostname
 
     exec { 'set hostname':
         command => '/usr/bin/hostnamectl set-hostname ecosystem.local'
@@ -196,7 +196,7 @@ Zarządzanie użytkownikami, grupami i katalogami
     - Ma uprawnienia ``rwxr-xr-x``
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie
+    :label: Pokaż rozwiązanie - Zarządzanie użytkownikami, grupami i katalogami
 
     group { 'mygroup':
         ensure => 'present',
@@ -245,7 +245,8 @@ Konfiguracja Apache2
     - https://127.0.0.1:8443
 
 
-.. code-block:: puppet
+.. toggle-code-block:: puppet
+    :label: Pokaż rozwiązanie katalog - Konfiguracja Apache2
 
     file {
       '/var/www':
@@ -256,14 +257,14 @@ Konfiguracja Apache2
     }
 
 .. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie w terminalu
+    :label: Pokaż rozwiązanie terminal - Konfiguracja Apache2
 
     puppet module install apache
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout self-signed.key -out self-signed.cert
     cat /etc/puppet/manifests/apache.pp
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie w puppet
+    :label: Pokaż rozwiązanie puppet - Konfiguracja Apache2
 
     class { 'apache':
         default_vhost => false,
@@ -301,7 +302,7 @@ Konfiguracja Apache2
     }
 
 .. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie w terminalu
+    :label: Pokaż rozwiązanie terminal 2 - Konfiguracja Apache2
 
     puppet apply /etc/puppet/manifests/apache.pp
     ls /var/www
@@ -321,12 +322,13 @@ Instalacja i konfiguracja MySQL
 - Ustaw backupowanie bazy danych do ``/tmp/mysql-backup``
 
 .. code-block:: sh
+    :label: Pokaż rozwiązanie instalacji pakietu - Instalacja i konfiguracja MySQL
 
     puppet module install puppetlabs-mysql
 
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie
+    :label: Pokaż rozwiązanie manifestu - Instalacja i konfiguracja MySQL
 
     class { "mysql::server":
         root_password => "mypassword",
@@ -378,7 +380,7 @@ Instalacja i konfiguracja Tomcat
     - Na pierwszej uruchom ``war`` z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
 
 .. toggle-code-block:: ruby
-    :label: Pokaż rozwiązanie
+    :label: Pokaż rozwiązanie manifestu - Instalacja i konfiguracja Tomcat
 
     class { 'java': }
 
