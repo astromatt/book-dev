@@ -44,6 +44,8 @@ Model
 * klient server
 * standalone - puppet apply
 
+* fakty i kolejność wykonywania manifestów
+
 Components
 ^^^^^^^^^^
 
@@ -90,7 +92,19 @@ Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należ
     export http_proxy=http://<IP>:3128
     export https_proxy=http://<IP>:3128
 
-Alternatively, you can set these two proxy settings inside the [user] config section in the puppet.conf file: http_proxy_host and http_proxy_port.
+Lub:
+
+.. code-block:: ini
+
+    [user]
+    http_proxy = http://<IP>:3128
+    https_proxy = http://<IP>:3128
+
+.. code-block:: sh
+
+    sudo service puppet restart
+    sudo su -
+    puppet module install
 
 
 Ćwiczenia Praktyczne
