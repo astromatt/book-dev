@@ -32,6 +32,9 @@ Uruchamianie maszyny
     vagrant init ubuntu/xenial64
     vagrant up
 
+    # Alternatywnie
+    vagrant up --provider virtualbox
+
 Ustawianie hasła
 ^^^^^^^^^^^^^^^^
 
