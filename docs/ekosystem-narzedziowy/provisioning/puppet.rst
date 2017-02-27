@@ -136,7 +136,7 @@ Druga metoda tworzenia faktów:
 
 .. code-block:: sh
 
-    export FACTER_system_role=`cat /etc/system_role`; facter
+    export FACTER_system_role=$(cat /etc/system_role); facter
 
 
 Zadania do rozwiązania
