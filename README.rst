@@ -31,7 +31,7 @@ Run
 .. code-block:: sh
 
     vagrant init ubuntu/xenial64
-    vagrant up --provider virtualbox
+    vagrant up
 
 
 More information
