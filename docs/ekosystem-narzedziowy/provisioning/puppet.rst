@@ -437,7 +437,11 @@ Konfiguracja Apache2
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie katalog - Konfiguracja Apache2
 
-    file {'/var/www':
+    file { [
+            '/var/www',
+            '/var/www/insecure-example-com',
+            '/var/www/ssl-example-com',
+        ]:
         ensure => 'directory',
         owner => 'www-data',
         group => 'www-data',
