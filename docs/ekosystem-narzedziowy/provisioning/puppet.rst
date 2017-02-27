@@ -146,6 +146,44 @@ Druga metoda tworzenia faktów:
 
     export FACTER_system_role=$(cat /etc/system_role); facter
 
+
+JBoss
+-----
+To install JBoss Application Server you can use just, it will install Wildfly 8.2.0.Final by default:
+
+.. code-block:: ruby
+    include jboss
+
+To install JBoss EAP or older JBoss AS use:
+
+.. code-block:: ruby
+
+    class { 'jboss':
+      product => 'jboss-eap',
+      version => '6.4.0.GA',
+    }
+
+or use hiera:
+
+.. code-block:: ruby
+
+    jboss::params::product: 'jboss-as'
+    jboss::params::version: '7.1.1.Final'
+
+.. code-block:: ruby
+
+    $user = 'jb-user'
+    $passwd = 'SeC3eT!1'
+
+    node 'controller' {
+      include jboss::domain::controller
+      include jboss
+      jboss::user { $user:
+        ensure   => 'present',
+        password => $passwd,
+      }
+    }
+
 Przydatny linki
 ---------------
 * https://docs.puppet.com/puppet/4.9/lang_facts_and_builtin_vars.html#language:-facts-and-built-in-variables
