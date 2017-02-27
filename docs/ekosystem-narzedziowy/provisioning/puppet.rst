@@ -375,27 +375,27 @@ Zmiana hostname
 Zarządzanie użytkownikami, grupami i katalogami
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/users.pp``
-- Upewnij się, że użytkownik ``myuser`` istnieje, ma ``uid=1337`` i należy do grupy ``mygroup``
-- Upewnij się, że grupa ``mygroup`` istnieje i ma ``gid=99``
+- Upewnij się, że użytkownik ``vagrant`` istnieje, ma ``uid=1337`` i należy do grupy ``vagrant``
+- Upewnij się, że grupa ``vagrant`` istnieje i ma ``gid=1337``
 - Upewnij się, że:
 
     - Katalog ``/var/www`` istnieje
-    - Właścicielem jego jest user ``myuser``
-    - Właścicielem jego jest grupa ``mygroup``
+    - Właścicielem jego jest user ``vagrant``
+    - Właścicielem jego jest grupa ``vagrant``
     - Ma uprawnienia ``rwxr-xr-x``
 
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie - Zarządzanie użytkownikami, grupami i katalogami
 
-    group { 'mygroup':
+    group { 'vagrant':
         ensure => 'present',
-        gid    => 99,
+        gid    => 1337,
     }
 
-    user { 'myuser':
+    user { 'vagrant':
         ensure           => 'present',
-        groups           => ['mygroup'],
-        home             => '/home/myuser',
+        groups           => ['vagrant'],
+        home             => '/home/vagrant',
         password         => '*',
         password_max_age => 99999,
         password_min_age => 0,
@@ -405,8 +405,8 @@ Zarządzanie użytkownikami, grupami i katalogami
 
     file { '/var/www':
         ensure => 'directory',
-        owner  => 'myuser',
-        group  => 'mygroup',
+        owner  => 'vagrant',
+        group  => 'vagrant',
         mode   => 0755
     }
 
@@ -465,7 +465,7 @@ Konfiguracja Apache2
 .. toggle-code-block:: sh
     :label: Pokaż rozwiązanie terminal - Konfiguracja Apache2
 
-    puppet module install apache
+    puppet module install puppetlabs-apache
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/ssl-example-com.key -out /etc/ssl/ssl-example-com.cert
     cat /etc/puppet/manifests/apache.pp
 
