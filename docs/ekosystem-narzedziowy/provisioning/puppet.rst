@@ -1,6 +1,11 @@
 Puppet
 ======
 
+.. todo:: sprawdzić czy działają tematy związane z tworzeniem faktów
+.. todo:: sprawdzić jak zachowa się to z Facterem
+.. todo:: sprawdzić deklarowanie i używanie zmiennych
+.. todo:: podzielić puppeta na osobne pliki per temat (zadanie do rozwiązania)
+
 .. contents::
 
 Architektura
@@ -20,8 +25,7 @@ manifest.pp
 
 .. code-block:: ruby
 
-    file {
-      '/var/www':
+    file { '/var/www':
         ensure => 'directory',
         owner => 'www-data',
         group => 'www-data',
@@ -48,18 +52,17 @@ Model
 
 Components
 ^^^^^^^^^^
-
-* facts
 * manifests (pliki z rozszerzeniem ``.pp``)
+* zmienne
 * classes
 * resources
+* facts
 
 Puppet language
 ^^^^^^^^^^^^^^^
 * DSL
 * rubby
 * ruby ERD templates
-
 
 
 Instalacja i konfiguracja
@@ -143,17 +146,28 @@ Co zauważyłeś? Jak można wykorzystać te informacje?
 
 Korzystanie z faktów w manifestach:
 
-.. code-block:: ruby
-
-    # Classic
-    $fact_name
-
-    # new
-    $facts['fact_name']
+:Sposób klasyczny, jako zmienne na głównym poziomie:
 
 .. code-block:: ruby
 
+    # Definicja
+    operatingsystem = 'Ubuntu'
+
+    # Wykorzystanie
     case $::operatingsystem {
+      'CentOS': { include centos }
+      'MacOS':  { include mac }
+    }
+
+:Jako zmienne w tablicy faktów:
+
+.. code-block:: ruby
+
+    # Definicja
+    $facts['fact_name'] = 'Ubuntu'
+
+    # Wykorzystanie
+    case $facts['fact_name'] {
       'CentOS': { include centos }
       'MacOS':  { include mac }
     }
@@ -163,6 +177,7 @@ Tworzenie nowych faktów:
 .. code-block:: ruby
 
     require 'facter'
+
     Facter.add(:system_role) do
       setcode "cat /etc/system_role"
     end
@@ -170,6 +185,7 @@ Tworzenie nowych faktów:
 .. code-block:: ruby
 
     require 'facter'
+
     Facter.add(:system_role) do
       setcode do
         Facter::Util::Resolution.exec("cat /etc/system_role")
