@@ -18,7 +18,7 @@ Jak działa
 ^^^^^^^^^^
 manifest.pp
 
-.. code-block:: puppet
+.. code-block:: ruby
 
     file {
       '/var/www':
@@ -28,7 +28,7 @@ manifest.pp
         mode  => '0755',
     }
 
-.. code-block:: puppet
+.. code-block:: ruby
 
     exec { 'package definition update':
         command => '/usr/bin/apt-get update',
@@ -245,7 +245,7 @@ Konfiguracja Apache2
     - https://127.0.0.1:8443
 
 
-.. toggle-code-block:: puppet
+.. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie katalog - Konfiguracja Apache2
 
     file {
