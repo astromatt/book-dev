@@ -416,7 +416,7 @@ Konfiguracja Apache2
     :label: Pokaż rozwiązanie terminal - Konfiguracja Apache2
 
     puppet module install apache
-    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout self-signed.key -out self-signed.cert
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/ssl-example-com.key -out /etc/ssl/ssl-example-com.cert
     cat /etc/puppet/manifests/apache.pp
 
 .. toggle-code-block:: ruby
