@@ -87,6 +87,58 @@ Przyjrzyj się wynikom poleceń:
 Co zauważyłeś? Jak można wykorzystać te informacje?
 
 
+.. code-block:: ruby
+
+    # facter
+    architecture => i386
+    ...
+    ipaddress => 172.16.182.129
+    is_virtual => true
+    kernel => Linux
+    kernelmajversion => 2.6
+    ...
+    operatingsystem => CentOS
+    operatingsystemrelease => 5.5
+    physicalprocessorcount => 0
+    processor0 => Intel(R) Core(TM)2 Duo CPU     P8800  @ 2.66GHz
+    processorcount => 1
+    productname => VMware Virtual Platform
+    ...
+
+Korzystanie z faktów w manifestach:
+
+.. code-block:: ruby
+
+    case $::operatingsystem {
+      'CentOS': { include centos }
+      'MacOS':  { include mac }
+    }
+
+Tworzenie nowych faktów:
+
+.. code-block:: ruby
+
+    require 'facter'
+    Facter.add(:system_role) do
+      setcode "cat /etc/system_role"
+    end
+
+.. code-block:: ruby
+
+    require 'facter'
+    Facter.add(:system_role) do
+      setcode do
+        Facter::Util::Resolution.exec("cat /etc/system_role")
+      end
+    end
+
+Druga metoda tworzenia faktów:
+
+.. code-block:: sh
+
+    export FACTER_system_role=`cat /etc/system_role`; facter
+
+
 Zadania do rozwiązania
 ----------------------
 

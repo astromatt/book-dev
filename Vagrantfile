@@ -1,7 +1,7 @@
 ## Adjust your settings here
 
 CPU = 2
-RAM = 8196
+RAM = 1024
 
 
 ################################
@@ -9,10 +9,9 @@ RAM = 8196
 ################################
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "ubuntu/trusty32"
-
-	# config.vm.box = "ecosystem.box"
     config.vm.box = "ubuntu/xenial64"
+
+	# config.vm.box = "my-ubuntu-lts"
     # config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/xenial64/versions/20170224.0.0/providers/virtualbox.box"
 
     config.vm.host_name = "ecosystem.local"
@@ -34,6 +33,8 @@ Vagrant.configure("2") do |config|
         v.cpus = CPU
         v.memory = RAM
     end
+
+    config.vm.provision "shell", inline: "(echo ubuntu; echo ubuntu) |sudo passwd ubuntu"
 
 end
 
