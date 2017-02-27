@@ -109,6 +109,14 @@ Korzystanie z faktów w manifestach:
 
 .. code-block:: ruby
 
+    # Classic
+    $fact_name
+
+    # new
+    $facts['fact_name']
+
+.. code-block:: ruby
+
     case $::operatingsystem {
       'CentOS': { include centos }
       'MacOS':  { include mac }
