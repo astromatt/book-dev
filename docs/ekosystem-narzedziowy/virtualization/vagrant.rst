@@ -1,6 +1,8 @@
 Vagrant
 =======
 
+.. contents::
+
 Tworzenie i konfigurowanie maszyny
 ----------------------------------
 
