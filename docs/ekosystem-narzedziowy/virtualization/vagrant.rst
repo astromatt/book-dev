@@ -52,15 +52,7 @@ Tworzenie i konfigurowanie maszyny
         end
 
         config.vm.provision "shell", inline: <<- SHELL
-            apt-get install -y expect
-            echo '#!/usr/bin/expect
-              set timeout 20
-              spawn sudo passwd ubuntu
-              expect "Enter new UNIX password:" {send "ubuntu\\r"}
-              expect "Retype new UNIX password:" {send "ubuntu\\r"}
-              interact' > change_ubuntu_password
-            chmod +x change_ubuntu_password
-          ./change_ubuntu_password
+            (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
         SHELL
 
 

@@ -47,7 +47,7 @@ Model
 Components
 ^^^^^^^^^^
 
-* factrs
+* facts
 * manifests
 * classes
 * resources
