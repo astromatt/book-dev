@@ -374,13 +374,13 @@ Konfiguracja Apache2
 - Z terminala wygeneruj certyfikaty self signed OpenSSL (``.cert`` i ``.key``) (za pomocą i umieść je w ``/etc/ssl/``)
 - Za pomocą Puppet Stwórz dwa vhosty:
 
-    - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure.example.com``
-    - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl.example.com`` + używanie certyfikatów SSL wcześniej wygenerowanych
+    - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure-example-com``
+    - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl-example-com`` + używanie certyfikatów SSL wcześniej wygenerowanych
 
 - Stwórz pliki z treścią:
 
-    - ``/var/www/insecure.example.com/index.html`` z treścią ``Ehlo World! - Insecure``
-    - ``/var/www/ssl.example.com/index.html`` z treścią ``Ehlo World! - SSL!``
+    - ``/var/www/insecure-example-com/index.html`` z treścią ``Ehlo World! - Insecure``
+    - ``/var/www/ssl-example-com/index.html`` z treścią ``Ehlo World! - SSL!``
 
 - W przeglądarce na komputerze lokalnym wejdź na stronę:
 
@@ -391,8 +391,21 @@ Konfiguracja Apache2
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie katalog - Konfiguracja Apache2
 
-    file {
-      '/var/www':
+    file {'/var/www':
+        ensure => 'directory',
+        owner => 'www-data',
+        group => 'www-data',
+        mode  => '0755',
+    }
+
+    file {'/var/www/insecure-example-com':
+        ensure => 'directory',
+        owner => 'www-data',
+        group => 'www-data',
+        mode  => '0755',
+    }
+
+    file {'/var/www/ssl-example-com':
         ensure => 'directory',
         owner => 'www-data',
         group => 'www-data',
@@ -431,17 +444,17 @@ Konfiguracja Apache2
     }
 
     file { '/var/www/insecure-example-com/index.html':
-      ensure  => 'present',
-      replace => 'no',
-      content => 'Ehlo World! - Insecure\n',
-      mode    => 0644,
+        ensure  => 'present',
+        replace => 'no',
+        content => 'Ehlo World! - Insecure\n',
+        mode    => 0644,
     }
 
     file { '/var/www/ssl-example-com/index.html':
-      ensure  => 'present',
-      replace => 'no',
-      content => 'Ehlo World! - SSL\n',
-      mode    => 0644,
+        ensure  => 'present',
+        replace => 'no',
+        content => 'Ehlo World! - SSL\n',
+        mode    => 0644,
     }
 
 .. toggle-code-block:: sh
