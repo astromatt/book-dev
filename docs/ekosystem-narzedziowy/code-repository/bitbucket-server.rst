@@ -8,11 +8,7 @@ Instalacja
 ^^^^^^^^^^
 * Zainstaluj `Bitbucket`
 * Skonfiguruj licencję wykorzystując evaluation license z https://my.atlassian.com/products/index
-
-Dane https://id.atlassian.com/:
-
-    - workshop-2017-02@astrotech.io
-    - etZ-ovM-neo-P8b
+* Załóż konto na https://id.atlassian.com/:
 
 .. toggle-code-block:: sh
     :label: Instalacja za pomocą archiwów `zip`
@@ -30,7 +26,7 @@ Dane https://id.atlassian.com/:
 
 Konfiguracja
 ^^^^^^^^^^^^
-* Stwórz projekt ``DevOps Workshop`` o kluczu ``DOW``
+* Stwórz projekt ``Ecosystem Workshop`` o kluczu ``ECO``
 * Zaciągnij projekty:
 
     * https://github.com/SonarSource/sonar-examples
