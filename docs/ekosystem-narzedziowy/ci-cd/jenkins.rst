@@ -3,6 +3,10 @@ Jenkins
 
 .. todo:: zamienić na osobne pliki
 .. todo:: obniżyć poziom nagłówków
+.. todo:: Jenkins Multibranch (out-of the box)
+.. todo:: Bitbucket Multibranch project (jako dodatkowy plugin)
+.. todo:: Niespójność w nazewnictwie Job DSL i Pipeline DSL
+
 
 Jenkins DSL
 -----------
@@ -416,6 +420,8 @@ Instalacja Jenkinsa i konfuguracja buildów
     - `it` - integration tests
 
 - Ustaw joby przez `Jenkinsa`
+
+.. tip:: Bitubcket plugin do Jenkinsa
 
 .. toggle-code-block:: sh
     :label: Pokaż rozwiązanie za pomocą ``apt-get`` na `Ubuntu`

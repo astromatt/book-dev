@@ -63,6 +63,8 @@ Operacje na poziomie systemu operacyjnego
 ^^^^^^^^^^^^^^^^^^^^^
 * Skonfiguruj Bitbucket tak, aby wyświetlał informacje na temat budowania branchy i commitów
 
+.. tip:: Webhook plugin to Jenkins
+
 `Jira` integration
 ^^^^^^^^^^^^^^^^^^
 * Zakładanie branchy z poziomu Jiry
