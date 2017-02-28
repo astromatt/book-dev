@@ -410,9 +410,11 @@ Instalacja Jenkinsa i konfuguracja buildów
     - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
     - Tak - Zaciągnij repozytorium ``sonar-examples`` z twojej instancji `Bitbucket Server`
 
-- Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
+- Zacznij budować różne projekty ``sonar-examples/projects/languages/java``:
+
     - `ut` - unit tests
     - `it` - integration tests
+
 - Ustaw joby przez `Jenkinsa`
 
 .. toggle-code-block:: sh
