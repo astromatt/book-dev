@@ -546,7 +546,7 @@ Budowanie Pull Requestów
 
     * https://plugins.jenkins.io/stash-pullrequest-builder
 
-Budowanie Checkstyle, PMD, JaCoCo, Findbugs i PITest
+Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Dla repozytorium ``sonar-examples``
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
@@ -554,20 +554,20 @@ Budowanie Checkstyle, PMD, JaCoCo, Findbugs i PITest
 - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 
-Pipeline DSL
-^^^^^^^^^^^^
+`Pipeline DSL`
+^^^^^^^^^^^^^^
 - Przepisz całą konfigurację wykorzustując plik ``Jenkinsfile`` i `Pipeline DSL`
 
-Jenkins Docker Plugin
-^^^^^^^^^^^^^^^^^^^^^
+`Jenkins Docker Plugin`
+^^^^^^^^^^^^^^^^^^^^^^^
 - Zainstaluj `Docker Plugin` w `Jenkins`
 - Skonfiguruj zadanie aby uruchamiało kontener
 - Zadanie ma provisionować konfigurację wewnątrz kontenera
 - Zadanie ma uruchamiać build wewnątrz kontenera
 - Zadanie ma niszczyć kontener po buildze
 
-Jenkins i testy wydajnościowe JMeter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`Jenkins` i testy wydajnościowe `JMeter`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Przeprowadź test wydajnościowy głównej strony aplikacji uruchomionej na Twoim komputerze (np. `SonarQube` jeżeli wykonałeś poprzednie ćwiczenie)
 - Test wydajnościowy powinien zapisany w ``xml`` oraz uruchamiany bez wykorzystania GUI
 
