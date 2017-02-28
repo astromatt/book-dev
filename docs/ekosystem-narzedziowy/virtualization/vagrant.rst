@@ -27,7 +27,7 @@ Tworzenie i konfigurowanie maszyny
 Uruchamianie maszyny
 ^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: shell
+.. code-block:: sh
 
     vagrant init ubuntu/xenial64
     vagrant up
@@ -43,7 +43,7 @@ Ustawianie hasła
 
 .. tip:: Rozwiązanie: http://askubuntu.com/a/854849/427956
 
-.. code-block::
+.. code-block:: ruby
 
     Vagrant.configure("2") do |config|
 
@@ -89,11 +89,13 @@ Provisioning za pomocą shell
 
 .. code-block:: ruby
 
-Vagrant.configure("2") do |config|
+    Vagrant.configure("2") do |config|
 
         config.vm.provision "shell", inline: <<- SHELL
             (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
         SHELL
+
+    end
 
 Provisioning za pomocą `Puppet`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
