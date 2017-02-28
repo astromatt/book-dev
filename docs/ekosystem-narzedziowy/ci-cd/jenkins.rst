@@ -4,34 +4,6 @@ Jenkins
 .. todo:: zamienić na osobne pliki
 .. todo:: obniżyć poziom nagłówków
 
-
-Installation and configuration
-------------------------------
-
-Install Using DEB on Ubuntu
-
-.. code-block:: sh
-
-    wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
-    echo "deb http://pkg.jenkins-ci.org/debian binary/" >> /etc/apt/sources.list
-    apt-get update
-    apt-get install --yes jenkins
-    sudo su - jenkins
-    ssh-keygen
-    cat ~/.ssh/id_rsa.pub
-    exit
-    service jenkins stop
-    # sed -i 's/HTTP_PORT=8080/HTTP_PORT=8081/g' /etc/default/jenkins
-    service jenkins start
-
-Install Using Docker
-
-.. code-block:: sh
-
-    docker pull jenkins
-    docker run -p 8080:8080 -p 50000:50000 -v /tmp/jenkins_home_on_host:/var/jenkins_home jenkins
-
-
 Jenkins DSL
 -----------
 
@@ -191,6 +163,7 @@ Podstawy składni `Groovy`
 
         def concat1 = { String... args -> args.join('') }
         assert concat1('abc','def') == 'abcdef'
+
         def concat2 = { String[] args -> args.join('') }
         assert concat2('abc', 'def') == 'abcdef'
 
@@ -220,9 +193,11 @@ Podstawy składni `Groovy`
         def project = 'Netflix/asgard'
         def branchApi = new URL("https://api.github.com/repos/${project}/branches")
         def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
+
         branches.each {
             def branchName = it.name
             def jobName = "${project}-${branchName}".replaceAll('/','-')
+
             job(jobName) {
                 scm {
                     git("https://github.com/${project}.git", branchName)
@@ -317,7 +292,7 @@ The DSL execution engine exposes several methods to create Jenkins jobs, views, 
 :Config:
     .. code-block:: groovy
 
-    configFiles(Closure configFilesClosure = null)
+        configFiles(Closure configFilesClosure = null)
 
 :Queue:
     .. code-block:: groovy
@@ -391,9 +366,11 @@ Przykłady Jenkins DSL
     def project = 'quidryan/aws-sdk-test'
     def branchApi = new URL("https://api.github.com/repos/${project}/branches")
     def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
+
     branches.each {
         def branchName = it.name
         def jobName = "${project}-${branchName}".replaceAll('/','-')
+
         job(jobName) {
             scm {
                 git("git://github.com/${project}.git", branchName)
@@ -407,6 +384,7 @@ Przykłady Jenkins DSL
 .. code-block:: groovy
 
         def giturl = 'https://github.com/quidryan/aws-sdk-test.git'
+
         for(i in 0..10) {
             job("DSL-Tutorial-1-Test-${i}") {
                 scm {
@@ -427,10 +405,40 @@ Instalacja Jenkinsa i konfuguracja buildów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Zainstaluj `Jenkins` za pomocą paczek `DEB` przez ``apt-get``
 - Alternatywnie możesz użyć `Docker` albo manifestów `Puppeta`
-- Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
+- Czy wcześniej zainstalowałeś `Bitbucket Server`?
+
+    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
+    - Tak - Zaciągnij repozytorium ``sonar-examples`` z twojej instancji `Bitbucket Server`
+
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
     - `ut` - unit tests
     - `it` - integration tests
+
+.. toggle-code-block:: sh
+    :label: Pokaż rozwiązanie za pomocą ``apt-get`` na `Ubuntu`
+
+    wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+    echo "deb http://pkg.jenkins-ci.org/debian binary/" >> /etc/apt/sources.list
+    apt-get update
+    apt-get install --yes jenkins
+    sudo su - jenkins
+    ssh-keygen
+    cat ~/.ssh/id_rsa.pub
+    exit
+    service jenkins stop
+    # sed -i 's/HTTP_PORT=8080/HTTP_PORT=8081/g' /etc/default/jenkins
+    service jenkins start
+
+.. toggle-code-block:: sh
+    :label: Pokaż rozwiązanie za pomocą ``docker`` na `Ubuntu`
+
+.. code-block:: sh
+
+    docker pull jenkins
+    docker run -p 8080:8080 -p 50000:50000 -v /tmp/jenkins_home_on_host:/var/jenkins_home jenkins
+
+.. warning:: Sprawdź, czy w swoim pliku ``Vagrantfile`` masz skonfigurowany forwardnig portów dla guest:``8080`` -> host:``80``
+
 
 Budowanie Pull Requestów
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -452,8 +460,8 @@ Budowanie Pull Requestów
     Key             Value
     =============== ======================
     Stash Root URL  http://localhost:7990/
-    Stash User      ``jenkins``
-    Stash Password  ``jenkins``
+    Stash User      jenkins
+    Stash Password  jenkins
     =============== ======================
 
 
@@ -532,7 +540,7 @@ Budowanie Pull Requestów
 
 Budowanie Checkstyle, PMD, JaCoCo, Findbugs i PITest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
+- Dla repozytorium ``sonar-examples``
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
 - Wyniki upublicznij w `SonarQube`
 - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
