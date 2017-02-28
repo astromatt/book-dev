@@ -1,6 +1,16 @@
 Docker
 ======
 
+Przydatne polecenia
+-------------------
+
+.. code-block:: sh
+
+    docker run bash
+    docker ps
+    docker exec -u 0 -it CONTAINER_NAME bash
+
+
 Zadania do rozwiązania
 ----------------------
 

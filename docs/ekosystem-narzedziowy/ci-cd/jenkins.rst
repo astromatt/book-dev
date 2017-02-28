@@ -547,7 +547,7 @@ Budowanie Pull Requestów
     * https://plugins.jenkins.io/stash-pullrequest-builder
 
 Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Dla repozytorium ``sonar-examples``
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
 - Wyniki upublicznij w `SonarQube`

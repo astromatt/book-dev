@@ -27,6 +27,7 @@ Wprowadzenie
     wprowadzenie/lean-startup.rst
     wprowadzenie/srodowisko-wirtualne.rst
     wprowadzenie/buzzwordy.rst
+    wprowadzenie/linki.rst
 
 Proces wytwarzania oprogramowania
 =================================
