@@ -358,6 +358,16 @@ Expert
 - Management: Umowy Agile - Sprzedaż Story Points
 
 
+Spotify Engineering Culture @youtube.com
+----------------------------------------
+
+.. figure:: ../../_static/img/spotify-engineering-culture-01.png
+    :scale: 50%
+    :align: center
+
+    Spotify Engineering Culture @youtube.com
+
+
 Community
 ---------
 

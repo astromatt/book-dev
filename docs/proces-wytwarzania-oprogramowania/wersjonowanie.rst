@@ -45,6 +45,8 @@ Wersja ``bugfix``
 
 Wersja ``bugfix`` jest przeznaczona do użytku wyłącznie dla poprawek bezpieczeństwa oraz funkcjonalności, wprowadzonych omyłkowo lub zauważonych podczas zwiększenia wersji ``minor``.
 
+.. _git-flow:
+
 Zarządzanie gałęziami
 =====================
 
