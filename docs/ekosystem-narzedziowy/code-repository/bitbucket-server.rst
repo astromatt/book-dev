@@ -1,12 +1,11 @@
-****************
 Bitbucket Server
-****************
+================
 
 Install
-=======
+-------
 
 Download official ZIP archive
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
@@ -16,11 +15,65 @@ Download official ZIP archive
     sh atlassian-bitbucket*/bin/start-bitbucket.sh
 
 Install using Docker
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
     docker pull atlassian/bitbucket-server
     docker run -u root -v /data/bitbucket:/var/atlassian/application-data/bitbucket atlassian/bitbucket-server chown -R daemon  /var/atlassian/application-data/bitbucket
     docker run -v /data/bitbucket:/var/atlassian/application-data/bitbucket --name="bitbucket" -d -p 7990:7990 -p 7999:7999 atlassian/bitbucket-server
+
+
+Zadania
+-------
+
+Instalacja
+^^^^^^^^^^
+* Zainstaluj `Bitbucket`
+* Skonfiguruj licencję wykorzystując evaluation license z https://my.atlassian.com/products/index
+
+Dane https://id.atlassian.com/:
+
+    - workshop-2017-02@astrotech.io
+    - etZ-ovM-neo-P8b
+
+Konfiguracja
+^^^^^^^^^^^^
+* Stwórz projekt ``DevOps Workshop`` o kluczu ``DOW``
+* Zaciągnij projekty:
+
+    * https://github.com/SonarSource/sonar-examples
+    * https://github.com/SonarSource/sonar-scanning-examples
+    * https://github.com/SonarSource/sonar-custom-rules-examples
+    * https://github.com/SonarSource/sonar-custom-plugin-example
+
+* Zablokuj ``git push --force`` dla ``sonar-examples``
+* W jakim katalogu na dysku znajdują się repozytoria?
+
+Bitbucket na poziomie systemu operacyjnego
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Z poziomu systemu operacyjnego dopisz do ``sonar-examples`` ``pre-receive`` `Git hook` aby:
+
+    * do pliku ``/tmp/sonar-examples.log``
+    * dokładał linię z obecną datą w formacie ISO ``date --iso-8601=seconds``
+    * wysyłał maila (subject: commit message, body: diff commita) do Ciebie
+    * do czego jeszcze możesz wykorzystać tą funkcjonalność?
+
+``Yet Another Commit Checker``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Zainstaluj plugin ``Yet Another Commit Checker``
+* W konfiguracji wymuś sprawdzanie:
+
+    * branchy w konwencji `GIT Flow`
+    * commit messages zawierające link do zadania w Jira
+    * zadanie w jirze musi istnieć
+
+Jenkins Integration
+^^^^^^^^^^^^^^^^^^^
+* Skonfiguruj Bitbucket tak, aby wyświetlał informacje na temat budowania branchy i commitów
+
+Jira Integration
+^^^^^^^^^^^^^^^^
+* Zakładanie branchy z poziomu Jiry
+* Wyświetlanie kodu oraz informacji o `Pull Request`
 
