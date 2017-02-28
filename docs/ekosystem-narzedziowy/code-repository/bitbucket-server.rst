@@ -41,8 +41,8 @@ Konfiguracja
 * Zablokuj ``git push --force`` dla ``sonar-examples``
 * W jakim katalogu na dysku znajdują się repozytoria?
 
-Bitbucket na poziomie systemu operacyjnego
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Operacje na poziomie systemu operacyjnego
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Z poziomu systemu operacyjnego dopisz do ``sonar-examples`` ``pre-receive`` `Git hook` aby:
 
     * do pliku ``/tmp/sonar-examples.log``
@@ -50,8 +50,8 @@ Bitbucket na poziomie systemu operacyjnego
     * wysyłał maila (subject: commit message, body: diff commita) do Ciebie
     * do czego jeszcze możesz wykorzystać tą funkcjonalność?
 
-``Yet Another Commit Checker``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`Yet Another Commit Checker`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Zainstaluj plugin ``Yet Another Commit Checker``
 * W konfiguracji wymuś sprawdzanie:
 
@@ -59,12 +59,23 @@ Bitbucket na poziomie systemu operacyjnego
     * commit messages zawierające link do zadania w Jira
     * zadanie w jirze musi istnieć
 
-Jenkins Integration
-^^^^^^^^^^^^^^^^^^^
+`Jenkins` integration
+^^^^^^^^^^^^^^^^^^^^^
 * Skonfiguruj Bitbucket tak, aby wyświetlał informacje na temat budowania branchy i commitów
 
-Jira Integration
-^^^^^^^^^^^^^^^^
+`Jira` integration
+^^^^^^^^^^^^^^^^^^
 * Zakładanie branchy z poziomu Jiry
 * Wyświetlanie kodu oraz informacji o `Pull Request`
 
+`SonarQube` integration
+^^^^^^^^^^^^^^^^^^^^^^^
+* Skonfiguruj tak, by w każdym `Pull Request` jako komentarz do linii kodu wyświetlały się uwagi z `SonarQube`
+* Dostosuj poziom komentarzy, aby nie zalać programisty ich zbyt dużą ilością, np. wyświetlaj tylko ``Blocker`` i ``Critical``
+
+Changelog
+^^^^^^^^^
+* Za pomocą skryptu wygeneruj changelog pomiędzy dwoma wersjami
+* Opisy i dane (priorytet, komponenty itp) zaciągnij z Jiry
+* Dlaczego tak jest lepiej?
+* za pomocą git hook zrób aby takie informacje przychodziły na maila przy pushu do mastera

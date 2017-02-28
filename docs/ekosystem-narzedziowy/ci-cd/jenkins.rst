@@ -239,7 +239,7 @@ Podstawy składni `Groovy`
 Podstawy składni Jenkins DSL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The DSL execution engine exposes several methods to create Jenkins jobs, views, folders and config files. These methods imply the creation of a Jenkins item and the closure to the method can be used to define the item's settings. The only mandatory option is the item's name.
+Jedyne wymagane to nazwa `Job`:
 
 :DSL Methods:
     .. code-block:: groovy
@@ -442,19 +442,20 @@ Instalacja Jenkinsa i konfuguracja buildów
 
 Budowanie Pull Requestów
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- Skonfiguruj plan by budował gałęzie `GIT Flow`
+- Skonfiguruj plan by budował gałęzie `GIT Flow`:
+
     - `Pull Requests`
     - ``feature``
     - ``bugfix``
     - ``master``
 
+- Wykorzystaj któryś z pluginów:
+
+    * https://plugins.jenkins.io/bitbucket-build-status-notifier
+    * https://plugins.jenkins.io/stashNotifier
+
 .. toggle-code-block:: rst
-    :label: Pokaż rozwiązanie dla Bitbucket Server
-
-    Connect Jenkins with Bitbucket Server:
-
-    - Install Stash Notifier Plugin in Jenkins
-    - In Configure System - Global Jenkins System Configuration set as follows
+    :label: Pokaż konfigurację dla Bitbucket Server
 
     =============== ======================
     Key             Value
@@ -537,6 +538,10 @@ Budowanie Pull Requestów
     Post-build Actions       Notify Stash Instance
     ======================== ======================== =============================================
 
+.. toggle-code-block:: rst
+    :label: Pokaż plugin, który to zrobi za Ciebie
+
+    * https://plugins.jenkins.io/stash-pullrequest-builder
 
 Budowanie Checkstyle, PMD, JaCoCo, Findbugs i PITest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
