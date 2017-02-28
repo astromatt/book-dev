@@ -37,6 +37,7 @@ Cloud
     :titlesonly:
     :glob:
 
+    cloud/index.rst
     cloud/*
 
 Code Repository

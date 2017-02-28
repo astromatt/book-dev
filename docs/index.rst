@@ -25,6 +25,7 @@ Wprowadzenie
     wprowadzenie/wstep.rst
     wprowadzenie/agile-vs-devops.rst
     wprowadzenie/srodowisko-wirtualne.rst
+    wprowadzenie/buzzwordy.rst
 
 Proces wytwarzania oprogramowania
 =================================
