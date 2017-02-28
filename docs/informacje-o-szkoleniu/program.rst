@@ -109,9 +109,13 @@ Dzień 3 - Cloud
     * Cloud Foundry
 
 * Microservices
-
+* ELK
+* statsd i graphite
 
 Dzień 4 - All together
 ^^^^^^^^^^^^^^^^^^^^^^
 * Docker
-*
+* jClouds
+* Continuous Delivery
+* Ansible
+* Terraform
