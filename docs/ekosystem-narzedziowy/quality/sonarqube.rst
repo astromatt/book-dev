@@ -72,6 +72,8 @@ Instalacja
         -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
         sonarqube
 
+.. tip:: User admin, Hasło admin
+
 Wrzucanie wyników statycznej analizy kodu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Czy wcześniej zainstalowałeś `Bitbucket Server`?
