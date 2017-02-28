@@ -130,7 +130,7 @@ Co zauważyłeś? Jak można wykorzystać te informacje?
 
 Kod przedstawia wynik polecenia ``facter`` na świerzej maszynie `Ubuntu` postawionej w `Amazon AWS`
 
-.. code-block::
+.. code-block:: text
 
     architecture => amd64
     augeasversion => 1.4.0
@@ -637,7 +637,7 @@ Instalacja i konfiguracja MySQL
 - Nadaj wszystkie uprawnienia dla usera ``myusername`` dla bazy ``mydb``
 - Ustaw backupowanie bazy danych do ``/tmp/mysql-backup``
 
-.. code-block:: sh
+.. toggle-code-block:: sh
     :label: Pokaż rozwiązanie instalacji pakietu - Instalacja i konfiguracja MySQL
 
     puppet module install puppetlabs-mysql

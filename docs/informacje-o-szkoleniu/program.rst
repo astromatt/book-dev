@@ -37,7 +37,8 @@ Microservices and Docker
     - Working with container
     - Building images using Dockerfile
     - Running containers as services, administration and security of containers
-    - Management of interconnected containers using Docker Compose and SystemD g) Introduction to clustering
+    - Management of interconnected containers using Docker Compose and SystemD g)
+    - Introduction to clustering
 
 DevOps in the cloud
 ^^^^^^^^^^^^^^^^^^^
@@ -74,9 +75,43 @@ Dodatkowe tematy
 Agenda
 ------
 
-Dzień 1
-^^^^^^^
+Dzień 1 - Provisioning
+^^^^^^^^^^^^^^^^^^^^^^
 * Agile i DevOps
 * Vagrant
 * Puppet
 * Git Flow
+
+Dzień 2 - Ecosystem
+^^^^^^^^^^^^^^^^^^^
+* Stawianie i łączenie narzędzi:
+
+    * Bitbucket
+    * Jenkins
+    * SonarQube
+
+* Konfiguracja:
+
+    Budowanie gałęzi Git Flow
+
+
+
+Dzień 3 - Cloud
+^^^^^^^^^^^^^^^
+* IaaS
+
+    * Amazon AWS
+    * Google Cloud
+
+* PaaS
+
+    * Heroku
+    * Cloud Foundry
+
+* Microservices
+
+
+Dzień 4 - All together
+^^^^^^^^^^^^^^^^^^^^^^
+* Docker
+*
