@@ -413,6 +413,7 @@ Instalacja Jenkinsa i konfuguracja buildów
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
     - `ut` - unit tests
     - `it` - integration tests
+- Ustaw joby przez `Jenkinsa`
 
 .. toggle-code-block:: sh
     :label: Pokaż rozwiązanie za pomocą ``apt-get`` na `Ubuntu`
@@ -442,14 +443,14 @@ Instalacja Jenkinsa i konfuguracja buildów
 
 Budowanie Pull Requestów
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- Skonfiguruj plan by budował gałęzie `GIT Flow`:
+- Skonfiguruj ręcznie plan by budował gałęzie `GIT Flow`:
 
     - `Pull Requests`
     - ``feature``
     - ``bugfix``
     - ``master``
 
-- Wykorzystaj któryś z pluginów:
+- Spróbuj wykorzystać któryś z dostępnych pluginów:
 
     * https://plugins.jenkins.io/bitbucket-build-status-notifier
     * https://plugins.jenkins.io/stashNotifier
