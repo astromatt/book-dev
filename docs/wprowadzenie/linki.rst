@@ -18,6 +18,10 @@ Moje prezentacje
 
 * `Pozostałe prezentacje <https://www.slideshare.net/mattharasymczuk/presentations>`_
 
+Informatyczne
+-------------
+* http://infoq.com
+
 
 Allegro
 -------
@@ -25,6 +29,8 @@ Allegro
 * `Krzysztof Dębski - Buzzwordy <https://www.youtube.com/watch?v=wOSQegt_nI8>`_
 * `Krzysztof Dębski - Open Source <https://www.youtube.com/watch?v=F5Z6mqE-uVg>`_
 * `Krzysztof Dębski - Large Scale Events <https://www.youtube.com/watch?v=SrT-amJgTTc>`_
+* ralph
+* Tipboard
 
 Uncle Bob
 ---------

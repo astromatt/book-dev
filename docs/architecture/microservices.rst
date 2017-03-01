@@ -5,7 +5,8 @@ Microservices
 .. todo:: Przepisanie microservices jako osobne szkolenie
 .. todo:: Reactive manifesto, reactive programming
 .. todo:: spock framework
-
+.. todo:: Blockchain uruchamianie kodu
+.. todo:: Function as a Service
 
 .. contents::
 
@@ -79,6 +80,8 @@ Poświęcenie
     - Consistency
     - Isolation
     - Durability
+
+.. todo:: dwufazowe kommity
 
 BASE
 ----
@@ -221,6 +224,10 @@ Polyglog Programming i Polyglog Persistance
 - nowe technologie
 - różne działające równoległe wersje np. baz danych
 - Deprecation policy
+
+    - Przykład Webapi
+    - Przykład Visual Fox Pro -> Java
+    - Przykład Twitter API
 
 Ludzie
 ^^^^^^

@@ -77,45 +77,43 @@ Agenda
 
 Dzień 1 - Provisioning
 ^^^^^^^^^^^^^^^^^^^^^^
-* Agile i DevOps
-* Vagrant
-* Puppet
-* Git Flow
+- Agile i DevOps
+- Vagrant
+- Puppet
+- Git Flow
 
 Dzień 2 - Ecosystem
 ^^^^^^^^^^^^^^^^^^^
-* Stawianie i łączenie narzędzi:
+- Stawianie i łączenie narzędzi:
 
-    * Bitbucket
-    * Jenkins
-    * SonarQube
+    - Bitbucket
+    - Jenkins
+    - SonarQube
 
-* Konfiguracja:
+- Konfiguracja:
 
-    Budowanie gałęzi Git Flow
-
-
+    - Budowanie gałęzi Git Flow
 
 Dzień 3 - Cloud
 ^^^^^^^^^^^^^^^
-* IaaS
+- Microservices
+- IaaS
 
-    * Amazon AWS
-    * Google Cloud
+    - Amazon AWS
+    - Google Cloud
 
-* PaaS
+- PaaS
 
-    * Heroku
-    * Cloud Foundry
+    - Heroku
+    - Cloud Foundry
 
-* Microservices
-* ELK
-* statsd i graphite
 
 Dzień 4 - All together
 ^^^^^^^^^^^^^^^^^^^^^^
-* Docker
-* jClouds
-* Continuous Delivery
-* Ansible
-* Terraform
+- Docker
+- jClouds
+- Continuous Delivery
+- Ansible
+- Terraform
+- ELK
+- statsd i graphite
