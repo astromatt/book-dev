@@ -66,6 +66,7 @@ Cloud
 .. toctree::
     :titlesonly:
     :glob:
+    :caption: Cloud
 
     cloud/index.rst
     cloud/*
