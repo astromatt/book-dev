@@ -3,6 +3,9 @@ Microservices
 
 .. todo:: Przepisanie microservices jako osobny katalog z podziałem na tematy
 .. todo:: Przepisanie microservices jako osobne szkolenie
+.. todo:: Reactive manifesto, reactive programming
+.. todo:: spock framework
+
 
 .. contents::
 
@@ -19,7 +22,7 @@ Cechy rozproszonych systemów
 - Niezależne domeny awarii
 - Możliwość pisania w wielu językach
 - Równoległość komponentów (concurrency)
-- Brak globalnego zegara i możliwości jednoznacznego określenia
+- Brak globalnego zegara i możliwości jednoznacznego określenia czasu i kolejności
 
 8 błędnych założeń
 ------------------
@@ -32,7 +35,7 @@ Cechy rozproszonych systemów
     - sieć w serwerowni jest niezawodna
     - MTBF routera jest 50k h
     - netsplit w publicznych cloudach są normalne
-    - zwiększa sięlatency
+    - zwiększa się latency
 
 - opóźnienia w sieci są zerowe
 - przepustowość sieci jest nieskończona
