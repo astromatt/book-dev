@@ -1,7 +1,9 @@
 Microservices
 =============
 
-Jeżeli jedna usługa pada i to pociąga za sobą cały system, to nie jest to architekura `Microservices`.
+.. contents::
+
+.. note:: Jeżeli jedna usługa pada i to pociąga za sobą cały system, to nie jest to architekura `Microservices`.
 
 Spojrzenie na Mikroserwisy z perspektywy biznesu
 ------------------------------------------------
