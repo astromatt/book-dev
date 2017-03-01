@@ -23,6 +23,10 @@ Cechy rozproszonych systemów
 
 8 błędnych założeń
 ------------------
+
+    The Eight Fallacies of Distributed Computing
+    -- Peter Deutsch, 1991
+
 - sieć jest niezawodna:
 
     - sieć w serwerowni jest niezawodna
@@ -60,9 +64,6 @@ Cechy rozproszonych systemów
     - mogą być różnie stabilne
     - mogą mieć różne charakterystyki
 
-
-    The Eight Fallacies of Distributed Computing
-    -- Peter Deutsch, 1991
 
 Poświęcenie
 -----------
