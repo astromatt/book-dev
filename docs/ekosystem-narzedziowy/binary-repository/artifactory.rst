@@ -1,8 +1,8 @@
 Artifactory
------------
+===========
 
 Installation
-^^^^^^^^^^^^
+------------
 
 .. code-block:: sh
 
