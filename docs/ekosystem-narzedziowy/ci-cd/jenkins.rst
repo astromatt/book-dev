@@ -106,7 +106,7 @@ Podstawy składni `Groovy`
         }
 
 :Funkcje:
-    * Optional ``return``
+    - Optional ``return``
 
     .. code-block:: groovy
 
@@ -460,8 +460,8 @@ Budowanie Pull Requestów
 
 - Spróbuj wykorzystać któryś z dostępnych pluginów:
 
-    * https://plugins.jenkins.io/bitbucket-build-status-notifier
-    * https://plugins.jenkins.io/stashNotifier
+    - https://plugins.jenkins.io/bitbucket-build-status-notifier
+    - https://plugins.jenkins.io/stashNotifier
 
 .. toggle-code-block:: rst
     :label: Pokaż konfigurację dla Bitbucket Server
@@ -550,7 +550,7 @@ Budowanie Pull Requestów
 .. toggle-code-block:: rst
     :label: Pokaż plugin, który to zrobi za Ciebie
 
-    * https://plugins.jenkins.io/stash-pullrequest-builder
+    - https://plugins.jenkins.io/stash-pullrequest-builder
 
 Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
