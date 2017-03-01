@@ -1,2 +1,0 @@
-Utrzymanie i Rozwój
-===================
