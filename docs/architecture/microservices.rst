@@ -103,6 +103,10 @@ Hermes
 - gdy zajdzie zdarzenie
 - system wypycha je do subskrybentów
 - nakładka na `Apache Kafka`
+- zarządza dostarczaniem wiadomości `only once policy`
+- throttling
+- load ballancing
+- security policy dla wiadomości
 
 .. figure:: ../../_static/img/microservices-hermes.png
     :scale: 50%
@@ -204,6 +208,7 @@ Polyglog Programming i Polyglog Persistance
 - overhead związany z wielością usług
 - nowe technologie
 - różne działające równoległe wersje np. baz danych
+- Deprecation policy
 
 Ludzie
 ^^^^^^
@@ -329,6 +334,7 @@ Cechy API
 ^^^^^^^^^
 - Werjsonowane
 - Stabilne
+- Deprecation policy
 - HTTP
 - REST
 - JSON
