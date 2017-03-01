@@ -1,7 +1,7 @@
 Amazon AWS
 ==========
 
-.. figure:: ../../../_static/img/cloud-amazon-services-01.png
+.. figure:: ../../_static/img/cloud-amazon-services-01.png
     :scale: 50%
     :align: center
 

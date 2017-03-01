@@ -1,12 +1,6 @@
-## Adjust your settings here
-
 CPU = 2
-RAM = 1024
+RAM = 2048
 
-
-################################
-# Do not modify anything below #
-################################
 
 Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
@@ -34,7 +28,8 @@ Vagrant.configure("2") do |config|
         v.memory = RAM
     end
 
-    config.vm.provision "shell", inline: "(echo ubuntu; echo ubuntu) |sudo passwd ubuntu"
+    #config.vm.provision "shell", inline: "(echo ubuntu; echo ubuntu) |sudo passwd ubuntu"
+	config.vm.provision "shell", path: "bin/provision.sh"
 
 end
 
