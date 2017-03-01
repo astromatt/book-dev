@@ -219,6 +219,10 @@ Ludzie
     - zmiana przyzwyczajeń
     - zmiana języka programowania i technologii
 
+- Ludzie muszą testować
+- Wymiana wiedzy pomiędzy ludźmi (eurowizja)
+- Hackatony wdrożeniowe
+
 Handoff
 ^^^^^^^
 - ze względu na bardzo rozproszone środowisko ludzie uruchamiają swoje usługi sami
