@@ -7,6 +7,9 @@ Microservices
 .. todo:: spock framework
 .. todo:: Blockchain uruchamianie kodu
 .. todo:: Function as a Service
+.. todo:: Database sharding
+.. todo:: Przykład edok w cloud i bazy po stronie klienta
+
 
 .. contents::
 
@@ -276,10 +279,16 @@ Audyt i Compliance
 
 Microdata
 ---------
-- ekspord danych do Hadoopa
+- eksport danych do Hadoopa
 - normalizacja danych z różnych technologii i baz danych
 - brak informacji na świecie jak to robić
 - inny sposób dostępu do danych dla analityki (dostęp do miliardów rekordów po HTTP i API nie jest optymalny)
+
+    - Replikacja baz danych
+    - BSON
+    - Protocol Buffers (Protobuf)
+    - Trhift
+
 
 SLA usług
 ---------
@@ -296,6 +305,8 @@ SLA usług
 Microservice testing
 --------------------
 * https://martinfowler.com/articles/microservice-testing/
+
+- Historia ze stubami w dużym polskim telecomie
 
 Architecture
 ------------
@@ -351,12 +362,16 @@ API
 
 Cechy API
 ^^^^^^^^^
-- Werjsonowane
+- Werisonowane
 - Stabilne
 - Deprecation policy
 - HTTP
 - REST
 - JSON
+
+.. todo:: przykład stabilności webapi i mobilnych stron
+.. todo:: wersjonowanie w nagłówkach HTTP i q=...
+.. todo:: http://allegro.tech/2015/01/Content-headers-or-how-to-version-api.html
 
 
 API gateway

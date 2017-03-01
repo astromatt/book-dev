@@ -31,6 +31,7 @@ Allegro
 * `Krzysztof Dębski - Large Scale Events <https://www.youtube.com/watch?v=SrT-amJgTTc>`_
 * ralph
 * Tipboard
+* `Krzysztof Dębski - Wersionowanie API - <http://allegro.tech/2015/01/Content-headers-or-how-to-version-api.html>`_
 
 Uncle Bob
 ---------
