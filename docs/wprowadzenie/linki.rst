@@ -38,7 +38,7 @@ Agile
 Microservices
 -------------
 * `Martin Fowler - Microservice Testing <https://martinfowler.com/articles/microservice-testing/>`_
-
+* `Reactive Manifesto <http://www.reactivemanifesto.org>`_
 
 Lean Startup
 ------------

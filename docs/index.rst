@@ -23,6 +23,7 @@ Wprowadzenie
 
     wprowadzenie/wstep.rst
     wprowadzenie/agile-vs-devops.rst
+    wprowadzenie/utrzymanie-vs-rozwoj.rst
     wprowadzenie/lean-startup.rst
     wprowadzenie/srodowisko-wirtualne.rst
     wprowadzenie/buzzwordy.rst
