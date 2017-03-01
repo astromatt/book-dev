@@ -60,6 +60,14 @@ Ekosystem narzędziowy
 
     ekosystem-narzedziowy/index.rst
 
+Architecture
+------------
+.. toctree::
+    :titlesonly:
+    :glob:
+    :caption: Architecture
+
+    architecture/*
 
 Cloud
 -----

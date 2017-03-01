@@ -21,6 +21,7 @@ Moje prezentacje
 
 Allegro
 -------
+* `Mateusz Gajewski - Microservices architecture pitfalls <https://www.youtube.com/watch?v=yxZm0Fhn9Tk>`_
 * `Krzysztof Dębski - Buzzwordy <https://www.youtube.com/watch?v=wOSQegt_nI8>`_
 * `Krzysztof Dębski - Open Source <https://www.youtube.com/watch?v=F5Z6mqE-uVg>`_
 * `Krzysztof Dębski - Large Scale Events <https://www.youtube.com/watch?v=SrT-amJgTTc>`_
@@ -33,6 +34,10 @@ Uncle Bob
 Agile
 -----
 * `Krzysztof Dąbrowski, CIO - Scaling Scrum @Allegro <https://www.youtube.com/watch?v=X2xuROuGBUk>`_
+
+Microservices
+-------------
+* `Martin Fowler - Microservice Testing <https://martinfowler.com/articles/microservice-testing/>`_
 
 
 Lean Startup
