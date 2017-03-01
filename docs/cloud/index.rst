@@ -1,6 +1,8 @@
 Cloud
 =====
 
+.. contents::
+
 Wprowadzenie do technologii i platform chmurowych
 -------------------------------------------------
 - zapoznanie uczestników z podstawowymi pojęciami oraz standardami związanymi z chmurami obliczeniowymi,
@@ -55,7 +57,7 @@ Build an application with a monolithic architecture. For example:
 -  a single Java WAR file.
 -  a single directory hierarchy of Rails or NodeJS code
 
-.. figure:: ../../../_static/img/microservices-monolithic-application.jpg
+.. figure:: ../../_static/img/microservices-monolithic-application.jpg
     :scale: 50%
     :align: center
 
@@ -78,7 +80,7 @@ Microservices architecture
    maintained using either database replication mechanisms or
    application-level events.
 
-.. figure:: ../../../_static/img/microservices-architecture.jpg
+.. figure:: ../../_static/img/microservices-architecture.jpg
     :scale: 50%
     :align: center
 
@@ -99,7 +101,7 @@ API gateway
    client is authorized to perform the request
 -  Netflix API gateway
 
-.. figure:: ../../../_static/img/microservices-api-gateway.jpg
+.. figure:: ../../_static/img/microservices-api-gateway.jpg
     :scale: 50%
     :align: center
 
@@ -115,7 +117,7 @@ Client-side discovery
 -  Ribbon Client is an HTTP client that queries Eureka to route HTTP
    requests to an available service instance
 
-.. figure:: ../../../_static/img/microservices-client-side-discovery.jpg
+.. figure:: ../../_static/img/microservices-client-side-discovery.jpg
     :scale: 50%
     :align: center
 
@@ -130,7 +132,7 @@ Server-side discovery
    router, and forwards the request to an available service instance.
 -  AWS Elastic Load Balancer (ELB), Kubernetes, Marathon
 
-.. figure:: ../../../_static/img/microservices-server-side-discovery.jpg
+.. figure:: ../../_static/img/microservices-server-side-discovery.jpg
     :scale: 50%
     :align: center
 
@@ -233,7 +235,7 @@ Database per Service
 -  Keep each microservice’s persistent data private to that service and
    accessible only via its API.
 
-.. figure:: ../../../_static/img/microservices-database-per-service.png
+.. figure:: ../../_static/img/microservices-database-per-service.png
     :scale: 50%
     :align: center
 
@@ -253,7 +255,7 @@ Shared database
    service freely accesses data owned by other services using local ACID
    transactions.
 
-.. figure:: ../../../_static/img/microservices-database-shared.png
+.. figure:: ../../_static/img/microservices-database-shared.png
     :scale: 50%
     :align: center
 
@@ -274,7 +276,7 @@ Event sourcing
    Sourcing. Event Sourcing persists each business entity as a sequence
    of events, which are replayed to reconstruct the current state.
 
-.. figure:: ../../../_static/img/microservices-event-sourcing.png
+.. figure:: ../../_static/img/microservices-event-sourcing.png
     :scale: 50%
     :align: center
 

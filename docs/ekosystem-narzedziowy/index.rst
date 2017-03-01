@@ -31,15 +31,6 @@ CI/CD
 
     ci-cd/*
 
-Cloud
------
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    cloud/index.rst
-    cloud/*
-
 Code Repository
 ---------------
 .. toctree::

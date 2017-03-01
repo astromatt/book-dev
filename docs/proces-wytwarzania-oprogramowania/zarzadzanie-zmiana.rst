@@ -1,6 +1,5 @@
-*************************
 Proces zarządzania zmianą
-*************************
+=========================
 
 .. figure:: ../../_static/img/processes.png
     :scale: 75%
@@ -9,7 +8,7 @@ Proces zarządzania zmianą
     Procesy zarządzania zmianą.
 
 Procesy wejścia dla zarządzania zmianą
-======================================
+--------------------------------------
 
 Wejściem do procesu zmiany jest zgłoszenie otrzymane poprzez określony kanał kontaktowy. Pierwszym zadaniem związanym ze zgłoszeniem jest określenie jego typu (incydent, wniosek o usługę lub inne).
 
@@ -20,17 +19,17 @@ Wnioski o usługę realizowane są w trybie indywidualnym ale powtarzalnym (zwi�
 Przyczyna wystąpienia incydentu może okazać się oczywista, co skutkuje w szybkim rozwiązaniu i zamknięciu incydentu. W identyfikacji przyczyny przydatna jest Baza Wiedzy dotycząca istniejących rozwiązań. W przypadku, gdy nie jest możliwa szybka identyfikacja przyczyny i rozwiązanie zgłoszenia, następuje uruchomienie procesu Zarządzania Problemem.
 
 Incydent (błąd w funkcjonalności aplikacji)
-===========================================
+-------------------------------------------
 
 Incydent to każde zdarzenie, które nie jest częścią normalnego działania usługi, zakłóca tę usługę, które powoduje lub może powodować przerwę w dostarczaniu usługi, względnie obniżenie jej jakości.
 
 Wniosek o usługę (zmiana funkcjonalności)
-=========================================
+-----------------------------------------
 
 Wnioski o usługę mają charakter powtarzalny, obsługiwane są zawsze w ten sam sposób, dla których możliwe jest zagwarantowanie przez Firmę czasu realizacji. 
 
 Zarządzanie incydentem
-======================
+----------------------
 
 Celem procesu Zarządzania Incydentem jest przywrócenie normalnego działania aplikacji i usług tak szybko, jak to możliwe oraz minimalizowanie niekorzystnego wpływu Incydentu na działanie aplikacji w przyszłości, tak by zapewnić najwyższy możliwy poziom jakości i dostępności świadczonych przez Projekt usług.
 
@@ -61,7 +60,7 @@ Kolejnym krokiem jest zamknięcie incydentu, polegające na zapewnieniu:
 * data i czas zamknięcia incydentu.
 
 Zarządzanie problemem
-=====================
+---------------------
 
 Celem procesu Zarządzania Problemem realizowanego przez Firmę jest minimalizowanie niekorzystnego wpływu incydentów oraz zabezpieczenie przed ponownym pojawieniem się incydentów związanych z tą samą przyczyną.
 
@@ -74,7 +73,7 @@ Rezultatem procesu Zarządzania Problemem musi być wpis do Bazy Wiedzy dokonany
 Może wystąpić sytuacja, w której rozwiązanie problemu będzie wymagało od pracowników obsługujących problem  wprowadzenia zmian. Zmiany są realizowane w procedurze Zarządzania Zmianą i w takim przypadku dopiero zastosowanie (przygotowanie, przetestowanie i wprowadzenie) zmiany pozwala zamknąć rozwiązany problem oraz wszelkie incydenty z nim powiązane.
 
 Proces zarządzania zmianą
-=========================
+-------------------------
 
 Zmiana, to dodanie, modyfikacja lub usunięcie czegokolwiek, co mogłyby mieć wpływ na działanie aplikacji i świadczone przez nią usługi. W ten sposób ogólna definicja zmiany obejmuje swym zakresem każdą zmianę w architekturze, procesach, narzędziach i innych elementach konfiguracji. 
 
@@ -107,7 +106,7 @@ Istotne jest to, że proces zarządzania zmianą nie realizuje samego wdrożenia
 Zarządzanie Zmianami jest silnie powiązane z Zarządzaniem Konfiguracją i Zarządzaniem Wydaniami. Z tego względu planuje się implementację tych procesów równocześnie.
 
 Zarządzanie wydaniami, wydajnością i wdrożeniami
-================================================
+------------------------------------------------
 
 W ramach procesu zarządzania wydaniami obowiązuje oddzielny proces opisany w dokumencie:  Proces wersjonowania aplikacji.
 
@@ -116,7 +115,7 @@ W ramach zarządzania wydajnością, obowiązuje proces opisany w dokumencie: Pr
 W ramach zarządzania wdrażaniem wersji, obowiązuje proces oparty o schemat przedstawiony w dokumencie: Proces wdrażania wersji (obejmuje on swym zakresem wszelkie środowiska istotne dla prac programistycznych, testów i akceptacji).
 
 Walidacja i testowanie usług
-============================
+----------------------------
 
 Warunkiem wdrożenia nowej wersji, a więc elementem procedury zarządzania zmianą – oprócz procesu zarządzania wydaniami i zarządzania wdrażaniem wersji jest również pozytywny wynik walidacji i testowania usług.
 
@@ -133,7 +132,7 @@ W Firmie stosujemy dwa podstawowe typy walidacji i testowania:
 Zakres testów, którym podlegają usługi jest określony w dokumencie / jest ustalany na spotkaniach roboczych przed rozpoczęciem testów ... lub jak wyżej w treści – ze wynika z opisanych w poszczególnych dokumentach funkcjonalności.
 
 Zarządzanie wiedzą
-==================
+------------------
 
 Celem Zarządzania Wiedzą jest zebranie wiedzy posiadanej przez pracowników Firmy tworzących aplikację i jej środowisko, ale także zapewnienie, że informacja jest dostępna przy założeniu: odpowiednia informacja trafia w odpowiednie miejsce lub jest dostarczana odpowiednim osobom.
 
@@ -146,10 +145,10 @@ Zakres informacji utrzymywanych w Bazie Wiedzy w zakresie Projektu obejmuje nas
 * Inna dokumentacja powstająca w trakcie wytwarzania i eksploatacji.
 
 Podział odpowiedzialności
-=========================
+-------------------------
 
 Zarządzający problemami
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 W zakresie obsługi problemów:
 
@@ -161,7 +160,7 @@ W zakresie obsługi problemów:
 * kontaktowanie się z dostawcami zewnętrznymi i zapewnienie, że wywiązują się oni z zapisanych ustaleń dotyczących rozwiązania problemu i/lub dostarczenia niezbędnych informacji dotyczących Problemu. 
 
 Zarządzający konfiguracją 
-=========================
+-------------------------
 
 Zakres odpowiedzialności: 
 
@@ -177,7 +176,7 @@ Zakres odpowiedzialności: 
 Za zarządzanie konfiguracją odpowiada wyznaczony pracownik po stronie Firmy.
 
 Zarządzający zmianami
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Zakres odpowiedzialności: 
 
@@ -202,7 +201,7 @@ W zakresie zarządzania wydaniem:
 Za rolę Zarządzającego Zmianami odpowiada wyznaczony pracownik po stronie Firmy.
 
 Zrządzający ServiceDesk
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Zarządzający Service Desk to rola realizowana przez wyznaczonego pracownika Firmy, która w całości odpowiada za funkcję Service Desk.
 
@@ -238,7 +237,7 @@ Ponadto w ramach zarządzania incydentami:
 * rozwój i utrzymanie systemu wspierającego proces Zarządzania Incydentem.
 
 Użytkownik
-----------
+^^^^^^^^^^
 
 Zakres uprawnień:
 
@@ -256,8 +255,8 @@ W zakresie zarządzania zmianą:
 
 * składanie propozycji modyfikacji aplikacji oraz związanych z nią usług.
 
-Zarządzający Wydaniami i Wdrożeniami
-------------------------------------
+Zarządzający wydaniami i wdrożeniami
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Zakres odpowiedzialności:
 

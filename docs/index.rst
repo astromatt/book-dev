@@ -1,9 +1,8 @@
-***************
 DevOps Workshop
-***************
+===============
 
 Informacje o dokumencie i szkoleniu
-===================================
+-----------------------------------
 
 .. include:: informacje-o-szkoleniu/autor.rst
 
@@ -14,7 +13,7 @@ Informacje o dokumencie i szkoleniu
 .. include:: informacje-o-szkoleniu/program.rst
 
 Wprowadzenie
-============
+------------
 
 .. toctree::
     :maxdepth: 2
@@ -30,7 +29,7 @@ Wprowadzenie
     wprowadzenie/linki.rst
 
 Proces wytwarzania oprogramowania
-=================================
+---------------------------------
 
 .. toctree::
     :maxdepth: 2
@@ -53,10 +52,20 @@ Proces wytwarzania oprogramowania
     proces-wytwarzania-oprogramowania/technologie.rst
 
 Ekosystem narzędziowy
-=====================
+---------------------
 .. toctree::
     :titlesonly:
     :caption: Ekosystem narzędziowy
     :glob:
 
     ekosystem-narzedziowy/index.rst
+
+
+Cloud
+-----
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    cloud/index.rst
+    cloud/*

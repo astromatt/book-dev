@@ -1,6 +1,5 @@
-*****************************************
 Wersjonowanie aplikacji i kodu źródłowego
-*****************************************
+=========================================
 
 Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym takim oprogramowaniu wcześniej czy później przychodzi konieczność wprowadzenia systemu do kontroli wersji takiego jak np. `GIT`. Już samo to narzędzie pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą jednak zaletą tego typu oprogramowania jest możliwość równoległej pracy nad systemem przez wiele osób. W XXI wieku gdzie projekty informatyczne stały się gigantyczne i długotrwałe, a w proces ich tworzenia zaangażowane są dziesiątki osób takie podejście jest jedynym skutecznym sposobem na wytwarzanie oprogramowania.
 
@@ -9,7 +8,7 @@ Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla popra
 Dzięki zastosowaniu takiej konstrukcji system do przechowywania repozytorium może wymieniać informacje z aplikacją do zarządzania zadaniami oraz przyporządkowywać dany kod odpowiednim zadaniom. Umożliwia to także łatwą weryfikację oraz śledzenie postępu pracy nad konkretną funkcjonalnością.
 
 Konwencja opisu zmian w systemie kontroli wersji
-================================================
+------------------------------------------------
 
 Każda zmiana w systemie kontroli wersji powinna zostać opisana według następującego przykładu:
 
@@ -20,7 +19,7 @@ Powyższy przykład wymaga zastosowania odpowiedniego identyfikatora zadania w s
 Dzięki zastosowaniu takiej konstrukcji system do hostowania repozytorium może wymieniać informacje z aplikacją do zarządzania zadaniami oraz przyporządkowywać dany kod odpowiednim zadaniom. Umożliwia to także łatwą weryfikację oraz śledzenie postępu pracy nad konkretną funkcjonalnością.
 
 Konwencja nazewnicza wersji
-===========================
+---------------------------
 
 W ramach projektów ma zastosowanie następująca konwencja nazewnicza wersji, tzw. `Semantic Versioning`:
 
@@ -31,29 +30,29 @@ Każda z kolejnych części rozdzielonych kropką jest liczbą naturalną (przyk
 Wszystkie narzędzia produkowane zewnętrznie oraz wewnętrznie powinny być opatrzone odpowiednią zależnością od konkretnej wersji. Nie przewiduje się wprowadzenia wersji "latest" ze względu ma możliwość niekompatybilności aplikacji ze zmianami.
 
 Wersja major
-------------
+^^^^^^^^^^^^
 
 Wersja ``major`` jest używana do określania zmian niekompatybilnych wstecznie lub przełomowych względem publicznego `API` aplikacji. Wszystkie narzędzia produkowane wewnętrznie lub zewnętrznie powinny precyzyjnie określać wersję ``major`` aplikacji, gdyż ma to krytyczny wpływ na ich działanie oraz kompatybilność.
 
 Wersja ``minor``
-----------------
+^^^^^^^^^^^^^^^^
 
 Wersja "minor" jest używana do określenia kolejnych przyrostów funkcjonalności aplikacji. Zgodnie z konwencją nazewniczą funkcjonalności w publicznym `API` dla danej wersji powinny wyłącznie przyrastać, chyba że jest to jasno określone i przeprowadzone zgodnie z polityką wyprowadzania zmian z użycia (ang. `deprecation`). Wprowadzone zmiany w wersji ``minor`` nie powinny powodować niekompatybilności pomiędzy oprogramowaniem zewnętrznym i wewnętrznym.
 
 Wersja ``bugfix``
------------------
+^^^^^^^^^^^^^^^^^
 
 Wersja ``bugfix`` jest przeznaczona do użytku wyłącznie dla poprawek bezpieczeństwa oraz funkcjonalności, wprowadzonych omyłkowo lub zauważonych podczas zwiększenia wersji ``minor``.
 
 .. _git-flow:
 
 Zarządzanie gałęziami
-=====================
+---------------------
 
 W ramach Firmy została wdrożona konwencja nazewnicza zwana `GIT Flow`. W ramach jej zastosowania wyróżnia się kilka specyficznych gałęzi rozwojowych oprogramowania. Każda z nich posiada unikalną rolę.
 
 Branch produkcyjny ``master``
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 W repozytorium główną gałęzią (ang. `branch`) jest ``master``. Przechowywana jest w nim stabilna wersja kodu będąca odpowiednikiem wersji znajdującej się na środowisku produkcyjnym. Scalenie kodu do brancha ``master`` jest równoważne z wydaniem nowej wersji i jest dopuszczalne jedynie, gdy testy automatyczne, funkcjonalne, regresyjne i jednostkowe nie pozostawiają wątpliwości na temat stabilności oraz braku defektów we wprowadzonych zmianach. Branch ten odpowiada 1 do 1 sytuacji na produkcji.
 
@@ -70,7 +69,7 @@ Dopuszcza się możliwość niewykorzystywania gałęzi ``develop`` w projekcie,
     Schemat scalania funkcjonalności z gałęzią ``master``.
 
 Gałąź integracyjna ``develop``
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 W dużych repozytoriach, nad którymi pracuje wiele osób na raz (np. kilka 6±3 osobowych zespołów) zachodzi konieczność wprowadzenie integracyjnej gałęzi rozwojowej (ang. `branch`). Zabieg ten ma na celu zabezpieczenie mastera przez scalaniem kodu, który mógłby go zdestabilizować. Dzięki takiemu podejściu proces staje się trochę bardziej skomplikowany ale za to pewniejszy i przewidywalny.
 
@@ -85,7 +84,7 @@ Stan powyżej opisany jest wysoce pożądany w przypadku każdego projektu bez w
     Schemat scalania funkcjonalności z gałęzią ``develop``.
 
 Gałąź tymczasowa ``release/X.Y``
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Wprowadzenie brancha integracyjnego, który w standardzie `GIT Flow` nazywany jest ``develop`` nakłada konieczność wprowadzenia sposobu wdrażania kodu, tj. scalania go z branchem produkcyjnym (``master``). W tym celu tymczasowo powoływany jest branch ``release/X.Y`` (`X.Y.Z` oznaczają numer wersji zgodnie z wcześniejszym opisem, tzw. `semantic versioning`: ``major.minor``), który jest tzw. kandydatem wydania (ang. `release candidate`). Na tej gałęzi odpalane są wszystkie testy, podnoszona jest wersja w ``pom.xml`` oraz w razie konieczności wprowadzane są poprawki. Po pozytywnym przejściu przez proces testów gałąź ``release/X.Y`` jest scalana z gałęzią ``master`` a zmiana (ang. ``commit``) jest otagowywany numerem wersji wdrożenia.
 
@@ -98,7 +97,7 @@ Obrazek poniżej przedstawia graficzną reprezentację procesu wdrożenia, tj. s
     Schemat scalania gałęzi ``develop`` z ``master`` za pośrednictwem ``release``.
 
 Rodziny branchy
----------------
+^^^^^^^^^^^^^^^
 
 Aby ułatwić wyszukiwanie wprowadzanych zmian w repozytorium oraz powiązania ich ze zleceniami i zadaniami w systemie do zarządzania projektami, Firma przyjęła konwencję nazywania gałęzi według następującego schematu:
 
@@ -113,7 +112,7 @@ Zgodnie z powyższym przykładem, nowa funkcjonalność powinna być poprzedzona
 Dzięki zastosowaniu powyższej konwencji w repozytorium wszystkie zmiany będą należały do odpowiednich gałęzi funkcjonalności lub błędów i będą jednoznacznie opisane. Umożliwia to dokładne śledzenie wszystkich zmian i łączenie ich z odpowiednimi zleceniami w systemie do zarządzania projektem.
 
 Branche ``bugfix/*`` i ``hotfix/*``
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Proces obsługi branchy ``bugfix/*`` i ``hotfix/*`` nieco się różni, chociaż schemat na rysunku wygląda bardzo podobnie.
 
@@ -128,7 +127,7 @@ Branche ``hotfix/*`` natomiast odpowiadają za poprawkę błędów znalezionych 
     Schemat scalania zmian z gałęzi z rodziny ``bugfix/*`` i ``hotfix/*`` do kodu źródłowego aplikacji.
 
 Branche ``feature/*``
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Branche z rodziny ``feature/*`` służą do wprowadzania funkcjonalności do systemu. Ich nazewnictwo jest ściśle powiązane z systemem kontroli zadań (ang. `issue tracker`). Dzięki takiej separacji mamy pełną transparentność i możliwość śledzenia historii wprowadzanych zmian w projekcie.
 
@@ -145,7 +144,7 @@ Branche z rodziny ``feature/*`` służą do wprowadzania funkcjonalności do sys
     Schemat scalania funkcjonalności ``feature/*`` z gałęzią ``develop``.
 
 Nazwa gałęzi dla kodu przeznaczonego do wdrożenia
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Podczas procesu wdrożenia następuje moment wydzielenia gałęzi tzw. kandydata do wdrożenia (ang. `release candidate`) o nazwie:
 
@@ -158,12 +157,12 @@ Na wyżej wymienionej gałęzi przeprowadzane są testy i wprowadzane ewentualne
 W miarę możliwości wszelkie akcje użytkownika końcowego lub testera powinno się automatyzować tak, aby proces weryfikacji odbywał się bezdotykowo a do jego wyników nie było zastrzeżeń.
 
 Tagowanie
-=========
+---------
 
 Po scaleniu gałęzi ``release/X.Y`` następuje proces oznaczania odpowiedniego momentu w historii przez tzw. tagowanie z etykietką o nazwie wersji zgodnej z odpowiednią konwencją. Dzięki temu w każdej chwili istnieje możliwość szybkiego powrotu do krytycznego momentu w repozytorium oraz zobaczenie logów zmian.
 
 Proces Pull Request
-===================
+-------------------
 
 Przed wprowadzeniem jakichkolwiek zmian do gałęzi integracyjnych wymagany jest proces tzw. `Pull Request`. Polega on na stworzeniu strony na której znajduje się wylistowany zmieniony kod, tj. dodane i usunięte linijki wraz ze zmodyfikowaną treścią. Na karcie `Pull Requesta` system do Ciągłej Integracji zamieszcza informacje o wyniku analizy i testów. Gdy wszystkie testy przejdą a zmiana uzyska zgodę (ang. `aproove`) przynajmniej dwóch osób pojawia się możliwość scalenia funkcjonalności do docelowego miejsca. Proces ten uodparnia kod na przypadkowe błędy. Większa ilość osób zaangażowanych w przegląd kodu procentuje w przyszłości w postaci zmniejszenia długu technicznego. Ponadto to rozwiązanie spełnia funkcję edukacyjną gdzie osoby z większym doświadczeniem mogą przekazać informacje swoim młodszym kolegom na temat konsekwencji zmian.
 
