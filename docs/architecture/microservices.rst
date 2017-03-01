@@ -1,9 +1,10 @@
 Microservices
 =============
 
-.. contents::
+.. todo:: Przepisanie microservices jako osobny katalog z podziałem na tematy
+.. todo:: Przepisanie microservices jako osobne szkolenie
 
-.. note:: Jeżeli jedna usługa pada i to pociąga za sobą cały system, to nie jest to architekura `Microservices`.
+.. contents::
 
 Spojrzenie na Mikroserwisy z perspektywy biznesu
 ------------------------------------------------
@@ -68,7 +69,12 @@ Poświęcenie
 - zapewnienie spójności kosztem dostępności
 - zapewnienie wysokiej dostępności kosztem spójności
 - wzajemnie się wykluczające
-- nie ma ACID!
+- nie ma ACID!:
+
+    - Atomicity
+    - Consistency
+    - Isolation
+    - Durability
 
 BASE
 ----
@@ -116,6 +122,8 @@ Hermes
 
 - można zapchać sieć, gdy ma się zcentralizowaną infrastrukturę
 - wykorzystanie HTTP/2.0 (multipleksowanie połączeń http, kompresja nagłówków, TLS)
+
+.. note:: Jeżeli jedna usługa pada i to pociąga za sobą cały system, to nie jest to architekura `Microservices`.
 
 Przepisywanie architektury
 --------------------------
