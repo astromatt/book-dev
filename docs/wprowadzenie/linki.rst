@@ -47,6 +47,11 @@ Microservices
 - `Martin Fowler - Microservice Testing <https://martinfowler.com/articles/microservice-testing/>`_
 - `Reactive Manifesto <http://www.reactivemanifesto.org>`_
 
+Cloud
+-----
+- `Amazon AWS 10 minute tutorials <https://aws.amazon.com/getting-started/tutorials/>`_
+
+
 Lean Startup
 ------------
 - `Eric Ries - Lean Startup <https://www.youtube.com/watch?v=fEvKo90qBns>`_

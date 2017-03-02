@@ -1,14 +1,79 @@
 Docker
 ======
 
+Instalacja
+----------
+
+- `macOS <https://docs.docker.com/docker-for-mac/install/>`_
+- `Ubuntu <https://docs.docker.com/engine/getstarted/linux_install_help/>`_
+- `Linux <https://docs.docker.com/engine/installation/>`_
+- `Windows <https://docs.docker.com/docker-for-windows/>`_
+
+CLI - Command Line Interface
+----------------------------
+
+Pierwsze polecenia
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    docker run hello-world
+    docker run -it ubuntu bash
+
 Przydatne polecenia
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sh
 
     docker run bash
-    docker ps
+    docker ps -a
     docker exec -u 0 -it CONTAINER_NAME bash
+    docker images
+
+
+Building Images
+---------------
+
+.. code-block:: sh
+
+    docker build -t docker .
+
+Docker Hub
+----------
+- https://hub.docker.com/
+
+.. code-block:: sh
+
+    docker run docker/whalesay cowsay boo
+
+Publikowanie
+^^^^^^^^^^^^
+
+.. code-block:: sh
+
+   docker login
+   docker tag 7d9495d03763 yourusername/docker-whale:latest
+   docker push yourusername/docker-whale
+
+.. code-block:: sh
+
+    docker image remove 7d9495d03763
+    docker run yourusername/docker-whale
+
+Dockerfile
+^^^^^^^^^^
+
+.. code-block:: dockerfile
+
+    FROM docker/whalesay:latest
+    RUN apt-get -y update && apt-get install -y fortunes
+    CMD /usr/games/fortune -a | cowsay
+
+.. code-block:: sh
+
+    docker build -t docker-whale .
+    docker images
+    docker run docker-whale
 
 
 Zadania do rozwiązania
@@ -18,8 +83,6 @@ Ehlo World
 ^^^^^^^^^^
 - Zainstaluj `Docker`
 - Czym różni się `Docker` od `Vagrant`?
-- Czy Docker może być na `Windows`?
-- Czy Docker może być na `OS X`?
 - Wyświetl `Ehlo World!` z wnętrza kontenera `Docker`
 - Wyświetl listę działających kontenerów `Docker`
 
