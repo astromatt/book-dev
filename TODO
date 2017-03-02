@@ -13,6 +13,7 @@ docs/architecture/microservices.rst: http://allegro.tech/2015/01/Content-headers
 docs/architecture/microservices.rst: POST, PUT, PATCH, GET, DELETE
 docs/architecture/microservices.rst: Wiele baz danych w jednej usłudze
 docs/architecture/microservices.rst: Mieszane, usługi mają jedną bazę danych
+docs/cloud/cloud-foundry.rst: Sprawdzić: https://brooklyn.apache.org/v/latest/ops/locations/
 docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: zamienić na osobne pliki
 docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: obniżyć poziom nagłówków
 docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: Jenkins Multibranch (out-of the box)
