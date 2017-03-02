@@ -50,6 +50,7 @@ Microservices
 Cloud
 -----
 - `Amazon AWS 10 minute tutorials <https://aws.amazon.com/getting-started/tutorials/>`_
+- `NoSQL Tapes - http://nosqltapes.com`_
 
 
 Lean Startup
