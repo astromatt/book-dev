@@ -5,6 +5,7 @@
 .vagrant
 .log
 
+*.log
 *.pyc
 *.icloud
 .coverage/
