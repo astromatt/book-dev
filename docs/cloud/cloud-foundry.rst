@@ -157,8 +157,8 @@ Getting a bit further into the trees, pushing an application to Cloud Foundry us
 Droplet Execution Agents (DEA) -> Diego
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Warden -> Garden
-- Health Manager (HM9000) → nsync, BBS, and Cell Rep
-- DEA Placement Algorithm → Diego Auction
+- Health Manager (HM9000) -> nsync, BBS, and Cell Rep
+- DEA Placement Algorithm -> Diego Auction
 - Message Bus (NATS)
 
 Consul
