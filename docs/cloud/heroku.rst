@@ -165,6 +165,12 @@ Visibility
 
     heroku pg:psql -c "select * from pg_stat_activity where application_name = 'heroku-postgres-backups'"
 
+Buildpack
+---------
+* co to?
+* do czego to służy?
+* jak to robić?
+
 Zadania
 -------
 
