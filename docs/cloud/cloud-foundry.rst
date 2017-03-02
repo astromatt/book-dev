@@ -134,7 +134,12 @@ Diego is the new container runtime system for Cloud Foundry, replacing the DEA (
 
 - https://github.com/cloudfoundry/diego-release
 
-Cloud Foundry has used two architectures for managing application containers: Droplet Execution Agents (DEA) and Diego. With the DEA architecture, the Cloud Controller schedules and manages applications on the DEA nodes. In the newer Diego architecture, Diego components replace the DEAs and the Health Manager (HM9000), and assume application scheduling and management responsibility from the Cloud Controller.
+Cloud Foundry has used two architectures for managing application containers:
+
+- Droplet Execution Agents (DEA)
+- Diego.
+
+With the DEA architecture, the Cloud Controller schedules and manages applications on the DEA nodes. In the newer Diego architecture, Diego components replace the DEAs and the Health Manager (HM9000), and assume application scheduling and management responsibility from the Cloud Controller.
 
 - https://github.com/cloudfoundry/diego-release/tree/develop/examples/bosh-lite
 
