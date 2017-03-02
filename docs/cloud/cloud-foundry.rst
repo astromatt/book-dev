@@ -320,9 +320,31 @@ A lightweight Pivotal Cloud Foundry® (PCF) installation that runs on a single v
 Zadania
 -------
 
+`pcfdev`
+^^^^^^^^
+- Zainstaluj na czystym `Ubunutu` na `Vagrant` ``pcfdev``
+
+.. toggle-code-block:: sh
+    :label: Pokaż rozwiązanie dla CF Dev
+
+    wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+    echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+    sudo apt-get update
+    sudo apt-get install openjdk-8-jdk
+    sudo apt-get install cf-cli
+
 Bosh Lite
 ^^^^^^^^^
 - Uruchom `Bosh Lite` na `Vagrant`
+
+.. toggle-code-block:: sh
+    :label: Pokaż rozwiązanie deploymentu lokalnego - uruchomienie
+
+    git clone https://github.com/cloudfoundry/bosh-lite
+    cd bosh-lite
+    vagrant up
+
+    # uważaj na ilość RAMu i CPU dla maszyny
 
 Deploy to local workstation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
