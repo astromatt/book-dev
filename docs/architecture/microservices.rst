@@ -372,6 +372,7 @@ Cechy API
 .. todo:: przykład stabilności webapi i mobilnych stron
 .. todo:: wersjonowanie w nagłówkach HTTP i q=...
 .. todo:: http://allegro.tech/2015/01/Content-headers-or-how-to-version-api.html
+.. todo:: POST, PUT, PATCH, GET, DELETE
 
 
 API gateway
@@ -386,7 +387,7 @@ API gateway
    client with an API that’s best suited to it’s requirements.
 -  The API gateway might also implement security, e.g. verify that the
    client is authorized to perform the request
--  Netflix API gateway
+-  Netflix API gateway, Zuur
 
 .. figure:: ../../_static/img/microservices-api-gateway.jpg
     :scale: 50%
@@ -532,6 +533,9 @@ Database per Service
 
     Database per Service
 
+.. todo:: Wiele baz danych w jednej usłudze
+.. todo:: Mieszane, usługi mają jedną bazę danych
+
 Shared database
 ^^^^^^^^^^^^^^^
 
@@ -551,6 +555,9 @@ Database triggers
 -  Reliably publish events whenever state changes by using database
    triggers. Each trigger inserts an event into an EVENTS table, which
    is polled by a separate process that publishes the events.
+
+- Czy są ok?
+- Czym się różni struct od Class
 
 Microservice chassis
 --------------------

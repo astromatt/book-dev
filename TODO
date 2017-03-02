@@ -10,6 +10,9 @@ docs/architecture/microservices.rst: dwufazowe kommity
 docs/architecture/microservices.rst: przykład stabilności webapi i mobilnych stron
 docs/architecture/microservices.rst: wersjonowanie w nagłówkach HTTP i q=...
 docs/architecture/microservices.rst: http://allegro.tech/2015/01/Content-headers-or-how-to-version-api.html
+docs/architecture/microservices.rst: POST, PUT, PATCH, GET, DELETE
+docs/architecture/microservices.rst: Wiele baz danych w jednej usłudze
+docs/architecture/microservices.rst: Mieszane, usługi mają jedną bazę danych
 docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: zamienić na osobne pliki
 docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: obniżyć poziom nagłówków
 docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: Jenkins Multibranch (out-of the box)
@@ -23,6 +26,8 @@ docs/ekosystem-narzedziowy/provisioning/puppet.rst: podzielić puppeta na osobne
 docs/ekosystem-narzedziowy/provisioning/puppet.rst: co z tematem odpalania jako user a nie root?
 docs/ekosystem-narzedziowy/provisioning/puppet.rst: uspójnić wszędzie nazwy userów i grup (vagrant, ubuntu, www-data, myuser) wybrać jeden
 docs/ekosystem-narzedziowy/provisioning/puppet.rst: błąd ze sprawdzaniem czy user i grupa www-data istnieją, kiedy wykorzystujemy moduł apache
+docs/index.html: stworzyć podział na dni szkolenia i bardziej dokładny opis agendy
+docs/index.html: stworzyć ankietę nie tylko do poszczególnych osób, ale także do grupy, poziom zaawansowania, zainteresowanie technologiami, doświadczenie zespołu, technologie w których zespół robi, grupa docelowa
 docs/informacje-o-szkoleniu/program.rst: stworzyć podział na dni szkolenia i bardziej dokładny opis agendy
 docs/informacje-o-szkoleniu/program.rst: stworzyć ankietę nie tylko do poszczególnych osób, ale także do grupy, poziom zaawansowania, zainteresowanie technologiami, doświadczenie zespołu, technologie w których zespół robi, grupa docelowa
 docs/wprowadzenie/buzzwordy.rst: Figure caption w Buzzwordach
