@@ -114,6 +114,56 @@ Provision a database
     heroku pg
     heroku pg:psql
 
+Backup
+------
+
+Create
+^^^^^^
+.. code-block:: sh
+
+    heroku pg:backups:capture
+
+Schedule
+^^^^^^^^
+.. code-block:: sh
+
+    heroku pg:backups:schedule DATABASE_URL --at '02:00 UTC'
+    heroku pg:backups:unschedule DATABASE_URL
+    heroku pg:backups:schedules
+
+Download
+^^^^^^^^
+.. code-block:: sh
+
+    heroku pg:backups:url b001
+    heroku pg:backups:url
+    heroku pg:backups:download
+
+Status
+^^^^^^
+.. code-block:: sh
+
+    heroku pg:backups
+    heroku pg:backups:info b001
+
+Delete
+^^^^^^
+.. code-block:: sh
+
+    heroku pg:backups:delete b101
+
+Restore
+^^^^^^^
+.. code-block:: sh
+
+    heroku pg:backups:restore b101 DATABASE_URL
+    heroku pg:backups:restore 'https://s3.amazonaws.com/me/items/mydb.dump' DB_URL
+
+Visibility
+^^^^^^^^^^
+.. code-block:: sh
+
+    heroku pg:psql -c "select * from pg_stat_activity where application_name = 'heroku-postgres-backups'"
 
 Zadania
 -------
@@ -121,6 +171,7 @@ Zadania
 Uruchamianie aplikacji
 ^^^^^^^^^^^^^^^^^^^^^^
 - Ściągnij repozytorium:
+
     - https://github.com/AstroMatt/esa-time-perception
 
 - Załóż konto na `Heroku`

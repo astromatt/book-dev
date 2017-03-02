@@ -8,8 +8,8 @@ Jenkins
 .. todo:: Niespójność w nazewnictwie Job DSL i Pipeline DSL
 
 
-Jenkins DSL
------------
+`Job DSL`
+---------
 
 Podstawy składni `Groovy`
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -240,8 +240,8 @@ Podstawy składni `Groovy`
         }
 
 
-Podstawy składni Jenkins DSL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Podstawy składni `Job DSL`
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Jedyne wymagane to nazwa `Job`:
 
@@ -348,8 +348,8 @@ Jedyne wymagane to nazwa `Job`:
             }
         }
 
-Przykłady Jenkins DSL
-^^^^^^^^^^^^^^^^^^^^^
+Przykłady `Job DSL`
+^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: groovy
 
@@ -400,7 +400,270 @@ Przykłady Jenkins DSL
             }
         }
 
+``Jenkinsfile``
+---------------
+- https://jenkins.io/doc/book/pipeline/jenkinsfile/
 
+Example
+^^^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('Build') {
+                steps {
+                    echo 'Building..'
+                }
+            }
+            stage('Test') {
+                steps {
+                    echo 'Testing..'
+                }
+            }
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying....'
+                }
+            }
+        }
+    }
+
+Build
+^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('Build') {
+                steps {
+                    sh 'make'
+                    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                }
+            }
+        }
+    }
+
+Test
+^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('Test') {
+                steps {
+                    /* `make check` returns non-zero on test failures,
+                    * using `true` to allow the Pipeline to continue nonetheless
+                    */
+                    sh 'make check || true'
+                    junit '**/target/*.xml'
+                }
+            }
+        }
+    }
+
+Deploy
+^^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('Deploy') {
+                when { currentBuild.result == 'SUCCESS' }
+                steps {
+                    sh 'make publish'
+                }
+            }
+        }
+    }
+
+
+Advanced syntax
+^^^^^^^^^^^^^^^
+.. code-block:: groovy
+
+    def username = 'Jenkins'
+    echo 'Hello Mr. ${username}'
+    echo "I said, Hello Mr. ${username}"
+
+Environment
+^^^^^^^^^^^
+
+===========  ============================================
+Variable
+===========  ============================================
+BUILD_ID     The current build ID, identical to BUILD_NUMBER for builds created in Jenkins versions 1.597+
+JOB_NAME     Name of the project of this build, such as "foo" or "foo/bar".
+JENKINS_URL  Full URL of Jenkins, such as example.com:port/jenkins/ (NOTE: only available if Jenkins URL set in "System Configuration")
+===========  ============================================
+
+
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+        stages {
+            stage('Example') {
+                steps {
+                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                }
+            }
+        }
+    }
+
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+        environment {
+            CC = 'clang'
+        }
+        stages {
+            stage('Example') {
+                environment {
+                    DEBUG_FLAGS = '-g'
+                }
+                steps {
+                    sh 'printenv'
+                }
+            }
+        }
+    }
+
+Parameters
+^^^^^^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+        parameters {
+            string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+        }
+        stages {
+            stage('Example') {
+                steps {
+                    echo "${Greeting} World!"
+                }
+            }
+        }
+    }
+
+Handling failures
+^^^^^^^^^^^^^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+        stages {
+            stage('Test') {
+                steps {
+                    sh 'make check'
+                }
+            }
+        }
+        post {
+            always {
+                junit '**/target/*.xml'
+            }
+            failure {
+                mail to: team@example.com, subject: 'The Pipeline failed :('
+            }
+        }
+    }
+
+Multiple agents
+^^^^^^^^^^^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent none
+        stages {
+            stage('Build') {
+                agent any
+                steps {
+                    checkout scm
+                    sh 'make'
+                    stash includes: '**/target/*.jar', name: 'app'
+                }
+            }
+            stage('Test on Linux') {
+                agent {
+                    label 'linux'
+                }
+                steps {
+                    unstash 'app'
+                    sh 'make check'
+                }
+                post {
+                    always {
+                        junit '**/target/*.xml'
+                    }
+                }
+            }
+            stage('Test on Windows') {
+                agent {
+                    label 'windows'
+                }
+                steps {
+                    unstash 'app'
+                    bat 'make check'
+                }
+                post {
+                    always {
+                        junit '**/target/*.xml'
+                    }
+                }
+            }
+        }
+    }
+
+Optional parameters
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: groovy
+
+    git url: 'git://example.com/amazing-project.git', branch: 'master'
+    git([url: 'git://example.com/amazing-project.git', branch: 'master'])
+
+.. code-block:: groovy
+
+    sh 'echo hello' /* short form  */
+    sh([script: 'echo hello'])  /* long form */
+
+Advanced usage
+^^^^^^^^^^^^^^
+.. code-block:: groovy
+
+    stage('Build') {
+        /* .. snip .. */
+    }
+
+    stage('Test') {
+        parallel linux: {
+            node('linux') {
+                checkout scm
+                try {
+                    unstash 'app'
+                    sh 'make check'
+                }
+                finally {
+                    junit '**/target/*.xml'
+                }
+            }
+        },
+        windows: {
+            node('windows') {
+                /* .. snip .. */
+            }
+        }
+    }
 
 Ćwiczenia
 ---------
@@ -560,9 +823,9 @@ Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
 - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 
-`Pipeline DSL`
-^^^^^^^^^^^^^^
-- Przepisz całą konfigurację wykorzustując plik ``Jenkinsfile`` i `Pipeline DSL`
+`Job DSL`
+^^^^^^^^^
+- Przepisz całą konfigurację wykorzustując plik ``Job DSL`
 
 `Jenkins Docker Plugin`
 ^^^^^^^^^^^^^^^^^^^^^^^
