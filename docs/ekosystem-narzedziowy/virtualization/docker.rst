@@ -147,6 +147,74 @@ Dockerfile
     FROM ubuntu
     RUN echo moo > oink
 
+.. code-block:: dockerfile
+
+    FROM debian:stable
+    RUN apt-get update && apt-get install -y --force-yes apache2
+    EXPOSE 80 443
+    VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
+
+    # An ENTRYPOINT allows you to configure a container that will run as an executable.
+    ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+Docker-compose
+--------------
+Compose is a tool for defining and running multi-container Docker applications.
+
+- https://docs.docker.com/compose/django/
+
+:Dockerfile:
+.. code-block:: dockerfile
+
+     FROM python:3.6
+     ENV PYTHONUNBUFFERED 1
+     RUN mkdir /code
+     WORKDIR /code
+     ADD requirements.txt /code/
+     RUN pip install -r requirements.txt
+     ADD . /code/
+
+:docker-compose.yaml:
+.. code-block:: yaml
+
+     version: '2'
+     services:
+       db:
+         image: postgres
+       web:
+         build: .
+         command: python manage.py runserver 0.0.0.0:8000
+         volumes:
+           - .:/code
+         ports:
+           - "8000:8000"
+         depends_on:
+           - db
+
+
+.. code-block:: sh
+
+    docker-compose run web django-admin.py startproject composeexample .
+    sudo chown -R $USER:$USER .
+
+:composeexample/settings.py:
+.. code-block:: python
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'HOST': 'db',
+            'PORT': 5432,
+        }
+    }
+
+.. code-block:: sh
+
+    docker-compose up
+    docker-machine ip MACHINE_NAME
+
 Zadania do rozwiązania
 ----------------------
 
