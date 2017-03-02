@@ -119,6 +119,7 @@ Publikowanie
 
 Dockerfile
 ^^^^^^^^^^
+- https://docs.docker.com/engine/reference/builder/
 
 .. code-block:: dockerfile
 
@@ -132,6 +133,19 @@ Dockerfile
     docker images
     docker run docker-whale
 
+.. code-block:: dockerfile
+
+    FROM      ubuntu
+    LABEL Description="This image is used to start the foobar executable" Vendor="ACME Products" Version="1.0"
+    RUN apt-get update && apt-get install -y inotify-tools nginx apache2 openssh-server
+
+.. code-block:: dockerfile
+
+    FROM ubuntu
+    RUN echo foo > bar
+
+    FROM ubuntu
+    RUN echo moo > oink
 
 Zadania do rozwiązania
 ----------------------
