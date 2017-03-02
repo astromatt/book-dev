@@ -5,7 +5,6 @@ Jenkins
 .. todo:: obniżyć poziom nagłówków
 .. todo:: Jenkins Multibranch (out-of the box)
 .. todo:: Bitbucket Multibranch project (jako dodatkowy plugin)
-.. todo:: Niespójność w nazewnictwie Job DSL i Pipeline DSL
 
 
 `Job DSL`
@@ -825,7 +824,7 @@ Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
 
 `Job DSL`
 ^^^^^^^^^
-- Przepisz całą konfigurację wykorzustując plik ``Job DSL`
+- Przepisz całą konfigurację wykorzustując plik `Job DSL`
 
 `Jenkins Docker Plugin`
 ^^^^^^^^^^^^^^^^^^^^^^^

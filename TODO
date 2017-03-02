@@ -1,0 +1,28 @@
+docs/architecture/microservices.rst: Przepisanie microservices jako osobny katalog z podziałem na tematy
+docs/architecture/microservices.rst: Przepisanie microservices jako osobne szkolenie
+docs/architecture/microservices.rst: Reactive manifesto, reactive programming
+docs/architecture/microservices.rst: spock framework
+docs/architecture/microservices.rst: Blockchain uruchamianie kodu
+docs/architecture/microservices.rst: Function as a Service
+docs/architecture/microservices.rst: Database sharding
+docs/architecture/microservices.rst: Przykład edok w cloud i bazy po stronie klienta
+docs/architecture/microservices.rst: dwufazowe kommity
+docs/architecture/microservices.rst: przykład stabilności webapi i mobilnych stron
+docs/architecture/microservices.rst: wersjonowanie w nagłówkach HTTP i q=...
+docs/architecture/microservices.rst: http://allegro.tech/2015/01/Content-headers-or-how-to-version-api.html
+docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: zamienić na osobne pliki
+docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: obniżyć poziom nagłówków
+docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: Jenkins Multibranch (out-of the box)
+docs/ekosystem-narzedziowy/ci-cd/jenkins.rst: Bitbucket Multibranch project (jako dodatkowy plugin)
+docs/ekosystem-narzedziowy/code-repository/bitbucket-server.rst: Blokujące code review
+docs/ekosystem-narzedziowy/code-repository/gerrit.rst: Blokujące code review
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: sprawdzić czy działają tematy związane z tworzeniem faktów
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: sprawdzić jak zachowa się to z Facterem
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: sprawdzić deklarowanie i używanie zmiennych
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: podzielić puppeta na osobne pliki per temat (zadanie do rozwiązania)
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: co z tematem odpalania jako user a nie root?
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: uspójnić wszędzie nazwy userów i grup (vagrant, ubuntu, www-data, myuser) wybrać jeden
+docs/ekosystem-narzedziowy/provisioning/puppet.rst: błąd ze sprawdzaniem czy user i grupa www-data istnieją, kiedy wykorzystujemy moduł apache
+docs/informacje-o-szkoleniu/program.rst: stworzyć podział na dni szkolenia i bardziej dokładny opis agendy
+docs/informacje-o-szkoleniu/program.rst: stworzyć ankietę nie tylko do poszczególnych osób, ale także do grupy, poziom zaawansowania, zainteresowanie technologiami, doświadczenie zespołu, technologie w których zespół robi, grupa docelowa
+docs/wprowadzenie/buzzwordy.rst: Figure caption w Buzzwordach
