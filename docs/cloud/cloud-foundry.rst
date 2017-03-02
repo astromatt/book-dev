@@ -152,6 +152,15 @@ Getting a bit further into the trees, pushing an application to Cloud Foundry us
 
 - Various other Diego-specific processes (Nsync, TPS, stager, and so forth) all exist as brokers to provide information from the cells to the right ingestors to ensure things are pushed in a safe manner, and information gets back to the right channels when things are not so safe.
 
+- http://www.starkandwayne.com/blog/demystifying-cloud-foundrys-diego/
+
+Droplet Execution Agents (DEA) -> Diego
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Warden -> Garden
+- Health Manager (HM9000) → nsync, BBS, and Cell Rep
+- DEA Placement Algorithm → Diego Auction
+- Message Bus (NATS)
+
 Consul
 ------
 Consul is a tool for service discovery and configuration. Consul is distributed, highly available, and extremely scalable.
