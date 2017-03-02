@@ -226,7 +226,7 @@ Ehlo World
 - Wyświetl listę działających kontenerów `Docker`
 
 .. toggle-code-block:: rst
-    :label: Pokaż rozwiązanie
+    :label: Pokaż rozwiązanie - Ehlo World
 
     $ apt-get install docker.io
 
@@ -245,11 +245,16 @@ Create container and run
 - Użyj pliku `Dockerfile` do opisu środowiska kontenera
 
 .. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie
+    :label: Pokaż rozwiązanie - Create container and run
+
+    ## cat README
 
     git clone https://github.com/spring-guides/gs-spring-boot-docker.git
     cd gs-spring-boot-docker
-    gradle build
+    sudo apt-get install openjdk-8-jdk
+    ./gradlew build
+    java -jar build/libs/gs-spring-boot-docker-0.1.0.jar
+
 
 Dockerfile
 ^^^^^^^^^^

@@ -15,7 +15,6 @@ Wprowadzenie do technologii i platform chmurowych
 
 Określenie potrzeb i wybór platformy
 ------------------------------------
-
 -  PaaS, IaaS, SaaS
 -  jakie są dostępne platformy?
 -  jakie mam potrzeby?
@@ -37,6 +36,7 @@ IaaS
 -  Amazon AWS
 -  Rackspace
 -  ecloud24
+-  Open Stack
 
 PaaS
 ^^^^
@@ -61,7 +61,6 @@ Inne \*aaS
 
 Ekosystem narzędziowy a cloud
 -----------------------------
-
 -  CI/CD: Travis, Bitbucket, CircleCI
 -  IM: Rocket, HipChat, Slack
 -  SCM: Github, Bitbucket
@@ -78,15 +77,13 @@ Ekosystem narzędziowy a cloud
 
 Distributed Logging
 ^^^^^^^^^^^^^^^^^^^
-
 -  Elastic Search
 -  Logstash
--  Kibana / Grafana
+-  Kibana
 
 Hearthbeat detecting
 ^^^^^^^^^^^^^^^^^^^^
-
-- statsd + graphite
+- statsd + graphite (Grafana)
 - pingdom
 
 Monitoring
@@ -103,7 +100,6 @@ Alerting
 
 Bazy danych
 ^^^^^^^^^^^
-
 -  Document: MongoDB
 -  RDBMS: PostgreSQL, MySQL, Oracle, MSSQL
 -  KV: Redis
@@ -111,26 +107,23 @@ Bazy danych
 
 Kontenery i wirtualizacja
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 -  Vagrant
 -  Docker
+-  Rockit
 -  Mesos, Swarm, Kubernetes
 
 Netflix
 ^^^^^^^
-
 -  chaos gorilla
 -  chaos monkey
 -  hystrix
 
 Service Discovery
 ^^^^^^^^^^^^^^^^^
-
 -  DNS
 -  AWS Elastic Load Balancer
 -  Własne usługi
 
 Configuration
 ^^^^^^^^^^^^^
-
 -  Zookeeper

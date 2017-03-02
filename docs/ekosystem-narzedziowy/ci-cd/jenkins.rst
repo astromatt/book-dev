@@ -399,8 +399,8 @@ Przykłady `Job DSL`
             }
         }
 
-``Jenkinsfile``
----------------
+``Jenkinsfile`` - Pipeline model definition
+-------------------------------------------
 - https://jenkins.io/doc/book/pipeline/jenkinsfile/
 
 Example
