@@ -130,13 +130,27 @@ CF-Release is the BOSH release repository for the Cloud Foundry platform. To dep
 
 Diego
 -----
-Diego is the new container runtime system for Cloud Foundry, replacing the DEAs and Health Manager.
+Diego is the new container runtime system for Cloud Foundry, replacing the DEA (Droplet Execution Agent) and Health Manager.
 
 - https://github.com/cloudfoundry/diego-release
 
 Cloud Foundry has used two architectures for managing application containers: Droplet Execution Agents (DEA) and Diego. With the DEA architecture, the Cloud Controller schedules and manages applications on the DEA nodes. In the newer Diego architecture, Diego components replace the DEAs and the Health Manager (HM9000), and assume application scheduling and management responsibility from the Cloud Controller.
 
 - https://github.com/cloudfoundry/diego-release/tree/develop/examples/bosh-lite
+
+From the standpoint of your application, here's what you need to know: In Diego, you now have the choice to push a one-use function (a Task) or a more traditional application that stays resident (a Long-Running Process, or LRP) -- a good example of an LRP might be a web server that you need always listening for traffic, while a Task may be something like a database migration as part of a release, or a task that examines recent data for something specific. Before, in DEA, you really only pushed processes that were expected to stay resident. Diego's brain and health monitor makes sure these tasks are balanced as well as possible - spreading out CPU-intensive tasks across virtual machines, or balancing memory, et cetera. While before some of this was done as part of the cloud controller, now the Diego environment handles it itself.
+
+Getting a bit further into the trees, pushing an application to Cloud Foundry using Diego would:
+
+- Contacts the Diego Brain which immediately sets up Auctioneer to announce to the diego cells that there is a new task or LRP that needs to be added, and how many cells it should use.
+
+- Lets the Converger know what the application expects to have running at any time, so that if there is a change, it can immediately set up a replacement.
+
+- The Diego Cells run the task at hand, constantly updating the bulletin board system with necessary information (such as CPU usage) that allow the auctioneer and the converger to ensure the app is running according to plan. Diego uses etcd to handle the BBS.
+
+- What isn't handled by the BBS is handled by Consul - this is mostly locks to make sure only the right process is handling the right task (as an example in Diego, there can be only one Auctioneer at any time, but if that Auctioneer goes away, something else must pick up the lock) or load balancing.
+
+- Various other Diego-specific processes (Nsync, TPS, stager, and so forth) all exist as brokers to provide information from the cells to the right ingestors to ensure things are pushed in a safe manner, and information gets back to the right channels when things are not so safe.
 
 Consul
 ------
