@@ -1,6 +1,12 @@
 Wymaniania sprzętowe
 ====================
 
+Internet
+--------
+- Szybka prędkość pobierania
+- Nielimitowany dostęp (jeden zajmuje jakieś 700 MB)
+- Brak blokowania HTTP i HTTPS
+
 Minimalne wymagania sprzętowe
 -----------------------------
 
