@@ -204,6 +204,8 @@ Planning and Refinement
 
 JQL - JIRA Query Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^
+- List View, Detail View
+- Konfiguracja Kolumn wyszukiwania
 - Searching Issues
 - Konfiguracja Boardów
 - Bulk edit
@@ -217,13 +219,15 @@ JQL - JIRA Query Language
 .. code-block:: sql
 
     project = DEMO
-        AND status = Open
+        AND status = "To Do"
 
 .. code-block:: sql
 
     status = "To Do" OR status = "In Progress"
 
     status IN ("To Do", "In Progress")
+
+    status NOT IN ("To Do", "In Progress")
 
 .. code-block:: sql
 
@@ -232,25 +236,23 @@ JQL - JIRA Query Language
 
 .. code-block:: sql
 
-    project = DEMO
-        AND statusCategory NOT IN (Done, "In Progress")
+    statusCategory = "To Do"
+    statusCategory NOT IN ("To Do", "In Progress")
+    statusCategory != "Done"
 
 .. code-block:: sql
 
-    project = DEMO
-        AND statusCategory NOT IN (Done, "In Progress")
+    statusCategory NOT IN (Done, "In Progress")
         AND assignee = currentUser()
 
 .. code-block:: sql
 
-    project = DEMO
-        AND statusCategory NOT IN (Done, "In Progress")
+    statusCategory NOT IN (Done, "In Progress")
         AND assignee IN membersOf("jira-administrators")
 
 .. code-block:: sql
 
-    project = DEMO
-        AND statusCategory NOT IN (Done, "In Progress")
+    statusCategory NOT IN (Done, "In Progress")
         AND assignee = currentUser()
         ORDER BY priority DESC, key ASC
 
@@ -276,14 +278,33 @@ JQL - JIRA Query Language
 
 .. code-block:: sql
 
+    Flagged IS NOT EMPTY
+
+.. code-block:: sql
+
+    project = DEMO
+        AND sprint IN openSprints()
+        AND (statusCategory = "In Progress" OR Flagged is not EMPTY)
+
+        # opcjonalnie, ze względu na omawianie Waiting i in test itp.
+        AND updated >= -1d
+
+.. code-block:: sql
+
     due >= 2017-03-01 AND due <= 2017-03-31
 
     due >= startOfMonth() AND due <= endOfMonth()
+
+.. code-block:: sql
+
+    due <= now()
 
 Filtry
 ^^^^^^
 - Tworzenie
 - Subskrybcja
+- Uprawnienia
+- Współidzelenie
 
 Dashboard
 ^^^^^^^^^
@@ -553,6 +574,8 @@ Tworzenie issues
     - status drugiego: In Progress
     - status trzeciego: Done
 
+- Przenieś zadanie z projektu do innego projektu
+
 Backlog i Estymacja
 ^^^^^^^^^^^^^^^^^^^
 - Stwórz epiki
@@ -610,13 +633,20 @@ JQL i Wyszukiwanie zadań
 - wyszukaj zadania, które były przypisane do Ciebie, ale już nie są
 - Wyszukaj wszystkie zadania zaktualizowane przez Ciebie w okresie ostatniego tygodnia
 
+- Pokaż mandaye, story points, fixVersion
+
 Filtry
 ^^^^^^
 - Stwórz filtr "Daily"
 - Stwórz filtr "Praca mojego zespołu z ostatniego tygodnia"
+- Stwórz filtr "Przekroczony Deadline"
 
 Custom Field
 ^^^^^^^^^^^^
-- Dodaj pole Manday
-- Dodaj listę dwupoziomową - Słownik
+- Dodaj `Custom Field` typu `Number` o nazwie `Manday`, ustaw board do szacowania w `Mandayach`, dodaj do Screen
+- Dodaj `Custom Field` typu listy dwupoziomowej - Słownik
 - Sprawdź czy pola wyświetlają się przy zakładaniu zadań (czy nie są ukryte w `Configure Fields`)
+
+Administracja
+^^^^^^^^^^^^^
+- Zmień priorytety na MoSCoW, zmień ikony i kolory (czerwony, zielony, szary)
