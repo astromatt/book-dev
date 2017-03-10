@@ -286,7 +286,7 @@ JQL - JIRA Query Language
         AND sprint IN openSprints()
         AND (statusCategory = "In Progress" OR Flagged is not EMPTY)
 
-        # opcjonalnie, ze względu na omawianie Waiting i in test itp.
+        -- opcjonalnie, ze względu na omawianie Waiting i in test itp.
         AND updated >= -1d
 
 .. code-block:: sql
