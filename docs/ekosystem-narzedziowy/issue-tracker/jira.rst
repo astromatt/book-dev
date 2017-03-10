@@ -27,7 +27,6 @@ Project Management
 - Scrum
 - Portfolio
 - Scrum + Kanban
-- Due Date, Start Date, Assignee w Epic
 
 Korzystanie z Jiry
 ------------------
@@ -50,6 +49,7 @@ Issues
 - Issue Types:
 
     - Bug
+    - Task
     - User Story
     - Epic
     - Sub-task
@@ -75,8 +75,13 @@ Issues
 
 - Epic
 
-    - Brak worków
-    - Dowożalne
+    - Brak worków (np. Poprawki błędów)
+    - Dowożalne (określone w czasie, mają datę początku i końca)
+    - Dobre praktyki:
+
+        - Due Date
+        - Start Date
+        - Assignee
 
 - Kryteria akceptacyjne
 - Dobre praktyki
@@ -444,6 +449,8 @@ Jira Administration
     - Dobre praktyki
     - Ile?
 
+- Re-index
+
 Pluginy
 ^^^^^^^
 - Kiedy instalować
@@ -607,3 +614,9 @@ Filtry
 ^^^^^^
 - Stwórz filtr "Daily"
 - Stwórz filtr "Praca mojego zespołu z ostatniego tygodnia"
+
+Custom Field
+^^^^^^^^^^^^
+- Dodaj pole Manday
+- Dodaj listę dwupoziomową - Słownik
+- Sprawdź czy pola wyświetlają się przy zakładaniu zadań (czy nie są ukryte w `Configure Fields`)
