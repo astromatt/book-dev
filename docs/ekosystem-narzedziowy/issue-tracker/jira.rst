@@ -689,7 +689,12 @@ Board
 
     - Dodaj kolumnę `In Test` oraz `In Review`
     - Dodaj status `Won't Do`, który będzie w kolumnie `Done` jednocześnie ze statusem `Done`
-    - Stwórz Quick Filter `Daily`
+    - Stwórz Quick Filter `Daily`:
+
+        - statusCategory = "In Progress"
+        - zaktualizowane w ciągu ostatniego dnia
+        - lub mają flagę
+
     - Stwórz wersję z Estymacją Time Estimate
     - Stwórz wersję z Estymacją w Story Points
 
