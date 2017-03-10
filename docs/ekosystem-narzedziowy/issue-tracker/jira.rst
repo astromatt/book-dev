@@ -685,13 +685,21 @@ Administracja
 
 Board
 ^^^^^
-- Dodaj kolumnę `In Test` oraz `In Review`
+- Stwórz Board dla zadań rozwojowych (Story, Bug):
+
+    - Dodaj kolumnę `In Test` oraz `In Review`
+    - Stwórz Quick Filter `Daily`
+    - Stwórz wersję z Estymacją Time Estimate
+    - Stwórz wersję z Estymacją w Story Points
+
+- Stwórz Board dla zadań utrzymaniowych (Task)
+- Stwórz board Kanban z Epikami:
+
+    - Stwórz swimline dla kwartałów
+    - Określ aby w kolumnie "In Progress" mogły być maksymalnie 3 Epiku
+
 - Stwórz board zadań przypisanych do Ciebie:
 
     - zadania mogą być w dowolnym projekcie
     - board ma być publiczny
 
-- Stwórz board Kanban z Epikami
-- Stwórz swimline dla kwartałów
-- Określ aby w kolumnie "In Progress" mogły być maksymalnie 3 Epiku
-- Stwórz Quick Filter `Daily`
