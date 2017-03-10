@@ -682,3 +682,16 @@ Custom Field
 Administracja
 ^^^^^^^^^^^^^
 - Zmień priorytety na MoSCoW, zmień ikony i kolory (czerwony, zielony, szary)
+
+Board
+^^^^^
+- Dodaj kolumnę `In Test` oraz `In Review`
+- Stwórz board zadań przypisanych do Ciebie:
+
+    - zadania mogą być w dowolnym projekcie
+    - board ma być publiczny
+
+- Stwórz board Kanban z Epikami
+- Stwórz swimline dla kwartałów
+- Określ aby w kolumnie "In Progress" mogły być maksymalnie 3 Epiku
+- Stwórz Quick Filter `Daily`
