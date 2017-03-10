@@ -271,6 +271,12 @@ JQL - JIRA Query Language
 
 .. code-block:: sql
 
+    Sprint IN closedSprints()
+    Sprint IN openSprints()
+    Sprint IN futureSprints()
+
+.. code-block:: sql
+
     project = DEMO
         AND sprint in openSprints()
         AND status != Done
@@ -291,6 +297,24 @@ JQL - JIRA Query Language
 
 .. code-block:: sql
 
+    project = DEMO
+        AND sprint IN openSprints()
+        AND assignee = currentUser()
+
+.. code-block:: sql
+
+    reporter = currentUser()
+        AND statusCategory != Done
+        AND assignee != currentUser()
+
+.. code-block:: sql
+
+    project = DEMO
+        AND updated >= -7d
+        AND assignee IN membersOf("jira-administrators")
+
+.. code-block:: sql
+
     due >= 2017-03-01 AND due <= 2017-03-31
 
     due >= startOfMonth() AND due <= endOfMonth()
@@ -304,6 +328,11 @@ Filtry
 - Tworzenie
 - Subskrybcja
 - Uprawnienia
+
+    - Przydział do ról
+    - Przydział do grup
+    - Publiczny
+
 - Współidzelenie
 
 Dashboard
@@ -326,6 +355,8 @@ Dashboard
 - Jira Agile Reports
 
     - Sprint Health Report
+    - Burndown
+    - Days Remaining
 
 Project
 ^^^^^^^
@@ -364,6 +395,7 @@ Board
     - Długość (tydzień)
     - Konwencja nazewnicza (YYYY-MM week W) (2017-03 week 2, 2017-03 week 3)
 
+- Uprawnienia
 - Konfiguracja
 - Kolumny
 
