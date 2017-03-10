@@ -527,9 +527,9 @@ Tworzenie issues
 
     - Issue Type
     - Summary
-    - Description
     - Priority
     - Attachment
+    - Linked Issue
 
 - Do jednego z zadań dodaj załącznik
 
@@ -568,7 +568,6 @@ Wersje
 
 - Zadania przydziel do wersji
 
-
 Sprinty
 ^^^^^^^
 - Stwórz Sprinty
@@ -594,3 +593,17 @@ Sprinty
 
 - Zobacz raporty
 
+JQL i Wyszukiwanie zadań
+^^^^^^^^^^^^^^^^^^^^^^^^
+- wyszukaj wszystkie zadania, które są w statusie "In Progress"
+- wyszukaj zadania, które zostały zaktualizowan od wczoraj
+- wyszukaj zadania, które należą do obecnie otwartego sprintu
+- wyszukaj zadania oflagowane
+- wyszukaj zadania, które należą do osób z grupy jira-administrators
+- wyszukaj zadania, które były przypisane do Ciebie, ale już nie są
+- Wyszukaj wszystkie zadania zaktualizowane przez Ciebie w okresie ostatniego tygodnia
+
+Filtry
+^^^^^^
+- Stwórz filtr "Daily"
+- Stwórz filtr "Praca mojego zespołu z ostatniego tygodnia"
