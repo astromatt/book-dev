@@ -692,7 +692,7 @@ Board
     - Dodaj status `Won't Do`, który będzie w kolumnie `Done` jednocześnie ze statusem `Done`
     - Stwórz Quick Filter `Daily`:
 
-        - statusCategory = "In Progress"
+        - zadania są w trakcie wykonywania
         - zaktualizowane w ciągu ostatniego dnia
         - lub mają flagę
 
