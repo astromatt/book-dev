@@ -76,7 +76,7 @@ Issues
 - Epic
 
     - Brak worków (np. Poprawki błędów)
-    - Dowożalne (określone w czasie, mają datę początku i końca)
+    - Doważalne (określone w czasie, mają datę początku i końca)
     - Dobre praktyki:
 
         - Due Date
