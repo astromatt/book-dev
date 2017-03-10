@@ -670,8 +670,8 @@ JQL i Wyszukiwanie zadań
 Filtry
 ^^^^^^
 - Stwórz filtr "Daily"
-- Stwórz filtr "Praca mojego zespołu z ostatniego tygodnia"
-- Stwórz filtr "Przekroczony Deadline"
+- Stwórz filtr "Przekroczony Deadline", ustaw uprawnienia by był widoczny dla administratorów w projekcie
+- Stwórz filtr "Praca mojego zespołu z ostatniego tygodnia", ustaw by przychodził mail z zadaniami w poniedziałki o 6 rano
 
 Custom Field
 ^^^^^^^^^^^^
@@ -682,12 +682,13 @@ Custom Field
 Administracja
 ^^^^^^^^^^^^^
 - Zmień priorytety na MoSCoW, zmień ikony i kolory (czerwony, zielony, szary)
+- Dodaj Screen aby przy zamykaniu zadań wyświetlało się użytkownikowi okienko z logowaniem czasu
 
 Board
 ^^^^^
 - Stwórz Board dla zadań rozwojowych (Story, Bug):
 
-    - Dodaj kolumnę `In Test` oraz `In Review`
+    - Dodaj kolumnę `In Test` oraz `In Review` wraz z odpowiadającymi im statusami
     - Dodaj status `Won't Do`, który będzie w kolumnie `Done` jednocześnie ze statusem `Done`
     - Stwórz Quick Filter `Daily`:
 
@@ -695,8 +696,8 @@ Board
         - zaktualizowane w ciągu ostatniego dnia
         - lub mają flagę
 
-    - Stwórz wersję z Estymacją Time Estimate
-    - Stwórz wersję z Estymacją w Story Points
+    - Stwórz wersję board z Estymacją Time Estimate
+    - Stwórz wersję board z Estymacją w Story Points
 
 - Stwórz Board dla zadań utrzymaniowych (Task)
 - Stwórz board Kanban z Epikami:
