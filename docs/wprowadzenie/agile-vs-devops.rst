@@ -38,6 +38,26 @@ Lean Startup
 - Measure
 - Learn
 
+Refinement Simulation
+^^^^^^^^^^^^^^^^^^^^^
+- Backlog decomposition
+- Iterating decomposition
+- Small, Medium, Large
+- Must, Should, Could
+- Sprint
+
+:Introduction to sticky cards backlog note format:
+
+    - header: Priority, Sprint, Estimate, Epic
+    - capital, technical letters
+    - acceptance criteria
+    - Solving disagreement on issue estimation
+    - three columns estimation (Small, Medium, Large)
+    - ballancing sprint capacity
+    - managing hard dependencies (issue is blocked by)
+    - managing soft dependencies (issue relates to other - logically should be done before, but it is not necessary)
+
+
 Scrum
 ^^^^^
 - What is Scrum?
