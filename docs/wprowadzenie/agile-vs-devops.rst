@@ -394,6 +394,8 @@ Community
 Rekrutacja
 ^^^^^^^^^^
 
+- https://stackoverflow.com/insights/survey/2017/
+
 1. Czy na waszej stronie jest widocznie wyeksponowana informacja, że szukacie pracowników?
 
 2. Czy opis jest precyzyjny?
