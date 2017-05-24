@@ -83,6 +83,16 @@ Issues
         - Start Date
         - Assignee
 
+    * Doważalne
+    * optymalna długość
+    * kategoryzowanie
+    * timeline i roadmapa
+    * planowanie kwartalne
+    * przypisywanie epikow do wersji
+    * board epików
+    * Business Value epików
+
+
 - Kryteria akceptacyjne
 - Dobre praktyki
 
