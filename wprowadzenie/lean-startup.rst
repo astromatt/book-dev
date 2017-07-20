@@ -1,7 +1,7 @@
 Lean Startup
 ============
 
-.. figure:: ../../_static/img/person-eric-ries.jpg
+.. figure:: /_static/img/person-eric-ries.jpg
     :scale: 50%
     :align: center
 
@@ -39,7 +39,7 @@ Lean Startup
 Lean Startup Cycle
 ------------------
 
-.. figure:: ../../_static/img/lean-startup-cycle-01.jpg
+.. figure:: /_static/img/lean-startup-cycle-01.jpg
     :scale: 50%
     :align: center
 

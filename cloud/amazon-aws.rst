@@ -1,7 +1,7 @@
 Amazon AWS
 ==========
 
-.. figure:: ../../_static/img/cloud-amazon-services-01.png
+.. figure:: /_static/img/cloud-amazon-services-01.png
     :scale: 50%
     :align: center
 
@@ -137,7 +137,7 @@ ELB - Elastic Load Ballancer
 
     - An Application Load Balancer makes routing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can route requests to one or more ports on each container instance in your cluster [LB]_.
 
-    .. figure:: ../../_static/img/architecture-application-load-ballancer.png
+    .. figure:: /_static/img/architecture-application-load-ballancer.png
         :scale: 50%
         :align: center
 
@@ -145,7 +145,7 @@ ELB - Elastic Load Ballancer
 
     - A Classic Load Balancer makes routing decisions at either the transport layer (TCP/SSL) or the application layer (HTTP/HTTPS) [LB]_.
 
-        .. figure:: ../../_static/img/architecture-classic-load-ballancer.png
+        .. figure:: /_static/img/architecture-classic-load-ballancer.png
             :scale: 50%
             :align: center
 

@@ -49,7 +49,7 @@ Automatyczne testowanie, ciągłe scalanie i ciągłe wdrażanie oprogramowania 
 
 Poszczególne mniejsze fragmenty wytwarzanego oprogramowania muszą przejść określone etapy walidacji na swojej drodze do publikacji. Kod jest kompilowany i pakowany za każdym razem, gdy dokonywana jest zmiana w systemie kontroli wersji. Następnie jest wielokrotnie testowany. Dopiero po tym może zostać wdrożony.
 
-.. figure:: ../../_static/img/cicd-loop.png
+.. figure:: /_static/img/cicd-loop.png
     :scale: 50%
     :align: center
 

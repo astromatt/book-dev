@@ -21,7 +21,7 @@ Określenie potrzeb i wybór platformy
 -  jak dobrać odpowiednią platformę do moich potrzeb?
 -  szczegółowa charakterystyka PaaS, Iaas, SaaS
 
-.. figure:: ../../_static/img/cloud-devops.png
+.. figure:: /_static/img/cloud-devops.png
     :scale: 50%
     :align: center
 

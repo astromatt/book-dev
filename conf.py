@@ -13,7 +13,7 @@ author = 'Matt Harasymczuk'
 
 extensions = [
     'sphinx.ext.todo',
-    'toggle_code_block',
+    '_bin.toggle_code_block',
 ]
 
 def get_version():
@@ -26,7 +26,7 @@ def get_version():
 language = 'pl'
 copyright = '2012-{date:%Y}, Matt Harasymczuk <matt@astrotech.io>'.format(date=datetime.date.today())
 master_doc = 'index'
-exclude_patterns = ['Thumbs.db', '.DS_Store']
+exclude_patterns = ['Thumbs.db', '.DS_Store', 'README.rst']
 pygments_style = 'vs'
 todo_include_todos = False
 today_fmt = '%Y-%m-%d'
@@ -39,7 +39,7 @@ release = get_version()
 
 html_theme = 'sphinx_rtd_theme'
 #html_theme_path = ['../_themes']
-html_static_path = ['../_static']
+html_static_path = ['_static']
 html_sidebars = {'sidebar': ['localtoc.html', 'sourcelink.html', 'searchbox.html']}
 html_show_sphinx = False
 htmlhelp_basename = 'DevOpsWorkshop'

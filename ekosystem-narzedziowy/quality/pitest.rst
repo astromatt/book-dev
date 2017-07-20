@@ -11,31 +11,31 @@ Pierwsza publikacja na temat testów mutacyjnych pojawiła się w 1978 roku [DLS
 Rodzaje mutatorów
 -----------------
 
-.. figure:: ../../../_static/img/ecosystem-pitest-mutators-01.jpg
+.. figure:: /_static/img/ecosystem-pitest-mutators-01.jpg
     :scale: 50%
     :align: center
 
     Mutation Testing - Condition boundary
 
-.. figure:: ../../../_static/img/ecosystem-pitest-mutators-02.jpg
+.. figure:: /_static/img/ecosystem-pitest-mutators-02.jpg
     :scale: 50%
     :align: center
 
     Mutation Testing - Negative conditions mutator
 
-.. figure:: ../../../_static/img/ecosystem-pitest-mutators-03.jpg
+.. figure:: /_static/img/ecosystem-pitest-mutators-03.jpg
     :scale: 50%
     :align: center
 
     Mutation Testing - Math mutator
 
-.. figure:: ../../../_static/img/ecosystem-pitest-mutators-06.jpg
+.. figure:: /_static/img/ecosystem-pitest-mutators-06.jpg
     :scale: 50%
     :align: center
 
     Mutation Testing - Conditional boundary mutator
 
-.. figure:: ../../../_static/img/ecosystem-pitest-report-06.png
+.. figure:: /_static/img/ecosystem-pitest-report-06.png
     :scale: 50%
     :align: center
 
