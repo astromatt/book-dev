@@ -48,6 +48,13 @@ Pojęcia zaawansowane
 - git fat i inne przydatne pluginy
 - git hooks
 
+Pozostałe
+=========
+git clean -f -d
+git reset --hard HEAD
+slajdy z .gitconfigiem
+
+
 Zadania praktyczne
 ==================
 
@@ -82,6 +89,41 @@ Zarządanie remote
 - pushowanie zmian
 - pobieranie zmian
 
+Submoduły
+---------
+#. Jako submoduł dodaj `Reveal.JS <https://github.com/hakimel/reveal.js>`_
+#. Zainicjalizuj go
+#. Zaciągnij najnowsze informacje
 
+Hook: Pre-Commit - commit message
+---------------------------------
+Stwórz hook aby wymuszał w nazwie commita ID issues z Jiry
 
+Hook: Pre-Commit - branche
+--------------------------
+Stwórz hook aby do commit message dodawał ID z nazwy brancha
 
+Hook: Pre-Commit - Testy
+------------------------
+Stwórz hook aby przy każdym commicie uruchamiał testy dla `HabitatOS <https://github.com/AstroMatt/HabitatOS>`_
+
+Hook: Post Commit
+-----------------
+Wyślij majla podsumowującego commita
+
+Hook: Pre-Receive
+-----------------
+Zablokuj otrzymywanie danych, jeżeli w commit message nie znajduje się issue z Jiry
+
+Subtree
+-------
+#. Jako subtree dodaj `Reveal.JS <https://github.com/hakimel/reveal.js>`_
+#. Zainicjalizuj go
+#. Zaciągnij najnowsze informacje
+#. Wypushuj go do jako branch w swoim repozytorium
+#. Zaktualizuj plik zdalnie
+#. Zaciągnij lokalnie zmiany
+
+fsck and gc
+-----------
+Przeprowadź pełne ``git fsck --full`` na repozytorium, a następnie uruchom ``git gc --aggressive --prune=now``
