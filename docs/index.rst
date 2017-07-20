@@ -79,3 +79,12 @@ Cloud
 
     cloud/index.rst
     cloud/*
+
+Versioning
+----------
+.. toctree::
+    :titlesonly:
+    :glob:
+    :caption: Versioning
+
+    ekosystem-narzedziowy/versioning/git
