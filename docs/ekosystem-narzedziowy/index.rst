@@ -103,3 +103,11 @@ Virtualization
     :glob:
 
     virtualization/*
+
+Versioning
+----------
+.. toctree::
+    :titlesonly:
+    :glob:
+
+    versioning/*
