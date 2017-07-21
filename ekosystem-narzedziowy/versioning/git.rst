@@ -54,6 +54,15 @@ git clean -f -d
 git reset --hard HEAD
 slajdy z .gitconfigiem
 
+Przykłady praktyczne
+====================
+
+Jenkins + Git Bisect Run
+------------------------
+
+.. code-block:: console
+
+    $ git bisect run
 
 Zadania praktyczne
 ==================
