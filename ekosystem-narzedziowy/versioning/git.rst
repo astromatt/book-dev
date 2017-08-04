@@ -60,9 +60,18 @@ Przykłady praktyczne
 Jenkins + Git Bisect Run
 ------------------------
 
+- plugin "Downstream-Ext"
+- dodatkowy projekt "...-blame"
+- email notyfikacje
+- Build other projects (extended) -> Build result is FAILURE
+
 .. code-block:: console
 
-    $ git bisect run
+    $ git bisect start @                                # startujemy git bisect z obecnym commitem jako bad 
+    $ git bisect good `git rev-list --max-parents=0 @`  # dobry commit - początek repo, można przekazać inny commit żeby nie zaczynać zawsze od początku
+    $ git bisect run ./test.sh                          # zestaw testów gdzie exit code > 0 oznacza bad commit
+    $ git log --format="%ae"                            # wylistowanie emaila osoby która wprowadziła buga
+    $ git bisect reset																	# zakończenie pracy z bisectem
 
 Zadania praktyczne
 ==================
