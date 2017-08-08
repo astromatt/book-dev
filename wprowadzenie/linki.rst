@@ -22,6 +22,17 @@ Informatyczne
 -------------
 - http://infoq.com
 
+Scrum + Scaling
+---------------
+- `Krzysztof Dąbrowski - Scalling Scrum <https://www.youtube.com/watch?v=X2xuROuGBUk>`_
+- `Product Owner Checklist <https://scrumwell.files.wordpress.com/2013/09/product-owner-checklist-november-2013.pdf>`_
+- `LeSS <https://less.works/>`_
+- `SAFe <http://www.scaledagileframework.com/>`_
+- `Nexus <https://www.scrum.org/resources/scaling-scrum>`_
+- `Lean Enterprise by ThoughWorks <https://www.infoq.com/presentations/lean-enterprise>`_
+- `Managing Good Developers <https://www.youtube.com/watch?v=jOrT5EKBEGY>`_
+- `Lean Startup <https://www.youtube.com/watch?v=fEvKo90qBns>`_
+
 
 Allegro
 -------
