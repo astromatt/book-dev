@@ -343,7 +343,7 @@ Filtry
     - Przydział do grup
     - Publiczny
 
-- Współidzelenie
+- Współdzielenie
 
 Dashboard
 ^^^^^^^^^
