@@ -503,20 +503,43 @@ Project Configuration
 - Roles and Permissions
 - Application Links
 
+Konfiguracja Jiry
+^^^^^^^^^^^^^^^^^
+- Zmiana formatu daty
+- Time Tracking
+- Priorytetyzacja i dobre praktyki
+- Estymacja różnych issuetype (nie tylko Story)
+- Re-index
+- Application Links
+- Zaawansowane opcje konfiguracyjne
+
 Jira Administration
 ^^^^^^^^^^^^^^^^^^^
-- Zmiana formatu daty
-- Estymacja różnych issuetype
-- Tworzenie Custom Field
+- Zarządzanie licencjami
+- Backup systemu
+- Tworzenie instancji testowych
+- Instalacja i upgrade + dobre praktyki
+- Tunning JVM pod Jirę
+- Dobre praktyki z Custom
 
-    - Dobre praktyki
-    - Ile?
+Tworzenie Custom Field
+^^^^^^^^^^^^^^^^^^^^^^
+- Dobre praktyki
+- Ile?
+- Konsekwencje
+- CF w bazie dancyh
 
-- Re-index
+Dirty hacks
+^^^^^^^^^^^
+- Manipulacje na bazie
+- Django Inspect DB + Jira = Django ORM
+- Skryptowanie
+- Time tracking
 
 Pluginy
 ^^^^^^^
 - Kiedy instalować
+- Licencje pluginów
 - Różnice między pliginami w Cloud a Server
 
     - Atlassian Connect vs p2
@@ -527,7 +550,15 @@ Pluginy
     - pluginy komercyjne
 
 - Instalacja dodatkowych języków
+- Pluginy a wykorzystywane zasoby:
+
+    - Pamięć RAM
+    - Baza danych
+    - System operacyjny
+    - Zasoby sieciowe
+
 - `Jira Agile Cards`
+- Dane pluginów w bazie danych Jiry
 
 Documentacja
 ------------
