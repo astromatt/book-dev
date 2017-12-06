@@ -1,6 +1,11 @@
 JIRA
 ====
 
+Wymagania przed szkoleniem
+--------------------------
+#. System operacyjny wspierany przez Atlassian (zalecany Linux)
+#. Ściągnięta odpowiednia binarka dla wybranego systemu operacyjnego https://www.atlassian.com/software/jira/download
+
 Documentation
 -------------
 
