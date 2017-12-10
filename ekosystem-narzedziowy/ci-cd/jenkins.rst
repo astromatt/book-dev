@@ -1,10 +1,307 @@
-Jenkins
-=======
-
 .. todo:: zamienić na osobne pliki
 .. todo:: obniżyć poziom nagłówków
 .. todo:: Jenkins Multibranch (out-of the box)
 .. todo:: Bitbucket Multibranch project (jako dodatkowy plugin)
+.. todo:: Jenkins odpalający git bisect i testy
+
+Jenkins
+=======
+- https://jenkins.io/
+- https://jenkins.io/doc
+
+.. figure:: _static/img/devops-continuous.png
+    :scale: 75%
+    :align: center
+
+    Continuous ...
+
+
+Large repos
+-----------
+- is a sign of git missuse, and should be tackled with GIT LFS
+- Use command line git rather than jGit
+- command line git handles memory better
+- Use reference repository (bare)
+- Shallow clone (GIT from 1.9+ can push from shallow clones)
+- Don't fetch tags
+- Narrow refspec - only clone specific branches (honor refspec on initial clone)
+- Pipeline stash / unstash (sparse checkout on master node, and then stash checkout, and unstash on remotes)
+- Sparse checkout (Subset of working tree - single directory [exclude or include on per file basis])
+
+
+Blue Ocean
+----------
+- New UI
+- Interoperable with old UI
+- Accessible at ``/blue/`` in the URL after "Blue Ocean" plugin installation.
+- Pipeline editor
+
+Pipeline model definition plugin
+--------------------------------
+- Jenkins 2.7.1 or later
+- Bundled with Blue Ocean
+- ``declarative-linter`` validate before running job
+
+.. figure:: _static/img/ecosystem-jenkins-dsl.png
+    :scale: 75%
+    :align: center
+
+    Pipeline model definition plugin
+
+Pipeline
+^^^^^^^^
+Everything must be inside this
+
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+    }
+
+Tools
+^^^^^
+- Requirements
+- Do not work with docker
+- If you put invalid, it will list valid
+- Automaticly installs requirements
+
+.. code-block:: groovy
+
+    tools {
+        maven "apache-maven-3.1.0"
+        jdk "default"
+    }
+
+Environment
+^^^^^^^^^^^
+Top level
+.. code-block:: groovy
+
+    environment {
+        FOO = "BAZ"
+    }
+
+Or per stage level (overwrite)
+.. code-block:: groovy
+
+    environment {
+        FOO = "BAZ"
+    }
+
+    stages {
+        stage("baz") {
+            steps {
+                sh 'echo "FOO is $FOO"'
+            }
+        }
+
+        stage("bar") {
+            environment {
+                FOO = "BAR"
+            }
+
+            steps {
+                sh 'echo "FOO is $FOO"'
+            }
+        }
+    }
+
+Stages
+^^^^^^
+- It is required whithin the ``pipeline {...}``
+- Cannot have empty ``stages {...}`` block (it has to be at least one stage
+
+.. code-block:: groovy
+
+    stages {
+        stage("build") {
+            steps {
+                echo "hello"
+            }
+        }
+    }
+
+If you use parallel inside your steps block, you cannot have anything besides that
+
+.. code-block:: groovy
+
+    stages {
+        stage("build") {
+            steps {
+                parallel(
+                    first: {
+                        echo "First branch"
+                    },
+                    second: {
+                        echo "Second branch"
+                    }
+                )
+            }
+        }
+    }
+
+Agent
+^^^^^
+It is required whithin the ``pipeline {...}``
+At the begining of pipeline directive:
+
+- ``agent any``
+- ``agent none``
+- ``agent label:'some-label'``
+- ``agent docker:"python:3.6.3", dockerArgs:"-v /tmp:/tmp -p 80:80"``
+- ``agent dockerfile:true, dockerArgs:"-v /tmp:/tmp -p 80:80"`` ## Dockerfile in root of your repo
+- ``agent dockerfile:"SomeOtherDockerfile", dockerArgs:"-v /tmp:/tmp -p 80:80"``
+
+Post Actions
+^^^^^^^^^^^^
+At the end of pipeline directive:
+
+- ``always {...}``
+- ``success {...}``
+- ``failure {...}``
+
+.. code-block:: groovy
+
+    post {
+
+        // evaluated first
+        always {
+            echo "Done."
+        }
+
+        sucess {
+            echo "Sucess. Will now deploy."
+        }
+
+        failure {
+            echo "Failure. Will cleanup."
+        }
+    }
+
+Parameters
+^^^^^^^^^^
+.. code-block:: groovy
+
+    parameters {
+        booleanParam(defaultValue: true, description: '', name: 'flag')
+        stringParam(defaultValue: '', description: '', name: 'SOME_STRING')
+    }
+
+Triggers
+^^^^^^^^
+- cron
+- upstream
+- callSCM
+
+.. code-block:: groovy
+
+    triggers {
+        cron('@daily')
+    }
+
+Properties
+^^^^^^^^^^
+.. code-block:: groovy
+
+    properties {
+        // how many builds to keep?
+        buildDiscarder(logRotatr(numToKeepStr:'1'))
+        disableConcurentBuilds()
+    }
+
+When
+^^^^
+Blue ocean visualizes failed due to the failure or failed due to the when
+.. code-block:: groovy
+
+    stage("deploy") {
+        when {
+            echo 'Should I run?'
+            return true
+        }
+
+        steps {
+            script {
+                echo 'Ehlo'
+                echo 'World'
+            }
+        }
+    }
+
+Timeout
+^^^^^^^
+Inside the ``steps``
+.. code-block:: groovy
+
+    timeout(time: 60) {
+        echo 'timeout happend'
+    }
+
+Use case
+^^^^^^^^
+.. code-block:: groovy
+
+    pipeline {
+        agent any
+
+        parameters {
+            booleanParam(defaultValue: true, description: '', name: 'flag')
+            stringParam(defaultValue: '', description: '', name: 'SOME_STRING')
+        }
+
+        stages {
+            stage("build") {
+                steps {
+                    echo "hello"
+                }
+            }
+        }
+
+        post {
+            always {
+                echo "Done."
+            }
+
+            sucess {
+                echo "Sucess. Will now deploy."
+            }
+
+            failure {
+                echo "Failure. Will cleanup."
+            }
+        }
+    }
+
+Docker
+------
+- docker pull openjdk:7-jdk
+- docker pull openjdk:8-jdk
+- docker pull maven:3-jdk-7
+- docker pull maven:3-jdk-8
+- docker pull golang:1.7
+- docker pull ruby:2.3
+- docker pull python:2
+- docker pull python:3
+
+
+Dobre praktyki
+--------------
+- Skrypt releasowy trzymany w konfiguracji narzędzia
+- Instalacja nadmiarowych pluginów
+- Korzystanie z pluginów zamiast z linii poleceń
+- Przygotowanie środowiska + provisioning
+- Spawnowanie agentów w cloud i czas setupu nowego środowiska
+- Długość buildów
+- Ignorowanie testów ?!
+- Skipowanie testów (verbose)
+- Budowanie Pull Requestów
+- Jak długo trzymać branche?
+- Jak automatycznie czyścić branche?
+- Budowanie na różnych środowiskach
+-
+
+
+
 
 
 `Job DSL`
