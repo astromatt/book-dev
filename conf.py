@@ -32,6 +32,7 @@ todo_include_todos = False
 today_fmt = '%Y-%m-%d'
 highlight_language = 'python3'
 source_suffix = ['.rst']
+numfig = True
 
 version = get_version()
 release = get_version()
