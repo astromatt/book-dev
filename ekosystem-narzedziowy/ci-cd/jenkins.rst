@@ -9,7 +9,7 @@ Jenkins
 - https://jenkins.io/
 - https://jenkins.io/doc
 
-.. figure:: _static/img/devops-continuous.png
+.. figure:: /_static/img/devops-continuous.png
     :scale: 75%
     :align: center
 
@@ -39,7 +39,7 @@ Blue Ocean
 Pipeline model definition plugin
 --------------------------------
 
-.. figure:: _static/img/ecosystem-jenkins-pipeline.png
+.. figure:: /_static/img/ecosystem-jenkins-pipeline.png
     :scale: 75%
     :align: center
 
@@ -58,6 +58,7 @@ Pipeline model definition plugin
 - Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
 
 Sample ``Jenkinsfile``:
+
 .. code-block:: groovy
 
     pipeline {
@@ -69,6 +70,7 @@ Sample ``Jenkinsfile``:
                     sh 'make'
                 }
             }
+
             stage('Test'){
                 steps {
                     sh 'make check'
@@ -77,6 +79,7 @@ Sample ``Jenkinsfile``:
                     junit 'reports/**/*.xml'
                 }
             }
+
             stage('Deploy') {
                 steps {
                     sh 'make publish'
@@ -86,9 +89,7 @@ Sample ``Jenkinsfile``:
     }
 
 
-
-
-.. figure:: _static/img/ecosystem-jenkins-dsl.png
+.. figure:: /_static/img/ecosystem-jenkins-dsl.png
     :scale: 75%
     :align: center
 
@@ -140,7 +141,8 @@ Tools
 
 Environment
 ^^^^^^^^^^^
-Top level
+Top level:
+
 .. code-block:: groovy
 
     environment {
@@ -149,7 +151,8 @@ Top level
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
     }
 
-Or per stage level (overwrite)
+Or per stage level (overwrite):
+
 .. code-block:: groovy
 
     environment {
@@ -437,7 +440,8 @@ When
 
 Timeout
 ^^^^^^^
-Inside the ``steps``
+Inside the ``steps``:
+
 .. code-block:: groovy
 
     timeout(time: 60) {
@@ -502,7 +506,8 @@ Use case
 
 Node
 ^^^^
-``node`` allocates an executor and workspace in the Jenkins environment.
+``node`` allocates an executor and workspace in the Jenkins environment:
+
 .. code-block:: groovy
 
     node {
@@ -599,7 +604,8 @@ Dobre praktyki
 - Budowanie na różnych środowiskach
 
 
-Asking for user input
+Asking for user input:
+
 .. code-block:: groovy
 
     pipeline {
