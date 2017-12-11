@@ -52,6 +52,17 @@ Proces wytwarzania oprogramowania
     proces-wytwarzania-oprogramowania/scrum.rst
     proces-wytwarzania-oprogramowania/technologie.rst
 
+CI/CD
+-----
+.. toctree::
+    :titlesonly:
+    :caption: CI/CD
+    :glob:
+
+    ci-cd/circle-ci.rst
+    ci-cd/jenkins.rst
+    ci-cd/travis.rst
+
 Ekosystem narzędziowy
 ---------------------
 .. toctree::

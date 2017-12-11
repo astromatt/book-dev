@@ -1,9 +1,3 @@
-.. todo:: zamienić na osobne pliki
-.. todo:: obniżyć poziom nagłówków
-.. todo:: Bitbucket Multibranch project (jako dodatkowy plugin)
-.. todo:: Jenkins odpalający git bisect i testy
-
-
 Jenkins
 =======
 - https://jenkins.io/
@@ -14,6 +8,14 @@ Jenkins
     :align: center
 
     Continuous Integration -> Continuous Delivery -> Continuous Deployment
+
+Jenkins in Devtools Ecosystem
+-----------------------------
+.. figure:: img/ecosystem-big-picture-01.png
+    :scale: 50%
+    :align: center
+
+    Ecosystem Big Picture
 
 Architecture
 ------------
@@ -329,6 +331,8 @@ Extra
     :language: groovy
     :caption: Commit Message
 
+- Jenkins odpalający ``git bisect`` i testy dla każdego commita z próby, tak długo aż nie znajdzie problemu
+
 Build Strategy
 --------------
 .. figure:: img/build-strategy.jpg
@@ -349,24 +353,24 @@ Build Strategy
 
 Instalacja Jenkinsa i konfuguracja buildów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Zainstaluj `Jenkins` za pomocą paczek `DEB` przez ``apt-get``
-- Alternatywnie możesz użyć `Docker` albo manifestów `Puppeta`
-- Czy wcześniej zainstalowałeś `Bitbucket Server`?
+- Zainstaluj *Jenkins* za pomocą paczek *DEB* przez ``apt-get``
+- Alternatywnie możesz użyć *Docker* albo manifestów *Puppeta*
+- Czy wcześniej zainstalowałeś *Bitbucket Server*?
 
     - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
-    - Tak - Zaciągnij repozytorium ``sonar-examples`` z twojej instancji `Bitbucket Server`
+    - Tak - Zaciągnij repozytorium ``sonar-examples`` z twojej instancji *Bitbucket Server*
 
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``:
 
-    - `ut` - unit tests
-    - `it` - integration tests
+    - *ut* - unit tests
+    - *it* - integration tests
 
-- Ustaw joby przez `Jenkinsa`
+- Ustaw joby przez *Jenkinsa*
 
 .. tip:: Bitubcket plugin do Jenkinsa
 
 .. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie za pomocą ``apt-get`` na `Ubuntu`
+    :label: Pokaż rozwiązanie za pomocą ``apt-get`` na *Ubuntu*
 
     wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
     echo "deb http://pkg.jenkins-ci.org/debian binary/" >> /etc/apt/sources.list
@@ -381,7 +385,7 @@ Instalacja Jenkinsa i konfuguracja buildów
     service jenkins start
 
 .. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie za pomocą ``docker`` na `Ubuntu`
+    :label: Pokaż rozwiązanie za pomocą ``docker`` na *Ubuntu*
 
     docker pull jenkins
     docker run -p 8080:8080 -p 50000:50000 -v /tmp/jenkins_home_on_host:/var/jenkins_home jenkins
@@ -391,9 +395,9 @@ Instalacja Jenkinsa i konfuguracja buildów
 
 Budowanie Pull Requestów
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- Skonfiguruj ręcznie plan by budował gałęzie `GIT Flow`:
+- Skonfiguruj ręcznie plan by budował gałęzie *GIT Flow*
 
-    - `Pull Requests`
+    - Pull Requests
     - ``feature``
     - ``bugfix``
     - ``master``
@@ -499,17 +503,17 @@ Budowanie Pull Requestów
 
     - https://plugins.jenkins.io/stash-pullrequest-builder
 
-Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
+Budowanie *Checkstyle*, *PMD*, *JaCoCo*, *Findbugs* i *PITest*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Dla repozytorium ``sonar-examples``
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
-- Wyniki upublicznij w `SonarQube`
+- Wyniki upublicznij w *SonarQube*
 - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 
 Job DSL
 ^^^^^^^
-- Przepisz całą konfigurację wykorzustując plik `Job DSL`
+- Przepisz całą konfigurację wykorzustując plik *Job DSL*
 
 Jenkins Docker Plugin
 ^^^^^^^^^^^^^^^^^^^^^
@@ -524,7 +528,7 @@ Jenkins i testy wydajnościowe JMeter
 - Test wydajnościowy powinien zapisany w ``xml`` oraz uruchamiany bez wykorzystania GUI
 
 .. toggle-code-block:: xml
-    :label: Pokaż rozwiązanie 2
+    :label: Pokaż rozwiązanie JMeter
 
     <?xml version="1.0" encoding="UTF-8"?>
     <jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
