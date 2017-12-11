@@ -1,19 +1,65 @@
 .. todo:: zamienić na osobne pliki
 .. todo:: obniżyć poziom nagłówków
-.. todo:: Jenkins Multibranch (out-of the box)
 .. todo:: Bitbucket Multibranch project (jako dodatkowy plugin)
 .. todo:: Jenkins odpalający git bisect i testy
+
 
 Jenkins
 =======
 - https://jenkins.io/
 - https://jenkins.io/doc
 
-.. figure:: /_static/img/devops-continuous.png
+.. figure:: img/devops-continuous.png
     :scale: 75%
     :align: center
 
-    Continuous ...
+    Continuous Integration -> Continuous Delivery -> Continuous Deployment
+
+Architecture
+------------
+- Local executors (default: 2)
+- Remote workers via SSH and labels
+- Docker build
+- New UI (Blue Ocean) currently accessible as a plugin, but soon to be default
+- Jenkins uses Groovy scripts in ``Jenkinsfile`` in repository main directory
+
+Administration
+--------------
+
+User Management
+^^^^^^^^^^^^^^^
+- Always use LDAP (OpenLDAP or Active Directory)
+- name groups as ``jenkins-users`` or ``jenkins-administrators``
+- local administrator ``jenkins-administrator`` only for fixing bugs with LDAP
+- use ``jenkins@example.com`` (for easy email fiterling)
+- use ``jenkins.example.com`` as domain name with Firewall blocking external access
+
+Plugin installation
+^^^^^^^^^^^^^^^^^^^
+- Dependencies hell
+- Plugin support (especially those free ones)
+- Open Source plugins
+- Plugin and upgrades
+- Once given out, cannot be easily taken away
+
+Build Triggers
+^^^^^^^^^^^^^^
+- Trigger builds remotely (e.g., from scripts via REST API)
+- Build after other projects are built
+- Build periodically
+- GitHub hook trigger for GITScm polling
+- Poll SCM
+
+Notifications
+-------------
+- Email
+- Slack / HipChat
+- IRC
+
+SonarScanner
+------------
+- https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+- https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
 
 
 Large repos
@@ -28,7 +74,6 @@ Large repos
 - Pipeline stash / unstash (sparse checkout on master node, and then stash checkout, and unstash on remotes)
 - Sparse checkout (Subset of working tree - single directory [exclude or include on per file basis])
 
-
 Blue Ocean
 ----------
 - New UI
@@ -36,901 +81,148 @@ Blue Ocean
 - Accessible at ``/blue/`` in the URL after "Blue Ocean" plugin installation.
 - Pipeline editor
 
-`Job DSL`
----------
+Environment Variables
+---------------------
+.. csv-table::
+    :header-rows: 1
+
+    "Variable", "Description"
+    "BUILD_NUMBER", "The current build number, such as '153'"
+    "BUILD_ID", "The current build id, such as ``2005-08-22_23-59-59`` (YYYY-MM-DD_hh-mm-ss, defunct since version 1.597)"
+    "BUILD_URL", "The URL where the results of this build can be found (e.g. ``http://localhost:8080/job/MyJobName/1337/``)"
+    "NODE_NAME", "The name of the node the current build is running on. Equals ``master`` for master node."
+    "JOB_NAME", "Name of the project of this build. This is the name you gave your job when you first set it up. It's the third column of the Jenkins Dashboard main page."
+    "BUILD_TAG", "String of ``jenkins-${JOB_NAME}-${BUILD_NUMBER}``. Convenient to put into a resource file, a jar file, etc for easier identification."
+    "JENKINS_URL", "Set to the URL of the Jenkins master that's running the build. This value is used by Jenkins CLI for example"
+    "EXECUTOR_NUMBER", "The unique number that identifies the current executor (among executors of the same machine) that's carrying out this build. This is the number you see in the 'build executor status', except that the number starts from 0, not 1."
+    "JAVA_HOME", "If your job is configured to use a specific JDK, this variable is set to the ``JAVA_HOME`` of the specified JDK. When this variable is set, ``PATH`` is also updated to have ``$JAVA_HOME/bin``."
+    "WORKSPACE", "The absolute path of the workspace."
+    "SVN_REVISION", "For Subversion-based projects, this variable contains the revision number of the module. If you have more than one module specified, this won't be set."
+    "CVS_BRANCH", "For CVS-based projects, this variable contains the branch of the module. If CVS is configured to check out the trunk, this environment variable will not be set."
+    "GIT_COMMIT", "For Git-based projects, this variable contains the Git hash of the commit checked out for the build (like ``ce9a3c1404e8c91be604088670e93434c4253f03``) (all the ``GIT_*`` variables require git plugin)"
+    "GIT_URL", "For Git-based projects, this variable contains the Git url (like ``git@github.com:user/repo.git`` or ``https://github.com/user/repo.git``)"
+    "GIT_BRANCH", "For Git-based projects, this variable contains the Git branch that was checked out for the build (normally ``origin/master``)"
+
+
+Groovy syntax
+-------------
+.. literalinclude:: code/groovy-variable.groovy
+    :language: groovy
+    :caption: Variable
+
+.. literalinclude:: code/groovy-contitional.groovy
+    :language: groovy
+    :caption: Conditional
+
+.. literalinclude:: code/groovy-control-structure.groovy
+    :language: groovy
+    :caption: Control structure
+
+.. literalinclude:: code/groovy-function.groovy
+    :language: groovy
+    :caption: Function
+
+.. literalinclude:: code/groovy-class.groovy
+    :language: groovy
+    :caption: Class
+
+.. literalinclude:: code/groovy-loop.groovy
+    :language: groovy
+    :caption: Loop
+
+.. literalinclude:: code/groovy-import.groovy
+    :language: groovy
+    :caption: Import
+
+.. literalinclude:: code/groovy-exception.groovy
+    :language: groovy
+    :caption: Exception
+
+.. literalinclude:: code/groovy-http.groovy
+    :language: groovy
+    :caption: Rest API HTTP queries
 
-Podstawy składni `Groovy`
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-:Zmienne:
-    .. code-block:: groovy
-
-        String x
-        def o
-
-    .. code-block:: groovy
-
-        x = 1
-        println x
-
-        x = new java.util.Date()
-        println x
-
-        x = -3.1499392
-        println x
-
-        x = false
-        println x
-
-        x = "Hi"
-        println x
-
-        def (a, b, c) = [10, 20, 'foo']
-
-        def nums = [1, 3, 5]
-        def a, b, c
-        (a, b, c) = nums
-
-:Control structures:
-
-    .. code-block:: groovy
-
-        def x = false
-        def y = false
-
-        if ( !x ) {
-            x = true
-        }
-
-        assert x == true
-
-        if ( x ) {
-            x = false
-        } else {
-            y = true
-        }
-
-        assert x == y
-
-    .. code-block:: groovy
-
-        def x = 1.23
-        def result = ""
-
-        switch ( x ) {
-            case "foo":
-                result = "found foo"
-                // lets fall through
-
-            case "bar":
-                result += "bar"
-
-            case [4, 5, 6, 'inList']:
-                result = "list"
-                break
-
-            case 12..30:
-                result = "range"
-                break
-
-            case Integer:
-                result = "integer"
-                break
-
-            case Number:
-                result = "number"
-                break
-
-            case ~/fo*/: // toString() representation of x matches the pattern?
-                result = "foo regex"
-                break
-
-            case { it < 0 }: // or { x < 0 }
-                result = "negative"
-                break
-
-            default:
-                result = "default"
-        }
-
-:Funkcje:
-    - Optional ``return``
-
-    .. code-block:: groovy
-
-        def jobName = 'example'
-
-        job(jobName) {
-
-        }
-
-:Klasy:
-
-    .. code-block:: groovy
-
-        class Person {
-            String name
-            int age
-            def fetchAge = { age }
-        }
-
-        def p = new Person(name:'Jessica', age:42)
-
-    .. code-block:: groovy
-
-        class Person {
-            String name
-        }
-
-        class Thing {
-            String name
-        }
-
-        def p = new Person(name: 'Norman')
-        def t = new Thing(name: 'Teapot')
-
-    .. code-block:: groovy
-
-        class Person {
-            String name
-            String toString() { name }
-        }
-        def sam = new Person(name:'Sam')
-
-        // Create a GString with lazy evaluation of "sam"
-        def gs = "Name: ${-> sam}"
-
-
-:Pętle:
-    .. code-block:: groovy
-
-        String message = ''
-        for (int i = 0; i < 5; i++) {
-            message += 'Hi '
-        }
-        assert message == 'Hi Hi Hi Hi Hi '
-
-:Zmienne ilości parametrów w finkcjach:
-    .. code-block:: groovy
-
-        def concat1 = { String... args -> args.join('') }
-        assert concat1('abc','def') == 'abcdef'
-
-        def concat2 = { String[] args -> args.join('') }
-        assert concat2('abc', 'def') == 'abcdef'
-
-        def multiConcat = { int n, String... args ->
-            args.join('')*n
-        }
-        assert multiConcat(2, 'abc','def') == 'abcdefabcdef'
-
-:Ciągi zanków:
-    .. code-block:: groovy
-
-        def viewspec = '''
-        //depot/Tools/build/... //jryan_car/Tools/build/...
-        //depot/commonlibraries/utils/... //jryan_car/commonlibraries/utils/...
-        //depot/helloworld/... //jryan_car/helloworld/...
-        '''
-
-        job('PerforceJob') {
-            scm {
-                p4(viewspec)
-            }
-        }
-
-:Zapytania API REST:
-    .. code-block:: groovy
-
-        def project = 'Netflix/asgard'
-        def branchApi = new URL("https://api.github.com/repos/${project}/branches")
-        def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
-
-        branches.each {
-            def branchName = it.name
-            def jobName = "${project}-${branchName}".replaceAll('/','-')
-
-            job(jobName) {
-                scm {
-                    git("https://github.com/${project}.git", branchName)
-                }
-            }
-        }
-
-:Importy:
-    .. code-block:: groovy
-
-        package utilities
-
-        class MyUtilities {
-            static void addMyFeature(def job) {
-                job.with {
-                    description('Arbitrary feature')
-                }
-            }
-        }
-
-    .. code-block:: groovy
-
-        import utilities.MyUtilities
-
-        def myJob = job('example')
-        MyUtilities.addMyFeature(myJob)
-
-:Exception:
-    .. code-block:: groovy
-
-        try {
-            'moo'.toLong()   // this will generate an exception
-            assert false     // asserting that this point should never be reached
-        } catch ( e ) {
-            assert e in NumberFormatException
-        }
-
-
-Podstawy składni `Job DSL`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Jedyne wymagane to nazwa `Job`:
-
-:DSL Methods:
-    .. code-block:: groovy
-
-        job('my-job')
-
-:Job:
-    .. code-block:: groovy
-
-        job(String name, Closure closure = null)
-        freeStyleJob(String name, Closure closure = null)
-        buildFlowJob(String name, Closure closure = null)
-        ivyJob(String name, Closure closure = null)
-        matrixJob(String name, Closure closure = null)
-        mavenJob(String name, Closure closure = null)
-        multiJob(String name, Closure closure = null)
-        workflowJob(String name, Closure closure = null)
-        multibranchWorkflowJob(String name, Closure closure = null)
-
-    .. code-block:: groovy
-
-        def myJob = freeStyleJob('SimpleJob')
-        myJob.with {
-            description 'A Simple Job'
-        }
-
-:View:
-    .. code-block:: groovy
-
-        listView(String name, Closure closure = null)
-        sectionedView(String name, Closure closure = null)
-        nestedView(String name, Closure closure = null)
-        deliveryPipelineView(String name, Closure closure = null)
-        buildPipelineView(String name, Closure closure = null)
-        buildMonitorView(String name, Closure closure = null)
-        categorizedJobsView(String name, Closure closure = null)
-
-:Folder:
-    .. code-block:: groovy
-
-        folder(String name, Closure closure = null)
-
-    .. code-block:: groovy
-
-        folder('project-a')
-        freeStyleJob('project-a/compile')
-        listView('project-a/pipeline')
-        folder('project-a/testing')
-
-:Config:
-    .. code-block:: groovy
-
-        configFiles(Closure configFilesClosure = null)
-
-:Queue:
-    .. code-block:: groovy
-
-        queue(String jobName)
-        queue(Job job)
-
-:Reading from workspace:
-    .. code-block:: groovy
-
-        InputStream streamFileFromWorkspace(String filePath)
-        String readFileFromWorkspace(String filePath)
-        String readFileFromWorkspace(String jobName, String filePath)
-
-    .. code-block:: groovy
-
-        job('example') {
-            steps {
-                shell(readFileFromWorkspace('build.sh'))
-            }
-        }
-
-        job('acme-tests') {
-            description(readFileFromWorkspace('acme-tests', 'README.txt'))
-        }
-
-:Logging:
-    .. code-block:: groovy
-
-        out.println('Hello from a Job DSL script!')
-        println('Hello from a Job DSL script!')
-
-    .. code-block:: groovy
-
-        import java.util.logging.Logger
-
-        Logger logger = Logger.getLogger('org.example.jobdsl')
-        logger.info('Hello from a Job DSL script!')
-
-:Confiugure:
-    .. code-block:: groovy
-
-        job('example') {
-            ...
-            configure { project ->
-                project / buildWrappers / EnvInjectPasswordWrapper {
-                    injectGlobalPasswords(true)
-                }
-            }
-        }
-
-Przykłady `Job DSL`
-^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: groovy
-
-    job('DSL-Tutorial-1-Test') {
-        scm {
-            git('git://github.com/quidryan/aws-sdk-test.git')
-        }
-        triggers {
-            scm('H/15 * * * *')
-        }
-        steps {
-            maven('-e clean test')
-        }
-    }
-
-.. code-block:: groovy
-
-    def project = 'quidryan/aws-sdk-test'
-    def branchApi = new URL("https://api.github.com/repos/${project}/branches")
-    def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
-
-    branches.each {
-        def branchName = it.name
-        def jobName = "${project}-${branchName}".replaceAll('/','-')
-
-        job(jobName) {
-            scm {
-                git("git://github.com/${project}.git", branchName)
-            }
-            steps {
-                maven("test -Dproject.name=${project}/${branchName}")
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-        def giturl = 'https://github.com/quidryan/aws-sdk-test.git'
-
-        for(i in 0..10) {
-            job("DSL-Tutorial-1-Test-${i}") {
-                scm {
-                    git(giturl)
-                }
-                steps {
-                    maven("test -Dtest.suite=${i}")
-                }
-            }
-        }
 
 ``Jenkinsfile`` - Pipeline model definition
 -------------------------------------------
 - https://jenkins.io/doc/book/pipeline/jenkinsfile/
-
-Example
-^^^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-
-        stages {
-            stage('Build') {
-                steps {
-                    echo 'Building..'
-                }
-            }
-            stage('Test') {
-                steps {
-                    echo 'Testing..'
-                }
-            }
-            stage('Deploy') {
-                steps {
-                    echo 'Deploying....'
-                }
-            }
-        }
-    }
-
-Build
-^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-
-        stages {
-            stage('Build') {
-                steps {
-                    sh 'make'
-                    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-                }
-            }
-        }
-    }
-
-Test
-^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-
-        stages {
-            stage('Test') {
-                steps {
-                    /* `make check` returns non-zero on test failures,
-                    * using `true` to allow the Pipeline to continue nonetheless
-                    */
-                    sh 'make check || true'
-                    junit '**/target/*.xml'
-                }
-            }
-        }
-    }
-
-Deploy
-^^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-
-        stages {
-            stage('Deploy') {
-                when { currentBuild.result == 'SUCCESS' }
-                steps {
-                    sh 'make publish'
-                }
-            }
-        }
-    }
-
-
-Advanced syntax
-^^^^^^^^^^^^^^^
-.. code-block:: groovy
-
-    def username = 'Jenkins'
-    echo 'Hello Mr. ${username}'
-    echo "I said, Hello Mr. ${username}"
-
-Environment
-^^^^^^^^^^^
-
-===========  ============================================
-Variable
-===========  ============================================
-BUILD_ID     The current build ID, identical to BUILD_NUMBER for builds created in Jenkins versions 1.597+
-JOB_NAME     Name of the project of this build, such as "foo" or "foo/bar".
-JENKINS_URL  Full URL of Jenkins, such as example.com:port/jenkins/ (NOTE: only available if Jenkins URL set in "System Configuration")
-===========  ============================================
-
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        stages {
-            stage('Example') {
-                steps {
-                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                }
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        environment {
-            CC = 'clang'
-        }
-        stages {
-            stage('Example') {
-                environment {
-                    DEBUG_FLAGS = '-g'
-                }
-                steps {
-                    sh 'printenv'
-                }
-            }
-        }
-    }
-
-Parameters
-^^^^^^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        parameters {
-            string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-        }
-        stages {
-            stage('Example') {
-                steps {
-                    echo "${Greeting} World!"
-                }
-            }
-        }
-    }
-
-Handling failures
-^^^^^^^^^^^^^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        stages {
-            stage('Test') {
-                steps {
-                    sh 'make check'
-                }
-            }
-        }
-        post {
-            always {
-                junit '**/target/*.xml'
-            }
-            failure {
-                mail to: team@example.com, subject: 'The Pipeline failed :('
-            }
-        }
-    }
-
-Multiple agents
-^^^^^^^^^^^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent none
-        stages {
-            stage('Build') {
-                agent any
-                steps {
-                    checkout scm
-                    sh 'make'
-                    stash includes: '**/target/*.jar', name: 'app'
-                }
-            }
-            stage('Test on Linux') {
-                agent {
-                    label 'linux'
-                }
-                steps {
-                    unstash 'app'
-                    sh 'make check'
-                }
-                post {
-                    always {
-                        junit '**/target/*.xml'
-                    }
-                }
-            }
-            stage('Test on Windows') {
-                agent {
-                    label 'windows'
-                }
-                steps {
-                    unstash 'app'
-                    bat 'make check'
-                }
-                post {
-                    always {
-                        junit '**/target/*.xml'
-                    }
-                }
-            }
-        }
-    }
-
-Optional parameters
-^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: groovy
-
-    git url: 'git://example.com/amazing-project.git', branch: 'master'
-    git([url: 'git://example.com/amazing-project.git', branch: 'master'])
-
-.. code-block:: groovy
-
-    sh 'echo hello' /* short form  */
-    sh([script: 'echo hello'])  /* long form */
-
-Advanced usage
-^^^^^^^^^^^^^^
-.. code-block:: groovy
-
-    stage('Build') {
-        /* .. snip .. */
-    }
-
-    stage('Test') {
-        parallel linux: {
-            node('linux') {
-                checkout scm
-                try {
-                    unstash 'app'
-                    sh 'make check'
-                }
-                finally {
-                    junit '**/target/*.xml'
-                }
-            }
-        },
-        windows: {
-            node('windows') {
-                /* .. snip .. */
-            }
-        }
-    }
-
-
-Pipeline model definition plugin
---------------------------------
-
-.. figure:: /_static/img/ecosystem-jenkins-pipeline.png
-    :scale: 75%
-    :align: center
-
-    Pipeline
-
-- Bundled with Blue Ocean
-- ``declarative-linter`` validate before running job
 - https://jenkins.io/doc/pipeline/steps/
 - https://jenkins.io/doc/tutorials/building-a-multibranch-pipeline-project/
 - http://localhost:8080/pipeline-syntax/
 - http://localhost:8080/pipeline-syntax/globals#currentBuild
 - http://localhost:8080/pipeline-syntax/globals#env
 - ``Jenkinsfile``
+- Bundled with Blue Ocean
+- ``declarative-linter`` validate before running job
 - The first line of a Jenkinsfile should be #!/usr/bin/env groovy
 - Automatically create Pipelines for all Branches and Pull Requests
 - Code review/iteration on the Pipeline
 - Audit trail for the Pipeline
 - Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
 
-Sample ``Jenkinsfile``:
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-
-        stages {
-            stage('Build') {
-                steps {
-                    sh 'make'
-                }
-            }
-
-            stage('Test'){
-                steps {
-                    sh 'make check'
-
-                    // junit is a Pipeline step provided by the JUnit plugin for aggregating test reports.
-                    junit 'reports/**/*.xml'
-                }
-            }
-
-            stage('Deploy') {
-                steps {
-                    sh 'make publish'
-                }
-            }
-        }
-    }
-
-
-.. figure:: /_static/img/ecosystem-jenkins-dsl.png
+.. figure:: img/ecosystem-jenkins-pipeline.png
     :scale: 75%
     :align: center
 
     Pipeline model definition plugin
 
-Pipeline
-^^^^^^^^
-Everything must be inside this
+Sample ``Jenkinsfile``:
 
-.. code-block:: groovy
+.. literalinclude:: code/jenkinsfile-simple.groovy
+    :language: groovy
+    :caption: Simple
 
-    pipeline {
-        agent any
-    }
+.. literalinclude:: code/jenkinsfile-example.groovy
+    :language: groovy
+    :caption: Example
 
-Options
-^^^^^^^
-.. code-block:: groovy
+.. literalinclude:: code/jenkinsfile-test.groovy
+    :language: groovy
+    :caption: Test
 
-    pipeline {
-        agent any
-        options {
-            timeout(time: 1, unit: 'HOURS')
-            // Prepend all console output generated by the Pipeline run with the time at which the line was emitted
-            timestamps()
-        }
-        stages {
-            stage('Example') {
-                steps {
-                    echo 'Hello World'
-                }
-            }
-        }
-    }
+.. literalinclude:: code/jenkinsfile-build.groovy
+    :language: groovy
+    :caption: Build
 
-Tools
-^^^^^
-- Requirements
-- Do not work with docker
-- If you put invalid, it will list valid
-- Automaticly installs requirements
+.. literalinclude:: code/jenkinsfile-deploy.groovy
+    :language: groovy
+    :caption: Deploy
 
-.. code-block:: groovy
+.. literalinclude:: code/jenkinsfile-environment.groovy
+    :language: groovy
+    :caption: Environment
 
-    tools {
-        maven "apache-maven-3.1.0"
-        jdk "default"
-    }
+.. literalinclude:: code/jenkinsfile-parameter.groovy
+    :language: groovy
+    :caption: Parameters
 
-Environment
-^^^^^^^^^^^
-Top level:
+.. literalinclude:: code/jenkinsfile-agent.groovy
+    :language: groovy
+    :caption: Agent
 
-.. code-block:: groovy
+.. literalinclude:: code/jenkinsfile-parallel.groovy
+    :language: groovy
+    :caption: Parallel
 
-    environment {
-        FOO = "BAZ"
-        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-    }
+.. literalinclude:: code/jenkinsfile-option.groovy
+    :language: groovy
+    :caption: Option
 
-Or per stage level (overwrite):
+.. literalinclude:: code/jenkinsfile-tool.groovy
+    :language: groovy
+    :caption: Tool
 
-.. code-block:: groovy
+.. literalinclude:: code/jenkinsfile-timeout.groovy
+    :language: groovy
+    :caption: Timeout
 
-    environment {
-        FOO = "BAZ"
-    }
+.. literalinclude:: code/jenkinsfile-input.groovy
+    :language: groovy
+    :caption: Input
 
-    stages {
-        stage("baz") {
-            steps {
-                sh 'echo "FOO is $FOO"'
-            }
-        }
-
-        stage("bar") {
-            environment {
-                FOO = "BAR"
-            }
-
-            steps {
-                sh 'echo "FOO is $FOO"'
-            }
-        }
-    }
-
-Stages
-^^^^^^
-- It is required whithin the ``pipeline {...}``
-- Cannot have empty ``stages {...}`` block (it has to be at least one stage
-
-.. code-block:: groovy
-
-    stages {
-        stage("build") {
-            steps {
-                echo "hello"
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-    stages {
-        stage("build") {
-            steps {
-                bat 'set'
-            }
-        }
-    }
-
-Parallel
-^^^^^^^^
-If you use parallel inside your steps block, you cannot have anything besides that
-
-.. code-block:: groovy
-
-    stages {
-        stage("build") {
-            steps {
-                parallel(
-                    first: {
-                        echo "First branch"
-                    },
-                    second: {
-                        echo "Second branch"
-                    }
-                )
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        stages {
-            stage('Non-Parallel Stage') {
-                steps {
-                    echo 'This stage will be executed first.'
-                }
-            }
-            stage('Parallel Stage') {
-                when {
-                    branch 'master'
-                }
-                failFast true
-                parallel {
-                    stage('Branch A') {
-                        agent {
-                            label "for-branch-a"
-                        }
-                        steps {
-                            echo "On Branch A"
-                        }
-                    }
-                    stage('Branch B') {
-                        agent {
-                            label "for-branch-b"
-                        }
-                        steps {
-                            echo "On Branch B"
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-Agent
-^^^^^
-It is required whithin the ``pipeline {...}``
-At the begining of pipeline directive:
-
-- ``agent any``
-- ``agent none``
-- ``agent label:'some-label'``
-- ``agent docker:"python:3.6.3", dockerArgs:"-v /tmp:/tmp -p 80:80"``
-- ``agent dockerfile:true, dockerArgs:"-v /tmp:/tmp -p 80:80"`` ## Dockerfile in root of your repo
-- ``agent dockerfile:"SomeOtherDockerfile", dockerArgs:"-v /tmp:/tmp -p 80:80"``
+.. literalinclude:: code/jenkinsfile-artifact.groovy
+    :language: groovy
+    :caption: Artifact
 
 Post Actions
 ^^^^^^^^^^^^
@@ -949,71 +241,10 @@ At the end of pipeline directive:
 :``aborted``: Only run the steps in post if the current Pipeline’s or stage’s run has an "aborted" status, usually due to the Pipeline being manually aborted. This is typically denoted by gray in the web UI
 
 
-.. code-block:: groovy
+.. literalinclude:: code/jenkinsfile-post.groovy
+    :language: groovy
+    :caption: Post
 
-    post {
-
-        // evaluated first
-        always {
-            echo "Done."
-
-            // Lets assume the step was ``sh './gradlew build'``
-            archive 'build/libs/**/*.jar'
-            junit 'build/reports/**/*.xml'
-            deleteDir() /* clean up our workspace */
-        }
-
-        sucess {
-            echo "Sucess. Will now deploy."
-            slackSend channel: '#ops-room',
-                      color: 'good',
-                      message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
-        }
-
-        failure {
-            echo "Failure. Will cleanup."
-            mail to: 'team@example.com',
-                 subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                 body: "Something is wrong with ${env.BUILD_URL}"
-        }
-
-        unstable {
-            echo 'I am unstable :/'
-            hipchatSend message: "Attention @here ${env.JOB_NAME} #${env.BUILD_NUMBER} has failed.",
-                        color: 'RED'
-        }
-
-        changed {
-            echo 'Things were different before...'
-        }
-    }
-
-Parameters
-^^^^^^^^^^
-.. code-block:: groovy
-
-    parameters {
-        booleanParam(defaultValue: true, description: '', name: 'flag')
-
-        // soon to be changed to stringParam
-        string(defaultValue: '', description: '', name: 'SOME_STRING')
-    }
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        parameters {
-            string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        }
-        stages {
-            stage('Example') {
-                steps {
-                    echo "Hello ${params.PERSON}"
-                }
-            }
-        }
-    }
 
 Triggers
 ^^^^^^^^
@@ -1024,22 +255,9 @@ Triggers
 
 :``upstream``: Accepts a comma separated string of jobs and a threshold. When any job in the string finishes with the minimum threshold, the Pipeline will be re-triggered. For example: ``triggers { upstream(upstreamProjects: 'job1,job2', threshold: hudson.model.Result.SUCCESS) }``
 
-.. code-block:: groovy
-
-    triggers {
-        cron('@daily')
-    }
-
-
-Properties
-^^^^^^^^^^
-.. code-block:: groovy
-
-    properties {
-        // how many builds to keep?
-        buildDiscarder(logRotatr(numToKeepStr:'1'))
-        disableConcurentBuilds()
-    }
+.. literalinclude:: code/jenkinsfile-trigger.groovy
+    :language: groovy
+    :caption: Trigger
 
 When
 ^^^^
@@ -1055,199 +273,28 @@ When
 
 :``anyOf``: Execute the stage when at least one of the nested conditions is true. Must contain at least one condition. For example: ``when { anyOf { branch 'master'; branch 'staging' } }``
 
-
-.. code-block:: groovy
-
-    stage("deploy") {
-        when {
-            echo 'Should I run?'
-            return true
-        }
-
-        steps {
-            script {
-                echo 'Ehlo'
-                echo 'World'
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        stages {
-            stage('Example Build') {
-                steps {
-                    echo 'Hello World'
-                }
-            }
-            stage('Example Deploy') {
-                when {
-                    expression { BRANCH_NAME ==~ /(production|staging)/ }
-                    anyOf {
-                        environment name: 'DEPLOY_TO', value: 'production'
-                        environment name: 'DEPLOY_TO', value: 'staging'
-                    }
-                }
-                steps {
-                    echo 'Deploying'
-                }
-            }
-        }
-    }
-
-
-Timeout
-^^^^^^^
-Inside the ``steps``:
-
-.. code-block:: groovy
-
-    timeout(time: 60) {
-        echo 'timeout happend'
-    }
-
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-        stages {
-            stage('Deploy') {
-                steps {
-                    retry(3) {
-                        sh './flakey-deploy.sh'
-                    }
-
-                    timeout(time: 3, unit: 'MINUTES') {
-                        sh './health-check.sh'
-                    }
-                }
-            }
-        }
-    }
-
-
-Use case
-^^^^^^^^
-.. code-block:: groovy
-
-    pipeline {
-        agent any
-
-        parameters {
-            booleanParam(defaultValue: true, description: '', name: 'flag')
-            stringParam(defaultValue: '', description: '', name: 'SOME_STRING')
-        }
-
-        stages {
-            stage("build") {
-                steps {
-                    echo "hello"
-                }
-            }
-        }
-
-        post {
-            always {
-                echo "Done."
-            }
-
-            sucess {
-                echo "Sucess. Will now deploy."
-            }
-
-            failure {
-                echo "Failure. Will cleanup."
-            }
-        }
-    }
-
-
-Node
-^^^^
-``node`` allocates an executor and workspace in the Jenkins environment:
-
-.. code-block:: groovy
-
-    node {
-        checkout scm
-        sh 'mvn clean install'
-        junit 'target/surefire-reports/**/*.xml'
-    }
-
-.. code-block:: groovy
-
-    agent {
-        node {
-            label 'my-defined-label'
-            customWorkspace '/some/other/path'
-        }
-    }
+.. literalinclude:: code/jenkinsfile-when.groovy
+    :language: groovy
+    :caption: When
 
 Docker
-------
+^^^^^^
 - https://youtu.be/TsWkZLLU-s4?t=3653
-- docker pull openjdk:7-jdk
-- docker pull openjdk:8-jdk
-- docker pull maven:3-jdk-7
-- docker pull maven:3-jdk-8
-- docker pull golang:1.7
-- docker pull ruby:2.3
-- docker pull python:2
-- docker pull python:3
 
-.. code-block:: groovy
+.. code-block:: console
 
-    agent {
-        docker { image 'node:7-alpine' }
-    }
+    $ docker pull openjdk:7-jdk
+    $ docker pull openjdk:8-jdk
+    $ docker pull maven:3-jdk-7
+    $ docker pull maven:3-jdk-8
+    $ docker pull golang:1.7
+    $ docker pull ruby:2.3
+    $ docker pull python:2
+    $ docker pull python:3
 
-.. code-block:: groovy
-
-    pipeline {
-        agent { docker 'python:3.6.3' }
-        stages {
-            stage('build') {
-                steps {
-                    sh 'python --version'
-                }
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            label 'my-defined-label'
-            args  '-v /tmp:/tmp'
-        }
-    }
-
-.. code-block:: groovy
-
-    pipeline {
-        agent none
-        stages {
-            stage('Example Build') {
-                agent { docker 'maven:3-alpine' }
-                steps {
-                    echo 'Hello, Maven'
-                    sh 'mvn --version'
-                }
-            }
-            stage('Example Test') {
-                agent { docker 'openjdk:8-jre' }
-                steps {
-                    echo 'Hello, JDK'
-                    sh 'java -version'
-                }
-            }
-        }
-    }
-
+.. literalinclude:: code/jenkinsfile-docker.groovy
+    :language: groovy
+    :caption: Docker
 
 Dobre praktyki
 --------------
@@ -1264,196 +311,37 @@ Dobre praktyki
 - Jak automatycznie czyścić branche?
 - Budowanie na różnych środowiskach
 
-
-Asking for user input:
-
-.. code-block:: groovy
-
-    pipeline {
-        agent {
-            docker {
-                image 'node:6-alpine'
-                args '-p 3000:3000 -p 5000:5000'
-            }
-        }
-        environment {
-            CI = 'true'
-        }
-        stages {
-            stage('Build') {
-                steps {
-                    sh 'npm install'
-                }
-            }
-            stage('Test') {
-                steps {
-                    sh './jenkins/scripts/test.sh'
-                }
-            }
-            stage('Deliver for development') {
-                when {
-                    branch 'development'
-                }
-                steps {
-                    sh './jenkins/scripts/deliver-for-development.sh'
-                    input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                    sh './jenkins/scripts/kill.sh'
-                }
-            }
-            stage('Deploy for production') {
-                when {
-                    branch 'production'
-                }
-                steps {
-                    sh './jenkins/scripts/deploy-for-production.sh'
-                    input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                    sh './jenkins/scripts/kill.sh'
-                }
-            }
-        }
-    }
-
-.. code-block:: groovy
-
-    // This shows a simple build wrapper example, using the AnsiColor plugin.
-    node {
-        // This displays colors using the 'xterm' ansi color map.
-        ansiColor('xterm') {
-            // Just some echoes to show the ANSI color.
-            stage "\u001B[31mI'm Red\u001B[0m Now not"
-        }
-    }
-
-.. code-block:: groovy
-
-    // This shows a simple example of how to archive the build output artifacts.
-    node {
-        stage "Create build output"
-
-        // Make the output directory.
-        sh "mkdir -p output"
-
-        // Write an useful file, which is needed to be archived.
-        writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
-
-        // Write an useless file, which is not needed to be archived.
-        writeFile file: "output/uselessfile.md", text: "This file is useless, no need to archive it."
-
-        stage "Archive build output"
-
-        // Archive the build output artifacts.
-        archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
-    }
-
-.. code-block:: groovy
-
-    node {
-        git url: 'https://github.com/jfrogdev/project-examples.git'
-
-        // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
-        def server = Artifactory.server "SERVER_ID"
-
-        // Read the upload spec and upload files to Artifactory.
-        def downloadSpec =
-                '''{
-                "files": [
-                    {
-                        "pattern": "libs-snapshot-local/*.zip",
-                        "target": "dependencies/",
-                        "props": "p1=v1;p2=v2"
-                    }
-                ]
-            }'''
-
-        def buildInfo1 = server.download spec: downloadSpec
-
-        // Read the upload spec which was downloaded from github.
-        def uploadSpec =
-                '''{
-                "files": [
-                    {
-                        "pattern": "resources/Kermit.*",
-                        "target": "libs-snapshot-local",
-                        "props": "p1=v1;p2=v2"
-                    },
-                    {
-                        "pattern": "resources/Frogger.*",
-                        "target": "libs-snapshot-local"
-                    }
-                ]
-            }'''
-
-        // Upload to Artifactory.
-        def buildInfo2 = server.upload spec: uploadSpec
-
-        // Merge the upload and download build-info objects.
-        buildInfo1.append buildInfo2
-
-        // Publish the build to Artifactory
-        server.publishBuildInfo buildInfo1
-    }
-
-.. code-block:: groovy
-
-    // These should all be performed at the point where you've
-    // checked out your sources on the agent. A 'git' executable
-    // must be available.
-    // Most typical, if you're not cloning into a sub directory
-    shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
-
-.. code-block:: groovy
-
-    // Jobs In Parallel
-    // in this array we'll place the jobs that we wish to run
-    def branches = [:]
-
-    //running the job 4 times concurrently
-    //the dummy parameter is for preventing mutation of the parameter before the execution of the closure.
-    //we have to assign it outside the closure or it will run the job multiple times with the same parameter "4"
-    //and jenkins will unite them into a single run of the job
-
-    for (int i = 0; i < 4; i++) {
-      def index = i //if we tried to use i below, it would equal 4 in each job execution.
-      branches["branch${i}"] = {
-    //Parameters:
-    //param1 : an example string parameter for the triggered job.
-    //dummy: a parameter used to prevent triggering the job with the same parameters value.
-    //       this parameter has to accept a different value each time the job is triggered.
-        build job: 'freestyle', parameters: [
-          string(name: 'param1', value:'test_param'),
-          string(name:'dummy', value: "${index}")]
-      }
-    }
-    parallel branches
-
-.. code-block:: groovy
-
-    // Parallel Multiple Nodes
-    def labels = ['precise', 'trusty'] // labels for Jenkins node types we will build on
-    def builders = [:]
-
-    for (x in labels) {
-        def label = x // Need to bind the label variable before the closure - can't do 'for (label in labels)'
-
-        // Create a map to pass in to the 'parallel' step so we can fire all the builds at once
-        builders[label] = {
-          node(label) {
-            // build steps that should happen on all nodes go here
-          }
-        }
-    }
-
-    parallel builders
-
-Solutions
----------
+Extra
+^^^^^
 - https://jenkins.io/solutions/pipeline/
 - Python https://jenkins.io/solutions/python/
 - Java https://jenkins.io/solutions/java/
 
+.. literalinclude:: code/jenkinsfile-color.groovy
+    :language: groovy
+    :caption: Color
 
+.. literalinclude:: code/jenkinsfile-artifactory.groovy
+    :language: groovy
+    :caption: Artifactory
 
+.. literalinclude:: code/jenkinsfile-commit-message.groovy
+    :language: groovy
+    :caption: Commit Message
 
+Build Strategy
+--------------
+.. figure:: img/build-strategy.jpg
+    :scale: 100%
+    :align: center
+
+    Build Strategy
+
+.. figure:: img/git-flow-whiteboard.jpg
+    :scale: 100%
+    :align: center
+
+    GIT Flow
 
 
 Ćwiczenia
@@ -1495,8 +383,6 @@ Instalacja Jenkinsa i konfuguracja buildów
 .. toggle-code-block:: sh
     :label: Pokaż rozwiązanie za pomocą ``docker`` na `Ubuntu`
 
-.. code-block:: sh
-
     docker pull jenkins
     docker run -p 8080:8080 -p 50000:50000 -v /tmp/jenkins_home_on_host:/var/jenkins_home jenkins
 
@@ -1511,6 +397,13 @@ Budowanie Pull Requestów
     - ``feature``
     - ``bugfix``
     - ``master``
+
+
+.. figure:: img/git-pull-request-09.jpg
+    :scale: 100%
+    :align: center
+
+    Pull Requests
 
 - Spróbuj wykorzystać któryś z dostępnych pluginów:
 
@@ -1614,21 +507,20 @@ Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
 - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 
-`Job DSL`
-^^^^^^^^^
+Job DSL
+^^^^^^^
 - Przepisz całą konfigurację wykorzustując plik `Job DSL`
 
-`Jenkins Docker Plugin`
-^^^^^^^^^^^^^^^^^^^^^^^
-- Zainstaluj `Docker Plugin` w `Jenkins`
+Jenkins Docker Plugin
+^^^^^^^^^^^^^^^^^^^^^
 - Skonfiguruj zadanie aby uruchamiało kontener
 - Zadanie ma provisionować konfigurację wewnątrz kontenera
 - Zadanie ma uruchamiać build wewnątrz kontenera
 - Zadanie ma niszczyć kontener po buildze
 
-`Jenkins` i testy wydajnościowe `JMeter`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Przeprowadź test wydajnościowy głównej strony aplikacji uruchomionej na Twoim komputerze (np. `SonarQube` jeżeli wykonałeś poprzednie ćwiczenie)
+Jenkins i testy wydajnościowe JMeter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Przeprowadź test wydajnościowy głównej strony aplikacji uruchomionej na Twoim komputerze (np. SonarQube jeżeli wykonałeś poprzednie ćwiczenie)
 - Test wydajnościowy powinien zapisany w ``xml`` oraz uruchamiany bez wykorzystania GUI
 
 .. toggle-code-block:: xml
@@ -1686,3 +578,8 @@ Budowanie `Checkstyle`, `PMD`, `JaCoCo`, `Findbugs` i `PITest`
         </hashTree>
       </hashTree>
     </jmeterTestPlan>
+
+Selenium
+^^^^^^^^
+#. Nagraj test w selenium
+#. Uruchom test przy każdym commicie do brancha ``feature`` i ``bugfix``
