@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.abspath('.'))
 
 author = 'Matt Harasymczuk'
-copyright = f'2017-{datetime.date.today():%Y}, Matt Harasymczuk <matt.harasymczuk@esa.int>'
+copyright = f'2017-{date:%Y}, Matt Harasymczuk <matt.harasymczuk@esa.int>'.format(date=datetime.date.today())
 description = 'DevOps workshop'
 description_slug = description.replace(' ', '-')
 
