@@ -40,12 +40,14 @@ numfig_format = {
     'code-block': 'Code Listing %s.',
 }
 
+
 def get_version():
     shell = subprocess.Popen('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True)
     return '{sha1}, {date:%Y-%m-%d}'.format(
         sha1=shell.stdout.read().decode().replace('\n', ''),
         date=datetime.date.today(),
     )
+
 
 version = get_version()
 release = get_version()

@@ -1,7 +1,9 @@
+Jenkins Job DSL
+===============
 
-Podstawy składni `Job DSL`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Jedyne wymagane to nazwa `Job`:
+Podstawy składni Job DSL
+------------------------
+Jedyne wymagane to nazwa ``Job``:
 
 :DSL Methods:
     .. code-block:: groovy
@@ -106,8 +108,8 @@ Jedyne wymagane to nazwa `Job`:
             }
         }
 
-Przykłady `Job DSL`
-^^^^^^^^^^^^^^^^^^^
+Przykłady Job DSL
+-----------------
 
 .. code-block:: groovy
 
@@ -145,15 +147,15 @@ Przykłady `Job DSL`
 
 .. code-block:: groovy
 
-        def giturl = 'https://github.com/quidryan/aws-sdk-test.git'
+    def giturl = 'https://github.com/quidryan/aws-sdk-test.git'
 
-        for(i in 0..10) {
-            job("DSL-Tutorial-1-Test-${i}") {
-                scm {
-                    git(giturl)
-                }
-                steps {
-                    maven("test -Dtest.suite=${i}")
-                }
+    for(i in 0..10) {
+        job("DSL-Tutorial-1-Test-${i}") {
+            scm {
+                git(giturl)
+            }
+            steps {
+                maven("test -Dtest.suite=${i}")
             }
         }
+    }
