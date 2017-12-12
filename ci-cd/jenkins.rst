@@ -27,6 +27,11 @@ Architecture
 
 Administration
 --------------
+.. figure:: img/geek-and-poke-jenkins-down-and-up.jpg
+    :scale: 50%
+    :align: center
+
+    Jenkins down... and up again.
 
 User Management
 ^^^^^^^^^^^^^^^
@@ -46,17 +51,21 @@ Plugin installation
 
 Build Triggers
 ^^^^^^^^^^^^^^
+.. figure:: img/geek-and-poke-development-driven-tests.jpg
+    :scale: 50%
+    :align: center
+
+    Development Driven Tests
+
 - Build after other projects are built
 - Build periodically
 - GitHub hook trigger for GITScm polling
 - Poll SCM
 - Trigger builds remotely (e.g., from scripts via REST API) - https://wiki.jenkins.io/display/JENKINS/Remote+access+API
 
-.. code-block:: console
-
-    curl -X POST http://localhost:8080/job/JOB_NAME/build \
-      --user USER:TOKEN \
-      --data-urlencode json='{"parameter": [{"name":"id", "value":"123"}, {"name":"verbosity", "value":"high"}]}'
+.. literalinclude:: code/jenkins-api.sh
+    :language: groovy
+    :caption: build trigger via Jenkins API
 
 Notifications
 -------------
@@ -74,19 +83,13 @@ SonarScanner
 
 If your code is in other version:
 
-.. code-block:: properties
+.. literalinclude:: code/sonar-minimal.properties
+    :language: groovy
+    :caption: Minimal Sonar Project Properties
 
-    # Required metadata
-    sonar.projectKey=MyProject
-    sonar.projectName=MyProject
-    sonar.projectVersion=1.0
-
-    sonar.sources=src/main/java
-    sonar.java.binaries=target/classes
-
-    # java version used by source files:
-    sonar.java.source=7
-
+.. literalinclude:: code/sonar-extra.properties
+    :language: groovy
+    :caption: Extra Sonar Project Properties
 
 Large repos
 -----------
@@ -266,7 +269,6 @@ At the end of pipeline directive:
 
 :``aborted``: Only run the steps in post if the current Pipeline’s or stage’s run has an "aborted" status, usually due to the Pipeline being manually aborted. This is typically denoted by gray in the web UI
 
-
 .. literalinclude:: code/jenkinsfile-post.groovy
     :language: groovy
     :caption: Post
@@ -337,6 +339,27 @@ Dobre praktyki
 - Jak automatycznie czyścić branche?
 - Budowanie na różnych środowiskach
 
+- Spockframework: https://www.youtube.com/watch?v=64jZVsScbU8
+
+.. code-block:: groovy
+
+    // source: http://thejavatar.com/testing-with-spock/
+
+    def "should return false if user does not have role required for viewing page"() {
+       given:
+          // context
+          pageRequiresRole Role.ADMIN
+          userHasRole Role.USER
+       when:
+          // some action is performed
+          boolean authorized = authorizationService.isUserAuthorizedForPage(user, page)
+       then:
+          // expect specific result
+          authorized == false
+    }
+
+
+
 Extra
 ^^^^^
 - https://jenkins.io/solutions/pipeline/
@@ -353,7 +376,7 @@ Extra
 
 .. literalinclude:: code/jenkinsfile-commit-message.groovy
     :language: groovy
-    :caption: Commit Message
+    :caption: Commit Hash from git shell
 
 - Jenkins odpalający ``git bisect`` i testy dla każdego commita z próby, tak długo aż nie znajdzie problemu
 
