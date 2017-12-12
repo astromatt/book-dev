@@ -253,6 +253,10 @@ Sample ``Jenkinsfile``:
     :language: groovy
     :caption: Artifact
 
+.. literalinclude:: code/jenkinsfile-maven.groovy
+    :language: groovy
+    :caption: Maven
+
 Post Actions
 ^^^^^^^^^^^^
 At the end of pipeline directive:
@@ -341,24 +345,9 @@ Dobre praktyki
 
 - Spockframework: https://www.youtube.com/watch?v=64jZVsScbU8
 
-.. code-block:: groovy
-
-    // source: http://thejavatar.com/testing-with-spock/
-
-    def "should return false if user does not have role required for viewing page"() {
-       given:
-          // context
-          pageRequiresRole Role.ADMIN
-          userHasRole Role.USER
-       when:
-          // some action is performed
-          boolean authorized = authorizationService.isUserAuthorizedForPage(user, page)
-       then:
-          // expect specific result
-          authorized == false
-    }
-
-
+.. literalinclude:: code/spockframework.groovy
+    :language: groovy
+    :caption: Spock Framework
 
 Extra
 ^^^^^
