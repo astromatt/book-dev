@@ -253,10 +253,6 @@ Sample ``Jenkinsfile``:
     :language: groovy
     :caption: Artifact
 
-.. literalinclude:: code/jenkinsfile-maven.groovy
-    :language: groovy
-    :caption: Maven
-
 Post Actions
 ^^^^^^^^^^^^
 At the end of pipeline directive:
@@ -276,7 +272,6 @@ At the end of pipeline directive:
 .. literalinclude:: code/jenkinsfile-post.groovy
     :language: groovy
     :caption: Post
-
 
 Triggers
 ^^^^^^^^
@@ -327,6 +322,15 @@ Docker
 .. literalinclude:: code/jenkinsfile-docker.groovy
     :language: groovy
     :caption: Docker
+
+Maven
+^^^^^
+- Pipeline Maven Integration Plugin
+- https://wiki.jenkins.io/display/JENKINS/Pipeline+Maven+Plugin
+
+.. literalinclude:: code/jenkinsfile-maven.groovy
+    :language: groovy
+    :caption: Maven
 
 Dobre praktyki
 --------------
