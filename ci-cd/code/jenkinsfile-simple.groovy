@@ -2,8 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage("name") {
-
+        stage("simple") {
+            steps {
+                // Put your code here
+            }
         }
     }
 }
