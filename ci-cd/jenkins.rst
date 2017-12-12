@@ -46,11 +46,17 @@ Plugin installation
 
 Build Triggers
 ^^^^^^^^^^^^^^
-- Trigger builds remotely (e.g., from scripts via REST API)
 - Build after other projects are built
 - Build periodically
 - GitHub hook trigger for GITScm polling
 - Poll SCM
+- Trigger builds remotely (e.g., from scripts via REST API) - https://wiki.jenkins.io/display/JENKINS/Remote+access+API
+
+.. code-block:: console
+
+    curl -X POST http://localhost:8080/job/JOB_NAME/build \
+      --user USER:TOKEN \
+      --data-urlencode json='{"parameter": [{"name":"id", "value":"123"}, {"name":"verbosity", "value":"high"}]}'
 
 Notifications
 -------------
