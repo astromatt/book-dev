@@ -70,6 +70,7 @@ SonarScanner
 - https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
 - SonnarScanner requires Java 8
 - https://docs.sonarqube.org/display/PLUG/Java+Plugin+and+Bytecode
+- https://docs.sonarqube.org/display/SONAR/Analysis+Parameters
 
 If your code is in other version:
 
@@ -84,7 +85,7 @@ If your code is in other version:
     sonar.java.binaries=target/classes
 
     # java version used by source files:
-    sonar.java.source=1.7
+    sonar.java.source=7
 
 
 Large repos
