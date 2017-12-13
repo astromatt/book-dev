@@ -64,7 +64,7 @@ Build Triggers
 - Trigger builds remotely (e.g., from scripts via REST API) - https://wiki.jenkins.io/display/JENKINS/Remote+access+API
 
 .. literalinclude:: code/jenkins-api.sh
-    :language: groovy
+    :language: console
     :caption: build trigger via Jenkins API
 
 Notifications
@@ -84,11 +84,11 @@ SonarScanner
 If your code is in other version:
 
 .. literalinclude:: code/sonar-minimal.properties
-    :language: groovy
+    :language: properties
     :caption: Minimal Sonar Project Properties
 
 .. literalinclude:: code/sonar-extra.properties
-    :language: groovy
+    :language: properties
     :caption: Extra Sonar Project Properties
 
 Large repos

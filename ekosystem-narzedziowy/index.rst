@@ -41,14 +41,6 @@ Instant Messenger
 
     instant-messenger/*
 
-Issue Tracker
--------------
-.. toctree::
-    :titlesonly:
-    :glob:
-
-    issue-tracker/*
-
 Knowledge Base
 --------------
 .. toctree::
