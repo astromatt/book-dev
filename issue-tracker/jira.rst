@@ -596,7 +596,7 @@ Open firewall:
 
 ``/var/lib/pgsql/data/pg_hba.conf``:
 
-.. code-block:: txt
+.. code-block:: text
 
     # "local" is for Unix domain socket connections only
     local   all             all                                     peer
