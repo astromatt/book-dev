@@ -14,6 +14,7 @@ Licencje
 - Ilość użytkowników
 - Długość trwania licencji
 - Jira Core vs. Software vs. Service Desk
+- Evaluation license
 
 Instalacja
 ^^^^^^^^^^
@@ -562,37 +563,32 @@ Pluginy
 - ``Jira Agile Cards``
 - Dane pluginów w bazie danych Jiry
 
-Instalacja
-----------
+Install
+-------
 - https://www.atlassian.com/software/jira/download?b=a#allDownloads
 
-.. code-block:: console
-
-    $ yum install posgresql-server
-    $ postgresql-setup initdb
-    $ systemctl start posgresql
-    $ su posgres -
-    $ createdb jira
-    $ createuser jira
-
-Open firewall:
-
+Database
+^^^^^^^^
 .. code-block:: console
 
     # CentOS
-    $ firewall-cmd --zone=public --add-port=8080/tcp --permanet
-    $ firewall-cmd --zone=public --add-port=5432/tcp --permanet
-    $ firewall-cmd --reload
+    $ yum install posgresql-server
 
-:Konfiguracja bazy danych:
-    .. code-block:: sql
+    # Ubuntu / Debian
+    $ apt-get install postgresql-server
 
-        CREATE USER jira WITH PASSWORD 'jira';
-        -- ALTER USER jira WITH PASSWORD 'jira';
+.. code-block:: console
 
-        CREATE DATABASE jira;
-        GRANT ALL PRIVILEGES ON DATABASE jira TO jira;
+    $ postgresql-setup initdb
+    $ systemctl start posgresql
 
+Konfiguracja bazy danych:
+
+.. code-block:: sql
+
+    CREATE USER jira WITH PASSWORD 'jira';
+    CREATE DATABASE jira;
+    GRANT ALL PRIVILEGES ON DATABASE jira TO jira;
 
 ``/var/lib/pgsql/data/pg_hba.conf``:
 
@@ -609,21 +605,31 @@ Open firewall:
 
     $ systemctl restart postgresql
 
+Jira install
+^^^^^^^^^^^^
+.. literalinclude:: code/jira-install.sh
+    :caption: Jira install
+    :language: console
 
-:Instalacja Jiry:
-    .. code-block:: sh
+Firewall
+^^^^^^^^
+.. code-block:: console
 
-        wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.6.1-x64.bin
-        chmod +x atlassian-jira-software-7.6.1-x64.bin
-        ./atlassian-jira-software-7.6.1-x64.bin
-        rm -fr atlassian-jira-software-7.6.1-x64.bin
+    # CentOS
+    $ firewall-cmd --zone=public --add-port=8080/tcp --permanet
+    $ firewall-cmd --zone=public --add-port=5432/tcp --permanet
+    $ firewall-cmd --reload
 
-:Wyłączanie Websudo (automatyczne wylogowywanie administratora):
-    .. code-block:: sh
+Websudo
+^^^^^^^
+- automatic admin logout
+- admin rights notification
 
-        service jira stop
-        echo "jira.websudo.is.disabled = true" >> /var/atlassian/application-data/jira/jira-config.properties
-        service jira start
+.. code-block:: sh
+
+    service jira stop
+    echo "jira.websudo.is.disabled = true" >> /var/atlassian/application-data/jira/jira-config.properties
+    service jira start
 
 User Management
 ^^^^^^^^^^^^^^^
@@ -638,6 +644,8 @@ User Management
 - all tools in ``OU=ecosystem``
 - use LDAP groups for project roles from ``OU=projects``
 - do not use user accounts in project roles (only LDAP groups)
+- Confluence page with all ``*-administrators`` + ``mailto:`` links
+- Confluence page with JIRA project administrators
 
 Upgrade
 ^^^^^^^
@@ -660,7 +668,6 @@ Project Administrators
     :caption: Jira Project Administrators
     :language: python
 
-
 Migracja danych
 ---------------
 .. literalinclude:: code/jira-migrate.py
@@ -679,8 +686,9 @@ Backup
 
 - database replication consistency and ``rsync`` while upgrading
 - ``/var/atlassian/application-data/jira/.jira-home.lock``
-- Cold standby w DC2
-- replikacja bazy danych
+- Cold standby in alternative datacenter
+- database replication between datacenter
+- cold standby and licensing (same SEN number)
 
 .. literalinclude:: code/jira-backup.sh
     :caption: Jira backup
@@ -701,10 +709,10 @@ Jira Performance
 - JProfiler
 - MAT (Memory Analyzer Tool) [heapdump and MAT from Eclipse]
 - Performance SQL
-- Wlasne indexy na bazie danych
-- pgpool i cache po stronie bazy
-- nginx i terminate SSL
-- Varnish i cache REST + static
+- own database indexes
+- *pgpool* and database cache
+- *nginx* as a SSL terminator
+- *Varnish* caching *REST* responses (JSON) and static files
 
 Garbage Collector
 ^^^^^^^^^^^^^^^^^
@@ -729,26 +737,31 @@ Monitorowanie
 
 Konfiguracja
 ------------
+
 JIRA User Server
 ^^^^^^^^^^^^^^^^
-
 - Go to Jira User Server (g+g and type JIRA User Server)
 - Add application
 - Set application name, password and IP Addresses (paste adresses from instances which you want connect with Jira User Server)
 
 Programming
 -----------
-- REST API
-- Atlassian CLI
-- `Atlassian Python API <https://github.com/AstroTech/atlassian-python-api>`_
+- REST API:
 
+    - https://docs.atlassian.com/software/jira/docs/api/REST/server/
+    - https://developer.atlassian.com/jiradev/jira-apis/about-the-jira-rest-apis/jira-rest-api-tutorials
+    - https://docs.atlassian.com/jira/REST/latest/
+    - https://jira.atlassian.com/plugins/servlet/restbrowser#/
+
+- Atlassian CLI:
+
+    - https://marketplace.atlassian.com/plugins/org.swift.atlassian.cli/cloud/overview
+    - https://bobswift.atlassian.net/wiki/spaces/ACLI/overview
+
+- Atlassian Python API:
+
+    - https://github.com/AstroTech/atlassian-python-api>
     - ``pip install atlassian-python-api``
-
-API Documentation
-^^^^^^^^^^^^^^^^^
-- https://docs.atlassian.com/jira/REST/latest/
-- https://jira.atlassian.com/plugins/servlet/restbrowser#/
-
 
 Zadania praktyczne
 ------------------
