@@ -620,6 +620,10 @@ Firewall
     $ firewall-cmd --zone=public --add-port=5432/tcp --permanet
     $ firewall-cmd --reload
 
+    # Other Linux
+    $ iptables -I INPUT 1 -i eth0 -p tcp --dport 8080 -j ACCEPT
+    $ iptables -I INPUT 1 -i eth0 -p tcp --dport 5432 -j ACCEPT
+
 Websudo
 ^^^^^^^
 - automatic admin logout
@@ -653,18 +657,18 @@ Instalacja nowej wersji
 ^^^^^^^^^^^^^^^^^^^^^^^
 #. Wejdź na stronę https://www.atlassian.com/software/jira/download
 #. Kliknij prawym na przycisk Download obok wydania Jira TAR.GZ i "Copy Link Location"
-#. Uruchom polecenia poniżej
+#. Uruchom polecenia poniżej:
 
-.. code-block:: console
+    .. code-block:: console
 
-    # Tu wklej zawartość linku
-    $ URL=""
+        # Tu wklej zawartość linku
+        $ URL=""
 
-    $ ssh root@localhost
-    $ cd /opt/jira
-    $ wget "$URL" -O jira.tgz
-    $ tar zxf jira.tgz
-    $ rm -fr jira.tgz
+        $ ssh root@localhost
+        $ cd /opt/jira
+        $ wget "$URL" -O jira.tgz
+        $ tar zxf jira.tgz
+        $ rm -fr jira.tgz
 
 Ustawienia środowiskowe
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -681,23 +685,23 @@ Zmiana portu działania Jiry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Edytuj linijkę ``/opt/jira/install/conf/server.xml`` i znajdź
 
-.. code-block:: xml
+    .. code-block:: xml
 
-    Connector port="8080"
+        Connector port="8080"
 
 #. Zamień na:
 
-.. code-block:: xml
+    .. code-block:: xml
 
-    Connector port="8000"
+        Connector port="8000"
 
 Sprawdzenie wersji Javy dla Jiry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Odpal poniższe polecenie
 
-.. code-block:: console
+    .. code-block:: console
 
-    /opt/java/default/bin/java -version
+        /opt/java/default/bin/java -version
 
 #. Zobacz aktualną werjsę na http://www.oracle.com/technetwork/java/javase/downloads/1880261
 #. Jeżeli wersja się różni ściągnij za pomocą ``wget`` nową Javę do ``/opt/java/``
