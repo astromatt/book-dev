@@ -573,20 +573,58 @@ Instalacja
 ----------
 - https://www.atlassian.com/software/jira/download?b=a#allDownloads
 
+.. code-block:: console
+
+    $ firewall-cmd --zone=public --add-port=8080/tcp --permanet
+    $ firewall-cmd --reload
+    $ yum install posgresql-server
+    $ postgresql-setup initdb
+    $ systemctl start posgresql
+    $ su posgres -
+    $ createdb jira
+    $ createuser jira
+
+
 :Konfiguracja bazy danych:
     .. code-block:: sql
 
         CREATE USER jira WITH PASSWORD 'jira';
+        -- ALTER USER jira WITH PASSWORD 'jira';
+
         CREATE DATABASE jira;
         GRANT ALL PRIVILEGES ON DATABASE jira TO jira;
+
+
+``/var/lib/pgsql/data/pg_hba.conf``:
+
+.. code-block:: txt
+
+    # "local" is for Unix domain socket connections only
+    local   all             all                                     peer
+    # IPv4 local connections:
+    host    all             all             127.0.0.1/32            md5
+    # IPv6 local connections:
+    host    all             all             ::1/128                 md5
+
+.. code-block:: console
+
+    $ systemctl restart postgresql
+
 
 :Instalacja Jiry:
     .. code-block:: sh
 
-        wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.3.2-x64.bin
-        chmod +x atlassian-jira-software-7.3.2-x64.bin
-        ./atlassian-jira-software-7.3.2-x64.bin
-        rm -fr atlassian-jira-software-7.3.2-x64.bin
+        wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.6.1-x64.bin
+        chmod +x atlassian-jira-software-7.6.1-x64.bin
+        ./atlassian-jira-software-7.6.1-x64.bin
+        rm -fr atlassian-jira-software-7.6.1-x64.bin
+
+:User Management:
+- Always use LDAP (OpenLDAP or Active Directory)
+- name groups as ``jira-users`` or ``jira-administrators``
+- local administrator ``jira-administrator`` only for fixing bugs with LDAP
+- use ``jira@example.com`` (for easy email fiterling)
+- use ``jira.example.com`` as domain name with Firewall blocking external access
 
 :Wyłączanie Websudo (automatyczne wylogowywanie administratora):
     .. code-block:: sh
