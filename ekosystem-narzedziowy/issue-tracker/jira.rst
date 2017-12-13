@@ -633,6 +633,20 @@ Instalacja
         echo "jira.websudo.is.disabled = true" >> /var/atlassian/application-data/jira/jira-config.properties
         service jira start
 
+Backup
+^^^^^^
+- XML (http://localhost:8080/secure/admin/XmlBackup!default.jspa)
+- rsync:
+
+    - ``JIRA_HOME="/var/atlassian/application-data/jira"``
+    - ``JIRA_INSTALL="/opt/atlassian/jira/"``
+
+- database replication
+- database replication consistency and ``rsync`` while upgrading
+- ``/var/atlassian/application-data/jira/.jira-home.lock``
+-
+
+
 Konfiguracja
 ------------
 JIRA User Server
