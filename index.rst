@@ -63,6 +63,17 @@ CI/CD
     ci-cd/jenkins.rst
     ci-cd/travis.rst
 
+Issue Tracker
+-------------
+.. toctree::
+    :titlesonly:
+    :caption: Issue Tracker
+    :glob:
+
+    issue-tracker/jira.rst
+    issue-tracker/redmine.rst
+    issue-tracker/trello.rst
+
 Ekosystem narzędziowy
 ---------------------
 .. toctree::

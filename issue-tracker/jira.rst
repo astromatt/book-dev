@@ -1,15 +1,12 @@
 JIRA
 ====
+- https://confluence.atlassian.com/display/JIRA/JIRA+Documentation
+
 
 Wymagania przed szkoleniem
 --------------------------
 #. System operacyjny wspierany przez Atlassian (zalecany Linux)
 #. Ściągnięta odpowiednia binarka dla wybranego systemu operacyjnego https://www.atlassian.com/software/jira/download
-
-Documentation
--------------
-
-- https://www.slideshare.net/mattharasymczuk/jira-and-jira-agile-training-course
 
 Licencje
 ^^^^^^^^
@@ -39,7 +36,7 @@ Korzystanie z Jiry
 Konfigurowanie profilu
 ^^^^^^^^^^^^^^^^^^^^^^
 - Język
-- Avatar
+- Avatar (gravatar)
 - Powiadamianie mailami
 - Dobre praktyki filtrów na maila
 
@@ -562,12 +559,8 @@ Pluginy
     - System operacyjny
     - Zasoby sieciowe
 
-- `Jira Agile Cards`
+- ``Jira Agile Cards``
 - Dane pluginów w bazie danych Jiry
-
-Documentacja
-------------
-- https://confluence.atlassian.com/display/JIRA/JIRA+Documentation
 
 Instalacja
 ----------
@@ -575,8 +568,6 @@ Instalacja
 
 .. code-block:: console
 
-    $ firewall-cmd --zone=public --add-port=8080/tcp --permanet
-    $ firewall-cmd --reload
     $ yum install posgresql-server
     $ postgresql-setup initdb
     $ systemctl start posgresql
@@ -584,6 +575,14 @@ Instalacja
     $ createdb jira
     $ createuser jira
 
+Open firewall:
+
+.. code-block:: console
+
+    # CentOS
+    $ firewall-cmd --zone=public --add-port=8080/tcp --permanet
+    $ firewall-cmd --zone=public --add-port=5432/tcp --permanet
+    $ firewall-cmd --reload
 
 :Konfiguracja bazy danych:
     .. code-block:: sql
@@ -619,13 +618,6 @@ Instalacja
         ./atlassian-jira-software-7.6.1-x64.bin
         rm -fr atlassian-jira-software-7.6.1-x64.bin
 
-:User Management:
-- Always use LDAP (OpenLDAP or Active Directory)
-- name groups as ``jira-users`` or ``jira-administrators``
-- local administrator ``jira-administrator`` only for fixing bugs with LDAP
-- use ``jira@example.com`` (for easy email fiterling)
-- use ``jira.example.com`` as domain name with Firewall blocking external access
-
 :Wyłączanie Websudo (automatyczne wylogowywanie administratora):
     .. code-block:: sh
 
@@ -633,19 +625,107 @@ Instalacja
         echo "jira.websudo.is.disabled = true" >> /var/atlassian/application-data/jira/jira-config.properties
         service jira start
 
+User Management
+^^^^^^^^^^^^^^^
+- Always use LDAP (OpenLDAP or Active Directory)
+- name groups as ``jira-users`` or ``jira-administrators``
+- local administrator ``jira-administrator`` only for fixing bugs with LDAP
+- use ``jira@example.com`` (for easy email fiterling)
+- use ``jira.example.com`` as domain name with Firewall blocking external access
+- Internal and external users in one LDAP server
+- Read only access via LDAPs
+- avoid nested groups
+- all tools in ``OU=ecosystem``
+- use LDAP groups for project roles from ``OU=projects``
+- do not use user accounts in project roles (only LDAP groups)
+
+Upgrade
+^^^^^^^
+.. literalinclude:: code/jira-upgrade-checklist.rst
+    :caption: Jira upgrade checklist
+    :language: rst
+
+Utils
+-----
+
+Reindex
+^^^^^^^
+.. literalinclude:: code/jira-reindex.py
+    :caption: Jira reindex
+    :language: python
+
+Project Administrators
+^^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: code/jira-project-administrators.py
+    :caption: Jira Project Administrators
+    :language: python
+
+
+Migracja danych
+---------------
+.. literalinclude:: code/jira-migrate.py
+    :caption: Jira Migrate
+    :language: python
+
 Backup
-^^^^^^
+------
 - XML (http://localhost:8080/secure/admin/XmlBackup!default.jspa)
-- rsync:
+- ``rsync``:
 
     - ``JIRA_HOME="/var/atlassian/application-data/jira"``
     - ``JIRA_INSTALL="/opt/atlassian/jira/"``
+    - database replication
+    - ``pgdump`` i restore
 
-- database replication
 - database replication consistency and ``rsync`` while upgrading
 - ``/var/atlassian/application-data/jira/.jira-home.lock``
--
+- Cold standby w DC2
+- replikacja bazy danych
 
+.. literalinclude:: code/jira-backup.sh
+    :caption: Jira backup
+    :language: console
+
+Test Environment
+----------------
+.. literalinclude:: code/jira-fabric.py
+    :caption: Jira test environment
+    :language: python
+
+.. literalinclude:: code/jira-delete-projects.py
+    :caption: Jira delete projects
+    :language: python
+
+Jira Performance
+----------------
+- JProfiler
+- MAT (Memory Analyzer Tool) [heapdump and MAT from Eclipse]
+- Performance SQL
+- Wlasne indexy na bazie danych
+- pgpool i cache po stronie bazy
+- nginx i terminate SSL
+- Varnish i cache REST + static
+
+Garbage Collector
+^^^^^^^^^^^^^^^^^
+- Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
+- G1 GC ``-XX:+UseG1GC``
+- ``Xmx``
+
+.. literalinclude:: code/jira-gc.sh
+    :caption: Jira Garbage Collector
+    :language: console
+
+Monitorowanie
+^^^^^^^^^^^^^
+- http://www.stagemonitor.org/
+- New Relic
+- JIRA embedded tools (in settings):
+
+    - JMX monitoring
+    - SQL profiling
+
+.. todo:: tool do profilingu SQL i pokazywania JVM internals
 
 Konfiguracja
 ------------
