@@ -11,3 +11,12 @@ JVM_MAXIMUM_MEMORY="2048m"
 # -XX:MaxMetaspaceSize --> Maximum Memory for Non-Heap Metaspace.
 # -XX:NewRatio --> Ratio between Younger and Older Generation Memory sizes.
 # -XX:ParallelGCThreads --> No of Parallel GC threads. By default, the GC threads will be equal to the number of CPUs of the Node / VM. Used when Parallel Garbage collectors are configured.
+
+
+
+
+
+
+GC_JVM_PARAMETERS=""
+GC_JVM_PARAMETERS="-XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+PrintGCCause ${GC_JVM_PARAMETERS}"
+GC_JVM_PARAMETERS="-Xloggc:$LOGBASEABS/logs/atlassian-jira-gc-%t.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=20M ${GC_JVM_PARAMETERS}"
