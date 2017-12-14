@@ -757,7 +757,7 @@ Backup
     - ``JIRA_HOME="/var/atlassian/application-data/jira"``
     - ``JIRA_INSTALL="/opt/atlassian/jira/"``
     - database replication
-    - ``pgdump`` i restore
+    - ``pg_dump`` i ``pg_restore``
 
 - database replication consistency and ``rsync`` while upgrading
 - ``/var/atlassian/application-data/jira/.jira-home.lock``
@@ -788,6 +788,25 @@ Jira Performance
 - *pgpool* and database cache
 - *nginx* as a SSL terminator
 - *Varnish* caching *REST* responses (JSON) and static files
+
+Database
+^^^^^^^^
+- ``/var/atlassian/application-data/jira/dbconfig.xml``
+
+.. code-block:: xml
+
+    <pool-min-size>20</pool-min-size>
+    <pool-max-size>20</pool-max-size>
+    <pool-max-wait>30000</pool-max-wait>
+    <validation-query>select 1</validation-query>
+    <min-evictable-idle-time-millis>60000</min-evictable-idle-time-millis>
+    <time-between-eviction-runs-millis>300000</time-between-eviction-runs-millis>
+    <pool-max-idle>20</pool-max-idle>
+    <pool-remove-abandoned>true</pool-remove-abandoned>
+    <pool-remove-abandoned-timeout>300</pool-remove-abandoned-timeout>
+    <pool-test-on-borrow>false</pool-test-on-borrow>
+    <pool-test-while-idle>true</pool-test-while-idle>
+
 
 Garbage Collector
 ^^^^^^^^^^^^^^^^^
@@ -833,12 +852,13 @@ Baza danych
 - worklog
 - customfieldvalue i customfield
 - project i project_key
-
+- fileattachment
 
 Backup data with ``pg_dump``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
+    $ service jira stop
     $ pg_dump -i -h localhost -p 5432 -U jira -F c -b -v -f "/tmp/$(date +%F)_jira.pgdump" jira
 
 .. code-block:: console
@@ -859,9 +879,15 @@ Backup data with ``pg_dump``
 
 Restore data with ``pg_restore``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: sql
+
+    DROP DATABSE jira;
+    CREATE DATABASE jira_new;
+    GRANT ALL PRIVILEGES ON DATABASE jira_new TO jira;
+
 .. code-block:: console
 
-    $ pg_restore -i -h localhost -p 5432 -U jira -v "/tmp/$(date +%F)_jira.pgdump" -d jira
+    $ pg_restore -i -h localhost -p 5432 -U jira -v "/tmp/$(date +%F)_jira.pgdump" -d jira_new
 
 .. code-block:: console
 
@@ -879,6 +905,15 @@ Restore data with ``psql`` from plaintext SQL
 .. code-block:: console
 
     $ psql -h localhost -p 5432 -U jira -d jira < "/tmp/$(date +%F)_jira.pgdump"
+
+Change JIRA DB config
+^^^^^^^^^^^^^^^^^^^^^
+- Change ``/var/atlassian/application-data/jira/dbconfig.xml``
+
+.. code-block:: console
+
+    $ service jira start
+
 
 Konfiguracja
 ------------
