@@ -768,6 +768,9 @@ Backup
     :caption: Jira backup
     :language: console
 
+
+
+
 Test Environment
 ----------------
 .. literalinclude:: code/jira-fabric.py
@@ -793,6 +796,7 @@ Garbage Collector
 - Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
 - G1 GC ``-XX:+UseG1GC``
 - ``Xmx``
+- `` /opt/atlassian/jira/bin/setenv.sh``
 
 .. literalinclude:: code/jira-gc.sh
     :caption: Jira Garbage Collector
@@ -802,12 +806,74 @@ Monitorowanie
 ^^^^^^^^^^^^^
 - http://www.stagemonitor.org/
 - New Relic
+- JavaMelody
 - JIRA embedded tools (in settings):
 
     - JMX monitoring
     - SQL profiling
 
-.. todo:: tool do profilingu SQL i pokazywania JVM internals
+
+Rozwiązywanie problemów
+^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    grep '/rest' /opt/atlassian/jira/logs/access_log.* |awk '{print $7}' |sort |uniq -c |sort
+
+- Dużo zapytań API (varnish requestów, np. dashboardów)
+- Inne usługi wysycające pamięć na maszynie, aż do limitów JAVY
+- Przy port forwardnig ``ssh -L 5432:localhost:5432 root@adresIP`` w ``/var/lib/pgsql/data/pg_hba.conf`` musi być md5 przy IPv4 i IPv6
+
+- Create issue by URL: http://localhost:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
+
+Baza danych
+-----------
+- AO = Add-On (plugins)
+- cwd_user i cwd_directories
+- jiraissue
+- mailserver
+- filtersubscription
+- worklog
+- customfieldvalue i customfield
+- project i project_key
+
+
+Backup data with ``pg_dump``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    $ pg_dump -i -h localhost -p 5432 -U postgres -F c -b -v -f "/tmp/$(date +%F)_jira.pgdump" jira
+
+.. code-block:: console
+
+    $ pg_dump -?
+    -p, –port=PORT database server port number
+    -i, –ignore-version proceed even when server version mismatches
+    -h, –host=HOSTNAME database server host or socket directory
+    -U, –username=NAME connect as specified database user
+    -W, –password force password prompt (should happen automatically)
+    -d, –dbname=NAME connect to database name
+    -v, –verbose verbose mode
+    -F, –format=c|t|p output file format (custom, tar, plain text)
+    -c, –clean clean (drop) schema prior to create
+    -b, –blobs include large objects in dump
+    -v, –verbose verbose mode
+    -f, –file=FILENAME output file name
+
+Restore data with ``pg_restore``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    $ pg_restore -i -h localhost -p 5432 -U postgres -d jira -v "/tmp/$(date +%F)_jira.pgdump"
+
+.. code-block:: console
+    $ pg_restore -?
+    -p, –port=PORT database server port number
+    -i, –ignore-version proceed even when server version mismatches
+    -h, –host=HOSTNAME database server host or socket directory
+    -U, –username=NAME connect as specified database user
+    -W, –password force password prompt (should happen automatically)
+    -d, –dbname=NAME connect to database name
+    -v, –verbose verbose mode
 
 Konfiguracja
 ------------
