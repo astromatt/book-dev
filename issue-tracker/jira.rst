@@ -565,6 +565,7 @@ Pluginy
 
 Install
 -------
+- Terminal z połączeniem SSH do produkcji Background color RED
 - https://www.atlassian.com/software/jira/download?b=a#allDownloads
 
 Database
@@ -768,9 +769,6 @@ Backup
     :caption: Jira backup
     :language: console
 
-
-
-
 Test Environment
 ----------------
 .. literalinclude:: code/jira-fabric.py
@@ -866,6 +864,7 @@ Restore data with ``pg_restore``
     $ pg_restore -i -h localhost -p 5432 -U jira -v "/tmp/$(date +%F)_jira.pgdump" -d jira
 
 .. code-block:: console
+
     $ pg_restore -?
     -p, –port=PORT database server port number
     -i, –ignore-version proceed even when server version mismatches
