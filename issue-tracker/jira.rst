@@ -1081,3 +1081,31 @@ Board
     - zadania mogą być w dowolnym projekcie
     - board ma być publiczny
 
+Administracja - Instalacja Jiry
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Zainstaluj jirę z licencją evaluation
+#. Utwórz przykładowy projekt
+
+Administracja - bazą danych
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Zrób backup bazy danych
+#. Zrób drop bazy
+#. Zmień DB Pool connection
+#. Przywróć backup do bazy jira_new
+
+Administracja - backup
+^^^^^^^^^^^^^^^^^^^^^^
+#. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL``
+#. Przywróć oba katalogi do:
+
+    - ``/opt/jira/home``
+    - ``/opt/jira/install``
+
+#. Podmienić skrypty startowe
+#. Uruchom Jirę z nowej lokalizacji
+
+Administracja - Garbage Collector
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Zmień Garbage Collector na G1
+#. Zmień Xmx na 1GB
+#. Wepnij Java Melody do monitorowania
