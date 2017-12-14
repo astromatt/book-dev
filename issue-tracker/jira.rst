@@ -1088,7 +1088,7 @@ Administracja - Instalacja Jiry
 
 Administracja - bazą danych
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Zrób backup bazy danych
+#. Zrób backup bazy danych (musi być data w nazwie pliku)
 #. Zrób drop bazy
 #. Zmień DB Pool connection
 #. Przywróć backup do bazy jira_new
@@ -1096,7 +1096,9 @@ Administracja - bazą danych
 
 Administracja - backup
 ^^^^^^^^^^^^^^^^^^^^^^
-#. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL`` wykorzystując ``tar.bz2``
+#. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL`` wykorzystując ``tar.gz`` (musi być data w nazwie pliku)
+#. Wylistuj pliki w archiwum (możesz przeglądnąć za pomocą midnight commander)
+#. Usuń katalogi ``$JIRA_HOME`` i ``$JIRA_INSTALL``
 #. Przywróć oba katalogi do:
 
     - ``/opt/jira/home``
