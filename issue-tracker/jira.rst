@@ -1092,10 +1092,11 @@ Administracja - bazą danych
 #. Zrób drop bazy
 #. Zmień DB Pool connection
 #. Przywróć backup do bazy jira_new
+#. Dodaj polecenie backupu bazy danych do *crontab* z ``@midnight``
 
 Administracja - backup
 ^^^^^^^^^^^^^^^^^^^^^^
-#. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL``
+#. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL`` wykorzystując ``tar.bz2``
 #. Przywróć oba katalogi do:
 
     - ``/opt/jira/home``
@@ -1103,9 +1104,16 @@ Administracja - backup
 
 #. Podmienić skrypty startowe
 #. Uruchom Jirę z nowej lokalizacji
+#. Dodaj polecenie backupu ``$JIRA_HOME`` i ``$JIRA_INSTALL`` do *crontab* z ``@midnight``
 
 Administracja - Garbage Collector
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zmień Garbage Collector na G1
 #. Zmień Xmx na 1GB
 #. Wepnij Java Melody do monitorowania
+
+Administracja - Zmiana Javy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Zainstaluj nową Javę na serwerze w katalogu ``/opt/java/$VERSION``
+#. Utwórz symlink ``/opt/java/default/`` wskazujący na ``/opt/java/$VERSION`` (dlaczego to dobra praktyka?)
+#. Zrestartuj Jirę by wykorzystywała nową Javę
