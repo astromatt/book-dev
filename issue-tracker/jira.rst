@@ -841,7 +841,7 @@ Backup data with ``pg_dump``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    $ pg_dump -i -h localhost -p 5432 -U postgres -F c -b -v -f "/tmp/$(date +%F)_jira.pgdump" jira
+    $ pg_dump -i -h localhost -p 5432 -U jira -F c -b -v -f "/tmp/$(date +%F)_jira.pgdump" jira
 
 .. code-block:: console
 
@@ -863,7 +863,7 @@ Restore data with ``pg_restore``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    $ pg_restore -i -h localhost -p 5432 -U postgres -d jira -v "/tmp/$(date +%F)_jira.pgdump"
+    $ pg_restore -i -h localhost -p 5432 -U jira -v "/tmp/$(date +%F)_jira.pgdump" -d jira
 
 .. code-block:: console
     $ pg_restore -?
@@ -874,6 +874,12 @@ Restore data with ``pg_restore``
     -W, –password force password prompt (should happen automatically)
     -d, –dbname=NAME connect to database name
     -v, –verbose verbose mode
+
+Restore data with ``psql`` from plaintext SQL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    $ psql -h localhost -p 5432 -U jira -d jira < "/tmp/$(date +%F)_jira.pgdump"
 
 Konfiguracja
 ------------
