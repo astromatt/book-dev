@@ -1,5 +1,9 @@
-MIT License
+*********
+Copyright
+*********
 
+MIT License
+===========
 Copyright (c) 2018 Matt Harasymczuk
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

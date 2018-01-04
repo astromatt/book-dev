@@ -1,21 +1,36 @@
-# Jekyll
-.sass-cache
-.site
-.jekyll-metadata
-.vagrant
-.log
+## Private
+_config/
+_database/
 
-*.log
-*.pyc
-*.icloud
-.coverage/
+## Compiled
 __pycache__/
-.virtualenv/
-.idea/
-.DS_Store
-_build/
-_docs/
-*.so
-*.o
+*.pyc
+~$*
+*.spec
+
+## Distribution / packaging
 build/
-tmp/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+sdist/
+*.egg-info/
+*.egg
+
+## Django
+*.log
+*.sqlite3
+_static
+_media
+
+## Sphinx documentation
+docs/_build/
+_docs/
+_build/
+_book/
+_slides/
+
+## IDE
+.idea
