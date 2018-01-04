@@ -57,7 +57,7 @@ API
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Ekosystem narzędziowy
+    :caption: API
 
     api/swagger.rst
 
@@ -190,7 +190,7 @@ Quality and Tests
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Ekosystem narzędziowy
+    :caption: Quality and Tests
 
     quality/findbugs.rst
     quality/pitest.rst
