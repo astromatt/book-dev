@@ -18,7 +18,7 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
     - architektura IT,
     - jakość i praktyki.
 
-.. figure:: ../../img/agile-division-chart.png
+.. figure:: /img/agile-division-chart.png
     :scale: 50%
     :align: center
 
@@ -381,7 +381,7 @@ Expert
 Spotify Engineering Culture @youtube.com
 ----------------------------------------
 
-.. figure:: ../../img/spotify-engineering-culture-01.png
+.. figure:: /img/spotify-engineering-culture-01.png
     :scale: 50%
     :align: center
 

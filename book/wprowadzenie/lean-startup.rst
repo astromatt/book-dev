@@ -1,7 +1,7 @@
 Lean Startup
 ============
 
-.. figure:: ../../img/person-eric-ries.jpg
+.. figure:: /img/person-eric-ries.jpg
     :scale: 50%
     :align: center
 

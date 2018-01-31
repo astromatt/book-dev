@@ -21,6 +21,7 @@ Moje prezentacje
 Informatyczne
 -------------
 - http://infoq.com
+- https://www.infoq.com/presentations/dynamic-static-typing
 
 Scrum + Scaling
 ---------------
