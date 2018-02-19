@@ -15,7 +15,7 @@ extensions = [
     # 'sphinx.ext.intersphinx',
     # 'sphinx.ext.graphviz',
     'sphinxcontrib.bibtex',
-    '_extensions.toggle_code_block',
+    'toggle_code_block',
     # 'sphinxjp.themes.revealjs',
 ]
 
