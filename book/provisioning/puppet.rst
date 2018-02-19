@@ -72,6 +72,7 @@ Instalacja i konfiguracja
 -------------------------
 .. code-block:: sh
 
+    sudo apt-get update
     sudo apt-get install puppet
 
 Zaglądnij do katalogu ``/etc/puppet``.
@@ -88,6 +89,7 @@ Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należ
 
 .. code-block:: sh
 
+    sudo apt-get update
     sudo apt-get install squid
 
 - na maszynie gościa (tam gdzie chcesz instalować moduł puppeta ustaw:
