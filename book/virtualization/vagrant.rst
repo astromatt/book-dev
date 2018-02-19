@@ -241,7 +241,6 @@ Automatyzacja tworzenia wirtualnej maszyny
 
 Vagrant + Puppet
 ^^^^^^^^^^^^^^^^
-
 - Skopiuj dotychczasowe manifesty z poprzednich zadań (``/etc/puppet/manifests/*``) na swój komputer do katalogu ``puppet/manifests/``
 - Skopiuj certyfikaty SSL, które wygenerowałeś na swój komputer do katalogu ``ssl/``
 - Wyłącz maszynę ``vagrant halt``, a następnie ją usuń ``vagrant destroy``
@@ -249,6 +248,8 @@ Vagrant + Puppet
 - W pliku ``Vagrantfile`` trzymaj jak najmniej logiki i wszystko rób za pomocą `Puppet`
 - Zrób by certyfikaty były przenoszone z twojego komputera na maszynę gościa (nie generuj nowych, tylko wykorzystaj stare!) oczywiście za pomocą `Puppet`, umieść to w pliku ``puppet/manifests/certificates.pp``
 - Każdy z manifestów powinien być w osobnych plikach a jeden ``puppet/main.pp`` powinien includować pozostałe z katalogu ``puppet/manifests/*``
+
+.. warning:: Ubuntu 16.04 (LTS) nie zawiera w sobie puppeta, co jest sprzeczne z wymaganiem (standardem) vagrantowym. Trzeba go zainstalować za pomocą provisioningu shella, a później odpalać manifesty puppetowe.
 
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie Vagrant
