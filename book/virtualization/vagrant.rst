@@ -104,7 +104,7 @@ Provisioning za pomocą shell
     Vagrant.configure("2") do |config|
       config.vm.provision "shell" do |s|
         s.inline = "echo $1"
-        s.args   = "'hello, world!'"
+        s.args   = ["hello, world!"]
       end
     end
 
