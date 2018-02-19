@@ -545,6 +545,11 @@ Konfiguracja Apache2
     - http://127.0.0.1:8080
     - https://127.0.0.1:8443
 
+.. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Puppet module instaluje zawsze najnowszą (w tym wypadku niekompatybilną z naszym puppetem)! Aby zainstalować apache należy wymusić odpowiednią wersję (ostatnia supportująca Puppeta 3.8 to 1.10.
+
+    .. code-block:: console
+
+        $ puppet module install puppetlabs-apache --version 1.10.0
 
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie katalog - Konfiguracja Apache2
