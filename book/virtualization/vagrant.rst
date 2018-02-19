@@ -98,7 +98,6 @@ Synchronizowanie katalogów
 
 Provisioning za pomocą shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. code-block:: ruby
 
     Vagrant.configure("2") do |config|
@@ -123,7 +122,6 @@ Provisioning za pomocą shell
 
 Provisioning za pomocą `Puppet`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. code-block:: ruby
 
     config.vm.provision :puppet do |puppet|
@@ -135,7 +133,6 @@ Provisioning za pomocą `Puppet`
 
 Finalna konfiguracja
 ^^^^^^^^^^^^^^^^^^^^
-
 Twoja konfuguracja `Vagrant` powinna wyglądać tak:
 
 .. code-block:: ruby
@@ -158,6 +155,11 @@ Twoja konfuguracja `Vagrant` powinna wyglądać tak:
             v.name = "ubuntu.local"
             v.cpus = CPU
             v.memory = RAM
+        end
+
+        config.vm.provision "shell" do |s|
+          s.inline = "echo $1"
+          s.args   = ["hello, world!"]
         end
 
     end
