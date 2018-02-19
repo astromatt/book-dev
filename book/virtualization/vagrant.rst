@@ -59,6 +59,18 @@ Ustawianie hasła
 
     end
 
+.. warning:: This bug is now fixed in ubuntu/xenial64 v20180112.0.0.
+
+Update your vagrant boxes:
+
+.. code-block:: console
+
+    $ vagrant box update
+    $ vagrant up
+    $ vagrant ssh
+
+(notice you're "vagrant").
+
 Usuwanie maszyny
 ^^^^^^^^^^^^^^^^
 
