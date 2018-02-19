@@ -41,35 +41,35 @@ Ustawianie hasła
 .. warning:: `Ubunutu` w nowych wersjach zmieniło hasło na użytkownika i nie da się tak łatwo na niego dostać. Użyj wtedy:
 .. note:: Basically the ``ubuntu/xenial32`` and ``ubuntu/xenial64`` images are flawed as they don't come with the vagrant user out of the box. This is against the `Vagrant` specifications!
 
-.. tip:: Rozwiązanie: http://askubuntu.com/a/854849/427956
+    .. tip:: Rozwiązanie: http://askubuntu.com/a/854849/427956
 
-.. code-block:: ruby
+    .. code-block:: ruby
 
-    Vagrant.configure("2") do |config|
+        Vagrant.configure("2") do |config|
 
-        apt-get install -y expect
-        echo '#!/usr/bin/expect
-          set timeout 20
-          spawn sudo passwd ubuntu
-          expect "Enter new UNIX password:" {send "ubuntu\\r"}
-          expect "Retype new UNIX password:" {send "ubuntu\\r"}
-          interact' > change_ubuntu_password
-        chmod +x change_ubuntu_password
-      ./change_ubuntu_password
+            apt-get install -y expect
+            echo '#!/usr/bin/expect
+              set timeout 20
+              spawn sudo passwd ubuntu
+              expect "Enter new UNIX password:" {send "ubuntu\\r"}
+              expect "Retype new UNIX password:" {send "ubuntu\\r"}
+              interact' > change_ubuntu_password
+            chmod +x change_ubuntu_password
+          ./change_ubuntu_password
 
-    end
+        end
 
 .. warning:: This bug is now fixed in ubuntu/xenial64 v20180112.0.0.
 
-Update your vagrant boxes:
+    Update your vagrant boxes:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ vagrant box update
-    $ vagrant up
-    $ vagrant ssh
+        $ vagrant box update
+        $ vagrant up
+        $ vagrant ssh
 
-(notice you're "vagrant").
+    (notice you're "vagrant").
 
 Usuwanie maszyny
 ^^^^^^^^^^^^^^^^
@@ -102,12 +102,24 @@ Provisioning za pomocą shell
 .. code-block:: ruby
 
     Vagrant.configure("2") do |config|
-
-        config.vm.provision "shell", inline: <<- SHELL
-            (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
-        SHELL
-
+      config.vm.provision "shell" do |s|
+        s.inline = "echo $1"
+        s.args   = "'hello, world!'"
+      end
     end
+
+.. code-block:: ruby
+
+    Vagrant.configure("2") do |config|
+      config.vm.provision "shell", path: "script.sh"
+    end
+
+.. code-block:: ruby
+
+    Vagrant.configure("2") do |config|
+      config.vm.provision "shell", path: "https://example.com/provisioner.sh"
+    end
+
 
 Provisioning za pomocą `Puppet`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,9 +160,6 @@ Twoja konfuguracja `Vagrant` powinna wyglądać tak:
             v.memory = RAM
         end
 
-        config.vm.provision "shell", inline: <<- SHELL
-            (echo ubuntu; echo ubuntu) |sudo passwd ubuntu
-        SHELL
     end
 
 .. code-block:: sh
