@@ -15,8 +15,8 @@ extensions = [
     # 'sphinx.ext.intersphinx',
     # 'sphinx.ext.graphviz',
     'sphinxcontrib.bibtex',
+    'sphinxcontrib.book._extensions.toggle_code_block',
     # 'sphinxjp.themes.revealjs',
-    'toggle_code_block',
 ]
 
 todo_emit_warnings = False
