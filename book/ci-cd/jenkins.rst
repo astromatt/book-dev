@@ -105,6 +105,7 @@ Large repos
 
 Blue Ocean
 ----------
+- Multibranch projects are the first class citizens
 - New UI
 - Interoperable with old UI
 - Accessible at ``/blue/`` in the URL after "Blue Ocean" plugin installation.
@@ -112,26 +113,9 @@ Blue Ocean
 
 Environment Variables
 ---------------------
-.. csv-table::
-    :header-rows: 1
-
-    "Variable", "Description"
-    "BUILD_NUMBER", "The current build number, such as '153'"
-    "BUILD_ID", "The current build id, such as ``2005-08-22_23-59-59`` (YYYY-MM-DD_hh-mm-ss, defunct since version 1.597)"
-    "BUILD_URL", "The URL where the results of this build can be found (e.g. ``http://localhost:8080/job/MyJobName/1337/``)"
-    "NODE_NAME", "The name of the node the current build is running on. Equals ``master`` for master node."
-    "JOB_NAME", "Name of the project of this build. This is the name you gave your job when you first set it up. It's the third column of the Jenkins Dashboard main page."
-    "BUILD_TAG", "String of ``jenkins-${JOB_NAME}-${BUILD_NUMBER}``. Convenient to put into a resource file, a jar file, etc for easier identification."
-    "JENKINS_URL", "Set to the URL of the Jenkins master that's running the build. This value is used by Jenkins CLI for example"
-    "EXECUTOR_NUMBER", "The unique number that identifies the current executor (among executors of the same machine) that's carrying out this build. This is the number you see in the 'build executor status', except that the number starts from 0, not 1."
-    "JAVA_HOME", "If your job is configured to use a specific JDK, this variable is set to the ``JAVA_HOME`` of the specified JDK. When this variable is set, ``PATH`` is also updated to have ``$JAVA_HOME/bin``."
-    "WORKSPACE", "The absolute path of the workspace."
-    "SVN_REVISION", "For Subversion-based projects, this variable contains the revision number of the module. If you have more than one module specified, this won't be set."
-    "CVS_BRANCH", "For CVS-based projects, this variable contains the branch of the module. If CVS is configured to check out the trunk, this environment variable will not be set."
-    "GIT_COMMIT", "For Git-based projects, this variable contains the Git hash of the commit checked out for the build (like ``ce9a3c1404e8c91be604088670e93434c4253f03``) (all the ``GIT_*`` variables require git plugin)"
-    "GIT_URL", "For Git-based projects, this variable contains the Git url (like ``git@github.com:user/repo.git`` or ``https://github.com/user/repo.git``)"
-    "GIT_BRANCH", "For Git-based projects, this variable contains the Git branch that was checked out for the build (normally ``origin/master``)"
-
+.. csv-table:: Jenkins Environment Variables
+    :header: "Variable", "Description"
+    :file: data/jenkins-environmental-variables.csv
 
 Groovy syntax
 -------------
@@ -427,8 +411,8 @@ Instalacja Jenkinsa i konfuguracja buildów
 .. toggle-code-block:: sh
     :label: Pokaż rozwiązanie za pomocą ``docker`` na *Ubuntu*
 
-    docker pull jenkins
-    docker run -p 8080:8080 -p 50000:50000 -v /tmp/jenkins_home_on_host:/var/jenkins_home jenkins
+    apt-get install docker.io
+    docker run -d -p 8080:8080 -v /tmp/:/tmp/ jenkins
 
 .. warning:: Sprawdź, czy w swoim pliku ``Vagrantfile`` masz skonfigurowany forwardnig portów dla guest:``8080`` -> host:``80``
 
@@ -441,7 +425,6 @@ Budowanie Pull Requestów
     - ``feature``
     - ``bugfix``
     - ``master``
-
 
 .. figure:: img/git-pull-request-09.jpg
     :scale: 100%
@@ -543,17 +526,82 @@ Budowanie Pull Requestów
 
     - https://plugins.jenkins.io/stash-pullrequest-builder
 
-Budowanie *Checkstyle*, *PMD*, *JaCoCo*, *Findbugs* i *PITest*
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-examples``
+Budowanie *SonarScanner*
+^^^^^^^^^^^^^^^^^^^^^^^^
+- Dla repozytorium ``sonar-examples`` (https://github.com/SonarSource/sonar-examples.git)
+- Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
+- Wyniki upublicznij w *SonarQube* (którą uruchomisz za pomocą ``docker run -d -p 9000:9000 sonarqube``
+- Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
+
+.. toggle-code-block:: rst
+    :label: Pokaż rozwiązanie ``sonarscanner`` z poziomu terminala
+
+    stage('SonarQube analysis') {
+        // requires SonarQube Scanner 2.8+
+        def scannerHome = tool 'SonarQube Scanner 2.8';
+
+        withSonarQubeEnv('My SonarQube Server') {
+            sh "${scannerHome}/bin/sonar-scanner"
+        }
+    }
+
+.. toggle-code-block:: rst
+    :label: Pokaż rozwiązanie ``sonarscanner`` z poziomu mvn
+
+    stage('SonarQube analysis') {
+        withSonarQubeEnv('My SonarQube Server') {
+            // requires SonarQube Scanner for Maven 3.2+
+            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+        }
+    }
+
+.. toggle-code-block:: rst
+    :label: Pokaż rozwiązanie ``sonarscanner`` z dla MSBuild
+
+    stage('Build + SonarQube analysis') {
+        def sqScannerMsBuildHome = tool 'Scanner for MSBuild 2.2'
+        withSonarQubeEnv('My SonarQube Server') {
+            // Due to SONARMSBRU-307 value of sonar.host.url and credentials should be passed on command line
+            bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:myKey /n:myName /v:1.0 /d:sonar.host.url=%SONAR_HOST_URL% /d:sonar.login=%SONAR_AUTH_TOKEN%"
+            bat 'MSBuild.exe /t:Rebuild'
+            bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
+        }
+    }
+
+Budowanie *PITest*
+^^^^^^^^^^^^^^^^^^
+- Dla repozytorium ``sonar-examples`` (https://github.com/SonarSource/sonar-examples.git)
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
 - Wyniki upublicznij w *SonarQube*
-- Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 
-Job DSL
-^^^^^^^
-- Przepisz całą konfigurację wykorzustując plik *Job DSL*
+.. toggle-code-block:: xml
+    :label: Pokaż co dodać w ``pom.xml``
+
+    <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>LATEST</version>
+     </plugin>
+
+.. toggle-code-block:: xml
+    :label: Pokaż ``Jenkinsfile`` dla ``PITest``
+
+    pipeline {
+        agent any
+
+        stages {
+            stage("Mutatory Testing") {
+                steps {
+                    sh "mvn org.pitest:pitest-maven:mutationCoverage"
+                }
+            }
+        }
+    }
+
+Jenkinsfile i Pipeline DSL
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Przepisz całą konfigurację wykorzustując *Pipeline DSL* zapisany w *Jenkinsfile*
 
 Jenkins Docker Plugin
 ^^^^^^^^^^^^^^^^^^^^^
