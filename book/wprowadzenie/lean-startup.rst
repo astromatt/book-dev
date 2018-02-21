@@ -1,7 +1,6 @@
 Lean Startup
 ============
-
-.. figure:: /img/person-eric-ries.jpg
+.. figure:: ../../img/person-eric-ries.jpg
     :scale: 50%
     :align: center
 
@@ -38,7 +37,6 @@ Lean Startup
 
 Lean Startup Cycle
 ------------------
-
 .. figure:: ../../img/lean-startup-cycle-01.jpg
     :scale: 50%
     :align: center
@@ -58,7 +56,6 @@ Delivering business values
 
 Lower time to market
 ^^^^^^^^^^^^^^^^^^^^
-
 -  Test-driven Development
 -  Evolutionary Design
 
@@ -72,7 +69,6 @@ Lower time to market
 
 Increase value to market
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 -  Test-driven Requirements
 
    -  Functional Tests
@@ -80,7 +76,6 @@ Increase value to market
 
 Increase quality to market
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 -  Test-driven Development
 
    -  Test-first and Test-last
@@ -97,7 +92,6 @@ Increase quality to market
 
 Increase flexibility
 ^^^^^^^^^^^^^^^^^^^^
-
 -  Evolutionary Design
 
    -  Refactoring
@@ -112,7 +106,6 @@ Increase flexibility
 
 Increase visibility
 ^^^^^^^^^^^^^^^^^^^
-
 -  Test-driven Requirements
 
    -  Functional Tests
@@ -121,7 +114,6 @@ Increase visibility
 
 Lower Cost
 ^^^^^^^^^^
-
 -  Evolutionary design
 
    -  Simple Design
@@ -135,7 +127,6 @@ Lower Cost
 
 Increase product lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 -  Test-Driven Development
 
    -  Automated Developer Tests
