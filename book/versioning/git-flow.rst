@@ -1,6 +1,18 @@
 GIT Flow
 ========
 
+.. figure:: ../../img/git-flow-whiteboard.jpg
+    :scale: 100%
+    :align: center
+
+    GIT Flow
+
+.. figure:: ../../img/build-strategy.jpg
+    :scale: 100%
+    :align: center
+
+    Build Strategy
+
 Konwencje nazewnicze
 ~~~~~~~~~~~~~~~~~~~~
 
