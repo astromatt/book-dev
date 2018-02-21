@@ -526,15 +526,26 @@ Budowanie Pull Requestów
 
     - https://plugins.jenkins.io/stash-pullrequest-builder
 
-Budowanie *SonarScanner*
-^^^^^^^^^^^^^^^^^^^^^^^^
+Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Dla repozytorium ``sonar-examples`` (https://github.com/SonarSource/sonar-examples.git)
 - Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
 - Wyniki upublicznij w *SonarQube* (którą uruchomisz za pomocą ``docker run -d -p 9000:9000 sonarqube``
 - Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
 
-.. toggle-code-block:: rst
-    :label: Pokaż rozwiązanie ``sonarscanner`` z poziomu terminala
+.. toggle-code-block:: groovy
+    :label: Pokaż zawartość pliku ``sonar.properties``
+
+    sonar.projectKey=MyProject
+    sonar.projectName=MyProject
+    sonar.projectVersion=1.0
+
+    sonar.sources=src/main/java
+    sonar.java.binaries=target/classes
+    sonar.java.source=7
+
+.. toggle-code-block:: groovy
+    :label: Pokaż rozwiązanie uruchamiania ``sonarScanner`` z terminala
 
     stage('SonarQube analysis') {
         // requires SonarQube Scanner 2.8+
@@ -545,8 +556,8 @@ Budowanie *SonarScanner*
         }
     }
 
-.. toggle-code-block:: rst
-    :label: Pokaż rozwiązanie ``sonarscanner`` z poziomu mvn
+.. toggle-code-block:: groovy
+    :label: Pokaż rozwiązanie ``sonarscanner`` z poziomu ``mvn``
 
     stage('SonarQube analysis') {
         withSonarQubeEnv('My SonarQube Server') {
@@ -555,8 +566,8 @@ Budowanie *SonarScanner*
         }
     }
 
-.. toggle-code-block:: rst
-    :label: Pokaż rozwiązanie ``sonarscanner`` z dla MSBuild
+.. toggle-code-block:: groovy
+    :label: Pokaż rozwiązanie uruchamiania ``sonarScanner`` dla ``MSBuild``
 
     stage('Build + SonarQube analysis') {
         def sqScannerMsBuildHome = tool 'Scanner for MSBuild 2.2'
@@ -584,7 +595,7 @@ Budowanie *PITest*
         <version>LATEST</version>
      </plugin>
 
-.. toggle-code-block:: xml
+.. toggle-code-block:: groovy
     :label: Pokaż ``Jenkinsfile`` dla ``PITest``
 
     pipeline {
