@@ -16,12 +16,22 @@ Licencje
 - Jira Core vs. Software vs. Service Desk
 - Evaluation license
 
+Konferencje
+^^^^^^^^^^^
+- Atlassian Camp (development)
+- Atlassian Summit (business)
+
+- https://www.atlassian.com/company/events/summit-europe
+- https://www.atlassian.com/company/events/summit-europe/programs/atlascamp?tab=build-add-ons
+- http://www.intenso.pl/jira-day/
+
 Instalacja
 ^^^^^^^^^^
-- skąd pobrać
+- skąd pobrać (https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-X.X.X-x64.bin)
 - jakie polecenia
 - forwarding portów
 - Jaka baza danych
+- SSL proxy
 
 Project Management
 ^^^^^^^^^^^^^^^^^^
@@ -33,6 +43,7 @@ Project Management
 
 Korzystanie z Jiry
 ------------------
+- ``gg`` oraz ``.``
 
 Konfigurowanie profilu
 ^^^^^^^^^^^^^^^^^^^^^^
