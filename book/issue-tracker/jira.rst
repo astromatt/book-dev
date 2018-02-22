@@ -346,6 +346,7 @@ JQL - JIRA Query Language
 .. code-block:: sql
 
     due <= now()
+        AND statusCategory != Done
 
 Filtry
 ^^^^^^
@@ -585,16 +586,21 @@ Database
 
     # CentOS
     $ yum install posgresql-server
-
-    # Ubuntu / Debian
-    $ apt-get install postgresql-server
-
-.. code-block:: console
-
     $ postgresql-setup initdb
     $ systemctl start posgresql
 
+.. code-block:: console
+
+    # Ubuntu / Debian
+    $ apt-get install postgresql
+
 Konfiguracja bazy danych:
+
+.. code-block:: console
+
+    # Musimy być na roocie
+    su posgres
+    psql
 
 .. code-block:: sql
 
@@ -602,7 +608,8 @@ Konfiguracja bazy danych:
     CREATE DATABASE jira;
     GRANT ALL PRIVILEGES ON DATABASE jira TO jira;
 
-``/var/lib/pgsql/data/pg_hba.conf``:
+W ubunutu ścieżka do *pg_hba* to: ``/etc/postgresql/9.5/main/pg_hba.conf``.
+Dla CentOS trzeba zmienić plik ``/var/lib/pgsql/data/pg_hba.conf``, tak aby można było łączyć się z localhost (po IPv4 i IPv6) za pomocą hasła (md5):
 
 .. code-block:: text
 
