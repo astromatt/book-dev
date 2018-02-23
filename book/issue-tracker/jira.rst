@@ -1229,11 +1229,11 @@ Atlassian Python API
 .. toggle-code-block:: console
     :label: Pokaż rozwiązanie instalacji Pythona i ``atlassian-python-api``
 
-    apt-get update
-    apt-get install python3-pip
-    python3 -m pip install atlassian-python-api
+    $ apt-get update
+    $ apt-get install python3-pip
+    $ python3 -m pip install atlassian-python-api
 
-.. toggle-code-block:: console
+.. toggle-code-block:: python
     :label: Pokaż kod dla Reindeksacji
 
     from pprint import pprint
@@ -1252,7 +1252,7 @@ Atlassian Python API
 
     .. code-block:: console
 
-        apt-get update
-        apt-get install docker.io
-        mkdir -p /var/atlassian/application-data/confluence
-        docker run -v /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence -d -p 8090:8090 atlassian/confluence-server
+        $ apt-get update
+        $ apt-get install docker.io
+        $ mkdir -p /var/atlassian/application-data/confluence
+        $ docker run -v /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence -d -p 8090:8090 atlassian/confluence-server
