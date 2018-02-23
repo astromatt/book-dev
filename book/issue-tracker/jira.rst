@@ -1213,8 +1213,11 @@ Administracja - Zmiana Javy
 
 Atlassian Python API - Instalacja
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- https://github.com/AstroMatt/atlassian-python-api
-#. Zainstaluj bibliotekę Atlassian Python API ``atlassian-python-api`` (wymagany Python 3.4 lub nowszy)
+#. Zainstaluj bibliotekę Atlassian Python API ``atlassian-python-api``
+
+.. note:: Kod biblioteki dostępny jest na GitHub https://github.com/AstroMatt/atlassian-python-api
+
+.. warning:: Wymagany Python 3.4 lub nowszy
 
 .. toggle-code-block:: console
     :label: Pokaż rozwiązanie instalacji Pythona i ``atlassian-python-api``
