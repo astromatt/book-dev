@@ -870,7 +870,7 @@ Jira Performance
 - Java Melody
 
 Optymalizacje
--------------
+^^^^^^^^^^^^^
 - Wyłączyć Activity Stream
 - Update gadżetów na Dashboardzie (update na bazie dla wszystkich gadgetów)
 - Edukacja użytkowników aby nie mieli odpalonych miliona zakładek z JIRĄ
