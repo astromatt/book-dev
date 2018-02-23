@@ -865,6 +865,7 @@ Jira Performance
 - *pgpool* and database cache
 - *nginx* as a SSL terminator
 - *Varnish* caching *REST* responses (JSON) and static files
+- Java Melody
 
 Database
 ^^^^^^^^
@@ -890,7 +891,7 @@ Garbage Collector
 - Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
 - G1 GC ``-XX:+UseG1GC``
 - ``Xmx``
-- `` /opt/atlassian/jira/bin/setenv.sh``
+- ``/opt/atlassian/jira/bin/setenv.sh``
 
 .. literalinclude:: code/jira-gc.sh
     :caption: Jira Garbage Collector
@@ -911,7 +912,7 @@ Rozwiązywanie problemów
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    grep '/rest' /opt/atlassian/jira/logs/access_log.* |awk '{print $7}' |sort |uniq -c |sort
+    grep '/rest' /opt/atlassian/jira/logs/access_log.* |awk '{print $7}' |sort |uniq -c |sort -n
 
 - Dużo zapytań API (varnish requestów, np. dashboardów)
 - Inne usługi wysycające pamięć na maszynie, aż do limitów JAVY
@@ -1211,7 +1212,7 @@ Administracja - Zmiana Javy
 Atlassian Python API
 ^^^^^^^^^^^^^^^^^^^^
 - https://github.com/AstroMatt/atlassian-python-api
-#. Zainstaluj bibliotekę Atlassian Python API ``pip install atlassian-python-api`` (wymagany Python 3.4)
+#. Zainstaluj bibliotekę Atlassian Python API ``pip install atlassian-python-api`` (wymagany Python 3.4 lub nowszy)
 #. Zreindeksuj Jirę za pomocą narzędzia, skrypt dodaj Crontab by był uruchamiany o 4 w nocy
 #. Wygeneruj listę project administrators z Jiry
 
@@ -1222,3 +1223,11 @@ Atlassian Python API
 
     - Wynik zapisz w Confluence na osobnej stronie dla każdej wersji
     - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku /var/www/changelog-XXX.html i skonfiguruj nginx aby wyświetlał tą stronę, XXX to nazwa wersji
+
+.. info:: Aby uruchomić Confluence możesz wykorzystać Docker
+
+    .. code-block:: console
+
+    apt-get install docker.io
+    mkdir -p /var/atlassian/application-data/confluence
+    docker run -v /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence -d -p 8090:8090 atlassian/confluence-server
