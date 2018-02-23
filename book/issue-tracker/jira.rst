@@ -1235,9 +1235,6 @@ Atlassian Python API - Reindeksacja
 .. toggle-code-block:: python
     :label: Pokaż kod skryptu do reindeksacji
 
-    #!/usr/bin/env python3
-
-    from pprint import pprint
     from atlassian import Jira
 
 
@@ -1246,8 +1243,7 @@ Atlassian Python API - Reindeksacja
         username="jira-administrator",
         password="admin")
 
-    status = jira.reindex()
-    pprint(status)
+    jira.reindex()
 
 .. toggle-code-block:: console
     :label: Pokaż jak uruchomić skrypt do reindeksacji
