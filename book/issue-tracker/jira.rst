@@ -1194,3 +1194,18 @@ Administracja - Zmiana Javy
 #. Zainstaluj nową Javę na serwerze w katalogu ``/opt/java/$VERSION``
 #. Utwórz symlink ``/opt/java/default/`` wskazujący na ``/opt/java/$VERSION`` (dlaczego to dobra praktyka?)
 #. Zrestartuj Jirę by wykorzystywała nową Javę
+
+Atlassian Python API
+^^^^^^^^^^^^^^^^^^^^
+- https://github.com/AstroMatt/atlassian-python-api
+#. Zainstaluj bibliotekę Atlassian Python API ``pip install atlassian-python-api`` (wymagany Python 3.4)
+#. Zreindeksuj Jirę za pomocą narzędzia, skrypt dodaj Crontab by był uruchamiany o 4 w nocy
+#. Wygeneruj listę project administrators z Jiry
+
+    - Wynik zapisz w Confluence i dodaj się do watchers strony, by być powiadamianym o zmianach
+    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku /var/www/jira-admins.html i skonfiguruj nginx aby wyświetlał tą stronę
+
+#. Wygeneruj Changelog, tj. listę zadań które zmieniły się pomiędzy dwoma wersjami (wykorzystaj JQL)
+
+    - Wynik zapisz w Confluence na osobnej stronie dla każdej wersji
+    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku /var/www/changelog-XXX.html i skonfiguruj nginx aby wyświetlał tą stronę, XXX to nazwa wersji
