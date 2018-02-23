@@ -1246,7 +1246,7 @@ Atlassian Python API - Reindeksacja
         username="jira-administrator",
         password="admin")
 
-    status = jira.reindex().json()
+    status = jira.reindex()
     pprint(status)
 
 .. toggle-code-block:: console
