@@ -869,6 +869,13 @@ Jira Performance
 - *Varnish* caching *REST* responses (JSON) and static files
 - Java Melody
 
+Optymalizacje
+-------------
+- Wyłączyć Activity Stream
+- Update gadżetów na Dashboardzie (update na bazie dla wszystkich gadgetów)
+- Edukacja użytkowników aby nie mieli odpalonych miliona zakładek z JIRĄ
+- Czy wszystkie monitory z Wallboardami są potrzebne?
+
 Database
 ^^^^^^^^
 - ``/var/atlassian/application-data/jira/dbconfig.xml``
