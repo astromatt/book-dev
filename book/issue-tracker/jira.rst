@@ -345,6 +345,10 @@ JQL - JIRA Query Language
 
 .. code-block:: sql
 
+    updated >= startOfWeek(-7d) AND updated <= endOfWeek(-7d)
+
+.. code-block:: sql
+
     due <= now()
         AND statusCategory != Done
 
