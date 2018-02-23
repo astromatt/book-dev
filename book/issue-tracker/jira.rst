@@ -557,6 +557,7 @@ Scheme
 - Field Configuration Scheme
 - Permission Scheme
 - Notification Scheme
+- Priority Scheme
 
 Project Configuration
 ^^^^^^^^^^^^^^^^^^^^^
@@ -715,6 +716,7 @@ User Management
 - local administrator ``jira-administrator`` only for fixing bugs with LDAP
 - use ``jira@example.com`` (for easy email fiterling)
 - use ``jira.example.com`` as domain name with Firewall blocking external access
+- ``/etc/resolv.conf`` ``search example.com`` -> ustawianie przez DHCP
 - Internal and external users in one LDAP server
 - Read only access via LDAPs
 - avoid nested groups
@@ -723,6 +725,9 @@ User Management
 - do not use user accounts in project roles (only LDAP groups)
 - Confluence page with all ``*-administrators`` + ``mailto:`` links
 - Confluence page with JIRA project administrators
+- Do not use technical accounts (use SSH keys)
+- Use SSH keys with proper comment
+
 
 Upgrade
 -------
@@ -925,6 +930,10 @@ Baza danych
 - customfieldvalue i customfield
 - project i project_key
 - fileattachment
+
+.. code-block:: console
+
+    ssh -L 5432:localhost:5432 root@adresIP
 
 Backup data with ``pg_dump``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
