@@ -348,6 +348,49 @@ JQL - JIRA Query Language
     due <= now()
         AND statusCategory != Done
 
+.. code-block:: sql
+
+    status WAS NOT "In Progress" BEFORE "2011/02/02"
+    status WAS NOT IN ("Resolved","In Progress") BEFORE "2011/02/02"
+    status WAS IN ("Resolved","In Progress")
+    status WAS "Resolved" BY jsmith DURING ("2010/01/01","2011/01/01")
+    status WAS "Resolved" BY jsmith BEFORE "2011/02/02"
+
+
+.. code-block:: sql
+
+    AFTER "date"
+    BEFORE "date"
+    BY "username"
+    DURING ("date1","date2")
+    ON "date"
+    FROM "oldvalue"
+    TO "newvalue"
+
+.. code-block:: sql
+
+    assignee CHANGED
+
+    priority CHANGED BY freddo BEFORE endOfWeek() AFTER startOfWeek()
+
+    status CHANGED FROM "In Progress" TO "Open"
+
+.. code-block:: sql
+
+    currentLogin()
+    lastLogin()
+    now()
+    startOfDay()
+    startOfWeek()
+    startOfMonth()
+    startOfYear()
+    endOfDay()
+    endOfWeek()
+    endOfMonth()
+    endOfYear()
+
+More info: https://confluence.atlassian.com/jira064/advanced-searching-720416661.html
+
 Filtry
 ^^^^^^
 - Tworzenie
@@ -520,13 +563,19 @@ Project Configuration
 
 Konfiguracja Jiry
 ^^^^^^^^^^^^^^^^^
-- Zmiana formatu daty
 - Time Tracking
 - Priorytetyzacja i dobre praktyki
 - Estymacja różnych issuetype (nie tylko Story)
 - Re-index
 - Application Links
 - Zaawansowane opcje konfiguracyjne
+- Zmiana formatu daty
+
+.. figure:: img/jira-date-format.png
+    :scale: 100%
+    :align: center
+
+    Zmiana formatu daty w zaawansowanych opcjach konfiguracyjnych
 
 Jira Administration
 ^^^^^^^^^^^^^^^^^^^
@@ -543,6 +592,7 @@ Tworzenie Custom Field
 - Ile?
 - Konsekwencje
 - CF w bazie dancyh
+- Javascript w opisie (nie używać)
 
 Dirty hacks
 ^^^^^^^^^^^
@@ -997,6 +1047,14 @@ Tworzenie issues
 
 - Przenieś zadanie z projektu do innego projektu
 
+Custom Field
+^^^^^^^^^^^^
+- Stwórz Custom Field (Multiple User) dla osób, które są przypisane do zadania
+- Dodaj tego custom field do Screena dla Projektu
+- Stwórz filtr który wyszuka zadania w których jesteś wymieniony w naszym Custom Field
+- Na podstawie filtru stwórz tablicę Kanban, z zadaniami które są do Ciebie przypisane w naszym Custom Fieldzie
+- Zrób by wyświetlało się w kolumnie po prawej
+
 Backlog i Estymacja
 ^^^^^^^^^^^^^^^^^^^
 - Stwórz epiki
@@ -1007,7 +1065,6 @@ Backlog i Estymacja
 - oszacuj zadania używając Story Points i skali S,M,L (Small: 1, Medium: 2, Large: 3)
 - Zadanie wyestymuj na 4h
 - Zaloguj 1h 30m do zadania i ustaw remaining na 3h
-
 
 Wersje
 ^^^^^^
