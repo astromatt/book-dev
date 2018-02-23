@@ -1249,6 +1249,7 @@ Atlassian Python API
     pprint(status)
 
 :Podpowiedź: Aby uruchomić Confluence możesz wykorzystać Docker
+
     .. code-block:: console
 
         $ apt-get update
