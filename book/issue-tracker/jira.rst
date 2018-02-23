@@ -1248,11 +1248,9 @@ Atlassian Python API
     status = jira.reindex().json()
     pprint(status)
 
-.. info:: Aby uruchomić Confluence możesz wykorzystać Docker
-
+:Podpowiedź: Aby uruchomić Confluence możesz wykorzystać Docker
     .. code-block:: console
 
         $ apt-get update
         $ apt-get install docker.io
-        $ mkdir -p /var/atlassian/application-data/confluence
         $ docker run -v /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence -d -p 8090:8090 atlassian/confluence-server
