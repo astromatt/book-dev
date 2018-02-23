@@ -1211,20 +1211,10 @@ Administracja - Zmiana Javy
 #. Utwórz symlink ``/opt/java/default/`` wskazujący na ``/opt/java/$VERSION`` (dlaczego to dobra praktyka?)
 #. Zrestartuj Jirę by wykorzystywała nową Javę
 
-Atlassian Python API
-^^^^^^^^^^^^^^^^^^^^
+Atlassian Python API - Instalacja
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - https://github.com/AstroMatt/atlassian-python-api
-#. Zainstaluj bibliotekę Atlassian Python API ``pip install atlassian-python-api`` (wymagany Python 3.4 lub nowszy)
-#. Zreindeksuj Jirę za pomocą narzędzia, skrypt dodaj Crontab by był uruchamiany o 4 w nocy
-#. Wygeneruj listę project administrators z Jiry
-
-    - Wynik zapisz w Confluence i dodaj się do watchers strony, by być powiadamianym o zmianach
-    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/jira-admins.html`` i skonfiguruj nginx aby wyświetlał tą stronę
-
-#. Wygeneruj Changelog, tj. listę zadań które zmieniły się pomiędzy dwoma wersjami (wykorzystaj JQL)
-
-    - Wynik zapisz w Confluence na osobnej stronie dla każdej wersji
-    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/changelog-XXX.html`` i skonfiguruj nginx aby wyświetlał tą stronę, XXX to nazwa wersji
+#. Zainstaluj bibliotekę Atlassian Python API ``atlassian-python-api`` (wymagany Python 3.4 lub nowszy)
 
 .. toggle-code-block:: console
     :label: Pokaż rozwiązanie instalacji Pythona i ``atlassian-python-api``
@@ -1233,20 +1223,41 @@ Atlassian Python API
     $ apt-get install python3-pip
     $ python3 -m pip install atlassian-python-api
 
+Atlassian Python API - Reindeksacja
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Stwórz skrypt ``jira-reindex.py``
+#. Skrypt wykorzystując bibliotekę ``atlassian-python-api`` ma reindeksować JIRĘ
+#. Skrypt ``jira-reindex.py`` dodaj Crontab by był uruchamiany o 4 w nocy (zwróć uwagę na zmienne środowiskowe)
+
 .. toggle-code-block:: python
-    :label: Pokaż kod dla Reindeksacji
+    :label: Pokaż kod skryptu do reindeksacji
+
+    #!/usr/bin/env python3
 
     from pprint import pprint
     from atlassian import Jira
 
 
     jira = Jira(
-        url="http://localhost:8000/",
-        username="admin",
+        url="http://localhost:8080/",
+        username="jira-administrator",
         password="admin")
 
     status = jira.reindex().json()
     pprint(status)
+
+.. toggle-code-block:: console
+    :label: Pokaż jak uruchomić skrypt do reindeksacji
+
+    $ python3 jira-reindex.py
+
+Atlassian Python API - Project Administrators
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Stwórz skrypt ``jira-administrators.py``
+#. Skrypt ma wyliistować wszystkich administratorów projektów w JIRA w tabelce, wraz z ich emailem jako link "mailto"
+
+    - Wynik zapisz w Confluence i dodaj się do watchers strony, by być powiadamianym o zmianach
+    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/jira-admins.html`` i skonfiguruj nginx aby wyświetlał tą stronę
 
 :Podpowiedź: Aby uruchomić Confluence możesz wykorzystać Docker
 
@@ -1255,3 +1266,11 @@ Atlassian Python API
         $ apt-get update
         $ apt-get install docker.io
         $ docker run -v /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence -d -p 8090:8090 atlassian/confluence-server
+
+Atlassian Python API - Changelog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Napisz skrypt ``jira-changelog.py``
+#. Wygeneruj Changelog, tj. listę zadań które zmieniły się pomiędzy dwoma wersjami (wykorzystaj JQL)
+
+    - Wynik zapisz w Confluence na osobnej stronie dla każdej wersji
+    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/changelog-XXX.html`` i skonfiguruj nginx aby wyświetlał tą stronę, XXX to nazwa wersji
