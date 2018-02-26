@@ -80,6 +80,24 @@ Co się tam znajduje?
 
 Przejdź do katalogu ``/etc/puppet/manifests``.
 
+.. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Wersja ta może być niekompatybilna z modułami pobieranymi przez puppeta (np. apache, tomcat, java). Rozwiązaniem jest ściąganie modułów w niższych wersjach (pasujących do wersji 3.8.5) lub instalacja puppeta w wersji wyższej niż ta w LTS.
+
+    .. code-block:: console
+    
+        #Instalacja puppet w ostatniej wersji
+
+        #Yum-based systems (np. Enterprise Linux 7)
+        sudo rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm
+        sudo yum -y install puppet-agent
+        export PATH=/opt/puppetlabs/bin:$PATH
+
+        #Apt-based systems (np. Ubuntu 16.04 Xenial Xerus)
+        wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+        sudo dpkg -i puppet5-release-xenial.deb
+        sudo apt update
+        sudo apt-get -y install puppet-agent
+        export PATH=/opt/puppetlabs/bin:$PATH
+
 HTTPS problem
 -------------
 Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należy:
@@ -336,7 +354,6 @@ Przykłady
 
 Moduły
 ------
-
 .. code-block:: sh
 
     puppet module search apache
@@ -402,7 +419,6 @@ Instalacja pakietów za pomocą `Puppet`
 
 - Upewnij się by `Puppet` wykonał polecenie ``apt-get update`` na początku
 
-
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie 1 - Instalacja pakietów za pomocą Puppet
 
@@ -457,7 +473,6 @@ Zmiana hostname
 - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
 - Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
 
-
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie 1 - Zmiana hostname
 
@@ -474,7 +489,6 @@ Zmiana hostname
             command => '/bin/hostname -F /etc/hostname',
             unless  => "/usr/bin/test `hostname` = `/bin/cat /etc/hostname`",
     }
-
 
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie 2 - Zmiana hostname
@@ -642,7 +656,6 @@ Konfiguracja Apache2
     cat /etc/apache2/sites-enabled/*
 
 
-
 Instalacja i konfiguracja MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/mysql.pp``
@@ -718,7 +731,7 @@ Instalacja i konfiguracja Tomcat
     class { 'java': }
 
     tomcat::install { '/opt/tomcat8':
-      source_url => 'https://www.apache.org/dist/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz'
+      source_url => 'https://www.apache.org/dist/tomcat/tomcat-8/v8.0.50/bin/apache-tomcat-8.0.50.tar.gz'
     }
 
     tomcat::instance { 'tomcat8-first':
