@@ -83,19 +83,20 @@ Przejdź do katalogu ``/etc/puppet/manifests``.
 .. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Wersja ta może być niekompatybilna z modułami pobieranymi przez puppeta (np. apache, tomcat, java). Rozwiązaniem jest ściąganie modułów w niższych wersjach (pasujących do wersji 3.8.5) lub instalacja puppeta w wersji wyższej niż ta w LTS.
 
     .. code-block:: console
-		#Instalacja puppet w ostatniej wersji
-		
-		#Yum-based systems (np. Enterprise Linux 7)
+    
+        #Instalacja puppet w ostatniej wersji
+
+        #Yum-based systems (np. Enterprise Linux 7)
         sudo rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm
-		sudo yum -y install puppet-agent
-		export PATH=/opt/puppetlabs/bin:$PATH
-		
-		#Apt-based systems (np. Ubuntu 16.04 Xenial Xerus)
+        sudo yum -y install puppet-agent
+        export PATH=/opt/puppetlabs/bin:$PATH
+
+        #Apt-based systems (np. Ubuntu 16.04 Xenial Xerus)
         wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
-		sudo dpkg -i puppet5-release-xenial.deb
-		sudo apt update
-		sudo apt-get -y install puppet-agent
-		export PATH=/opt/puppetlabs/bin:$PATH
+        sudo dpkg -i puppet5-release-xenial.deb
+        sudo apt update
+        sudo apt-get -y install puppet-agent
+        export PATH=/opt/puppetlabs/bin:$PATH
 
 HTTPS problem
 -------------
