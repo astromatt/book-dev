@@ -354,7 +354,6 @@ Przykłady
 
 Moduły
 ------
-
 .. code-block:: sh
 
     puppet module search apache
@@ -420,7 +419,6 @@ Instalacja pakietów za pomocą `Puppet`
 
 - Upewnij się by `Puppet` wykonał polecenie ``apt-get update`` na początku
 
-
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie 1 - Instalacja pakietów za pomocą Puppet
 
@@ -475,7 +473,6 @@ Zmiana hostname
 - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
 - Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
 
-
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie 1 - Zmiana hostname
 
@@ -492,7 +489,6 @@ Zmiana hostname
             command => '/bin/hostname -F /etc/hostname',
             unless  => "/usr/bin/test `hostname` = `/bin/cat /etc/hostname`",
     }
-
 
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie 2 - Zmiana hostname
@@ -568,7 +564,6 @@ Konfiguracja Apache2
     .. code-block:: console
 
         $ puppet module install puppetlabs-apache --version 1.10.0
-		
 
 .. toggle-code-block:: ruby
     :label: Pokaż rozwiązanie katalog - Konfiguracja Apache2
@@ -659,7 +654,6 @@ Konfiguracja Apache2
     puppet apply /etc/puppet/manifests/apache.pp
     ls /var/www
     cat /etc/apache2/sites-enabled/*
-
 
 
 Instalacja i konfiguracja MySQL
