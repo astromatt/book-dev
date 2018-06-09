@@ -16,7 +16,7 @@ DevOps and Development Tools Ecosystem
 **Other books from this series**
     :Python and Machine Learning: http://python.astrotech.io
     :DevOps and Development Tools Ecosystem: http://devops.astrotech.io
-    :GIT and GIT Flow: http://git.astrotech.io
+    :GIT and GIT Flow in CI/CD: http://git.astrotech.io
     :Agile, Scrum, Kanban, XP, Lean: http://agile.astrotech.io
     :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
     :Linux and Shell Programming with Bash: http://linux.astrotech.io
