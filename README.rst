@@ -9,6 +9,7 @@ DevOps and Development Tools Ecosystem
     :facebook: https://facebook.com/matt.harasymczuk
     :linkedin: https://linkedin.com/in/mattharasymczuk
     :slideshare: https://www.slideshare.net/astrotech/presentations
+    :github: https://github.com/astromatt
 
 .. tip:: The most up-to-date version of this book is always at http://devops.astrotech.io
 
@@ -18,6 +19,7 @@ DevOps and Development Tools Ecosystem
     :GIT and GIT Flow: http://git.astrotech.io
     :Agile, Scrum, Kanban, XP, Lean: http://agile.astrotech.io
     :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
+    :Linux and Shell Programming with Bash: http://linux.astrotech.io
 
 Requirements
 ============
