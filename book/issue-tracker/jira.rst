@@ -1,23 +1,32 @@
+****
 JIRA
-====
+****
 - https://confluence.atlassian.com/display/JIRA/JIRA+Documentation
 
 
 Wymagania przed szkoleniem
---------------------------
+==========================
 #. System operacyjny wspierany przez Atlassian (zalecany Linux)
 #. Ściągnięta odpowiednia binarka dla wybranego systemu operacyjnego https://www.atlassian.com/software/jira/download
 
 Licencje
-^^^^^^^^
+========
 - Cloud vs. Server
 - Ilość użytkowników
 - Długość trwania licencji
 - Jira Core vs. Software vs. Service Desk
 - Evaluation license
 
+Instalacja
+==========
+- skąd pobrać (https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-X.X.X-x64.bin)
+- jakie polecenia
+- forwarding portów
+- Jaka baza danych
+- SSL proxy
+
 Konferencje
-^^^^^^^^^^^
+===========
 - Atlassian Camp (development)
 - Atlassian Summit (business)
 
@@ -25,98 +34,113 @@ Konferencje
 - https://www.atlassian.com/company/events/summit-europe/programs/atlascamp?tab=build-add-ons
 - http://www.intenso.pl/jira-day/
 
-Instalacja
-^^^^^^^^^^
-- skąd pobrać (https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-X.X.X-x64.bin)
-- jakie polecenia
-- forwarding portów
-- Jaka baza danych
-- SSL proxy
+
+Podstawowe korzystanie z Jiry
+=============================
+- ``gg`` oraz ``.``
 
 Project Management
-^^^^^^^^^^^^^^^^^^
+------------------
 - Prowadzenie projektów
 - Kanban
 - Scrum
 - Portfolio
 - Scrum + Kanban
 
-Korzystanie z Jiry
-------------------
-- ``gg`` oraz ``.``
-
 Konfigurowanie profilu
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 - Język
 - Avatar (gravatar)
 - Powiadamianie mailami
 - Dobre praktyki filtrów na maila
 
 Issues
-^^^^^^
-- Issue key:
+======
 
-    - krótki i zwięzły
-    - łatwy do zapamiętania
-    - 2-10 liter
+Issue key
+---------
+- krótki i zwięzły
+- łatwy do zapamiętania
+- 2-10 liter
 
-- Issue Types:
-
-    - Bug
-    - Task
-    - User Story
-    - Epic
-    - Sub-task
-
-- Issue Fields:
-
-    - Versions
-
-        - Roadmap
-        - Releases (with Bamboo)
-        - Konwencja nazewnicza YYYY-MM (2017-01, 2017-02, 2017-03)
-
-    - Components
-
-        - Component Leaders
-
-    - Custom Fields
-    - Lables
-    - Links
-    - Assignee
-    - Reporter
-    - affectsVersion vs. fixVersion
-
+Issue Types
+-----------
+- Bug
+- Task
+- User Story
 - Epic
+- Sub-task
 
-    - Brak worków (np. Poprawki błędów)
-    - Doważalne (określone w czasie, mają datę początku i końca)
-    - Dobre praktyki:
+Issue Fields
+------------
+- Components
 
-        - Due Date
-        - Start Date
-        - Assignee
+    - Component Leaders
 
-    * Doważalne
-    * optymalna długość
-    * kategoryzowanie
-    * timeline i roadmapa
-    * planowanie kwartalne
-    * przypisywanie epikow do wersji
-    * board epików
-    * Business Value epików
+- Lables
+- Links
+- Assignee
+- Reporter
 
+Custom Fields
+-------------
+- kilka - kilkanaście
+- Team Assigned
+- Start Date (and Due Date)
 
+Versions
+--------
+- Roadmap
+- Releases (with Bamboo)
+- Konwencja nazewnicza YYYY-MM (2017-01, 2017-02, 2017-03)
+- Time Tracking Report by Version
+- affectsVersion vs. fixVersion
+
+Dobre praktyki
+--------------
 - Kryteria akceptacyjne
-- Dobre praktyki
+- INFO
+- BEFORE
+- TODO
+- AFTER
+- używanie (/) i (x)
 
-    - INFO
-    - BEFORE
-    - TODO
-    - AFTER
+Priorities
+----------
+- Standard
+
+    - Lowest
+    - Low
+    - Medium
+    - High
+    - Highest
+
+- MoSCoW
+
+    - Must
+    - Schould
+    - Could
+
+Statusy
+-------
+- To Do
+- In Progress
+- Done
+- In Review
+- Waiting / Blocked
+- In Test
+
+Resolutions
+-----------
+- Fixed
+- Won't Fix
+- Duplicate
+- Cannot Reproduce
+- Incomplete
+- [Jira Agile] -> Done
 
 Issue Actions
-^^^^^^^^^^^^^
+-------------
 - Workflow Actions (Open, In Progress, Done)
 - Voting
 - Watching
@@ -135,21 +159,14 @@ Issue Actions
     - Używanie formatowania
 
 Time Reporting
-^^^^^^^^^^^^^^
+--------------
 - Original Time Estimate
 - Remaining Time
 - Log Work
 - Reports
 
-Estimation
-^^^^^^^^^^
-- Time Estimate
-- Manday
-- Story Point
-- Business Value
-
 Workflow
-^^^^^^^^
+========
 - Tworznie
 
     - Directed graph
@@ -167,42 +184,35 @@ Workflow
 - Validators
 - Closed vs Resolved vs Done
 
-Priorities
-^^^^^^^^^^
-- Standard
+Epic
+====
+- Brak worków (np. Poprawki błędów)
+- Doważalne (określone w czasie, mają datę początku i końca)
+- Dobre praktyki:
 
-    - Lowest
-    - Low
-    - Medium
-    - High
-    - Highest
+    - Due Date
+    - Start Date
+    - Assignee
 
-- MoSCoW
+- Doważalne
+- optymalna długość
+- kategoryzowanie
+- timeline i roadmapa
+- planowanie kwartalne
+- przypisywanie epikow do wersji
+- board epików
+- Business Value epików
 
-    - Must
-    - Schould
-    - Could
-
-Statusy
-^^^^^^^
-- To Do
-- In Progress
-- Done
-- In Review
-- Waiting / Blocked
-- In Test
-
-Resolutions
-^^^^^^^^^^^
-- Fixed
-- Won't Fix
-- Duplicate
-- Cannot Reproduce
-- Incomplete
-- [Jira Agile] -> Done
+Estimation
+==========
+- Time Estimate
+- Manday
+- Story Point
+- Business Value
+- #NoEstimates and Monte Carlo simulation (https://www.infoq.com/presentations/monte-carlo)
 
 Artifacts
-^^^^^^^^^
+=========
 - Backlog
 - Sprintlog
 - Task board
@@ -211,13 +221,13 @@ Artifacts
 - Business Value
 
 Metrics
-^^^^^^^
+=======
 - Velocity
 - Capacity
 - Maturity
 
 Planning and Refinement
-^^^^^^^^^^^^^^^^^^^^^^^
+=======================
 - Estimation
 - How big your tasks should be?
 - Estimation support systems
@@ -227,7 +237,7 @@ Planning and Refinement
 - Time Tracking
 
 JQL - JIRA Query Language
-^^^^^^^^^^^^^^^^^^^^^^^^^
+=========================
 - List View, Detail View
 - Konfiguracja Kolumn wyszukiwania
 - Searching Issues
@@ -398,7 +408,7 @@ JQL - JIRA Query Language
 More info: https://confluence.atlassian.com/jira064/advanced-searching-720416661.html
 
 Filtry
-^^^^^^
+======
 - Tworzenie
 - Subskrybcja
 - Uprawnienia
@@ -410,7 +420,7 @@ Filtry
 - Współdzielenie
 
 Dashboard
-^^^^^^^^^
+=========
 - Tworzenie
 - Publikacja
 - Dodawanie gadżetów
@@ -433,7 +443,7 @@ Dashboard
     - Days Remaining
 
 Project
-^^^^^^^
+=======
 - Project Lead
 - Categories
 
@@ -447,7 +457,7 @@ Project
 - Issue Collector
 
 Board
-^^^^^
+=====
 - Scrum vs. Kanban
 
     - Scrum -> Rozwój (Story)
@@ -508,7 +518,7 @@ Board
 - Quick Filters dla Daily
 
 Charts
-^^^^^^
+======
 - Burn-down Chart
 - Burn-up Chart
 - Control Chart
@@ -524,7 +534,7 @@ Charts
 - Refine Reports
 
 Kanban
-^^^^^^
+======
 - What’s Kanban?
 - Pull system
 - JIT
@@ -548,11 +558,11 @@ Kanban
     - SLA
 
 Administracja
--------------
+=============
 - Skrót klawiszowy ``gg``
 
 Scheme
-^^^^^^
+------
 - Issue Type Schemes
 - Workflow Scheme
 - Screen Scheme
@@ -562,14 +572,14 @@ Scheme
 - Priority Scheme
 
 Project Configuration
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 - Versions
 - Components
 - Roles and Permissions
 - Application Links
 
 Konfiguracja Jiry
-^^^^^^^^^^^^^^^^^
+-----------------
 - Time Tracking
 - Priorytetyzacja i dobre praktyki
 - Estymacja różnych issuetype (nie tylko Story)
@@ -585,7 +595,7 @@ Konfiguracja Jiry
     Zmiana formatu daty w zaawansowanych opcjach konfiguracyjnych
 
 Jira Administration
-^^^^^^^^^^^^^^^^^^^
+-------------------
 - Zarządzanie licencjami
 - Backup systemu
 - Tworzenie instancji testowych
@@ -594,7 +604,7 @@ Jira Administration
 - Dobre praktyki z Custom
 
 Tworzenie Custom Field
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 - Dobre praktyki
 - Ile?
 - Konsekwencje
@@ -602,14 +612,14 @@ Tworzenie Custom Field
 - Javascript w opisie (nie używać)
 
 Dirty hacks
-^^^^^^^^^^^
+-----------
 - Manipulacje na bazie
 - Django Inspect DB + Jira = Django ORM
 - Skryptowanie
 - Time tracking
 
 Pluginy
-^^^^^^^
+-------
 - Kiedy instalować
 - Licencje pluginów
 - Różnice między pliginami w Cloud a Server
@@ -633,12 +643,12 @@ Pluginy
 - Dane pluginów w bazie danych Jiry
 
 Install
--------
+=======
 - Terminal z połączeniem SSH do produkcji Background color RED
 - https://www.atlassian.com/software/jira/download?b=a#allDownloads
 
 Database
-^^^^^^^^
+--------
 .. code-block:: console
 
     # CentOS
@@ -682,13 +692,13 @@ Dla CentOS trzeba zmienić plik ``/var/lib/pgsql/data/pg_hba.conf``, tak aby mo�
     $ systemctl restart postgresql
 
 Jira install
-^^^^^^^^^^^^
+------------
 .. literalinclude:: code/jira-install.sh
     :caption: Jira install
     :language: console
 
 Firewall
-^^^^^^^^
+--------
 .. code-block:: console
 
     # CentOS
@@ -701,7 +711,7 @@ Firewall
     $ iptables -I INPUT 1 -i eth0 -p tcp --dport 5432 -j ACCEPT
 
 Websudo
-^^^^^^^
+-------
 - automatic admin logout
 - admin rights notification
 
@@ -712,7 +722,7 @@ Websudo
     service jira start
 
 User Management
-^^^^^^^^^^^^^^^
+---------------
 - Always use LDAP (OpenLDAP or Active Directory)
 - name groups as ``jira-users`` or ``jira-administrators``
 - local administrator ``jira-administrator`` only for fixing bugs with LDAP
@@ -732,9 +742,10 @@ User Management
 
 
 Upgrade
--------
+=======
+
 Instalacja nowej wersji
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 #. Wejdź na stronę https://www.atlassian.com/software/jira/download
 #. Kliknij prawym na przycisk Download obok wydania Jira TAR.GZ i "Copy Link Location"
 #. Uruchom polecenia poniżej:
@@ -751,7 +762,7 @@ Instalacja nowej wersji
         $ rm -fr jira.tgz
 
 Ustawienia środowiskowe
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 #. Poniższych edycji dokonujemy w pliku ``atlassian-jira-XXX/bin/setenv.sh`` gdzie XXX to numer wersji (nowej)
 
 .. code-block:: console
@@ -762,7 +773,7 @@ Ustawienia środowiskowe
     JVM_MAXIMUM_MEMORY="2048m"
 
 Zmiana portu działania Jiry
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 #. Edytuj linijkę ``/opt/jira/install/conf/server.xml`` i znajdź
 
     .. code-block:: xml
@@ -776,7 +787,7 @@ Zmiana portu działania Jiry
         Connector port="8000"
 
 Sprawdzenie wersji Javy dla Jiry
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 #. Odpal poniższe polecenie
 
     .. code-block:: console
@@ -789,11 +800,11 @@ Sprawdzenie wersji Javy dla Jiry
 #. stwórz symlink ``/opt/java/default`` wskazujący na nową Javę
 
 Backup bazy oraz home'a
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 Odpal skrypt ``/opt/jira/backup-jira.sh``
 
 Upgrade Jiry
-^^^^^^^^^^^^
+------------
 .. code-block:: console
 
     $ service jira stop
@@ -803,33 +814,33 @@ Upgrade Jiry
     $ service jira start
 
 Sprzątanie
-^^^^^^^^^^
+----------
 #. Możesz usunąć stary katalog instalacyjny Jiry.
 #. Proponuję jednak zostawić jedną, poprzednią wersję tak na wszelki wypadek, gdyby jakieś zmiany nie zostały przeniesione.
 
 Utils
------
+=====
 
 Reindex
-^^^^^^^
+-------
 .. literalinclude:: code/jira-reindex.py
     :caption: Jira reindex
     :language: python
 
 Project Administrators
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 .. literalinclude:: code/jira-project-administrators.py
     :caption: Jira Project Administrators
     :language: python
 
 Migracja danych
----------------
+===============
 .. literalinclude:: code/jira-migrate.py
     :caption: Jira Migrate
     :language: python
 
 Backup
-------
+======
 - XML (http://localhost:8080/secure/admin/XmlBackup!default.jspa)
 - ``rsync``:
 
@@ -849,7 +860,7 @@ Backup
     :language: console
 
 Test Environment
-----------------
+================
 .. literalinclude:: code/jira-fabric.py
     :caption: Jira test environment
     :language: python
@@ -859,7 +870,7 @@ Test Environment
     :language: python
 
 Jira Performance
-----------------
+================
 - JProfiler
 - MAT (Memory Analyzer Tool) [heapdump and MAT from Eclipse]
 - Performance SQL
@@ -870,14 +881,14 @@ Jira Performance
 - Java Melody
 
 Optymalizacje
-^^^^^^^^^^^^^
+-------------
 - Wyłączyć Activity Stream
 - Update gadżetów na Dashboardzie (update na bazie dla wszystkich gadgetów)
 - Edukacja użytkowników aby nie mieli odpalonych miliona zakładek z JIRĄ
 - Czy wszystkie monitory z Wallboardami są potrzebne?
 
 Database
-^^^^^^^^
+--------
 - ``/var/atlassian/application-data/jira/dbconfig.xml``
 
 .. code-block:: xml
@@ -896,7 +907,7 @@ Database
 
 
 Garbage Collector
-^^^^^^^^^^^^^^^^^
+-----------------
 - Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
 - G1 GC ``-XX:+UseG1GC``
 - ``Xmx``
@@ -907,7 +918,7 @@ Garbage Collector
     :language: console
 
 Monitorowanie
-^^^^^^^^^^^^^
+-------------
 - http://www.stagemonitor.org/
 - New Relic
 - JavaMelody
@@ -918,7 +929,7 @@ Monitorowanie
 
 
 Rozwiązywanie problemów
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 .. code-block:: console
 
     grep '/rest' /opt/atlassian/jira/logs/access_log.* |awk '{print $7}' |sort |uniq -c |sort -n
@@ -930,7 +941,7 @@ Rozwiązywanie problemów
 - Create issue by URL: http://localhost:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
 
 Baza danych
------------
+===========
 - AO = Add-On (plugins)
 - cwd_user i cwd_directories
 - jiraissue
@@ -946,7 +957,7 @@ Baza danych
     ssh -L 5432:localhost:5432 root@adresIP
 
 Backup data with ``pg_dump``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 .. code-block:: console
 
     $ service jira stop
@@ -969,7 +980,7 @@ Backup data with ``pg_dump``
     -f, –file=FILENAME output file name
 
 Restore data with ``pg_restore``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 .. code-block:: sql
 
     DROP DATABSE jira;
@@ -992,13 +1003,13 @@ Restore data with ``pg_restore``
     -v, –verbose verbose mode
 
 Restore data with ``psql`` from plaintext SQL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 .. code-block:: console
 
     $ psql -h localhost -p 5432 -U jira -d jira < "/tmp/$(date +%F)_jira.pgdump"
 
 Change JIRA DB config
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 - Change ``/var/atlassian/application-data/jira/dbconfig.xml``
 
 .. code-block:: console
@@ -1007,16 +1018,16 @@ Change JIRA DB config
 
 
 Konfiguracja
-------------
+============
 
 JIRA User Server
-^^^^^^^^^^^^^^^^
+----------------
 - Go to Jira User Server (g+g and type JIRA User Server)
 - Add application
 - Set application name, password and IP Addresses (paste adresses from instances which you want connect with Jira User Server)
 
 Programming
------------
+===========
 - REST API:
 
     - https://docs.atlassian.com/software/jira/docs/api/REST/server/
@@ -1035,16 +1046,16 @@ Programming
     - ``pip install atlassian-python-api``
 
 Zadania praktyczne
-------------------
+==================
 
 Projekt
-^^^^^^^
+-------
 - Stwórz projekt
 - Dodaj użytkownika ``admin`` do roli ``Developers``
 - Dodaj użytkownika ``admin`` do roli ``Administrators``
 
 Tworzenie issues
-^^^^^^^^^^^^^^^^
+----------------
 - Pozostaw za pomocą Configure Fields  (ekran tworzenia zadania)
 
     - Issue Type
@@ -1071,7 +1082,7 @@ Tworzenie issues
 - Przenieś zadanie z projektu do innego projektu
 
 Custom Field
-^^^^^^^^^^^^
+------------
 - Stwórz Custom Field (Multiple User) dla osób, które są przypisane do zadania
 - Dodaj tego custom field do Screena dla Projektu
 - Stwórz filtr który wyszuka zadania w których jesteś wymieniony w naszym Custom Field
@@ -1079,7 +1090,7 @@ Custom Field
 - Zrób by wyświetlało się w kolumnie po prawej
 
 Backlog i Estymacja
-^^^^^^^^^^^^^^^^^^^
+-------------------
 - Stwórz epiki
 
     - Logowanie
@@ -1090,7 +1101,7 @@ Backlog i Estymacja
 - Zaloguj 1h 30m do zadania i ustaw remaining na 3h
 
 Wersje
-^^^^^^
+------
 - Stwórz werjse
 
     - 2017-03 (rozpoczęcie: 1 marzec 2017; zakończenie: 31 marzec 2017)
@@ -1100,7 +1111,7 @@ Wersje
 - Zadania przydziel do wersji
 
 Sprinty
-^^^^^^^
+-------
 - Stwórz Sprinty
 
     - 2017-03 week 3 (ma 10 Story Points)
@@ -1125,7 +1136,7 @@ Sprinty
 - Zobacz raporty
 
 JQL i Wyszukiwanie zadań
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 - wyszukaj wszystkie zadania, które są w statusie "In Progress"
 - wyszukaj zadania, które zostały zaktualizowan od wczoraj
 - wyszukaj zadania, które należą do obecnie otwartego sprintu
@@ -1137,24 +1148,24 @@ JQL i Wyszukiwanie zadań
 - Pokaż mandaye, story points, fixVersion
 
 Filtry
-^^^^^^
+------
 - Stwórz filtr "Daily"
 - Stwórz filtr "Przekroczony Deadline", ustaw uprawnienia by był widoczny dla administratorów w projekcie
 - Stwórz filtr "Praca mojego zespołu z ostatniego tygodnia", ustaw by przychodził mail z zadaniami w poniedziałki o 6 rano
 
 Custom Field
-^^^^^^^^^^^^
+------------
 - Dodaj `Custom Field` typu `Number` o nazwie `Manday`, ustaw board do szacowania w `Mandayach`, dodaj do Screen
 - Dodaj `Custom Field` typu listy dwupoziomowej - Słownik
 - Sprawdź czy pola wyświetlają się przy zakładaniu zadań (czy nie są ukryte w `Configure Fields`)
 
 Administracja
-^^^^^^^^^^^^^
+-------------
 - Zmień priorytety na MoSCoW, zmień ikony i kolory (czerwony, zielony, szary)
 - Dodaj Screen aby przy zamykaniu zadań wyświetlało się użytkownikowi okienko z logowaniem czasu
 
 Board
-^^^^^
+-----
 - Stwórz Board dla zadań rozwojowych (Story, Bug):
 
     - Dodaj kolumnę `In Test` oraz `In Review` wraz z odpowiadającymi im statusami
@@ -1180,12 +1191,12 @@ Board
     - board ma być publiczny
 
 Administracja - Instalacja Jiry
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 #. Zainstaluj jirę z licencją evaluation
 #. Utwórz przykładowy projekt
 
 Administracja - bazą danych
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 #. Zrób backup bazy danych (musi być data w nazwie pliku)
 #. Zrób drop bazy
 #. Zmień DB Pool connection
@@ -1193,7 +1204,7 @@ Administracja - bazą danych
 #. Dodaj polecenie backupu bazy danych do *crontab* z ``@midnight``
 
 Administracja - backup
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 #. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL`` wykorzystując ``tar.gz`` (musi być data w nazwie pliku)
 #. Wylistuj pliki w archiwum (możesz przeglądnąć za pomocą midnight commander)
 #. Usuń katalogi ``$JIRA_HOME`` i ``$JIRA_INSTALL``
@@ -1207,19 +1218,19 @@ Administracja - backup
 #. Dodaj polecenie backupu ``$JIRA_HOME`` i ``$JIRA_INSTALL`` do *crontab* z ``@midnight``
 
 Administracja - Garbage Collector
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 #. Zmień Garbage Collector na G1
 #. Zmień Xmx na 1GB
 #. Wepnij Java Melody do monitorowania
 
 Administracja - Zmiana Javy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 #. Zainstaluj nową Javę na serwerze w katalogu ``/opt/java/$VERSION``
 #. Utwórz symlink ``/opt/java/default/`` wskazujący na ``/opt/java/$VERSION`` (dlaczego to dobra praktyka?)
 #. Zrestartuj Jirę by wykorzystywała nową Javę
 
 Atlassian Python API - Instalacja
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 #. Zainstaluj bibliotekę Atlassian Python API ``atlassian-python-api``
 
 .. note:: Kod biblioteki dostępny jest na GitHub https://github.com/AstroMatt/atlassian-python-api
@@ -1234,7 +1245,7 @@ Atlassian Python API - Instalacja
     $ python3 -m pip install atlassian-python-api
 
 Atlassian Python API - Reindeksacja
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 #. Stwórz skrypt ``jira-reindex.py``
 #. Skrypt wykorzystując bibliotekę ``atlassian-python-api`` ma reindeksować JIRĘ
 #. Skrypt ``jira-reindex.py`` dodaj Crontab by był uruchamiany o 4 w nocy (zwróć uwagę na zmienne środowiskowe)
@@ -1258,7 +1269,7 @@ Atlassian Python API - Reindeksacja
     $ python3 jira-reindex.py
 
 Atlassian Python API - Project Administrators
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 #. Stwórz skrypt ``jira-administrators.py``
 #. Skrypt ma wyliistować wszystkich administratorów projektów w JIRA w tabelce, wraz z ich emailem jako link "mailto"
 
@@ -1307,9 +1318,8 @@ Atlassian Python API - Project Administrators
 
     pprint(status)
 
-
 Atlassian Python API - Changelog
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 #. Napisz skrypt ``jira-changelog.py``
 #. Wygeneruj Changelog, tj. listę zadań które zmieniły się pomiędzy dwoma wersjami (wykorzystaj JQL)
 
