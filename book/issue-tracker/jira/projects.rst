@@ -23,8 +23,11 @@ Project Configuration
 - Roles and Permissions
 - Application Links
 
-Zadanie - Projekt
------------------
+Assignments
+-----------
+
+Projekt
+^^^^^^^
 - Stwórz projekt
 - Dodaj użytkownika ``jira-administrator`` do roli ``Developers``
 - Dodaj użytkownika ``jira-administrator`` do roli ``Administrators``

@@ -172,9 +172,11 @@ JQL - JIRA Query Language
 
 More info: https://confluence.atlassian.com/jira064/advanced-searching-720416661.html
 
+Assignments
+-----------
 
 JQL i Wyszukiwanie zadań
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 #. wyszukaj wszystkie zadania, które są w statusie "In Progress"
 #. wyszukaj zadania, które zostały zaktualizowane od wczoraj
 #. wyszukaj zadania, które należą do obecnie otwartego sprintu

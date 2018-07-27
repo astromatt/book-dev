@@ -18,8 +18,11 @@ Atlassian Python API
 - https://github.com/AstroTech/atlassian-python-api>
 - ``pip install atlassian-python-api``
 
-Zadanie - Atlassian Python API - Instalacja
--------------------------------------------
+Assignments
+-----------
+
+Atlassian Python API - Instalacja
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zainstaluj bibliotekę Atlassian Python API ``atlassian-python-api``
 
 .. note:: Kod biblioteki dostępny jest na GitHub https://github.com/AstroMatt/atlassian-python-api
@@ -33,8 +36,8 @@ Zadanie - Atlassian Python API - Instalacja
     $ apt-get install python3-pip
     $ python3 -m pip install atlassian-python-api
 
-Zadanie - Atlassian Python API - Reindeksacja
----------------------------------------------
+Atlassian Python API - Reindeksacja
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Stwórz skrypt ``jira-reindex.py``
 #. Skrypt wykorzystując bibliotekę ``atlassian-python-api`` ma reindeksować JIRĘ
 #. Skrypt ``jira-reindex.py`` dodaj Crontab by był uruchamiany o 4 w nocy (zwróć uwagę na zmienne środowiskowe)
@@ -57,8 +60,8 @@ Zadanie - Atlassian Python API - Reindeksacja
 
     $ python3 jira-reindex.py
 
-Zadanie - Atlassian Python API - Project Administrators
--------------------------------------------------------
+Atlassian Python API - Project Administrators
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Stwórz skrypt ``jira-administrators.py``
 #. Skrypt ma wyliistować wszystkich administratorów projektów w JIRA w tabelce, wraz z ich emailem jako link "mailto"
 
@@ -107,8 +110,8 @@ Zadanie - Atlassian Python API - Project Administrators
 
     pprint(status)
 
-Zadanie - Atlassian Python API - Changelog
-------------------------------------------
+Atlassian Python API - Changelog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Napisz skrypt ``jira-changelog.py``
 #. Wygeneruj Changelog, tj. listę zadań które zmieniły się pomiędzy dwoma wersjami (wykorzystaj JQL)
 

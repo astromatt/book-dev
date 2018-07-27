@@ -94,8 +94,11 @@ Time Reporting
 - Log Work
 - Reports
 
-Zadanie - Tworzenie issues
---------------------------
+Assignments
+-----------
+
+Tworzenie issues
+^^^^^^^^^^^^^^^^
 - Ustaw ekran tworzenia zadania
 
     - Issue Type

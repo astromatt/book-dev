@@ -21,8 +21,8 @@ Dashboard
     - Burndown
     - Days Remaining
 
-Zadanie
--------
+Assignments
+-----------
 #. Stwórz dashboard z trzema kolumnami
 #. Pierwsza kolumna:
 

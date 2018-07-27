@@ -14,9 +14,10 @@ Artifacts
 - Backlog
 - Sprintlog
 - Task board
-- Units
-- Story Points
-- Business Value
+- Units:
+
+    - Story Points
+    - Business Value
 
 Epic
 ----
@@ -171,8 +172,11 @@ Kanban
     - Priority
     - SLA
 
-Zadanie - Board
----------------
+Assignments
+-----------
+
+Board
+^^^^^
 #. Stwórz Board dla zadań rozwojowych (Story, Bug):
 
     - Dodaj kolumnę ``In Test`` oraz ``In Review`` wraz z odpowiadającymi im statusami
@@ -201,8 +205,8 @@ Zadanie - Board
     - zadania mogą być w dowolnym projekcie
     - board ma być publiczny
 
-Zadanie - Backlog i Estymacja
------------------------------
+Backlog i Estymacja
+^^^^^^^^^^^^^^^^^^^
 - Stwórz epiki
 
     - Logowanie
@@ -213,7 +217,7 @@ Zadanie - Backlog i Estymacja
 - Zaloguj 1h 30m do zadania i ustaw remaining na 3h
 
 Wersje
-------
+^^^^^^
 - Stwórz wersje
 
     - 2019-01 (rozpoczęcie: 1 styczeń 2019; zakończenie: 31 styczeń 2019)
@@ -223,7 +227,7 @@ Wersje
 - Zadania przydziel do wersji
 
 Sprinty
--------
+^^^^^^^
 - Stwórz Sprinty
 
     - 2019-01 week 1 (ma 4 Story Points)

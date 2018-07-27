@@ -17,8 +17,8 @@ Workflow
 - Validators
 - Closed vs Resolved vs Done
 
-Zadania
--------
+Assignments
+-----------
 #. Dodaj do workflow status ``In Review``, ``Blocked``, ``In Test``
 #. Przy przenoszeniu do statusu ``Done`` ma wyświetlać się okienko z logownaiem czasu
 #. Przy przenoszeniu do statusu ``Blocked`` ma wyświetlać się okienko z komentarzem (przyczyna zablokowania)

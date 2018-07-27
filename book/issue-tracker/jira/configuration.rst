@@ -78,19 +78,27 @@ Pluginy
 
 .. include:: jira/system-administration.rst
 
-Zadanie - Prosta Administracja
-------------------------------
+Assignments
+-----------
+
+Prosta Administracja
+^^^^^^^^^^^^^^^^^^^^
 #. Wyłącz obsługę gravatar
 #. Włącz obsługę Attachmentów
 #. Ustaw maksymalny rozmiar attachmentów na 100 MB
 
-Zadanie - Administracja
------------------------
+Priorytety
+^^^^^^^^^^
 #. Zmień priorytety na MoSCoW, zmień ikony i kolory (czerwony, zielony, szary)
-#. Dodaj Screen aby przy zamykaniu zadań wyświetlało się użytkownikowi okienko z logowaniem czasu
 
-Zadanie - Custom Field
-----------------------
+Role
+^^^^
+#. Dodaj rolę "Scrum Master"
+#. Dodaj do roli w projekcie użytkownika z JIRY
+#. Zmień w Permission scheme, aby tylko Scrum Master mógł otwierać i zamykać sprinty
+
+Custom Field
+^^^^^^^^^^^^
 #. Stwórz Custom Field "People Assigned":
 
     - W polu mamy mieć możliwość przypisywania wielu użytkowników do zadania

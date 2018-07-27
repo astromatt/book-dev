@@ -139,7 +139,7 @@ Ustawienia środowiskowe
     JVM_MAXIMUM_MEMORY="2048m"
 
 Zmiana portu działania Jiry
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Edytuj linijkę ``/opt/jira/install/conf/server.xml`` i znajdź
 
     .. code-block:: xml
@@ -153,7 +153,7 @@ Zmiana portu działania Jiry
         Connector port="8000"
 
 Sprawdzenie wersji Javy dla Jiry
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Odpal poniższe polecenie
 
     .. code-block:: console
@@ -166,11 +166,11 @@ Sprawdzenie wersji Javy dla Jiry
 #. stwórz symlink ``/opt/java/default`` wskazujący na nową Javę
 
 Backup bazy oraz home'a
------------------------
-Odpal skrypt ``/opt/jira/backup-jira.sh``
+^^^^^^^^^^^^^^^^^^^^^^^
+#. Odpal skrypt ``/opt/jira/backup-jira.sh``
 
 Upgrade Jiry
-------------
+^^^^^^^^^^^^
 .. code-block:: console
 
     $ service jira stop
@@ -180,33 +180,33 @@ Upgrade Jiry
     $ service jira start
 
 Sprzątanie
-----------
+^^^^^^^^^^
 #. Możesz usunąć stary katalog instalacyjny Jiry.
 #. Proponuję jednak zostawić jedną, poprzednią wersję tak na wszelki wypadek, gdyby jakieś zmiany nie zostały przeniesione.
 
 Utils
-=====
+-----
 
 Reindex
--------
+^^^^^^^
 .. literalinclude:: src/jira-reindex.py
     :caption: Jira reindex
     :language: python
 
 Project Administrators
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 .. literalinclude:: src/jira-project-administrators.py
     :caption: Jira Project Administrators
     :language: python
 
 Migracja danych
-===============
+---------------
 .. literalinclude:: src/jira-migrate.py
     :caption: Jira Migrate
     :language: python
 
 Backup
-======
+------
 - XML (http://localhost:8080/secure/admin/XmlBackup!default.jspa)
 - ``rsync``:
 
@@ -226,7 +226,7 @@ Backup
     :language: console
 
 Test Environment
-================
+----------------
 .. literalinclude:: src/jira-fabric.py
     :caption: Jira test environment
     :language: python
@@ -236,7 +236,7 @@ Test Environment
     :language: python
 
 Jira Performance
-================
+----------------
 - JProfiler
 - MAT (Memory Analyzer Tool) [heapdump and MAT from Eclipse]
 - Performance SQL
@@ -245,16 +245,17 @@ Jira Performance
 - *nginx* as a SSL terminator
 - *Varnish* caching *REST* responses (JSON) and static files
 - Java Melody
+- New Relic
 
 Optymalizacje
--------------
+^^^^^^^^^^^^^
 - Wyłączyć Activity Stream
 - Update gadżetów na Dashboardzie (update na bazie dla wszystkich gadgetów)
 - Edukacja użytkowników aby nie mieli odpalonych miliona zakładek z JIRĄ
 - Czy wszystkie monitory z Wallboardami są potrzebne?
 
 Database
---------
+^^^^^^^^
 - ``/var/atlassian/application-data/jira/dbconfig.xml``
 
 .. code-block:: xml
@@ -273,7 +274,7 @@ Database
 
 
 Garbage Collector
------------------
+^^^^^^^^^^^^^^^^^
 - Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
 - G1 GC ``-XX:+UseG1GC``
 - ``Xmx``
@@ -284,7 +285,7 @@ Garbage Collector
     :language: console
 
 Monitorowanie
--------------
+^^^^^^^^^^^^^
 - http://www.stagemonitor.org/
 - New Relic
 - JavaMelody
@@ -293,9 +294,8 @@ Monitorowanie
     - JMX monitoring
     - SQL profiling
 
-
 Rozwiązywanie problemów
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
     grep '/rest' /opt/atlassian/jira/logs/access_log.* |awk '{print $7}' |sort |uniq -c |sort -n
@@ -306,8 +306,9 @@ Rozwiązywanie problemów
 
 - Create issue by URL: http://localhost:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
 
+
 Baza danych
-===========
+-----------
 - AO = Add-On (plugins)
 - cwd_user i cwd_directories
 - jiraissue
@@ -323,7 +324,7 @@ Baza danych
     ssh -L 5432:localhost:5432 root@adresIP
 
 Backup data with ``pg_dump``
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
     $ service jira stop
@@ -346,7 +347,7 @@ Backup data with ``pg_dump``
     -f, –file=FILENAME output file name
 
 Restore data with ``pg_restore``
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: sql
 
     DROP DATABSE jira;
@@ -369,29 +370,32 @@ Restore data with ``pg_restore``
     -v, –verbose verbose mode
 
 Restore data with ``psql`` from plaintext SQL
----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
     $ psql -h localhost -p 5432 -U jira -d jira < "/tmp/$(date +%F)_jira.pgdump"
 
 Change JIRA DB config
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 - Change ``/var/atlassian/application-data/jira/dbconfig.xml``
 
 .. code-block:: console
 
     $ service jira start
 
-Zadanie - Administracja - bazą danych
--------------------------------------
+Assignments
+-----------
+
+Administracja - bazą danych
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zrób backup bazy danych (musi być data w nazwie pliku)
 #. Zrób drop bazy
 #. Zmień DB Pool connection
 #. Przywróć backup do bazy jira_new
 #. Dodaj polecenie backupu bazy danych do *crontab* z ``@midnight``
 
-Zadanie - Administracja - backup
---------------------------------
+Administracja - backup
+^^^^^^^^^^^^^^^^^^^^^^
 #. Zrób backup ``$JIRA_HOME`` i ``$JIRA_INSTALL`` wykorzystując ``tar.gz`` (musi być data w nazwie pliku)
 #. Wylistuj pliki w archiwum (możesz przeglądnąć za pomocą midnight commander)
 #. Usuń katalogi ``$JIRA_HOME`` i ``$JIRA_INSTALL``
@@ -404,14 +408,14 @@ Zadanie - Administracja - backup
 #. Uruchom Jirę z nowej lokalizacji
 #. Dodaj polecenie backupu ``$JIRA_HOME`` i ``$JIRA_INSTALL`` do *crontab* z ``@midnight``
 
-Zadanie - Administracja - Garbage Collector
--------------------------------------------
+Administracja - Garbage Collector
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zmień Garbage Collector na G1
 #. Zmień Xmx na 1GB
 #. Wepnij Java Melody do monitorowania
 
-Zadanie - Administracja - Zmiana Javy
--------------------------------------
+Administracja - Zmiana Javy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zainstaluj nową Javę na serwerze w katalogu ``/opt/java/$VERSION``
 #. Utwórz symlink ``/opt/java/default/`` wskazujący na ``/opt/java/$VERSION`` (dlaczego to dobra praktyka?)
 #. Zrestartuj Jirę by wykorzystywała nową Javę

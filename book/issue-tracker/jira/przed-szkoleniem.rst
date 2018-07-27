@@ -44,7 +44,10 @@ Skróty klawiszowe
 - ``c``
 - ``e``
 
-Zadanie - Instalacja Jiry
--------------------------
+Assignments
+-----------
+
+Instalacja Jiry
+^^^^^^^^^^^^^^^
 #. Zainstaluj Jirę z licencją evaluation (wykorzystaj 10 minute email - drugi wynik w Google)
 #. Utwórz projekt Moon Village (klucz: MOON) z przykładowymi danymi
