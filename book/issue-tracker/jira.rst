@@ -794,7 +794,7 @@ Sprawdzenie wersji Javy dla Jiry
 
         /opt/java/default/bin/java -version
 
-#. Zobacz aktualną werjsę na http://www.oracle.com/technetwork/java/javase/downloads/1880261
+#. Zobacz aktualną wersję na http://www.oracle.com/technetwork/java/javase/downloads/1880261
 #. Jeżeli wersja się różni ściągnij za pomocą ``wget`` nową Javę do ``/opt/java/``
 #. rozpakuj i usuń symlink ``/opt/java/default``
 #. stwórz symlink ``/opt/java/default`` wskazujący na nową Javę
@@ -1102,7 +1102,7 @@ Backlog i Estymacja
 
 Wersje
 ------
-- Stwórz werjse
+- Stwórz wersje
 
     - 2017-03 (rozpoczęcie: 1 marzec 2017; zakończenie: 31 marzec 2017)
     - 2017-04 (rozpoczęcie: 1 kwiecień 2017; zakończenie: 31 kwiecień 2017)
