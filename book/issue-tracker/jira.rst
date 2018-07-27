@@ -1051,12 +1051,12 @@ Zadania praktyczne
 Projekt
 -------
 - Stwórz projekt
-- Dodaj użytkownika ``admin`` do roli ``Developers``
-- Dodaj użytkownika ``admin`` do roli ``Administrators``
+- Dodaj użytkownika ``jira-administrator`` do roli ``Developers``
+- Dodaj użytkownika ``jira-administrator`` do roli ``Administrators``
 
 Tworzenie issues
 ----------------
-- Pozostaw za pomocą Configure Fields  (ekran tworzenia zadania)
+- Ustaw za pomocą Configure Fields  (ekran tworzenia zadania)
 
     - Issue Type
     - Summary
