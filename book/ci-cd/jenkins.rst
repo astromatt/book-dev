@@ -330,6 +330,7 @@ Dobre praktyki
 - Jak długo trzymać branche?
 - Jak automatycznie czyścić branche?
 - Budowanie na różnych środowiskach
+- Colorful deployments (version names from colors of the first six hexes in GIT ref)
 
 - Spockframework: https://www.youtube.com/watch?v=64jZVsScbU8
 
