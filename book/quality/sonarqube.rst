@@ -1,6 +1,16 @@
 SonarQube
 =========
 
+Budowanie Pull Request
+----------------------
+.. code-block:: properties
+
+    sonar.pullrequest.base=master
+    sonar.pullrequest.branch=feature/my-new-feature
+    sonar.pullrequest.key=5
+    sonar.pullrequest.provider=GitHub
+    sonar.pullrequest.github.repository=my-company/my-repo https://blog.sonarsource.com/sonarcloud-loves-your-build-pipeline
+
 Analiza kodu za pomocą ``mvn``
 ------------------------------
 
