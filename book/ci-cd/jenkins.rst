@@ -331,6 +331,7 @@ Dobre praktyki
 - Jak automatycznie czyścić branche?
 - Budowanie na różnych środowiskach
 - Colorful deployments (version names from colors of the first six hexes in GIT ref)
+- Technology radar: https://www.thoughtworks.com/radar
 
 - Spockframework: https://www.youtube.com/watch?v=64jZVsScbU8
 
