@@ -189,6 +189,10 @@ Tagowanie
 
 Po scaleniu gałęzi ``release/X.Y`` następuje proces oznaczania odpowiedniego momentu w historii przez tzw. tagowanie z etykietką o nazwie wersji zgodnej z odpowiednią konwencją. Dzięki temu w każdej chwili istnieje możliwość szybkiego powrotu do krytycznego momentu w repozytorium oraz zobaczenie logów zmian.
 
+Colorful deployments
+--------------------
+Colorful deployments (version names from colors of the first six hexes in GIT ref)
+
 Proces Pull Request
 -------------------
 
