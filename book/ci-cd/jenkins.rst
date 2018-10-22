@@ -33,7 +33,6 @@ Install
     docker exec -it 6de64f92632e /bin/bash
     cat /var/jenkins_home/secrets/initialAdminPassword
 
-
 Architecture
 ------------
 - Local executors (default: 2)
