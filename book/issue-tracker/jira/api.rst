@@ -29,36 +29,12 @@ Atlassian Python API - Instalacja
 
 .. warning:: Wymagany Python 3.4 lub nowszy
 
-.. toggle-code-block:: console
-    :label: Pokaż rozwiązanie instalacji Pythona i ``atlassian-python-api``
-
-    $ apt-get update
-    $ apt-get install python3-pip
-    $ python3 -m pip install atlassian-python-api
-
 Atlassian Python API - Reindeksacja
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Stwórz skrypt ``jira-reindex.py``
 #. Skrypt wykorzystując bibliotekę ``atlassian-python-api`` ma reindeksować JIRĘ
-#. Skrypt ``jira-reindex.py`` dodaj Crontab by był uruchamiany o 4 w nocy (zwróć uwagę na zmienne środowiskowe)
-
-.. toggle-code-block:: python
-    :label: Pokaż kod skryptu do reindeksacji
-
-    from atlassian import Jira
-
-
-    jira = Jira(
-        url="http://localhost:8080/",
-        username="jira-administrator",
-        password="admin")
-
-    jira.reindex()
-
-.. toggle-code-block:: console
-    :label: Pokaż jak uruchomić skrypt do reindeksacji
-
-    $ python3 jira-reindex.py
+#. Skrypt ``jira-reindex.py`` dodaj Crontab by był uruchamiany o 4 w nocy
+#. Pamiętaj, że cron ma inne zmienne środowiskowe
 
 Atlassian Python API - Project Administrators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,40 +51,6 @@ Atlassian Python API - Project Administrators
         $ apt-get update
         $ apt-get install docker.io
         $ docker run -v /var/atlassian/application-data/confluence:/var/atlassian/application-data/confluence -d -p 8090:8090 atlassian/confluence-server
-
-.. toggle-code-block:: console
-    :label: Pokaż jak uruchomić skrypt project administrators
-
-    from atlassian import Confluence
-    from atlassian import Jira
-
-
-    jira = Jira(
-        url='http://localhost:8080',
-        username='admin',
-        password='admin')
-
-    confluence = Confluence(
-        url='http://localhost:8090',
-        username='admin',
-        password='admin')
-
-
-    html = ['<table><tr><th>Project Key</th><th>Project Name</th><th>Leader</th><th>Email</th></tr>']
-
-    for data in jira.project_leaders():
-        row = '<tr><td>{project_key}</td><td>{project_name}<td></td>{lead_name}<td></td><a href="mailto:{lead_email}">{lead_email}</a></td></tr>'
-        html.append(row.format(**data))
-
-    html.append('</table><p></p><p></p>')
-
-    status = confluence.create_page(
-        space='DEMO',
-        parent_id=confluence.get_page_id('DEMO', 'demo'),
-        title='JIRA Administrators',
-        body='\r\n'.join(html))
-
-    pprint(status)
 
 Atlassian Python API - Changelog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,0 +1,5 @@
+config.vm.provision :puppet do |puppet|
+    puppet.options = "--verbose"
+    puppet.manifests_path = "puppet/"
+    puppet.manifest_file  = "main.pp"
+end

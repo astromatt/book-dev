@@ -56,32 +56,6 @@ Instalacja
 ^^^^^^^^^^
 - Zainstaluj `SonarQube`
 
-.. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie dla instalacji za pomocą ``apt-get``
-
-    echo "deb http://downloads.sourceforge.net/project/sonar-pkg/deb binary/" >> /etc/apt/sources.list
-    apt-get update
-    apt-get install --yes sonar
-    service sonar stop
-    sed -i 's(#sonar.jdbc.url=jdbc:postgresql(sonar.jdbc.url=jdbc:postgresql(g' /opt/sonar/conf/sonar.properties
-    sed -i 's(sonar.jdbc.url=jdbc:h2(#sonar.jdbc.url=jdbc:h2(g' /opt/sonar/conf/sonar.properties
-    sed -i 's(#sonar.jdbc.username=sonar(sonar.jdbc.username=sonar(g' /opt/sonar/conf/sonar.properties
-    sed -i 's(#sonar.jdbc.password=sonar(sonar.jdbc.password=sonar(g' /opt/sonar/conf/sonar.properties
-    service sonar start
-
-.. toggle-code-block:: sh
-    :label: Pokaż rozwiązanie dla instalacji za pomocą ``docker``
-
-    docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
-
-    # By default, the image will use an embedded H2 database that is not suited for production.
-    docker run -d --name sonarqube \
-        -p 9000:9000 -p 9092:9092 \
-        -e SONARQUBE_JDBC_USERNAME=sonar \
-        -e SONARQUBE_JDBC_PASSWORD=sonar \
-        -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-        sonarqube
-
 .. tip:: User admin, Hasło admin
 
 Wrzucanie wyników statycznej analizy kodu
