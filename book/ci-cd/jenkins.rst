@@ -58,7 +58,7 @@ Plugin installation
 Build Triggers
 ^^^^^^^^^^^^^^
 .. figure:: ../../img/geek-and-poke-development-driven-tests.jpg
-    :scale: 50%
+    :scale: 25%
     :align: center
 
     Development Driven Tests
@@ -125,7 +125,7 @@ Blue Ocean
     Blue Ocean pipeline
 
 .. figure:: ../../img/cicd-blueocean-success.png
-    :scale: 50%
+    :scale: 75%
     :align: center
 
     Blue Ocean pipeline Success
@@ -199,7 +199,7 @@ Groovy syntax
 - Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
 
 .. figure:: ../../img/ecosystem-jenkins-pipeline.png
-    :scale: 75%
+    :scale: 50%
     :align: center
 
     Pipeline model definition plugin
@@ -393,13 +393,13 @@ Build Strategy
     Almost green... just some broken tests
 
 .. figure:: ../../img/build-strategy.jpg
-    :scale: 50%
+    :scale: 25%
     :align: center
 
     Build Strategy
 
 .. figure:: ../../img/git-flow-whiteboard.jpg
-    :scale: 50%
+    :scale: 25%
     :align: center
 
     GIT Flow
@@ -448,6 +448,14 @@ Budowanie Pull Requestów
     - https://plugins.jenkins.io/bitbucket-build-status-notifier
     - https://plugins.jenkins.io/stashNotifier
     - https://plugins.jenkins.io/stash-pullrequest-builder
+
+Trigger przez API
+^^^^^^^^^^^^^^^^^
+- Napisz skrypt ``sh`` wykorzystujący ``curl``
+- Skrypt po odpaleniu ma triggerować build
+- Dodaj skrypt do ``crontab``
+- Skrypt ma się uruchamiać ``@daily``
+- Zwróć uwagę, że ``cron`` ma mniejszą ilość zmiennych środowiskowych (skrypt, który u Ciebie działa, może nie być odpalany przez ``cron``)
 
 Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
