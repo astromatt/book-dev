@@ -3,7 +3,7 @@ Jenkins
 - https://jenkins.io/
 - https://jenkins.io/doc
 
-.. figure:: ../../img/devops-continuous.png
+.. figure:: ../../img/cicd-loop.png
     :scale: 75%
     :align: center
 
@@ -16,6 +16,12 @@ Jenkins in Devtools Ecosystem
     :align: center
 
     Ecosystem Big Picture
+
+.. figure:: ../../img/ecosystem-jenkins-tooling.png
+    :scale: 50%
+    :align: center
+
+    Jenkins in Devtools Ecosystem
 
 Architecture
 ------------
@@ -110,6 +116,25 @@ Blue Ocean
 - Interoperable with old UI
 - Accessible at ``/blue/`` in the URL after "Blue Ocean" plugin installation.
 - Pipeline editor
+
+
+.. figure:: ../../img/cicd-pipeline.png
+    :scale: 50%
+    :align: center
+
+    Blue Ocean pipeline
+
+.. figure:: ../../img/cicd-blueocean-success.png
+    :scale: 50%
+    :align: center
+
+    Blue Ocean pipeline Success
+
+.. figure:: ../../img/cicd-blueocean-failing.png
+    :scale: 50%
+    :align: center
+
+    Blue Ocean pipeline Failing
 
 Environment Variables
 ---------------------
@@ -361,14 +386,20 @@ Extra
 
 Build Strategy
 --------------
+.. figure:: ../../img/geek-and-almost-green.jpg
+    :scale: 50%
+    :align: center
+
+    Almost green... just some broken tests
+
 .. figure:: ../../img/build-strategy.jpg
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     Build Strategy
 
 .. figure:: ../../img/git-flow-whiteboard.jpg
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     GIT Flow
