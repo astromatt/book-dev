@@ -3,6 +3,8 @@ Vagrant
 
 .. contents::
 
+.. warning:: Na windows installer może się pod koniec instalacji wywalać. Wtedy trzeba urtuchomić ``cmd`` jako Administrator i uruchomić installer z terminala.
+
 Tworzenie i konfigurowanie maszyny
 ----------------------------------
 - Poniższe polecenia wykonaj w pliku ``Vagrantfile``
@@ -27,7 +29,16 @@ Uruchamianie maszyny
 ^^^^^^^^^^^^^^^^^^^^
 .. code-block:: sh
 
-    vagrant init ubuntu/xenial64
+    vagrant init ubuntu/bionic64
+
+.. code-block:: text
+
+    Vagrant.configure("2") do |config|
+      config.vm.box = "ubuntu/bionic64"
+    end
+
+.. code-block:: sh
+
     vagrant up
 
     # Alternatywnie
