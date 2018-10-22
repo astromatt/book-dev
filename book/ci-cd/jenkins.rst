@@ -23,6 +23,17 @@ Jenkins in Devtools Ecosystem
 
     Jenkins in Devtools Ecosystem
 
+Install
+-------
+.. code-block:: console
+
+    apt-get install docker.io
+    docker run -d -p 8080:8080 -v /tmp/:/tmp/ jenkins
+    docker ps
+    docker exec -it 6de64f92632e /bin/bash
+    cat /var/jenkins_home/secrets/initialAdminPassword
+
+
 Architecture
 ------------
 - Local executors (default: 2)

@@ -64,8 +64,8 @@ Components
 Puppet language
 ^^^^^^^^^^^^^^^
 * DSL
-* rubby
-* ruby ERD templates
+* ruby
+* ERB templates
 
 
 Instalacja i konfiguracja
