@@ -90,14 +90,14 @@ Konfiguracja forwardingu portów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: ruby
 
-    config.vm.network :forwarded_port, guest: 80, host: 8080
-    config.vm.network :forwarded_port, guest: 443, host: 8443
+    config.vm.network :forwarded_port, guest: 8080, host: 8080
+    config.vm.network :forwarded_port, guest: 9000, host: 9000
 
 Synchronizowanie katalogów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: ruby
 
-    config.vm.synced_folder ".", "/var/www/host"
+    config.vm.synced_folder ".", "/vagrant"
 
 
 Provisioning za pomocą shell
