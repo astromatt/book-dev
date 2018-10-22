@@ -57,12 +57,6 @@ Plugin installation
 
 Build Triggers
 ^^^^^^^^^^^^^^
-.. figure:: ../../img/geek-and-poke-development-driven-tests.jpg
-    :scale: 25%
-    :align: center
-
-    Development Driven Tests
-
 - Build after other projects are built
 - Build periodically
 - GitHub hook trigger for GITScm polling
@@ -96,6 +90,12 @@ If your code is in other version:
 .. literalinclude:: code/sonar-extra.properties
     :language: properties
     :caption: Extra Sonar Project Properties
+
+.. figure:: ../../img/geek-and-poke-development-driven-tests.jpg
+    :scale: 15%
+    :align: center
+
+    Development Driven Tests
 
 Large repos
 -----------
@@ -387,7 +387,7 @@ Extra
 Build Strategy
 --------------
 .. figure:: ../../img/geek-and-almost-green.jpg
-    :scale: 50%
+    :scale: 25%
     :align: center
 
     Almost green... just some broken tests
@@ -438,7 +438,7 @@ Budowanie Pull Requestów
     - ``master``
 
 .. figure:: ../../img/git-pull-request-09.jpg
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     Pull Requests

@@ -56,6 +56,7 @@ slajdy z .gitconfigiem
 
 Przykłady praktyczne
 ====================
+* https://learngitbranching.js.org
 
 Jenkins + Git Bisect Run
 ------------------------
