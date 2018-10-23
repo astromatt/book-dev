@@ -160,6 +160,10 @@ Dockerfile
     # An ENTRYPOINT allows you to configure a container that will run as an executable.
     ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
+Limiting resources
+------------------
+* https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
+
 Docker network
 --------------
 * https://docs.docker.com/network/bridge/

@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stage('Test') {
-        parallel(
+        parallel {
             windows: {
                 echo "Windows branch"
             },
@@ -14,7 +14,7 @@ pipeline {
             macOS: {
                 echo "macOS branch"
             }
-        )
+        }
     }
 }
 
