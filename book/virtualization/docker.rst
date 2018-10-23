@@ -363,6 +363,12 @@ Create network
         dockernet:
             external: true
 
+List networks
+^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network ls
+
 Delete network
 ^^^^^^^^^^^^^^
 .. code-block:: console
@@ -451,6 +457,32 @@ Creating ``Dockerfile``
 * The ``RUN`` instruction will execute any commands in a new layer on top of the current image and commit the results.
 * The resulting committed image will be used for the next step in the Dockerfile
 
+``CMD`` vs ``ENTRYPOINT``
+^^^^^^^^^^^^^^^^^^^^^^^^^
+* The main purpose of a ``CMD`` is to provide defaults for an executing container.
+* An ``ENTRYPOINT`` helps you to configure a container that you can run as an executable.
+
+:ENTRYPOINT:
+    .. code-block:: dockerfile
+
+        ENTRYPOINT ["/bin/ping"]
+
+    .. code-block:: console
+
+        docker run myping 127.0.0.1
+
+:CMD:
+    .. code-block:: dockerfile
+
+        CMD ["/bin/ping", "127.0.0.1"]
+
+    .. code-block:: console
+
+        docker run myping
+
+
+* 127.0.0.1 will be an argument to ``ENTRYPOINT``
+
 ``EXPOSE``
 ^^^^^^^^^^
 * The ``EXPOSE`` instruction does not actually publish the port
@@ -470,10 +502,26 @@ Creating ``Dockerfile``
     ENV <key>=<value> ...
 
 ``COPY`` vs ``ADD``
--------------------
+^^^^^^^^^^^^^^^^^^^
 * ADD allows <src> to be a URL
 * If the <src> parameter of ADD is an archive in a recognised compression format, it will be unpacked
 * Best practices for writing Dockerfiles suggests using COPY where the magic of ADD is not required.
+
+``VOLUME``
+^^^^^^^^^^
+* The VOLUME instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
+
+.. code-block:: console
+
+    VOLUME ["/data"]
+
+``WORKDIR``
+^^^^^^^^^^^
+* The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile
+
+.. code-block:: console
+
+    WORKDIR /path/to/workdir
 
 Run Django App in container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
