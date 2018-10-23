@@ -502,27 +502,13 @@ Build Strategy
 
 Instalacja Jenkinsa i konfuguracja buildów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Zainstaluj *Jenkins* za pomocą paczek *DEB* przez ``apt-get``
-- Alternatywnie możesz użyć *Docker* albo manifestów *Puppeta*
-- Czy wcześniej zainstalowałeś *Bitbucket Server*?
-
-    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-training-examples.git
-    - Tak - Zaciągnij repozytorium ``sonar-training-examples`` z twojej instancji repozytorium kodu
-
-- Zacznij budować różne projekty ``/coverage-metrics/src``:
-
-    - *ut* - unit tests
-    - *it* - integration tests
-
-- Ustaw joby przez *Jenkinsa*
-
-.. tip:: Bitubcket plugin do Jenkinsa
-
-.. warning:: Sprawdź, czy w swoim pliku ``Vagrantfile`` masz skonfigurowany forwardnig portów dla guest:``8080`` -> host:``80``
+#. Zainstaluj *Jenkins* za pomocą *Docker*
+#. Zaciągnij repozytorium https://github.com/AstroTech/sonarqube-example-java-maven-junit.git
+#. Ustaw Job aby budował aplikację za pomocą ``mvn clean install``
 
 Budowanie Pull Requestów
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- Skonfiguruj ręcznie plan by budował gałęzie *GIT Flow*
+- Skonfiguruj ręcznie plan by budował gałęzie wg. schematu *GIT Flow*
 
     - Pull Requests
     - ``feature``
@@ -551,16 +537,16 @@ Trigger przez API
 
 Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonar-training-examples)
-- Zacznij budować różne projekty ``/coverage-metrics/src``
+- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonarqube-example-java-maven-junit.git)
+- Zacznij budować za pomocą ``mvn clean install``
 - Wyniki upublicznij w *SonarQube*
 - Build uzależnij od wyniku Quality Gates (plugin ``Sonar Quality Gates)
 - Uruchom SonarQube za pomocą ``docker run -d --name sonarqube -p 9000:9000 sonarqube``
 
 Budowanie *PITest*
 ^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonar-training-examples)
-- Zacznij budować różne projekty ``/coverage-metrics/src``
+- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonarqube-example-java-maven-junit.git)
+- Zacznij budować różne projekty ``coverage-metrics``
 - Wyniki upublicznij w *SonarQube*
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 

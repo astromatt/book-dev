@@ -160,6 +160,34 @@ Dockerfile
     # An ENTRYPOINT allows you to configure a container that will run as an executable.
     ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
+Docker network
+--------------
+* https://docs.docker.com/network/bridge/
+
+- ``bridge`` networks are best when you need multiple containers to communicate on the same Docker host.
+- ``host`` networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
+- ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
+- ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
+- Third-party network plugins allow you to integrate Docker with specialized network stacks.
+
+Create network
+^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network create my-net
+
+Delete network
+^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network rm my-net
+
+Connect running container to network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network connect my-net my-container
+
 Docker-compose
 --------------
 Compose is a tool for defining and running multi-container Docker applications.
