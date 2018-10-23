@@ -156,6 +156,41 @@ If your code is in other version:
 
     Development Driven Tests
 
+
+.. code-block:: yaml
+
+    version: '3'
+
+    networks:
+      prodnetwork:
+        driver: bridge
+
+    volumes:
+      jenkins-data:
+
+    services:
+      jenkins:
+        image: jenkins/jenkins
+        restart: always
+        ports:
+          - "18080:8080"
+        networks:
+          - prodnetwork
+        volumes:
+          - /tmp/jenkins:/var/lib/jenkins/
+        depends_on:
+          - sonar
+        environment:
+          - SONAR_PORT=9000
+      sonar:
+        image: sonarqube
+        restart: always
+        ports:
+         - "19000:9000"
+         - "19092:9092"
+        networks:
+          - prodnetwork
+
 Large repos
 -----------
 - is a sign of git missuse, and should be tackled with GIT LFS

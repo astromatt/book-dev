@@ -1,0 +1,33 @@
+version: '3'
+
+networks:
+  prodnetwork:
+    driver: bridge
+
+volumes:
+  jenkins-data:
+
+services:
+  jenkins:
+    image: jenkins/jenkins
+    container_name: jenkins
+    restart: always
+    ports:
+      - "18080:8080"
+    networks:
+      - prodnetwork
+    volumes:
+      - /tmp/jenkins:/var/lib/jenkins/
+    depends_on:
+      - sonar
+    environment:
+      - SONAR_PORT=9000
+  sonar:
+    image: sonarqube
+    container_name: sonarqube
+    restart: always
+    ports:
+     - "19000:9000"
+     - "19092:9092"
+    networks:
+      - prodnetwork

@@ -31,7 +31,6 @@ Przydatne polecenia
     docker images
     docker rm IMAGE
 
-
 Building Images
 ---------------
 
@@ -94,6 +93,10 @@ Volume container
 
     docker create -v /dbdata --name dbstore training/postgres /bin/true
     docker run --detach --volumes-from dbstore --name db1 training/postgres
+
+Visualizing docker container
+----------------------------
+* https://portainer.io
 
 Docker Hub
 ----------
@@ -214,6 +217,13 @@ Compose is a tool for defining and running multi-container Docker applications.
 
     docker-compose up
     docker-machine ip MACHINE_NAME
+
+Where docker store containers
+-----------------------------
+* ``docker info``
+* ``/var/lib/docker``
+
+
 
 Zadania do rozwiązania
 ----------------------
