@@ -1,13 +1,31 @@
 Docker
 ======
 
-Instalacja
+Installing
 ----------
-
 - `macOS <https://docs.docker.com/docker-for-mac/install/>`_
 - `Ubuntu <https://docs.docker.com/engine/getstarted/linux_install_help/>`_
 - `Linux <https://docs.docker.com/engine/installation/>`_
 - `Windows <https://docs.docker.com/docker-for-windows/>`_
+
+Install from terminal
+^^^^^^^^^^^^^^^^^^^^^
+* https://get.docker.com
+
+.. code-block:: console
+
+    curl -fsSL get.docker.com -o get-docker.sh
+    sh get-docker.sh
+
+Nomenclature
+------------
+* Container
+* Image
+* Layer
+* LTS version
+* Edge version
+* Host
+
 
 CLI - Command Line Interface
 ----------------------------
@@ -124,6 +142,13 @@ Attach to running containers
     .. code-block:: console
 
         docker exec -u 0 -it CONTAINER_NAME_OR_ID bash
+
+What application is running inside the container?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker top CONTAINER_NAME_OR_ID
+
 
 Images
 ------
