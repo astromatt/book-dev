@@ -23,15 +23,25 @@ Jenkins in Devtools Ecosystem
 
     Jenkins in Devtools Ecosystem
 
-Install
--------
+Install LTS
+-----------
+.. warning:: for non-training use change ``/tmp`` to other persistent directory
+
 .. code-block:: console
 
     apt-get install docker.io
-    docker run -d -p 8080:8080 -v /tmp/:/tmp/ jenkins
-    docker ps
-    docker exec -it 6de64f92632e /bin/bash
-    cat /var/jenkins_home/secrets/initialAdminPassword
+    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
+    docker container exec -u 0 -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+Install weekly version
+----------------------
+.. warning:: for non-training use change ``/tmp`` to other persistent directory
+
+.. code-block:: console
+
+    apt-get install docker.io
+    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins
+    docker container exec -u 0 -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Architecture
 ------------
@@ -52,10 +62,21 @@ Administration
 User Management
 ^^^^^^^^^^^^^^^
 - Always use LDAP (OpenLDAP or Active Directory)
+- Read only access via LDAPs
+- Internal and external users in one LDAP server
 - name groups as ``jenkins-users`` or ``jenkins-administrators``
 - local administrator ``jenkins-administrator`` only for fixing bugs with LDAP
 - use ``jenkins@example.com`` (for easy email fiterling)
 - use ``jenkins.example.com`` as domain name with Firewall blocking external access
+- ``/etc/resolv.conf`` ``search example.com`` -> ustawianie przez DHCP
+- avoid nested groups
+- all tools in ``OU=ecosystem``
+- use LDAP groups for project roles from ``OU=projects``
+- do not use user accounts in project roles (only LDAP groups)
+- Confluence page with all ``*-administrators`` + ``mailto:`` links
+- Confluence page with Jenkins job administrators
+- Do not use technical accounts (use SSH keys)
+- Use SSH keys with proper comment
 
 Plugin installation
 ^^^^^^^^^^^^^^^^^^^
@@ -424,10 +445,10 @@ Instalacja Jenkinsa i konfuguracja buildów
 - Alternatywnie możesz użyć *Docker* albo manifestów *Puppeta*
 - Czy wcześniej zainstalowałeś *Bitbucket Server*?
 
-    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git
-    - Tak - Zaciągnij repozytorium ``sonar-examples`` z twojej instancji *Bitbucket Server*
+    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-training-examples.git
+    - Tak - Zaciągnij repozytorium ``sonar-training-examples`` z twojej instancji repozytorium kodu
 
-- Zacznij budować różne projekty ``sonar-examples/projects/languages/java``:
+- Zacznij budować różne projekty ``/coverage-metrics/src``:
 
     - *ut* - unit tests
     - *it* - integration tests
@@ -469,15 +490,16 @@ Trigger przez API
 
 Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-examples`` (https://github.com/SonarSource/sonar-examples.git)
-- Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
-- Wyniki upublicznij w *SonarQube* (którą uruchomisz za pomocą ``docker run -d -p 9000:9000 sonarqube``
-- Do instalacji możesz wykorzystać ``puppet module install maestrodev/sonarqube``
+- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonar-training-examples)
+- Zacznij budować różne projekty ``/coverage-metrics/src``
+- Wyniki upublicznij w *SonarQube*
+- Build uzależnij od wyniku Quality Gates (plugin ``Sonar Quality Gates)
+- Uruchom SonarQube za pomocą ``docker run -d --name sonarqube -p 9000:9000 sonarqube``
 
 Budowanie *PITest*
 ^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-examples`` (https://github.com/SonarSource/sonar-examples.git)
-- Zacznij budować różne projekty ``sonar-examples/projects/languages/java``
+- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonar-training-examples)
+- Zacznij budować różne projekty ``/coverage-metrics/src``
 - Wyniki upublicznij w *SonarQube*
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
 

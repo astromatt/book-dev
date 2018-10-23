@@ -1,6 +1,24 @@
 SonarQube
 =========
 
+
+Sonar Family
+------------
+* SonarQube
+* SonarCloud
+* SonarLint
+* SonarScanner
+
+
+Install
+-------
+.. code-block:: console
+
+    docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+
+SonarScanner
+------------
+
 Budowanie Pull Request
 ----------------------
 .. code-block:: properties
@@ -62,8 +80,8 @@ Wrzucanie wyników statycznej analizy kodu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Czy wcześniej zainstalowałeś `Bitbucket Server`?
 
-    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-examples.git i wrzuć wyniki odpalając ``mvn``
-    - Tak - Zaciągnij repozytorium ``sonar-examples`` z twojej instancji `Bitbucket Server`
+    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-training-examples.git i wrzuć wyniki odpalając ``mvn``
+    - Tak - Zaciągnij repozytorium ``sonar-training-examples`` z twojej instancji `Bitbucket Server`
 
 - Skonfiguruj aby statyczna analiza kodu uruchamiała z `Jenkins`
 - Skonfiguruj tak, by w każdym `Pull Request` jako komentarz do linii kodu wyświetlały się uwagi z `SonarQube`
