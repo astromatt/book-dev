@@ -12,39 +12,158 @@ Instalacja
 CLI - Command Line Interface
 ----------------------------
 
-Pierwsze polecenia
-^^^^^^^^^^^^^^^^^^
+Docker Management commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: text
 
-.. code-block:: sh
+      checkpoint  Manage checkpoints
+      config      Manage Docker configs
+      container   Manage containers
+      image       Manage images
+      network     Manage networks
+      node        Manage Swarm nodes
+      plugin      Manage plugins
+      secret      Manage Docker secrets
+      service     Manage services
+      stack       Manage Docker stacks
+      swarm       Manage Swarm
+      system      Manage Docker
+      trust       Manage trust on Docker images
+      volume      Manage volumes
 
-    docker run hello-world
-    docker run -it ubuntu bash
+Docker commands
+^^^^^^^^^^^^^^^
+.. code-block:: text
 
-Przydatne polecenia
-^^^^^^^^^^^^^^^^^^^
+      attach      Attach local standard input, output, and error streams to a running container
+      build       Build an image from a Dockerfile
+      commit      Create a new image from a container's changes
+      cp          Copy files/folders between a container and the local filesystem
+      create      Create a new container
+      deploy      Deploy a new stack or update an existing stack
+      diff        Inspect changes to files or directories on a container's filesystem
+      events      Get real time events from the server
+      exec        Run a command in a running container
+      export      Export a container's filesystem as a tar archive
+      history     Show the history of an image
+      images      List images
+      import      Import the contents from a tarball to create a filesystem image
+      info        Display system-wide information
+      inspect     Return low-level information on Docker objects
+      kill        Kill one or more running containers
+      load        Load an image from a tar archive or STDIN
+      login       Log in to a Docker registry
+      logout      Log out from a Docker registry
+      logs        Fetch the logs of a container
+      pause       Pause all processes within one or more containers
+      port        List port mappings or a specific mapping for the container
+      ps          List containers
+      pull        Pull an image or a repository from a registry
+      push        Push an image or a repository to a registry
+      rename      Rename a container
+      restart     Restart one or more containers
+      rm          Remove one or more containers
+      rmi         Remove one or more images
+      run         Run a command in a new container
+      save        Save one or more images to a tar archive (streamed to STDOUT by default)
+      search      Search the Docker Hub for images
+      start       Start one or more stopped containers
+      stats       Display a live stream of container(s) resource usage statistics
+      stop        Stop one or more running containers
+      tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+      top         Display the running processes of a container
+      unpause     Unpause all processes within one or more containers
+      update      Update configuration of one or more containers
+      version     Show the Docker version information
+      wait        Block until one or more containers stop, then print their exit codes
 
-.. code-block:: sh
+Run containers
+^^^^^^^^^^^^^^
+.. code-block:: console
 
     docker run bash
-    docker ps -a
-    docker exec -u 0 -it CONTAINER_NAME bash
-    docker images
-    docker rm IMAGE
 
-Building Images
----------------
+* ``-t`` - run pseudo terminal and attach to it
+* ``-i`` - interactive, keeps stdin open
 
-.. code-block:: sh
+.. code-block:: console
+
+    docker run -it bash
+
+* ``ctrl + p + q`` - quit container without stopping it
+* ``ctld + d`` - exits and stops the container
+
+.. code-block:: console
+
+    docker run -it ubuntu:latest bash
+
+Show containers
+^^^^^^^^^^^^^^^
+* show running:
+
+    .. code-block:: console
+
+        docker ps
+
+* Show all containers, even not running:
+
+    .. code-block:: console
+
+        docker ps -a
+
+Attach to running containers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Attach to stdout of running container:
+
+    .. code-block:: console
+
+        docker attach CONTAINER_NAME_OR_ID
+
+* Attach to running container and execute bash
+
+    .. code-block:: console
+
+        docker exec -u 0 -it CONTAINER_NAME_OR_ID bash
+
+Images
+------
+
+Build images
+^^^^^^^^^^^^
+.. code-block:: console
 
     docker build -t docker .
+
+List images
+^^^^^^^^^^^
+.. code-block:: console
+
+    docker images
+
+Remove images
+^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker rmi IMAGE
+
+Remove container
+^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker rm IMAGE
+
 
 Container linking
 -----------------
 Containers can be linked to another container’s ports directly using ``-link remote_name:local_alias`` in the client’s docker run. This will set a number of environment variables that can then be used to connect:
 
-.. code-block:: sh
+.. code-block:: console
 
     docker run --rm -t -i --link pg_test:pg eg_postgresql bash
+
+Hostname
+--------
+* ``hostname`` to docker container id
 
 Volumes
 -------
@@ -64,11 +183,11 @@ Data volumes are designed to persist data, independent of the container’s life
 
 Mounting directories
 ^^^^^^^^^^^^^^^^^^^^
-.. code-block:: sh
+.. code-block:: console
 
     docker run -v <host path>:<container path>[:FLAG]
 
-.. code-block:: sh
+.. code-block:: console
 
 
     docker run --detach -P --name web -v /developer/myproject:/var/www training/webapp python app.py
@@ -76,20 +195,20 @@ Mounting directories
 
 Tworznie volumenów
 ^^^^^^^^^^^^^^^^^^
-.. code-block:: sh
+.. code-block:: console
 
     docker volume create -d flocker --opt o=size=20GB my-named-volume
     docker run --detach -P -v my-named-volume:/webapp --name web training/webapp python app.py
 
 Mounting files
 ^^^^^^^^^^^^^^
-.. code-block:: sh
+.. code-block:: console
 
     docker run --rm -it -v ~/.bash_history:/root/.bash_history ubuntu /bin/bash
 
 Volume container
 ^^^^^^^^^^^^^^^^
-.. code-block:: sh
+.. code-block:: console
 
     docker create -v /dbdata --name dbstore training/postgres /bin/true
     docker run --detach --volumes-from dbstore --name db1 training/postgres
@@ -102,23 +221,41 @@ Docker Hub
 ----------
 - https://hub.docker.com/
 
-.. code-block:: sh
+.. code-block:: console
 
     docker run docker/whalesay cowsay boo
 
 Publikowanie
 ^^^^^^^^^^^^
 
-.. code-block:: sh
+.. code-block:: console
 
    docker login
    docker tag 7d9495d03763 yourusername/docker-whale:latest
    docker push yourusername/docker-whale
 
-.. code-block:: sh
+.. code-block:: console
 
     docker image remove 7d9495d03763
     docker run yourusername/docker-whale
+
+Searching
+^^^^^^^^^
+* https://hub.docker.com
+
+.. code-block:: console
+
+    docker search NAME
+
+Pobieranie
+^^^^^^^^^^
+* Only pull, not run
+.. code-block:: console
+
+    docker pull NAME
+    docker pull ubuntu  # will pull lates
+    docker pull ubuntu:latest
+    docker pull ubuntu:18.10
 
 Dockerfile
 ^^^^^^^^^^
@@ -130,7 +267,7 @@ Dockerfile
     RUN apt-get -y update && apt-get install -y fortunes
     CMD /usr/games/fortune -a | cowsay
 
-.. code-block:: sh
+.. code-block:: console
 
     docker build -t docker-whale .
     docker images
@@ -227,7 +364,7 @@ Compose is a tool for defining and running multi-container Docker applications.
                - db
 
 
-.. code-block:: sh
+.. code-block:: console
 
     docker-compose run web django-admin.py startproject composeexample .
     sudo chown -R $USER:$USER .
@@ -245,7 +382,7 @@ Compose is a tool for defining and running multi-container Docker applications.
             }
         }
 
-.. code-block:: sh
+.. code-block:: console
 
     docker-compose up
     docker-machine ip MACHINE_NAME
@@ -255,7 +392,28 @@ Where docker store containers
 * ``docker info``
 * ``/var/lib/docker/containers``
 
+Kubernetes
+----------
+* Kubernetes is a framework for building distributed platforms
+* Master node
+* Cluster
+* https://www.youtube.com/watch?v=_vHTaIJm9uY&list=PLF3s2WICJlqOiymMaTLjwwHz-MSVbtJPQ
 
+Deploying
+^^^^^^^^^
+* Automatic health checks
+* Autohealing
+* Rollback deployment
+
+Scaling
+^^^^^^^
+* Services
+* Load ballancing
+* Same machine or different machines
+* Scaling container within Service
+
+Monitoring
+^^^^^^^^^^
 
 Zadania do rozwiązania
 ----------------------
