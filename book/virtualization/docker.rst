@@ -97,6 +97,9 @@ Docker commands
 
 Run containers
 ^^^^^^^^^^^^^^
+* Check ``hostname``
+* Check ``PS1`` (bash prompt)
+
 .. code-block:: console
 
     docker run bash
@@ -114,6 +117,18 @@ Run containers
 .. code-block:: console
 
     docker run -it ubuntu:latest bash
+
+* ``-d`` - daemon (runs in the background)
+
+.. code-block:: console
+
+    docker run -d -it ubuntu:latest bash
+
+* ``--name`` - named container
+
+.. code-block:: console
+
+    docker run -d -it --name bash ubuntu:latest bash
 
 Show containers
 ^^^^^^^^^^^^^^^
@@ -149,6 +164,17 @@ What application is running inside the container?
 
     docker top CONTAINER_NAME_OR_ID
 
+Stop containers
+^^^^^^^^^^^^^^^
+* Filesystem inside container is ephemeral (it will be deleted after stop)
+
+.. code-block:: console
+
+    docker stop CONTAINER_NAME_OR_ID
+
+.. code-block:: console
+
+    docker kill CONTAINER_NAME_OR_ID
 
 Images
 ------
@@ -205,6 +231,27 @@ Data volumes are designed to persist data, independent of the container’s life
 .. note:: You can also use the VOLUME instruction in a Dockerfile to add one or more new volumes to any container created from that image.
 
 .. [Docker] https://docs.docker.com/engine/tutorials/dockervolumes/
+
+Creating persistant storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker run -it -v /data --name bash ubuntu:latest /bin/bash
+    echo 'hello' > /data/hello.txt
+    # exit with ``ctrl+q+p``
+
+.. code-block:: console
+
+    ls /var/lib/docker/containers/volumes/.../
+
+Attaching local dir to docker container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Will mount ``/tmp/my_host`` from host to ``/data`` inside container
+
+.. code-block:: console
+
+    docker run -it -v /tmp/my_host:/data --name bash ubuntu:latest /bin/bash
+
 
 Mounting directories
 ^^^^^^^^^^^^^^^^^^^^
