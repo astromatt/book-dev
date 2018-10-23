@@ -21,6 +21,8 @@ services:
       - /tmp/jenkins:/var/lib/jenkins/
     depends_on:
       - sonar
+      - gitlab
+      - artifactory
     environment:
       - SONAR_PORT=9000
 
@@ -33,3 +35,28 @@ services:
      - "9092:9092"
     networks:
       - prodnetwork
+
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    restart: always
+    volumes:
+      - /tmp/gitlab/config:/etc/gitlab
+      - /tmp/gitlab/logs:/var/log/gitlab
+      - /tmp/gitlab/data:/var/opt/gitlab
+    ports:
+     - "443:443"
+     - "80:80"
+     - "2222:22"
+    networks:
+      - prodnetwork
+
+    artifactory:
+      image: docker.bintray.io/jfrog/artifactory-oss:latest
+      container_name: artifactory
+      restart: always
+      ports:
+        - "8081:8081"
+      networks:
+        - prodnetwork
+

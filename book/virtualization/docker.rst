@@ -221,7 +221,7 @@ Compose is a tool for defining and running multi-container Docker applications.
 Where docker store containers
 -----------------------------
 * ``docker info``
-* ``/var/lib/docker``
+* ``/var/lib/docker/containers``
 
 
 
