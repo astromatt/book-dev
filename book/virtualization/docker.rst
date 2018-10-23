@@ -8,8 +8,8 @@ Installing
 - `Linux <https://docs.docker.com/engine/installation/>`_
 - `Windows <https://docs.docker.com/docker-for-windows/>`_
 
-Install from terminal
-^^^^^^^^^^^^^^^^^^^^^
+Install docker from terminal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * https://get.docker.com
 
 .. code-block:: console
@@ -19,8 +19,8 @@ Install from terminal
 
 Nomenclature
 ------------
-* Container
-* Image
+* Container (How to run your application)
+* Image (How to store your application)
 * Layer
 * LTS version
 * Edge version
@@ -95,10 +95,34 @@ Docker commands
       version     Show the Docker version information
       wait        Block until one or more containers stop, then print their exit codes
 
+
+Containers
+----------
+
+Searching
+^^^^^^^^^
+* https://hub.docker.com
+
+.. code-block:: console
+
+    docker search NAME
+
+Pulling from Docker Hub
+^^^^^^^^^^^^^^^^^^^^^^^
+* Only pull, not run
+
+.. code-block:: console
+
+    docker pull NAME
+    docker pull ubuntu  # will pull latest
+    docker pull ubuntu:latest
+    docker pull ubuntu:18.10
+
 Run containers
 ^^^^^^^^^^^^^^
 * Check ``hostname``
 * Check ``PS1`` (bash prompt)
+* Will pull automatically
 
 .. code-block:: console
 
@@ -106,6 +130,7 @@ Run containers
 
 * ``-t`` - run pseudo terminal and attach to it
 * ``-i`` - interactive, keeps stdin open
+* ``--rm`` - Automatically remove the container when it exits
 
 .. code-block:: console
 
@@ -176,6 +201,12 @@ Stop containers
 
     docker kill CONTAINER_NAME_OR_ID
 
+Remove container
+^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker rm IMAGE
+
 Images
 ------
 
@@ -197,12 +228,6 @@ Remove images
 
     docker rmi IMAGE
 
-Remove container
-^^^^^^^^^^^^^^^^
-.. code-block:: console
-
-    docker rm IMAGE
-
 
 Container linking
 -----------------
@@ -211,10 +236,6 @@ Containers can be linked to another container’s ports directly using ``-link r
 .. code-block:: console
 
     docker run --rm -t -i --link pg_test:pg eg_postgresql bash
-
-Hostname
---------
-* ``hostname`` to docker container id
 
 Volumes
 -------
@@ -252,7 +273,6 @@ Attaching local dir to docker container
 
     docker run -it -v /tmp/my_host:/data --name bash ubuntu:latest /bin/bash
 
-
 Mounting directories
 ^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
@@ -265,8 +285,8 @@ Mounting directories
     docker run --detach -P --name web -v /developer/myproject:/var/www training/webapp python app.py
     docker run --detach -P --name web -v /developer/myproject:/var/www:ro training/webapp python app.py
 
-Tworznie volumenów
-^^^^^^^^^^^^^^^^^^
+Creating Volumes
+^^^^^^^^^^^^^^^^
 .. code-block:: console
 
     docker volume create -d flocker --opt o=size=20GB my-named-volume
@@ -285,6 +305,93 @@ Volume container
     docker create -v /dbdata --name dbstore training/postgres /bin/true
     docker run --detach --volumes-from dbstore --name db1 training/postgres
 
+
+Docker network
+--------------
+* https://docs.docker.com/network/bridge/
+
+- ``bridge`` networks are best when you need multiple containers to communicate on the same Docker host.
+- ``host`` networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
+- ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
+- ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
+- Third-party network plugins allow you to integrate Docker with specialized network stacks.
+
+How to make two containers talk with each other?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Create a new docker network and connect both containers to that network
+- Containers on the same network can use the others container name to communicate with each other
+
+.. code-block:: console
+
+    docker network create mynetwork
+    docker run -d -p "80:80" --name web mywebimage
+    docker run -d --name my_service myapiimage
+
+- Then you can connect to your web service using the hostname of your container and the web service can make calls to the API service with the URL http://my_service:8000/dosomething
+
+Hostname
+^^^^^^^^
+* ``hostname`` is the same as docker container id
+
+Expose ports
+^^^^^^^^^^^^
+.. code-block:: console
+
+    docker run -d -p 5432:5432 --name postgres postgres
+    docker run -d -p 5432:5432 --name postgres postgres:10.5
+    docker run -d -p 192.168.56.101:5432:5432 --name postgres postgres
+
+Create network
+^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network create mynetwork
+
+.. code-block:: console
+
+    docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 mynetwork
+
+.. code-block:: yaml
+
+    version: '2'
+    services:
+        db:
+            image: some/image
+            networks:
+                - mynetwork
+    mynetwork:
+        dockernet:
+            external: true
+
+Delete network
+^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network rm mynetwork
+
+Connect container to network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker run --net bridge -d -p 5432:5432 --name postgres postgres
+
+.. code-block:: console
+
+    docker run --net mynetwork -d -p 5432:5432 --name postgres postgres
+
+Connect running container to network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network connect mynetwork CONTAINER_NAME_OR_ID
+
+Inspect network
+^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker network inspect
+
+
 Visualizing docker container
 ----------------------------
 * https://portainer.io
@@ -299,7 +406,6 @@ Docker Hub
 
 Publikowanie
 ^^^^^^^^^^^^
-
 .. code-block:: console
 
    docker login
@@ -311,53 +417,22 @@ Publikowanie
     docker image remove 7d9495d03763
     docker run yourusername/docker-whale
 
-Searching
-^^^^^^^^^
-* https://hub.docker.com
-
-.. code-block:: console
-
-    docker search NAME
-
-Pobieranie
-^^^^^^^^^^
-* Only pull, not run
-.. code-block:: console
-
-    docker pull NAME
-    docker pull ubuntu  # will pull lates
-    docker pull ubuntu:latest
-    docker pull ubuntu:18.10
-
 Dockerfile
-^^^^^^^^^^
+----------
 - https://docs.docker.com/engine/reference/builder/
 
+Creating ``Dockerfile``
+^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: dockerfile
 
-    FROM docker/whalesay:latest
-    RUN apt-get -y update && apt-get install -y fortunes
-    CMD /usr/games/fortune -a | cowsay
+    FROM python:latest
+    CMD python
 
 .. code-block:: console
 
-    docker build -t docker-whale .
+    docker build -t myname:1.0.0 .
     docker images
-    docker run docker-whale
-
-.. code-block:: dockerfile
-
-    FROM      ubuntu
-    LABEL Description="This image is used to start the foobar executable" Vendor="ACME Products" Version="1.0"
-    RUN apt-get update && apt-get install -y inotify-tools nginx apache2 openssh-server
-
-.. code-block:: dockerfile
-
-    FROM ubuntu
-    RUN echo foo > bar
-
-    FROM ubuntu
-    RUN echo moo > oink
+    docker run myname:1.0.0
 
 .. code-block:: dockerfile
 
@@ -369,37 +444,56 @@ Dockerfile
     # An ENTRYPOINT allows you to configure a container that will run as an executable.
     ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
+``CMD`` vs ``RUN``
+^^^^^^^^^^^^^^^^^^
+* There can only be one ``CMD`` instruction in a Dockerfile
+* If you list more than one ``CMD`` then only the last ``CMD`` will take effect
+* The ``RUN`` instruction will execute any commands in a new layer on top of the current image and commit the results.
+* The resulting committed image will be used for the next step in the Dockerfile
+
+``EXPOSE``
+^^^^^^^^^^
+* The ``EXPOSE`` instruction does not actually publish the port
+* It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published
+
+.. code-block:: dockerfile
+
+    EXPOSE 80/tcp
+    EXPOSE 80/udp
+    EXPOSE 443
+
+``ENV``
+^^^^^^^
+.. code-block:: dockerfile
+
+    ENV <key> <value>
+    ENV <key>=<value> ...
+
+``COPY`` vs ``ADD``
+-------------------
+* ADD allows <src> to be a URL
+* If the <src> parameter of ADD is an archive in a recognised compression format, it will be unpacked
+* Best practices for writing Dockerfiles suggests using COPY where the magic of ADD is not required.
+
+Run Django App in container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: dockerfile
+
+    FROM python:3.7
+
+    WORKDIR /www
+    COPY requirements.txt /www
+    RUN pip install -r /www/requirements.txt
+    COPY . /www
+
+    ENV ENVIRONMENT=docker
+
+    EXPOSE 8000 8000/tcp
+    CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
 Limiting resources
 ------------------
 * https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
-
-Docker network
---------------
-* https://docs.docker.com/network/bridge/
-
-- ``bridge`` networks are best when you need multiple containers to communicate on the same Docker host.
-- ``host`` networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
-- ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
-- ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
-- Third-party network plugins allow you to integrate Docker with specialized network stacks.
-
-Create network
-^^^^^^^^^^^^^^
-.. code-block:: console
-
-    docker network create my-net
-
-Delete network
-^^^^^^^^^^^^^^
-.. code-block:: console
-
-    docker network rm my-net
-
-Connect running container to network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: console
-
-    docker network connect my-net my-container
 
 Docker-compose
 --------------
