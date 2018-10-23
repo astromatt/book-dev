@@ -104,6 +104,34 @@ Notifications
 - Slack / HipChat
 - IRC
 
+Installing MVN
+--------------
+.. code-block:: console
+
+    wget http://apache.claz.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+    tar -zxvf apache-maven-3.5.4-bin.tar.gz
+    mkdir -p /opt
+    mv apache-maven-3.5.4 /opt/maven
+    ln -s /opt/maven/bin/mvn /usr/local/bin/mvn
+
+.. code-block:: console
+
+    sudo vim /etc/profile.d/maven.sh
+
+Add following content.
+
+.. code-block:: console
+
+    export M2_HOME=/opt/maven
+    export PATH=${M2_HOME}/bin:${PATH}
+
+Now load the environment variables in the current shell using the following command.
+
+.. code-block:: console
+
+    source /etc/profile.d/maven.sh
+
+
 SonarScanner
 ------------
 - https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
