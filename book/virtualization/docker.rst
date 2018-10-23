@@ -231,27 +231,41 @@ Remove images
 
 Container linking
 -----------------
-Containers can be linked to another container’s ports directly using ``-link remote_name:local_alias`` in the client’s docker run. This will set a number of environment variables that can then be used to connect:
+* Linking is a legacy feature. Please use "user defined networks"
+* Docker Cloud creates a per-user overlay network which connects all containers across all of the user’s hosts.
+* Docker Cloud gives your containers two ways find other services:
+
+    * Using service and container names directly as ``hostnames``
+    * Using service links, which are based on Docker Compose links
+
+* Containers can be linked to another container’s ports directly using ``-link remote_name:local_alias`` in the client’s docker run.
+* This will set a number of environment variables that can then be used to connect:
 
 .. code-block:: console
 
-    docker run --rm -t -i --link pg_test:pg eg_postgresql bash
+    docker run --rm -it --name server bash
+    docker run --rm -it --name client bash
+
+    docker exec -u 0 -it client bash
+    ping server
+
 
 Volumes
 -------
-A data volume is a specially-designated directory within one or more containers that bypasses the Union File System. Data volumes provide several useful features for persistent or shared data:
+* A data volume is a specially-designated directory within one or more containers that bypasses the Union File System.
+* Data volumes provide several useful features for persistent or shared data:
 
-    - Volumes are initialized when a container is created. If the container’s base image contains data at the specified mount point, that existing data is copied into the new volume upon volume initialization. (Note that this does not apply when mounting a host directory.)
+    - Volumes are initialized when a container is created.
+    - If the container’s base image contains data at the specified mount point, that existing data is copied into the new volume upon volume initialization. (Note that this does not apply when mounting a host directory.)
     - Data volumes can be shared and reused among containers.
     - Changes to a data volume are made directly.
     - Changes to a data volume will not be included when you update an image.
     - Data volumes persist even if the container itself is deleted.
 
-Data volumes are designed to persist data, independent of the container’s life cycle. Docker therefore never automatically deletes volumes when you remove a container, nor will it “garbage collect” volumes that are no longer referenced by a container [Docker]_.
+* Data volumes are designed to persist data, independent of the container’s life cycle.
+* Docker therefore never automatically deletes volumes when you remove a container, nor will it “garbage collect” volumes that are no longer referenced by a container.
 
 .. note:: You can also use the VOLUME instruction in a Dockerfile to add one or more new volumes to any container created from that image.
-
-.. [Docker] https://docs.docker.com/engine/tutorials/dockervolumes/
 
 Creating persistant storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -271,16 +285,13 @@ Attaching local dir to docker container
 
 .. code-block:: console
 
-    docker run -it -v /tmp/my_host:/data --name bash ubuntu:latest /bin/bash
-
-Mounting directories
-^^^^^^^^^^^^^^^^^^^^
-.. code-block:: console
-
     docker run -v <host path>:<container path>[:FLAG]
 
 .. code-block:: console
 
+    docker run -it -v /tmp/my_host:/data --name bash ubuntu:latest /bin/bash
+
+.. code-block:: console
 
     docker run --detach -P --name web -v /developer/myproject:/var/www training/webapp python app.py
     docker run --detach -P --name web -v /developer/myproject:/var/www:ro training/webapp python app.py
@@ -291,12 +302,6 @@ Creating Volumes
 
     docker volume create -d flocker --opt o=size=20GB my-named-volume
     docker run --detach -P -v my-named-volume:/webapp --name web training/webapp python app.py
-
-Mounting files
-^^^^^^^^^^^^^^
-.. code-block:: console
-
-    docker run --rm -it -v ~/.bash_history:/root/.bash_history ubuntu /bin/bash
 
 Volume container
 ^^^^^^^^^^^^^^^^
@@ -315,23 +320,6 @@ Docker network
 - ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
 - ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
 - Third-party network plugins allow you to integrate Docker with specialized network stacks.
-
-How to make two containers talk with each other?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Create a new docker network and connect both containers to that network
-- Containers on the same network can use the others container name to communicate with each other
-
-.. code-block:: console
-
-    docker network create mynetwork
-    docker run -d -p "80:80" --name web mywebimage
-    docker run -d --name my_service myapiimage
-
-- Then you can connect to your web service using the hostname of your container and the web service can make calls to the API service with the URL http://my_service:8000/dosomething
-
-Hostname
-^^^^^^^^
-* ``hostname`` is the same as docker container id
 
 Expose ports
 ^^^^^^^^^^^^
@@ -353,15 +341,17 @@ Create network
 
 .. code-block:: yaml
 
-    version: '2'
+    version: '3'
+
     services:
-        db:
-            image: some/image
-            networks:
-                - mynetwork
-    mynetwork:
-        dockernet:
-            external: true
+      db:
+        image: some/image
+        networks:
+          - mynetwork
+
+    networks:
+      mynetwork:
+        external: true
 
 List networks
 ^^^^^^^^^^^^^
@@ -397,38 +387,24 @@ Inspect network
 
     docker network inspect
 
-
-Visualizing docker container
-----------------------------
-* https://portainer.io
-
-Docker Hub
-----------
-- https://hub.docker.com/
+How to make two containers talk with each other?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Create a new docker network and connect both containers to that network
+- Containers on the same network can use the others container name to communicate with each other
 
 .. code-block:: console
 
-    docker run docker/whalesay cowsay boo
+    docker network create mynetwork
+    docker run -d -p 80:80 --name web mywebimage
+    docker run -d --name my_service myapiimage
 
-Publikowanie
-^^^^^^^^^^^^
-.. code-block:: console
-
-   docker login
-   docker tag 7d9495d03763 yourusername/docker-whale:latest
-   docker push yourusername/docker-whale
-
-.. code-block:: console
-
-    docker image remove 7d9495d03763
-    docker run yourusername/docker-whale
 
 Dockerfile
 ----------
 - https://docs.docker.com/engine/reference/builder/
 
-Creating ``Dockerfile``
-^^^^^^^^^^^^^^^^^^^^^^^
+Creating and building ``Dockerfile``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: dockerfile
 
     FROM python:latest
@@ -436,19 +412,37 @@ Creating ``Dockerfile``
 
 .. code-block:: console
 
-    docker build -t myname:1.0.0 .
+    docker build -t mypython:1.0.0 .
+    docker run mypython:1.0.0
+
+.. code-block:: console
+
+    docker build -t mypython:latest .
+    docker run mypython
+
+.. code-block:: console
+
     docker images
-    docker run myname:1.0.0
+
+FROM
+^^^^
+* The FROM instruction initializes a new build stage and sets the Base Image for subsequent instructions.
 
 .. code-block:: dockerfile
 
-    FROM debian:stable
-    RUN apt-get update && apt-get install -y --force-yes apache2
-    EXPOSE 80 443
-    VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
+    FROM python:3.7
 
-    # An ENTRYPOINT allows you to configure a container that will run as an executable.
-    ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+.. code-block:: dockerfile
+
+    FROM python:latest
+
+
+``RUN``
+^^^^^^^
+.. code-block:: dockerfile
+
+    RUN ["/bin/bash", "-c", "echo hello"]
+
 
 ``CMD`` vs ``RUN``
 ^^^^^^^^^^^^^^^^^^
@@ -501,15 +495,23 @@ Creating ``Dockerfile``
     ENV <key> <value>
     ENV <key>=<value> ...
 
+.. code-block:: dockerfile
+
+    ENV ENVIRONMENT=docker
+
 ``COPY`` vs ``ADD``
 ^^^^^^^^^^^^^^^^^^^
-* ADD allows <src> to be a URL
-* If the <src> parameter of ADD is an archive in a recognised compression format, it will be unpacked
-* Best practices for writing Dockerfiles suggests using COPY where the magic of ADD is not required.
+* ``ADD`` allows <src> to be a URL
+* If the <src> parameter of ``ADD`` is an archive in a recognised compression format, it will be unpacked
+* Best practices for writing Dockerfiles suggests using COPY where the magic of ``ADD`` is not required.
+
+.. code-block:: console
+
+    COPY requirements.txt /www
 
 ``VOLUME``
 ^^^^^^^^^^
-* The VOLUME instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
+* The ``VOLUME`` instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
 
 .. code-block:: console
 
@@ -517,7 +519,7 @@ Creating ``Dockerfile``
 
 ``WORKDIR``
 ^^^^^^^^^^^
-* The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile
+* The ``WORKDIR`` instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile
 
 .. code-block:: console
 
@@ -539,9 +541,40 @@ Run Django App in container
     EXPOSE 8000 8000/tcp
     CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
-Limiting resources
-------------------
-* https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
+Apache 2
+^^^^^^^^
+.. code-block:: dockerfile
+
+    FROM debian:stable
+
+    RUN apt-get update && apt-get install -y --force-yes apache2
+    EXPOSE 80 443
+    VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
+
+    ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+
+Docker Hub
+----------
+- https://hub.docker.com/
+
+Publishing
+^^^^^^^^^^
+.. code-block:: console
+
+    docker build -t habitatos:1.0.0 .
+
+.. code-block:: console
+
+   docker login
+   docker tag habitatos:1.0.0 astromatt/habitatos:latest
+   docker push astromatt/habitatos:latest
+
+.. code-block:: console
+
+    docker image remove habitatos:1.0.0
+    docker run astromatt/habitatos
+
 
 Docker-compose
 --------------
@@ -549,57 +582,120 @@ Compose is a tool for defining and running multi-container Docker applications.
 
 - https://docs.docker.com/compose/django/
 
-:Dockerfile:
-    .. code-block:: dockerfile
+``Docker-compose`` ``Django`` application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* ``docker-compose.yaml``
 
-         FROM python:3.6
-         ENV PYTHONUNBUFFERED 1
-         RUN mkdir /code
-         WORKDIR /code
-         ADD requirements.txt /code/
-         RUN pip install -r requirements.txt
-         ADD . /code/
+.. code-block:: yaml
 
-:docker-compose.yaml:
-    .. code-block:: yaml
+    version: '3'
 
-         version: '2'
-         services:
-           db:
-             image: postgres
-           web:
-             build: .
-             command: python manage.py runserver 0.0.0.0:8000
-             volumes:
-               - .:/code
-             ports:
-               - "8000:8000"
-             depends_on:
-               - db
+    services:
+      db:
+        image: postgres
+        ports:
+          - "8080:8080"
 
+      web:
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+          - .:/www
+        ports:
+          - "8000:8000"
+        depends_on:
+          - db
 
 .. code-block:: console
 
-    docker-compose run web django-admin.py startproject composeexample .
-    sudo chown -R $USER:$USER .
-
-:composeexample/settings.py:
-    .. code-block:: python
-
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': 'postgres',
-                'USER': 'postgres',
-                'HOST': 'db',
-                'PORT': 5432,
-            }
-        }
+    docker-compose up -d
 
 .. code-block:: console
 
-    docker-compose up
-    docker-machine ip MACHINE_NAME
+    docker swarm init
+    docker stack deploy -c docker-compose.yml my-stack
+
+Docker compose CI/CD ecosystem
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* ``docker-compose.yaml``
+
+.. code-block:: yaml
+
+    version: '3'
+
+    networks:
+      mynetwork:
+        driver: bridge
+
+    volumes:
+      jenkins-data:
+
+    services:
+
+      jenkins:
+        image: jenkins/jenkins
+        container_name: jenkins
+        restart: always
+        ports:
+          - "8080:8080"
+        networks:
+          - mynetwork
+        volumes:
+          - /tmp/jenkins:/var/lib/jenkins/
+        depends_on:
+          - sonar
+          - gitlab
+          - artifactory
+        environment:
+          - SONAR_PORT=9000
+
+      sonar:
+        image: sonarqube
+        container_name: sonarqube
+        restart: always
+        ports:
+         - "9000:9000"
+         - "9092:9092"
+        networks:
+          - mynetwork
+
+      gitlab:
+        image: gitlab/gitlab-ce:latest
+        container_name: gitlab
+        restart: always
+        volumes:
+          - /tmp/gitlab/config:/etc/gitlab
+          - /tmp/gitlab/logs:/var/log/gitlab
+          - /tmp/gitlab/data:/var/opt/gitlab
+        ports:
+         - "443:443"
+         - "80:80"
+         - "2222:22"
+        networks:
+          - mynetwork
+
+      artifactory:
+        image: docker.bintray.io/jfrog/artifactory-oss:latest
+        container_name: artifactory
+        restart: always
+        ports:
+          - "8081:8081"
+        networks:
+          - mynetwork
+
+.. code-block:: console
+
+    docker-compose up -d
+
+
+Visualizing docker container
+----------------------------
+* https://portainer.io
+
+
+Limiting resources
+------------------
+* https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
 
 Where docker store containers
 -----------------------------
@@ -629,30 +725,30 @@ Scaling
 Monitoring
 ^^^^^^^^^^
 
-Zadania do rozwiązania
-----------------------
+Assignments
+-----------
 
 Ehlo World
 ^^^^^^^^^^
-- Zainstaluj `Docker`
-- Czym różni się `Docker` od `Vagrant`?
-- Wyświetl `Ehlo World!` z wnętrza kontenera `Docker`
-- Wyświetl listę działających kontenerów `Docker`
+#. Zainstaluj ``Docker``
+#. Czym różni się ``Docker`` od ``Vagrant``?
+#. Wyświetl ``Ehlo World!`` z wnętrza kontenera ``Docker``
+#. Wyświetl listę działających kontenerów ``Docker``
 
 Create container and run
 ^^^^^^^^^^^^^^^^^^^^^^^^
-- Ściągnij repozytorium https://github.com/spring-guides/gs-spring-boot-docker.git
-- Zbuduj projekt za pomocą `gradle`
-- Uruchom aplikację wykorzystując `Docker`
-- Użyj pliku `Dockerfile` do opisu środowiska kontenera
+#. Ściągnij repozytorium https://github.com/AstroTech/sonarqube-example-java-maven-junit
+#. Zbuduj projekt za pomocą ``mvn install``
+#. Przygotuj obraz oraz uruchom aplikację wykorzystując ``Docker``
+#. Użyj pliku ``Dockerfile`` do opisu środowiska kontenera
 
 Dockerfile
 ^^^^^^^^^^
-- Stwórz kontener dla `PostgreSQL`
+#. Na bazie czystego Ubuntu stwórz własnt kontener dla ``PostgreSQL``
 
 Docker Compose
 ^^^^^^^^^^^^^^
-- Ściągnij repozytorium https://github.com/spring-guides/gs-spring-boot-docker.git
-- Zbuduj projekt za pomocą `gradle`
-- Uruchom aplikację wykorzystując `Docker`
-- Użyj pliku `docker-compose.yaml` do opisu środowiska kontenera
+#. Ściągnij repozytorium https://github.com/AstroTech/sonarqube-example-java-maven-junit
+#. Zbuduj projekt za pomocą ``mvn install``
+#. Przygotuj obraz oraz uruchom aplikację wykorzystując ``Docker``
+#. Użyj pliku ``docker-compose.yaml`` do opisu środowiska kontenera
