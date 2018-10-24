@@ -180,7 +180,7 @@ Run containers
     docker run -it bash
 
 * ``ctrl + p + q`` - quit container without stopping it
-* ``ctld + d`` - exits and stops the container
+* ``ctrl + d`` - exits and stops the container
 
 .. code-block:: console
 
@@ -273,27 +273,6 @@ Remove images
     docker rmi IMAGE
 
 
-Container linking
------------------
-* Linking is a legacy feature. Please use "user defined networks"
-* Docker Cloud creates a per-user overlay network which connects all containers across all of the user’s hosts.
-* Docker Cloud gives your containers two ways find other services:
-
-    * Using service and container names directly as ``hostnames``
-    * Using service links, which are based on Docker Compose links
-
-* Containers can be linked to another container’s ports directly using ``-link remote_name:local_alias`` in the client’s docker run.
-* This will set a number of environment variables that can then be used to connect:
-
-.. code-block:: console
-
-    docker run --rm -it --name server bash
-    docker run --rm -it --name client bash
-
-    docker exec -u 0 -it client bash
-    ping server
-
-
 Volumes
 -------
 * A data volume is a specially-designated directory within one or more containers that bypasses the Union File System.
@@ -333,19 +312,20 @@ Attaching local dir to docker container
 
 .. code-block:: console
 
-    docker run -it -v /tmp/my_host:/data --name bash ubuntu:latest /bin/bash
+    docker run -d -P --name web -v /home/myproject:/data ubuntu /bin/bash
 
+Mount read-only filesystem
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run --detach -P --name web -v /developer/myproject:/var/www training/webapp python app.py
-    docker run --detach -P --name web -v /developer/myproject:/var/www:ro training/webapp python app.py
+    docker run -d -P --name web -v /home/myproject:/data:ro ubuntu /bin/bash
 
 Creating Volumes
 ^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker volume create -d flocker --opt o=size=20GB my-named-volume
-    docker run --detach -P -v my-named-volume:/webapp --name web training/webapp python app.py
+    docker volume create -d flocker --opt o=size=20GB myvolume
+    docker run --detach -P -v myvolume:/data --name web ubuntu /bin/bash
 
 Volume container
 ^^^^^^^^^^^^^^^^
@@ -487,6 +467,17 @@ FROM
 
     FROM python:latest
 
+.. code-block:: dockerfile
+
+    FROM alpine
+
+.. code-block:: dockerfile
+
+    FROM ubuntu
+    FROM ubuntu:latest   # always current LTS
+    FROM ubuntu:rolling  # released every 6 months (also LTS, if it was LTS release)
+    FROM ubuntu:devel    # released every 6 months (only devel)
+
 ``RUN``
 ^^^^^^^
 .. code-block:: dockerfile
@@ -508,6 +499,7 @@ FROM
 :ENTRYPOINT:
     .. code-block:: dockerfile
 
+        FROM alpine
         ENTRYPOINT ["/bin/ping"]
 
     .. code-block:: console
@@ -517,6 +509,7 @@ FROM
 :CMD:
     .. code-block:: dockerfile
 
+        FROM alpine
         CMD ["/bin/ping", "127.0.0.1"]
 
     .. code-block:: console
@@ -580,14 +573,12 @@ Run Django App in container
 
     FROM python:3.7
 
-    WORKDIR /www
-    COPY requirements.txt /www
-    RUN pip install -r /www/requirements.txt
-    COPY . /www
-
-    ENV ENVIRONMENT=docker
-
+    COPY . /data
+    WORKDIR /data
+    RUN pip install -r /data/requirements.txt
+    ENV ENVIRONMENT docker
     EXPOSE 8000 8000/tcp
+
     CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 Apache 2
@@ -612,12 +603,12 @@ Publishing
 .. code-block:: console
 
     docker build -t habitatos:1.0.0 .
+    docker tag habitatos:1.0.0 astromatt/habitatos:latest
 
 .. code-block:: console
 
-   docker login
-   docker tag habitatos:1.0.0 astromatt/habitatos:latest
-   docker push astromatt/habitatos:latest
+    docker login
+    docker push astromatt/habitatos:latest
 
 .. code-block:: console
 
@@ -643,7 +634,7 @@ Compose is a tool for defining and running multi-container Docker applications.
       db:
         image: postgres
         ports:
-          - "8080:8080"
+          - "5432:5432"
 
       web:
         build: .
