@@ -26,6 +26,11 @@ Nomenclature
 * Edge version
 * Host
 
+.. figure:: ../../img/docker-layer-images.png
+    :scale: 50%
+    :align: center
+
+    Layers
 
 CLI - Command Line Interface
 ----------------------------
@@ -171,7 +176,7 @@ Show containers
 
 Attach to running containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Attach to stdout of running container:
+* Attach local standard input, output, and error streams to a running container:
 
     .. code-block:: console
 
@@ -408,6 +413,7 @@ How to make two containers talk with each other?
 
 Dockerfile
 ----------
+* Build an image from a ``Dockerfile``
 - https://docs.docker.com/engine/reference/builder/
 
 Creating and building ``Dockerfile``
