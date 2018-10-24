@@ -267,7 +267,7 @@ Volumes
 
 .. note:: You can also use the VOLUME instruction in a Dockerfile to add one or more new volumes to any container created from that image.
 
-Creating persistant storage
+Creating persistent storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
@@ -320,6 +320,13 @@ Docker network
 - ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
 - ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
 - Third-party network plugins allow you to integrate Docker with specialized network stacks.
+
+.. figure:: ../../img/docker-networking.png
+    :scale: 50%
+    :align: center
+
+    Docker network
+
 
 Expose ports
 ^^^^^^^^^^^^

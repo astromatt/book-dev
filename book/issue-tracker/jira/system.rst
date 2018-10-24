@@ -55,7 +55,7 @@ Dla CentOS trzeba zmieniÄ‡ plik ``/var/lib/pgsql/data/pg_hba.conf``, tak aby moÅ
 
 Jira install
 ^^^^^^^^^^^^
-.. literalinclude:: src/jira-install.sh
+.. literalinclude:: jira/src/jira-install.sh
     :caption: Jira install
     :language: console
 
@@ -189,19 +189,19 @@ Utils
 
 Reindex
 ^^^^^^^
-.. literalinclude:: src/jira-reindex.py
+.. literalinclude:: jira/src/jira-reindex.py
     :caption: Jira reindex
     :language: python
 
 Project Administrators
 ^^^^^^^^^^^^^^^^^^^^^^
-.. literalinclude:: src/jira-project-administrators.py
+.. literalinclude:: jira/src/jira-project-administrators.py
     :caption: Jira Project Administrators
     :language: python
 
 Migracja danych
 ---------------
-.. literalinclude:: src/jira-migrate.py
+.. literalinclude:: jira/src/jira-migrate.py
     :caption: Jira Migrate
     :language: python
 
@@ -221,17 +221,17 @@ Backup
 - database replication between datacenter
 - cold standby and licensing (same SEN number)
 
-.. literalinclude:: src/jira-backup.sh
+.. literalinclude:: jira/src/jira-backup.sh
     :caption: Jira backup
     :language: console
 
 Test Environment
 ----------------
-.. literalinclude:: src/jira-fabric.py
+.. literalinclude:: jira/src/jira-fabric.py
     :caption: Jira test environment
     :language: python
 
-.. literalinclude:: src/jira-delete-projects.py
+.. literalinclude:: jira/src/jira-delete-projects.py
     :caption: Jira delete projects
     :language: python
 
@@ -280,7 +280,7 @@ Garbage Collector
 - ``Xmx``
 - ``/opt/atlassian/jira/bin/setenv.sh``
 
-.. literalinclude:: src/jira-gc.sh
+.. literalinclude:: jira/src/jira-gc.sh
     :caption: Jira Garbage Collector
     :language: console
 

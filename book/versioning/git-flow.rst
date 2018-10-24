@@ -76,7 +76,7 @@ Zarządzanie gałęziami
 W ramach Firmy została wdrożona konwencja nazewnicza zwana `GIT Flow`. W ramach jej zastosowania wyróżnia się kilka specyficznych gałęzi rozwojowych oprogramowania. Każda z nich posiada unikalną rolę.
 
 Branch produkcyjny ``master``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 W repozytorium główną gałęzią (ang. `branch`) jest ``master``. Przechowywana jest w nim stabilna wersja kodu będąca odpowiednikiem wersji znajdującej się na środowisku produkcyjnym. Scalenie kodu do brancha ``master`` jest równoważne z wydaniem nowej wersji i jest dopuszczalne jedynie, gdy testy automatyczne, funkcjonalne, regresyjne i jednostkowe nie pozostawiają wątpliwości na temat stabilności oraz braku defektów we wprowadzonych zmianach. Branch ten odpowiada 1 do 1 sytuacji na produkcji.
 
 Gdy kod pobierany jest z ``Github.com`` lub ``Bitbucket.com`` zwykle nie zmienia się domyślnego brancha (domyślnie jest ``master``). Po ściągnięciu oczekujesz, że kod będzie stabilny i się uruchamiał. Tym samym przesłaniem kierujemy się w Firmie. Domyślny branch z repozytorium, które klonujesz musi być stabilny i zielony.
@@ -92,7 +92,7 @@ Dopuszcza się możliwość niewykorzystywania gałęzi ``develop`` w projekcie,
     Schemat scalania funkcjonalności z gałęzią ``master``.
 
 Gałąź integracyjna ``develop``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 W dużych repozytoriach, nad którymi pracuje wiele osób na raz (np. kilka 6±3 osobowych zespołów) zachodzi konieczność wprowadzenie integracyjnej gałęzi rozwojowej (ang. `branch`). Zabieg ten ma na celu zabezpieczenie mastera przez scalaniem kodu, który mógłby go zdestabilizować. Dzięki takiemu podejściu proces staje się trochę bardziej skomplikowany ale za to pewniejszy i przewidywalny.
 
 W takim przypadku w repozytorium główną gałęzią rozwojową staje się branch ``develop``. Przechowywana jest w nim najnowsza wersja oprogramowania ze scalonymi ukończonymi funkcjonalnościami. Gałąź ``develop`` powinna przechowywać kod, co do którego poprawności nie ma zastrzeżeń. Kod powinien się budować oraz być odpowiednio przetestowany. Z gałęzi rozwojowej ``develop`` w każdym momencie można stworzyć tzw. kandydata do wdrożenia (ang. `release candidate`).
@@ -106,7 +106,7 @@ Stan powyżej opisany jest wysoce pożądany w przypadku każdego projektu bez w
     Schemat scalania funkcjonalności z gałęzią ``develop``.
 
 Gałąź tymczasowa ``release/X.Y``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 Wprowadzenie brancha integracyjnego, który w standardzie `GIT Flow` nazywany jest ``develop`` nakłada konieczność wprowadzenia sposobu wdrażania kodu, tj. scalania go z branchem produkcyjnym (``master``). W tym celu tymczasowo powoływany jest branch ``release/X.Y`` (`X.Y.Z` oznaczają numer wersji zgodnie z wcześniejszym opisem, tzw. `semantic versioning`: ``major.minor``), który jest tzw. kandydatem wydania (ang. `release candidate`). Na tej gałęzi odpalane są wszystkie testy, podnoszona jest wersja w ``pom.xml`` oraz w razie konieczności wprowadzane są poprawki. Po pozytywnym przejściu przez proces testów gałąź ``release/X.Y`` jest scalana z gałęzią ``master`` a zmiana (ang. ``commit``) jest otagowywany numerem wersji wdrożenia.
 
 Obrazek poniżej przedstawia graficzną reprezentację procesu wdrożenia, tj. scalenia kodu z brancha integracyjnego ``develop`` do brancha stabilnego master. 
@@ -117,8 +117,9 @@ Obrazek poniżej przedstawia graficzną reprezentację procesu wdrożenia, tj. s
 
     Schemat scalania gałęzi ``develop`` z ``master`` za pośrednictwem ``release``.
 
+
 Rodziny branchy
-^^^^^^^^^^^^^^^
+===============
 Aby ułatwić wyszukiwanie wprowadzanych zmian w repozytorium oraz powiązania ich ze zleceniami i zadaniami w systemie do zarządzania projektami, Firma przyjęła konwencję nazywania gałęzi według następującego schematu:
 
     ``feature/ID-1337-dodanie-nowej-funkcjonalnosci-do-modulu``
@@ -132,7 +133,7 @@ Zgodnie z powyższym przykładem, nowa funkcjonalność powinna być poprzedzona
 Dzięki zastosowaniu powyższej konwencji w repozytorium wszystkie zmiany będą należały do odpowiednich gałęzi funkcjonalności lub błędów i będą jednoznacznie opisane. Umożliwia to dokładne śledzenie wszystkich zmian i łączenie ich z odpowiednimi zleceniami w systemie do zarządzania projektem.
 
 Branche ``bugfix/*`` i ``hotfix/*``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 Proces obsługi branchy ``bugfix/*`` i ``hotfix/*`` nieco się różni, chociaż schemat na rysunku wygląda bardzo podobnie.
 
 Branche ``bugfix/*`` służą do poprawy błędów znalezionych podczas produkcji oprogramowania a system scalania ich z kodem źródłowym jest podobny do obsługi ``feature/*``.
@@ -146,7 +147,7 @@ Branche ``hotfix/*`` natomiast odpowiadają za poprawkę błędów znalezionych 
     Schemat scalania zmian z gałęzi z rodziny ``bugfix/*`` i ``hotfix/*`` do kodu źródłowego aplikacji.
 
 Branche ``feature/*``
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 Branche z rodziny ``feature/*`` służą do wprowadzania funkcjonalności do systemu. Ich nazewnictwo jest ściśle powiązane z systemem kontroli zadań (ang. `issue tracker`). Dzięki takiej separacji mamy pełną transparentność i możliwość śledzenia historii wprowadzanych zmian w projekcie.
 
 .. figure:: ../../img/git-flow-paper-04.jpg
@@ -161,8 +162,8 @@ Branche z rodziny ``feature/*`` służą do wprowadzania funkcjonalności do sys
 
     Schemat scalania funkcjonalności ``feature/*`` z gałęzią ``develop``.
 
-Nazwa gałęzi dla kodu przeznaczonego do wdrożenia
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Branche ``release/*``
+^^^^^^^^^^^^^^^^^^^^^
 Podczas procesu wdrożenia następuje moment wydzielenia gałęzi tzw. kandydata do wdrożenia (ang. `release candidate`) o nazwie:
 
     ``release/X.Y``
@@ -172,6 +173,7 @@ gdzie numery odpowiadają kolejnej wersji np. ``release/1.4``. Konwencja nazewni
 Na wyżej wymienionej gałęzi przeprowadzane są testy i wprowadzane ewentualne poprawki zgodnie z procesem wprowadzania zmian i poprawek błędów przedwdrożeniowych. Po pomyślnej weryfikacji automatycznej następuje faza testów manualnych, zgodnie z procedurą i ścieżką ich przeprowadzania.
 
 W miarę możliwości wszelkie akcje użytkownika końcowego lub testera powinno się automatyzować tak, aby proces weryfikacji odbywał się bezdotykowo a do jego wyników nie było zastrzeżeń.
+
 
 Tagowanie
 =========

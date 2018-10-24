@@ -76,7 +76,6 @@ Pluginy
 - ``Jira Agile Cards``
 - Dane pluginów w bazie danych Jiry
 
-.. include:: jira/system-administration.rst
 
 Assignments
 -----------

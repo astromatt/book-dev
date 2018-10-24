@@ -1,3 +1,5 @@
+.PHONY: book
+
 book:
 	@rm -fr _book && sphinx-build -j11 -b html book/ _book/
 

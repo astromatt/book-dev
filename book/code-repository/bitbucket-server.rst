@@ -12,20 +12,6 @@ Instalacja
 - Skonfiguruj licencję wykorzystując evaluation license z https://my.atlassian.com/products/index
 - Załóż konto na https://id.atlassian.com/:
 
-.. toggle-code-block:: sh
-    :label: Instalacja za pomocą archiwów `zip`
-
-    wget -O atlassian-bitbucket.zip https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-4.14.0.zip
-    unzip atlassian-bitbucket.zip
-    rm -fr atlassian-bitbucket.zip
-    sh atlassian-bitbucket-/bin/start-bitbucket.sh
-
-.. toggle-code-block:: sh
-    :label: Instalacja za pomocą `Docker`
-
-    docker volume create --name bitbucketVolume
-    docker run -v bitbucketVolume:/var/atlassian/application-data/bitbucket --name="bitbucket" -d -p 7990:7990 -p 7999:7999 atlassian/bitbucket-server
-
 Konfiguracja
 ^^^^^^^^^^^^
 - Stwórz projekt ``Ecosystem Workshop`` o kluczu ``ECO``

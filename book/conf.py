@@ -58,7 +58,7 @@ copyright = '{year}, {author} <{email}>'.format(
 )
 
 exclude = ['README.rst']
-exclude_patterns = ['_build', '_book', '_slides', 'img', '_themes', 'slides', 'README.rst', '*/_template.rst']
+exclude_patterns = ['_build', '_book', '_slides', 'img', '_themes', 'slides', 'README.rst', '*/_template.rst', '*/solution/*']
 
 extensions_dir = os.path.join(os.path.dirname(__file__), '..', '_extensions')
 sys.path.append(extensions_dir)

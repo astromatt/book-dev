@@ -540,7 +540,7 @@ Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
 - Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonarqube-example-java-maven-junit.git)
 - Zacznij budować za pomocą ``mvn clean install``
 - Wyniki upublicznij w *SonarQube*
-- Build uzależnij od wyniku Quality Gates (plugin ``Sonar Quality Gates)
+- Build uzależnij od wyniku Quality Gates (plugin ``Sonar Quality Gates``)
 - Uruchom SonarQube za pomocą ``docker run -d --name sonarqube -p 9000:9000 sonarqube``
 
 Budowanie *PITest*
