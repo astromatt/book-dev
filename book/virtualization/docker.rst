@@ -331,19 +331,21 @@ Volume container
 ^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker create -v /dbdata --name dbstore training/postgres /bin/true
-    docker run --detach --volumes-from dbstore --name db1 training/postgres
+    docker create -v /data --name dbstore postgres /bin/true
+    docker run --detach --volumes-from dbstore --name db1 postgres
 
 
 Docker network
 --------------
+* Create a new docker network and connect both containers to that network
+* Containers on the same network can use the others container name to communicate with each other
 * https://docs.docker.com/network/bridge/
 
-- ``bridge`` networks are best when you need multiple containers to communicate on the same Docker host.
-- ``host`` networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
-- ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
-- ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
-- Third-party network plugins allow you to integrate Docker with specialized network stacks.
+* ``bridge`` networks are best when you need multiple containers to communicate on the same Docker host.
+* ``host`` networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
+* ``overlay`` networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
+* ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
+* Third-party network plugins allow you to integrate Docker with specialized network stacks.
 
 .. figure:: ../../img/docker-networking.png
     :scale: 35%
@@ -356,7 +358,6 @@ Expose ports
 .. code-block:: console
 
     docker run -d -p 5432:5432 --name postgres postgres
-    docker run -d -p 5432:5432 --name postgres postgres:10.5
     docker run -d -p 192.168.56.101:5432:5432 --name postgres postgres
 
 Create network
@@ -395,21 +396,31 @@ Delete network
 
     docker network rm mynetwork
 
-Connect container to network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Connect new container to network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run --net bridge -d -p 5432:5432 --name postgres postgres
+    docker network create mynetwork
+    docker run -d --net mynetwork --name host1 ubuntu
+    docker run -d --net mynetwork --name host2 ubuntu
 
-.. code-block:: console
-
-    docker run --net mynetwork -d -p 5432:5432 --name postgres postgres
+    docker attach host1
+    ping host2
 
 Connect running container to network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block:: console
 
-    docker network connect mynetwork CONTAINER_NAME_OR_ID
+    docker run -d --name host1 ubuntu
+    docker run -d --name host2 ubuntu
+
+    docker network create mynetwork
+    docker network connect mynetwork host1
+    docker network connect mynetwork host2
+
+    docker attach host1
+    ping host2
 
 Inspect network
 ^^^^^^^^^^^^^^^
@@ -417,22 +428,11 @@ Inspect network
 
     docker network inspect
 
-How to make two containers talk with each other?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Create a new docker network and connect both containers to that network
-- Containers on the same network can use the others container name to communicate with each other
-
-.. code-block:: console
-
-    docker network create mynetwork
-    docker run -d -p 80:80 --name web mywebimage
-    docker run -d --name my_service myapiimage
-
 
 Dockerfile
 ----------
 * Build an image from a ``Dockerfile``
-- https://docs.docker.com/engine/reference/builder/
+* https://docs.docker.com/engine/reference/builder/
 
 Creating and building ``Dockerfile``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -477,6 +477,14 @@ FROM
     FROM ubuntu:latest   # always current LTS
     FROM ubuntu:rolling  # released every 6 months (also LTS, if it was LTS release)
     FROM ubuntu:devel    # released every 6 months (only devel)
+
+``USER``
+^^^^^^^^
+* Run the rest of the commands as the user
+
+.. code-block:: dockerfile
+
+    USER postgres
 
 ``RUN``
 ^^^^^^^
