@@ -45,6 +45,12 @@ Nomenclature
     Container Layers
 
 
+.. figure:: ../../img/docker-container-layers.png
+    :scale: 50%
+    :align: center
+
+    Container Layers
+
 CLI - Command Line Interface
 ----------------------------
 
