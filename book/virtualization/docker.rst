@@ -1,6 +1,15 @@
 Docker
 ======
 
+What is docker?
+---------------
+.. figure:: ../../img/docker-vs-lxc.png
+    :scale: 50%
+    :align: center
+
+    Docker vs LXC
+
+
 Installing
 ----------
 - `macOS <https://docs.docker.com/docker-for-mac/install/>`_
@@ -16,6 +25,7 @@ Install docker from terminal
 
     curl -fsSL get.docker.com -o get-docker.sh
     sh get-docker.sh
+
 
 Nomenclature
 ------------
@@ -44,12 +54,12 @@ Nomenclature
 
     Container Layers
 
-
 .. figure:: ../../img/docker-container-layers.png
     :scale: 50%
     :align: center
 
     Container Layers
+
 
 CLI - Command Line Interface
 ----------------------------
@@ -231,6 +241,7 @@ Remove container
 
     docker rm IMAGE
 
+
 Images
 ------
 
@@ -351,7 +362,6 @@ Docker network
 
     Docker network
 
-
 Expose ports
 ^^^^^^^^^^^^
 .. code-block:: console
@@ -468,13 +478,11 @@ FROM
 
     FROM python:latest
 
-
 ``RUN``
 ^^^^^^^
 .. code-block:: dockerfile
 
     RUN ["/bin/bash", "-c", "echo hello"]
-
 
 ``CMD`` vs ``RUN``
 ^^^^^^^^^^^^^^^^^^
@@ -729,10 +737,12 @@ Limiting resources
 ------------------
 * https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
 
+
 Where docker store containers
 -----------------------------
 * ``docker info``
 * ``/var/lib/docker/containers``
+
 
 Kubernetes
 ----------
@@ -756,6 +766,15 @@ Scaling
 
 Monitoring
 ^^^^^^^^^^
+
+
+Swarm
+-----
+
+
+Mesos
+-----
+
 
 Assignments
 -----------
