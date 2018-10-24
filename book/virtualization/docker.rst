@@ -473,7 +473,7 @@ FROM
 
 .. code-block:: dockerfile
 
-    FROM ubuntu
+    FROM ubuntu          # links to :latest
     FROM ubuntu:latest   # always current LTS
     FROM ubuntu:rolling  # released every 6 months (also LTS, if it was LTS release)
     FROM ubuntu:devel    # released every 6 months (only devel)
