@@ -322,7 +322,7 @@ Docker network
 - Third-party network plugins allow you to integrate Docker with specialized network stacks.
 
 .. figure:: ../../img/docker-networking.png
-    :scale: 50%
+    :scale: 35%
     :align: center
 
     Docker network
