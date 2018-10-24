@@ -26,6 +26,15 @@ Install docker from terminal
     curl -fsSL get.docker.com -o get-docker.sh
     sh get-docker.sh
 
+Requirements for workshop
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker pull python:3.7 \
+        && docker pull postgres \
+        && docker pull ubuntu \
+        && docker pull bash
+
 
 Nomenclature
 ------------
