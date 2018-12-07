@@ -250,6 +250,19 @@ Remove container
 
     docker rm IMAGE
 
+Inspect
+^^^^^^^
+.. code-block:: console
+
+    docker inspect jenkins
+
+Update
+^^^^^^
+* Do not autostart ``jenkins`` container after Docker engine restart (computer reboot)
+.. code-block:: console
+
+    docker update --restart=no jenkins
+
 
 Images
 ------

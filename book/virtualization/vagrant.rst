@@ -1,6 +1,8 @@
 Vagrant
 =======
 
+.. todo:: https://www.youtube.com/watch?v=kbarwyun-c4
+
 .. contents::
 
 .. warning:: Na windows installer może się pod koniec instalacji wywalać. Wtedy trzeba urtuchomić ``cmd`` jako Administrator i uruchomić installer z terminala.
