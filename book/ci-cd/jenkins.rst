@@ -30,7 +30,7 @@ Install LTS
 .. code-block:: console
 
     docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
-    docker container exec -u 0 -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Install weekly version
 ----------------------
@@ -39,7 +39,7 @@ Install weekly version
 .. code-block:: console
 
     docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins
-    docker container exec -u 0 -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Architecture
 ------------

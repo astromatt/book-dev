@@ -1,7 +1,7 @@
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'DevOps and Development Tools Ecosystem'
-description = 'Matt Harasymczuk\'s DevOps and Development Tools Ecosystem'
+project = 'DevOps and CI/CD wtih Docker'
+description = "Matt Harasymczuk's DevOps and CI/CD wtih Docker"
 
 extensions = [
     # 'sphinx.ext.doctest',

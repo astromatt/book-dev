@@ -224,6 +224,7 @@ Attach to running containers
 
     .. code-block:: console
 
+        docker exec -it CONTAINER_NAME_OR_ID bash
         docker exec -u 0 -it CONTAINER_NAME_OR_ID bash
 
 What application is running inside the container?
@@ -248,7 +249,7 @@ Remove container
 ^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker rm IMAGE
+    docker rm CONTAINER_NAME_OR_ID
 
 Remove all stopped containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
