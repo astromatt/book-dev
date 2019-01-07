@@ -250,6 +250,12 @@ Remove container
 
     docker rm IMAGE
 
+Remove all stopped containers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker rm $(docker ps -a -q)
+
 Inspect
 ^^^^^^^
 .. code-block:: console
