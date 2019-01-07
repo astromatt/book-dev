@@ -29,8 +29,7 @@ Install LTS
 
 .. code-block:: console
 
-    apt-get install docker.io
-    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/lib/jenkins/ jenkins/jenkins:lts
+    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
     docker container exec -u 0 -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Install weekly version
@@ -39,8 +38,7 @@ Install weekly version
 
 .. code-block:: console
 
-    apt-get install docker.io
-    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/lib/jenkins/ jenkins/jenkins
+    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins
     docker container exec -u 0 -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Architecture
@@ -408,17 +406,28 @@ When
 Docker
 ^^^^^^
 - https://youtu.be/TsWkZLLU-s4?t=3653
+- Install Docker on Jenkins container
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ docker pull openjdk:7-jdk
-    $ docker pull openjdk:8-jdk
-    $ docker pull maven:3-jdk-7
-    $ docker pull maven:3-jdk-8
-    $ docker pull golang:1.7
-    $ docker pull ruby:2.3
-    $ docker pull python:2
-    $ docker pull python:3
+        $ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+        $ echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" > /etc/apt/sources.list.d/docker.list
+        $ apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+        $ apt-get update
+        $ apt install docker-ce
+
+- Using docker
+
+    .. code-block:: console
+
+        $ docker pull openjdk:7-jdk
+        $ docker pull openjdk:8-jdk
+        $ docker pull maven:3-jdk-7
+        $ docker pull maven:3-jdk-8
+        $ docker pull golang:1.7
+        $ docker pull ruby:2.3
+        $ docker pull python:2
+        $ docker pull python:3
 
 .. literalinclude:: code/jenkinsfile-docker.groovy
     :language: groovy

@@ -194,8 +194,9 @@ Quality and Tests
     :numbered:
     :caption: Quality and Tests
 
+    quality/coverage.rst
     quality/findbugs.rst
-    quality/pitest.rst
+    quality/mutation-testing.rst
     quality/selenium.rst
     quality/soap-ui.rst
     quality/sonarqube.rst
