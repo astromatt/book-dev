@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ## Connect to AWS
 ssh ubuntu@<IP_ADDRESS> -i private-key.pem
 
@@ -56,6 +58,6 @@ make check
 ARTIFACTORY_USERNAME='admin'
 ARTIFACTORY_PASSWORD='admin'
 ARTIFACTORY_URL='http://artifactory:8081/artifactory/generic-local/'
-FILES='/var/jenkins_home/jobs/tcpdump/branches/master/builds/$BUILD_NUMBER/archive/*'
+FILES="/var/jenkins_home/jobs/tcpdump/branches/master/builds/$BUILD_NUMBER/archive/*"
 
 curl -u $ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD -T $FILES $ARTIFACTORY_URL
