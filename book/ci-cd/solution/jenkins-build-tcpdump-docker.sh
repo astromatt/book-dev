@@ -28,7 +28,9 @@ docker run --rm --name artifactory -d -p 8002:8081 docker.bintray.io/jfrog/artif
 
 
 ## Run Jenkins
-docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins
+mkdir /home/jenkins
+chown ubuntu:ubuntu /home/jenkins
+docker run --rm --name jenkins -d -p 8000:8080 -v /home/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins
 chmod 666 /var/run/docker.sock
 
 
