@@ -53,9 +53,9 @@ make check
 # create artefact
 
 ## Publish artefact to Artifactory
-USERNAME='admin'
-PASSWORD='admin'
-FILE='/var/jenkins_home/jobs/tcpdump/branches/master/builds/$BUILD_NUMBER/archive/*'
-URL='http://artifactory:8081/artifactory/generic-local/'
+ARTIFACTORY_USERNAME='admin'
+ARTIFACTORY_PASSWORD='admin'
+ARTIFACTORY_URL='http://artifactory:8081/artifactory/generic-local/'
+FILES='/var/jenkins_home/jobs/tcpdump/branches/master/builds/$BUILD_NUMBER/archive/*'
 
-curl -u $USERNAME:$PASSWORD -T $FILE $URL
+curl -u $ARTIFACTORY_USERNAME:$ARTIFACTORY_PASSWORD -T $FILES $ARTIFACTORY_URL
