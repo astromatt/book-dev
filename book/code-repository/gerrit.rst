@@ -8,7 +8,7 @@ Install
 =======
 .. code-block:: console
 
-    $ docker run --name gerrit -d -p 8080:8080 gerritcodereview/gerrit
+    $ docker run --rm --name gerrit -d -p 8001:8080 gerritcodereview/gerrit
 
 Using persistent volumes
 ------------------------
@@ -27,8 +27,8 @@ Using persistent volumes
                - index-volume:/var/gerrit/index
                - cache-volume:/var/gerrit/cache
             ports:
-               - "29418:29418"
-               - "8080:8080"
+               - "8022:29418"
+               - "8001:8080"
 
         volumes:
           git-volume:

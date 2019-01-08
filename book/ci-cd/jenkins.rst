@@ -23,23 +23,30 @@ Jenkins in Devtools Ecosystem
 
     Jenkins in Devtools Ecosystem
 
+Install
+-------
+
+Weekly version
+^^^^^^^^^^^^^^
+.. warning:: for non-training use change ``/tmp`` to other persistent directory
+
+.. code-block:: console
+
+    docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins
+    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
 Install LTS
------------
+^^^^^^^^^^^
 .. warning:: for non-training use change ``/tmp`` to other persistent directory
 
 .. code-block:: console
 
-    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
+    docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
     docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
-Install weekly version
-----------------------
-.. warning:: for non-training use change ``/tmp`` to other persistent directory
-
-.. code-block:: console
-
-    docker run --name jenkins -d -p 8080:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins
-    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+More information
+^^^^^^^^^^^^^^^^
+- https://github.com/jenkinsci/docker/blob/master/README.md
 
 Architecture
 ------------
@@ -410,11 +417,19 @@ Docker
 
     .. code-block:: console
 
+        $ docker exec -u0 -it jenkins bash
+        $ apt update
         $ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
         $ echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" > /etc/apt/sources.list.d/docker.list
-        $ apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common
-        $ apt-get update
-        $ apt install docker-ce
+        $ apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+        $ apt update
+        $ apt install -y docker-ce
+
+- Spawning sibling containers instead of container inside the container
+
+    .. code-block:: console
+
+        $ docker run -v /var/run/docker.sock:/var/run/docker.sock ...
 
 - Using docker
 
@@ -514,6 +529,19 @@ Instalacja Jenkinsa i konfuguracja buildów
 #. Zainstaluj *Jenkins* za pomocą *Docker*
 #. Zaciągnij repozytorium https://github.com/AstroTech/sonarqube-example-java-maven-junit.git
 #. Ustaw Job aby budował aplikację za pomocą ``mvn clean install``
+
+Building c/c++ projects inside ``docker``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Zainstaluj *Jenkins* za pomocą *Docker*
+#. Zaciągnij repozytorium https://github.com/AstroTech/tcpdump
+#. Budowanie ma odbywać się w kontenerze ``docker`` uruchamianym jako sibling
+#. Dodaj job za pomocą Blue Ocean
+
+    - apt update && apt install -y gcc libpcap-dev make
+    - ./configure
+    - make
+    - make check
+    - make install
 
 Budowanie Pull Requestów
 ^^^^^^^^^^^^^^^^^^^^^^^^
