@@ -15,3 +15,12 @@ git commit -am "Dockerfile"
 git push
 docker build . -t tcpdump:latest
 
+
+
+
+USERNAME='admin'
+PASSWORD='admin'
+FILE='/var/jenkins_home/jobs/tcpdump/branches/master/builds/$BUILD_NUMBER/archive/*'
+URL='http://artifactory:8081/artifactory/generic-local/'
+
+curl -u $USERNAME:$PASSWORD -T $FILE $URL
