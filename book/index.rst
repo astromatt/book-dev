@@ -1,4 +1,4 @@
-.. include:: /README.rst
+.. include:: ../README.rst
 
 ***********************************
 Informacje o dokumencie i szkoleniu
