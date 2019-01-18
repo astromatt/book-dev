@@ -38,7 +38,9 @@ Running
 ^^^^^^^
 .. code-block:: console
 
-    sonar-scanner -Dproject.settings=/src/sonar-multilanguage.properties
+    VERSION=$(git log -1 --format='%H')
+    nosetests --with-coverage --cover-erase --cover-xml --cover-inclusive --with-xunit --xunit-file=xunit.xml --cover-xml-file=coverage.xml
+    sonar-scanner -Dsonar.projectVersion=$VERSION -Dproject.settings=/src/sonar-python.properties
 
 Python
 ^^^^^^
