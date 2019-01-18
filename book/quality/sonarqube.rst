@@ -19,6 +19,53 @@ Install
 SonarScanner
 ------------
 
+Set-up
+^^^^^^
+.. code-block:: console
+
+    cd PROJECT_DIRECTORY
+    docker run --rm -d --name sonarqube -p 9000:9000 -v $(pwd):/src sonarqube
+    docker exec -u 0 -it sonarqube bash
+
+        curl -sL https://deb.nodesource.com/setup_8.x -o /opt/node.sh
+        bash /opt/node.sh
+        apt install -y nodejs pylint python-coverage python-nose
+        wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492.zip -O /opt/sonar-scanner.zip
+        unzip -d /opt/ /opt/sonar-scanner.zip
+        ln -s /opt/sonar-scanner-*/bin/sonar-scanner /usr/bin/sonar-scanner
+
+Running
+^^^^^^^
+.. code-block:: console
+
+    sonar-scanner -Dproject.settings=/src/sonar-multilanguage.properties
+
+Python
+^^^^^^
+.. literalinclude:: src/sonar-python.properties
+    :language: properties
+
+JavaScript
+^^^^^^^^^^
+.. literalinclude:: src/sonar-javascript.properties
+    :language: properties
+
+CSS
+^^^
+.. literalinclude:: src/sonar-css.properties
+    :language: properties
+
+HTML
+^^^^
+.. literalinclude:: src/sonar-html.properties
+    :language: properties
+
+Multi-language
+^^^^^^^^^^^^^^
+.. literalinclude:: src/sonar-multilanguage.properties
+    :language: properties
+
+
 Budowanie Pull Request
 ----------------------
 .. code-block:: properties
