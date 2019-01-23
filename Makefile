@@ -1,14 +1,15 @@
-.PHONY: book
+book = /tmp/devops-book/
+slides = /tmp/devops-slides/
 
 book:
-	@rm -fr _book && sphinx-build -j11 -b html book/ _book/
+	@rm -fr $(book) && clear && sphinx-build -j11 -b html . $(book)
 
 slides:
-	@sphinx-build -j4 -b html slides/ _slides/
+	@rm -fr $(book) && clear && sphinx-build -j11 -b html _slides/ $(slides)
 
 help:
 	@sphinx-build -M help help help
 
 clean:
-	-rm -fr _book/
-	-rm -fr _slides/
+	-rm -fr $(book)
+	-rm -fr $(slides)

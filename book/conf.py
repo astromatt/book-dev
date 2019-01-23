@@ -20,9 +20,21 @@ extensions = [
 
 todo_emit_warnings = False
 todo_include_todos = True
-html_theme = 'sphinx_rtd_theme'
 
-language = 'en'
+exclude_patterns = []
+
+
+# -----------------------------------------------------------------------------
+# Standard book config
+# -----------------------------------------------------------------------------
+
+import datetime
+import os
+import re
+import subprocess
+import sys
+
+
 numfig_format = {
     'section': 'Sect. %s.',
     'figure': 'Fig. %s.',
@@ -30,20 +42,14 @@ numfig_format = {
     'code-block': 'Code Listing %s.',
 }
 
-# -----------------------------------------------------------------------------
-# Unified book config
-# -----------------------------------------------------------------------------
-import datetime
-import os
-import re
-import subprocess
-import sys
-
+html_theme = 'sphinx_rtd_theme'
+language = 'en'
+source_directory = '.'
+master_doc = 'index'
 highlight_language = 'python3'
 pygments_style = 'vs'
 numfig = True
 templates_path = ['_templates']
-master_doc = 'index'
 source_suffix = ['.rst']
 imgmath_image_format = 'svg'
 today_fmt = '%Y-%m-%d'
@@ -57,14 +63,26 @@ copyright = '{year}, {author} <{email}>'.format(
     email=email,
 )
 
-exclude = ['README.rst']
-exclude_patterns = ['_build', '_book', '_slides', 'img', '_themes', 'slides', 'README.rst', '*/_template.rst', '*/solution/*']
+exclude_patterns = exclude_patterns + [
+    '.*',
+    'venv*',
+    'virtualenv*',
+    '_extensions',
+    '_img',
+    '_slides',
+    '_static',
+    '_themes',
+    '_tmp',
+    '**.ipynb_checkpoints',
+    'README.rst'
+]
 
-extensions_dir = os.path.join(os.path.dirname(__file__), '..', '_extensions')
+extensions_dir = os.path.join(os.path.dirname(__file__), '', '_extensions')
 sys.path.append(extensions_dir)
 
 html_theme_path = ['_themes']
-html_static_path = []
+html_static_path = ['_static']
+html_favicon = '_static/favicon.png'
 html_sidebars = {'sidebar': ['localtoc.html', 'sourcelink.html', 'searchbox.html']}
 html_show_sphinx = False
 htmlhelp_basename = project
