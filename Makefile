@@ -1,11 +1,18 @@
 book = /tmp/devops-book/
 slides = /tmp/devops-slides/
+cpu_cores = 11
+format = html
+
 
 book:
-	@rm -fr $(book) && clear && sphinx-build -j11 -b html . $(book)
+	rm -fr $(book)
+	clear
+	sphinx-build -j $(cpu_cores) -b $(format) . $(book)
 
 slides:
-	@rm -fr $(book) && clear && sphinx-build -j11 -b html _slides/ $(slides)
+	rm -fr $(book)
+	clear
+	sphinx-build -j $(cpu_cores) -b $(format) _slides/ $(slides)
 
 help:
 	@sphinx-build -M help help help
