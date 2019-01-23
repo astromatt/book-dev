@@ -25,7 +25,7 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
     Healing the divide between business and programming.
     -- Kent Beck, 1999
 
-.. figure:: ../../img/agile-division-chart.png
+.. figure:: /_img/agile-division-chart.png
     :scale: 50%
     :align: center
 
@@ -44,7 +44,7 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 
    -  Vagrant, Docker
 
-.. figure:: ../../img/ecosystem-whiteboard-01.jpg
+.. figure:: /_img/ecosystem-whiteboard-01.jpg
     :scale: 50%
     :align: center
 
@@ -59,23 +59,23 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 
    -  PITest
 
-.. figure:: ../../img/apollo-saturn5.jpg
+.. figure:: /_img/apollo-saturn5.jpg
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/apollo-lunar-module.gif
+.. figure:: /_img/apollo-lunar-module.gif
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/ecosystem-pitest-mutators-02.jpg
+.. figure:: /_img/ecosystem-pitest-mutators-02.jpg
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/ecosystem-pitest-mutators-03.jpg
+.. figure:: /_img/ecosystem-pitest-mutators-03.jpg
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/ecosystem-pitest-report-03.png
+.. figure:: /_img/ecosystem-pitest-report-03.png
     :scale: 50%
     :align: center
 
@@ -90,15 +90,15 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 
    -  Swagger
 
-.. figure:: ../../img/ecosystem-swagger-list-01.png
+.. figure:: /_img/ecosystem-swagger-list-01.png
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/ecosystem-swagger-get-01.png
+.. figure:: /_img/ecosystem-swagger-get-01.png
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/ecosystem-swagger-post-01.png
+.. figure:: /_img/ecosystem-swagger-post-01.png
     :scale: 50%
     :align: center
 
@@ -112,11 +112,11 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 -  Release Toggles
 -  CI/CD
 
-.. figure:: ../../img/spotify-release-trains-and-feature-toggles.png
+.. figure:: /_img/spotify-release-trains-and-feature-toggles.png
     :scale: 50%
     :align: center
 
-.. figure:: ../../img/git-flow-whiteboard.jpg
+.. figure:: /_img/git-flow-whiteboard.jpg
     :scale: 50%
     :align: center
 
@@ -154,13 +154,13 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 -  Kaizen
 -  Retrospektywy
 
-.. figure:: ../../img/agile-summary-table.png
+.. figure:: /_img/agile-summary-table.png
     :scale: 50%
     :align: center
 
 Summary
 -------
 
-.. figure:: ../../img/agile-summary-table.png
+.. figure:: /_img/agile-summary-table.png
     :scale: 50%
     :align: center

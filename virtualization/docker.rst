@@ -3,7 +3,7 @@ Docker
 
 What is docker?
 ---------------
-.. figure:: ../../img/docker-vs-lxc.png
+.. figure:: /_img/docker-vs-lxc.png
     :scale: 50%
     :align: center
 
@@ -45,25 +45,25 @@ Nomenclature
 * Edge version
 * Host
 
-.. figure:: ../../img/docker-layer-images.png
+.. figure:: /_img/docker-layer-images.png
     :scale: 50%
     :align: center
 
     Layers
 
-.. figure:: ../../img/docker-layers.png
+.. figure:: /_img/docker-layers.png
     :scale: 50%
     :align: center
 
     Layers
 
-.. figure:: ../../img/docker-container-layers.jpg
+.. figure:: /_img/docker-container-layers.jpg
     :scale: 50%
     :align: center
 
     Container Layers
 
-.. figure:: ../../img/docker-container-layers.png
+.. figure:: /_img/docker-container-layers.png
     :scale: 50%
     :align: center
 
@@ -367,7 +367,7 @@ Docker network
 * ``macvlan`` networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
 * Third-party network plugins allow you to integrate Docker with specialized network stacks.
 
-.. figure:: ../../img/docker-networking.png
+.. figure:: /_img/docker-networking.png
     :scale: 35%
     :align: center
 

@@ -3,7 +3,7 @@ Agile vs. DevOps
 
 Agile, Scrum, Lean, XP...
 -------------------------
-.. figure:: ../../img/agile-division-chart.png
+.. figure:: /_img/agile-division-chart.png
     :scale: 50%
     :align: center
 
@@ -380,7 +380,7 @@ Expert
 Spotify Engineering Culture @youtube.com
 ----------------------------------------
 
-.. figure:: ../../img/spotify-engineering-culture-01.png
+.. figure:: /_img/spotify-engineering-culture-01.png
     :scale: 50%
     :align: center
 

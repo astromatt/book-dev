@@ -2,13 +2,13 @@
 GIT Flow
 ********
 
-.. figure:: ../../img/git-flow-whiteboard.jpg
+.. figure:: /_img/git-flow-whiteboard.jpg
     :scale: 25%
     :align: center
 
     GIT Flow
 
-.. figure:: ../../img/build-strategy.jpg
+.. figure:: /_img/build-strategy.jpg
     :scale: 25%
     :align: center
 
@@ -85,7 +85,7 @@ W wersji odchudzonej podejścia gałęzie z funkcjonalnościami bezpośrednio s�
 
 Dopuszcza się możliwość niewykorzystywania gałęzi ``develop`` w projekcie, gdy wielkość projektu jest nieznaczna a wprowadzenie dodatkowego procesu przejściowego jest nadmierne. Nie zwalnia to z obowiązku utrzymywania stabilnego kodu w gałęzi głównej (``master``) i wymaga wprowadzenia podobnego procesu weryfikacji zmian dla każdej poprawki lub/i funkcjonalności, co w przypadku wdrożenia na środowisko produkcyjne.
 
-.. figure:: ../../img/git-flow-paper-04.jpg
+.. figure:: /_img/git-flow-paper-04.jpg
     :scale: 25%
     :align: center
 
@@ -99,7 +99,7 @@ W takim przypadku w repozytorium główną gałęzią rozwojową staje się bran
 
 Stan powyżej opisany jest wysoce pożądany w przypadku każdego projektu bez względu na jego wielkość wraz z wprowadzeniem tzw. `Continuous Delivery`. Do czasu uzyskania odpowiedniej dojrzałości procesowej, zaleca się stosowanie pośredniczącej gałęzi ``develop`` w celu integrowania zmian.
 
-.. figure:: ../../img/git-flow-paper-10.jpg
+.. figure:: /_img/git-flow-paper-10.jpg
     :scale: 25%
     :align: center
 
@@ -111,7 +111,7 @@ Wprowadzenie brancha integracyjnego, który w standardzie `GIT Flow` nazywany je
 
 Obrazek poniżej przedstawia graficzną reprezentację procesu wdrożenia, tj. scalenia kodu z brancha integracyjnego ``develop`` do brancha stabilnego master. 
 
-.. figure:: ../../img/git-flow-paper-22.jpg
+.. figure:: /_img/git-flow-paper-22.jpg
     :scale: 25%
     :align: center
 
@@ -140,7 +140,7 @@ Branche ``bugfix/*`` służą do poprawy błędów znalezionych podczas produkc
 
 Branche ``hotfix/*`` natomiast odpowiadają za poprawkę błędów znalezionych na środowisku produkcyjnym. Dzięki takiej konwencji nazewniczej i separacji gałęzi ich obsługa, np. wdrożenie na środowisko, może być przyspieszona. Wszystkie zmiany które znajdą się w gałęziach ``hotfix/*`` mogą omijać standardową procedurę wdrożenia, tj. stworzenie brancha ``release/X.Y`` i odpalenie testów. Zmiany priorytetowe mają na celu natychmiastowe przywrócenie działania oprogramowania, np. po krytycznym błędzie na produkcji, gdzie każda sekunda zwłoki powoduje straty. Zmiany te, dopiero w późniejszym etapie poddawane są normalnemu procesowi testowania i weryfikacji. Mechanizm ten pozwala na szybkie "ugaszenie pożaru" i przywrócenie stabilności systemu. Ta funkcjonalność powinna być używana jedynie w uzasadnionych przypadkach.
 
-.. figure:: ../../img/git-flow-paper-29.jpg
+.. figure:: /_img/git-flow-paper-29.jpg
     :scale: 25%
     :align: center
 
@@ -150,13 +150,13 @@ Branche ``feature/*``
 ---------------------
 Branche z rodziny ``feature/*`` służą do wprowadzania funkcjonalności do systemu. Ich nazewnictwo jest ściśle powiązane z systemem kontroli zadań (ang. `issue tracker`). Dzięki takiej separacji mamy pełną transparentność i możliwość śledzenia historii wprowadzanych zmian w projekcie.
 
-.. figure:: ../../img/git-flow-paper-04.jpg
+.. figure:: /_img/git-flow-paper-04.jpg
     :scale: 25%
     :align: center
 
     Schemat scalania funkcjonalności ``feature/*`` z gałęzią ``master``.
 
-.. figure:: ../../img/git-flow-paper-10.jpg
+.. figure:: /_img/git-flow-paper-10.jpg
     :scale: 25%
     :align: center
 
@@ -187,13 +187,13 @@ Proces Pull Request
 ===================
 Przed wprowadzeniem jakichkolwiek zmian do gałęzi integracyjnych wymagany jest proces tzw. `Pull Request`. Polega on na stworzeniu strony na której znajduje się wylistowany zmieniony kod, tj. dodane i usunięte linijki wraz ze zmodyfikowaną treścią. Na karcie `Pull Requesta` system do Ciągłej Integracji zamieszcza informacje o wyniku analizy i testów. Gdy wszystkie testy przejdą a zmiana uzyska zgodę (ang. `aproove`) przynajmniej dwóch osób pojawia się możliwość scalenia funkcjonalności do docelowego miejsca. Proces ten uodparnia kod na przypadkowe błędy. Większa ilość osób zaangażowanych w przegląd kodu procentuje w przyszłości w postaci zmniejszenia długu technicznego. Ponadto to rozwiązanie spełnia funkcję edukacyjną gdzie osoby z większym doświadczeniem mogą przekazać informacje swoim młodszym kolegom na temat konsekwencji zmian.
 
-.. figure:: ../../img/git-pull-request-05.jpg
+.. figure:: /_img/git-pull-request-05.jpg
     :scale: 25%
     :align: center
 
     Schemat momentu tworzenia `Pull Requesta` przy scalaniu zmian.
 
-.. figure:: ../../img/git-pull-request-09.jpg
+.. figure:: /_img/git-pull-request-09.jpg
     :scale: 25%
     :align: center
 

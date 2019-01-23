@@ -73,6 +73,7 @@ exclude_patterns = exclude_patterns + [
     '_static',
     '_themes',
     '_tmp',
+    '*/solutions/*',
     '**.ipynb_checkpoints',
     'README.rst'
 ]

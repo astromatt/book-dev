@@ -3,7 +3,7 @@ Jenkins
 - https://jenkins.io/
 - https://jenkins.io/doc
 
-.. figure:: ../../img/cicd-loop.png
+.. figure:: /_img/cicd-loop.png
     :scale: 75%
     :align: center
 
@@ -11,13 +11,13 @@ Jenkins
 
 Jenkins in Devtools Ecosystem
 -----------------------------
-.. figure:: ../../img/ecosystem-big-picture-01.png
+.. figure:: /_img/ecosystem-big-picture-01.png
     :scale: 50%
     :align: center
 
     Ecosystem Big Picture
 
-.. figure:: ../../img/ecosystem-jenkins-tooling.png
+.. figure:: /_img/ecosystem-jenkins-tooling.png
     :scale: 50%
     :align: center
 
@@ -58,7 +58,7 @@ Architecture
 
 Administration
 --------------
-.. figure:: ../../img/geek-and-poke-jenkins-down-and-up.jpg
+.. figure:: /_img/geek-and-poke-jenkins-down-and-up.jpg
     :scale: 50%
     :align: center
 
@@ -153,7 +153,7 @@ If your code is in other version:
     :language: properties
     :caption: Extra Sonar Project Properties
 
-.. figure:: ../../img/geek-and-poke-development-driven-tests.jpg
+.. figure:: /_img/geek-and-poke-development-driven-tests.jpg
     :scale: 15%
     :align: center
 
@@ -215,19 +215,19 @@ Blue Ocean
 - Pipeline editor
 
 
-.. figure:: ../../img/cicd-pipeline.png
+.. figure:: /_img/cicd-pipeline.png
     :scale: 50%
     :align: center
 
     Blue Ocean pipeline
 
-.. figure:: ../../img/cicd-blueocean-success.png
+.. figure:: /_img/cicd-blueocean-success.png
     :scale: 75%
     :align: center
 
     Blue Ocean pipeline Success
 
-.. figure:: ../../img/cicd-blueocean-failing.png
+.. figure:: /_img/cicd-blueocean-failing.png
     :scale: 50%
     :align: center
 
@@ -295,7 +295,7 @@ Groovy syntax
 - Audit trail for the Pipeline
 - Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
 
-.. figure:: ../../img/ecosystem-jenkins-pipeline.png
+.. figure:: /_img/ecosystem-jenkins-pipeline.png
     :scale: 50%
     :align: center
 
@@ -502,19 +502,19 @@ Extra
 
 Build Strategy
 --------------
-.. figure:: ../../img/geek-and-almost-green.jpg
+.. figure:: /_img/geek-and-almost-green.jpg
     :scale: 25%
     :align: center
 
     Almost green... just some broken tests
 
-.. figure:: ../../img/build-strategy.jpg
+.. figure:: /_img/build-strategy.jpg
     :scale: 25%
     :align: center
 
     Build Strategy
 
-.. figure:: ../../img/git-flow-whiteboard.jpg
+.. figure:: /_img/git-flow-whiteboard.jpg
     :scale: 25%
     :align: center
 
@@ -552,7 +552,7 @@ Budowanie Pull Requestów
     - ``bugfix``
     - ``master``
 
-.. figure:: ../../img/git-pull-request-09.jpg
+.. figure:: /_img/git-pull-request-09.jpg
     :scale: 50%
     :align: center
 
