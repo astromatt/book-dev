@@ -3,23 +3,29 @@ DevOps and CI/CD wtih Docker
 ############################
 
 **Author**
-    :name: `Matt Harasymczuk <http://astrotech.io>`_
-    :email: matt@astrotech.io
-    :www: http://www.astrotech.io
-    :facebook: https://facebook.com/matt.harasymczuk
-    :linkedin: https://linkedin.com/in/mattharasymczuk
-    :slideshare: https://www.slideshare.net/astrotech/presentations
-    :github: https://github.com/astromatt
+
+:name: `Matt Harasymczuk <http://astrotech.io>`_
+:email: matt@astrotech.io
+:www: http://www.astrotech.io
+:facebook: https://facebook.com/matt.harasymczuk
+:linkedin: https://linkedin.com/in/mattharasymczuk
+:slideshare: https://www.slideshare.net/astrotech/presentations
+:github: https://github.com/astromatt
 
 .. tip:: The most up-to-date version of this book is always at http://devops.astrotech.io
 
-**Other books from this series**
-    :Python and Machine Learning: http://python.astrotech.io
-    :DevOps and CI/CD wtih Docker: http://devops.astrotech.io
-    :GIT and GIT Flow in CI/CD: http://git.astrotech.io
-    :Agile, Scrum, Kanban, XP, Lean: http://agile.astrotech.io
-    :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
-    :Linux and Shell Programming with Bash: http://linux.astrotech.io
+.. csv-table:: Other books from this series
+    :widths: 30, 70
+    :header: "URL", "Title"
+
+    "http://python.astrotech.io", "Python 3 and Machine Learning"
+    "http://devops.astrotech.io", "DevOps and CI/CD wtih Docker"
+    "http://jira.astrotech.io", "Jira Software, Jira Service Desk and Jira Core"
+    "http://git.astrotech.io", "GIT and GIT Flow"
+    "http://agile.astrotech.io", "Agile, Scrum, Kanban, XP, Lean"
+    "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices and Processes"
+    "http://linux.astrotech.io", "Linux and Shell Programming with Bash"
+
 
 Requirements
 ============
