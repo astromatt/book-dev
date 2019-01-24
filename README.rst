@@ -14,7 +14,7 @@ DevOps and CI/CD wtih Docker
 
 .. tip:: The most up-to-date version of this book is always at http://devops.astrotech.io
 
-.. csv-table:: Other books from this series
+.. csv-table:: Other books from author
     :widths: 30, 70
     :header: "URL", "Title"
 
