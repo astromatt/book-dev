@@ -1,12 +1,15 @@
-## Private
-_config/
-_database/
+## Temporary
+_tmp/
 
-## Compiled
+## Compiled and environmental
 __pycache__/
+.mypy_cache/
 *.pyc
 ~$*
 *.spec
+.ipynb_checkpoints
+*virtualenv*/
+*venv*/
 
 ## Distribution / packaging
 build/
@@ -22,16 +25,18 @@ sdist/
 ## Django
 *.log
 *.sqlite3
+*.sqlite3-journal
 _static
 _media
 
 ## Sphinx documentation
 docs/_build/
-_docs/
 _build/
-_book/
-_slides/
+.build/
+.slide/
 
 ## IDE
 .idea
+
+## OS
 .DS_Store
