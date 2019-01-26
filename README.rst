@@ -2,17 +2,17 @@
 DevOps and CI/CD wtih Docker
 ############################
 
+.. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
+
 **Author**
 
 :name: `Matt Harasymczuk <http://astrotech.io>`_
 :email: matt@astrotech.io
 :www: http://www.astrotech.io
-:facebook: https://facebook.com/matt.harasymczuk
-:linkedin: https://linkedin.com/in/mattharasymczuk
-:slideshare: https://www.slideshare.net/astrotech/presentations
 :github: https://github.com/astromatt
-
-.. tip:: The most up-to-date version of this book is always at http://devops.astrotech.io
+:linkedin: https://linkedin.com/in/mattharasymczuk
+:facebook: https://facebook.com/matt.harasymczuk
+:slideshare: https://www.slideshare.net/astrotech/presentations
 
 .. csv-table:: Other books from author
     :widths: 30, 70
@@ -25,6 +25,8 @@ DevOps and CI/CD wtih Docker
     "http://agile.astrotech.io", "Agile, Scrum, Kanban, XP, Lean"
     "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices and Processes"
     "http://linux.astrotech.io", "Linux and Shell Programming with Bash"
+
+.. tip:: If you're interested in training course on topics from this book, please email me at matt@astrotech.io
 
 
 Requirements
