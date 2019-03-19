@@ -1,5 +1,5 @@
-book = /tmp/devops-book/
-slides = /tmp/devops-slides/
+book = /tmp/book-devops/
+slides = /tmp/slides-devops/
 cpu_cores = 11
 format = html
 
