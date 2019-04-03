@@ -48,17 +48,22 @@ Optimal:
 
 Software
 --------
+
+Windows
+^^^^^^^
 - Latest version of `Virtualbox <https://www.virtualbox.org/wiki/Downloads>`_
 - Latest version of `Vagrant <https://www.vagrantup.com/downloads.html>`_
-- Latest version of `GIT <https://git-scm.com/downloads>`_
 - Latest version of `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_ if you're on Windows
 
-Run
----
 .. code-block:: console
 
-    $ vagrant init ubuntu/xenial64
+    $ vagrant init ubuntu/bionic64
     $ vagrant up
+
+macOS and Linux
+^^^^^^^^^^^^^^^
+- Latest version of `GIT <https://git-scm.com/downloads>`_
+- Latest version of `Docker <http://docker.io>`_
 
 
 More information
