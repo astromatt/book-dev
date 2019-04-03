@@ -22,6 +22,7 @@ Wprowadzenie
     :numbered:
     :caption: Wprowadzenie
 
+    /wprowadzenie/requirements.rst
     /wprowadzenie/wstep.rst
     /wprowadzenie/agile-vs-devops.rst
     /wprowadzenie/utrzymanie-vs-rozwoj.rst
