@@ -294,6 +294,62 @@ Hiera
     :logging:
       - console
 
+.. code-block:: yaml
+
+    nginx::nginx_servers:
+         'devops-alldomains':
+             server_name:
+                 - '~^(?<fqdn>.+?)$'
+             www_root: '/var/www/$fqdn'
+             index_files:
+                 - 'index.php'
+             try_files:
+                 - '$uri'
+                 - '$uri/'
+                 - '/index.php?$args'
+             access_log: '/var/log/nginx/devops-alldomains-access.log'
+             error_log: '/var/log/nginx/devops-alldomains-error.log'
+
+         'devops-alldomains-ssl':
+             server_name:
+                 - '~^(?<fqdn>.+?)$'
+             listen_port: '443'
+             ssl_port: '443'
+             www_root: '/var/www/$fqdn'
+             ssl: true
+             ssl_key: '/etc/ssl/www/$fqdn.key'
+             ssl_cert: '/etc/ssl/www/$fqdn.crt'
+             index_files:
+                 - 'index.php'
+             try_files:
+                 - '$uri'
+                 - '$uri/'
+                 - '/index.php?$args'
+             access_log: '/var/log/nginx/devops-alldomains-access-ssl.log'
+             error_log: '/var/log/nginx/devops-alldomains-error-ssl.log'
+
+     nginx::nginx_locations:
+         'devops-alldomains-loc':
+             location: '~ \.php$'
+             www_root: '/var/www/$fqdn'
+             server: 'devops-alldomains'
+             fastcgi: 'unix:/var/run/php7-fpm.sock'
+             fastcgi_split_path: '^(.+\.php)(/.*)$'
+             fastcgi_index: 'index.php'
+             fastcgi_param:
+                 'SCRIPT_FILENAME': '$document_root$fastcgi_script_name'
+
+         'devops-alldomains-ssl-loc':
+             location: '~ \.php$'
+             www_root: '/var/www/$fqdn'
+             server: 'devops-alldomains-ssl'
+             ssl: true
+             ssl_only: true
+             fastcgi: 'unix:/var/run/php7-fpm.sock'
+             fastcgi_split_path: '^(.+\.php)(/.*)$'
+             fastcgi_index: 'index.php'
+             fastcgi_param:
+                 'SCRIPT_FILENAME': '$document_root$fastcgi_script_name'
 
 Augias
 ^^^^^^
@@ -471,8 +527,30 @@ Zarządzanie użytkownikami, grupami i katalogami
     - Właścicielem jego jest grupa ``vagrant``
     - Ma uprawnienia ``rwxr-xr-x``
 
-Konfiguracja Apache2
-^^^^^^^^^^^^^^^^^^^^
+Konfiguracja nginx
+^^^^^^^^^^^^^^^^^^
+- Za pomocą Puppet upewnij się by był użytkownik ``www-data`` i miał ``uid=33``
+- Za pomocą Puppet upewnij się by była grupa ``www-data`` i miała ``gid=33``
+- Upewnij się że katalog ``/var/www`` istnieje i właścicielem jego są user ``www-data`` i grupa ``www-data`` i że ma uprawnienia ``rwxr-xr-x``
+- Zainstaluj i skonfiguruj ``nginx`` wykorzystując moduł Puppet
+- Z terminala wygeneruj certyfikaty self signed OpenSSL (``.cert`` i ``.key``) (za pomocą i umieść je w ``/etc/ssl/``)
+- Za pomocą Puppet Stwórz dwa vhosty:
+
+    - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure-example-com``
+    - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl-example-com`` + używanie certyfikatów SSL wcześniej wygenerowanych
+
+- Stwórz pliki z treścią:
+
+    - ``/var/www/insecure-example-com/index.html`` z treścią ``Ehlo World! - Insecure``
+    - ``/var/www/ssl-example-com/index.html`` z treścią ``Ehlo World! - SSL!``
+
+- W przeglądarce na komputerze lokalnym wejdź na stronę:
+
+    - http://127.0.0.1:8080
+    - https://127.0.0.1:8443
+
+Konfiguracja Apache2 (opcjonalnie)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Za pomocą Puppet upewnij się by był użytkownik ``www-data`` i miał ``uid=33``
 - Za pomocą Puppet upewnij się by była grupa ``www-data`` i miała ``gid=33``
 - Upewnij się że katalog ``/var/www`` istnieje i właścicielem jego są user ``www-data`` i grupa ``www-data`` i że ma uprawnienia ``rwxr-xr-x``
