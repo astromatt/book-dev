@@ -3,7 +3,7 @@ DevOps and CI/CD with Docker
 ############################
 
 
-.. tip:: This book is free and open source! The most up-to-date version is always at http://devops.astrotech.io
+.. tip:: This book is free and open source at http://devops.astrotech.io
 
 .. figure:: _img/AstroMatt.jpg
     :align: left
