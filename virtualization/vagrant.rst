@@ -163,9 +163,9 @@ Twoja konfuguracja `Vagrant` powinna wyglądać tak:
     Vagrant.configure("2") do |config|
         config.vm.hostname = "ubuntu.local"
 
-        config.vm.box = "ubuntu/xenial64"
+        config.vm.box = "ubuntu/bionic64"
         # config.vm.box = "ubuntu-lts"
-        # config.vm.box_url = "http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box"
+        # config.vm.box_url = "http://cloud-images.ubuntu.com/releases/18.04/release/ubuntu-18.04-server-cloudimg-amd64-vagrant.box"
 
         config.vm.network "forwarded_port", guest: 80, host: 8080
         config.vm.network "forwarded_port", guest: 443, host: 8443
