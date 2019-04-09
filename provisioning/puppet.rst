@@ -199,7 +199,7 @@ Lub:
     puppet module install
 
 
-Ćwiczenia Praktyczne
+Narzędzia pomocnicze
 --------------------
 
 Facter
@@ -272,6 +272,32 @@ Druga metoda tworzenia faktów:
 .. code-block:: console
 
     export FACTER_system_role=$(cat /etc/system_role); facter
+
+Hiera
+^^^^^
+* ``/etc/puppet/hiera.yaml``
+
+.. code-block:: yaml
+
+    ---
+    :backends:
+      - yaml
+
+    :hierarchy:
+      - "nodes/%{::fqdn}"
+      - "roles/%{::role}"
+      - common
+
+    :yaml:
+      :datadir: /etc/puppet/hiera/
+
+    :logging:
+      - console
+
+
+Augias
+^^^^^^
+
 
 Przykłady
 ---------
@@ -428,6 +454,10 @@ Zmiana hostname
 - Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
 - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
 - Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
+- Hostname zmienia się na dwa sposoby:
+
+    * podmiana zawartości pliku ``/etc/hostname`` i uruchomienie ``hostname -F /etc/hostname``
+    * uruchomienie polecenia ``hostnamectl set-hostname ...``
 
 Zarządzanie użytkownikami, grupami i katalogami
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
