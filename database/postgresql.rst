@@ -1,7 +1,7 @@
 PostgreSQL
 ==========
 
-.. code-block:: sh
+.. code-block:: console
 
     apt-get install --yes postgresql
     cat /etc/postgresql/9.3/main/pg_hba.conf
@@ -15,7 +15,7 @@ PostgreSQL
     host    all     all         0.0.0.0/0       md5
     host    all     all         ::1/128         md5
 
-.. code-block:: sh
+.. code-block:: console
 
     cat /etc/postgresql/9.3/main/postgresql.conf
 
@@ -43,6 +43,6 @@ PostgreSQL
     lc_time = 'en_US.UTF-8'
     default_text_search_config = 'pg_catalog.english'
 
-.. code-block:: sh
+.. code-block:: console
 
     service postgresql restart

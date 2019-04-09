@@ -24,6 +24,6 @@ Add this to your ``pom.xml``
 Usage
 =====
 
-.. code-block:: sh
+.. code-block:: console
 
     mvn site

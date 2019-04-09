@@ -70,7 +70,7 @@ Puppet language
 
 Instalacja i konfiguracja
 -------------------------
-.. code-block:: sh
+.. code-block:: console
 
     sudo apt-get update
     sudo apt-get install puppet
@@ -83,7 +83,7 @@ Przejdź do katalogu ``/etc/puppet/manifests``.
 .. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Wersja ta może być niekompatybilna z modułami pobieranymi przez puppeta (np. apache, tomcat, java). Rozwiązaniem jest ściąganie modułów w niższych wersjach (pasujących do wersji 3.8.5) lub instalacja puppeta w wersji wyższej niż ta w LTS.
 
     .. code-block:: console
-    
+
         #Instalacja puppet w ostatniej wersji
 
         #Yum-based systems (np. Enterprise Linux 7)
@@ -105,7 +105,7 @@ Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należ
 - postaw maszynę w Amazonie (Ubuntu LTS)
 - zainstaluj squid
 
-.. code-block:: sh
+.. code-block:: console
 
     sudo apt-get update
     sudo apt-get install squid
@@ -113,7 +113,7 @@ Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należ
 - na maszynie gościa (tam gdzie chcesz instalować moduł puppeta ustaw:
 
 
-.. code-block:: sh
+.. code-block:: console
 
     export http_proxy=http://<IP>:3128
     export https_proxy=http://<IP>:3128
@@ -126,7 +126,7 @@ Lub:
     http_proxy = http://<IP>:3128
     https_proxy = http://<IP>:3128
 
-.. code-block:: sh
+.. code-block:: console
 
     sudo service puppet restart
     sudo su -
@@ -140,7 +140,7 @@ Facter
 ^^^^^^
 Przyjrzyj się wynikom poleceń:
 
-.. code-block:: sh
+.. code-block:: console
 
     facter
     facter ipaddress
@@ -301,7 +301,7 @@ Tworzenie nowych faktów:
 
 Druga metoda tworzenia faktów:
 
-.. code-block:: sh
+.. code-block:: console
 
     export FACTER_system_role=$(cat /etc/system_role); facter
 
@@ -354,7 +354,7 @@ Przykłady
 
 Moduły
 ------
-.. code-block:: sh
+.. code-block:: console
 
     puppet module search apache
     puppet module install puppetlabs-apache

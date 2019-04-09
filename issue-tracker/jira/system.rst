@@ -77,7 +77,7 @@ Websudo
 - automatic admin logout
 - admin rights notification
 
-.. code-block:: sh
+.. code-block:: console
 
     service jira stop
     echo "jira.websudo.is.disabled = true" >> /var/atlassian/application-data/jira/jira-config.properties

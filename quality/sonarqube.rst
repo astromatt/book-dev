@@ -107,7 +107,7 @@ pom.xml
 
 Używnianie
 ^^^^^^^^^^
-.. code-block:: sh
+.. code-block:: console
 
     mvn sonar:sonar
 

@@ -5,95 +5,73 @@ Vagrant
 
 .. contents::
 
-.. warning:: Na windows installer może się pod koniec instalacji wywalać. Wtedy trzeba urtuchomić ``cmd`` jako Administrator i uruchomić installer z terminala.
+.. warning:: Na windows installer może się pod koniec instalacji wywalać. Wtedy trzeba uruchomić ``cmd`` jako Administrator i uruchomić installer z terminala.
 
-Tworzenie i konfigurowanie maszyny
-----------------------------------
-- Poniższe polecenia wykonaj w pliku ``Vagrantfile``
-- Stwórz maszynę z oficjalnego obrazu 64 bitowej wersji `Ubuntu LTS` (`Long Time Support`)
-- Ustaw hostname na ``ubuntu.local``
-- Jeżeli masz słabszą maszynę (2 CPU core, 4 GB RAM):
 
-    - 1 CPU core
-    - 1024 MB Ram
-
-- Jeżeli masz lepszy komputer:
-
-    - 2 CPU core
-    - 4096 MB RAM
-
-- Ustaw forwarding portu ``80`` na ``8080`` hosta oraz ``443`` na ``8443``
-- Ustaw aby ten katalog był synchronizowany na maszynie gościa w ``/var/www/host``
-- Zrób by maszyna była stawiana z manifestu `Puppet`
-- Podnieś maszynę i rozpocznij pobieranie obrazu
+Tworzenie maszyny
+-----------------
 
 Uruchamianie maszyny
 ^^^^^^^^^^^^^^^^^^^^
-.. code-block:: sh
+#. Stwórz na pulpicie katalog ``szkolenie``
+#. Przejdź za pomocą terminala do tego katalogu i wykonaj:
+
+.. code-block:: console
 
     vagrant init ubuntu/bionic64
 
-.. code-block:: text
+#. Spowoduje to wygenerowanie pliku, który po usunięciu komentarzy będzie wyglądał następująco:
 
-    Vagrant.configure("2") do |config|
-      config.vm.box = "ubuntu/bionic64"
-    end
-
-.. code-block:: sh
-
-    vagrant up
-
-    # Alternatywnie
-    vagrant up --provider virtualbox
-
-Ustawianie hasła
-^^^^^^^^^^^^^^^^
-.. warning:: `Ubunutu` w nowych wersjach zmieniło hasło na użytkownika i nie da się tak łatwo na niego dostać. Użyj wtedy:
-.. note:: Basically the ``ubuntu/xenial32`` and ``ubuntu/xenial64`` images are flawed as they don't come with the vagrant user out of the box. This is against the `Vagrant` specifications!
-
-    .. tip:: Rozwiązanie: http://askubuntu.com/a/854849/427956
-
-    .. code-block:: ruby
+    .. code-block:: text
 
         Vagrant.configure("2") do |config|
-
-            apt-get install -y expect
-            echo '#!/usr/bin/expect
-              set timeout 20
-              spawn sudo passwd ubuntu
-              expect "Enter new UNIX password:" {send "ubuntu\\r"}
-              expect "Retype new UNIX password:" {send "ubuntu\\r"}
-              interact' > change_ubuntu_password
-            chmod +x change_ubuntu_password
-          ./change_ubuntu_password
-
+          config.vm.box = "ubuntu/bionic64"
         end
 
-.. warning:: This bug is now fixed in ubuntu/xenial64 v20180112.0.0.
-
-    Update your vagrant boxes:
+#. Uruchom maszynę
 
     .. code-block:: console
 
-        $ vagrant box update
-        $ vagrant up
-        $ vagrant ssh
+        vagrant up
 
-    (notice you're "vagrant").
+#. Stworzy to maszynę z oficjalnego obrazu 64 bitowej wersji `Ubuntu LTS` (`Long Time Support`)
+#. Aby zalogować się na maszynę należy wykonać:
+
+.. code-block:: console
+
+    vagrant ssh
+
+.. note:: Standard tworzenia boxów Vagrant wymaga posiadanie w systemie użytkownika ``vagrant`` z hasłem ``vagrant``
+
+Update vagrant boxes
+^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    vagrant box update
 
 Usuwanie maszyny
 ^^^^^^^^^^^^^^^^
-.. code-block:: sh
+.. code-block:: console
 
     vagrant halt
     vagrant destroy
+
+Uruchamianie innego providera
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    vagrant up --provider virtualbox
+
+
+Konfiguracja maszyny
+--------------------
 
 Konfiguracja forwardingu portów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: ruby
 
-    config.vm.network :forwarded_port, guest: 8080, host: 8080
-    config.vm.network :forwarded_port, guest: 9000, host: 9000
+    config.vm.network "forwarded_port", guest: 8080, host: 8080
+    config.vm.network "forwarded_port", guest: 9000, host: 9000
 
 Synchronizowanie katalogów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,6 +79,37 @@ Synchronizowanie katalogów
 
     config.vm.synced_folder ".", "/vagrant"
 
+
+Konfiguracja zasobów
+--------------------
+- Poniższe polecenia wykonaj w pliku ``Vagrantfile``
+
+Słaby komputer
+^^^^^^^^^^^^^^
+* np. 2 CPU core, 4 GB RAM
+
+Zalecana konfiguracja maszyny wirtualnej:
+
+    - 1 CPU core
+    - 1024 MB Ram
+
+Średni komputer
+^^^^^^^^^^^^^^^
+Zalecana konfiguracja maszyny wirtualnej:
+
+    - 66% CPU core
+    - 66% MB RAM
+
+Dobry komputer
+^^^^^^^^^^^^^^
+Zalecana konfiguracja maszyny wirtualnej:
+
+    - 75% CPU core
+    - 75% MB RAM
+
+
+Provisioning
+------------
 
 Provisioning za pomocą shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -112,6 +121,12 @@ Provisioning za pomocą shell
         s.args   = ["hello, world!"]
       end
     end
+
+.. code-block:: ruby
+
+    config.vm.provision "shell", inline: <<- SHELL
+        /usr/bin/whoami > /tmp/whoami
+    SHELL
 
 .. code-block:: ruby
 
@@ -152,8 +167,8 @@ Twoja konfuguracja `Vagrant` powinna wyglądać tak:
         # config.vm.box = "ubuntu-lts"
         # config.vm.box_url = "http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box"
 
-        config.vm.network :forwarded_port, guest: 80, host: 8080
-        config.vm.network :forwarded_port, guest: 443, host: 8443
+        config.vm.network "forwarded_port", guest: 80, host: 8080
+        config.vm.network "forwarded_port", guest: 443, host: 8443
         config.vm.synced_folder ".", "/var/www/host"
 
         config.vm.provider "virtualbox" do |v|
@@ -162,14 +177,11 @@ Twoja konfuguracja `Vagrant` powinna wyglądać tak:
             v.memory = RAM
         end
 
-        config.vm.provision "shell" do |s|
-          s.inline = "echo $1"
-          s.args   = ["hello, world!"]
-        end
+        config.vm.provision "shell", path: "script.sh"
 
     end
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant provision
 
@@ -180,12 +192,12 @@ Zadania do rozwiązania
 Automatyzacja tworzenia wirtualnej maszyny
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Użyj pliku ``Vagrantfile`` do przetrzymywania następującej konfiguracji
-- Stwórz maszynę z oficjalnego obrazu 32 bitowej wersji `Ubuntu LTS` (Long Time Support)
+- Stwórz maszynę z oficjalnego obrazu 64 bitowej wersji `Ubuntu LTS` (Long Time Support)
 - Ustaw hostname na ``ubuntu.local``
-- Ustaw zasoby przydzielane towjej maszynie wirtialnej w zależności od mocy komputera:
+- Ustaw zasoby przydzielane maszynie wirtualnej w zależności od mocy komputera:
 
-    - 1 CPU core, 1024 MB RAM (jeżeli masz około 2 CPU core, 4 GB RAM)
-    - 2 CPU core, 8196 MB RAM (jeżeli masz mocniejszą maszynę)
+    - 75% CPU core,
+    - 75% MB RAM
 
 - Ustaw forwarding portów:
 
@@ -200,8 +212,9 @@ Automatyzacja tworzenia wirtualnej maszyny
     - 5432 -> 5432
     - 3306 -> 3306
 
-- Ustaw aby ten katalog był synchronizowany na maszynie gościa w ``/var/www/host``
-- Podnieś maszynę z ``Vagrantfile`` i rozpocznij pobieranie obrazu `Ubuntu`
+- Ustaw aby obecny katalog był synchronizowany na maszynie gościa w ``/var/www/host``
+- Podnieś maszynę z ``Vagrantfile`` i rozpocznij pobieranie obrazu `Ubuntu LTS`
+
 
 Vagrant + Puppet
 ^^^^^^^^^^^^^^^^

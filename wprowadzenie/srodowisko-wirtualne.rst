@@ -7,7 +7,7 @@ Korzystanie ze środowiska
 Clone the Repository with Submodules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: sh
+.. code-block:: console
 
     git clone --recursive https://github.com/AstroTech/workshop-devops.git
 
@@ -56,7 +56,7 @@ Then to run this you have to simply type:
 
 Warning: if you see warning message like this: ``Warning: Authentication failure. Retrying...`` exit the process (``ctrl+c`` on `Linux/Windows` or `cmd+c` on `OS X`) and start `ssh` connection by:
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant ssh
 
@@ -68,7 +68,7 @@ Remember that each tool while running takes around ``700 MB`` of RAM.
 Please run only one/two selected services for small RAM sizes.
 ``8196 MB RAM`` should be enough to handle load for each of this machines run simultaneously.
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant ssh -c 'sudo service confluence start'
     vagrant ssh -c 'sudo service jenkins start'
@@ -86,14 +86,14 @@ Go ahead and download http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe a
 
 First thing you do after connecting to the new host might be to switch to the ``root``:
 
-.. code-block:: sh
+.. code-block:: console
 
     sudo su -
 
 Then you do not need to run commands with ``sudo`` prefix.
 To run services type one of the following:
 
-.. code-block:: sh
+.. code-block:: console
 
     service confluence start
     service jenkins start
@@ -129,7 +129,7 @@ Stop Service
 
 When you do not need the service anymore you may kill the instance to save some RAM for other tools.
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant ssh -c 'service confluence stop'
     vagrant ssh -c 'service jenkins stop'
@@ -144,13 +144,13 @@ Stop Guest Machine
 
 This will preserve state of the machine.
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant halt
 
 This will destroy the machine and free some space from your hard drive.
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant destroy
 
@@ -160,14 +160,14 @@ How to setup a new box
 
 .. warning:: If you are using Linux and provided pendrive cannot be mounted on your system, install exfat-fuse and exfat-util by typing in your console:
 
-.. code-block:: sh
+.. code-block:: console
 
     sudo apt-get install exfat-fuse exfat-utils
 
 At the workshop you'll receive an Developer Tools Ecosystem already set-up and configured!
 Then to run this you have to simply type:
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant up
 
@@ -177,7 +177,7 @@ If you want to setup your own ecosystem from scratch, read and execute the follo
 Create and Setup the Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: sh
+.. code-block:: console
 
     sudo su -
     apt-get update
@@ -192,7 +192,7 @@ Create and Setup the Environment
 Install VirtualBox Guest Additions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: sh
+.. code-block:: console
 
     apt-get install linux-headers-generic build-essential dkms
     wget http://dlc-cdn.sun.com/virtualbox/4.3.26/VBoxGuestAdditions_4.3.26.iso
@@ -206,7 +206,7 @@ Install VirtualBox Guest Additions
 Install and Setup Database For All Tools
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: sh
+.. code-block:: console
 
     apt-get install --yes postgresql-9.3
     su postgres -
@@ -234,6 +234,6 @@ Install and Setup Database For All Tools
 Create New Box
 ^^^^^^^^^^^^^^
 
-.. code-block:: sh
+.. code-block:: console
 
     vagrant package --base ecosystem.local --output ecosystem.box
