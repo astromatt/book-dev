@@ -698,36 +698,40 @@ Compose is a tool for defining and running multi-container Docker applications.
 
 Docker Compose Jenkins
 ^^^^^^^^^^^^^^^^^^^^^^
-* ``docker-compose.yaml``
+#. Create file ``docker-compose.yaml``
 
-.. code-block:: yaml
+    .. code-block:: yaml
 
-    version: '3'
+        version: '3'
 
-    networks:
-      mojasiec:
-        driver: bridge
-
-    services:
-      jenkins:
-        image: jenkins/jenkins
-        container_name: jenkins
-        restart: "no"
-        ports:
-          - "8080:8080"
         networks:
-          - mojasiec
-        volumes:
-          - /tmp/jenkins:/var/jenkins_home/
-          - /var/run/docker.sock:/var/run/docker.sock
+          mojasiec:
+            driver: bridge
 
-.. code-block:: console
+        services:
+          jenkins:
+            image: jenkins/jenkins
+            container_name: jenkins
+            restart: "no"
+            ports:
+              - "8080:8080"
+            networks:
+              - mojasiec
+            volumes:
+              - /tmp/jenkins:/var/jenkins_home/
+              - /var/run/docker.sock:/var/run/docker.sock
 
-    docker-compose up
+ #. Run Jenkins
 
-.. code-block:: console
+    .. code-block:: console
 
-    docker-compose up -d
+        docker-compose up
+
+#. Run Jenkins in background (daemon)
+
+    .. code-block:: console
+
+        docker-compose up -d
 
 
 ``Docker-compose`` ``Django`` application
