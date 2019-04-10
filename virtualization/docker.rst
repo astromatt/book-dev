@@ -721,7 +721,7 @@ Docker Compose Jenkins
               - /tmp/jenkins:/var/jenkins_home/
               - /var/run/docker.sock:/var/run/docker.sock
 
- #. Run Jenkins
+#. Run Jenkins
 
     .. code-block:: console
 
