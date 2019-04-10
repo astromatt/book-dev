@@ -44,28 +44,42 @@ Install LTS
     docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
     docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
-Docker Compose
-^^^^^^^^^^^^^^
-.. code-block:: yaml
+Docker Compose Jenkins
+^^^^^^^^^^^^^^^^^^^^^^
+#. Create file ``docker-compose.yaml``
 
-    version: '3'
+    .. code-block:: yaml
 
-    networks:
-      mojasiec:
-        driver: bridge
+        version: '3'
 
-    services:
-      jenkins:
-        image: jenkins/jenkins
-        container_name: jenkins
-        restart: "no"
-        ports:
-          - "8080:8080"
         networks:
-          - mojasiec
-        volumes:
-          - /tmp/jenkins:/var/jenkins_home/
-          - /var/run/docker.sock:/var/run/docker.sock
+          mojasiec:
+            driver: bridge
+
+        services:
+          jenkins:
+            image: jenkins/jenkins
+            container_name: jenkins
+            restart: "no"
+            ports:
+              - "8080:8080"
+            networks:
+              - mojasiec
+            volumes:
+              - /tmp/jenkins:/var/jenkins_home/
+              - /var/run/docker.sock:/var/run/docker.sock
+
+ #. Run Jenkins
+
+    .. code-block:: console
+
+        docker-compose up
+
+#. Run Jenkins in background (daemon)
+
+    .. code-block:: console
+
+        docker-compose up -d
 
 
 More information
