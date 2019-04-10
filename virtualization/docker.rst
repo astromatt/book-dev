@@ -698,6 +698,8 @@ Compose is a tool for defining and running multi-container Docker applications.
 
 Docker Compose Jenkins
 ^^^^^^^^^^^^^^^^^^^^^^
+* ``docker-compose.yaml``
+
 .. code-block:: yaml
 
     version: '3'
