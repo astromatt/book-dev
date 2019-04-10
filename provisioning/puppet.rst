@@ -2,9 +2,9 @@ Puppet
 ======
 
 .. todo:: sprawdzić czy działają tematy związane z tworzeniem faktów
-.. todo:: sprawdzić jak zachowa się to z Facterem
+.. todo:: sprawdzić jak zachowa się to z Facter
 .. todo:: sprawdzić deklarowanie i używanie zmiennych
-.. todo:: podzielić puppeta na osobne pliki per temat (zadanie do rozwiązania)
+.. todo:: podzielić Puppet na osobne pliki per temat (zadanie do rozwiązania)
 .. todo:: co z tematem odpalania jako user a nie root?
 .. todo:: uspójnić wszędzie nazwy userów i grup (vagrant, ubuntu, www-data, myuser) wybrać jeden
 .. todo:: błąd ze sprawdzaniem czy user i grupa www-data istnieją, kiedy wykorzystujemy moduł apache
@@ -214,7 +214,7 @@ Przyjrzyj się wynikom poleceń:
 
 Co zauważyłeś? Jak można wykorzystać te informacje?
 
-Kod przedstawia wynik polecenia ``facter`` na świerzej maszynie `Ubuntu` postawionej w `Amazon AWS`
+Kod przedstawia wynik polecenia ``facter`` na świeżej maszynie `Ubuntu` postawionej w `Amazon AWS`
 
 .. literal-include:: src/facter.txt
     :language: console
@@ -571,7 +571,7 @@ Konfiguracja Apache2 (opcjonalnie)
     - http://127.0.0.1:8080
     - https://127.0.0.1:8443
 
-.. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Puppet module instaluje zawsze najnowszą (w tym wypadku niekompatybilną z naszym puppetem)! Aby zainstalować apache należy wymusić odpowiednią wersję (ostatnia supportująca Puppeta 3.8 to 1.10.
+.. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Puppet module instaluje zawsze najnowszą (w tym wypadku niekompatybilną z naszym Puppet)! Aby zainstalować apache należy wymusić odpowiednią wersję (ostatnia supportująca Puppet 3.8 to 1.10.
 
     .. code-block:: console
 

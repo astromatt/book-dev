@@ -26,6 +26,11 @@ Install docker from terminal
     curl -fsSL get.docker.com -o get-docker.sh
     sh get-docker.sh
 
+.. code-block:: console
+
+    sudo apt update
+    sudo apt install docker.io
+
 Requirements for workshop
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
@@ -621,6 +626,47 @@ Apache 2
 
     ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
+Example dockerfile
+^^^^^^^^^^^^^^^^^^
+.. code-block:: dockerfile
+
+    ## Creating image based on official python image
+    FROM python:3.7
+
+    ## Sets dumping log messages directly to stream instead of buffering
+    ENV PYTHONUNBUFFERED 1
+
+    ## Install system dependencies
+    RUN apt update && apt install -y nginx
+
+    ## Change working directory
+    WORKDIR /srv
+
+    ## Creating and putting configurations
+    COPY habitat /srv/habitat
+    COPY manage.py /srv/
+    COPY docker-entrypoint.sh /srv/docker-entrypoint.sh
+    COPY requirements.txt /srv/requirements.txt
+    COPY conf/nginx.conf /etc/nginx/sites-enabled/habitatOS
+
+    ## Installing all python dependencies
+    RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+    RUN pip install --no-cache-dir -r /srv/requirements.txt
+
+    ## Open ports to outside world
+    EXPOSE 80 80/tcp
+    EXPOSE 8000 8000/tcp
+
+    ## When container starts, this script will be executed.
+    ## Note that it is NOT executed during building
+    CMD sh /srv/docker-entrypoint.sh
+
+
+    ## Run like that
+    # docker build . -t habitatos:latest
+    # docker run -d --env-file=.env --rm --name habitatOS -p 80:80 habitatos
+    # docker run -d --env-file=.env --rm --name habitatOS -p 80:80 -v /Users/matt/Developer/habitatOS/habitat:/srv/habitat habitatos
+    # docker exec -it habitatOS bash
 
 Docker Hub
 ----------
