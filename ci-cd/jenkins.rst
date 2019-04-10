@@ -44,6 +44,30 @@ Install LTS
     docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
     docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
+Docker Compose
+^^^^^^^^^^^^^^
+.. code-block:: yaml
+
+    version: '3'
+
+    networks:
+      mojasiec:
+        driver: bridge
+
+    services:
+      jenkins:
+        image: jenkins/jenkins
+        container_name: jenkins
+        restart: "no"
+        ports:
+          - "8080:8080"
+        networks:
+          - mojasiec
+        volumes:
+          - /tmp/jenkins:/var/jenkins_home/
+          - /var/run/docker.sock:/var/run/docker.sock
+
+
 More information
 ^^^^^^^^^^^^^^^^
 - https://github.com/jenkinsci/docker/blob/master/README.md
