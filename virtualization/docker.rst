@@ -721,6 +721,14 @@ Docker Compose Jenkins
           - /tmp/jenkins:/var/jenkins_home/
           - /var/run/docker.sock:/var/run/docker.sock
 
+.. code-block:: console
+
+    docker-compose up
+
+.. code-block:: console
+
+    docker-compose up -d
+
 
 ``Docker-compose`` ``Django`` application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
