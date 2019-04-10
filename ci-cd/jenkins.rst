@@ -53,7 +53,7 @@ Docker Compose Jenkins
         version: '3'
 
         networks:
-          mojasiec:
+          devtools-ecosystem:
             driver: bridge
 
         services:
@@ -64,7 +64,7 @@ Docker Compose Jenkins
             ports:
               - "8080:8080"
             networks:
-              - mojasiec
+              - devtools-ecosystem
             volumes:
               - /tmp/jenkins:/var/jenkins_home/
               - /var/run/docker.sock:/var/run/docker.sock
