@@ -66,22 +66,26 @@ Administration
 
 User Management
 ^^^^^^^^^^^^^^^
-- Always use LDAP (OpenLDAP or Active Directory)
-- Read only access via LDAPs
-- Internal and external users in one LDAP server
-- name groups as ``jenkins-users`` or ``jenkins-administrators``
-- local administrator ``jenkins-administrator`` only for fixing bugs with LDAP
-- use ``jenkins@example.com`` (for easy email fiterling)
-- use ``jenkins.example.com`` as domain name with Firewall blocking external access
-- ``/etc/resolv.conf`` ``search example.com`` -> ustawianie przez DHCP
-- avoid nested groups
-- all tools in ``OU=ecosystem``
-- use LDAP groups for project roles from ``OU=projects``
-- do not use user accounts in project roles (only LDAP groups)
+- Always use *LDAP* (*OpenLDAP* or *Active Directory*)
+- Each tool has separate *LDAP* read only account
+- Connection only with *LDAPS* (secure)
+- Internal and external users in one *LDAP* server
+- Name groups as ``jenkins-users`` or ``jenkins-administrators``
+- Local administrator ``jenkins-administrator`` only for fixing bugs with *LDAP*
+- Use ``jenkins@example.com`` (for easy email filtering)
+- Use ``jenkins.example.com`` as domain name with firewall blocking external access
+- Wildcard *SSL* certificate (``*.example.com``)
+- Only *HTTPS* access to tool!
+- ``/etc/resolv.conf`` ``search example.com`` -> set by *DHCP*
+- No nested groups
+- All tool access groups in ``OU=ecosystem``
+- Use LDAP groups for project roles from ``OU=projects``
+- Do not use user accounts in project roles (only *LDAP* groups)
 - Confluence page with all ``*-administrators`` + ``mailto:`` links
-- Confluence page with Jenkins job administrators
-- Do not use technical accounts (use SSH keys)
-- Use SSH keys with proper comment
+- Confluence page with *Jira* project leaders
+- Confluence page with *Jenkins* job administrators
+- Do not use technical accounts (use *SSH* keys)
+- Use *SSH* keys with proper comment: ``user@example.com/computer-name``
 
 Plugin installation
 ^^^^^^^^^^^^^^^^^^^
