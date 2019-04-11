@@ -32,6 +32,17 @@ Wprowadzenie
     /wprowadzenie/linki.rst
 
 
+**************
+User Directory
+**************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: User Directory
+
+    /database/openldap.rst
+
+
 ***
 API
 ***
@@ -53,6 +64,7 @@ Binary Repository
 
     /binary-repository/artifactory.rst
     /binary-repository/nexus.rst
+    /binary-repository/docker-registry.rst
 
 
 ***************
@@ -105,7 +117,6 @@ Instant Messaging
     :numbered:
     :caption: Instant Messaging
 
-    /instant-messaging/hipchat.rst
     /instant-messaging/rocket-chat.rst
     /instant-messaging/slack.rst
 
@@ -142,13 +153,24 @@ Logging
     :numbered:
     :caption: Logging
 
-    /logging/graphite.rst
     /logging/kibana.rst
     /logging/logstash.rst
-    /logging/statsd.rst
-    /logging/graphana.rst
-    /logging/superset.rst
+    /logging/splunk.rst
 
+**********
+Monitoring
+**********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Monitoring
+
+    /logging/graphite.rst
+    /logging/graphana.rst
+    /logging/opsgenie.rst
+    /logging/nagios.rst
+    /logging/statsd.rst
+    /logging/zabbix.rst
 
 ************
 Provisioning
@@ -175,9 +197,11 @@ Quality and Tests
 
     /quality/coverage.rst
     /quality/findbugs.rst
+    /quality/jmeter.rst
     /quality/mutation-testing.rst
     /quality/selenium.rst
     /quality/soap-ui.rst
+    /quality/sonarlint.rst
     /quality/sonarqube.rst
     /quality/valgrind.rst
 
