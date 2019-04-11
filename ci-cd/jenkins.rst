@@ -476,7 +476,6 @@ Docker
 
     .. code-block:: console
 
-        $ docker pull openjdk:7-jdk
         $ docker pull openjdk:8-jdk
         $ docker pull maven:3-jdk-7
         $ docker pull maven:3-jdk-8
@@ -565,7 +564,7 @@ Build Strategy
 Ćwiczenia
 ---------
 
-Instalacja Jenkinsa i konfuguracja buildów
+Instalacja Jenkinsa i konfiguracją buildów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zainstaluj *Jenkins* za pomocą *Docker*
 #. Zaciągnij repozytorium https://github.com/AstroTech/sonarqube-example-java-maven-junit.git
@@ -630,7 +629,7 @@ Budowanie *PITest*
 
 Jenkinsfile i Pipeline DSL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Przepisz całą konfigurację wykorzustując *Pipeline DSL* zapisany w *Jenkinsfile*
+- Przepisz całą konfigurację wykorzystując *Pipeline DSL* zapisany w *Jenkinsfile*
 
 Jenkins Docker Plugin
 ^^^^^^^^^^^^^^^^^^^^^
