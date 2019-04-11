@@ -40,7 +40,7 @@ User Directory
     :numbered:
     :caption: User Directory
 
-    /database/openldap.rst
+    /user-directory/openldap.rst
 
 
 ***
@@ -143,6 +143,7 @@ Knowledge Base
     :caption: Knowledge Base
 
     /knowledge-base/confluence.rst
+    /knowledge-base/wiki.rst
 
 
 *******
@@ -166,12 +167,12 @@ Monitoring
     :numbered:
     :caption: Monitoring
 
-    /logging/graphite.rst
-    /logging/graphana.rst
-    /logging/opsgenie.rst
-    /logging/nagios.rst
-    /logging/statsd.rst
-    /logging/zabbix.rst
+    /monitoring/graphite.rst
+    /monitoring/graphana.rst
+    /monitoring/opsgenie.rst
+    /monitoring/nagios.rst
+    /monitoring/statsd.rst
+    /monitoring/zabbix.rst
 
 
 ************
