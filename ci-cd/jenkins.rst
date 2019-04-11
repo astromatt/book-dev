@@ -53,21 +53,21 @@ Docker Compose
         version: '3'
 
         networks:
-          devtools-ecosystem:
-            driver: bridge
+            devtools-ecosystem:
+                driver: bridge
 
         services:
-          jenkins:
-            image: jenkins/jenkins
-            container_name: jenkins
-            restart: "no"
-            ports:
-              - "8080:8080"
-            networks:
-              - devtools-ecosystem
-            volumes:
-              - /tmp/jenkins:/var/jenkins_home/
-              - /var/run/docker.sock:/var/run/docker.sock
+            jenkins:
+                image: jenkins/jenkins
+                container_name: jenkins
+                restart: "no"
+                ports:
+                    - "8080:8080"
+                networks:
+                    - devtools-ecosystem
+                volumes:
+                    - /tmp/jenkins:/var/jenkins_home/
+                    - /var/run/docker.sock:/var/run/docker.sock
 
 #. Run Jenkins
 
@@ -459,13 +459,12 @@ Docker
 
     .. code-block:: console
 
-        $ docker exec -u0 -it jenkins bash
-        $ apt update
-        $ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-        $ echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" > /etc/apt/sources.list.d/docker.list
-        $ apt install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
-        $ apt update
-        $ apt install -y docker-ce
+        docker exec -itu 0 jenkins bash
+        curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+        echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" > /etc/apt/sources.list.d/docker.list
+        apt install -y apt-transport-https
+        apt update
+        apt install -y docker-ce
 
 - Spawning sibling containers instead of container inside the container
 

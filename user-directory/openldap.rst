@@ -16,7 +16,7 @@ Docker
         --env LDAP_ADMIN_PASSWORD="MyPassword" \
         --volume /tmp/openldap/data:/var/lib/ldap \
         --volume /tmp/openldap/config:/etc/ldap/slapd.d \
-        --name openldap \
+        --name openldap-server \
         osixia/openldap
 
 
@@ -35,7 +35,7 @@ Docker Compose
         services:
             openldap:
                 image: osixia/openldap
-                container_name: openldap
+                container_name: openldap-server
                 restart: "no"
                 hostname: my-company.com
                 environment:
@@ -72,3 +72,14 @@ Connect
 .. code-block:: console
 
     docker exec openldap ldapsearch -x -H ldap://localhost -b dc=example,dc=org -D "cn=admin,dc=example,dc=org" -w admin
+
+GUI
+===
+.. code-block:: console
+
+    docker run -p 6443:443 \
+        --env PHPLDAPADMIN_LDAP_HOSTS=openldap \
+        --detach \
+        --rm \
+        --name openldap-gui \
+        osixia/phpldapadmin
