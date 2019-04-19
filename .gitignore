@@ -26,7 +26,6 @@ sdist/
 *.log
 *.sqlite3
 *.sqlite3-journal
-_static
 _media
 
 ## Sphinx documentation
