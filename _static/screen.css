@@ -1,0 +1,108 @@
+@media screen {
+    /* RTD theme's default is 800px as max width for the content */
+    .wy-nav-content { max-width: 1000px; }
+    .wy-nav-content-wrap { background: none; }
+
+    /* hide double entries on main page toc-tree */
+    .toctree-wrapper .caption {display: none}
+
+    /* hyperlinks */
+    a { color: #00f !important; }
+    a:hover {text-decoration: underline !important; }
+    .download span {color: #00f !important;}
+    .download span:hover {color: #00f !important; text-decoration: underline !important; }
+
+    /* headers */
+    h1 {font-family: sans-serif; page-break-after: avoid; }
+    h2 {font-family: sans-serif; page-break-after: avoid; }
+    h3 {font-family: sans-serif; page-break-after: avoid; }
+    h4 {font-family: sans-serif; page-break-after: avoid; }
+    h5 {font-family: sans-serif; page-break-after: avoid; }
+    h6 {font-family: sans-serif; page-break-after: avoid; }
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: #404040 !important;}
+
+    /* top menu (while zoom) */
+    .wy-nav-top { background: #004 !important; }
+    .wy-nav-top a { color: #fff !important; }
+
+    /* left vertical menu search */
+    .wy-nav-side { background: none; }
+    .wy-nav-side a { color: #fff !important; }
+    .wy-nav-side a:before { content: none !important; }
+    .wy-side-nav-search { background: #006; }
+    .wy-side-nav-search input[type=text] { border: 1px solid #006; border-radius: 0; }
+
+    /* left vertical menu chapters */
+    .wy-menu-vertical p.caption { color: #006 !important; margin: 0 !important; }
+    .wy-menu-vertical p.caption:hover { color: #006; text-decoration: underline !important; cursor: pointer; }
+    /* .wy-menu-vertical p.caption:hover span:after { margin-left: 1rem; font-size: 0.7rem; color: #666; float: right; vertical-align: center; content:" [click to expand]" } */
+
+    /* left vertical menu sub-chapters */
+    .wy-menu-vertical li { font-size: 1rem !important; background: none !important; border: 0 !important; }
+    .wy-menu-vertical li a { color: #666 !important; border: 0 !important; background: none !important;  }
+    .wy-menu-vertical li a:hover { text-decoration: underline; border: 0 !important; background: none !important; }
+    .wy-menu-vertical li.current { background: none !important; }
+    .wy-menu-vertical li.current a { color: #333 !important; border: 0 !important; background: #f3f3f3 !important; }
+    .wy-menu-vertical li.current a:hover { text-decoration: underline; border: 0 !important; background: #f3f3f3 !important; }
+    .wy-menu-vertical .literal {background: none !important; text-transform: capitalize; font-family: sans-serif; color: #404040 !important; font-size: 0.85rem }
+
+    /* table:
+     *
+     *   - Sequences of whitespace should collapse into a single whitespace.
+     *   - make the overflow auto (scrollbar if needed)
+     *   - align caption "left" ("center" is unsuitable on vast tables)
+     */
+    table {border: 0 !important;}
+    table td {border: none !important; }
+    table th {border-bottom: 1px solid #222 !important; }
+    table tr td { background: none !important; }
+    table tr:hover td { background: #eee !important; }
+    table thead { text-align: left !important; vertical-align: middle !important; }
+    table thead p { margin-bottom: 0; }
+    .wy-table-responsive table td { white-space: normal; }
+    .wy-table-responsive { overflow: auto; }
+    .rst-content table.docutils caption { text-align: left; font-size: 100%; }
+
+    /* hide the permalink symbol as long as link is not hovered */
+    caption a.headerlink { opacity: 0; }
+    caption a.headerlink:hover { opacity: 1; }
+
+    /* inline literal */
+    code.literal { color: #006 !important; background: #fff !important; border: 1px solid #ddd; padding-left: 0.5rem; padding-right: 0.5rem; font-family: monospace; }
+
+    /* glossary entries */
+    dt { color: #404040 !important; background: none !important; border: none !important; }
+
+    /* lists */
+    .rst-content dl p { margin: 0 !important; }
+
+    /* bibliography entries */
+    dl.citation dt:before { content: '['; color: #404040 !important; }
+    dl.citation dt:after { content: ']'; color: #404040 !important; }
+
+    /* caption */
+    .code-block-caption { color: #404040 !important; text-align: center !important; font-weight: bold !important; font-style: normal !important; margin-top: 1rem; margin-bottom: 1rem; }
+    .figure .caption { color: #404040 !important; text-align: center !important; font-weight: bold !important; font-style: normal !important; margin-top: 1rem; margin-bottom: 1rem; }
+    table caption { color: #404040 !important; text-align: center !important; font-weight: bold !important; font-style: normal !important; margin-top: 1rem; margin-bottom: 1rem; }
+
+    /* infoboxes */
+    .tip { background: #fff !important; border: 1px solid #18bc9b; }
+    .tip .admonition-title { background: #18bc9b !important; }
+
+    .warning { background: #fff !important; border: 1px solid #f00; }
+    .warning .admonition-title { background: #f00 !important; }
+
+    .note { background: #fff !important; border: 1px solid #00f; }
+    .note .admonition-title { background: #00f !important; }
+
+    .admonition-todo {background: #fff !important; border: 1px solid #0b2;}
+    .admonition-todo .admonition-title { background: #0b2 !important; }
+
+    /* buttons on bottom (next, prev)*/
+    .btn-neutral {color: #00f !important;background: none !important;border: 0; box-shadow: none; }
+    .btn-neutral:hover { color: #00f !important; background: none !important; border: 0; }
+    .btn-neutral:visited { color: #00f !important; background: none !important; border: 0; }
+    .fa-arrow-circle-left:before { content: '<<'}
+    .fa-arrow-circle-right:before { content: '>>'}
+}

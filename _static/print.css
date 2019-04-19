@@ -1,0 +1,10 @@
+@media print {
+    div[role="navigation"] { display: none; }
+    div.pagebreak { page-break-after: always; }
+    h1 { page-break-after: avoid; }
+    h2 { page-break-after: avoid; }
+    h3 { page-break-after: avoid; }
+    h4 { page-break-after: avoid; }
+    h5 { page-break-after: avoid; }
+    h6 { page-break-after: avoid; }
+}
