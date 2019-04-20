@@ -40,7 +40,6 @@
     /* left vertical menu chapters */
     .wy-menu-vertical p.caption {color: #006 !important; margin: 0 !important}
     .wy-menu-vertical p.caption:hover {color: #006; text-decoration: underline !important; cursor: pointer}
-    /* .wy-menu-vertical p.caption:hover span:after {margin-left: 1rem; font-size: 0.7rem; color: #666; float: right; vertical-align: center; content:" [click to expand]"} */
 
     /* left vertical menu sub-chapters */
     .wy-menu-vertical li {font-size: 1rem !important; background: none !important; border: 0 !important}
