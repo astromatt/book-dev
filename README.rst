@@ -28,8 +28,8 @@ DevOps and CI/CD with Docker
     "http://devops.astrotech.io", "DevOps and CI/CD with Docker"
     "http://jira.astrotech.io", "Jira Software, Jira Service Desk and Jira Core"
     "http://git.astrotech.io", "GIT and GIT Flow"
-    "http://agile.astrotech.io", "Agile, Scrum, Kanban, XP, Lean"
-    "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices and Processes"
+    "http://agile.astrotech.io", "Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean"
+    "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices"
     "http://linux.astrotech.io", "Linux and Shell Programming with Bash"
 
 .. tip:: If you're interested in training course on topics from this book, please email me at matt@astrotech.io
