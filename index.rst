@@ -25,6 +25,9 @@ Wprowadzenie
     /wprowadzenie/requirements.rst
     /wprowadzenie/wstep.rst
     /wprowadzenie/agile-vs-devops.rst
+    /wprowadzenie/transformation-agile.rst
+    /wprowadzenie/transformation-devops.rst
+    /wprowadzenie/community.rst
     /wprowadzenie/utrzymanie-vs-rozwoj.rst
     /wprowadzenie/lean-startup.rst
     /wprowadzenie/srodowisko-wirtualne.rst
