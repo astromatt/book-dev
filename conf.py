@@ -99,6 +99,7 @@ html_context = {
         '_static/print.css',
     ],
     'script_files': [
+        '_static/jquery.min.js',
         '_static/onload.js',
     ],
 }
