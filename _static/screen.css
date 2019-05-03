@@ -54,11 +54,12 @@
     .wy-nav-side a:before {content: none !important}
 
     /* left vertical menu chapters */
-    .wy-menu-vertical p.caption {color: var(--menu-header) !important; margin: 0 !important; margin-top: 1rem !important;}
+    .wy-menu-vertical p.caption {color: var(--menu-header) !important; margin: 0 !important;}
     .wy-menu-vertical p.caption:hover {text-decoration: none !important; color: var(--menu-header); cursor: pointer}
 
     /* left vertical menu sub-chapters */
     .wy-menu-vertical li {font-size: 1rem !important; background: none !important; border: 0 !important}
+    .wy-menu-vertical li:last-child {margin-bottom: 1rem !important}
     .wy-menu-vertical li a {color: var(--menu-entry) !important; border: 0 !important; background: none !important}
     .wy-menu-vertical li a:hover {text-decoration: none !important; border: 0 !important; background: none !important;  background: var(--menu-entry-hover) !important}
     .wy-menu-vertical li.current {background: none !important}
