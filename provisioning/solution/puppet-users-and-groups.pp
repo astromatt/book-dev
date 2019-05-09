@@ -1,6 +1,6 @@
 group { 'vagrant':
     ensure => 'present',
-    gid    => 1337,
+    gid    => 13 37,
 }
 
 user { 'vagrant':

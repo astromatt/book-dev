@@ -19,17 +19,16 @@ Installing
 
 Install docker from terminal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* https://get.docker.com
-
 .. code-block:: console
 
-    curl -fsSL get.docker.com -o get-docker.sh
-    sh get-docker.sh
+    curl https://get.docker.com |sh
 
-.. code-block:: console
+Alternatywnie:
 
-    sudo apt update
-    sudo apt install docker.io
+    .. code-block:: console
+
+        sudo apt update
+        sudo apt install docker.io
 
 Requirements for workshop
 ^^^^^^^^^^^^^^^^^^^^^^^^^

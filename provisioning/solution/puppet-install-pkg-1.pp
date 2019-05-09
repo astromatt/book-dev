@@ -1,5 +1,5 @@
 exec { 'package definition update':
-    command => '/usr/bin/apt-get update',
+    command => '/usr/bin/apt update',
 }
 
 package { ['nmap', 'htop', 'git']:
