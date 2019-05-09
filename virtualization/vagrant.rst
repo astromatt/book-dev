@@ -20,6 +20,10 @@ Uruchamianie maszyny
 
         vagrant init ubuntu/bionic64
 
+    .. code-block:: console
+
+        vagrant init http://cloud-images.ubuntu.com/releases/18.10/release/ubuntu-18.10-server-cloudimg-amd64-vagrant.box
+
 #. Spowoduje to wygenerowanie pliku, który po usunięciu komentarzy będzie wyglądał następująco:
 
     .. code-block:: text
@@ -100,6 +104,11 @@ Zalecana konfiguracja maszyny wirtualnej:
     - 66% CPU core
     - 66% MB RAM
 
+Na przykład:
+
+    - 2 CPU core
+    - 4096 MB Ram
+
 Dobry komputer
 ^^^^^^^^^^^^^^
 Zalecana konfiguracja maszyny wirtualnej:
@@ -115,15 +124,6 @@ Provisioning za pomocą shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: ruby
 
-    Vagrant.configure("2") do |config|
-      config.vm.provision "shell" do |s|
-        s.inline = "echo $1"
-        s.args   = ["hello, world!"]
-      end
-    end
-
-.. code-block:: ruby
-
     config.vm.provision "shell", inline: <<- SHELL
         /usr/bin/whoami > /tmp/whoami
     SHELL
@@ -131,7 +131,7 @@ Provisioning za pomocą shell
 .. code-block:: ruby
 
     Vagrant.configure("2") do |config|
-      config.vm.provision "shell", path: "script.sh"
+      config.vm.provision "shell", path: "bootstrap.sh"
     end
 
 .. code-block:: ruby
@@ -153,19 +153,16 @@ Provisioning za pomocą `Puppet`
 
 Finalna konfiguracja
 ^^^^^^^^^^^^^^^^^^^^
-Twoja konfuguracja `Vagrant` powinna wyglądać tak:
+Twoja konfiguracja `Vagrant` powinna wyglądać tak:
 
 .. code-block:: ruby
-
-    CPU = 1
-    RAM = 1024
 
     Vagrant.configure("2") do |config|
         config.vm.hostname = "ubuntu.local"
 
         config.vm.box = "ubuntu/bionic64"
         # config.vm.box = "ubuntu-lts"
-        # config.vm.box_url = "http://cloud-images.ubuntu.com/releases/18.04/release/ubuntu-18.04-server-cloudimg-amd64-vagrant.box"
+        # config.vm.box_url = "http://cloud-images.ubuntu.com/releases/18.10/release/ubuntu-18.10-server-cloudimg-amd64-vagrant.box"
 
         config.vm.network "forwarded_port", guest: 80, host: 8080
         config.vm.network "forwarded_port", guest: 443, host: 8443
@@ -173,11 +170,11 @@ Twoja konfuguracja `Vagrant` powinna wyglądać tak:
 
         config.vm.provider "virtualbox" do |v|
             v.name = "ubuntu.local"
-            v.cpus = CPU
-            v.memory = RAM
+            v.cpus = 2
+            v.memory = 4096
         end
 
-        config.vm.provision "shell", path: "script.sh"
+        config.vm.provision "shell", path: "bootstrap.sh"
 
     end
 
