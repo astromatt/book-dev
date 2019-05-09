@@ -137,13 +137,19 @@ Instalacja i konfiguracja
 -------------------------
 .. code-block:: console
 
-    sudo apt-get update
-    sudo apt-get install puppet
+    sudo apt update
+    sudo apt install puppet
 
 Zaglądnij do katalogu ``/etc/puppet``.
 Co się tam znajduje?
 
-Przejdź do katalogu ``/etc/puppet/manifests``.
+Jeżeli nie ma katalogu ``/etc/puppet/manifests`` to go stwórz.
+
+    .. code-block:: console
+
+        mkdir -p /etc/puppet/manifests
+
+Przejdź do katalogu ``/etc/puppet/manifests``, jeżeli.
 
 .. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Wersja ta może być niekompatybilna z modułami pobieranymi przez Puppet (np. Apache, Tomcat, Java). Rozwiązaniem jest ściąganie modułów w niższych wersjach (pasujących do wersji 3.8.5) lub instalacja Puppet w wersji wyższej niż ta w LTS.
 
@@ -176,7 +182,7 @@ Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należ
     sudo apt update
     sudo apt install squid
 
-- na maszynie gościa (tam gdzie chcesz instalować moduł puppeta ustaw:
+- na maszynie gościa (tam gdzie chcesz instalować moduł Puppet ustaw:
 
 
 .. code-block:: console
@@ -495,18 +501,18 @@ Zadania do rozwiązania
 
 Instalacja pakietów za pomocą `Puppet`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/packages.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/packages.pp``
 - Zainstaluj następujące pakiety za pomocą `Puppet`:
 
     - ``nmap``
     - ``htop``
     - ``git``
 
-- Upewnij się by `Puppet` wykonał polecenie ``apt-get update`` na początku
+- Upewnij się by `Puppet` wykonał polecenie ``apt update`` na początku
 
 Zmiana hostname
 ^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/hostname.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/hostname.pp``
 - Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
 - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
 - Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
@@ -517,7 +523,7 @@ Zmiana hostname
 
 Zarządzanie użytkownikami, grupami i katalogami
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/users.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/users.pp``
 - Upewnij się, że użytkownik ``vagrant`` istnieje, ma ``uid=1337`` i należy do grupy ``vagrant``
 - Upewnij się, że grupa ``vagrant`` istnieje i ma ``gid=1337``
 - Upewnij się, że:
@@ -579,7 +585,7 @@ Konfiguracja Apache2 (opcjonalnie)
 
 Instalacja i konfiguracja MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/mysql.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/mysql.pp``
 - Zainstaluj bazę danych `MySQL` wykorzystując moduł `Puppet`
 - Ustaw hasło dla użytkownika ``root`` na ``mypassword``
 - Ustaw nasłuchiwanie serwera ``mysqld`` na wszystkich interfejsach (``0.0.0.0``)
@@ -590,7 +596,7 @@ Instalacja i konfiguracja MySQL
 
 Instalacja i konfiguracja Tomcat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/tomcat.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/tomcat.pp``
 - Zainstaluj język `Java` za pomocą modułu `Puppet`
 - Zainstaluj `Tomcat 8` za pomocą `Puppet` w katalogu ``/opt/tomcat8``
 - Skonfiguruj dwie instancje `Tomcat` działające jednocześnie:
