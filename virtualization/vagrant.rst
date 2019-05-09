@@ -38,6 +38,13 @@ Uruchamianie maszyny
 
         vagrant up
 
+.. note:: Gdyby wystąpił problem i maszyny nie można uruchomić nawet z poziomu Virtualbox GUI (błąd: ``VT-x is disabled in the BIOS for both all CPU modes (VERR_VMX_MSR_ALL_VMX_DISABLED)``), to należy odblokować w biosie opcje:
+
+    - Enable Virtualization Technology (VTx)
+    - Virtualization Technology Directed I/O (VTd)
+
+    Więcej informacji: https://stackoverflow.com/questions/33304393/vt-x-is-disabled-in-the-bios-for-both-all-cpu-modes-verr-vmx-msr-all-vmx-disabl
+
 #. Stworzy to maszynę z oficjalnego obrazu 64 bitowej wersji `Ubuntu LTS` (`Long Time Support`)
 #. Aby zalogować się na maszynę należy wykonać:
 
