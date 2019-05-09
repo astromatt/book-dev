@@ -365,10 +365,22 @@ Przykłady
 ---------
 .. code-block:: ruby
 
-    Exec    { path => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" }
-    group   { "vagrant": ensure => present }
-    user    { "vagrant": ensure => present, gid => "vagrant" }
-    exec    { "apt-get update": command => "/usr/bin/apt-get update" }
+    Exec {
+        path => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    }
+
+    group { "vagrant":
+        ensure => present
+    }
+
+    user { "vagrant":
+        ensure => present,
+        gid => "vagrant"
+    }
+
+    exec { "update package definition":
+        command => "/usr/bin/apt update"
+    }
 
     package { [
         "git",
@@ -390,18 +402,19 @@ Przykłady
         "libmemcached-dev"
       ] :
         ensure => latest,
-        require => Exec["apt-get update"],
+        require => Exec["update package definition"],
     }
 
     file { [
-        "/var/www",
-        "/var/www/log",
-        "/var/www/public",
-        "/var/www/public/media",
-        "/var/www/public/static",
-        "/var/www/tmp",
-        "/var/www/src"
-      ]:
+            "/var/www",
+            "/var/www/log",
+            "/var/www/public",
+            "/var/www/public/media",
+            "/var/www/public/static",
+            "/var/www/tmp",
+            "/var/www/src"
+        ]:
+
         ensure => directory,
         owner => "vagrant",
         group => "vagrant",
