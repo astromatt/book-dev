@@ -30,6 +30,7 @@ Install
 Run from docker-compose
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: yaml
+    :caption: ``gitlab.yaml``
 
     version: '3'
 
@@ -53,6 +54,10 @@ Run from docker-compose
                 - /home/gitlab/config:/etc/gitlab
                 - /home/gitlab/logs:/var/log/gitlab
                 - /home/gitlab/data:/var/opt/gitlab
+
+.. code-block:: console
+
+    docker-compose -f gitlab.yaml up
 
 
 Configuration
