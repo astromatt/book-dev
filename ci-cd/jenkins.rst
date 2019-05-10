@@ -28,21 +28,17 @@ Install
 
 Weekly version
 ^^^^^^^^^^^^^^
-.. warning:: for non-training use change ``/tmp`` to other persistent directory
-
 .. code-block:: console
 
-    docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins
-    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+    docker run -d --rm --name jenkins -p 8080:8080 -v /home/jenkins:/var/jenkins_home jenkins/jenkins
+    cat /home/jenkins/secrets/initialAdminPassword
 
 Install LTS
 ^^^^^^^^^^^
-.. warning:: for non-training use change ``/tmp`` to other persistent directory
-
 .. code-block:: console
 
-    docker run --rm --name jenkins -d -p 8000:8080 -v /tmp/jenkins:/var/jenkins_home jenkins/jenkins:lts
-    docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+    docker run -d  --rm --name jenkins -p 8080:8080 -v /home/jenkins:/var/jenkins_home jenkins/jenkins:lts
+    cat /home/jenkins/secrets/initialAdminPassword
 
 Docker Compose
 ^^^^^^^^^^^^^^
@@ -66,7 +62,7 @@ Docker Compose
                 networks:
                     - devtools-ecosystem
                 volumes:
-                    - /tmp/jenkins:/var/jenkins_home/
+                    - /home/jenkins:/var/jenkins_home/
                     - /var/run/docker.sock:/var/run/docker.sock
 
 #. Run Jenkins

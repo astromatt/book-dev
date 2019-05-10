@@ -406,8 +406,8 @@ Create network
     version: '3'
 
     networks:
-      mynetwork:
-        external: true
+        devtools-ecosystem:
+            driver: bridge
 
     services:
       db:
@@ -477,12 +477,12 @@ Creating and building ``Dockerfile``
 
 .. code-block:: console
 
-    docker build -t mypython:1.0.0 .
+    docker build . -t mypython:1.0.0
     docker run mypython:1.0.0
 
 .. code-block:: console
 
-    docker build -t mypython:latest .
+    docker build . -t mypython:latest
     docker run mypython
 
 .. code-block:: console
@@ -616,7 +616,7 @@ Run Django App in container
     WORKDIR /data
     RUN pip install -r /data/requirements.txt
     ENV ENVIRONMENT docker
-    EXPOSE 8000 8000/tcp
+    EXPOSE 8000/tcp
 
     CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
