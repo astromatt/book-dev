@@ -161,9 +161,16 @@ Pulling from Docker Hub
 .. code-block:: console
 
     docker pull NAME
-    docker pull ubuntu  # will pull latest
-    docker pull ubuntu:latest
+
+.. code-block:: console
+
     docker pull ubuntu:18.10
+    docker pull ubuntu:latest
+    docker pull ubuntu          # will pull latest
+
+.. code-block:: console
+
+    docker pull alpine
 
 Run containers
 ^^^^^^^^^^^^^^
@@ -188,19 +195,19 @@ Run containers
 
 .. code-block:: console
 
-    docker run -it ubuntu:latest bash
+    docker run -it alpine sh
 
 * ``-d`` - daemon (runs in the background)
 
 .. code-block:: console
 
-    docker run -d -it ubuntu:latest bash
+    docker run -d -it alpine sh
 
 * ``--name`` - named container
 
 .. code-block:: console
 
-    docker run -d -it --name bash ubuntu:latest bash
+    docker run -d -it --name shell alpine sh
 
 Show containers
 ^^^^^^^^^^^^^^^
@@ -218,18 +225,18 @@ Show containers
 
 Attach to running containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Attach local standard input, output, and error streams to a running container:
+* Attach to local standard input, output, and error streams of main process:
 
     .. code-block:: console
 
         docker attach CONTAINER_NAME_OR_ID
 
-* Attach to running container and execute bash
+* Attach to running container and execute another process of bash:
 
     .. code-block:: console
 
         docker exec -it CONTAINER_NAME_OR_ID bash
-        docker exec -u 0 -it CONTAINER_NAME_OR_ID bash
+        docker exec -u 0 -it CONTAINER_NAME_OR_ID bash      # as root
 
 What application is running inside the container?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -318,7 +325,7 @@ Creating persistent storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run -it -v /data --name bash ubuntu:latest /bin/bash
+    docker run -it -v /data --name bash alpine sh
     echo 'hello' > /data/hello.txt
     # exit with ``ctrl+q+p``
 
@@ -336,20 +343,20 @@ Attaching local dir to docker container
 
 .. code-block:: console
 
-    docker run -d -P --name web -v /home/myproject:/data ubuntu /bin/bash
+    docker run -d -P --name web -v /home/myproject:/data alpine sh
 
 Mount read-only filesystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run -d -P --name web -v /home/myproject:/data:ro ubuntu /bin/bash
+    docker run -d -P --name web -v /home/myproject:/data:ro alpine sh
 
 Creating Volumes
 ^^^^^^^^^^^^^^^^
 .. code-block:: console
 
     docker volume create -d flocker --opt o=size=20GB myvolume
-    docker run --detach -P -v myvolume:/data --name web ubuntu /bin/bash
+    docker run --detach -P -v myvolume:/data --name web alpine sh
 
 Volume container
 ^^^^^^^^^^^^^^^^
@@ -398,15 +405,16 @@ Create network
 
     version: '3'
 
-    services:
-      db:
-        image: some/image
-        networks:
-          - mynetwork
-
     networks:
       mynetwork:
         external: true
+
+    services:
+      db:
+        image: alpine
+        networks:
+          - mynetwork
+
 
 List networks
 ^^^^^^^^^^^^^
@@ -425,26 +433,28 @@ Connect new container to network
 .. code-block:: console
 
     docker network create mynetwork
-    docker run -d --net mynetwork --name host1 ubuntu
-    docker run -d --net mynetwork --name host2 ubuntu
+    docker run -d --net mynetwork --name host1 -it alpine sh
+    docker run -d --net mynetwork --name host2 -it alpine sh
 
-    docker attach host1
-    ping host2
+.. code-block:: console
+
+    docker exec host1 ping -c4 host2
 
 Connect running container to network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
-    docker run -d --name host1 ubuntu
-    docker run -d --name host2 ubuntu
+    docker run -d --name host1 -it alpine sh
+    docker run -d --name host2 -it alpine sh
 
     docker network create mynetwork
     docker network connect mynetwork host1
     docker network connect mynetwork host2
 
-    docker attach host1
-    ping host2
+.. code-block:: console
+
+    docker exec host1 ping -c4 host2
 
 Inspect network
 ^^^^^^^^^^^^^^^
@@ -486,9 +496,6 @@ FROM
 .. code-block:: dockerfile
 
     FROM python:3.7
-
-.. code-block:: dockerfile
-
     FROM python:latest
 
 .. code-block:: dockerfile
