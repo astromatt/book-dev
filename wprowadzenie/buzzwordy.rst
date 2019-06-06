@@ -25,9 +25,12 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
     Healing the divide between business and programming.
     -- Kent Beck, 1999
 
-.. figure:: /_img/agile-division-chart.png
-    :scale: 50%
+.. figure:: /_img/agile-understanding.png
+    :name: figure-agile-understanding
+    :scale: 75%
     :align: center
+
+    Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
 
 001. Automatyzacja i Ekosystem Narzędziowy
 ------------------------------------------

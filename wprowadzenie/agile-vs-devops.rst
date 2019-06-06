@@ -5,11 +5,12 @@ Agile vs. DevOps
 
 Agile, Scrum, Lean, XP...
 =========================
-.. figure:: /_img/agile-division-chart.png
-    :scale: 50%
+.. figure:: /_img/agile-understanding.png
+    :name: figure-agile-understanding
+    :scale: 75%
     :align: center
 
-    Agile można rozumieć jako sześć spójnych i łączących się dyscyplin.
+    Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
 
 Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
 

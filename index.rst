@@ -244,6 +244,5 @@ Appendix
     :numbered:
     :caption: Appendix
 
-    /appendix/glossary.rst
-    /appendix/bibliography.rst
+    /_references/references.rst
     /LICENSE.rst
