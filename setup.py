@@ -7,21 +7,15 @@ from shutil import rmtree
 from subprocess import run
 
 
-OUTPUT_DIR = '/tmp/'
 FORMAT = 'html'
-THREADS = 11
-VENV = '/src/book/.venv-3.7.3'
-
 
 sourcedir = dirname(abspath(__file__))
 project_name = basename(sourcedir)
-outputdir = join(OUTPUT_DIR, project_name)
-sphinx_build = join(VENV, 'bin', 'sphinx-build')
+outputdir = join('/tmp/', project_name)
 
 rmtree(outputdir, ignore_errors=True)
 makedirs(outputdir, exist_ok=True)
-
 run('clear')
 
-cmd = split(f'{sphinx_build} -j {THREADS} -b {FORMAT} {sourcedir} {outputdir}')
+cmd = split(f'sphinx-build -a -E -j auto --color -b {FORMAT} {sourcedir} {outputdir}')
 run(cmd)
