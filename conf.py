@@ -36,12 +36,19 @@ exclude_patterns = []
 # Standard book config
 # -----------------------------------------------------------------------------
 
-from datetime import datetime
 import os
 import re
 import subprocess
 import sys
+from datetime import datetime
 
+needs_sphinx = '2.2'
+
+mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML'
+mathjax_config = {
+    'extensions': ['tex2jax.js'],
+    'jax': ['input/TeX', 'output/HTML-CSS'],
+}
 
 html_theme = 'sphinx_rtd_theme'
 
