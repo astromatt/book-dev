@@ -514,7 +514,7 @@ Zadania do rozwiązania
 
 Instalacja pakietów za pomocą `Puppet`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/packages.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/packages.pp``
 - Zainstaluj następujące pakiety za pomocą `Puppet`:
 
     - ``nmap``
@@ -525,7 +525,7 @@ Instalacja pakietów za pomocą `Puppet`
 
 Zmiana hostname
 ^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/hostname.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/hostname.pp``
 - Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
 - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
 - Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
@@ -536,7 +536,7 @@ Zmiana hostname
 
 Zarządzanie użytkownikami, grupami i katalogami
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/users.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/users.pp``
 - Upewnij się, że użytkownik ``vagrant`` istnieje, ma ``uid=1337`` i należy do grupy ``vagrant``
 - Upewnij się, że grupa ``vagrant`` istnieje i ma ``gid=1337``
 - Upewnij się, że:
@@ -598,7 +598,7 @@ Konfiguracja Apache2 (opcjonalnie)
 
 Instalacja i konfiguracja MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/mysql.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/mysql.pp``
 - Zainstaluj bazę danych `MySQL` wykorzystując moduł `Puppet`
 - Ustaw hasło dla użytkownika ``root`` na ``mypassword``
 - Ustaw nasłuchiwanie serwera ``mysqld`` na wszystkich interfejsach (``0.0.0.0``)
@@ -609,7 +609,7 @@ Instalacja i konfiguracja MySQL
 
 Instalacja i konfiguracja Tomcat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/manifests/tomcat.pp``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/tomcat.pp``
 - Zainstaluj język `Java` za pomocą modułu `Puppet`
 - Zainstaluj `Tomcat 8` za pomocą `Puppet` w katalogu ``/opt/tomcat8``
 - Skonfiguruj dwie instancje `Tomcat` działające jednocześnie:
