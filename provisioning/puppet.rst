@@ -369,13 +369,13 @@ Przykłady
         path => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     }
 
-    group { "vagrant":
+    group { "www-data":
         ensure => present
     }
 
-    user { "vagrant":
+    user { "www-data":
         ensure => present,
-        gid => "vagrant"
+        gid => "www-data"
     }
 
     exec { "update package definition":
@@ -416,8 +416,8 @@ Przykłady
         ]:
 
         ensure => directory,
-        owner => "vagrant",
-        group => "vagrant",
+        owner => "www-data",
+        group => "www-data",
         mode => 0755,
     }
 
@@ -430,6 +430,17 @@ Unless
         unless  => "/usr/bin/test `hostname` = `/bin/cat /etc/hostname`",
     }
 
+Podmiana zawartości w pliku
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: ruby
+
+    file { "/tmp/my-file.pp":
+        ensure  => present,
+        owner   => root,
+        group   => root,
+        mode    => '0644',
+        content => "Lorem ipsum...\n",
+    }
 
 Moduły
 ------
@@ -528,7 +539,7 @@ Zmiana hostname
 - Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/hostname.pp``
 - Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
 - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
-- Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
+- (jeżeli korzystasz z Vagrant) Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
 - Hostname zmienia się na dwa sposoby:
 
     * podmiana zawartości pliku ``/etc/hostname`` i uruchomienie ``hostname -F /etc/hostname``
@@ -536,14 +547,14 @@ Zmiana hostname
 
 Zarządzanie użytkownikami, grupami i katalogami
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/users.pp``
-- Upewnij się, że użytkownik ``vagrant`` istnieje, ma ``uid=1337`` i należy do grupy ``vagrant``
-- Upewnij się, że grupa ``vagrant`` istnieje i ma ``gid=1337``
+- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/jenkins.pp``
+- Upewnij się, że użytkownik ``jenkins`` istnieje, ma ``uid=1337`` i należy do grupy ``jenkins``
+- Upewnij się, że grupa ``jenkins`` istnieje i ma ``gid=1337``
 - Upewnij się, że:
 
-    - Katalog ``/var/www`` istnieje
-    - Właścicielem jego jest user ``vagrant``
-    - Właścicielem jego jest grupa ``vagrant``
+    - Katalog ``/home/jenkins`` istnieje
+    - Właścicielem jego jest user ``jenkins``
+    - Właścicielem jego jest grupa ``jenkins``
     - Ma uprawnienia ``rwxr-xr-x``
 
 Konfiguracja nginx
