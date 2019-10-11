@@ -544,7 +544,7 @@ Build Strategy
 
     Almost green... just some broken tests
 
-.. figure:: /_img/build-strategy.jpg
+.. figure:: /_img/build-strategy.png
     :scale: 25%
     :align: center
 

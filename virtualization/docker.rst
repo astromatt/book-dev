@@ -19,22 +19,24 @@ Installing
 
 Install docker from terminal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: console
+Preferred:
 
-    curl https://get.docker.com |sh
+    .. code-block:: console
+
+        $ curl https://get.docker.com |sh
 
 Alternatywnie:
 
     .. code-block:: console
 
-        sudo apt update
-        sudo apt install docker.io
+        $ sudo apt update
+        $ sudo apt install docker.io
 
 Requirements for workshop
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker pull python:3.7 \
+    $ docker pull python:3.7 \
         && docker pull postgres \
         && docker pull ubuntu \
         && docker pull bash
@@ -152,7 +154,7 @@ Searching
 
 .. code-block:: console
 
-    docker search NAME
+    $ docker search NAME
 
 Pulling from Docker Hub
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,17 +162,17 @@ Pulling from Docker Hub
 
 .. code-block:: console
 
-    docker pull NAME
+    $ docker pull IMAGE_NAME
 
 .. code-block:: console
 
-    docker pull ubuntu:18.10
-    docker pull ubuntu:latest
-    docker pull ubuntu          # will pull latest
+    $ docker pull alpine
 
 .. code-block:: console
 
-    docker pull alpine
+    $ docker pull ubuntu:18.04
+    $ docker pull ubuntu:latest
+    $ docker pull ubuntu          # will pull latest
 
 Run containers
 ^^^^^^^^^^^^^^
@@ -180,34 +182,40 @@ Run containers
 
 .. code-block:: console
 
-    docker run bash
+    $ docker run bash
 
 * ``-t`` - run pseudo terminal and attach to it
 * ``-i`` - interactive, keeps stdin open
-* ``--rm`` - Automatically remove the container when it exits
 
 .. code-block:: console
 
-    docker run -it bash
+    $ docker run -it bash
 
 * ``ctrl + p + q`` - quit container without stopping it
 * ``ctrl + d`` - exits and stops the container
 
 .. code-block:: console
 
-    docker run -it alpine sh
+    $ docker run -it alpine sh
 
-* ``-d`` - daemon (runs in the background)
-
-.. code-block:: console
-
-    docker run -d -it alpine sh
-
-* ``--name`` - named container
+Detach
+^^^^^^
+* Runs container in background
+* ``-d``
+* ``--detach``
 
 .. code-block:: console
 
-    docker run -d -it --name shell alpine sh
+    $ docker run -d -it alpine sh
+
+Name
+^^^^
+* named container
+* ``--name``
+
+.. code-block:: console
+
+    $ docker run -d -it --name shell alpine sh
 
 Show containers
 ^^^^^^^^^^^^^^^
@@ -215,13 +223,13 @@ Show containers
 
     .. code-block:: console
 
-        docker ps
+        $ docker ps
 
 * Show all containers, even not running:
 
     .. code-block:: console
 
-        docker ps -a
+        $ docker ps -a
 
 Attach to running containers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,20 +237,20 @@ Attach to running containers
 
     .. code-block:: console
 
-        docker attach CONTAINER_NAME_OR_ID
+        $ docker attach CONTAINER_NAME_OR_ID
 
 * Attach to running container and execute another process of bash:
 
     .. code-block:: console
 
-        docker exec -it CONTAINER_NAME_OR_ID bash
-        docker exec -u 0 -it CONTAINER_NAME_OR_ID bash      # as root
+        $ docker exec -it CONTAINER_NAME_OR_ID sh
+        $ docker exec -u 0 -it CONTAINER_NAME_OR_ID sh      # as root
 
 What application is running inside the container?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker top CONTAINER_NAME_OR_ID
+    $ docker top CONTAINER_NAME_OR_ID
 
 Stop containers
 ^^^^^^^^^^^^^^^
@@ -250,58 +258,45 @@ Stop containers
 
 .. code-block:: console
 
-    docker stop CONTAINER_NAME_OR_ID
+    $ docker stop CONTAINER_NAME_OR_ID
 
 .. code-block:: console
 
-    docker kill CONTAINER_NAME_OR_ID
+    $ docker kill CONTAINER_NAME_OR_ID
 
 Remove container
 ^^^^^^^^^^^^^^^^
-.. code-block:: console
+* Remove container
 
-    docker rm CONTAINER_NAME_OR_ID
+    .. code-block:: console
 
-Remove all stopped containers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: console
+        $ docker rm CONTAINER_NAME_OR_ID
 
-    docker rm $(docker ps -a -q)
+* Remove all stopped containers
+
+    .. code-block:: console
+
+        $ docker rm $(docker ps -a -q)
+
+* ``--rm`` - Automatically remove the container when it exits
+
+    .. code-block:: console
+
+        $ docker run --rm -it alpine sh
 
 Inspect
 ^^^^^^^
 .. code-block:: console
 
-    docker inspect jenkins
+    $ docker inspect jenkins
 
 Update
 ^^^^^^
 * Do not autostart ``jenkins`` container after Docker engine restart (computer reboot)
+
 .. code-block:: console
 
-    docker update --restart=no jenkins
-
-
-Images
-------
-
-Build images
-^^^^^^^^^^^^
-.. code-block:: console
-
-    docker build -t docker .
-
-List images
-^^^^^^^^^^^
-.. code-block:: console
-
-    docker images
-
-Remove images
-^^^^^^^^^^^^^
-.. code-block:: console
-
-    docker rmi IMAGE
+    $ docker update --restart=no jenkins
 
 
 Volumes
@@ -325,13 +320,13 @@ Creating persistent storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run -it -v /data --name bash alpine sh
-    echo 'hello' > /data/hello.txt
+    $ docker run -it -v /data alpine sh
+    $ echo 'hello' > /data/hello.txt
     # exit with ``ctrl+q+p``
 
 .. code-block:: console
 
-    ls /var/lib/docker/containers/volumes/.../
+    $ ls /var/lib/docker/containers/volumes/.../
 
 Attaching local dir to docker container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -339,31 +334,31 @@ Attaching local dir to docker container
 
 .. code-block:: console
 
-    docker run -v <host path>:<container path>[:FLAG]
+    $ docker run -v <host path>:<container path>[:FLAG]
 
 .. code-block:: console
 
-    docker run -d -P --name web -v /home/myproject:/data alpine sh
+    $ docker run -v /home/myproject:/data alpine sh
 
 Mount read-only filesystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run -d -P --name web -v /home/myproject:/data:ro alpine sh
+    $ docker run -v /home/myproject:/data:ro alpine sh
 
 Creating Volumes
 ^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker volume create -d flocker --opt o=size=20GB myvolume
-    docker run --detach -P -v myvolume:/data --name web alpine sh
+    $ docker volume create -d flocker --opt o=size=20GB myvolume
+    $ docker run -v myvolume:/data alpine sh
 
 Volume container
 ^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker create -v /data --name dbstore postgres /bin/true
-    docker run --detach --volumes-from dbstore --name db1 postgres
+    $ docker create -v /data --name dbstore postgres /bin/true
+    $ docker run --detach --volumes-from dbstore --name db1 postgres
 
 
 Docker network
@@ -395,26 +390,32 @@ Create network
 ^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker network create mynetwork
+    $ docker network create mynetwork
 
 .. code-block:: console
 
-    docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 mynetwork
+    $ docker network create -d bridge --subnet 192.168.0.0/24 --gateway 192.168.0.1 mynetwork
 
 .. code-block:: yaml
 
     version: '3'
 
     networks:
-        devtools-ecosystem:
+        mynetwork:
             driver: bridge
 
+
     services:
-      db:
+
+      host1:
         image: alpine
         networks:
           - mynetwork
 
+      host2:
+        image: alpine
+        networks:
+          - mynetwork
 
 List networks
 ^^^^^^^^^^^^^
@@ -445,22 +446,44 @@ Connect running container to network
 
 .. code-block:: console
 
-    docker run -d --name host1 -it alpine sh
-    docker run -d --name host2 -it alpine sh
+    $ docker run -d --name host1 -it alpine sh
+    $ docker run -d --name host2 -it alpine sh
 
-    docker network create mynetwork
-    docker network connect mynetwork host1
-    docker network connect mynetwork host2
+    $ docker network create mynetwork
+    $ docker network connect mynetwork host1
+    $ docker network connect mynetwork host2
 
 .. code-block:: console
 
-    docker exec host1 ping -c4 host2
+    $ docker exec host1 ping -c4 host2
 
 Inspect network
 ^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker network inspect
+    $ docker network inspect
+
+
+Images
+------
+
+Build images
+^^^^^^^^^^^^
+.. code-block:: console
+
+    $ docker build -t IMAGE_NAME .
+
+List images
+^^^^^^^^^^^
+.. code-block:: console
+
+    docker images
+
+Remove images
+^^^^^^^^^^^^^
+.. code-block:: console
+
+    docker rmi IMAGE_NAME_OR_ID
 
 
 Dockerfile
