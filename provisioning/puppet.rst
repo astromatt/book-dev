@@ -487,7 +487,7 @@ Przykłady
         ensure => directory,
         owner => "www-data",
         group => "www-data",
-        mode => 0755,
+        mode => "0755",
     }
 
 .. code-block:: ruby
@@ -531,14 +531,14 @@ Przykłady
         ensure => directory,
         owner => "vagrant",
         group => "vagrant",
-        mode => 0755,
+        mode => "0755",
     }
 
     file { "/var/www/database":
         ensure => directory,
         owner => "vagrant",
         group => "vagrant",
-        mode => 0700,
+        mode => "0700",
     }
 
     service { "nginx":
