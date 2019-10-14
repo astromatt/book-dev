@@ -18,19 +18,19 @@ Adapters
 Bridge
 ------
 * https://docs.docker.com/network/bridge/
-* are best when you need multiple containers to communicate on the same Docker host
+* Best when you need multiple containers to communicate on the same Docker host
 
 Host
 ----
-* are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated
+* Best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated
 
 Overlay
 -------
-* are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services
+* Best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services
 
 Macvlan
 -------
-* are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address
+* Best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address
 
 
 
@@ -54,25 +54,25 @@ List networks
 ^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker network ls
+    $ docker network ls
 
 Delete network
 ^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker network rm mynetwork
+    $ docker network rm mynetwork
 
 Connect new container to network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker network create mynetwork
-    docker run -d --net mynetwork --name host1 -it alpine sh
-    docker run -d --net mynetwork --name host2 -it alpine sh
+    $ docker network create mynetwork
+    $ docker run -d --net mynetwork --name host1 -it alpine sh
+    $ docker run -d --net mynetwork --name host2 -it alpine sh
 
 .. code-block:: console
 
-    docker exec host1 ping -c4 host2
+    $ docker exec host1 ping -c4 host2
 
 Connect running container to network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

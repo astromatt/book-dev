@@ -10,19 +10,100 @@ Build images
 ------------
 .. code-block:: console
 
-    $ docker build -t IMAGE_NAME .
+    $ docker build . -t IMAGE_NAME
+
+.. code-block:: console
+
+    $ docker build . -t mycontainer
+    Sending build context to Docker daemon  2.048kB
+    Step 1/3 : FROM alpine:latest
+     ---> 961769676411
+    Step 2/3 : RUN apk add bash
+     ---> Running in 5148740edf53
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+    (1/5) Installing ncurses-terminfo-base (6.1_p20190518-r0)
+    (2/5) Installing ncurses-terminfo (6.1_p20190518-r0)
+    (3/5) Installing ncurses-libs (6.1_p20190518-r0)
+    (4/5) Installing readline (8.0.0-r0)
+    (5/5) Installing bash (5.0.0-r0)
+    Executing bash-5.0.0-r0.post-install
+    Executing busybox-1.30.1-r2.trigger
+    OK: 15 MiB in 19 packages
+    Removing intermediate container 5148740edf53
+     ---> 99ec117fc810
+    Step 3/3 : CMD /bin/bash
+     ---> Running in 6a1b630dbfae
+    Removing intermediate container 6a1b630dbfae
+     ---> ce299736b126
+    Successfully built ce299736b126
+    Successfully tagged mycontainer:latest
+
+.. code-block:: console
+
+    $ docker build . -t mycontainer:1.0.0
+    Sending build context to Docker daemon  2.048kB
+    Step 1/3 : FROM alpine:latest
+     ---> 961769676411
+    Step 2/3 : RUN apk add bash
+     ---> Running in 5148740edf53
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+    (1/5) Installing ncurses-terminfo-base (6.1_p20190518-r0)
+    (2/5) Installing ncurses-terminfo (6.1_p20190518-r0)
+    (3/5) Installing ncurses-libs (6.1_p20190518-r0)
+    (4/5) Installing readline (8.0.0-r0)
+    (5/5) Installing bash (5.0.0-r0)
+    Executing bash-5.0.0-r0.post-install
+    Executing busybox-1.30.1-r2.trigger
+    OK: 15 MiB in 19 packages
+    Removing intermediate container 5148740edf53
+     ---> 99ec117fc810
+    Step 3/3 : CMD /bin/bash
+     ---> Running in 6a1b630dbfae
+    Removing intermediate container 6a1b630dbfae
+     ---> ce299736b126
+    Successfully built ce299736b126
+    Successfully tagged mycontainer:1.0.0
+
+.. code-block:: console
+
+    $ docker build . -t mycontainer
+    Sending build context to Docker daemon  2.048kB
+    Step 1/3 : FROM alpine:latest
+     ---> 961769676411
+    Step 2/3 : RUN apk add bash
+     ---> Running in 5148740edf53
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
+    fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
+    (1/5) Installing ncurses-terminfo-base (6.1_p20190518-r0)
+    (2/5) Installing ncurses-terminfo (6.1_p20190518-r0)
+    (3/5) Installing ncurses-libs (6.1_p20190518-r0)
+    (4/5) Installing readline (8.0.0-r0)
+    (5/5) Installing bash (5.0.0-r0)
+    Executing bash-5.0.0-r0.post-install
+    Executing busybox-1.30.1-r2.trigger
+    OK: 15 MiB in 19 packages
+    Removing intermediate container 5148740edf53
+     ---> 99ec117fc810
+    Step 3/3 : CMD /bin/bash
+     ---> Running in 6a1b630dbfae
+    Removing intermediate container 6a1b630dbfae
+     ---> ce299736b126
+    Successfully built ce299736b126
+    Successfully tagged mycontainer:latest
 
 List images
 -----------
 .. code-block:: console
 
-    docker images
+    $ docker images
 
 Remove images
 -------------
 .. code-block:: console
 
-    docker rmi IMAGE_NAME_OR_ID
+    $ docker rmi IMAGE_NAME_OR_ID
 
 
 Build Workflow
@@ -31,55 +112,19 @@ Build Workflow
 
     .. code-block:: dockerfile
 
-        FROM python:latest
-        CMD python
+        FROM alpine:latest
+        RUN apk add bash
+        CMD /bin/bash
 
 #. Build image
 
-    .. code-block:: console
-
-        $ docker build . -t mycontainer:latest
-        Sending build context to Docker daemon  4.096kB
-        Step 1/2 : FROM python:latest
-         ---> 02d2bb146b3b
-        Step 2/2 : CMD python
-         ---> Running in 34042e9ee32e
-        Removing intermediate container 34042e9ee32e
-         ---> 069469106d57
-        Successfully built 069469106d57
-        Successfully tagged mycontainer:latest
-
-    .. code-block:: console
-
-        $ docker build . -t mycontainer:1.0.0
-        Sending build context to Docker daemon  4.096kB
-        Step 1/2 : FROM python:latest
-         ---> 02d2bb146b3b
-        Step 2/2 : CMD python
-         ---> Using cache
-         ---> 5e633acf561a
-        Successfully built 5e633acf561a
-        Successfully tagged mycontainer:1.0.0
-
-    .. code-block:: console
-
-        $ docker build . -t mycontainer
-        Sending build context to Docker daemon  4.096kB
-        Step 1/2 : FROM python:latest
-         ---> 02d2bb146b3b
-        Step 2/2 : CMD python
-         ---> Running in b69fd76c216c
-        Removing intermediate container b69fd76c216c
-         ---> 5e633acf561a
-        Successfully built 5e633acf561a
-        Successfully tagged mycontainer:latest
+    $ docker build . -t mycontainer
 
 #. Run image
 
     .. code-block:: console
 
         $ docker run -it mycontainer
-        $ docker run -it mycontainer:1.0.0
 
 #. List images
 
@@ -99,11 +144,6 @@ FROM
 
 .. code-block:: dockerfile
 
-    FROM python:3.7
-    FROM python:latest
-
-.. code-block:: dockerfile
-
     FROM alpine
 
 .. code-block:: dockerfile
@@ -113,6 +153,22 @@ FROM
     FROM ubuntu:rolling  # released every 6 months (also LTS, if it was LTS release)
     FROM ubuntu:devel    # released every 6 months (only devel)
 
+.. code-block:: dockerfile
+
+    FROM python:3.7
+    FROM python:latest
+
+.. code-block:: dockerfile
+
+    FROM gcc:8
+    FROM gcc:9
+
+.. code-block:: dockerfile
+
+    FROM openjdk:8
+    FROM openjdk:8-alpine
+    FROM openjdk:12
+    FROM openjdk:12-alpine
 
 
 Execute shell commands
@@ -150,30 +206,33 @@ Example 2
 .. code-block:: dockerfile
 
     FROM alpine
-    RUN apk add git
+    RUN apk add bash
 
 .. code-block:: console
 
     $ docker build . -t mycontainer
-    Sending build context to Docker daemon  4.096kB
-    Step 1/2 : FROM alpine
+    Sending build context to Docker daemon  2.048kB
+    Step 1/3 : FROM alpine:latest
      ---> 961769676411
-    Step 2/2 : RUN apk add git
-     ---> Running in 107a2e82b087
+    Step 2/3 : RUN apk add bash
+     ---> Running in 5148740edf53
     fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/main/x86_64/APKINDEX.tar.gz
     fetch http://dl-cdn.alpinelinux.org/alpine/v3.10/community/x86_64/APKINDEX.tar.gz
-    (1/6) Installing ca-certificates (20190108-r0)
-    (2/6) Installing nghttp2-libs (1.39.2-r0)
-    (3/6) Installing libcurl (7.66.0-r0)
-    (4/6) Installing expat (2.2.8-r0)
-    (5/6) Installing pcre2 (10.33-r0)
-    (6/6) Installing git (2.22.0-r0)
+    (1/5) Installing ncurses-terminfo-base (6.1_p20190518-r0)
+    (2/5) Installing ncurses-terminfo (6.1_p20190518-r0)
+    (3/5) Installing ncurses-libs (6.1_p20190518-r0)
+    (4/5) Installing readline (8.0.0-r0)
+    (5/5) Installing bash (5.0.0-r0)
+    Executing bash-5.0.0-r0.post-install
     Executing busybox-1.30.1-r2.trigger
-    Executing ca-certificates-20190108-r0.trigger
-    OK: 21 MiB in 20 packages
-    Removing intermediate container 107a2e82b087
-     ---> f155fa7757ac
-    Successfully built f155fa7757ac
+    OK: 15 MiB in 19 packages
+    Removing intermediate container 5148740edf53
+     ---> 99ec117fc810
+    Step 3/3 : CMD /bin/bash
+     ---> Running in 6a1b630dbfae
+    Removing intermediate container 6a1b630dbfae
+     ---> ce299736b126
+    Successfully built ce299736b126
     Successfully tagged mycontainer:latest
 
 ``ENTRYPOINT``
@@ -236,7 +295,6 @@ Example 2
 * The main purpose of a ``CMD`` is to provide defaults for an executing container
 
 .. code-block:: dockerfile
-    :caption: CMD
 
     FROM alpine
     CMD ["/bin/ping", "127.0.0.1"]
@@ -475,32 +533,32 @@ Docker Hub
 
     .. code-block:: console
 
-        docker build -t mycontainer:1.0.0 .
+        $ docker build -t mycontainer:1.0.0 .
 
 #. Tag
 
     .. code-block:: console
 
-        docker tag mycontainer:1.0.0 myusername/mycontainer:latest
+        $ docker tag mycontainer:1.0.0 myusername/mycontainer:latest
 
 #. Publish
 
     .. code-block:: console
 
-        docker login
-        docker push myusername/mycontainer:latest
+        $ docker login
+        $ docker push myusername/mycontainer:latest
 
 #. Clean local build
 
     .. code-block:: console
 
-        docker image remove mycontainer:1.0.0
+        $ docker image remove mycontainer:1.0.0
 
 #. Run from Hub
 
     .. code-block:: console
 
-        docker run myusername/mycontainer
+        $ docker run myusername/mycontainer
 
 
 Assignments

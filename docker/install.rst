@@ -47,23 +47,3 @@ Linux
 Windows
 -------
 * https://docs.docker.com/docker-for-windows/
-
-
-Install docker from terminal
-============================
-
-Preferred
----------
-
-Alternative
------------
-
-
-Requirements for workshop
-=========================
-.. code-block:: console
-
-    $ docker pull python:3.7 \
-        && docker pull postgres \
-        && docker pull ubuntu \
-        && docker pull bash

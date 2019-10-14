@@ -2,6 +2,8 @@
 GIT Flow
 ********
 
+
+
 .. figure:: /_img/git-flow-whiteboard.jpg
     :scale: 25%
     :align: center
@@ -13,6 +15,10 @@ GIT Flow
     :align: center
 
     Build Strategy
+
+More information
+================
+.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/git-training-course Those slides will be converted to the book format with time.
 
 
 Konwencje nazewnicze
@@ -198,3 +204,8 @@ Przed wprowadzeniem jakichkolwiek zmian do gałęzi integracyjnych wymagany jest
     :align: center
 
     Karta podsumowania `Pull Request` z informacjami wynikowymi z systemu budowania.
+
+
+More information
+================
+.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/git-training-course Those slides will be converted to the book format with time.

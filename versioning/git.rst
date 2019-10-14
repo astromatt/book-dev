@@ -2,6 +2,9 @@
 GIT
 ***
 
+.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/git-training-course Those slides will be converted to the book format with time.
+
+
 Wprowadzenie
 ============
 * :cite:`GITDocumentation`
@@ -147,3 +150,8 @@ Subtree
 fsck and gc
 -----------
 Przeprowadź pełne ``git fsck --full`` na repozytorium, a następnie uruchom ``git gc --aggressive --prune=now``
+
+
+More information
+================
+.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/git-training-course Those slides will be converted to the book format with time.

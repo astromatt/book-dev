@@ -2,6 +2,9 @@
 JIRA
 ****
 
+More information
+================
+.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/git-training-course Those slides will be converted to the book format with time.
 
 .. toctree::
 

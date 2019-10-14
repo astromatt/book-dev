@@ -54,7 +54,7 @@ Ubuntu
 * https://ubuntu.com/about/release-cycle
 
 .. figure:: /_img/release-ubuntu.png
-    :scale: 50%
+    :scale: 35%
     :align: center
 
     Long term support and interim releases
@@ -68,5 +68,9 @@ Ubuntu
 
 Where docker store containers
 =============================
-* ``docker info``
 * ``/var/lib/docker/containers``
+
+.. code-block:: console
+
+    $ docker info |grep 'Docker Root Dir'
+    Docker Root Dir: /var/lib/docker

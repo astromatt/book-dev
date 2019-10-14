@@ -28,13 +28,13 @@ Docker-compose workflow
 
     .. code-block:: console
 
-        docker-compose up
+        $ docker-compose up
 
 #. Run in background (daemon)
 
     .. code-block:: console
 
-        docker-compose up -d
+        $ docker-compose up -d
 
 
 Network
@@ -91,7 +91,7 @@ Jenkins
 
     .. code-block:: console
 
-        docker-compose up -d
+        $ docker-compose up -d
 
 ``Django`` application
 ----------------------
@@ -118,12 +118,12 @@ Jenkins
 
 .. code-block:: console
 
-    docker-compose up -d
+    $ docker-compose up -d
 
 .. code-block:: console
 
-    docker swarm init
-    docker stack deploy -c docker-compose.yml my-stack
+    $ docker swarm init
+    $ docker stack deploy -c docker-compose.yml my-stack
 
 CI/CD ecosystem
 ---------------
@@ -189,7 +189,8 @@ CI/CD ecosystem
 
 .. code-block:: console
 
-    docker-compose up -d
+    $ docker-compose up -d
+
 
 Assignments
 ===========

@@ -90,10 +90,10 @@ Name
     b9e2e75cb7727cc43c6daff677b69d2fcae9077717c069190ab7bb3329339c4a
 
     $ docker ps
-    CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
-    b9e2e75cb772        alpine              "sleep 50"          5 seconds ago        Up 4 seconds                            sleeper
-    09f99d54cba4        alpine              "sh"                About a minute ago   Up About a minute                       serene_kare
-    b7583714a497        alpine              "sh"                About a minute ago   Up About a minute                       cocky_curie
+    CONTAINER ID        IMAGE     COMMAND      CREATED              STATUS              PORTS   NAMES
+    b9e2e75cb772        alpine    "sleep 50"   5 seconds ago        Up 4 seconds                sleeper
+    09f99d54cba4        alpine    "sh"         About a minute ago   Up About a minute           serene_kare
+    b7583714a497        alpine    "sh"         About a minute ago   Up About a minute           cocky_curie
 
 
 Environmental variables
@@ -118,15 +118,17 @@ Env-file
 * Add ``.env`` to ``.gitignore``
 * ``.env-sample`` in your repository
 
-.. code-block:: console
+.. code-block:: text
+    :caption: Contents of ``.env`` file
 
-    $ cat .env
     DATABASE_ENGINE=sqlite3
     DATABASE_HOST=localhost
     DATABASE_PORT=1337
     DATABASE_NAME=/tmp/db.sqlite3
     DATABASE_USER=root
     DATABASE_PASSWORD=mypassword
+
+.. code-block:: console
 
     $ docker run --env-file=.env alpine env
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
