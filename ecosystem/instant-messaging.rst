@@ -1,3 +1,3 @@
 *****************
-GitHub Enterprise
+Instant Messaging
 *****************

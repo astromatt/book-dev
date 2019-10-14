@@ -1,11 +1,11 @@
 #!/usr/bin/env python2
 
-import httplib
-import ldap
-import urllib
 import logging
 import re
+import urllib
 
+import httplib
+import ldap
 
 """
 Basic configuration

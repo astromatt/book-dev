@@ -4,38 +4,37 @@ GITLab
 
 
 Install
--------
+=======
 .. warning:: Machine must have at least 2 GB RAM, otherwise freezes. Amazon ``t2.micro`` is not good.
 
 .. code-block:: console
 
-    mkdir -p /home/gitlab
-    chmod 777 /home/gitlab
-
-.. code-block:: console
-
-    docker run \
-        --detach \
-        --hostname gitlab.example.com \
-        --publish 9922:22 \
-        --publish 9980:80 \
-        --publish 99443:443 \
+    $ mkdir -p /home/gitlab
+    $ chmod 777 /home/gitlab
+    $ docker run \
         --name gitlab \
+        --detach \
         --restart always \
+        --rm \
+        --hostname gitlab.example.com \
+        --network ecosystem \
+        --publish 2222:22 \
+        --publish 2280:80 \
+        --publish 22443:443 \
         --volume /home/gitlab/config:/etc/gitlab \
         --volume /home/gitlab/logs:/var/log/gitlab \
         --volume /home/gitlab/data:/var/opt/gitlab \
         gitlab/gitlab-ce:latest
 
 Run from docker-compose
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 .. code-block:: yaml
     :caption: ``gitlab.yaml``
 
     version: '3'
 
     networks:
-        devtools-ecosystem:
+        ecosystem:
             driver: bridge
 
     services:
@@ -45,11 +44,11 @@ Run from docker-compose
             hostname: gitlab.example.com
             restart: "always"
             ports:
-                - "22:22"
-                - "80:80"
-                - "443:443"
+                - "2222:22"
+                - "2280:80"
+                - "22443:443"
             networks:
-                - devtools-ecosystem
+                - ecosystem
             volumes:
                 - /home/gitlab/config:/etc/gitlab
                 - /home/gitlab/logs:/var/log/gitlab
@@ -61,12 +60,12 @@ Run from docker-compose
 
 
 Configuration
--------------
+=============
 .. code-block:: console
 
-    docker exec -it gitlab vi /etc/gitlab/gitlab.rb
-    docker restart gitlab
+    $ docker exec -it gitlab vi /etc/gitlab/gitlab.rb
+    $ docker restart gitlab
 
 Login
------
+=====
 .. warning:: Username do zalogowania to ``root``

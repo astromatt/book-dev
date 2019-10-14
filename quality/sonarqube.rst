@@ -1,9 +1,10 @@
+*********
 SonarQube
-=========
+*********
 
 
 Sonar Family
-------------
+============
 * SonarQube
 * SonarCloud
 * SonarLint
@@ -11,16 +12,16 @@ Sonar Family
 
 
 Install
--------
+=======
 .. code-block:: console
 
     docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
 
 SonarScanner
-------------
+============
 
 Set-up
-^^^^^^
+------
 .. code-block:: console
 
     cd PROJECT_DIRECTORY
@@ -35,41 +36,44 @@ Set-up
         ln -s /opt/sonar-scanner-*/bin/sonar-scanner /usr/bin/sonar-scanner
 
 Running
-^^^^^^^
+-------
 .. code-block:: console
 
     VERSION=$(git log -1 --format='%H')
     nosetests --with-coverage --cover-erase --cover-xml --cover-inclusive --with-xunit --xunit-file=xunit.xml --cover-xml-file=coverage.xml
     sonar-scanner -Dsonar.projectVersion=$VERSION -Dproject.settings=/src/sonar-python.properties
 
+Configuration
+=============
+
 Python
-^^^^^^
+------
 .. literalinclude:: src/sonar-python.properties
     :language: properties
 
 JavaScript
-^^^^^^^^^^
+----------
 .. literalinclude:: src/sonar-javascript.properties
     :language: properties
 
 CSS
-^^^
+---
 .. literalinclude:: src/sonar-css.properties
     :language: properties
 
 HTML
-^^^^
+----
 .. literalinclude:: src/sonar-html.properties
     :language: properties
 
 Multi-language
-^^^^^^^^^^^^^^
+--------------
 .. literalinclude:: src/sonar-multilanguage.properties
     :language: properties
 
 
 Budowanie Pull Request
-----------------------
+======================
 .. code-block:: properties
 
     sonar.pullrequest.base=master
@@ -78,12 +82,14 @@ Budowanie Pull Request
     sonar.pullrequest.provider=GitHub
     sonar.pullrequest.github.repository=my-company/my-repo https://blog.sonarsource.com/sonarcloud-loves-your-build-pipeline
 
-Analiza kodu za pomocą ``mvn``
-------------------------------
 
-pom.xml
-^^^^^^^
+Using with maven
+================
+
+Configuration
+-------------
 .. code-block:: xml
+    :caption: ``pom.xml``
 
     <settings>
         <pluginGroups>
@@ -105,31 +111,31 @@ pom.xml
          </profiles>
     </settings>
 
-Używnianie
-^^^^^^^^^^
+Usage
+-----
 .. code-block:: console
 
     mvn sonar:sonar
 
-Dokumentacja
-------------
+Documentation
+=============
 * https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven
 
 
-Zadania
--------
+Assignments
+===========
 
-Instalacja
-^^^^^^^^^^
+Installation
+------------
 - Zainstaluj `SonarQube`
 
 .. tip:: User admin, Hasło admin
 
 Wrzucanie wyników statycznej analizy kodu
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 - Czy wcześniej zainstalowałeś `Bitbucket Server`?
 
-    - Nie - Zaciągnij repozytorium https://github.com/SonarSource/sonar-training-examples.git i wrzuć wyniki odpalając ``mvn``
+    - Nie - Zaciągnij repozytorium https://github.com/AstroTech/ecosystem-example-java.git i wrzuć wyniki odpalając ``mvn``
     - Tak - Zaciągnij repozytorium ``sonar-training-examples`` z twojej instancji `Bitbucket Server`
 
 - Skonfiguruj aby statyczna analiza kodu uruchamiała z `Jenkins`

@@ -1,15 +1,16 @@
+****************
+Mutation Testing
+****************
+
+
 Mutation Testing
 ================
 
-Mutation Testing
-----------------
+Pierwsza publikacja na temat testów mutacyjnych pojawiła się w 1978 roku :cite:`DeMillo1978`.
 
-Pierwsza publikacja na temat testów mutacyjnych pojawiła się w 1978 roku [DLS78]_.
-
-.. [DLS78] Richard A. DeMillo, Richard J. Lipton, and Fred G. Sayward. Hints on test data selection: Help for the practicing programmer. IEEE Computer, 11(4):34-41. April 1978.
 
 Rodzaje mutatorów
------------------
+=================
 
 .. figure:: /_img/ecosystem-pitest-mutators-01.jpg
     :scale: 50%

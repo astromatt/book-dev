@@ -1,8 +1,8 @@
-import httplib
-import urllib
 import logging
 import re
+import urllib
 
+import httplib
 
 """
 .. todo::

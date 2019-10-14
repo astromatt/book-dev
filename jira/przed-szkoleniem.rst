@@ -22,6 +22,10 @@ Instalacja
 - Jaka baza danych
 - SSL proxy
 
+Dokumentacja
+------------
+- https://confluence.atlassian.com/display/JIRA/JIRA+Documentation
+
 Konferencje
 -----------
 - Atlassian Camp (development)

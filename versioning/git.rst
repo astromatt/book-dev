@@ -4,6 +4,7 @@ GIT
 
 Wprowadzenie
 ============
+* :cite:`GITDocumentation`
 
 Opis dostępnych darmowych klientów gita
 ---------------------------------------
@@ -68,7 +69,7 @@ Jenkins + Git Bisect Run
 
 .. code-block:: console
 
-    $ git bisect start @                                # startujemy git bisect z obecnym commitem jako bad 
+    $ git bisect start @                                # startujemy git bisect z obecnym commitem jako bad
     $ git bisect good `git rev-list --max-parents=0 @`  # dobry commit - początek repo, można przekazać inny commit żeby nie zaczynać zawsze od początku
     $ git bisect run ./test.sh                          # zestaw testów gdzie exit code > 0 oznacza bad commit
     $ git log --format="%ae"                            # wylistowanie emaila osoby która wprowadziła buga

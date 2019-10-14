@@ -1,6 +1,6 @@
 from pprint import pprint
-from atlassian import Jira
 
+from atlassian import Jira
 
 jira = Jira(
     url="http://localhost:8000/",

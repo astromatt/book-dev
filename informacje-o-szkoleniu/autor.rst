@@ -1,5 +1,6 @@
+******
 Author
-------
+******
 
 :name: `Matt Harasymczuk <http://astrotech.io>`_
 :email: `devops@astrotech.io <mailto:devops@astrotech.io>`_

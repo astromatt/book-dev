@@ -26,7 +26,6 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
     -- Kent Beck, 1999
 
 .. figure:: /_img/agile-understanding.png
-    :name: figure-agile-understanding
     :scale: 75%
     :align: center
 

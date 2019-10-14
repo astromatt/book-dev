@@ -1,13 +1,18 @@
+**********
 PostgreSQL
-==========
+**********
 
+Install
+=======
 .. code-block:: console
 
-    apt-get install --yes postgresql
-    cat /etc/postgresql/9.3/main/pg_hba.conf
+    $ apt install --yes postgresql
 
-.. code-block:: text
+Configure
+=========
+.. code-block:: console
 
+    $ cat /etc/postgresql/12.0/main/pg_hba.conf
     # TYPE DATABASE USER        ADDRESS         METHOD
     local   all     postgres                    peer
     local   all     all                         peer
@@ -17,14 +22,11 @@ PostgreSQL
 
 .. code-block:: console
 
-    cat /etc/postgresql/9.3/main/postgresql.conf
-
-.. code-block:: cfg
-
-    data_directory = '/var/lib/postgresql/9.3/main'
-    hba_file = '/etc/postgresql/9.3/main/pg_hba.conf'
-    ident_file = '/etc/postgresql/9.3/main/pg_ident.conf'
-    external_pid_file = '/var/run/postgresql/9.3-main.pid'
+    $ cat /etc/postgresql/12.0/main/postgresql.conf
+    data_directory = '/var/lib/postgresql/12.0/main'
+    hba_file = '/etc/postgresql/12.0/main/pg_hba.conf'
+    ident_file = '/etc/postgresql/12.0/main/pg_ident.conf'
+    external_pid_file = '/var/run/postgresql/12.0-main.pid'
     listen_addresses = '*'
     port = 5432
     max_connections = 100

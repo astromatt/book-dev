@@ -1,5 +1,6 @@
+*****************
 Program Szkolenia
-=================
+*****************
 
 .. todo:: stworzyć podział na dni szkolenia i bardziej dokładny opis agendy
 .. todo:: stworzyć ankietę nie tylko do poszczególnych osób, ale także do grupy, poziom zaawansowania, zainteresowanie technologiami, doświadczenie zespołu, technologie w których zespół robi, grupa docelowa

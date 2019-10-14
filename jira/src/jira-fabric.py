@@ -1,10 +1,11 @@
 #!/usr/bin/env python2
 
+from datetime import datetime
+
 from fabric.api import *
 from fabric.colors import *
 from fabric.contrib.console import confirm
 from fabric.tasks import Task
-from datetime import datetime
 
 
 class CloneTask(Task):

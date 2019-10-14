@@ -1,5 +1,6 @@
 Jira Software (Agile)
 =====================
+* :cite:`AgileManifesto2001`
 
 Project Management
 ------------------

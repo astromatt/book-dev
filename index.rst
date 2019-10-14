@@ -34,6 +34,31 @@ Wprowadzenie
     /wprowadzenie/buzzwordy.rst
     /wprowadzenie/linki.rst
 
+*********
+Ecosystem
+*********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Ecosystem
+
+    /ecosystem/api.rst
+    /ecosystem/binary-repository.rst
+    /ecosystem/ci-cd.rst
+    /ecosystem/code-repository.rst
+    /ecosystem/data-exploration.rst
+    /ecosystem/database.rst
+    /ecosystem/instant-messaging.rst
+    /ecosystem/issue-tracker.rst
+    /ecosystem/knowledge-base.rst
+    /ecosystem/logging.rst
+    /ecosystem/monitoring.rst
+    /ecosystem/provisioning.rst
+    /ecosystem/quality.rst
+    /ecosystem/user-directory.rst
+    /ecosystem/versioning.rst
+    /ecosystem/virtualization.rst
+
 
 **************
 User Directory
@@ -112,6 +137,15 @@ Database
     /database/postgresql.rst
     /database/dbunit.rst
 
+****************
+Data exploration
+****************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Data exploration
+
+    /data-exploration/superset.rst
 
 *****************
 Instant Messaging
@@ -133,7 +167,6 @@ Issue Tracker
     :numbered:
     :caption: Issue Tracker
 
-    /issue-tracker/jira.rst
     /issue-tracker/redmine.rst
     /issue-tracker/trello.rst
 
@@ -189,7 +222,6 @@ Provisioning
     /provisioning/ansible.rst
     /provisioning/chef.rst
     /provisioning/puppet.rst
-    /provisioning/puppet-english.rst
     /provisioning/salt-stack.rst
 
 *****************
@@ -209,6 +241,18 @@ Quality and Tests
     /quality/sonarlint.rst
     /quality/sonarqube.rst
     /quality/valgrind.rst
+
+
+
+****
+Jira
+****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Jira
+
+    /jira/index.rst
 
 *******
 Vagrant
@@ -237,6 +281,8 @@ Docker
     /docker/network.rst
     /docker/volumes.rst
     /docker/docker-compose.rst
+    /docker/build.rst
+    /docker/docker-registry.rst
     /docker/scaling.rst
     /docker/kubernetes.rst
 

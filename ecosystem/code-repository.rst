@@ -1,3 +1,3 @@
 ***************
-Docker Registry
+Code Repository
 ***************

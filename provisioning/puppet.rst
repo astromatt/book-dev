@@ -1,19 +1,12 @@
+******
 Puppet
-======
+******
 
-.. todo:: sprawdzić czy działają tematy związane z tworzeniem faktów
-.. todo:: sprawdzić jak zachowa się to z Facter
-.. todo:: sprawdzić deklarowanie i używanie zmiennych
-.. todo:: podzielić Puppet na osobne pliki per temat (zadanie do rozwiązania)
-.. todo:: co z tematem odpalania jako user a nie root?
-.. todo:: uspójnić wszędzie nazwy userów i grup (vagrant, ubuntu, www-data, myuser) wybrać jeden
-.. todo:: błąd ze sprawdzaniem czy user i grupa www-data istnieją, kiedy wykorzystujemy moduł apache
 
 .. contents::
 
 Architektura
-------------
-
+============
 * zasada działania
 * infrastructure as a code
 * ad hoc changes
@@ -22,9 +15,10 @@ Architektura
 * developer env changes
 * instalacja ręczna pakietów
 
-Jak działa
-^^^^^^^^^^
-manifest.pp
+
+Manifests
+=========
+* Files with ``.pp`` extension
 
 .. code-block:: ruby
 
@@ -47,37 +41,37 @@ manifest.pp
     }
 
 Model
-^^^^^
+-----
 * klient server
 * standalone - puppet apply
 * fakty i kolejność wykonywania manifestów
 
 Components
-^^^^^^^^^^
-* manifests (pliki z rozszerzeniem ``.pp``)
+----------
 * zmienne
 * classes
 * resources
 * facts
 
 Puppet language
-^^^^^^^^^^^^^^^
+---------------
 * DSL
 * ruby
 * ERB templates
 
+
 Templates
----------
+=========
 * ERB templates
 
 Comment
-^^^^^^^
+-------
 .. code-block:: erb
 
     <%# This is a comment. %>
 
 Variables
-^^^^^^^^^
+---------
 There are two ways to access variables in an ERB template:
 
 .. code-block:: erb
@@ -95,14 +89,14 @@ Example:
         scope["ntp::tinker"]
 
 Printing variables
-^^^^^^^^^^^^^^^^^^
+------------------
 .. code-block:: erb
 
     ServerName <%= @fqdn %>
     ServerAlias <%= @hostname %>
 
 If
-^^
+--
 .. code-block:: text
 
     if <CONDITION>
@@ -118,7 +112,7 @@ If
     <% end %>
 
 For
-^^^
+---
 .. code-block:: erb
 
     <% @values.each do |val| -%>
@@ -134,46 +128,28 @@ If $values was set to ["one", "two"], this example would produce:
 
 
 Instalacja i konfiguracja
--------------------------
+=========================
 .. code-block:: console
 
-    sudo apt update
-    sudo apt install puppet
+    $ sudo apt update
+    $ sudo apt install puppet
 
-Zaglądnij do katalogu ``/etc/puppet``.
-Co się tam znajduje?
-
-Jeżeli nie ma katalogu ``/etc/puppet/manifests`` to go stwórz.
-
-    .. code-block:: console
-
-        mkdir -p /etc/puppet/manifests
-
-Przejdź do katalogu ``/etc/puppet/manifests``, jeżeli.
-
-.. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Wersja ta może być niekompatybilna z modułami pobieranymi przez Puppet (np. Apache, Tomcat, Java). Rozwiązaniem jest ściąganie modułów w niższych wersjach (pasujących do wersji 3.8.5) lub instalacja Puppet w wersji wyższej niż ta w LTS.
+* Zaglądnij do katalogu ``/etc/puppet``.
+* Co się tam znajduje?
+* Jeżeli nie ma katalogu ``/etc/puppet/code`` to go stwórz
 
     .. code-block:: console
 
-        # Instalacja puppet w ostatniej wersji
+        $ mkdir -p /etc/puppet/manifests
 
-        # Yum-based systems (np. Enterprise Linux 7)
-        sudo rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm
-        sudo yum -y install puppet-agent
-        export PATH=/opt/puppetlabs/bin:$PATH
+* Przejdź do katalogu ``/etc/puppet/code``
 
-        # Apt-based systems (np. Ubuntu 16.04 Xenial Xerus)
-        wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
-        sudo dpkg -i puppet5-release-xenial.deb
-        sudo apt update
-        sudo apt -y install puppet-agent
-        export PATH=/opt/puppetlabs/bin:$PATH
 
 Resources
----------
+=========
 
 File
-^^^^
+----
 .. code-block:: ruby
 
     file { "resource title":
@@ -213,7 +189,7 @@ File
     }
 
 ensure
-
+------
 (Property: This attribute represents concrete state on the target system.)
 
 Whether the file should exist, and if so what kind of file it should be. Possible values are present, absent, file, directory, and link.
@@ -223,7 +199,6 @@ Whether the file should exist, and if so what kind of file it should be. Possibl
 :file: ensures it’s a normal file, and enables use of the content or source attribute.
 :directory: ensures it’s a directory, and enables use of the source, recurse, recurselimit, ignore, and purge attributes.
 :link: ensures the file is a symlink, and requires that you also set the target attribute. Symlinks are supported on all Posix systems and on Windows Vista / 2008 and higher. On Windows, managing symlinks requires Puppet agent’s user account to have the “Create Symbolic Links” privilege; this can be configured in the “User Rights Assignment” section in the Windows policy editor. By default, Puppet agent runs as the Administrator account, which has this privilege.
-
 
 .. code-block:: ruby
 
@@ -238,121 +213,138 @@ Whether the file should exist, and if so what kind of file it should be. Possibl
       target => "/etc/inet/inetd.conf",
     }
 
+Unless
+------
+.. code-block:: ruby
+
+    exec { "set hostname":
+        command => "/bin/hostname -F /etc/hostname",
+        unless  => "/usr/bin/test $(hostname) = $(/bin/cat /etc/hostname)",
+    }
+
+Podmiana zawartości w pliku
+---------------------------
+.. code-block:: ruby
+
+    file { "/tmp/my-file.pp":
+        ensure  => present,
+        owner   => root,
+        group   => root,
+        mode    => "0644",
+        content => "Lorem ipsum...\n",
+    }
 
 HTTPS problem
--------------
+=============
 Gdyby wystąpił problem z certyfikatem ``ssl`` przy instalacji modułów należy:
 
 - postaw maszynę w Amazonie (Ubuntu LTS)
-- zainstaluj squid
+- zainstaluj squid:
 
-.. code-block:: console
+    .. code-block:: console
 
-    sudo apt update
-    sudo apt install squid
+        $ sudo apt update
+        $ sudo apt install squid
 
 - na maszynie gościa (tam gdzie chcesz instalować moduł Puppet ustaw:
 
+    .. code-block:: console
 
-.. code-block:: console
-
-    export http_proxy=http://<IP>:3128
-    export https_proxy=http://<IP>:3128
+        $ export http_proxy=http://<IP>:3128
+        $ export https_proxy=http://<IP>:3128
 
 Lub:
 
-.. code-block:: ini
+    .. code-block:: ini
 
-    [user]
-    http_proxy = http://<IP>:3128
-    https_proxy = http://<IP>:3128
+        [user]
+        http_proxy = http://<IP>:3128
+        https_proxy = http://<IP>:3128
 
-.. code-block:: console
+    .. code-block:: console
 
-    sudo service puppet restart
-    sudo su -
-    puppet module install
+        $ sudo service puppet restart
+        $ sudo su -
+        $ puppet module install
 
 
 Narzędzia pomocnicze
---------------------
+====================
 
 Facter
-^^^^^^
-Przyjrzyj się wynikom poleceń:
+------
+* Przyjrzyj się wynikom poleceń:
 
-.. code-block:: console
+    .. code-block:: console
 
-    facter
-    facter ipaddress
-    facter lsbdistdescription
+        $ facter
+        $ facter ipaddress
+        $ facter lsbdistdescription
 
-Co zauważyłeś? Jak można wykorzystać te informacje?
+* Co zauważyłeś? Jak można wykorzystać te informacje?
+* Kod przedstawia wynik polecenia ``facter`` na świeżej maszynie `Ubuntu` postawionej w `Amazon AWS`:
 
-Kod przedstawia wynik polecenia ``facter`` na świeżej maszynie `Ubuntu` postawionej w `Amazon AWS`
+    .. literalinclude:: src/facter.txt
+        :language: console
 
-.. literal-include:: src/facter.txt
-    :language: console
+Korzystanie z faktów w manifestach
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Sposób klasyczny, jako zmienne na głównym poziomie
 
-Korzystanie z faktów w manifestach:
+    .. code-block:: ruby
 
-:Sposób klasyczny, jako zmienne na głównym poziomie:
+        # Definicja
+        operatingsystem = "Ubuntu"
 
-.. code-block:: ruby
+        # Wykorzystanie
+        case $::operatingsystem {
+          "CentOS": { include centos }
+          "MacOS":  { include mac }
+        }
 
-    # Definicja
-    operatingsystem = "Ubuntu"
+* Jako zmienne w tablicy faktów
 
-    # Wykorzystanie
-    case $::operatingsystem {
-      "CentOS": { include centos }
-      "MacOS":  { include mac }
-    }
+    .. code-block:: ruby
 
-:Jako zmienne w tablicy faktów:
+        # Definicja
+        $facts["fact_name"] = "Ubuntu"
 
-.. code-block:: ruby
+        # Wykorzystanie
+        case $facts["fact_name"] {
+          "CentOS": { include centos }
+          "MacOS":  { include mac }
+        }
 
-    # Definicja
-    $facts["fact_name"] = "Ubuntu"
+* Tworzenie nowych faktów:
 
-    # Wykorzystanie
-    case $facts["fact_name"] {
-      "CentOS": { include centos }
-      "MacOS":  { include mac }
-    }
+    .. code-block:: ruby
 
-Tworzenie nowych faktów:
+        require "facter"
 
-.. code-block:: ruby
+        Facter.add(:system_role) do
+          setcode "cat /etc/system_role"
+        end
 
-    require "facter"
+    .. code-block:: ruby
 
-    Facter.add(:system_role) do
-      setcode "cat /etc/system_role"
-    end
+        require "facter"
 
-.. code-block:: ruby
+        Facter.add(:system_role) do
+          setcode do
+            Facter::Util::Resolution.exec("cat /etc/system_role")
+          end
+        end
 
-    require "facter"
+* Druga metoda tworzenia faktów:
 
-    Facter.add(:system_role) do
-      setcode do
-        Facter::Util::Resolution.exec("cat /etc/system_role")
-      end
-    end
+    .. code-block:: console
 
-Druga metoda tworzenia faktów:
-
-.. code-block:: console
-
-    export FACTER_system_role=$(cat /etc/system_role); facter
+        export FACTER_system_role=$(cat /etc/system_role); facter
 
 Hiera
-^^^^^
-* ``/etc/puppet/hiera.yaml``
-
+-----
 .. code-block:: yaml
+    :caption: ``/etc/puppet/hiera.yaml``
 
     ---
     :backends:
@@ -370,68 +362,67 @@ Hiera
       - console
 
 .. code-block:: yaml
+    :caption: ``/etc/puppet/hiera.yaml``
 
     nginx::nginx_servers:
-         "devops-alldomains":
+         'devops-alldomains':
              server_name:
-                 - "~^(?<fqdn>.+?)$"
-             www_root: "/var/www/$fqdn"
+                 - '~^(?<fqdn>.+?)$'
+             www_root: '/var/www/$fqdn'
              index_files:
-                 - "index.php"
+                 - 'index.php'
              try_files:
-                 - "$uri"
-                 - "$uri/"
-                 - "/index.php?$args"
-             access_log: "/var/log/nginx/devops-alldomains-access.log"
-             error_log: "/var/log/nginx/devops-alldomains-error.log"
-
-         "devops-alldomains-ssl":
+                 - '$uri'
+                 - '$uri/'
+                 - '/index.php?$args'
+             access_log: '/var/log/nginx/devops-alldomains-access.log'
+             error_log: '/var/log/nginx/devops-alldomains-error.log'
+         'devops-alldomains-ssl':
              server_name:
-                 - "~^(?<fqdn>.+?)$"
-             listen_port: "443"
-             ssl_port: "443"
-             www_root: "/var/www/$fqdn"
+                 - '~^(?<fqdn>.+?)$'
+             listen_port: '443'
+             ssl_port: '443'
+             www_root: '/var/www/$fqdn'
              ssl: true
-             ssl_key: "/etc/ssl/www/$fqdn.key"
-             ssl_cert: "/etc/ssl/www/$fqdn.crt"
+             ssl_key: '/etc/ssl/www/$fqdn.key'
+             ssl_cert: '/etc/ssl/www/$fqdn.crt'
              index_files:
-                 - "index.php"
+                 - 'index.php'
              try_files:
-                 - "$uri"
-                 - "$uri/"
-                 - "/index.php?$args"
-             access_log: "/var/log/nginx/devops-alldomains-access-ssl.log"
-             error_log: "/var/log/nginx/devops-alldomains-error-ssl.log"
+                 - '$uri'
+                 - '$uri/'
+                 - '/index.php?$args'
+             access_log: '/var/log/nginx/devops-alldomains-access-ssl.log'
+             error_log: '/var/log/nginx/devops-alldomains-error-ssl.log'
 
      nginx::nginx_locations:
-         "devops-alldomains-loc":
-             location: "~ \.php$"
-             www_root: "/var/www/$fqdn"
-             server: "devops-alldomains"
-             fastcgi: "unix:/var/run/php7-fpm.sock"
-             fastcgi_split_path: "^(.+\.php)(/.*)$"
-             fastcgi_index: "index.php"
+         'devops-alldomains-loc':
+             location: '~ \.php$'
+             www_root: '/var/www/$fqdn'
+             server: 'devops-alldomains'
+             fastcgi: 'unix:/var/run/php7-fpm.sock'
+             fastcgi_split_path: '^(.+\.php)(/.*)$'
+             fastcgi_index: 'index.php'
              fastcgi_param:
-                 "SCRIPT_FILENAME": "$document_root$fastcgi_script_name"
-
-         "devops-alldomains-ssl-loc":
-             location: "~ \.php$"
-             www_root: "/var/www/$fqdn"
-             server: "devops-alldomains-ssl"
+                 'SCRIPT_FILENAME': '$document_root$fastcgi_script_name'
+         'devops-alldomains-ssl-loc':
+             location: '~ \.php$'
+             www_root: '/var/www/$fqdn'
+             server: 'devops-alldomains-ssl'
              ssl: true
              ssl_only: true
-             fastcgi: "unix:/var/run/php7-fpm.sock"
-             fastcgi_split_path: "^(.+\.php)(/.*)$"
-             fastcgi_index: "index.php"
+             fastcgi: 'unix:/var/run/php7-fpm.sock'
+             fastcgi_split_path: '^(.+\.php)(/.*)$'
+             fastcgi_index: 'index.php'
              fastcgi_param:
-                 "SCRIPT_FILENAME": "$document_root$fastcgi_script_name"
+                 'SCRIPT_FILENAME': '$document_root$fastcgi_script_name'
 
 Augias
-^^^^^^
+------
 
 
-Przykłady
----------
+Examples
+========
 .. code-block:: ruby
 
     Exec {
@@ -579,36 +570,16 @@ Przykłady
         require => Exec["python requirements"],
     }
 
-Unless
-^^^^^^
-.. code-block:: ruby
 
-    exec { "set hostname":
-        command => "/bin/hostname -F /etc/hostname",
-        unless  => "/usr/bin/test $(hostname) = $(/bin/cat /etc/hostname)",
-    }
-
-Podmiana zawartości w pliku
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: ruby
-
-    file { "/tmp/my-file.pp":
-        ensure  => present,
-        owner   => root,
-        group   => root,
-        mode    => "0644",
-        content => "Lorem ipsum...\n",
-    }
-
-Moduły
-------
+Modules
+=======
 .. code-block:: console
 
     puppet module search apache
     puppet module install puppetlabs-apache
 
 Java
-^^^^
+----
 .. code-block:: ruby
 
     class { "java" :
@@ -633,7 +604,7 @@ Java
     }
 
 JBoss
-^^^^^
+-----
 * https://github.com/coi-gov-pl/puppet-jboss
 
 To install JBoss Application Server you can use just, it will install Wildfly 8.2.0.Final by default:
@@ -673,116 +644,164 @@ or use hiera:
     }
 
 
-Przydatny linki
+References
+===============
+* https://docs.puppet.com/puppet/
+
+
+Assignments
+===========
+
+Puppet package installation
+---------------------------
+:English:
+    * Create manifest in ``/etc/puppet/code/packages.pp``
+    * `Puppet` should install those packages:
+
+        * ``nmap``
+        * ``htop``
+        * ``git``
+
+    * Make sure that ``apt update`` command is run before
+
+:Polish:
+    * Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/packages.pp``
+    * Zainstaluj następujące pakiety za pomocą `Puppet`:
+
+        * ``nmap``
+        * ``htop``
+        * ``git``
+
+    * Upewnij się by `Puppet` wykonał polecenie ``apt update`` na początku
+
+Hostname change
 ---------------
-* https://docs.puppet.com/puppet/4.9/lang_facts_and_builtin_vars.html#language:-facts-and-built-in-variables
+:English:
+    - Create manifest in ``/etc/puppet/code/hostname.pp``
+    - Using manifest change the hostname to ``ecosystem.local``
+    - Make sure that command ``hostname`` returns valid output
+    - Make sure that ``hostname`` do not restores to default after reboot
 
+:Polish:
+    - Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/hostname.pp``
+    - Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
+    - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
+    - (jeżeli korzystasz z Vagrant) Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
+    - Hostname zmienia się na dwa sposoby:
 
-Zadania do rozwiązania
-----------------------
+        * podmiana zawartości pliku ``/etc/hostname`` i uruchomienie ``hostname -F /etc/hostname``
+        * uruchomienie polecenia ``hostnamectl set-hostname ...``
 
-Instalacja pakietów za pomocą `Puppet`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/packages.pp``
-- Zainstaluj następujące pakiety za pomocą `Puppet`:
+Users, Groups and Directories management
+----------------------------------------
+:English:
+    - Create manifest in ``/etc/puppet/code/users.pp``
+    - Make sure group ``mygroup`` exists and has ``gid=1337``
+    - Make sure user ``myuser`` exists and has ``uid=1337`` and belongs to ``mygroup``
+    - Make sure:
 
-    - ``nmap``
-    - ``htop``
-    - ``git``
+        - Directory ``/home/myuser`` exists
+        - Owner is set to ``myuser``
+        - Group is set to ``mygroup``
+        - Has ``rwxr-xr-x`` permissions
 
-- Upewnij się by `Puppet` wykonał polecenie ``apt update`` na początku
+:Polish:
+    - Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/users.pp``
+    - Upewnij się, że użytkownik ``myuser`` istnieje, ma ``uid=1337`` i należy do grupy ``mygroup``
+    - Upewnij się, że grupa ``mygroup`` istnieje i ma ``gid=1337``
+    - Upewnij się, że:
 
-Zmiana hostname
-^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/hostname.pp``
-- Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
-- Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
-- (jeżeli korzystasz z Vagrant) Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
-- Hostname zmienia się na dwa sposoby:
+        - Katalog ``/home/myuser`` istnieje
+        - Właścicielem jego jest user ``myuser``
+        - Właścicielem jego jest grupa ``mygroup``
+        - Ma uprawnienia ``rwxr-xr-x``
 
-    * podmiana zawartości pliku ``/etc/hostname`` i uruchomienie ``hostname -F /etc/hostname``
-    * uruchomienie polecenia ``hostnamectl set-hostname ...``
+Puppet Apache2 installation
+---------------------------
+:English:
+    - Create manifest in ``/etc/puppet/manifests/apache.pp``
+    - Install and confugure `Apache 2` using `Puppet` module
+    - Using terminal generate self-signed OpenSSL certificates and put them in ``/etc/ssl/``:
 
-Zarządzanie użytkownikami, grupami i katalogami
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/jenkins.pp``
-- Upewnij się, że użytkownik ``jenkins`` istnieje, ma ``uid=1337`` i należy do grupy ``jenkins``
-- Upewnij się, że grupa ``jenkins`` istnieje i ma ``gid=1337``
-- Upewnij się, że:
+        - ``/etc/ssl/ssl.example.com.cert``
+        - ``/etc/ssl/ssl.example.com.key``
 
-    - Katalog ``/home/jenkins`` istnieje
-    - Właścicielem jego jest user ``jenkins``
-    - Właścicielem jego jest grupa ``jenkins``
-    - Ma uprawnienia ``rwxr-xr-x``
+    - Using `Puppet` create two vhosts:
 
-Konfiguracja nginx
-^^^^^^^^^^^^^^^^^^
-- Za pomocą Puppet upewnij się by był użytkownik ``www-data`` i miał ``uid=33``
-- Za pomocą Puppet upewnij się by była grupa ``www-data`` i miała ``gid=33``
-- Upewnij się że katalog ``/var/www`` istnieje i właścicielem jego są user ``www-data`` i grupa ``www-data`` i że ma uprawnienia ``rwxr-xr-x``
-- Zainstaluj i skonfiguruj ``nginx`` wykorzystując moduł Puppet
-- Z terminala wygeneruj certyfikaty self signed OpenSSL (``.cert`` i ``.key``) (za pomocą i umieść je w ``/etc/ssl/``)
-- Za pomocą Puppet Stwórz dwa vhosty:
+        - ``insecure.example.com`` using port ``80`` and with document root in ``/var/www/insecure.example.com``
+        - ``ssl.example.com` using port ``443`` with document root in ``/var/www/ssl.example.com`` using certificates from ``/etc/ssl/``
 
-    - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure-example-com``
-    - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl-example-com`` + używanie certyfikatów SSL wcześniej wygenerowanych
+    - Create file:
 
-- Stwórz pliki z treścią:
+        - ``/var/www/insecure.example.com/index.html`` with content ``Ehlo World! - Insecure``
+        - ``/var/www/ssl.example.com/index.html`` with content ``Ehlo World! - SSL!``
 
-    - ``/var/www/insecure-example-com/index.html`` z treścią ``Ehlo World! - Insecure``
-    - ``/var/www/ssl-example-com/index.html`` z treścią ``Ehlo World! - SSL!``
+    - Run browser on your localhost:
 
-- W przeglądarce na komputerze lokalnym wejdź na stronę:
+        - http://127.0.0.1:8080
+        - https://127.0.0.1:8443
 
-    - http://127.0.0.1:8080
-    - https://127.0.0.1:8443
+:Polish:
+    - Za pomocą Puppet upewnij się by był użytkownik ``www-data`` i miał ``uid=33``
+    - Za pomocą Puppet upewnij się by była grupa ``www-data`` i miała ``gid=33``
+    - Upewnij się że katalog ``/var/www`` istnieje i właścicielem jego są user ``www-data`` i grupa ``www-data`` i że ma uprawnienia ``rwxr-xr-x``
+    - Zainstaluj i skonfiguruj ``nginx`` wykorzystując moduł Puppet
+    - Z terminala wygeneruj certyfikaty self signed OpenSSL (``.cert`` i ``.key``) (za pomocą i umieść je w ``/etc/ssl/``)
+    - Za pomocą Puppet Stwórz dwa vhosty:
 
-Konfiguracja Apache2 (opcjonalnie)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Za pomocą Puppet upewnij się by był użytkownik ``www-data`` i miał ``uid=33``
-- Za pomocą Puppet upewnij się by była grupa ``www-data`` i miała ``gid=33``
-- Upewnij się że katalog ``/var/www`` istnieje i właścicielem jego są user ``www-data`` i grupa ``www-data`` i że ma uprawnienia ``rwxr-xr-x``
-- Zainstaluj i skonfiguruj Apache2 wykorzystując moduł Puppet
-- Z terminala wygeneruj certyfikaty self signed OpenSSL (``.cert`` i ``.key``) (za pomocą i umieść je w ``/etc/ssl/``)
-- Za pomocą Puppet Stwórz dwa vhosty:
+        - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure-example-com``
+        - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl-example-com`` + używanie certyfikatów SSL wcześniej wygenerowanych
 
-    - ``insecure.example.com`` na porcie 80 i z katalogiem domowym ``/var/www/insecure-example-com``
-    - ``ssl.example.com`` na porcie 443 i z katalogiem domowym ``/var/www/ssl-example-com`` + używanie certyfikatów SSL wcześniej wygenerowanych
+    - Stwórz pliki z treścią:
 
-- Stwórz pliki z treścią:
+        - ``/var/www/insecure-example-com/index.html`` z treścią ``Ehlo World! - Insecure``
+        - ``/var/www/ssl-example-com/index.html`` z treścią ``Ehlo World! - SSL!``
 
-    - ``/var/www/insecure-example-com/index.html`` z treścią ``Ehlo World! - Insecure``
-    - ``/var/www/ssl-example-com/index.html`` z treścią ``Ehlo World! - SSL!``
+    - W przeglądarce na komputerze lokalnym wejdź na stronę:
 
-- W przeglądarce na komputerze lokalnym wejdź na stronę:
+        - http://127.0.0.1:8080
+        - https://127.0.0.1:8443
 
-    - http://127.0.0.1:8080
-    - https://127.0.0.1:8443
+Puppet MySQL installation and configuration
+-------------------------------------------
+:English:
+    - Create manifest in ``/etc/puppet/code/mysql.pp``
+    - Install `MySQL` database using `Puppet` module
+    - Set ``root`` password to ``mypassword``
+    - Set ``mysqld`` to listen on all interfaces (``0.0.0.0``)
+    - Create database ``mydb`` with ``utf-8``
+    - Create user ``myusername`` with password ``mypassword``
+    - Grant all privileges to ``myusername`` for ``mydb``
+    - Setup database backup to ``/tmp/mysql-backup``
 
-.. warning:: Uwaga, puppet od wersji 4 ma inną składnię. W Ubuntu 16.04 (LTS) instaluje się Puppet 3.8.5. Puppet module instaluje zawsze najnowszą (w tym wypadku niekompatybilną z naszym Puppet)! Aby zainstalować apache należy wymusić odpowiednią wersję (ostatnia supportująca Puppet 3.8 to 1.10.
+:Polish:
+    - Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/mysql.pp``
+    - Zainstaluj bazę danych `MySQL` wykorzystując moduł `Puppet`
+    - Ustaw hasło dla użytkownika ``root`` na ``mypassword``
+    - Ustaw nasłuchiwanie serwera ``mysqld`` na wszystkich interfejsach (``0.0.0.0``)
+    - Stwórz bazę danych ``mydb`` z ``utf-8``
+    - Stwórz usera ``myusername`` z hasłem ``mypassword``
+    - Nadaj wszystkie uprawnienia dla usera ``myusername`` dla bazy ``mydb``
+    - Ustaw backupowanie bazy danych do ``/tmp/mysql-backup``
 
-    .. code-block:: console
+Puppet Tomcat installation and configuration
+--------------------------------------------
+:English:
+    - Create manifest in ``/etc/puppet/manifests/mysql.pp``
+    - Install `Java` using `Puppet` module
+    - Install `Tomcat 8` using `Puppet` module in ``/opt/tomcat8``
+    - Configure to `Tomcat` instances running simultanously on your hostname:
 
-        $ puppet module install puppetlabs-apache --version 1.10.0
+        - One instance is running on default ports
+        - Another instance is using ``8006`` port for connector and ``8081`` to redirect to ``8443``
+        - On the first instance deploy `WAR` from ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
 
-Instalacja i konfiguracja MySQL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/mysql.pp``
-- Zainstaluj bazę danych `MySQL` wykorzystując moduł `Puppet`
-- Ustaw hasło dla użytkownika ``root`` na ``mypassword``
-- Ustaw nasłuchiwanie serwera ``mysqld`` na wszystkich interfejsach (``0.0.0.0``)
-- Stwórz bazę danych ``mydb`` z ``utf-8``
-- Stwórz usera ``myusername`` z hasłem ``mypassword``
-- Nadaj wszystkie uprawnienia dla usera ``myusername`` dla bazy ``mydb``
-- Ustaw backupowanie bazy danych do ``/tmp/mysql-backup``
+:Polish:
+    - Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/tomcat.pp``
+    - Zainstaluj język `Java` za pomocą modułu `Puppet`
+    - Zainstaluj `Tomcat 8` za pomocą `Puppet` w katalogu ``/opt/tomcat8``
+    - Skonfiguruj dwie instancje `Tomcat` działające jednocześnie:
 
-Instalacja i konfiguracja Tomcat
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/tomcat.pp``
-- Zainstaluj język `Java` za pomocą modułu `Puppet`
-- Zainstaluj `Tomcat 8` za pomocą `Puppet` w katalogu ``/opt/tomcat8``
-- Skonfiguruj dwie instancje `Tomcat` działające jednocześnie:
-
-    - Jedna uruchamiana na domyślnych portach
-    - Druga uruchamiana na ``8006`` a connector z portu ``8081`` przekierowywał na ``8443``
-    - Na pierwszej uruchom ``war`` z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
+        - Jedna uruchamiana na domyślnych portach
+        - Druga uruchamiana na ``8006`` a connector z portu ``8081`` przekierowywał na ``8443``
+        - Na pierwszej uruchom ``war`` z lokacji ``/opt/tomcat8/webapps/docs/appdev/sample/sample.war``
