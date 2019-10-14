@@ -421,6 +421,96 @@ Przykłady
         mode => 0755,
     }
 
+.. code-block:: ruby
+
+    Exec    { path => "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" }
+    group   { "vagrant": ensure => present }
+    user    { "vagrant": ensure => present, gid => "vagrant" }
+    exec    { "apt-get update": command => "/usr/bin/apt-get update" }
+
+    package { [
+        "git",
+        "vim",
+        "nmap",
+        "htop",
+        "wget",
+        "curl",
+        "nginx",
+        "python3",
+        "python3-dev",
+        "python3-pip",
+        "p7zip-full",
+        "uwsgi",
+        "uwsgi-plugin-python3",
+        "postgresql-9.3",
+        "postgresql-server-dev-9.3",
+        "libmemcached-dev"
+      ] :
+        ensure => latest,
+        require => Exec["apt-get update"],
+    }
+
+    file { [
+        "/var/www",
+        "/var/www/log",
+        "/var/www/public",
+        "/var/www/public/media",
+        "/var/www/public/static",
+        "/var/www/tmp",
+        "/var/www/src"
+      ]:
+        ensure => directory,
+        owner => "vagrant",
+        group => "vagrant",
+        mode => 0755,
+    }
+
+    file { "/var/www/database":
+        ensure => directory,
+        owner => "vagrant",
+        group => "vagrant",
+        mode => 0700,
+    }
+
+    service { "nginx":
+        ensure => running,
+        enable => true,
+        require => Package["nginx"],
+    }
+
+    service { "uwsgi":
+        ensure => running,
+        enable => true,
+        require => [Package["uwsgi"], Exec["python requirements"], File["/var/www/tmp"]],
+    }
+
+    file { "/etc/nginx/sites-enabled/default":
+        content => template("/var/www/src/conf/nginx.conf"),
+        require => Package["nginx"],
+        notify => Service["nginx"],
+        ensure => file,
+    }
+
+    file { "/etc/uwsgi/apps-enabled/default.ini":
+        content => template("/var/www/src/conf/uwsgi.ini"),
+        require => Package["uwsgi"],
+        notify => Service["uwsgi"],
+        ensure => file,
+    }
+
+    exec { "python requirements":
+        command => "pip3 install -r /var/www/src/requirements.txt",
+        require => Package["python3-pip", "python3-dev", "libmemcached-dev", "postgresql-9.3", "postgresql-server-dev-9.3"],
+    }
+
+    exec { "collectstatic":
+        command => "python3 /var/www/src/manage.py collectstatic --noinput",
+        require => Exec["python requirements"],
+    }
+
+    # postgres
+    # updatedb
+
 Unless
 ^^^^^^
 .. code-block:: ruby

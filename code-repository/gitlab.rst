@@ -17,9 +17,9 @@ Install
     docker run \
         --detach \
         --hostname gitlab.example.com \
-        --publish 22:22 \
-        --publish 80:80 \
-        --publish 443:443 \
+        --publish 9922:22 \
+        --publish 9980:80 \
+        --publish 99443:443 \
         --name gitlab \
         --restart always \
         --volume /home/gitlab/config:/etc/gitlab \
