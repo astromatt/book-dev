@@ -110,6 +110,7 @@ Database
 
     /database/flyway.rst
     /database/postgresql.rst
+    /database/dbunit.rst
 
 
 *****************

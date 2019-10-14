@@ -28,22 +28,22 @@ manifest.pp
 
 .. code-block:: ruby
 
-    file { '/var/www':
-        ensure => 'directory',
-        owner => 'www-data',
-        group => 'www-data',
-        mode  => '0755',
+    file { "/var/www":
+        ensure => "directory",
+        owner => "www-data",
+        group => "www-data",
+        mode  => "0755",
     }
 
 .. code-block:: ruby
 
-    exec { 'package definition update':
-        command => '/usr/bin/apt update',
+    exec { "package definition update":
+        command => "/usr/bin/apt update",
     }
 
-    package { ['nmap', 'htop', 'git']:
-        ensure => 'latest',
-        require => Exec['package definition update'],
+    package { ["nmap", "htop", "git"]:
+        ensure => "latest",
+        require => Exec["package definition update"],
     }
 
 Model
@@ -86,13 +86,13 @@ There are two ways to access variables in an ERB template:
 
 .. code-block:: erb
 
-    scope['variable']
+    scope["variable"]
 
 Example:
 
     .. code-block:: erb
 
-        scope['ntp::tinker']
+        scope["ntp::tinker"]
 
 Printing variables
 ^^^^^^^^^^^^^^^^^^
@@ -125,7 +125,7 @@ For
         Some stuff with <%= val %>
     <% end -%>
 
-If $values was set to ['one', 'two'], this example would produce:
+If $values was set to ["one", "two"], this example would produce:
 
 .. code-block:: text
 
@@ -176,7 +176,7 @@ File
 ^^^^
 .. code-block:: ruby
 
-    file { 'resource title':
+    file { "resource title":
       path                    => # (namevar) The path to the file to manage.  Must be fully...
       ensure                  => # Whether the file should exist, and if so what...
       backup                  => # Whether (and how) file content should be backed...
@@ -229,13 +229,13 @@ Whether the file should exist, and if so what kind of file it should be. Possibl
 
     # Equivalent resources:
 
-    file { '/etc/inetd.conf':
-      ensure => '/etc/inet/inetd.conf',
+    file { "/etc/inetd.conf":
+      ensure => "/etc/inet/inetd.conf",
     }
 
-    file { '/etc/inetd.conf':
+    file { "/etc/inetd.conf":
       ensure => link,
-      target => '/etc/inet/inetd.conf',
+      target => "/etc/inet/inetd.conf",
     }
 
 
@@ -301,12 +301,12 @@ Korzystanie z faktów w manifestach:
 .. code-block:: ruby
 
     # Definicja
-    operatingsystem = 'Ubuntu'
+    operatingsystem = "Ubuntu"
 
     # Wykorzystanie
     case $::operatingsystem {
-      'CentOS': { include centos }
-      'MacOS':  { include mac }
+      "CentOS": { include centos }
+      "MacOS":  { include mac }
     }
 
 :Jako zmienne w tablicy faktów:
@@ -314,19 +314,19 @@ Korzystanie z faktów w manifestach:
 .. code-block:: ruby
 
     # Definicja
-    $facts['fact_name'] = 'Ubuntu'
+    $facts["fact_name"] = "Ubuntu"
 
     # Wykorzystanie
-    case $facts['fact_name'] {
-      'CentOS': { include centos }
-      'MacOS':  { include mac }
+    case $facts["fact_name"] {
+      "CentOS": { include centos }
+      "MacOS":  { include mac }
     }
 
 Tworzenie nowych faktów:
 
 .. code-block:: ruby
 
-    require 'facter'
+    require "facter"
 
     Facter.add(:system_role) do
       setcode "cat /etc/system_role"
@@ -334,7 +334,7 @@ Tworzenie nowych faktów:
 
 .. code-block:: ruby
 
-    require 'facter'
+    require "facter"
 
     Facter.add(:system_role) do
       setcode do
@@ -372,59 +372,59 @@ Hiera
 .. code-block:: yaml
 
     nginx::nginx_servers:
-         'devops-alldomains':
+         "devops-alldomains":
              server_name:
-                 - '~^(?<fqdn>.+?)$'
-             www_root: '/var/www/$fqdn'
+                 - "~^(?<fqdn>.+?)$"
+             www_root: "/var/www/$fqdn"
              index_files:
-                 - 'index.php'
+                 - "index.php"
              try_files:
-                 - '$uri'
-                 - '$uri/'
-                 - '/index.php?$args'
-             access_log: '/var/log/nginx/devops-alldomains-access.log'
-             error_log: '/var/log/nginx/devops-alldomains-error.log'
+                 - "$uri"
+                 - "$uri/"
+                 - "/index.php?$args"
+             access_log: "/var/log/nginx/devops-alldomains-access.log"
+             error_log: "/var/log/nginx/devops-alldomains-error.log"
 
-         'devops-alldomains-ssl':
+         "devops-alldomains-ssl":
              server_name:
-                 - '~^(?<fqdn>.+?)$'
-             listen_port: '443'
-             ssl_port: '443'
-             www_root: '/var/www/$fqdn'
+                 - "~^(?<fqdn>.+?)$"
+             listen_port: "443"
+             ssl_port: "443"
+             www_root: "/var/www/$fqdn"
              ssl: true
-             ssl_key: '/etc/ssl/www/$fqdn.key'
-             ssl_cert: '/etc/ssl/www/$fqdn.crt'
+             ssl_key: "/etc/ssl/www/$fqdn.key"
+             ssl_cert: "/etc/ssl/www/$fqdn.crt"
              index_files:
-                 - 'index.php'
+                 - "index.php"
              try_files:
-                 - '$uri'
-                 - '$uri/'
-                 - '/index.php?$args'
-             access_log: '/var/log/nginx/devops-alldomains-access-ssl.log'
-             error_log: '/var/log/nginx/devops-alldomains-error-ssl.log'
+                 - "$uri"
+                 - "$uri/"
+                 - "/index.php?$args"
+             access_log: "/var/log/nginx/devops-alldomains-access-ssl.log"
+             error_log: "/var/log/nginx/devops-alldomains-error-ssl.log"
 
      nginx::nginx_locations:
-         'devops-alldomains-loc':
-             location: '~ \.php$'
-             www_root: '/var/www/$fqdn'
-             server: 'devops-alldomains'
-             fastcgi: 'unix:/var/run/php7-fpm.sock'
-             fastcgi_split_path: '^(.+\.php)(/.*)$'
-             fastcgi_index: 'index.php'
+         "devops-alldomains-loc":
+             location: "~ \.php$"
+             www_root: "/var/www/$fqdn"
+             server: "devops-alldomains"
+             fastcgi: "unix:/var/run/php7-fpm.sock"
+             fastcgi_split_path: "^(.+\.php)(/.*)$"
+             fastcgi_index: "index.php"
              fastcgi_param:
-                 'SCRIPT_FILENAME': '$document_root$fastcgi_script_name'
+                 "SCRIPT_FILENAME": "$document_root$fastcgi_script_name"
 
-         'devops-alldomains-ssl-loc':
-             location: '~ \.php$'
-             www_root: '/var/www/$fqdn'
-             server: 'devops-alldomains-ssl'
+         "devops-alldomains-ssl-loc":
+             location: "~ \.php$"
+             www_root: "/var/www/$fqdn"
+             server: "devops-alldomains-ssl"
              ssl: true
              ssl_only: true
-             fastcgi: 'unix:/var/run/php7-fpm.sock'
-             fastcgi_split_path: '^(.+\.php)(/.*)$'
-             fastcgi_index: 'index.php'
+             fastcgi: "unix:/var/run/php7-fpm.sock"
+             fastcgi_split_path: "^(.+\.php)(/.*)$"
+             fastcgi_index: "index.php"
              fastcgi_param:
-                 'SCRIPT_FILENAME': '$document_root$fastcgi_script_name'
+                 "SCRIPT_FILENAME": "$document_root$fastcgi_script_name"
 
 Augias
 ^^^^^^
@@ -585,8 +585,8 @@ Unless
 .. code-block:: ruby
 
     exec { "set hostname":
-        command => '/bin/hostname -F /etc/hostname',
-        unless  => "/usr/bin/test `hostname` = `/bin/cat /etc/hostname`",
+        command => "/bin/hostname -F /etc/hostname",
+        unless  => "/usr/bin/test $(hostname) = $(/bin/cat /etc/hostname)",
     }
 
 Podmiana zawartości w pliku
@@ -597,7 +597,7 @@ Podmiana zawartości w pliku
         ensure  => present,
         owner   => root,
         group   => root,
-        mode    => '0644',
+        mode    => "0644",
         content => "Lorem ipsum...\n",
     }
 
@@ -612,25 +612,25 @@ Java
 ^^^^
 .. code-block:: ruby
 
-    class { 'java' :
-      package => 'java-1.8.0-openjdk-devel',
+    class { "java" :
+      package => "java-1.8.0-openjdk-devel",
     }
 
 .. code-block:: ruby
 
-    java::oracle { 'jdk8' :
-      ensure  => 'present',
-      version => '8',
-      java_se => 'jdk',
+    java::oracle { "jdk8" :
+      ensure  => "present",
+      version => "8",
+      java_se => "jdk",
     }
 
 .. code-block:: ruby
 
-    java::oracle { 'jdk8' :
-      ensure  => 'present',
-      version_major => '8u101',
-      version_minor => 'b13',
-      java_se => 'jdk',
+    java::oracle { "jdk8" :
+      ensure  => "present",
+      version_major => "8u101",
+      version_minor => "b13",
+      java_se => "jdk",
     }
 
 JBoss
@@ -647,28 +647,28 @@ To install JBoss EAP or older JBoss AS use:
 
 .. code-block:: ruby
 
-    class { 'jboss':
-      product => 'jboss-eap',
-      version => '6.4.0.GA',
+    class { "jboss":
+      product => "jboss-eap",
+      version => "6.4.0.GA",
     }
 
 or use hiera:
 
 .. code-block:: ruby
 
-    jboss::params::product: 'jboss-as'
-    jboss::params::version: '7.1.1.Final'
+    jboss::params::product: "jboss-as"
+    jboss::params::version: "7.1.1.Final"
 
 .. code-block:: ruby
 
-    $user = 'jb-user'
-    $passwd = 'SeC3eT!1'
+    $user = "jb-user"
+    $passwd = "SeC3eT!1"
 
-    node 'controller' {
+    node "controller" {
       include jboss::domain::controller
       include jboss
       jboss::user { $user:
-        ensure   => 'present',
+        ensure   => "present",
         password => $passwd,
       }
     }
