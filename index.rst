@@ -178,7 +178,6 @@ Monitoring
     /monitoring/statsd.rst
     /monitoring/zabbix.rst
 
-
 ************
 Provisioning
 ************
@@ -192,7 +191,6 @@ Provisioning
     /provisioning/puppet.rst
     /provisioning/puppet-english.rst
     /provisioning/salt-stack.rst
-
 
 *****************
 Quality and Tests
@@ -212,29 +210,46 @@ Quality and Tests
     /quality/sonarqube.rst
     /quality/valgrind.rst
 
-
-**********
-Versioning
-**********
+*******
+Vagrant
+*******
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Versioning
+    :caption: Vagrant
+
+    /vagrant/vagrant.rst
+
+******
+Docker
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Docker
+
+    /docker/about.rst
+    /docker/install.rst
+    /docker/cli.rst
+    /docker/basic-usage.rst
+    /docker/run.rst
+    /docker/exec.rst
+    /docker/network.rst
+    /docker/volumes.rst
+    /docker/docker-compose.rst
+    /docker/scaling.rst
+    /docker/kubernetes.rst
+
+****************
+GIT and GIT Flow
+****************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: GIT and GIT Flow
 
     /versioning/git.rst
     /versioning/git-flow.rst
-
-
-**************
-Virtualization
-**************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Virtualization
-
-    /virtualization/docker.rst
-    /virtualization/vagrant.rst
 
 
 ********

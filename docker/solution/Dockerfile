@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y postgresql-10.5 postgresql-client-10.5
+RUN apt update && apt install -y postgresql-10.5 postgresql-client-10.5
 
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-10.5`` package when it was ``apt-get installed``
 USER postgres

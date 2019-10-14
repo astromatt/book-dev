@@ -447,7 +447,9 @@ Przykłady
         gid => "www-data"
     }
 
-    exec { "update package definition":
+.. code-block:: ruby
+
+    Exec { "update package definition":
         command => "/usr/bin/apt update"
     }
 
@@ -471,18 +473,18 @@ Przykłady
         "libmemcached-dev"
       ] :
         ensure => latest,
-        require => Exec["update package definition"],
     }
 
-    file { [
+.. code-block:: ruby
+
+    file {[
             "/var/www",
             "/var/www/log",
             "/var/www/public",
             "/var/www/public/media",
             "/var/www/public/static",
             "/var/www/tmp",
-            "/var/www/src"
-        ]:
+            "/var/www/src"]:
 
         ensure => directory,
         owner => "www-data",
@@ -576,9 +578,6 @@ Przykłady
         command => "python3 /var/www/src/manage.py collectstatic --noinput",
         require => Exec["python requirements"],
     }
-
-    # postgres
-    # updatedb
 
 Unless
 ^^^^^^
