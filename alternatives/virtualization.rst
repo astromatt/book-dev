@@ -1,0 +1,15 @@
+**************
+Virtualization
+**************
+
+
+Vagrant
+=======
+
+
+Docker
+======
+
+
+OpenStack
+=========

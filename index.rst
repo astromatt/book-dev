@@ -34,31 +34,6 @@ Wprowadzenie
     /wprowadzenie/buzzwordy.rst
     /wprowadzenie/linki.rst
 
-*********
-Ecosystem
-*********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Ecosystem
-
-    /ecosystem/api.rst
-    /ecosystem/binary-repository.rst
-    /ecosystem/ci-cd.rst
-    /ecosystem/code-repository.rst
-    /ecosystem/data-exploration.rst
-    /ecosystem/database.rst
-    /ecosystem/instant-messaging.rst
-    /ecosystem/issue-tracker.rst
-    /ecosystem/knowledge-base.rst
-    /ecosystem/logging.rst
-    /ecosystem/monitoring.rst
-    /ecosystem/provisioning.rst
-    /ecosystem/quality.rst
-    /ecosystem/user-directory.rst
-    /ecosystem/versioning.rst
-    /ecosystem/virtualization.rst
-
 
 **************
 User Directory
@@ -244,15 +219,16 @@ Quality and Tests
 
 
 
-****
-Jira
-****
+
 .. toctree::
     :maxdepth: 2
     :numbered:
     :caption: Jira
 
+    /process/index.rst
     /jira/index.rst
+
+
 
 *******
 Vagrant
@@ -296,6 +272,31 @@ GIT and GIT Flow
 
     /versioning/git.rst
     /versioning/git-flow.rst
+
+************
+Alternatives
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Alternatives
+
+    /alternatives/api.rst
+    /alternatives/binary-repository.rst
+    /alternatives/ci-cd.rst
+    /alternatives/code-repository.rst
+    /alternatives/data-exploration.rst
+    /alternatives/database.rst
+    /alternatives/instant-messaging.rst
+    /alternatives/issue-tracker.rst
+    /alternatives/knowledge-base.rst
+    /alternatives/logging.rst
+    /alternatives/monitoring.rst
+    /alternatives/provisioning.rst
+    /alternatives/quality.rst
+    /alternatives/user-directory.rst
+    /alternatives/versioning.rst
+    /alternatives/virtualization.rst
 
 
 ********
