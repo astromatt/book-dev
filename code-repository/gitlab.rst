@@ -11,11 +11,11 @@ Install
 
     $ mkdir -p /home/gitlab
     $ chmod 777 /home/gitlab
+    $ docker network create ecosystem
     $ docker run \
         --name gitlab \
         --detach \
         --restart always \
-        --rm \
         --hostname gitlab.example.com \
         --network ecosystem \
         --publish 2222:22 \
