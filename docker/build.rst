@@ -130,7 +130,7 @@ Build Workflow
 
 .. code-block:: console
 
-    docker images
+    $ docker images
 
 
 Dockerfile

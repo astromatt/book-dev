@@ -32,15 +32,15 @@ Weekly version
 ^^^^^^^^^^^^^^
 .. code-block:: console
 
-    docker run -d --rm --name jenkins -p 8080:8080 -v /home/jenkins:/var/jenkins_home jenkins/jenkins
-    cat /home/jenkins/secrets/initialAdminPassword
+    $ docker run -d --rm --name jenkins -p 8080:8080 -v /home/jenkins:/var/jenkins_home jenkins/jenkins
+    $ cat /home/jenkins/secrets/initialAdminPassword
 
 Install LTS
 ^^^^^^^^^^^
 .. code-block:: console
 
-    docker run -d  --rm --name jenkins -p 8080:8080 -v /home/jenkins:/var/jenkins_home jenkins/jenkins:lts
-    cat /home/jenkins/secrets/initialAdminPassword
+    $ docker run -d  --rm --name jenkins -p 8080:8080 -v /home/jenkins:/var/jenkins_home jenkins/jenkins:lts
+    $ cat /home/jenkins/secrets/initialAdminPassword
 
 Docker Compose
 ^^^^^^^^^^^^^^
@@ -71,13 +71,13 @@ Docker Compose
 
     .. code-block:: console
 
-        docker-compose up
+        $ docker-compose up
 
 #. Run Jenkins in background (daemon)
 
     .. code-block:: console
 
-        docker-compose up -d
+        $ docker-compose up -d
 
 
 More information
@@ -153,26 +153,26 @@ Installing MVN
 --------------
 .. code-block:: console
 
-    docker container exec -u 0 -it jenkins bash
+    $ docker container exec -u 0 -it jenkins bash
 
 .. code-block:: console
 
-    mkdir -p /opt
-    cd /opt
-    wget http://apache.claz.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
-    tar -zxvf apache-maven-3.5.4-bin.tar.gz
-    mv apache-maven-3.5.4 /opt/maven
-    ln -s /opt/maven/bin/mvn /usr/local/bin/mvn
+    $ mkdir -p /opt
+    $ cd /opt
+    $ wget http://apache.claz.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+    $ tar -zxvf apache-maven-3.5.4-bin.tar.gz
+    $ mv apache-maven-3.5.4 /opt/maven
+    $ ln -s /opt/maven/bin/mvn /usr/local/bin/mvn
 
 .. code-block:: console
 
-    echo 'export M2_HOME=/opt/maven' > /etc/profile.d/maven.sh
+    $ echo 'export M2_HOME=/opt/maven' > /etc/profile.d/maven.sh
 
 Now load the environment variables in the current shell using the following command.
 
 .. code-block:: console
 
-    source /etc/profile.d/maven.sh
+    $ source /etc/profile.d/maven.sh
 
 
 SonarScanner
@@ -457,12 +457,12 @@ Docker
 
     .. code-block:: console
 
-        docker exec -itu 0 jenkins bash
-        curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-        echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" > /etc/apt/sources.list.d/docker.list
-        apt install -y apt-transport-https
-        apt update
-        apt install -y docker-ce
+        $ docker exec -itu 0 jenkins bash
+        $ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+        $ echo "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" > /etc/apt/sources.list.d/docker.list
+        $ apt install -y apt-transport-https
+        $ apt update
+        $ apt install -y docker-ce
 
 - Spawning sibling containers instead of container inside the container
 
@@ -565,13 +565,13 @@ Build Strategy
 Instalacja Jenkinsa i konfiguracją buildów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zainstaluj *Jenkins* za pomocą *Docker*
-#. Zaciągnij repozytorium https://github.com/AstroTech/sonarqube-example-java-maven-junit.git
+#. Zaciągnij repozytorium https://github.com/AstroTech/ecosystem-example-java.git
 #. Ustaw Job aby budował aplikację za pomocą ``mvn clean install``
 
 Building c/c++ projects inside ``docker``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Zainstaluj *Jenkins* za pomocą *Docker*
-#. Zaciągnij repozytorium https://github.com/AstroTech/tcpdump
+#. Zaciągnij repozytorium https://github.com/AstroTech/ecosystem-example-c
 #. Budowanie ma odbywać się w kontenerze ``docker`` uruchamianym jako sibling
 #. Dodaj job za pomocą Blue Ocean
 
@@ -612,7 +612,7 @@ Trigger przez API
 
 Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonarqube-example-java-maven-junit.git)
+- Dla repozytorium https://github.com/AstroTech/ecosystem-example-java.git
 - Zacznij budować za pomocą ``mvn clean install``
 - Wyniki upublicznij w *SonarQube*
 - Build uzależnij od wyniku Quality Gates (plugin ``Sonar Quality Gates``)
@@ -620,7 +620,7 @@ Statyczna analiza kodu za pomocą *SonarScanner* i *SonarQube*
 
 Budowanie *PITest*
 ^^^^^^^^^^^^^^^^^^
-- Dla repozytorium ``sonar-training-examples`` (https://github.com/AstroTech/sonarqube-example-java-maven-junit.git)
+- Dla repozytorium https://github.com/AstroTech/ecosystem-example-java.git
 - Zacznij budować różne projekty ``coverage-metrics``
 - Wyniki upublicznij w *SonarQube*
 - Dodaj w ``pom.xml`` zależność ``pitest`` i przetestuj projekt wykorzystując domyślne mutatory
