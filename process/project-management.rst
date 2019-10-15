@@ -9,6 +9,12 @@ Do planowania pracy wykorzystano podejście zwinne (ang. *Agile*) wraz z metodyk
 
 Podejście zwinne wymaga połączenia umiejętności miękkich, zarządzania projektami oraz technicznych aspektów. Schemat :numref:`figure-process-agile-understanding` przedstawia sposób rozumienia pojęcia "Agile" przez autora pracy.
 
+.. figure:: /_img/agile-understanding-simple.png
+    :scale: 75%
+    :align: center
+
+    Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
+
 .. figure:: img/agile-understanding.png
     :name: figure-process-agile-understanding
 
