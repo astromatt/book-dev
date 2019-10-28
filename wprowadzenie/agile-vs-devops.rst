@@ -5,14 +5,14 @@ Agile vs. DevOps
 
 Agile, Scrum, Lean, XP...
 =========================
-.. figure:: /_img/agile-understanding-simple.png
+.. figure:: img/agility-v1.png
     :scale: 75%
     :align: center
 
     Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
 
-.. figure:: /_img/agile-understanding.png
-    :name: figure-agile-understanding
+.. figure:: img/agility-v2.png
+    :name: figure-agility
     :scale: 75%
     :align: center
 

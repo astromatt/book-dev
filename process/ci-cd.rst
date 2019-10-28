@@ -42,7 +42,7 @@ W zależności od kategorii definiuje się inny zestaw testów uruchamianych dla
 
 Poszczególne mniejsze fragmenty wytwarzanego oprogramowania muszą przejść określone etapy walidacji na swojej drodze do publikacji. Kod jest kompilowany i pakowany za każdym razem, gdy dokonywana jest zmiana w systemie kontroli wersji. Następnie jest wielokrotnie testowany. Dopiero po tym może zostać uznany za poprawny.
 
-.. figure:: img/cicd-strategy.png
+.. figure:: img/cicd-strategy-color.png
     :name: figure-process-cicd-strategy
 
     Tabela przedstawia listę testów uruchamianych dla zmian w zależności od gałęzi rozwojowej do której należą.

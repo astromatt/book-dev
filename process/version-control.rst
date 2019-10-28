@@ -34,7 +34,7 @@ W powyższej liście zastosowano ogólnie przyjętą konwencję użycia znaku gw
 
 Proces i umiejscowienie poszczególnych gałęzi rozwojowych w ramach projektu zobrazowano na :numref:`figure-process-gitflow-overview` zamieszczonym poniżej. Strzałki oznaczają kierunek przyrostu a oś czasu biegnie z dołu do góry grafiki. Skierowanie osi czasu w górę jest ogólnie przyjętą zasadą na świecie przy określaniu przepływów w systemach kontroli wersji. Strzałki określają kierunek scalania zmian, a kropki poszczególne commity.
 
-.. figure:: img/gitflow-00-big-picture.png
+.. figure:: img/gitflow-all.png
     :name: figure-process-gitflow-overview
 
     Schemat konwencji nazewniczej *GIT Flow* obrazujący rozmieszczenie gałęzi rozwojowych oprogramowania.
@@ -44,7 +44,7 @@ Gałąź kodu produkcyjnego
 ========================
 W repozytorium główną gałęzią jest ``master``. Przechowywana jest w nim stabilna wersja kodu będąca odpowiednikiem zmiany znajdującej się na środowisku produkcyjnym. Scalenie kodu do *brancha* ``master`` jest równoważne z wydaniem nowej wersji. Jest to dopuszczalne jedynie, gdy testy automatyczne, funkcjonalne, regresyjne i jednostkowe nie pozostawiają wątpliwości na temat stabilności oraz braku defektów we wprowadzonych zmianach. Branch ten odpowiada sytuacji na serwerze produkcyjnym z działającą aplikacją operującą na rzeczywistych danych. Grafika poglądowa :numref:`figure-process-gitflow-master` przedstawia wizualizację procesu wprowadzania zmian do gałęzi ``master``.
 
-.. figure:: img/gitflow-00-master-only.png
+.. figure:: img/gitflow-lean.png
     :name: figure-process-gitflow-master
 
     Schemat scalania funkcjonalności z gałęzią kodu produkcyjnego.
@@ -56,7 +56,7 @@ W dużych repozytoriach, nad którymi pracuje wiele osób równocześnie, tj. wi
 
 W takim przypadku w repozytorium główną gałęzią rozwojową staje się *branch* ``develop``. Przechowywana jest w nim najnowsza wersja oprogramowania ze scalonymi ukończonymi funkcjonalnościami. Gałąź ``develop`` powinna przechowywać kod, co do którego poprawności nie ma zastrzeżeń. Kod powinien się budować oraz być odpowiednio przetestowany. Z gałęzi rozwojowej ``develop`` w każdym momencie można stworzyć tzw. kandydata do wdrożenia (ang. *release candidate*) i branch ``release/X.Y``, gdzie litery ``X`` i ``Y`` symbolizują kolejną wersję zgodną z semantic versioning.
 
-.. figure:: img/gitflow-05-develop.png
+.. figure:: img/gitflow-master-develop.png
     :name: figure-process-gitflow-develop
 
     Schemat scalania funkcjonalności z gałęzią integracyjną.
@@ -65,7 +65,7 @@ Dopuszcza się możliwość niewykorzystywania gałęzi ``develop`` w komponenta
 
 Przy takim podejściu kod jest scalany mniejszymi, lecz częstszymi przyrostami (:numref:`figure-process-gitflow-github`). Powoduje to, iż problemy integracyjne ujawniają się znacznie szybciej. Rozwiązywanie małych konfliktów jest nie tylko łatwiejsze, ale również nie wymaga dużej ingerencji w projekt. Stan powyżej opisany jest wysoce pożądany wraz z wprowadzeniem tzw. *Continuous Delivery*. Do czasu uzyskania odpowiedniej dojrzałości procesowej, zaleca się stosowanie pośredniczącej gałęzi ``develop`` w celu integrowania zmian. Grafika :numref:`figure-process-gitflow-develop` przedstawia wizualizację umiejscowienia zmian w tej gałęzi rozwojowej.
 
-.. figure:: img/gitflow-00-github.png
+.. figure:: img/gitflow-github.png
     :name: figure-process-gitflow-github
 
     Schemat scalania funkcjonalności z gałęzią kodu produkcyjnego przy braku gałęzi integracyjnej.
@@ -81,7 +81,7 @@ gdzie sekwencja numeryczna odpowiadająca kolejnej wersji np. ``release/1.4`` lu
 
 Następnie na gałęzi z rodziny ``release/*`` uruchamiane są testy oraz w razie konieczności wprowadzane są poprawki przedwdrożeniowe. Po pozytywnym przejściu przez proces weryfikacji jakości gałąź jest scalana z ``master`` a zmiana jest oznaczana numerem wersji wdrożenia. Wszelkie akcje użytkownika końcowego oraz testera są zautomatyzowane tak, aby proces weryfikacji odbywał się autonomicznie.
 
-.. figure:: img/gitflow-06-release.png
+.. figure:: img/gitflow-release.png
     :name: figure-process-gitflow-release
 
     Schemat scalania gałęzi integracyjnej z gałęzią kodu produkcyjnego za pośrednictwem gałęzi wdrożeniowych.
@@ -106,7 +106,7 @@ Gałęzie nowych funkcjonalności
 ==============================
 Gałęzie rozwojowe z rodziny ``feature/*`` (:numref:`figure-process-gitflow-feature`) służą do wprowadzania nowych funkcjonalności do systemu. Ich nazewnictwo jest ściśle powiązane z systemem kontroli zadań (ang. *issue tracker*). Gałęzie te nie powinny istnieć dłużej niż sprint, gdyż wszystkie planowane funkcjonalności muszą zostać zgranulowane do zadań odpowiednich w stosunku do długości iteracji.
 
-.. figure:: img/gitflow-03-feature.png
+.. figure:: img/gitflow-feature-pr.png
     :name: figure-process-gitflow-feature
 
     Schemat scalania gałęzi funkcjonalności z gałęzią kodu produkcyjnego.
@@ -116,7 +116,7 @@ Gałęzie poprawek planowanych
 ============================
 Gałęzie ``bugfix/*`` (:numref:`figure-process-gitflow-bugfix`) służą do wprowadzania poprawek błędów znalezionych podczas produkcji oprogramowania a system scalania ich z kodem źródłowym jest podobny do obsługi zmian w ramach kategorii ``feature/*``. Podobnie jak w przypadku wdrażania planowanych funkcjonalności gałęzie te nie powinny istnieć dłużej niż sprint. Wszystkie planowane zmiany muszą zostać zgranulowane do zadań odpowiednich w stosunku do iteracji.
 
-.. figure:: img/gitflow-04-bugfix.png
+.. figure:: img/gitflow-bugfix.png
     :name: figure-process-gitflow-bugfix
 
     Schemat scalania zmian z rodziny gałęzi poprawek planowanych do kodu źródłowego aplikacji.
@@ -128,7 +128,7 @@ Branche z kategorii ``hotfix/*`` (:numref:`figure-process-gitflow-hotfix`) odpow
 
 Zmiany priorytetowe mają na celu natychmiastowe przywrócenie działania oprogramowania, np. po krytycznym błędzie na środowisku produkcyjnym, gdzie każda sekunda zwłoki powoduje straty. Zmiany te dopiero w późniejszym etapie poddawane są normalnemu procesowi testowania i weryfikacji. Powyższy mechanizm pozwala na szybkie przywrócenie stabilności systemu. Ta funkcjonalność jest używana jedynie w uzasadnionych i ściśle kontrolowanych przypadkach.
 
-.. figure:: img/gitflow-07-hotfix.png
+.. figure:: img/gitflow-hotfix.png
     :name: figure-process-gitflow-hotfix
 
     Schemat scalania zmian z rodziny gałęzi poprawek produkcyjnych do kodu źródłowego aplikacji.
@@ -138,15 +138,15 @@ Gałęzie procesu przeglądu kodu i scalania zmian
 ===============================================
 Przed wprowadzeniem jakichkolwiek zmian do gałęzi integracyjnych wymagany jest proces tzw. scalenia zmian (ang. *Pull Request*) przedstawiony na :numref:`figure-process-pr-branch` Polega on na stworzeniu podsumowania zmienionego kodu, tj. dodane i usunięte linijki wraz ze zmodyfikowaną treścią.
 
-.. figure:: img/gitflow-02-pull-request.png
+.. figure:: img/gitflow-feature-pr.png
     :name: figure-process-pr-branch
 
     Schemat procesu scalania zmian.
 
-Na karcie *Pull Request* zgodnie ze schematem :numref:`figure-process-pr-card` system ciągłej integracji zamieszcza informacje o wyniku statycznej analizy oraz testów. Gdy wszystkie testy zakończą się bez błędów, a zmiana uzyska zgodę (ang. *approve*) innych członków zespołu wytwarzającego oprogramowanie, pojawia się możliwość scalenia funkcjonalności do docelowej gałęzi (zwykle ``develop``).
+Na karcie *Pull Request* zgodnie ze schematem :numref:`figure-process-pull-request` system ciągłej integracji zamieszcza informacje o wyniku statycznej analizy oraz testów. Gdy wszystkie testy zakończą się bez błędów, a zmiana uzyska zgodę (ang. *approve*) innych członków zespołu wytwarzającego oprogramowanie, pojawia się możliwość scalenia funkcjonalności do docelowej gałęzi (zwykle ``develop``).
 
-.. figure:: img/gitflow-02-pull-request-screen.png
-    :name: figure-process-pr-card
+.. figure:: img/gitflow-pull-request.png
+    :name: figure-process-pull-request
 
     Karta podsumowania proces scalania zmian z informacją dotyczącą wyników z systemu budowania i ciągłej integracji.
 
@@ -157,7 +157,7 @@ Oznaczanie etykietą wersji
 ==========================
 Po scaleniu gałęzi ``release/X.Y`` następuje proces oznaczania odpowiedniego momentu w historii przez tzw. oznaczanie etykietką (ang. *tag*). Proces przedstawiono na schemacie :numref:`figure-process-pr-tag` Każda etykieta ma nazwę zgodną z konwencją wersjonowania semantycznego. Dzięki temu w każdej chwili istnieje możliwość szybkiego powrotu do dowolnego wdrożenia w celu identyfikacji i usunięcia zgłaszanych przez użytkowników błędów.
 
-.. figure:: img/gitflow-08-tag.png
+.. figure:: img/gitflow-tag.png
     :name: figure-process-pr-tag
 
     Schemat scalania gałęzi integracyjnej do gałęzi kodu produkcyjnego za pośrednictwem rodziny gałęzi wdrożeniowych. Na schemacie przedstawiony jest również moment tworzenia etykiety wersji.

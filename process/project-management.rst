@@ -7,16 +7,16 @@ Projekt systemu operacyjnego jest dużym przedsięwzięciem wymagającym odpowie
 
 Do planowania pracy wykorzystano podejście zwinne (ang. *Agile*) wraz z metodyką *Scrum* :cite:`ScrumGuide2017`. Proces ten kładzie nacisk na terminowe rozliczanie niewielkich przyrostów funkcjonalności spełniających wartości biznesowe. Przyrosty te zwane są "iteracjami" lub "sprintami". Zgodnie z dobrymi praktykami iteracje nie powinny być dłuższe niż jeden miesiąc, ale zaleca się skrócenie takich pętli do tygodnia. Reguły dobrych praktyk podejścia zwinnego przedstawiono w załączniku ":ref:`Manifest zwinnego wytwarzania oprogramowania`".
 
-Podejście zwinne wymaga połączenia umiejętności miękkich, zarządzania projektami oraz technicznych aspektów. Schemat :numref:`figure-process-agile-understanding` przedstawia sposób rozumienia pojęcia "Agile" przez autora pracy.
+Podejście zwinne wymaga połączenia umiejętności miękkich, zarządzania projektami oraz technicznych aspektów. Schemat :numref:`figure-process-agility` przedstawia sposób rozumienia pojęcia "Agile" przez autora pracy.
 
-.. figure:: /_img/agile-understanding-simple.png
+.. figure:: img/agility-v1.png
     :scale: 75%
     :align: center
 
     Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
 
-.. figure:: img/agile-understanding.png
-    :name: figure-process-agile-understanding
+.. figure:: img/agility-v2.png
+    :name: figure-process-agility
 
     Schemat rozumienia przez autora pojęcia zwinność w kontekście wytwarzania oprogramowania.
 

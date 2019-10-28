@@ -5,7 +5,7 @@ Top 0b111 buzzwordów i praktyk, których mogłeś nie znać
 
 Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i opowiedzenie w kilku zdaniach o najważniejszych z nich. Mam nadzieję, że ułatwi Ci to znalezienie samodzielnie informacji na ten temat w internecie.
 
-000. Agile to nie tylko Scrum, Estymacja to nie koniecznie planning poker i ciąg Fibonacci'ego, Dobry PO to 66,(6)% sukcesu, kiedy Pair Programming się sprawdz
+000. Agile to nie tylko Scrum, Estymacja to nie koniecznie planning poker i ciąg Fibonacci'ego, Dobry PO to 66,(6)% sukcesu, kiedy Pair Programming się sprawdzi
 001. Provisioning środowiska, wersjonowanie schematów bazy danych, VMki i kontenery (FlywayDB, Puppet, Vagrant, Docker)
 010. Statyczna analiza kodu, Testy Mutacyjne (SonarQube, Squid, SonarLint, PITest)
 011. Wersjonowanie i dokumentowanie API (swagger)
@@ -25,13 +25,13 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
     Healing the divide between business and programming.
     -- Kent Beck, 1999
 
-.. figure:: /_img/agile-understanding-simple.png
+.. figure:: img/agility-v1.png
     :scale: 75%
     :align: center
 
     Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
 
-.. figure:: /_img/agile-understanding.png
+.. figure:: img/agility-v2.png
     :scale: 75%
     :align: center
 
