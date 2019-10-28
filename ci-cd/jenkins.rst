@@ -13,7 +13,7 @@ Jenkins
 
 Jenkins in Devtools Ecosystem
 -----------------------------
-.. figure:: /_img/ecosystem-big-picture-01.png
+.. figure:: img/ecosystem-big-picture-01.png
     :scale: 50%
     :align: center
 
@@ -94,7 +94,7 @@ Architecture
 
 Administration
 --------------
-.. figure:: /_img/geek-and-poke-jenkins-down-and-up.jpg
+.. figure:: img/geek-and-poke-jenkins-down-and-up.jpg
     :scale: 50%
     :align: center
 
@@ -193,7 +193,7 @@ If your code is in other version:
     :language: properties
     :caption: Extra Sonar Project Properties
 
-.. figure:: /_img/geek-and-poke-development-driven-tests.jpg
+.. figure:: img/geek-and-poke-development-driven-tests.jpg
     :scale: 15%
     :align: center
 
@@ -255,19 +255,19 @@ Blue Ocean
 - Pipeline editor
 
 
-.. figure:: /_img/cicd-pipeline.png
+.. figure:: img/cicd-pipeline.png
     :scale: 50%
     :align: center
 
     Blue Ocean pipeline
 
-.. figure:: /_img/cicd-blueocean-success.png
+.. figure:: img/cicd-success.png
     :scale: 75%
     :align: center
 
     Blue Ocean pipeline Success
 
-.. figure:: /_img/cicd-blueocean-failing.png
+.. figure:: img/cicd-failing.png
     :scale: 50%
     :align: center
 
@@ -540,19 +540,19 @@ Extra
 
 Build Strategy
 --------------
-.. figure:: /_img/geek-and-almost-green.jpg
+.. figure:: img/geek-and-almost-green.jpg
     :scale: 25%
     :align: center
 
     Almost green... just some broken tests
 
-.. figure:: /_img/build-strategy.png
+.. figure:: img/cicd-strategy-color.png
     :scale: 25%
     :align: center
 
     Build Strategy
 
-.. figure:: /_img/git-flow-whiteboard.jpg
+.. figure:: img/gitflow-all.png
     :scale: 25%
     :align: center
 
@@ -590,7 +590,7 @@ Budowanie Pull Requestów
     - ``bugfix``
     - ``master``
 
-.. figure:: /_img/git-pull-request-09.jpg
+.. figure:: img/gitflow-pull-request.png
     :scale: 50%
     :align: center
 
