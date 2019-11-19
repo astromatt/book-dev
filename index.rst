@@ -299,6 +299,17 @@ Alternatives
     /alternatives/virtualization.rst
 
 
+*******
+Summary
+*******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Summary
+
+    /summary/index.rst
+
+
 ********
 Appendix
 ********
