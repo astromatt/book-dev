@@ -16,7 +16,6 @@ Install
         --name gitlab \
         --detach \
         --restart always \
-        --hostname gitlab.example.com \
         --network ecosystem \
         --publish 2222:22 \
         --publish 2280:80 \
@@ -41,7 +40,6 @@ Run from docker-compose
         gitlab:
             image: gitlab/gitlab-ce
             container_name: gitlab
-            hostname: gitlab.example.com
             restart: "always"
             ports:
                 - "2222:22"
@@ -56,7 +54,7 @@ Run from docker-compose
 
 .. code-block:: console
 
-    docker-compose -f gitlab.yaml up
+    $ docker-compose -f gitlab.yaml up
 
 
 Configuration

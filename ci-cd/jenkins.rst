@@ -51,7 +51,7 @@ Docker Compose
         version: '3'
 
         networks:
-            devtools-ecosystem:
+            ecosystem:
                 driver: bridge
 
         services:
@@ -62,7 +62,7 @@ Docker Compose
                 ports:
                     - "8080:8080"
                 networks:
-                    - devtools-ecosystem
+                    - ecosystem
                 volumes:
                     - /home/jenkins:/var/jenkins_home/
                     - /var/run/docker.sock:/var/run/docker.sock
