@@ -19,6 +19,12 @@ Jenkins in Devtools Ecosystem
 
     Ecosystem Big Picture
 
+.. figure:: img/ecosystem-big-picture-02.png
+    :scale: 50%
+    :align: center
+
+    Ecosystem Big Picture
+
 .. figure:: /_img/ecosystem-jenkins-tooling.png
     :scale: 50%
     :align: center
