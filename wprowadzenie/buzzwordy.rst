@@ -124,7 +124,7 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
     :scale: 50%
     :align: center
 
-.. figure:: /_img/git-flow-whiteboard.jpg
+.. figure:: img/gitflow-all.png
     :scale: 50%
     :align: center
 

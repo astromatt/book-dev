@@ -71,7 +71,7 @@ Jenkins
         version: '3'
 
         networks:
-          mynetwork:
+          ecosystem:
             driver: bridge
 
         services:
@@ -82,7 +82,7 @@ Jenkins
             ports:
               - "8080:8080"
             networks:
-              - mynetwork
+              - ecosystem
             volumes:
               - /home/jenkins:/var/jenkins_home/
               - /var/run/docker.sock:/var/run/docker.sock
