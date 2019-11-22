@@ -70,6 +70,9 @@ Show running
 .. code-block:: console
 
     $ docker ps
+    CONTAINER ID        IMAGE     COMMAND      CREATED              STATUS              PORTS   NAMES
+    09f99d54cba4        alpine    "sh"         About a minute ago   Up About a minute           serene_kare
+    b7583714a497        alpine    "sh"         About a minute ago   Up About a minute           cocky_curie
 
 Show all containers
 -------------------
@@ -78,6 +81,9 @@ Show all containers
 .. code-block:: console
 
     $ docker ps -a
+    CONTAINER ID        IMAGE     COMMAND      CREATED              STATUS              PORTS   NAMES
+    09f99d54cba4        alpine    "sh"         About a minute ago   Up About a minute           serene_kare
+    b7583714a497        alpine    "sh"         About a minute ago   Up About a minute           cocky_curie
 
 
 Name
@@ -109,6 +115,15 @@ Env
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     HOSTNAME=f5f93be44865
     MY_NAME=Jan Twardowski
+    HOME=/root
+
+.. code-block:: console
+
+    $ docker run -e MY_FIRST_NAME='Jan' -e MY_LAST_NAME='Twardowski' alpine env
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    HOSTNAME=0c9bf0f8ae0e
+    MY_FIRST_NAME=Jan
+    MY_LAST_NAME=Twardowski
     HOME=/root
 
 Env-file

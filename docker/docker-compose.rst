@@ -100,17 +100,25 @@ Jenkins
 
     version: '3'
 
+    networks:
+      mynetwork:
+        driver: bridge
+
     services:
       db:
         image: postgres
+        networks:
+          - mynetwork
         ports:
           - "5432:5432"
 
       web:
         build: .
         command: python manage.py runserver 0.0.0.0:8000
+        networks:
+          - mynetwork
         volumes:
-          - .:/www
+          - .:/srv
         ports:
           - "8000:8000"
         depends_on:
@@ -141,27 +149,63 @@ CI/CD ecosystem
         container_name: jenkins
         restart: always
         ports:
-          - "8080:8080"
+          - "8100:8080"
         networks:
           - ecosystem
         volumes:
           - /home/jenkins:/var/jenkins_home/
         depends_on:
-          - sonar
-          - gitlab
+          - sonarqube
           - artifactory
+          - gitlab
         environment:
-          - SONAR_PORT=9000
+          - SONAR_PORT=8200
 
-      sonar:
+      db:
+        image: postgres
+        networks:
+          - ecosystem
+        ports:
+          - "5432:5432"
+
+      sonarqube:
         image: sonarqube
         container_name: sonarqube
         restart: always
         ports:
-         - "9000:9000"
-         - "9092:9092"
+          - "8200:9000"
         networks:
           - ecosystem
+        depends_on:
+          - db
+        volumes:
+          - /home/sonarqube/conf:/opt/sonarqube/conf
+          - /home/sonarqube/data:/opt/sonarqube/data
+          - /home/sonarqube/logs:/opt/sonarqube/logs
+          - /home/sonarqube/extensions:/opt/sonarqube/extensions
+        environment:
+          - sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
+          - sonar.jdbc.username=sonar
+          - sonar.jdbc.password=sonar
+
+      artifactory:
+        image: docker.bintray.io/jfrog/artifactory-oss:latest
+        container_name: artifactory
+        restart: always
+        ports:
+          - "8300:8081"
+        networks:
+          - ecosystem
+        depends_on:
+          - db
+        volumes:
+          - /home/artifactory:/var/opt/jfrog/artifactory
+        environment:
+          - DB_TYPE=postgresql
+          - DB_HOST=db
+          - DB_PORT=5432
+          - DB_USER=artifactory
+          - DB_PASSWORD=artifactory
 
       gitlab:
         image: gitlab/gitlab-ce:latest
@@ -172,20 +216,20 @@ CI/CD ecosystem
           - /home/gitlab/logs:/var/log/gitlab
           - /home/gitlab/data:/var/opt/gitlab
         ports:
-         - "443:443"
-         - "80:80"
-         - "2222:22"
+          - "8400:22"
+          - "8401:80"
+          - "8402:443"
         networks:
           - ecosystem
-
-      artifactory:
-        image: docker.bintray.io/jfrog/artifactory-oss:latest
-        container_name: artifactory
-        restart: always
-        ports:
-          - "8081:8081"
-        networks:
-          - ecosystem
+        depends_on:
+          - db
+        environment:
+          - DB_ADAPTER=postgresql
+          - DB_HOST=db
+          - DB_PORT=5432
+          - DB_NAME=gitlab
+          - DB_USER=gitlab
+          - DB_PASS=gitlab
 
 .. code-block:: console
 

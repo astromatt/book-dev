@@ -62,18 +62,6 @@ Delete network
 
     $ docker network rm mynetwork
 
-Connect new container to network
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: console
-
-    $ docker network create mynetwork
-    $ docker run -d --net mynetwork --name host1 -it alpine sh
-    $ docker run -d --net mynetwork --name host2 -it alpine sh
-
-.. code-block:: console
-
-    $ docker exec host1 ping -c4 host2
-
 Connect running container to network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -85,6 +73,18 @@ Connect running container to network
     $ docker network create mynetwork
     $ docker network connect mynetwork host1
     $ docker network connect mynetwork host2
+
+Connect new container to network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: console
+
+    $ docker network create mynetwork
+    $ docker run -d --net mynetwork --name host1 -it alpine sh
+    $ docker run -d --net mynetwork --name host2 -it alpine sh
+
+.. code-block:: console
+
+    $ docker exec host1 ping -c4 host2
 
 .. code-block:: console
 
