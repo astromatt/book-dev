@@ -158,8 +158,6 @@ CI/CD ecosystem
           - sonarqube
           - artifactory
           - gitlab
-        environment:
-          - SONAR_PORT=8200
 
       db:
         image: postgres
@@ -167,6 +165,11 @@ CI/CD ecosystem
           - ecosystem
         ports:
           - "5432:5432"
+        volumes:
+          - /home/postgresql:/var/lib/postgresql/data
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=example
 
       sonarqube:
         image: sonarqube
@@ -184,9 +187,9 @@ CI/CD ecosystem
           - /home/sonarqube/logs:/opt/sonarqube/logs
           - /home/sonarqube/extensions:/opt/sonarqube/extensions
         environment:
-          - sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube
-          - sonar.jdbc.username=sonar
-          - sonar.jdbc.password=sonar
+          - sonar.jdbc.url=jdbc:postgresql://db:5432/sonarqube
+          - sonar.jdbc.username=sonarqube
+          - sonar.jdbc.password=sonarqube
 
       artifactory:
         image: docker.bintray.io/jfrog/artifactory-oss:latest
@@ -204,6 +207,7 @@ CI/CD ecosystem
           - DB_TYPE=postgresql
           - DB_HOST=db
           - DB_PORT=5432
+          - DB_NAME=artifactory
           - DB_USER=artifactory
           - DB_PASSWORD=artifactory
 

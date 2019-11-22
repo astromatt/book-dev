@@ -5,7 +5,7 @@ GITLab
 
 Install
 =======
-.. warning:: Machine must have at least 2 GB RAM, otherwise freezes. Amazon ``t2.micro`` is not good.
+.. warning:: Machine must have at least 8 GB RAM, otherwise freezes. Amazon ``t2.micro`` is not good.
 
 .. code-block:: console
 
@@ -17,9 +17,9 @@ Install
         --detach \
         --restart always \
         --network ecosystem \
-        --publish 2222:22 \
-        --publish 2280:80 \
-        --publish 22443:443 \
+        --publish 8400:22 \
+        --publish 8401:80 \
+        --publish 8402:443 \
         --volume /home/gitlab/config:/etc/gitlab \
         --volume /home/gitlab/logs:/var/log/gitlab \
         --volume /home/gitlab/data:/var/opt/gitlab \
@@ -42,9 +42,9 @@ Run from docker-compose
             container_name: gitlab
             restart: "always"
             ports:
-                - "2222:22"
-                - "2280:80"
-                - "22443:443"
+                - "8400:22"
+                - "8401:80"
+                - "8402:443"
             networks:
                 - ecosystem
             volumes:
