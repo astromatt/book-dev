@@ -270,8 +270,23 @@ GIT and GIT Flow
     :numbered:
     :caption: GIT and GIT Flow
 
-    /versioning/git.rst
-    /versioning/git-flow.rst
+    /git/introduction.rst
+    /git/commands.rst
+
+    /git/remote.rst
+    /git/config.rst
+    /git/workflow.rst
+    /git/stash.rst
+    /git/refs.rst
+    /git/branch.rst
+    /git/tag.rst
+    /git/log.rst
+    /git/internals.rst
+    /git/reflog.rst
+    /git/smart-commits.rst
+
+    /git/git.rst
+    /git/git-flow.rst
 
 ************
 Alternatives
