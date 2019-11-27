@@ -75,6 +75,7 @@ Notable
 * commit.template
 * core.editor
 
+
 Aliases
 =======
 .. code-block:: text
@@ -96,3 +97,19 @@ Aliases
 
 Gitignore
 =========
+.. code-block:: text
+
+    # Byte-compiled / optimized / DLL files
+    __pycache__/
+    *.py[cod]
+    *$py.class
+
+    # C extensions
+    *.so
+
+    # Distribution / packaging
+    .Python
+    env/
+    build/
+    develop-eggs/
+    dist/

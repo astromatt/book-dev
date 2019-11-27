@@ -17,7 +17,7 @@ Branche
 #. After merging no need to delete branch
 #. Branches are only commit hashes to the most recent commit
 #. Branch weights 40 bytes + null terminator (in fact one file system sector)
-#. Can :ref:`merge` and :ref:`rebase` branches
+#. Can :ref:`merge <GIT Merge>` and :ref:`rebase <GIT Rebase>` branches
 
 
 Local storage of branches

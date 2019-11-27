@@ -274,17 +274,32 @@ GIT and GIT Flow
     /git/commands.rst
 
     /git/remote.rst
-    /git/config.rst
     /git/workflow.rst
-    /git/stash.rst
-    /git/refs.rst
     /git/branch.rst
+    /git/diff.rst
+    /git/stash.rst
     /git/tag.rst
     /git/log.rst
+    /git/config.rst
+
+    /git/rebase.rst
+    /git/merge-vs-rebase.rst
+    /git/cherry-pick.rst
+
+    /git/smart-commits.rst
+    /git/hooks.rst
+    /git/bisect.rst
+    /git/filter-branch.rst
+
+    /git/refs.rst
     /git/internals.rst
     /git/reflog.rst
-    /git/smart-commits.rst
 
+    /git/submodules.rst
+    /git/subtree.rst
+
+    /git/tools.rst
+    /git/lfs.rst
     /git/git.rst
     /git/git-flow.rst
 

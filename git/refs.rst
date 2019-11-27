@@ -13,8 +13,14 @@ Commit Hash
 #. Informacja na temat całej historii drzewa
 
 
+Refs
+====
+* ``.git/refs/*``
+
+
 HEAD
 ====
+* ``.git/HEAD``
 
 
 Branches

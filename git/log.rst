@@ -45,6 +45,7 @@ Graph
     $ git log --graph
     $ git log -15 --oneline --graph
 
+
 Format
 ======
 * ``%ae`` - author email
@@ -111,3 +112,15 @@ Format
     Matt Harasymczuk
     Przemysław Pytlak
     wasikuss
+
+
+File Log
+========
+.. code-block:: console
+
+    $ git log -n5 --oneline README.rst
+    8b3440a (HEAD -> master) Change Readme file
+    d84da13 Book: Refactor #time 79m
+    19cc5df Book: Theme #time 30m
+    d84ac63 Book: README #time 5m
+    e5c6727 Book: README #time 5m

@@ -9,7 +9,7 @@ What is it?
 
 
 How to restore from reflog?
-==========================
+===========================
 * Which one to pick
 * Detached HEAD
 * Cherry Pick

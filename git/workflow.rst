@@ -99,6 +99,7 @@ Status
 
     $ git status
 
+
 Commit
 ======
 * ``-a``, ``--all`` - commit all changed files
@@ -112,6 +113,17 @@ Commit
     $ git commit --all --message "ID-10 fix, now working"
     $ git commit -a -m "ID-10 fix, now working"
     $ git commit -am "ID-10 fix, now working"
+
+Revert
+======
+* Undo committed file
+
+.. code-block:: console
+
+    $ git reset --soft HEAD^
+    $ git reset HEAD <file-path>
+    $ git commit -c ORIG_HEAD
+
 
 Push
 ====
