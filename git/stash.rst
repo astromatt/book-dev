@@ -1,6 +1,6 @@
-*****
-Stash
-*****
+*********
+GIT Stash
+*********
 
 
 Add to stash
