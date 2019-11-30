@@ -5,6 +5,8 @@ About Docker
 
 What is docker?
 ===============
+* :cite:`DockerDocumentation`
+
 .. figure:: img/docker-vs-lxc.png
     :scale: 50%
     :align: center

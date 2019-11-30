@@ -26,13 +26,13 @@ Atlassian Python API
 
 Reindex
 -------
-.. literalinclude:: /_src/jira-reindex.py
+.. literalinclude:: src/jira-reindex.py
     :caption: Jira reindex
     :language: python
 
 Project Administrators
 ----------------------
-.. literalinclude:: /_src/jira-project-administrators.py
+.. literalinclude:: src/jira-project-administrators.py
     :caption: Jira Project Administrators
     :language: python
 

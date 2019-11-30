@@ -5,7 +5,7 @@ Jenkins
 - https://jenkins.io/
 - https://jenkins.io/doc
 
-.. figure:: /_img/cicd-loop.png
+.. figure:: img/cicd-loop.png
     :scale: 75%
     :align: center
 
@@ -25,7 +25,7 @@ Jenkins in Devtools Ecosystem
 
     Ecosystem Big Picture
 
-.. figure:: /_img/ecosystem-jenkins-tooling.png
+.. figure:: img/ecosystem-jenkins-tooling.png
     :scale: 50%
     :align: center
 
@@ -341,7 +341,7 @@ Groovy syntax
 - Audit trail for the Pipeline
 - Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
 
-.. figure:: /_img/ecosystem-jenkins-pipeline.png
+.. figure:: img/ecosystem-jenkins-pipeline.png
     :scale: 50%
     :align: center
 

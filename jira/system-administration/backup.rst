@@ -22,7 +22,7 @@ Procedure
 
 Script
 ======
-.. literalinclude:: /_src/jira-backup.sh
+.. literalinclude:: src/jira-backup.sh
     :caption: Jira backup
     :language: console
 

@@ -28,7 +28,12 @@ extensions = [
     # 'sphinxjp.themes.revealjs',
 ]
 
-exclude_patterns = []
+exclude_patterns = [
+    'ecosystem/*',
+    'process/*',
+    'cloud-architecture/*',
+    'ci-cd/*',
+]
 
 # -----------------------------------------------------------------------------
 # Standard book config
@@ -58,23 +63,20 @@ html_theme = 'sphinx_rtd_theme'
 
 exclude_patterns = exclude_patterns + [
     '.*',
-    'venv*',
-    'virtualenv*',
-    '_extensions',
-    '_img',
-    '_slides',
-    '_static',
-    '_themes',
-    '_tmp',
+    '.venv-*',
+    '*/_slides',
+    '*/_static',
+    '*/_themes',
+    '*/_tmp',
     '*/_template.rst',
     '*/contrib/*',
     '*/solution/*',
-    '*/solutions/*',
     '**.ipynb_checkpoints',
     'README.rst',
     'TODO.rst',
 ]
 
+suppress_warnings = ['toc.secnum']
 source_directory = abs_path('.')
 master_doc = 'index'
 highlight_language = 'python3'

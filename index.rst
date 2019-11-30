@@ -1,22 +1,11 @@
 .. include:: README.rst
 
-
 .. toctree::
+    :numbered:
     :maxdepth: 2
 
-    /jira/index.rst
-
-.. toctree::
-    :maxdepth: 2
-
+    /agile/index.rst
     /linux/index.rst
-
-.. toctree::
-    :maxdepth: 2
-
+    /jira/index.rst
     /docker/index.rst
-
-.. toctree::
-    :maxdepth: 2
-
     /git/index.rst

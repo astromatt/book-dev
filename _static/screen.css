@@ -128,4 +128,5 @@
 
     /* Read the docs footer on bottom left menu */
     .rst-current-version {background: var(--menu-background) !important;}
+    .rst-versions {display: none;}
 }

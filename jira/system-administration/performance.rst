@@ -13,6 +13,11 @@ Performance Tuning
 - Java Melody
 - New Relic
 
+Cache
+=====
+.. literalinclude:: src/confluence-varnish.vcl
+    :language: text
+
 
 Optymalizacje
 =============
@@ -48,7 +53,7 @@ Garbage Collector
 - ``Xmx``
 - ``/opt/atlassian/jira/bin/setenv.sh``
 
-.. literalinclude:: /_src/jira-gc.sh
+.. literalinclude:: src/jira-gc.sh
     :caption: Jira Garbage Collector
     :language: console
 

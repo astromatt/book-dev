@@ -5,7 +5,7 @@ License
 
 Cloud vs. Server
 ================
-* Dokumentacja :cite:`OfficialDocumentation`
+* Dokumentacja :cite:`JiraDocumentation`
 * Jira Core vs. Software vs. Service Desk
 
 

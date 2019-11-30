@@ -11,7 +11,7 @@ Basic Configuration
 - Application Links
 - Zmiana formatu daty
 
-.. figure:: /_img/jira-date-format.png
+.. figure:: img/jira-date-format.png
     :scale: 75%
     :align: center
 

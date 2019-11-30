@@ -1,4 +1,4 @@
-# ACL - biuro + internal + cloud
+# ACL - office + internal + cloud
 acl local_access {
   "localhost";
   "10.0.0.0"/8;
@@ -29,19 +29,19 @@ sub vcl_recv {
   }
 
   if (req.url ~ "\.(xml)"){
-  return(pipe);
+    return(pipe);
   }
 
   if (req.url ~ "^/secure/projectavatar" || req.url ~ "^/secure/useravatar") {
-#    set beresp.http.Cache-Control = "max-age=330";
-#    set beresp.ttl = 330s;
-  return (lookup);
+    # set beresp.http.Cache-Control = "max-age=330";
+    # set beresp.ttl = 330s;
+    return (lookup);
   }
 
 
   if (req.request == "POST") {
     return (pipe);
-    }
+  }
 
   return (pass);
 }
@@ -69,15 +69,11 @@ sub vcl_fetch {
     set beresp.do_gzip = true;
   }
 
-#  if (beresp.http.Pragma ~ "no-cache" || beresp.http.Cache-Control ~ "no-cache" || beresp.http.Cache-Control ~ "private") {
-#    return(hit_for_pass);
+  # if (beresp.http.Pragma ~ "no-cache" || beresp.http.Cache-Control ~ "no-cache" || beresp.http.Cache-Control ~ "private") {
+  #   return(hit_for_pass);
+  # }
 
-#  }
-
-# ftpd 2013-05-17 - podmiana
-#   if (beresp.http.Cache-Control ~ "max-age") {
   if (beresp.http.Cache-Control ~ "max-age" || beresp.http.Cache-Control ~ "s-maxage") {
-# ---
     unset beresp.http.Set-Cookie;
     unset beresp.http.X-AREQUESTID;
     unset beresp.http.X-ASESSIONID;
@@ -85,13 +81,12 @@ sub vcl_fetch {
     unset beresp.http.X-Seraph-LoginReason;
     return(deliver);
   }
-# ftpd 2013-05-17 - dopisanie
+
   if (beresp.status == 404) {
     set beresp.http.Cache-Control = "max-age=5";
     set beresp.ttl = 5s;
     set beresp.grace = 5s;
   }
-# ---
 }
 
 sub vcl_hit {
@@ -108,7 +103,7 @@ sub vcl_miss {
 }
 
 sub vcl_deliver {
-# usun naglowki varnisha/php/nginxa
+  # remote varnish and nginx headers
   remove resp.http.X-Varnish;
   remove resp.http.Via;
   remove resp.http.X-Powered-By;
@@ -121,7 +116,6 @@ sub vcl_hash {
   hash_data(req.url);
   return (hash);
 }
-
 
 sub vcl_pipe {
   /* Force the connection to be closed afterwards so subsequent reqs don't use pipe */
