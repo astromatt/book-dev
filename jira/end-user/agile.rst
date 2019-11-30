@@ -1,15 +1,5 @@
-*********************
 Jira Software (Agile)
-*********************
-
-* :cite:`AgileManifesto2001`
-
-
-More information
-----------------
-.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/scrum-master-training-course and https://www.slideshare.net/astrotech/scrum-training-course Those slides will be converted to the book format with time.
-
-
+=====================
 
 Project Management
 ------------------
@@ -262,8 +252,3 @@ Sprinty
     - Co się dzieje z otwartymi subtaskami ale zamkniętym zadaniem?
 
 - Zobacz raporty
-
-More information
-----------------
-.. warning:: There's much more information at my slides https://www.slideshare.net/astrotech/scrum-master-training-course and https://www.slideshare.net/astrotech/scrum-training-course Those slides will be converted to the book format with time.
-

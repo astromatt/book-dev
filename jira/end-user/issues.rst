@@ -36,19 +36,15 @@ Versions
 
 Priorities
 ----------
-- Standard
-
-    - Lowest
-    - Low
-    - Medium
-    - High
-    - Highest
-
-- MoSCoW
-
-    - Must
-    - Schould
-    - Could
+* Lower, Low, Medium, High, Highest
+* Low, Medium, High, Highest, Blocker
+* Urgent, Important, Standard
+* MoSCoW (Must, Should, Could)
+* Important, Normal
+* Expedite, Standard
+* Top, Normal, Bottom
+* Important, Normal, Somday/Maybe
+* DEFCON-1, DEFCON-2, DEFCON-3
 
 Statusy
 -------
@@ -99,30 +95,38 @@ Assignments
 
 Tworzenie issues
 ^^^^^^^^^^^^^^^^
-- Ustaw ekran tworzenia zadania
+#. Ustaw ekran tworzenia zadania
 
     - Issue Type
     - Summary
     - Description
     - Priority
     - Attachment
-    - Linked Issue
+    - Linked Issues
     - Assignee
     - Time Tracking
 
-- Do jednego z zadań dodaj załącznik
+#. Załóż zadanie w projekcie
+#. Do zadania dodaj załącznik
 
     - obrazek PNG lub JEPG
     - archiwum .zip z przynajmniej dwoma plikami tekstowymi
 
-- Zadania powinny mieć różne priorytety
-- Zadania miały różne Issue Type
-- Powiąż dwa zadania linkami jako "is blocked by"/"blocks"
-- Sklonuj przynajmniej jedno zadanie
-- Niech jedno zadanie ma trzy sub-taski
+#. Zmień priorytet na Highest
+#. Zmień Issue Type na Task
+#. Powiąż dwa zadania linkami jako "is blocked by"/"blocks"
+#. Sklonuj zadanie
+
+    - z attachmentami
+    - ze sprintem
+
+#. Zadanie ma mieć trzy sub-taski
 
     - status pierwszego: To Do
     - status drugiego: In Progress
     - status trzeciego: Done
+    - wyceń każde z zadań na 10m
 
-- Przenieś zadanie z projektu do innego projektu
+#. Przenieś zadanie z projektu do innego projektu
+
+    - nie wysyłaj informacji mailem o zmianach

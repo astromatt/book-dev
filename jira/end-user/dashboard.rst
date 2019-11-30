@@ -1,5 +1,7 @@
 Dashboard
 =========
+- Edit Layout
+- Share
 - Tworzenie
 - Publikacja
 - Dodawanie gadżetów
