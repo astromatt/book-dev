@@ -56,9 +56,8 @@ mathjax_config = {
 html_theme = 'sphinx_rtd_theme'
 
 exclude_patterns = [
-    'ecosystem/*',
-    'process/*',
-    'ci-cd/*',
+    '__ecosystem/*',
+    '__process/*',
 
     '.*',
     '.venv-*',
