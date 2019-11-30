@@ -1,4 +1,5 @@
 import sys; sys.path.append('..')
+from conf import *
 
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
