@@ -9,7 +9,7 @@ Docker network
 Adapters
 ========
 
-.. figure:: /_img/docker-networking.png
+.. figure:: img/docker-networking.png
     :scale: 35%
     :align: center
 

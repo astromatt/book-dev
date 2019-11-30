@@ -53,7 +53,7 @@ Ubuntu
 * LTS or 'Long Term Support' releases are published every two years in April
 * https://ubuntu.com/about/release-cycle
 
-.. figure:: /_img/release-ubuntu.png
+.. figure:: img/release-ubuntu.png
     :scale: 35%
     :align: center
 

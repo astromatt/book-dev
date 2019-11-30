@@ -5,7 +5,7 @@ About Docker
 
 What is docker?
 ===============
-.. figure:: /_img/docker-vs-lxc.png
+.. figure:: img/docker-vs-lxc.png
     :scale: 50%
     :align: center
 
@@ -44,25 +44,25 @@ Layers
         Diff between outputs of Dockerfile ``RUN`` command while building an image
 
 
-.. figure:: /_img/docker-layer-images.png
+.. figure:: img/docker-layer-images.png
     :scale: 50%
     :align: center
 
     Layers
 
-.. figure:: /_img/docker-layers.png
+.. figure:: img/docker-layers.png
     :scale: 50%
     :align: center
 
     Layers
 
-.. figure:: /_img/docker-container-layers.jpg
+.. figure:: img/docker-container-layers.jpg
     :scale: 50%
     :align: center
 
     Container Layers
 
-.. figure:: /_img/docker-container-layers.png
+.. figure:: img/docker-container-layers.png
     :scale: 50%
     :align: center
 
