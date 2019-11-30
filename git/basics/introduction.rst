@@ -5,6 +5,7 @@ GIT Introduction
 
 About Version Control
 =====================
+* :cite:`GITDocumentation`
 
 Why we have Version Control?
 ----------------------------
