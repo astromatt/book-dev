@@ -14,7 +14,7 @@ Moje prezentacje
 - `Always Be Responsible for Any Code You Write, Even for Fun. NoException(); - Prezentacja <https://www.slideshare.net/mattharasymczuk/always-be-responsible-for-any-code-you-write-even-for-fun-noexception>`_
 - `Technical side of agile <https://www.slideshare.net/mattharasymczuk/technical-side-of-agile>`_
 - `Jira and Jira Agile Training Course <https://www.slideshare.net/mattharasymczuk/jira-and-jira-agile-training-course>`_
-- `GIT and GIT Flow <https://www.slideshare.net/mattharasymczuk/git-69488776>`_
+- `Git and Git Flow in CI/CD <https://www.slideshare.net/mattharasymczuk/git-69488776>`_
 
 - `Pozostałe prezentacje <https://www.slideshare.net/mattharasymczuk/presentations>`_
 

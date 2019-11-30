@@ -2,12 +2,12 @@
 .. include:: LICENSE.rst
 
 **********
-GIT Basics
+Git Basics
 **********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT Basics
+    :caption: Git Basics
 
     basics/introduction.rst
     basics/commands.rst
@@ -15,12 +15,12 @@ GIT Basics
     basics/workflow.rst
 
 **********
-GIT Commit
+Git Commit
 **********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT and GIT Flow
+    :caption: Git Commit
 
     commit/smart-commits.rst
     commit/diff.rst
@@ -28,24 +28,24 @@ GIT Commit
     commit/stash.rst
 
 *************
-GIT Branching
+Git Branching
 *************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT Branching
+    :caption: Git Branching
 
     branch/branch.rst
     branch/rebase.rst
     branch/merge-vs-rebase.rst
 
 ***********
-GIT History
+Git History
 ***********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT History
+    :caption: Git History
 
     history/log.rst
     history/bisect.rst
@@ -53,12 +53,12 @@ GIT History
     history/filter-branch.rst
 
 *************
-GIT Internals
+Git Internals
 *************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT Internals
+    :caption: Git Internals
 
     internals/hooks.rst
     internals/refs.rst
@@ -66,24 +66,24 @@ GIT Internals
     internals/reflog.rst
     internals/config.rst
 
-********************
-GIT Sub-repositories
-********************
+*******************
+Git Subrepositories
+*******************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT Sub-repositories
+    :caption: Git Subrepositories
 
     subrepo/submodules.rst
     subrepo/subtree.rst
 
 ***********
-GIT Tooling
+Git Tooling
 ***********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: GIT Tooling
+    :caption: Git Tooling
 
     tools/tools.rst
     tools/lfs.rst

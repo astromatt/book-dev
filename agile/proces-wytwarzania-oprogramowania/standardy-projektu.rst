@@ -36,9 +36,9 @@ W przypadku zapotrzebowania na zmianę technologii, architektury lub podziału a
 System kontroli wersji
 ======================
 
-Firma jako standard systemu kontroli wersji wybrała rozwiązanie GIT. Aplikacja ta jest narzędziem pozwalającym na śledzenie zmian oraz ich autorów. GIT został wybrany, jako że na chwilę obecną jest najpopularniejszym oprogramowaniem tego typu na rynku i ma największe wsparcie wśród narzędzi deweloperskich. Ponadto w sieci Internet zgromadzone są duże zasoby wiedzy dotyczącej korzystania z tego oprogramowania, a społeczność chętnie pomaga rozwiązywać najczęściej spotykane problemy.
+Firma jako standard systemu kontroli wersji wybrała rozwiązanie Git. Aplikacja ta jest narzędziem pozwalającym na śledzenie zmian oraz ich autorów. Git został wybrany, jako że na chwilę obecną jest najpopularniejszym oprogramowaniem tego typu na rynku i ma największe wsparcie wśród narzędzi deweloperskich. Ponadto w sieci Internet zgromadzone są duże zasoby wiedzy dotyczącej korzystania z tego oprogramowania, a społeczność chętnie pomaga rozwiązywać najczęściej spotykane problemy.
 
-Zastosowanie GITa w projekcie wiąże się z przestrzeganiem odpowiednich konwencji nazewniczych oraz procesu wprowadzania funkcjonalności w aplikacji. Informacje te są zamieszczone w oddzielnym paragrafie “Konwencja nazewnicza w systemie kontroli wersji”.
+Zastosowanie Git w projekcie wiąże się z przestrzeganiem odpowiednich konwencji nazewniczych oraz procesu wprowadzania funkcjonalności w aplikacji. Informacje te są zamieszczone w oddzielnym paragrafie “Konwencja nazewnicza w systemie kontroli wersji”.
 
 Zarządzanie projektem oraz zadaniami
 ====================================

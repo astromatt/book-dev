@@ -5,7 +5,7 @@ Code Review
 #. Praktyki projektowe vs. praktyki developerskie
 #. Feature i bugfix branch
 
-    * GIT i GIT Flow
+    * Git i Git Flow
     * Strategia budowania branchy
     * Statyczna analiza kodu
     * Strategie repozytoriów: Fork, Central Repo, Army model

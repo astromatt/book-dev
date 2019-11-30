@@ -1,5 +1,5 @@
 ************
-GIT Workflow
+Git Workflow
 ************
 
 

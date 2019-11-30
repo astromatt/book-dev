@@ -1,5 +1,5 @@
 ********
-GIT Diff
+Git Diff
 ********
 
 

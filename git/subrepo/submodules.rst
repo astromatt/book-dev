@@ -1,5 +1,5 @@
 **************
-GIT Submodules
+Git Submodules
 **************
 
 

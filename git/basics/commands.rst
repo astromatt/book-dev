@@ -1,5 +1,5 @@
 ************
-GIT Commands
+Git Commands
 ************
 
 

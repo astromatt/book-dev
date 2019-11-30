@@ -1,14 +1,14 @@
 ********************
-GIT Merge vs. Rebase
+Git Merge vs. Rebase
 ********************
 
-.. _GIT Merge:
+.. _Git Merge:
 
 Merge
 =====
 
 
-.. _GIT Rebase:
+.. _Git Rebase:
 
 Rebase
 ======

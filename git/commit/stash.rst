@@ -1,5 +1,5 @@
 *********
-GIT Stash
+Git Stash
 *********
 
 

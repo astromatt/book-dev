@@ -1,5 +1,5 @@
 ********
-GIT Tags
+Git Tags
 ********
 
 

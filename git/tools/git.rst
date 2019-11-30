@@ -1,5 +1,5 @@
 ***
-GIT
+Git
 ***
 
 
@@ -8,7 +8,7 @@ GIT
 
 Wprowadzenie
 ============
-* :cite:`GITDocumentation`
+* :cite:`GitDocumentation`
 
 Opis dostępnych darmowych klientów gita
 ---------------------------------------

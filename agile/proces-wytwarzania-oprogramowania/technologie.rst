@@ -21,7 +21,7 @@ Narzędzia developerskie
 =======================
 
 * Jira
-* GIT
+* Git
 * Bitbucket
 * Jenkins
 * SonarQube
@@ -32,7 +32,7 @@ Narzędzia developerskie
     * PMD
     * Jacoco
     * PIT Test
-    
+
 * Artifactory
 * Netbeans / Eclipse / InteliJ IDEA
 * SonarLint

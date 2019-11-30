@@ -1,5 +1,5 @@
 *********
-GIT Tools
+Git Tools
 *********
 
 #. Skrypt robiący changelog pomiędzy wersjami (tagami) zaciągający dane z Jiry

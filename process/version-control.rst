@@ -5,9 +5,9 @@ Proces kontroli wersji i zmian
 
 W ramach projektu zadbano o jakość opracowanych rozwiązań. Dla poprawy kodu aplikacji stworzonego w ramach systemu mają zastosowanie ogólnie przyjęte dobre praktyki wytwarzania oprogramowania oraz konwencje nazewnicze zgodne o ogólnoświatowym standardem.
 
-Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym oprogramowaniu, które jest aktywnie rozwijane zachodzi konieczność wprowadzenia systemu kontroli wersji takiego jak np. *GIT*. Narzędzie to pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą zaletą tego typu systemu jest możliwość równoległej pracy nad systemem przez wiele osób. Zaproponowany system kontroli zmian pozwala na dowolne skalowanie zespołu programistów i jest zgodny ze standardem dobrych praktyk inżynierii oprogramowania na świecie.
+Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym oprogramowaniu, które jest aktywnie rozwijane zachodzi konieczność wprowadzenia systemu kontroli wersji takiego jak np. *Git*. Narzędzie to pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą zaletą tego typu systemu jest możliwość równoległej pracy nad systemem przez wiele osób. Zaproponowany system kontroli zmian pozwala na dowolne skalowanie zespołu programistów i jest zgodny ze standardem dobrych praktyk inżynierii oprogramowania na świecie.
 
-Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. *commit*) oraz gałęzi (ang. *branch*) z nowymi funkcjonalnościami oraz poprawkami błędów. Przyjęta konwencja jest standardem opartym na schemacie *GIT Flow*.
+Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. *commit*) oraz gałęzi (ang. *branch*) z nowymi funkcjonalnościami oraz poprawkami błędów. Przyjęta konwencja jest standardem opartym na schemacie *Git Flow*.
 
 Aby zachować spójność ze standardem opisu zmian w systemach informatycznych zastosowano opisy w języku angielskim. Każda zmiana w systemie kontroli wersji jest opisana według następującego przykładu:
 
@@ -20,7 +20,7 @@ Dzięki zastosowaniu takiej konstrukcji system do przechowywania repozytorium mo
 
 Zarządzanie głównymi gałęziami rozwoju oprogramowania
 =====================================================
-W ramach konwencji nazewniczej *GIT Flow* wyróżnia się szereg specyficznych gałęzi rozwojowych oprogramowania. Każda z nich posiada unikalną rolę. Do głównych gałęzi można zaliczyć:
+W ramach konwencji nazewniczej *Git Flow* wyróżnia się szereg specyficznych gałęzi rozwojowych oprogramowania. Każda z nich posiada unikalną rolę. Do głównych gałęzi można zaliczyć:
 
     - stabilna gałąź kodu produkcyjnego - ``master``,
     - "żyjąca" gałąź integracyjna - ``develop``,
@@ -37,7 +37,7 @@ Proces i umiejscowienie poszczególnych gałęzi rozwojowych w ramach projektu z
 .. figure:: img/gitflow-all.png
     :name: figure-process-gitflow-overview
 
-    Schemat konwencji nazewniczej *GIT Flow* obrazujący rozmieszczenie gałęzi rozwojowych oprogramowania.
+    Schemat konwencji nazewniczej *Git Flow* obrazujący rozmieszczenie gałęzi rozwojowych oprogramowania.
 
 
 Gałąź kodu produkcyjnego
@@ -73,7 +73,7 @@ Przy takim podejściu kod jest scalany mniejszymi, lecz częstszymi przyrostami 
 
 Rodzina gałęzi wdrożeniowych
 ============================
-Wprowadzenie gałęzi integracyjnej, która w standardzie *GIT Flow* nazywana jest ``develop``, nakłada konieczność wprowadzenia procesu wdrażania kodu, tj. scalania go z kodem produkcyjnym ``master``. W trakcie wdrożenia następuje moment wydzielenia gałęzi tzw. kandydata do wdrożenia (ang. *release candidate*) o nazwie:
+Wprowadzenie gałęzi integracyjnej, która w standardzie *Git Flow* nazywana jest ``develop``, nakłada konieczność wprowadzenia procesu wdrażania kodu, tj. scalania go z kodem produkcyjnym ``master``. W trakcie wdrożenia następuje moment wydzielenia gałęzi tzw. kandydata do wdrożenia (ang. *release candidate*) o nazwie:
 
     ``release/X.Y``
 

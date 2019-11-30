@@ -1,5 +1,5 @@
 **********
-GIT Bisect
+Git Bisect
 **********
 
 .. code-block:: console

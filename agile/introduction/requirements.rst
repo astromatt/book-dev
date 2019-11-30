@@ -34,5 +34,5 @@ Windows
 
 macOS and Linux
 ---------------
-- Latest version of `GIT <https://git-scm.com/downloads>`_
+- Latest version of `Git <https://git-scm.com/downloads>`_
 - Latest version of `Docker <http://docker.io>`_

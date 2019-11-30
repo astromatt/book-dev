@@ -1,5 +1,5 @@
 *********
-GIT Hooks
+Git Hooks
 *********
 
 

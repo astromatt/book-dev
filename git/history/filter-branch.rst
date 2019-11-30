@@ -1,5 +1,5 @@
 *****************
-GIT Filter Branch
+Git Filter Branch
 *****************
 
 

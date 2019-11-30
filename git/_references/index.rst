@@ -6,5 +6,5 @@ References
 Bibliography
 ============
 .. bibliography:: bibliography.bib
-    :style: unsrt
+    :style: alpha
     :all:

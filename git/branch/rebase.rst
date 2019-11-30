@@ -1,5 +1,5 @@
 **********************
-GIT Interactive Rebase
+Git Interactive Rebase
 **********************
 
 

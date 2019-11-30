@@ -27,7 +27,7 @@ Proces produkcji
 #. Produkcja Oprogramowania
 
     * Ciągłe budowanie, testowanie, inspekcja i wdrażanie
-    * Budowanie GIT Flow oraz jego alternatyw
+    * Budowanie Git Flow oraz jego alternatyw
     * Które branche budować i jakie testy odpalać
     * Omówienie systemów CI/CD oraz różnic w filozofii
     * Big Picture ekosystemu narzędziowego

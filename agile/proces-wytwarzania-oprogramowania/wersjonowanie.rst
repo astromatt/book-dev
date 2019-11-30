@@ -1,9 +1,9 @@
 Wersjonowanie aplikacji i kodu źródłowego
 =========================================
 
-Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym takim oprogramowaniu wcześniej czy później przychodzi konieczność wprowadzenia systemu do kontroli wersji takiego jak np. *GIT*. Już samo to narzędzie pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą jednak zaletą tego typu oprogramowania jest możliwość równoległej pracy nad systemem przez wiele osób. W XXI wieku gdzie projekty informatyczne stały się gigantyczne i długotrwałe, a w proces ich tworzenia zaangażowane są dziesiątki osób takie podejście jest jedynym skutecznym sposobem na wytwarzanie oprogramowania.
+Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym takim oprogramowaniu wcześniej czy później przychodzi konieczność wprowadzenia systemu do kontroli wersji takiego jak np. *Git*. Już samo to narzędzie pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą jednak zaletą tego typu oprogramowania jest możliwość równoległej pracy nad systemem przez wiele osób. W XXI wieku gdzie projekty informatyczne stały się gigantyczne i długotrwałe, a w proces ich tworzenia zaangażowane są dziesiątki osób takie podejście jest jedynym skutecznym sposobem na wytwarzanie oprogramowania.
 
-Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla poprawy kodu aplikacji stworzonego w ramach działań operacyjnych mają zastosowanie ogólnie przyjęte dobre praktyki wytwarzania oprogramowania oraz konwencje nazewnicze zgodne o ogólnoświatowym standardem dla danej technologii. Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. *commit*) oraz gałęzi (ang. *branch*) z nowymi funkcjonalnościami z poprawkami błędów. Przyjęta konwencja jest standardem opartym na uproszczonym schemacie *GIT Flow*, zwanym dalej *Lean GIT Flow*.
+Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla poprawy kodu aplikacji stworzonego w ramach działań operacyjnych mają zastosowanie ogólnie przyjęte dobre praktyki wytwarzania oprogramowania oraz konwencje nazewnicze zgodne o ogólnoświatowym standardem dla danej technologii. Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. *commit*) oraz gałęzi (ang. *branch*) z nowymi funkcjonalnościami z poprawkami błędów. Przyjęta konwencja jest standardem opartym na uproszczonym schemacie *Git Flow*, zwanym dalej *Lean Git Flow*.
 
 Dzięki zastosowaniu takiej konstrukcji system do przechowywania repozytorium może wymieniać informacje z aplikacją do zarządzania zadaniami oraz przyporządkowywać dany kod odpowiednim zadaniom. Umożliwia to także łatwą weryfikację oraz śledzenie postępu pracy nad konkretną funkcjonalnością.
 
@@ -43,7 +43,7 @@ Wersja ``bugfix`` jest przeznaczona do użytku wyłącznie dla poprawek bezpiecz
 
 Zarządzanie gałęziami
 ---------------------
-W ramach Firmy została wdrożona konwencja nazewnicza zwana *GIT Flow*. W ramach jej zastosowania wyróżnia się kilka specyficznych gałęzi rozwojowych oprogramowania. Każda z nich posiada unikalną rolę.
+W ramach Firmy została wdrożona konwencja nazewnicza zwana *Git Flow*. W ramach jej zastosowania wyróżnia się kilka specyficznych gałęzi rozwojowych oprogramowania. Każda z nich posiada unikalną rolę.
 
 Branch produkcyjny ``master``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,7 +77,7 @@ Stan powyżej opisany jest wysoce pożądany w przypadku każdego projektu bez w
 
 Gałąź tymczasowa ``release/X.Y``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Wprowadzenie brancha integracyjnego, który w standardzie *GIT Flow* nazywany jest ``develop`` nakłada konieczność wprowadzenia sposobu wdrażania kodu, tj. scalania go z branchem produkcyjnym (``master``). W tym celu tymczasowo powoływany jest branch ``release/X.Y`` (*X.Y.Z* oznaczają numer wersji zgodnie z wcześniejszym opisem, tzw. *semantic versioning*: ``major.minor``), który jest tzw. kandydatem wydania (ang. *release candidate*). Na tej gałęzi odpalane są wszystkie testy, podnoszona jest wersja w ``pom.xml`` oraz w razie konieczności wprowadzane są poprawki. Po pozytywnym przejściu przez proces testów gałąź ``release/X.Y`` jest scalana z gałęzią ``master`` a zmiana (ang. ``commit``) jest otagowywany numerem wersji wdrożenia.
+Wprowadzenie brancha integracyjnego, który w standardzie *Git Flow* nazywany jest ``develop`` nakłada konieczność wprowadzenia sposobu wdrażania kodu, tj. scalania go z branchem produkcyjnym (``master``). W tym celu tymczasowo powoływany jest branch ``release/X.Y`` (*X.Y.Z* oznaczają numer wersji zgodnie z wcześniejszym opisem, tzw. *semantic versioning*: ``major.minor``), który jest tzw. kandydatem wydania (ang. *release candidate*). Na tej gałęzi odpalane są wszystkie testy, podnoszona jest wersja w ``pom.xml`` oraz w razie konieczności wprowadzane są poprawki. Po pozytywnym przejściu przez proces testów gałąź ``release/X.Y`` jest scalana z gałęzią ``master`` a zmiana (ang. ``commit``) jest otagowywany numerem wersji wdrożenia.
 
 Obrazek poniżej przedstawia graficzną reprezentację procesu wdrożenia, tj. scalenia kodu z brancha integracyjnego ``develop`` do brancha stabilnego master. 
 

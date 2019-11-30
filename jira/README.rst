@@ -1,6 +1,6 @@
-############################
-Jira and Atlassian Ecosystem
-############################
+#############################
+Jira with Atlassian Ecosystem
+#############################
 
 
 .. figure:: ../_static/AstroMatt.jpg
@@ -28,8 +28,8 @@ Jira and Atlassian Ecosystem
 
     "http://python.astrotech.io", "Python 3: from None to Machine Learning"
     "http://dev.astrotech.io", "DevOps and CI/CD with Docker"
-    "http://jira.astrotech.io", "Jira Software, Jira Service Desk and Jira Core"
-    "http://git.astrotech.io", "GIT and GIT Flow"
+    "http://jira.astrotech.io", "Jira with Atlassian Ecosystem"
+    "http://git.astrotech.io", "Git and Git Flow in CI/CD"
     "http://agile.astrotech.io", "Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean"
     "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices"
     "http://linux.astrotech.io", "Linux and Shell Programming with Bash"

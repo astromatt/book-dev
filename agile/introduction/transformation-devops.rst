@@ -39,11 +39,11 @@ Everyday use
 - Ekosystem: Testy Integracyjne
 - Ekosystem: Testy Regresyjne
 - Ekosystem: Testy Wydajnościowe
-- Ekosystem: Wdrożenie GIT Flow w repozytoriach zespołów
+- Ekosystem: Wdrożenie Git Flow w repozytoriach zespołów
 - Szkolenie: Build - Test - Learn
 - Szkolenie: CI / CD
 - Szkolenie: Clean Code
-- Szkolenie: GIT Flow
+- Szkolenie: Git Flow
 - Szkolenie: Lean Startup
 
 

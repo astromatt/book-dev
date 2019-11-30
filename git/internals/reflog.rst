@@ -1,5 +1,5 @@
 **********
-GIT Reflog
+Git Reflog
 **********
 
 

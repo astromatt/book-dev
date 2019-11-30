@@ -1,5 +1,5 @@
 ********
-GIT Refs
+Git Refs
 ********
 
 

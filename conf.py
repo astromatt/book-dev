@@ -28,12 +28,6 @@ extensions = [
     # 'sphinxjp.themes.revealjs',
 ]
 
-exclude_patterns = [
-    'ecosystem/*',
-    'process/*',
-    'cloud-architecture/*',
-    'ci-cd/*',
-]
 
 # -----------------------------------------------------------------------------
 # Standard book config
@@ -61,7 +55,11 @@ mathjax_config = {
 
 html_theme = 'sphinx_rtd_theme'
 
-exclude_patterns = exclude_patterns + [
+exclude_patterns = [
+    'ecosystem/*',
+    'process/*',
+    'ci-cd/*',
+
     '.*',
     '.venv-*',
     '*/_slides',

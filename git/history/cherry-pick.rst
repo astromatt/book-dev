@@ -1,5 +1,5 @@
 ***************
-GIT Cherry Pick
+Git Cherry Pick
 ***************
 
 

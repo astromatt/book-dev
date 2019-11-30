@@ -9,7 +9,7 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 001. Provisioning środowiska, wersjonowanie schematów bazy danych, VMki i kontenery (FlywayDB, Puppet, Vagrant, Docker)
 010. Statyczna analiza kodu, Testy Mutacyjne (SonarQube, Squid, SonarLint, PITest)
 011. Wersjonowanie i dokumentowanie API (swagger)
-100. GIT Flow + Feature Branching + Feature Flags + Release Toggles = CI/CD
+100. Git Flow + Feature Branching + Feature Flags + Release Toggles = CI/CD
 101. Rozproszone logowanie zdarzeń, hartbeat i statystyki (Logstash, Kibana, Graphite)
 110. Collective Code Ownership, Refactoring i Emerging Architecture / Evolutionary Design
 111. Lean Startup UX, A/B, Hipotezy, MVP, Build + Measure + Learn, Smoke Testy, Continuous Improvement, Kaizen i Retrospektywy
@@ -113,7 +113,7 @@ Celem tego wykładu jest przekazanie kilkunastu najważniejszych keywordów i op
 100. Release Management
 -----------------------
 
--  GIT Flow
+-  Git Flow
 -  Feature Branching
 -  Feature Flags
 -  Dark Features

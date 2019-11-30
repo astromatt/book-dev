@@ -9,3 +9,4 @@
     /jira/index.rst
     /docker/index.rst
     /git/index.rst
+    /architecture/index.rst

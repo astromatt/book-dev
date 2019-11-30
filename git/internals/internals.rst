@@ -1,5 +1,5 @@
 *************
-GIT Internals
+Git Internals
 *************
 
 

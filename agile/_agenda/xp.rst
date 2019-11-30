@@ -11,7 +11,7 @@ Praktyki developerskie a praktyki projektowe
 
 Feature i bugfix branch
 =======================
-* GIT i GIT Flow
+* Git i Git Flow
 * Strategia budowania branchy
 * Statyczna analiza kodu Pull Requestów
 * Strategie repozytoriów: Fork, Central Repo, Army model

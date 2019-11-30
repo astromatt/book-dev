@@ -1,11 +1,11 @@
 ****************
-GIT Introduction
+Git Introduction
 ****************
 
 
 About Version Control
 =====================
-* :cite:`GITDocumentation`
+* :cite:`GitDocumentation`
 
 Why we have Version Control?
 ----------------------------

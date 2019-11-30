@@ -3,8 +3,8 @@ from conf import *
 
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'Jira Software, Jira Service Desk and Jira Core'
-description = "Matt Harasymczuk's Jira Software, Jira Service Desk and Jira Core"
+project = 'Jira with Atlassian Ecosystem'
+description = "Matt Harasymczuk's Jira with Atlassian Ecosystem"
 language = 'en'
 todo_emit_warnings = False
 todo_include_todos = True

@@ -1,5 +1,5 @@
 ************
-GIT Branches
+Git Branches
 ************
 
 
@@ -13,11 +13,11 @@ Branche
 #. Default branch: ``master``
 #. Branch can have any names
 #. ``/`` in name make branch folder in ``.git/refs/heads/``
-#. Typically use GIT Flow naming convention
+#. Typically use Git Flow naming convention
 #. After merging no need to delete branch
 #. Branches are only commit hashes to the most recent commit
 #. Branch weights 40 bytes + null terminator (in fact one file system sector)
-#. Can :ref:`merge <GIT Merge>` and :ref:`rebase <GIT Rebase>` branches
+#. Can :ref:`merge <Git Merge>` and :ref:`rebase <Git Rebase>` branches
 
 
 Local storage of branches

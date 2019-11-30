@@ -1,5 +1,5 @@
 ***********
-GIT Subtree
+Git Subtree
 ***********
 
 

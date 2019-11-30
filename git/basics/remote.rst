@@ -1,5 +1,5 @@
 ***********
-GIT Remotes
+Git Remotes
 ***********
 
 
