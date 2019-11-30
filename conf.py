@@ -1,7 +1,7 @@
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'DevOps and CI/CD with Docker'
-description = "Matt Harasymczuk's DevOps and CI/CD with Docker"
+project = 'Software Engineering'
+description = "Matt Harasymczuk's Software Engineering"
 language = 'en'
 todo_emit_warnings = False
 todo_include_todos = True
@@ -26,8 +26,6 @@ extensions = [
     # 'sphinx.ext.intersphinx',
     # 'sphinx.ext.graphviz',
     # 'sphinxjp.themes.revealjs',
-    # 'nbsphinx',
-    # 'IPython.sphinxext.ipython_console_highlighting',
 ]
 
 exclude_patterns = []
@@ -36,11 +34,17 @@ exclude_patterns = []
 # Standard book config
 # -----------------------------------------------------------------------------
 
-import os
 import re
-import subprocess
 import sys
 from datetime import datetime
+from subprocess import run
+
+
+def abs_path(relative_path):
+    from os.path import dirname, abspath, join
+    base_dir = dirname(abspath(__file__))
+    return join(base_dir, relative_path)
+
 
 needs_sphinx = '2.2'
 
@@ -71,18 +75,18 @@ exclude_patterns = exclude_patterns + [
     'TODO.rst',
 ]
 
-source_directory = '.'
+source_directory = abs_path('.')
 master_doc = 'index'
 highlight_language = 'python3'
 pygments_style = 'borland'
 numfig = True
-templates_path = ['_templates']
+templates_path = [abs_path('_templates')]
 source_suffix = ['.rst']
 imgmath_image_format = 'svg'
 today_fmt = '%Y-%m-%d'
 
 project_slug = re.sub(r'[\W]+', '', project)
-sha1 = subprocess.Popen('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True).stdout.read().decode().replace('\n', '')
+sha1 = run('git log -1 --format="%h"', shell=True, capture_output=True).stdout.strip().decode()
 now = datetime.now()
 year = now.year
 today = now.strftime('%Y-%m-%d')
@@ -91,13 +95,13 @@ version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'
 copyright = f'{year}, {author} <{email}>'
 
-extensions_dir = os.path.join(os.path.dirname(__file__), '', '_extensions')
+extensions_dir = abs_path('_extensions')
 sys.path.append(extensions_dir)
 
 htmlhelp_basename = project
-html_theme_path = ['_themes']
-html_static_path = ['_static']
-html_favicon = '_static/favicon.png'
+html_theme_path = [abs_path('_themes')]
+html_static_path = [abs_path('_static')]
+html_favicon = abs_path('_static/favicon.png')
 html_sidebars = {'sidebar': ['localtoc.html', 'sourcelink.html', 'searchbox.html']}
 html_show_sphinx = False
 html_context = {

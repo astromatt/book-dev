@@ -8,8 +8,7 @@ __pycache__/
 ~$*
 *.spec
 .ipynb_checkpoints
-*virtualenv*/
-*venv*/
+.venv-*/
 
 ## Distribution / packaging
 build/
