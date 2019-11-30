@@ -9,6 +9,11 @@
 .. toctree::
     :maxdepth: 2
 
+    /linux/index.rst
+
+.. toctree::
+    :maxdepth: 2
+
     /docker/index.rst
 
 .. toctree::
