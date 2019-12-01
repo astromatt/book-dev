@@ -86,8 +86,20 @@ Example
         stages {
             stage("Test") {
                 steps {
-                    sh 'echo "Testing..."'
+                    sh '/bin/echo Testing...'
                 }
             }
         }
     }
+
+
+Assignments
+===========
+
+API Trigger
+-----------
+#. Napisz skrypt ``sh`` wykorzystujący ``curl``
+#. Skrypt po odpaleniu ma triggerować build
+#. Dodaj skrypt do ``crontab``
+#. Skrypt ma się uruchamiać ``@daily``
+#. Zwróć uwagę, że ``cron`` ma mniejszą ilość zmiennych środowiskowych (skrypt, który u Ciebie działa, może nie być odpalany przez ``cron``)

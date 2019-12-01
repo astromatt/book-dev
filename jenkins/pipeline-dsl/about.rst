@@ -3,14 +3,6 @@ Pipeline DSL
 ************
 
 
-
-.. figure:: img/ecosystem-jenkins-pipeline.png
-    :scale: 50%
-    :align: center
-
-    Pipeline model definition plugin
-
-
 Jenkinsfile
 ===========
 * Pipeline model definition
@@ -22,14 +14,7 @@ Jenkinsfile
 * Code review/iteration on the Pipeline
 * Audit trail for the Pipeline
 * Single source of truth for the Pipeline, which can be viewed and edited by multiple members of the project.
-
-
-Example
-=======
-.. literalinclude:: code/jenkinsfile-simple.groovy
-    :language: groovy
-    :caption: Simple
-
+* https://jenkins.io/solutions/pipeline/
 
 Documentation
 =============
@@ -39,3 +24,53 @@ Documentation
 * http://localhost:8100/pipeline-syntax/
 * http://localhost:8100/pipeline-syntax/globals#currentBuild
 * http://localhost:8100/pipeline-syntax/globals#env
+
+
+Examples
+========
+
+Single Stage
+------------
+.. code-block:: groovy
+    :caption: Simple
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('My Stage Name') {
+                steps {
+                    sh '/bin/echo Working...'
+                }
+            }
+        }
+    }
+
+Multi Stage
+-----------
+.. code-block:: groovy
+    :caption: Example
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('Build') {
+                steps {
+                    sh '/bin/echo Building...'
+                }
+            }
+
+            stage('Test') {
+                steps {
+                    sh '/bin/echo Testing...'
+                }
+            }
+
+            stage('Deploy') {
+                steps {
+                    sh '/bin/echo Deploying...'
+                }
+            }
+        }
+    }

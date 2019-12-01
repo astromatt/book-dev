@@ -3,8 +3,8 @@ from conf import *
 
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'Docker and CI/CD'
-description = "Matt Harasymczuk's Docker and CI/CD"
+project = 'CI/CD with Docker'
+description = "Matt Harasymczuk's CI/CD with Docker"
 language = 'en'
 todo_emit_warnings = False
 todo_include_todos = True

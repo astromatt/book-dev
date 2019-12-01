@@ -102,12 +102,12 @@ Example 1
         stages {
             stage('Test') {
                 when {
-                    echo 'Should I test?'
+                    sh '/bin/echo Should I test?'
                     return true
                 }
 
                 steps {
-                    sh 'echo "Testing..."'
+                    sh '/bin/echo Testing...'
                 }
             }
     }
@@ -134,7 +134,7 @@ Example 2
                 }
 
                 steps {
-                    sh 'echo "Deploying..."'
+                    sh '/bin/echo Deploying...'
                 }
             }
         }

@@ -1,6 +1,6 @@
-#########################
-Git and Git Flow in CI/CD
-#########################
+###########################
+CI/CD with Git and Git Flow
+###########################
 
 
 .. figure:: ../_static/AstroMatt.jpg

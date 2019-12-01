@@ -1,6 +1,6 @@
-###############
-Docker in CI/CD
-###############
+#################
+CI/CD with Docker
+#################
 
 
 .. figure:: ../_static/AstroMatt.jpg

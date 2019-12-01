@@ -37,64 +37,82 @@ Using docker
 
 Pipeline DSL
 ============
-.. literalinclude:: code/jenkinsfile-docker.groovy
-    :language: groovy
-    :caption: Docker
 
 Example 1
 ---------
-// Docker container declaration
-pipeline {
-    agent { docker 'python:3.6.3' }
+.. code-block:: groovy
+    :caption: Docker container declaration
+    :emphasize-lines: 2
 
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
+    pipeline {
+        agent { docker 'python:3.7.5' }
+
+        stages {
+            stage('build') {
+                steps {
+                    sh 'python --version'
+                }
             }
         }
     }
-}
 
-// Verbose declaration
-pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            label 'my-defined-label'
-            args  '-v /tmp:/tmp'
-        }
-    }
+Example 2
+---------
+.. code-block:: groovy
+    :caption: Verbose declaration
+    :emphasize-lines: 2-8
 
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-    }
-}
-
-// Declaring docker container per build
-pipeline {
-    agent none
-
-    stages {
-
-        stage('Example Build') {
-            agent { docker 'maven:3-alpine' }
-            steps {
-                echo 'Hello, Maven'
-                sh 'mvn --version'
+    pipeline {
+        agent {
+            docker {
+                image 'maven:3-alpine'
+                label 'my-defined-label'
+                args  '-v /home/jenkins/.m2:/home/jenkins/.m2'
             }
         }
 
-        stage('Example Test') {
-            agent { docker 'openjdk:8-jre' }
-            steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+        stages {
+            stage('Build') {
+                steps {
+                    sh '/bin/echo "Building..."'
+                }
             }
         }
     }
-}
+
+Example 3
+---------
+.. code-block:: groovy
+    :caption: Declaring docker container per build
+    :emphasize-lines: 6,13
+
+    pipeline {
+        agent none
+
+        stages {
+            stage('Build') {
+                agent { docker 'maven:3-alpine' }
+                steps {
+                    sh 'mvn --version'
+                }
+            }
+
+            stage('Test') {
+                agent { docker 'openjdk:8-jre' }
+                steps {
+                    sh 'java -version'
+                }
+            }
+        }
+    }
+
+
+Assignments
+===========
+
+Jenkins Docker Plugin
+---------------------
+#. Skonfiguruj zadanie aby uruchamiało kontener
+#. Zadanie ma provisionować konfigurację wewnątrz kontenera
+#. Zadanie ma uruchamiać build wewnątrz kontenera
+#. Zadanie ma niszczyć kontener po buildze
