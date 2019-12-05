@@ -5,7 +5,7 @@ Devtools Ecosystem
 
 Big Picture
 ===========
-.. figure:: img/devtools-big-picture.png
+.. figure:: img/ecosystem-big-picture.png
     :scale: 50%
     :align: center
 
@@ -14,7 +14,7 @@ Big Picture
 
 Alternatives
 ============
-.. figure:: img/devtools-alternatives.png
+.. figure:: img/ecosystem-alternatives.png
     :scale: 40%
     :align: center
 

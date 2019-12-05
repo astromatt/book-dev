@@ -11,3 +11,4 @@
     /git/index.rst
     /jenkins/index.rst
     /architecture/index.rst
+    /summary/index.rst
