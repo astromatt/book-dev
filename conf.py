@@ -1,7 +1,7 @@
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'Software Engineering'
-description = "Matt Harasymczuk's Software Engineering"
+project = 'The Software Engineering'
+description = "Matt Harasymczuk's The Software Engineering"
 language = 'en'
 todo_emit_warnings = False
 todo_include_todos = True
