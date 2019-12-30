@@ -30,6 +30,7 @@ Linux
     system/permissions.rst
     system/filesystem.rst
     system/processes.rst
+    ststem/signals.rst
     system/booting.rst
     system/networking.rst
     system/devices.rst
