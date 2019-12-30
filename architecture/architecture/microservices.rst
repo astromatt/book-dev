@@ -17,6 +17,24 @@ Technology Radar
 ----------------
 https://www.thoughtworks.com/radar
 
+Zalety
+------
+* skalowalność
+* separacja domen biznesowych
+* mniejszy codebase
+* łatwiejszy deployment
+
+Wady
+----
+* złe decyzje architektoniczne pokutują długo
+* overhead sieciowy
+* testowanie jest bardziej złożone
+* przechowywanie danych i ich współdzielenie jest złożone
+* jak współdzielić dane (np. user) aby nie zrobić usług które są zależne od siebie
+* problemy z kompatybilnością
+
+
+
 Spojrzenie na Mikroserwisy z perspektywy biznesu
 ------------------------------------------------
 - szybkie wypuszczanie MVP nowych produktów
@@ -613,4 +631,15 @@ Transaction log tailing
 
 -  Reliably publish events whenever state changes by tailing the
    transaction log.
+
+
+Dobre praktyki
+--------------
+* nigdy nie zaczynaj od mikroserisów od dnia pierwszego
+* zbyt wczesne rozdzielanie aplikacji na wczesnym poziomie może prowadzić do wielu problemów
+* nie tworzyć mikroserwisów CRUDów dla danych (np. user GET, DELETE, PUT, POST, PATCH)
+* mikroserwisy muszą odwzorowywać domenę biznesową
+* zawsze używaj wersjonowania api
+* zawsze bądź backward compatible
+* walidować dane między requestami
 
