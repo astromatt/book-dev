@@ -34,7 +34,6 @@ Wady
 * problemy z kompatybilnością
 
 
-
 Spojrzenie na Mikroserwisy z perspektywy biznesu
 ------------------------------------------------
 - szybkie wypuszczanie MVP nowych produktów
@@ -642,4 +641,9 @@ Dobre praktyki
 * zawsze używaj wersjonowania api
 * zawsze bądź backward compatible
 * walidować dane między requestami
+
+References
+----------
+* https://www.youtube.com/watch?v=X0tjziAQfNQ
+* https://www.youtube.com/watch?v=gfh-VCTwMw8
 
