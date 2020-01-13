@@ -367,7 +367,7 @@ Files and directories
 .. code-block:: dockerfile
 
     FROM alpine
-    COPY requirements.txt /data
+    COPY requirements.txt /data/
 
 ``ADD``
 -------
@@ -377,7 +377,7 @@ Files and directories
 .. code-block:: dockerfile
 
     FROM alpine
-    ADD requirements.txt /data
+    ADD requirements.txt /data/
 
 ``COPY`` vs ``ADD``
 -------------------

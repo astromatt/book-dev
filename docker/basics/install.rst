@@ -47,3 +47,11 @@ Linux
 Windows
 -------
 * https://docs.docker.com/docker-for-windows/
+
+Assignments
+===========
+
+Install
+-------
+#. Zainstaluj ``Docker``
+#. Czym różni się ``Docker`` od ``Vagrant``?

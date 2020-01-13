@@ -2,14 +2,12 @@ class { 'apache':
     default_vhost => false,
 }
 
-# The non-ssl virtual host
 apache::vhost { 'insecure.example.com':
     servername => 'insecure.example.com',
     port       => 80,
     docroot    => '/var/www/insecure-example-com',
 }
 
-# The SSL virtual host at the same domain
 apache::vhost { 'ssl.example.com':
     servername => 'ssl.example.com',
     port       => 443,

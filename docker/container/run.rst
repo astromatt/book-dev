@@ -176,9 +176,14 @@ Limiting resources
 Assignments
 ===========
 
+Env
+---
+#. Stwórz plik ``test.env`` oraz ``prod.env``
+#. Zapisz dwie różne konfiguracje bazy danych do obu plików
+#. Uruchom kontener z parametrami testowymi
+#. Uruchom kontener z parametrami produkcyjnymi
+
 Ehlo World
 ----------
-#. Zainstaluj ``Docker``
-#. Czym różni się ``Docker`` od ``Vagrant``?
-#. Wyświetl ``Ehlo World!`` z wnętrza kontenera ``Docker``
-#. Wyświetl listę działających kontenerów ``Docker``
+#. Wyświetl ``Ehlo World!`` z wnętrza kontenera ``alpine``
+#. Wyświetl listę działających i zakończonych kontenerów
