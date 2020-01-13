@@ -377,7 +377,7 @@ Files and directories
 .. code-block:: dockerfile
 
     FROM alpine
-    ADD requirements.txt /data/
+    ADD requirements.txt /data/-
 
 ``COPY`` vs ``ADD``
 -------------------
@@ -397,7 +397,7 @@ Files and directories
 ----------
 * The ``VOLUME`` instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
 
-.. code-block:: console
+.. code-block:: dockerfile
 
     VOLUME ["/data"]
 
