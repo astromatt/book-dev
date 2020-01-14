@@ -1,3 +1,27 @@
+****
+TODO
+****
+
+API
+===
+* Swagger
+
+Binary Repository
+=================
+* artifactory.rst
+* docker-registry.rst
+* nexus.rst
+
+Code Repository
+===============
+* bitbucket-cloud.rst
+* bitbucket-server.rst
+* gerrit.rst
+* github.rst
+* github-enterprise.rst
+* gitlab.rst
+
+
 .//architecture/microservices.rst: Przepisanie microservices jako osobny katalog z podziałem na tematy
 .//architecture/microservices.rst: Przepisanie microservices jako osobne szkolenie
 .//architecture/microservices.rst: Reactive manifesto, reactive programming

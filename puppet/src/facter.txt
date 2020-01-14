@@ -1,0 +1,213 @@
+disks => {
+  xvda => {
+    size => "8.00 GiB",
+    size_bytes => 8589934592
+  }
+}
+ec2_metadata => {
+  ami-id => "ami-hahahafc254eaf55",
+  ami-launch-index => "0",
+  ami-manifest-path => "(unknown)",
+  block-device-mapping => {
+    ami => "/dev/sda1",
+    root => "/dev/sda1"
+  },
+  events => {
+    maintenance => {
+      history => "[]",
+      scheduled => "[]"
+    }
+  },
+  hostname => "ip-172-13-37-1.eu-central-1.compute.internal",
+  identity-credentials => {
+    ec2 => {
+      info => "{
+  "Code" : "Success",
+  "LastUpdated" : "2019-04-09T11:53:57Z",
+  "AccountId" : "624006931337"
+}"
+    }
+  },
+  instance-action => "none",
+  instance-id => "i-02f361764hahaha10dbe",
+  instance-type => "t2.micro",
+  local-hostname => "ip-172-13-37-1.eu-central-1.compute.internal",
+  local-ipv4 => "172.13.37.1",
+  mac => "06:6b:ha:ha:ha:82",
+  network => {
+    interfaces => {
+      macs => {
+        06:6b:ha:ha:ha:82 => {
+          device-number => "0",
+          interface-id => "eni-07ed83hahahacc247",
+          ipv4-associations => {
+            127.0.0.1 => "172.13.37.1"
+          },
+          local-hostname => "ip-172-13-37-1.eu-central-1.compute.internal",
+          local-ipv4s => "172.13.37.1",
+          mac => "06:6b:ha:ha:ha:82",
+          owner-id => "624006931337",
+          public-hostname => "ec2-127-0-0-1.eu-central-1.compute.amazonaws.com",
+          public-ipv4s => "127.0.0.1",
+          security-group-ids => "sg-02d60687273e1337",
+          security-groups => "launch-wizard-6",
+          subnet-id => "subnet-26e91337",
+          subnet-ipv4-cidr-block => "172.13.0.0/20",
+          vpc-id => "vpc-d44885bd",
+          vpc-ipv4-cidr-block => "172.13.0.0/16",
+          vpc-ipv4-cidr-blocks => "172.13.0.0/16"
+        }
+      }
+    }
+  },
+  placement => {
+    availability-zone => "eu-central-1b"
+  },
+  profile => "default-hvm",
+  public-hostname => "ec2-127-0-0-1.eu-central-1.compute.amazonaws.com",
+  public-ipv4 => "127.0.0.1",
+  reservation-id => "r-0a097a6cd34ehaha",
+  security-groups => "launch-wizard-6",
+  services => {
+    domain => "amazonaws.com",
+    partition => "aws"
+  }
+}
+facterversion => 3.10.0
+filesystems => btrfs,ext2,ext3,ext4,squashfs,vfat
+fips_enabled => false
+identity => {
+  gid => 0,
+  group => "root",
+  privileged => true,
+  uid => 0,
+  user => "root"
+}
+is_virtual => true
+kernel => Linux
+kernelmajversion => 4.15
+kernelrelease => 4.15.0-1032-aws
+kernelversion => 4.15.0
+load_averages => {
+  15m => 0.01,
+  1m => 0.18,
+  5m => 0.04
+}
+memory => {
+  system => {
+    available => "830.03 MiB",
+    available_bytes => 870350848,
+    capacity => "15.64%",
+    total => "983.91 MiB",
+    total_bytes => 1031708672,
+    used => "153.88 MiB",
+    used_bytes => 161357824
+  }
+}
+networking => {
+  domain => "eu-central-1.compute.internal",
+  fqdn => "ip-172-13-37-1.eu-central-1.compute.internal",
+  hostname => "ip-172-13-37-1",
+  interfaces => {
+    eth0 => {
+      bindings => [
+        {
+          address => "172.13.37.1",
+          netmask => "255.255.240.0",
+          network => "172.13.37.0"
+        }
+      ],
+      bindings6 => [
+        {
+          address => "fe80::46b:haha:haha:da82",
+          netmask => "ffff:ffff:ffff:ffff::",
+          network => "fe80::"
+        }
+      ],
+      ip => "172.13.37.1",
+      ip6 => "fe80::46b:haha:haha:da82",
+      mac => "06:6b:ha:ha:da:82",
+      mtu => 9001,
+      netmask => "255.255.240.0",
+      netmask6 => "ffff:ffff:ffff:ffff::",
+      network => "172.13.37.0",
+      network6 => "fe80::"
+    },
+    lo => {
+      bindings => [
+        {
+          address => "127.0.0.1",
+          netmask => "255.0.0.0",
+          network => "127.0.0.0"
+        }
+      ],
+      bindings6 => [
+        {
+          address => "::1",
+          netmask => "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+          network => "::1"
+        }
+      ],
+      ip => "127.0.0.1",
+      ip6 => "::1",
+      mtu => 65536,
+      netmask => "255.0.0.0",
+      netmask6 => "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+      network => "127.0.0.0",
+      network6 => "::1"
+    }
+  },
+  ip => "172.13.37.1",
+  ip6 => "fe80::46b:haha:haha:da82",
+  mac => "06:6b:ha:ha:da:82",
+  mtu => 9001,
+  netmask => "255.255.240.0",
+  netmask6 => "ffff:ffff:ffff:ffff::",
+  network => "172.13.37.0",
+  network6 => "fe80::",
+  primary => "eth0"
+}
+os => {
+  architecture => "amd64",
+  distro => {
+    codename => "bionic",
+    description => "Ubuntu 18.04.2 LTS",
+    id => "Ubuntu",
+    release => {
+      full => "18.04",
+      major => "18.04"
+    }
+  },
+  family => "Debian",
+  hardware => "x86_64",
+  name => "Ubuntu",
+  release => {
+    full => "18.04",
+    major => "18.04"
+  },
+  selinux => {
+    enabled => false
+  }
+}
+path => /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+processors => {
+  count => 1,
+  isa => "x86_64",
+  models => [
+    "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+  ],
+  physicalcount => 1
+}
+ruby => {
+  platform => "x86_64-linux-gnu",
+  sitedir => "/usr/local/lib/site_ruby/2.5.0",
+  version => "2.5.1"
+}
+system_uptime => {
+  days => 0,
+  hours => 0,
+  seconds => 1732,
+  uptime => "0:28 hours"
+}
+timezone => UTC
+virtual => xenu
