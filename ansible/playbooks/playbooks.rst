@@ -18,7 +18,6 @@ Run
 * Ansible Tower
 
 
-
 Playbook
 ========
 .. code-block:: yaml

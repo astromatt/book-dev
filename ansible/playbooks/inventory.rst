@@ -275,9 +275,3 @@ Docker
       file:
         path: "/var/jenkins_home/.ssh/jupiter"
         state: directory
-
-Usage
-=====
-.. code-block:: console
-
-    $ ansible webservers -m service -a "name=httpd state=restarted"

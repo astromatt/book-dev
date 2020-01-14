@@ -13,23 +13,16 @@ About
     about/install.rst
     about/concepts.rst
     about/usage.rst
-    about/ad-hoc.rst
 
 ******
-Syntax
+Ad Hoc
 ******
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Syntax
+    :caption: Ad Hoc
 
-    syntax/conditionals.rst
-    syntax/filters.rst
-    syntax/inclusion.rst
-    syntax/loops.rst
-    syntax/tags.rst
-    syntax/variables.rst
-    syntax/facts.rst
+    ad-hoc/ad-hoc.rst
 
 *********
 Playbooks
@@ -46,6 +39,22 @@ Playbooks
     playbooks/roles.rst
     playbooks/vault.rst
     playbooks/examples.rst
+
+******
+Syntax
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Syntax
+
+    syntax/vars.rst
+    syntax/facts.rst
+    syntax/conditionals.rst
+    syntax/filters.rst
+    syntax/inclusion.rst
+    syntax/loops.rst
+    syntax/tags.rst
 
 *****
 Tests
