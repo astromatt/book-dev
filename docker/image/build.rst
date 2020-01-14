@@ -572,9 +572,10 @@ Create container and run
 ------------------------
 #. Ściągnij repozytorium:
 
+    * Szkolenie z Python: https://github.com/AstroTech/ecosystem-example-python
     * Szkolenie z C: https://github.com/AstroTech/ecosystem-example-c
     * Szkolenie z JAVA: https://github.com/AstroTech/ecosystem-example-java
 
-#. Zbuduj projekt
+#. Zbuduj projekt / lub uruchom testy
 #. Przygotuj obraz oraz uruchom aplikację wykorzystując ``Docker``
 #. Użyj pliku ``Dockerfile`` do opisu środowiska kontenera
