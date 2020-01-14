@@ -13,7 +13,7 @@ About
     about/install.rst
     about/concepts.rst
     about/usage.rst
-    about/glossary.rst
+    glossary.rst
 
 ******
 Ad Hoc
