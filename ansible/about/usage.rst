@@ -136,3 +136,76 @@ Config
 Ansible Pull
 ============
 * The ansible-pull is a small script that will checkout a repo of configuration instructions from git, and then run ``ansible-playbook`` against that content.
+
+.. code-block:: yaml
+
+    # ansible-pull setup
+    #
+    # on remote hosts, set up ansible to run periodically using the latest code
+    # from a particular checkout, in pull based fashion, inverting Ansible's
+    # usual push-based operating mode.
+    #
+    # This particular pull based mode is ideal for:
+    #
+    # (A) massive scale out
+    # (B) continual system remediation
+    #
+    # DO NOT RUN THIS AGAINST YOUR HOSTS WITHOUT CHANGING THE repo_url
+    # TO SOMETHING YOU HAVE PERSONALLY VERIFIED
+    #
+    #
+    ---
+
+    - hosts: pull_mode_hosts
+      remote_user: root
+
+      vars:
+
+        # schedule is fed directly to cron
+        schedule: '*/15 * * * *'
+
+        # User to run ansible-pull as from cron
+        cron_user: root
+
+        # File that ansible will use for logs
+        logfile: /var/log/ansible-pull.log
+
+        # Directory to where repository will be cloned
+        workdir: /var/lib/ansible/local
+
+        # Repository to check out
+        # repo must contain a local.yml file at top level
+        repo_url: git://github.com/myuser/ansible-playbooks.git
+
+      tasks:
+
+        - name: Install ansible
+          apt: pkg=ansible state=installed
+
+        - name: Create local directory to work from
+          file: path={{workdir}} state=directory owner=root group=root mode=0751
+
+        - name: Copy ansible inventory file to client
+          copy: src=/etc/ansible/hosts dest=/etc/ansible/hosts
+                  owner=root group=root mode=0644
+
+        - name: Create crontab entry to clone/pull git repository
+          template: src=templates/etc_cron.d_ansible-pull.j2 dest=/etc/cron.d/ansible-pull owner=root group=root mode=0644
+
+        - name: Create logrotate entry for ansible-pull.log
+          template: src=templates/etc_logrotate.d_ansible-pull.j2 dest=/etc/logrotate.d/ansible-pull owner=root group=root mode=0644
+
+
+Directory Structure
+===================
+.. code-block:: text
+
+    files
+    filter_plugins
+ 	group_vars
+    handlers
+	hosts
+	playbooks
+	roles
+    tasks
+    vars

@@ -24,3 +24,31 @@ Can be defined from:
     dbuser: foouser
     dbname: foodb
     upassword: abc
+
+
+Environment Variables
+=====================
+.. code-block:: yaml
+
+    - hosts: all
+      remote_user: root
+
+      # here we make a variable named "env" that is a dictionary
+      vars:
+        env:
+           HI: test2
+           http_proxy: http://proxy.example.com:8080
+
+      tasks:
+
+        # here we just define the dictionary directly and use it
+        # (here $HI is the shell variable as nothing in Ansible will replace it)
+
+        - shell: echo $HI
+          environment:
+             HI: test1
+
+        # here we are using the "env" map variable above
+
+        - shell: echo $HI
+          environment: "{{ env }}"

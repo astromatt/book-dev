@@ -156,13 +156,44 @@ Facts
 
 Installing Packages
 ===================
-.. code-block:: console
-    :caption: apt module
 
-    $ ansible myserver -m apt -a "name=python3 state=present"
+Yum
+---
+.. code-block:: console
+    :caption: Yum module
+
+    $ ansible myserver -m yum -a "name=openssl"
+    $ ansible myserver -m yum -a "name=openssl state=latest"
+    $ ansible myserver -m yum -a "name=openssl update_cache=yes state=latest"
+
+Pip
+---
+.. code-block:: ini
+
+    [myserver]
+    127.0.0.1 ansible_python_interpreter=/usr/bin/python3
+
+.. code-block:: console
+    :caption: Pip module
+
+    $ ansible myserver -m apt -a "name=python3-pip state=present"
+
+    $ ansible myserver -m pip -a "name=numpy" -u ubuntu --become
+    $ ansible myserver -m pip -a "name=numpy state=present" -u ubuntu --become
+
+Apt
+---
+.. code-block:: console
+    :caption: Apt module
+
+    $ ansible myserver -m apt -a "name=python3"
+    $ ansible myserver -m apt -a "name=python3 state=present""
     $ ansible myserver -m apt -a "name=python3-3.8 state=present"
     $ ansible myserver -m apt -a "name=python3 state=latest"
     $ ansible myserver -m apt -a "name=python3 state=absent"
+
+    # apt update before checking if package is in latest version
+    $ ansible myserver -m apt -a "name=python3 update_cache=yes state=latest"
 
 .. code-block:: console
     :caption: apt module
@@ -176,11 +207,6 @@ Installing Packages
         "cache_updated": false,
         "changed": false
     }
-
-.. code-block:: console
-    :caption: yum module
-
-    $ ansible myserver -m yum -a "name=openssl state=latest"
 
 .. code-block:: console
 

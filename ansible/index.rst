@@ -13,6 +13,7 @@ About
     about/install.rst
     about/concepts.rst
     about/usage.rst
+    about/glossary.rst
 
 ******
 Ad Hoc
@@ -50,6 +51,7 @@ Syntax
 
     syntax/vars.rst
     syntax/facts.rst
+    syntax/templates.rst
     syntax/conditionals.rst
     syntax/filters.rst
     syntax/inclusion.rst
