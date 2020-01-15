@@ -39,6 +39,18 @@ Inventory
 * Your inventory can specify information like IP address for each managed node.
 * An inventory can also organize managed nodes, creating and nesting groups for easier scaling.
 
+.. code-block:: ini
+    :caption: Inventory file
+
+    [dbservers]
+    db01.staging.example.com
+    db02.staging.example.com
+
+    [webservers]
+    app01.staging.example.com
+    app02.staging.example.com
+    app03.staging.example.com
+
 
 Modules
 =======
@@ -78,10 +90,46 @@ Tasks
 * The units of action in Ansible.
 * You can execute a single task once with an ad-hoc command.
 
+.. code-block:: yaml
+    :caption: Ansible tasks
 
-Playbooks
-=========
+    - name: install httpd
+      package: name=apache2 state=latest
+
+    - name: write apache config file
+      template: src=conf/httpd.j2 dest=/etc/httpd.conf
+
+    - name: start httpd
+      service: name=httpd state=running
+
+
+Playbook
+========
 * Ordered lists of tasks, saved so you can run those tasks in that order repeatedly.
 * Playbooks can include variables as well as tasks.
 * Playbooks are written in YAML and are easy to read, write, share and understand.
 
+.. code-block:: yaml
+    :caption: Ansible Playbook
+
+    - name: install and start apache
+      hosts: webservers
+      remote_user: myuser
+      become_method: sudo
+      become_user: root
+
+      vars:
+        http_port: 80
+        max_clients: 200
+
+      tasks:
+      - name: install httpd
+        apt: name=apache2 state=latest
+      - name: write apache config file
+        template: src=conf/httpd.j2 dest=/etc/httpd.conf
+      - name: start httpd
+        service: name=httpd state=running
+
+      handlers:
+      - name: restart http
+        service: name=httpd state=restarted

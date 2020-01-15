@@ -8,17 +8,19 @@ What is Inventory?
 * Static lines of servers
 * Ranges
 * Other custom things (generated automatically)
-* Dynamic lists of servers: AWS, Azure, Google Cloud Platform
+* Dynamic lists of servers: AWS, Azure, Google Cloud Platform, OpenStack
+* Special group: ``all``
 
 
-Static hosts
-============
+Static Inventory
+================
 * Create file ``hosts``
 * Roles are defined in square brackets
 * Hosts are below roles
 * There are two default groups: all and ungrouped.
 * The all group contains every host.
 * The ungrouped group contains all hosts that don’t have another group aside from all
+
 
 INI format
 ==========
@@ -69,6 +71,8 @@ Range
 
 Host variables
 --------------
+* https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+
 .. code-block:: ini
 
     [myservers]
@@ -109,6 +113,40 @@ Group variables
     [myservers:vars]
     ntp_server=ntp.myhost.example.com
     proxy=proxy.myhost.example.com
+
+.. code-block:: ini
+
+    [db]
+    db[1:4]
+
+    [web]
+    web[1:4]
+
+    [east]
+    db1
+    web1
+    db3
+    web3
+
+    [west]
+    db2
+    web2
+    db4
+    web4
+
+    [dev]
+    db1
+    web1
+
+    [testing]
+    db3
+    web3
+
+    [prod]
+    db2
+    web2
+    db4
+    web4
 
 .. code-block:: ini
 
@@ -187,6 +225,8 @@ YAML format
 
 Host variables
 --------------
+* https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+
 .. code-block:: yaml
 
     atlanta:
@@ -251,11 +291,6 @@ Files
 * If you load inventory files from both the playbook directory and the inventory directory, variables in the playbook directory will override variables set in the inventory directory
 
 
-Connection Parameters
-=====================
-* https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
-
-
 Docker
 ======
 .. code-block:: yaml
@@ -279,3 +314,10 @@ Docker
       file:
         path: "/var/jenkins_home/.ssh/jupiter"
         state: directory
+
+Best Practices
+==============
+* Give inventory nodes *human-meaningful* names rather than IPs or DNS hostnames
+* If you change inventory file frequently (one or two times a month) use dynamic inventory files
+* If it's a static environment (new servers are added rarely) use static inventory
+* Dynamic inventory files are quite easy

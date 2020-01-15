@@ -149,11 +149,6 @@ Ansible Pull
     #
     # (A) massive scale out
     # (B) continual system remediation
-    #
-    # DO NOT RUN THIS AGAINST YOUR HOSTS WITHOUT CHANGING THE repo_url
-    # TO SOMETHING YOU HAVE PERSONALLY VERIFIED
-    #
-    #
     ---
 
     - hosts: pull_mode_hosts
@@ -194,18 +189,3 @@ Ansible Pull
 
         - name: Create logrotate entry for ansible-pull.log
           template: src=templates/etc_logrotate.d_ansible-pull.j2 dest=/etc/logrotate.d/ansible-pull owner=root group=root mode=0644
-
-
-Directory Structure
-===================
-.. code-block:: text
-
-    files
-    filter_plugins
- 	group_vars
-    handlers
-	hosts
-	playbooks
-	roles
-    tasks
-    vars

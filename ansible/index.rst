@@ -12,9 +12,11 @@ About
 
     about/install.rst
     about/concepts.rst
+    about/best-practices.rst
     about/usage.rst
     about/glossary.rst
     about/inventory.rst
+    about/directory-structure.rst
 
 ******
 Ad Hoc

@@ -52,3 +52,22 @@ Environment Variables
 
         - shell: echo $HI
           environment: "{{ env }}"
+
+
+Best Practices
+==============
+* Use descriptive unique human-meaningful variable names
+* Prefer flat variables over nested
+
+    .. code-block:: yaml
+        :caption: Nested variables
+
+        apache:
+            startservers: 2
+            maxclients: 2
+
+    .. code-block:: yaml
+        :caption: Flat variables
+
+        apache_startservers: 2
+        apache_maxclients: 2

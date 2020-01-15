@@ -35,10 +35,8 @@ Syntax
     $ ansible [pattern] -m [module] -a '[module options]' -f 10
 
 
-Become
-======
-* Run as root
-
+Become (Run as root)
+====================
 .. code-block:: console
     :caption: Run as root
 
@@ -61,6 +59,10 @@ Modules
 
 Console
 -------
+* Use the run command modules as a last resort
+* ``command`` module is safer than ``shell``
+* ``command`` cannot evaluate variables
+
 .. code-block:: console
     :caption: Console module
 
@@ -72,6 +74,8 @@ Console
 
 Shell
 -----
+* ``shell`` can evaluate variables
+
 .. code-block:: console
     :caption: shell module
 
@@ -90,15 +94,13 @@ File
 .. code-block:: console
     :caption: file module
 
-    $ ansible myserver -m file -a 'dest=/path/to/directory mode=755 owner=myuser group=mygroup state=directory'
+    $ ansible myserver -m file -a 'dest=/var/www mode=755 owner=myuser group=mygroup state=directory'
 
 Ping
 ----
 .. code-block:: console
 
     $ ansible myserver -m ping
-    [WARNING]: No inventory was parsed, only implicit localhost is available
-
     localhost | SUCCESS => {
         "changed": false,
         "ping": "pong"
@@ -109,8 +111,8 @@ User
 .. code-block:: console
     :caption: User module
 
-    $ ansible myserver -m user -a 'name=foo password=<crypted password here>'
-    $ ansible myserver -m user -a 'name=foo state=absent'
+    $ ansible myserver -m user -a 'name=myuser password=<crypted password here>'
+    $ ansible myserver -m user -a 'name=myuser state=absent'
 
 Service
 -------
@@ -149,22 +151,23 @@ Facts
 .. code-block:: console
     :caption: See all facts
 
-    $ ansible myserver -m setup -u ubuntu
+    $ ansible myserver -m setup
     $ ansible all -m setup
-    $ ansible all -m setup -u ubuntu
 
 
 Installing Packages
 ===================
 
-Yum
----
+Package
+-------
 .. code-block:: console
-    :caption: Yum module
+    :caption: Package module
 
-    $ ansible myserver -m yum -a 'name=openssl'
-    $ ansible myserver -m yum -a 'name=openssl state=latest'
-    $ ansible myserver -m yum -a 'name=openssl update_cache=yes state=latest'
+    $ ansible myserver -m package -a 'name=python3'
+    $ ansible myserver -m package -a 'name=python3 state=present'
+    $ ansible myserver -m package -a 'name=python3 state=absent'
+    $ ansible myserver -m package -a 'name=python3 state=latest'
+    $ ansible myserver -m package -a 'name=python3 update_cache=yes state=latest'
 
 Pip
 ---
@@ -176,10 +179,27 @@ Pip
 .. code-block:: console
     :caption: Pip module
 
-    $ ansible myserver -m apt -a 'name=python3-pip state=present'
+    $ ansible myserver -m package -a 'name=python3-pip state=present'
 
-    $ ansible myserver -m pip -a 'name=numpy' -u ubuntu --become
-    $ ansible myserver -m pip -a 'name=numpy state=present' -u ubuntu --become
+.. code-block:: console
+    :caption: Pip module
+
+    $ ansible myserver -m pip -a 'name=numpy'
+    $ ansible myserver -m pip -a 'name=numpy state=present'
+    $ ansible myserver -m pip -a 'name=numpy state=absent'
+    $ ansible myserver -m pip -a 'name=numpy state=latest'
+    $ ansible myserver -m pip -a 'name=numpy update_cache=yes state=latest'
+
+Yum
+---
+.. code-block:: console
+    :caption: Yum module
+
+    $ ansible myserver -m yum -a 'name=python3'
+    $ ansible myserver -m yum -a 'name=python3 state=present'
+    $ ansible myserver -m yum -a 'name=python3 state=absent'
+    $ ansible myserver -m yum -a 'name=python3 state=latest'
+    $ ansible myserver -m yum -a 'name=python3 update_cache=yes state=latest'
 
 Apt
 ---
@@ -188,13 +208,12 @@ Apt
 
     $ ansible myserver -m apt -a 'name=python3'
     $ ansible myserver -m apt -a 'name=python3 state=present'
-    $ ansible myserver -m apt -a 'name=python3-3.8 state=present'
-    $ ansible myserver -m apt -a 'name=python3 state=latest'
     $ ansible myserver -m apt -a 'name=python3 state=absent'
-
-    # apt update before checking if package is in latest version
+    $ ansible myserver -m apt -a 'name=python3 state=latest'
     $ ansible myserver -m apt -a 'name=python3 update_cache=yes state=latest'
 
+Example
+-------
 .. code-block:: console
     :caption: apt module
 
