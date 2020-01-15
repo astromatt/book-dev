@@ -14,6 +14,11 @@ Core concepts
 * Uses OpenSSH
 * Secure
 * Playbooks
+* Make change only when needed (if there was a change)
+* Changes can be incremental or wholesale
+* Schedule tasks daily, weekly, or monthly
+* Perform regular state check and validation
+* Automate backup and restore
 
 
 Control node
@@ -89,6 +94,17 @@ Tasks
 =====
 * The units of action in Ansible.
 * You can execute a single task once with an ad-hoc command.
+
+.. code-block:: yaml
+    :caption: Ansible tasks
+
+    - name: install httpd
+      package: name=apache2 state=latest
+
+
+Roles
+=====
+* Specialized list of commands to perform
 
 .. code-block:: yaml
     :caption: Ansible tasks

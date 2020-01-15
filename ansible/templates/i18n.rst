@@ -1,0 +1,22 @@
+****
+i18n
+****
+
+
+Translation
+===========
+.. code-block:: jinja
+
+    <p>{% trans %}Hello {{ user }}!{% endtrans %}</p>
+
+.. code-block:: jinja
+
+    {% trans count=list|length %}
+    There is {{ count }} {{ name }} object.
+    {% pluralize %}
+    There are {{ count }} {{ name }} objects.
+    {% endtrans %}
+
+.. code-block:: jinja
+
+    {{ _('Hello World!') }}

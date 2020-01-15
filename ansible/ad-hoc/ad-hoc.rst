@@ -171,15 +171,16 @@ Package
 
 Pip
 ---
+.. code-block:: console
+    :caption: Make sure python3 and pip is installed
+
+    $ ansible myserver -m package -a 'name=python3-pip state=present'
+
 .. code-block:: ini
+    :caption: Inventory file. Make sure to use python3 interpreter
 
     [myserver]
     127.0.0.1 ansible_python_interpreter=/usr/bin/python3
-
-.. code-block:: console
-    :caption: Pip module
-
-    $ ansible myserver -m package -a 'name=python3-pip state=present'
 
 .. code-block:: console
     :caption: Pip module

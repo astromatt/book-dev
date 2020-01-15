@@ -2,37 +2,128 @@
 Tasks
 *****
 
-
-Running
+Modules
 =======
+* Cloud modules
+* Clustering modules
+* Commands modules
+* Crypto modules
+* Database modules
+* Files modules
+* Identity modules
+* Inventory modules
+* Messaging modules
+* Monitoring modules
+* Net Tools modules
+* Network modules
+* Notification modules
+* Packaging modules
+* Remote Management modules
+* Source Control modules
+* Storage modules
+* System modules
+* Utilities modules
+* Web Infrastructure modules
+* Windows modules
+
+.. note:: More info at: https://docs.ansible.com/ansible/latest/modules/modules_by_category.html#modules-by-category
+
+
+Install Packages
+================
+
+Single Package
+--------------
 .. code-block:: yaml
 
-    tasks:
-      - name: run this command and ignore the result
-        shell: /usr/bin/somecommand || /bin/true
+    - name: install ntpdate
+      package:
+        name: ntpdate
+        state: present
+
+Install Multiple Packages
+-------------------------
+.. code-block:: yaml
+
+    - name: install the latest version of Apache and MariaDB
+      package:
+        name:
+          - httpd
+          - mariadb-server
+        state: latest
+
+Install HTTPd server
+--------------------
+* In some distributions ``apache`` is named ``httpd``
+
+.. code-block:: yaml
+    :caption: This uses a variable as this changes per distribution
+
+    - name: remove the apache package
+      package:
+        name: "{{ apache }}"
+        state: absent
+
+
+Running Commands
+================
+
+Copy
+----
+.. code-block:: yaml
+
+    - name: Copy ansible inventory file to client
+      copy: src=/etc/ansible/hosts dest=/etc/ansible/hosts owner=root group=root mode=0644
 
 .. code-block:: yaml
 
-    tasks:
-      - name: run this command and ignore the result
-        shell: /usr/bin/somecommand
-        ignore_errors: True
-
-.. code-block:: yaml
-
-    tasks:
-      - name: Copy ansible inventory file to client
-        copy: src=/etc/ansible/hosts dest=/etc/ansible/hosts
-                owner=root group=root mode=0644
+    - name: Copy ansible inventory file to client
+      copy:
+        src: /etc/ansible/hosts
+        dest: /etc/ansible/hosts
+        owner: root
+        group: root
+        mode: 0644
 
 .. code-block:: yaml
     :caption: Variables can be used in action lines. Suppose you defined a variable called vhost in the vars section
 
-    tasks:
-      - name: create a virtual host file for {{ vhost }}
-        template:
-          src: somefile.j2
-          dest: /etc/httpd/conf.d/{{ vhost }}
+    - name: create a virtual host file for {{ vhost }}
+      template:
+        src: myfile.j2
+        dest: /etc/httpd/conf.d/{{ vhost }}
+        owner: root
+        group: root
+        mode: 0644
+
+Shell
+-----
+.. code-block:: yaml
+
+    - name: show date
+      shell: /bin/date
+
+.. code-block:: yaml
+
+    - name: run this command and ignore the result
+      shell: /usr/bin/somecommand || /bin/true
+
+.. code-block:: yaml
+
+    - name: run this command and ignore the result
+      shell: /usr/bin/somecommand
+      ignore_errors: True
+
+Iptables
+--------
+.. code-block:: yaml
+
+    - name: allow access from 10.0.0.1
+      iptables:
+        chain: INPUT
+        jump: ACCEPT
+        source: 10.0.0.1
+
 
 Order
 =====
@@ -50,19 +141,3 @@ Order
       tasks:
         - debug:
             var: inventory_hostname
-
-
-Examples
-========
-
-Firewall
---------
-.. code-block:: yaml
-
-    - hosts: dbservers
-      tasks:
-      - name: allow access from 10.0.0.1
-        iptables:
-          chain: INPUT
-          jump: ACCEPT
-          source: 10.0.0.1

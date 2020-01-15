@@ -9,24 +9,23 @@ Single Play
     :caption: verify-apache.yml
 
     - hosts: webservers
+      remote_user: root
+
       vars:
         http_port: 80
         max_clients: 200
-      remote_user: root
-      tasks:
 
+      tasks:
       - name: ensure apache is at the latest version
-        yum:
+        package:
           name: httpd
           state: latest
-
       - name: write the apache config file
         template:
           src: /srv/httpd.j2
           dest: /etc/httpd.conf
         notify:
         - restart apache
-
       - name: ensure apache is running
         service:
           name: httpd
@@ -46,12 +45,10 @@ Multiple Plays
     - hosts: webservers
       remote_user: root
       tasks:
-
       - name: ensure apache is at the latest version
-        apt:
+        package:
           name: httpd
           state: latest
-
       - name: write the apache config file
         template:
           src: /srv/httpd.j2
@@ -60,12 +57,10 @@ Multiple Plays
     - hosts: databases
       remote_user: root
       tasks:
-
       - name: ensure postgresql is at the latest version
-        apt:
+        package:
           name: postgresql
           state: latest
-
       - name: ensure that postgresql is started
         service:
           name: postgresql

@@ -3,13 +3,9 @@ Facts
 *****
 
 
-Running
-=======
 .. code-block:: console
 
     $ ansible localhost -m setup
-    [WARNING]: No inventory was parsed, only implicit localhost is available
-
     localhost | SUCCESS => {
         "ansible_facts": {
             "ansible_apparmor": {

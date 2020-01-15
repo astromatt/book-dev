@@ -38,7 +38,6 @@ Usecases
 
     usecases/installing-packages.rst
 
-
 *********
 Playbooks
 *********
@@ -47,30 +46,35 @@ Playbooks
     :numbered:
     :caption: Playbooks
 
-    playbooks/playbooks.rst
+    playbooks/vars.rst
+    playbooks/keywords.rst
     playbooks/tasks.rst
-    playbooks/handlers.rst
     playbooks/roles.rst
+    playbooks/playbooks.rst
+    playbooks/handlers.rst
+    playbooks/facts.rst
+    playbooks/conditionals.rst
+    playbooks/tags.rst
     playbooks/vault.rst
     playbooks/examples.rst
 
-******
-Syntax
-******
+*********
+Templates
+*********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Syntax
+    :caption: Templates
 
-    syntax/keywords.rst
-    syntax/vars.rst
-    syntax/facts.rst
-    syntax/templates.rst
-    syntax/conditionals.rst
-    syntax/filters.rst
-    syntax/inclusion.rst
-    syntax/loops.rst
-    syntax/tags.rst
+    templates/jinja-basics.rst
+    templates/conditionals.rst
+    templates/loops.rst
+    templates/blocks.rst
+    templates/inclusion.rst
+    templates/assignments.rst
+    templates/filters.rst
+    templates/i18n.rst
+    templates/macros.rst
 
 *****
 Tests
