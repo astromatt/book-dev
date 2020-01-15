@@ -28,16 +28,6 @@ Ad Hoc
 
     ad-hoc/ad-hoc.rst
 
-********
-Usecases
-********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Usecases
-
-    usecases/installing-packages.rst
-
 *********
 Playbooks
 *********
