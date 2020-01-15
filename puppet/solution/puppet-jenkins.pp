@@ -1,12 +1,12 @@
-group { 'jenkins':
-    ensure => 'present',
+group { 'myuser':
+    ensure => present,
     gid    => 1337,
 }
 
-user { 'jenkins':
-    ensure           => 'present',
-    groups           => ['jenkins'],
-    home             => '/home/jenkins',
+user { 'myuser':
+    ensure           => present,
+    groups           => ['mygroup'],
+    home             => '/home/myuser',
     password         => '*',
     password_max_age => 99999,
     password_min_age => 0,
@@ -14,9 +14,9 @@ user { 'jenkins':
     uid              => 1337,
 }
 
-file { '/home/jenkins':
+file { '/home/myuser':
     ensure => 'directory',
-    owner  => 'jenkins',
-    group  => 'jenkins',
+    owner  => 'myuser',
+    group  => 'mygroup',
     mode   => '0755'
 }
