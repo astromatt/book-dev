@@ -339,7 +339,7 @@ Korzystanie z faktów w manifestach
 
     .. code-block:: console
 
-        export FACTER_system_role=$(cat /etc/system_role); facter
+        $ export FACTER_system_role=$(cat /etc/system_role); facter
 
 Hiera
 -----
@@ -575,8 +575,8 @@ Modules
 =======
 .. code-block:: console
 
-    puppet module search apache
-    puppet module install puppetlabs-apache
+    $ puppet module search apache
+    $ puppet module install puppetlabs-apache
 
 Java
 ----
