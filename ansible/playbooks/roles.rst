@@ -17,6 +17,44 @@ Ansible Galaxy
 ==============
 * Repository of user defined :term:`Roles`
 
+Example
+=======
+.. code-block:: yaml
+
+    - name: "Installing packages"
+      package: name={{item}} state=installed
+      with_items:
+      - gunicorn
+      - supervisor
+      - python-mysqldb
+      - python-falcon
+
+    - name: "Making sure supervisor is enabled and started"
+      service: name=supervisor state=started enabled=yes
+
+    - name: "Creating the base folder of the application"
+      file: path=/opt/myapp state=directory owner=nobody group=nobody mode=0755
+
+    - name: "Copying the application"
+      copy: src=../myapp.py dest=/opt/myapp/myapp.py owner=nobody group=nobody mode=0755
+      notify:
+      - restart-app
+
+    - name: "Copying the supervisor config file"
+      template: src=../files/myapp.conf dest=/etc/supervisor/conf.d/myapp.conf owner=nobody group=nobody mode=0644
+      notify:
+      - reload-config
+      - restart-app
+
+    - name: "Adding IP od dbserver to /etc/hosts"
+      lineinfile: name=/etc/hosts line="{{ hostvars['dbserver']['ansible_eth0']['ipv4']['address'] }} dbserver"
+
+    handlers:
+    - name: reload-config
+      shell: supervisorctl reread
+    - name: restart-app
+      supervisorctl: name=myapp state=restarted
+
 
 Best Practices
 ==============
