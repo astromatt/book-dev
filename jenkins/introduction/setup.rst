@@ -67,4 +67,4 @@ Installing using Docker Compose
     .. code-block:: console
 
         $ cd /home/
-        $ docker-compose -f jenkins.yaml up --detach
+        $ docker-compose -f jenkins.yaml up -d

@@ -80,7 +80,7 @@ Jenkins
             container_name: jenkins
             restart: "no"
             ports:
-              - "8080:8080"
+              - "8100:8080"
             networks:
               - ecosystem
             volumes:
@@ -220,9 +220,9 @@ CI/CD ecosystem
           - /home/gitlab/logs:/var/log/gitlab
           - /home/gitlab/data:/var/opt/gitlab
         ports:
-          - "8400:22"
-          - "8401:80"
-          - "8402:443"
+          - "8400:80"
+          - "8422:22"
+          - "8443:443"
         networks:
           - ecosystem
         depends_on:

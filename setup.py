@@ -21,7 +21,7 @@ run('clear')
 cmd = split(f'sphinx-build -a -E -j auto --color -b {FORMAT} {sourcedir} {outputdir}')
 run(cmd)
 
-print('\n\n')
+print('\n')
 
 SECOND = 1
 MINUTE = 60 * SECOND

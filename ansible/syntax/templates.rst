@@ -2,7 +2,7 @@
 Templates
 *********
 
-.. code-block:: jinja2
+.. code-block:: jinja
 
     127.0.0.1 localhost
     {% for host in groups['all'] %}

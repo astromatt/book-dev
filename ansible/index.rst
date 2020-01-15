@@ -49,6 +49,7 @@ Syntax
     :numbered:
     :caption: Syntax
 
+    syntax/keywords.rst
     syntax/vars.rst
     syntax/facts.rst
     syntax/templates.rst

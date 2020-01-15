@@ -240,31 +240,6 @@ Vagrant
 
     /vagrant/vagrant.rst
 
-************
-Alternatives
-************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Alternatives
-
-    /alternatives/api.rst
-    /alternatives/binary-repository.rst
-    /alternatives/ci-cd.rst
-    /alternatives/code-repository.rst
-    /alternatives/data-exploration.rst
-    /alternatives/database.rst
-    /alternatives/instant-messaging.rst
-    /alternatives/issue-tracker.rst
-    /alternatives/knowledge-base.rst
-    /alternatives/logging.rst
-    /alternatives/monitoring.rst
-    /alternatives/provisioning.rst
-    /alternatives/quality.rst
-    /alternatives/user-directory.rst
-    /alternatives/versioning.rst
-    /alternatives/virtualization.rst
-
 
 *******
 Summary

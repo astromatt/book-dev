@@ -1,10 +1,12 @@
 .. include:: /README.rst
 
 .. toctree::
-    :maxdepth: 1
-    :numbered:
 
     /LICENSE.rst
+
+.. toctree::
+    :maxdepth: 1
+
     /agile/index.rst
     /linux/index.rst
     /jira/index.rst
@@ -14,4 +16,7 @@
     /architecture/index.rst
     /puppet/index.rst
     /ansible/index.rst
+
+.. toctree::
+
     /summary/index.rst

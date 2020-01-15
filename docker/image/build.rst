@@ -14,7 +14,7 @@ Build images
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  2.048kB
     Step 1/3 : FROM alpine:latest
      ---> 961769676411
@@ -37,11 +37,11 @@ Build images
     Removing intermediate container 6a1b630dbfae
      ---> ce299736b126
     Successfully built ce299736b126
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer:1.0.0
+    $ docker build . -t myimg:1.0.0
     Sending build context to Docker daemon  2.048kB
     Step 1/3 : FROM alpine:latest
      ---> 961769676411
@@ -64,11 +64,11 @@ Build images
     Removing intermediate container 6a1b630dbfae
      ---> ce299736b126
     Successfully built ce299736b126
-    Successfully tagged mycontainer:1.0.0
+    Successfully tagged myimg:1.0.0
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  2.048kB
     Step 1/3 : FROM alpine:latest
      ---> 961769676411
@@ -91,7 +91,7 @@ Build images
     Removing intermediate container 6a1b630dbfae
      ---> ce299736b126
     Successfully built ce299736b126
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
 List images
 -----------
@@ -118,19 +118,21 @@ Build Workflow
 
 #. Build image
 
-    $ docker build . -t mycontainer
+    .. code-block:: console
+
+        $ docker build . -t myimg
 
 #. Run image
 
     .. code-block:: console
 
-        $ docker run -it mycontainer
+        $ docker run -it myimg
 
 #. List images
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ docker images
+        $ docker images
 
 
 Dockerfile
@@ -189,7 +191,7 @@ Example 1
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  4.096kB
     Step 1/2 : FROM alpine
      ---> 961769676411
@@ -199,7 +201,7 @@ Example 1
     Removing intermediate container c66d9f7f5f4d
      ---> ea39fac384a4
     Successfully built ea39fac384a4
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
 Example 2
 ^^^^^^^^^
@@ -210,7 +212,7 @@ Example 2
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  2.048kB
     Step 1/3 : FROM alpine:latest
      ---> 961769676411
@@ -233,7 +235,7 @@ Example 2
     Removing intermediate container 6a1b630dbfae
      ---> ce299736b126
     Successfully built ce299736b126
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
 ``ENTRYPOINT``
 --------------
@@ -246,7 +248,7 @@ Example 2
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  4.096kB
     Step 1/2 : FROM alpine
      ---> 961769676411
@@ -254,9 +256,9 @@ Example 2
      ---> Using cache
      ---> 2b4aa9975a77
     Successfully built 2b4aa9975a77
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
-    $ docker run -it mycontainer
+    $ docker run -it myimg
     BusyBox v1.30.1 (2019-06-12 17:51:55 UTC) multi-call binary.
 
     Usage: ping [OPTIONS] HOST
@@ -278,7 +280,7 @@ Example 2
                 and when finished
         -p HEXBYTE	Pattern to use for payload
 
-    $ docker run -it mycontainer 127.0.0.1
+    $ docker run -it myimg 127.0.0.1
     PING 127.0.0.1 (127.0.0.1): 56 data bytes
     64 bytes from 127.0.0.1: seq=0 ttl=64 time=0.041 ms
     64 bytes from 127.0.0.1: seq=1 ttl=64 time=0.094 ms
@@ -301,7 +303,7 @@ Example 2
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  4.096kB
     Step 1/2 : FROM alpine
      ---> 961769676411
@@ -309,9 +311,9 @@ Example 2
      ---> Using cache
      ---> e4992bc1834a
     Successfully built e4992bc1834a
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
-    $ docker run mycontainer
+    $ docker run myimg
     PING 127.0.0.1 (127.0.0.1): 56 data bytes
     64 bytes from 127.0.0.1: seq=0 ttl=64 time=0.060 ms
     64 bytes from 127.0.0.1: seq=1 ttl=64 time=0.067 ms
@@ -339,7 +341,7 @@ Example 2
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  4.096kB
     Step 1/3 : FROM alpine
      ---> 961769676411
@@ -353,9 +355,9 @@ Example 2
     Removing intermediate container c6fcf919ced7
      ---> a569f8c240ab
     Successfully built a569f8c240ab
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
-    $ docker run mycontainer /usr/bin/id
+    $ docker run myimg /usr/bin/id
     uid=405(guest) gid=100(users)
 
 
@@ -377,12 +379,11 @@ Files and directories
 .. code-block:: dockerfile
 
     FROM alpine
-    ADD requirements.txt /data/-
+    ADD requirements.txt /data/
 
 ``COPY`` vs ``ADD``
 -------------------
 * Best practices for writing Dockerfile suggests using ``COPY`` where the magic of ``ADD`` is not required
-
 
 ``WORKDIR``
 -----------
@@ -434,7 +435,7 @@ Environmental variables
 
 .. code-block:: console
 
-    $ docker build . -t mycontainer
+    $ docker build . -t myimg
     Sending build context to Docker daemon  4.096kB
     Step 1/2 : FROM alpine
      ---> 961769676411
@@ -443,9 +444,9 @@ Environmental variables
     Removing intermediate container f6a7217b8b8a
      ---> 347cd3b90f0b
     Successfully built 347cd3b90f0b
-    Successfully tagged mycontainer:latest
+    Successfully tagged myimg:latest
 
-    $ docker run mycontainer env
+    $ docker run myimg env
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     HOSTNAME=4c59a9f37394
     MY_NAME=Jan Twardowski
@@ -533,32 +534,32 @@ Docker Hub
 
     .. code-block:: console
 
-        $ docker build -t mycontainer:1.0.0 .
+        $ docker build . -t myimg:1.0.0
 
 #. Tag
 
     .. code-block:: console
 
-        $ docker tag mycontainer:1.0.0 myusername/mycontainer:latest
+        $ docker tag myimg:1.0.0 myusername/myimg:latest
 
 #. Publish
 
     .. code-block:: console
 
         $ docker login
-        $ docker push myusername/mycontainer:latest
+        $ docker push myusername/myimg:latest
 
 #. Clean local build
 
     .. code-block:: console
 
-        $ docker image remove mycontainer:1.0.0
+        $ docker image remove myimg:1.0.0
 
 #. Run from Hub
 
     .. code-block:: console
 
-        $ docker run myusername/mycontainer
+        $ docker run myusername/myimg
 
 
 Assignments
