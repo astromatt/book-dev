@@ -14,11 +14,11 @@ Inventory - Host file
     [myserver]
     127.0.0.1
 
-    $ ansible -i ./hosts myserver -a "/bin/echo hello" -u ubuntu
+    $ ansible -i ./hosts myserver -a '/bin/echo hello' -u ubuntu
     127.0.0.1 | CHANGED | rc=0 >>
     hello
 
-    $ ansible -i ./hosts all -a "/bin/echo hello" -u ubuntu
+    $ ansible -i ./hosts all -a '/bin/echo hello' -u ubuntu
     127.0.0.1 | CHANGED | rc=0 >>
     hello
 
@@ -31,8 +31,8 @@ Syntax
 
 .. code-block:: console
 
-    $ ansible [pattern] -m [module] -a "[module options]"
-    $ ansible [pattern] -m [module] -a "[module options]" -f 10
+    $ ansible [pattern] -m [module] -a '[module options]'
+    $ ansible [pattern] -m [module] -a '[module options]' -f 10
 
 
 Become
@@ -42,16 +42,16 @@ Become
 .. code-block:: console
     :caption: Run as root
 
-    $ ansible [pattern] -m [module] -a "[module options]" --become
+    $ ansible [pattern] -m [module] -a '[module options]' --become
 
 .. code-block:: console
     :caption: Example
 
-    $ ansible myserver -a "/usr/bin/whoami" -u ubuntu
+    $ ansible myserver -a '/usr/bin/whoami' -u ubuntu
     127.0.0.1 | CHANGED | rc=0 >>
     ubuntu
 
-    $ ansible myserver -a "/usr/bin/whoami" -u ubuntu --become
+    $ ansible myserver -a '/usr/bin/whoami' -u ubuntu --become
     127.0.0.1 | CHANGED | rc=0 >>
     root
 
@@ -64,11 +64,11 @@ Console
 .. code-block:: console
     :caption: Console module
 
-    $ ansible myserver -a "/bin/date"
-    $ ansible myserver -a "/sbin/reboot"
-    $ ansible myserver -a "/sbin/reboot" -f 10
-    $ ansible myserver -a "/sbin/reboot" -f 10 -u root
-    $ ansible myserver -a "/sbin/reboot" -f 10 -u root --become
+    $ ansible myserver -a '/bin/date'
+    $ ansible myserver -a '/sbin/reboot'
+    $ ansible myserver -a '/sbin/reboot' -f 10
+    $ ansible myserver -a '/sbin/reboot' -f 10 -u root
+    $ ansible myserver -a '/sbin/reboot' -f 10 -u root --become
 
 Shell
 -----
@@ -83,14 +83,14 @@ Copy
 .. code-block:: console
     :caption: copy
 
-    $ ansible myserver -m copy -a "src=/etc/hosts dest=/tmp/hosts"
+    $ ansible myserver -m copy -a 'src=/etc/hosts dest=/tmp/hosts'
 
 File
 ----
 .. code-block:: console
     :caption: file module
 
-    $ ansible myserver -m file -a "dest=/path/to/directory mode=755 owner=myuser group=mygroup state=directory"
+    $ ansible myserver -m file -a 'dest=/path/to/directory mode=755 owner=myuser group=mygroup state=directory'
 
 Ping
 ----
@@ -109,17 +109,17 @@ User
 .. code-block:: console
     :caption: User module
 
-    $ ansible myserver -m user -a "name=foo password=<crypted password here>"
-    $ ansible myserver -m user -a "name=foo state=absent"
+    $ ansible myserver -m user -a 'name=foo password=<crypted password here>'
+    $ ansible myserver -m user -a 'name=foo state=absent'
 
 Service
 -------
 .. code-block:: console
     :caption: Service module
 
-    $ ansible myserver -m service -a "name=httpd state=started"
-    $ ansible myserver -m service -a "name=httpd state=restarted"
-    $ ansible myserver -m service -a "name=httpd state=stopped"
+    $ ansible myserver -m service -a 'name=httpd state=started'
+    $ ansible myserver -m service -a 'name=httpd state=restarted'
+    $ ansible myserver -m service -a 'name=httpd state=stopped'
 
 
 Examples
@@ -162,9 +162,9 @@ Yum
 .. code-block:: console
     :caption: Yum module
 
-    $ ansible myserver -m yum -a "name=openssl"
-    $ ansible myserver -m yum -a "name=openssl state=latest"
-    $ ansible myserver -m yum -a "name=openssl update_cache=yes state=latest"
+    $ ansible myserver -m yum -a 'name=openssl'
+    $ ansible myserver -m yum -a 'name=openssl state=latest'
+    $ ansible myserver -m yum -a 'name=openssl update_cache=yes state=latest'
 
 Pip
 ---
@@ -176,29 +176,29 @@ Pip
 .. code-block:: console
     :caption: Pip module
 
-    $ ansible myserver -m apt -a "name=python3-pip state=present"
+    $ ansible myserver -m apt -a 'name=python3-pip state=present'
 
-    $ ansible myserver -m pip -a "name=numpy" -u ubuntu --become
-    $ ansible myserver -m pip -a "name=numpy state=present" -u ubuntu --become
+    $ ansible myserver -m pip -a 'name=numpy' -u ubuntu --become
+    $ ansible myserver -m pip -a 'name=numpy state=present' -u ubuntu --become
 
 Apt
 ---
 .. code-block:: console
     :caption: Apt module
 
-    $ ansible myserver -m apt -a "name=python3"
-    $ ansible myserver -m apt -a "name=python3 state=present""
-    $ ansible myserver -m apt -a "name=python3-3.8 state=present"
-    $ ansible myserver -m apt -a "name=python3 state=latest"
-    $ ansible myserver -m apt -a "name=python3 state=absent"
+    $ ansible myserver -m apt -a 'name=python3'
+    $ ansible myserver -m apt -a 'name=python3 state=present'
+    $ ansible myserver -m apt -a 'name=python3-3.8 state=present'
+    $ ansible myserver -m apt -a 'name=python3 state=latest'
+    $ ansible myserver -m apt -a 'name=python3 state=absent'
 
     # apt update before checking if package is in latest version
-    $ ansible myserver -m apt -a "name=python3 update_cache=yes state=latest"
+    $ ansible myserver -m apt -a 'name=python3 update_cache=yes state=latest'
 
 .. code-block:: console
     :caption: apt module
 
-    $ ansible myserver -m apt -a "name=python3 state=present" -u ubuntu --become
+    $ ansible myserver -m apt -a 'name=python3 state=present' -u ubuntu --become
     127.0.0.1 | SUCCESS => {
         "ansible_facts": {
             "discovered_interpreter_python": "/usr/bin/python"

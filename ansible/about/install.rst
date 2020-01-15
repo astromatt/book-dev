@@ -25,6 +25,12 @@ PIP
 
     $ pip3 install ansible
 
+Alpine
+======
+.. code-block:: console
+
+    $ apk add python3 python3-dev gcc musl-dev libffi-dev openssl-dev
+    $ pip3 install ansible
 
 Ubuntu
 ======

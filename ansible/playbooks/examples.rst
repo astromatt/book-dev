@@ -38,6 +38,7 @@ Single Play
             name: httpd
             state: restarted
 
+
 Multiple Plays
 ==============
 .. code-block:: yaml

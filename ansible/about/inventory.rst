@@ -91,7 +91,7 @@ Host variables
 
 Inventory aliases
 -----------------
-* In the above example, running Ansible against the host alias “jumper” will connect to 192.0.2.50 on port 5555.
+* In the above example, running Ansible against the host alias "jumper" will connect to 192.0.2.50 on port 5555.
 * This only works for hosts with static IPs, or when you are connecting through tunnels.
 
 .. code-block:: ini
@@ -135,6 +135,7 @@ Group variables
     northeast
     southwest
     northwest
+
 
 YAML format
 ===========
@@ -221,14 +222,15 @@ Group variables
         ntp_server: ntp.myhost.example.com
         proxy: proxy.myhost.example.com
 
+
 Files
 =====
 * You can store variables in the main inventory file
 * Storing separate host and group variables files may help you organize your variable values more easily
 * Host and group variable files must use YAML syntax
-* Valid file extensions include ‘.yml’, ‘.yaml’, ‘.json’, or no file extension.
+* Valid file extensions include ``.yml``, ``.yaml``, ``.json``, or no file extension.
 * Ansible loads host and group variable files by searching paths relative to the inventory file or the playbook file
-* If your inventory file at ``/etc/ansible/hosts`` contains a host named ‘foosball’ that belongs to two groups, ‘raleigh’ and ‘webservers’, that host will use variables in YAML files at the following locations:
+* If your inventory file at ``/etc/ansible/hosts`` contains a host named ‘foosball’ that belongs to two groups, ``raleigh`` and ``webservers``, that host will use variables in YAML files at the following locations:
 
 .. code-block:: text
     :caption: Filenames can optionally end in ``.yml``, ``.yaml``, or ``.json``
@@ -248,9 +250,11 @@ Files
 * If you want other commands to load group and host variables from a playbook directory, you must provide the ``--playbook-dir`` option on the command line
 * If you load inventory files from both the playbook directory and the inventory directory, variables in the playbook directory will override variables set in the inventory directory
 
+
 Connection Parameters
 =====================
 * https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+
 
 Docker
 ======

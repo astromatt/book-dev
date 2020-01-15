@@ -13,7 +13,8 @@ About
     about/install.rst
     about/concepts.rst
     about/usage.rst
-    glossary.rst
+    about/glossary.rst
+    about/inventory.rst
 
 ******
 Ad Hoc
@@ -25,6 +26,17 @@ Ad Hoc
 
     ad-hoc/ad-hoc.rst
 
+********
+Usecases
+********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Usecases
+
+    usecases/installing-packages.rst
+
+
 *********
 Playbooks
 *********
@@ -35,7 +47,6 @@ Playbooks
 
     playbooks/playbooks.rst
     playbooks/tasks.rst
-    playbooks/inventory.rst
     playbooks/handlers.rst
     playbooks/roles.rst
     playbooks/vault.rst
@@ -67,6 +78,4 @@ Tests
     :numbered:
     :caption: Tests
 
-    tests/debug.rst
-    tests/dry-mode.rst
     tests/tests.rst
