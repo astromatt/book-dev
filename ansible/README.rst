@@ -33,3 +33,13 @@ Ansible
     "http://agile.astrotech.io", "Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean"
     "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices"
     "http://linux.astrotech.io", "Linux and Shell Programming with Bash"
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+.. raw:: html
+
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License"
+             style="border-width:0"
+             src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>

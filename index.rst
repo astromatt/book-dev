@@ -1,10 +1,6 @@
 .. include:: /README.rst
 
 .. toctree::
-
-    /LICENSE.rst
-
-.. toctree::
     :maxdepth: 1
 
     /agile/index.rst

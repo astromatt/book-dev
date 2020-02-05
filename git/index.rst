@@ -1,5 +1,4 @@
 .. include:: README.rst
-.. include:: LICENSE.rst
 
 **********
 Git Basics

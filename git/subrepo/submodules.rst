@@ -24,7 +24,7 @@ Add submodule
     Resolving deltas: 100% (141/141), done.
 
     $ ls contrib
-    LICENSE.rst             _references             requirements.txt
+    LICENSE.txt             _references             requirements.txt
     README.rst              _static                 setup.cfg
     _img                    conf.py                 setup.py
     _new_img                index.rst               versioning
