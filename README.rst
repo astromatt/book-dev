@@ -43,3 +43,12 @@ This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Intern
              style="border-width:0"
              src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
     </a>
+
+*The Software Engineering* book covers topics of:
+
+    * DevOps and CI/CD with Docker
+    * Jira and Atlassian Ecosystem
+    * Git and Git Flow in CI/CD
+    * Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean Startup
+    * Software Architecture with Cloud and Microservices
+    * Linux and Shell Programming with Bash
