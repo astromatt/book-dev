@@ -1,6 +1,6 @@
-####################
-Software Engineering
-####################
+########################
+The Software Engineering
+########################
 
 
 .. figure:: /_static/AstroMatt.jpg
@@ -19,20 +19,20 @@ Software Engineering
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
 .. tip::
-    * This book is free and open source at http://dev.astrotech.io
+    * This book is free and open source at https://dev.astrotech.io
     * For consulting or training course requests please email matt@astrotech.io
 
 .. csv-table:: Other books from author
     :widths: 30, 70
-    :header: "URL", "Title"
+    :header: "URL", "ISBN",  "Title"
 
-    "http://python.astrotech.io", "Python 3: from None to Machine Learning"
-    "http://dev.astrotech.io", "DevOps and CI/CD with Docker"
-    "http://jira.astrotech.io", "Jira with Atlassian Ecosystem"
-    "http://git.astrotech.io", "Git and Git Flow in CI/CD"
-    "http://agile.astrotech.io", "Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean"
-    "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices"
-    "http://linux.astrotech.io", "Linux and Shell Programming with Bash"
+    "978-83-957186-2-5", "https://python.astrotech.io", "Python 3: from None to Machine Learning"
+    "978-83-957186-3-2", "https://dev.astrotech.io", "The Software Engineering: DevOps, CI/CD, Docker, Provisioning and GIT+GIT Flow"
+    "", "", ""
+    "978-83-957186-0-1", "https://www.astronaut.pl", "Astronaut Selection and Training for Long Duration Spaceflight and Extraterrestrial Activity"
+    "978-83-956752-0-1", "https://www.astronaut.center/books", "Space in Practice: How to Prepare and Conduct Stratospheric Balloon Mission"
+    "978-83-957186-4-9", "https://pl.habitatos.space", "HabitatOS - Development of operating system prototype for Lunar and Martian habitats"
+    "978-83-957186-1-8", "https://alsep.astronaut.center", "Geophysics experiments from Apollo Lunar Surface Experiments Package"
 
 This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 
