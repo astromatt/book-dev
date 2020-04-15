@@ -15,6 +15,8 @@ What is Inventory?
 Static Inventory
 ================
 * Create file ``hosts``
+* Default inventory file location ``/etc/ansible/hosts``
+* If any other location, then specify ``ansible -i hosts ...`` for file named hosts, `more info <https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html>`_
 * Roles are defined in square brackets
 * Hosts are below roles
 * There are two default groups: all and ungrouped.

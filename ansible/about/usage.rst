@@ -131,7 +131,7 @@ Config
 ======
 * ``/etc/ansible/ansible.cfg`` – Config file, used if present
 * ``~/.ansible.cfg`` – User config file, overrides the default config if present
-
+* ``/etc/ansible/hosts`` - Default inventory file location, If any other location, then specify ``ansible -i hosts ...`` for file named hosts `More info <https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html>`_
 
 Ansible Pull
 ============

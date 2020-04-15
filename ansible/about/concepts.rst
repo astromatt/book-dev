@@ -43,6 +43,9 @@ Inventory
 * An inventory file is also sometimes called a "hostfile".
 * Your inventory can specify information like IP address for each managed node.
 * An inventory can also organize managed nodes, creating and nesting groups for easier scaling.
+* Default inventory file location ``/etc/ansible/hosts``
+* If any other location, then specify ``ansible -i hosts ...`` for file named hosts
+* `More info <https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html>`_
 
 .. code-block:: ini
     :caption: Inventory file
