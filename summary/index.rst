@@ -7,6 +7,7 @@ Summary
     :numbered:
     :caption: Summary
 
-    /summary/compose.rst
+    /summary/docker-run.rst
+    /summary/docker-compose.rst
     /summary/alternatives.rst
     /summary/pictures.rst

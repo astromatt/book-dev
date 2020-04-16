@@ -51,13 +51,13 @@ Inventory
     :caption: Inventory file
 
     [dbservers]
-    db01.staging.example.com
-    db02.staging.example.com
+    db01.example.com
+    db02.example.com
 
     [webservers]
-    app01.staging.example.com
-    app02.staging.example.com
-    app03.staging.example.com
+    10.13.37.1
+    10.13.37.2
+    10.13.37.3
 
 
 Modules
@@ -152,3 +152,16 @@ Playbook
       handlers:
       - name: restart http
         service: name=httpd state=restarted
+
+
+Templates
+=========
+* Jinja2 templates (similar to Django templates)
+
+.. code-block:: jinja
+
+    <ul>
+    {% for item in sequence %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>

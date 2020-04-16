@@ -15,15 +15,6 @@ Requirements
 Installation
 ============
 
-Dependencies via Raw mode
--------------------------
-* Ansible’s raw module, and the script module, do not depend on a client side install of Python to run
-* You can use Ansible to install a compatible version of Python using the raw module, which then allows you to use everything else
-
-.. code-block:: console
-
-    $ ansible myhost --become -m raw -a 'apt install -y python3'
-
 PIP
 ---
 * Preferred way
@@ -69,3 +60,13 @@ Debian
     $ apt update
     $ apt install ansible
 
+
+Client Dependencies
+===================
+* Ansible modules depends on Python 3 installed on machine
+* Ansible’s raw module, and the script module, do not depend on a client side install of Python to run
+* You can use Ansible to install a compatible version of Python using the raw module, which then allows you to use everything else
+
+.. code-block:: console
+
+    $ ansible myhost --become -m raw -a 'apt install -y python3'

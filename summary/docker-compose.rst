@@ -133,6 +133,7 @@ Jenkins
           - ecosystem
         volumes:
           - /home/jenkins:/var/jenkins_home/
+          - /var/run/docker.sock:/var/run/docker.sock
 
 .. code-block:: console
 
@@ -188,6 +189,55 @@ SonarQube
     $ docker-compose -f sonarqube.yaml up
 
 
+Artifactory
+===========
+.. code-block:: yaml
+    :caption: ``artifactory.yaml``
+
+    version: '3'
+
+    networks:
+      ecosystem:
+        driver: bridge
+
+    services:
+      db:
+        image: postgres
+        networks:
+          - ecosystem
+        ports:
+          - "5432:5432"
+        volumes:
+          - /home/postgresql:/var/lib/postgresql/data
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=example
+
+      artifactory:
+        image: docker.bintray.io/jfrog/artifactory-oss:latest
+        container_name: artifactory
+        restart: always
+        ports:
+          - "8300:8081"
+        networks:
+          - ecosystem
+        depends_on:
+          - db
+        volumes:
+          - /home/artifactory:/var/opt/jfrog/artifactory
+        environment:
+          - DB_TYPE=postgresql
+          - DB_HOST=db
+          - DB_PORT=5432
+          - DB_NAME=artifactory
+          - DB_USER=artifactory
+          - DB_PASSWORD=artifactory
+
+.. code-block:: console
+
+    $ docker-compose -f artifactory.yaml up
+
+
 GitLab
 ======
 .. code-block:: yaml
@@ -239,52 +289,3 @@ GitLab
 .. code-block:: console
 
     $ docker-compose -f gitlab.yaml up
-
-
-Artifactory
-===========
-.. code-block:: yaml
-    :caption: ``artifactory.yaml``
-
-    version: '3'
-
-    networks:
-      ecosystem:
-        driver: bridge
-
-    services:
-      db:
-        image: postgres
-        networks:
-          - ecosystem
-        ports:
-          - "5432:5432"
-        volumes:
-          - /home/postgresql:/var/lib/postgresql/data
-        environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=example
-
-      artifactory:
-        image: docker.bintray.io/jfrog/artifactory-oss:latest
-        container_name: artifactory
-        restart: always
-        ports:
-          - "8300:8081"
-        networks:
-          - ecosystem
-        depends_on:
-          - db
-        volumes:
-          - /home/artifactory:/var/opt/jfrog/artifactory
-        environment:
-          - DB_TYPE=postgresql
-          - DB_HOST=db
-          - DB_PORT=5432
-          - DB_NAME=artifactory
-          - DB_USER=artifactory
-          - DB_PASSWORD=artifactory
-
-.. code-block:: console
-
-    $ docker-compose -f artifactory.yaml up

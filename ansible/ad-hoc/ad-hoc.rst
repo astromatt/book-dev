@@ -14,14 +14,13 @@ Inventory - Host file
     [myserver]
     127.0.0.1
 
-    $ ansible -i ./hosts myserver -a '/bin/echo hello' -u ubuntu
+    $ ansible -i ./hosts myserver -u ubuntu -a '/bin/grep PRETTY_NAME /etc/os-release'
     127.0.0.1 | CHANGED | rc=0 >>
-    hello
+    PRETTY_NAME="Ubuntu 18.04.3 LTS"
 
-    $ ansible -i ./hosts all -a '/bin/echo hello' -u ubuntu
+    $ ansible -i ./hosts all -u ubuntu -a '/bin/grep PRETTY_NAME /etc/os-release'
     127.0.0.1 | CHANGED | rc=0 >>
-    hello
-
+    PRETTY_NAME="Ubuntu 18.04.3 LTS"
 
 Syntax
 ======
@@ -79,7 +78,7 @@ Shell
 .. code-block:: console
     :caption: shell module
 
-    $ ansible myserver -m shell -a 'echo $TERM'
+    $ ansible myserver -m shell -a 'echo $HOME'
     $ ansible myserver -m shell -a 'echo $(/usr/bin/whoami) > /tmp/whoami'
 
 Copy
@@ -128,20 +127,20 @@ Examples
 ========
 .. code-block:: console
 
-    $ ansible myserver -m raw -a '/usr/bin/whoami' -u ubuntu
+    $ ansible myserver -u ubuntu -m raw -a '/usr/bin/whoami'
     127.0.0.1 | CHANGED | rc=0 >>
     ubuntu
     Shared connection to 127.0.0.1 closed.
 
-    $ ansible myserver -m shell -a '/usr/bin/whoami' -u ubuntu
+    $ ansible myserver -u ubuntu -m shell -a '/usr/bin/whoami'
     127.0.0.1 | CHANGED | rc=0 >>
     ubuntu
 
-    $ ansible myserver -m command -a '/usr/bin/whoami' -u ubuntu
+    $ ansible myserver -u ubuntu -m command -a '/usr/bin/whoami'
     127.0.0.1 | CHANGED | rc=0 >>
     ubuntu
 
-    $ ansible myserver -a '/usr/bin/whoami' -u ubuntu
+    $ ansible myserver -u ubuntu -a '/usr/bin/whoami'
     127.0.0.1 | CHANGED | rc=0 >>
     ubuntu
 
@@ -160,6 +159,10 @@ Installing Packages
 
 Package
 -------
+* Detects operating system and executes apt, yum or rpm
+* Universal and portable
+* Preferred method
+
 .. code-block:: console
     :caption: Package module
 
@@ -191,17 +194,6 @@ Pip
     $ ansible myserver -m pip -a 'name=numpy state=latest'
     $ ansible myserver -m pip -a 'name=numpy update_cache=yes state=latest'
 
-Yum
----
-.. code-block:: console
-    :caption: Yum module
-
-    $ ansible myserver -m yum -a 'name=python3'
-    $ ansible myserver -m yum -a 'name=python3 state=present'
-    $ ansible myserver -m yum -a 'name=python3 state=absent'
-    $ ansible myserver -m yum -a 'name=python3 state=latest'
-    $ ansible myserver -m yum -a 'name=python3 update_cache=yes state=latest'
-
 Apt
 ---
 .. code-block:: console
@@ -213,12 +205,23 @@ Apt
     $ ansible myserver -m apt -a 'name=python3 state=latest'
     $ ansible myserver -m apt -a 'name=python3 update_cache=yes state=latest'
 
+Yum
+---
+.. code-block:: console
+    :caption: Yum module
+
+    $ ansible myserver -m yum -a 'name=python3'
+    $ ansible myserver -m yum -a 'name=python3 state=present'
+    $ ansible myserver -m yum -a 'name=python3 state=absent'
+    $ ansible myserver -m yum -a 'name=python3 state=latest'
+    $ ansible myserver -m yum -a 'name=python3 update_cache=yes state=latest'
+
 Example
 -------
 .. code-block:: console
     :caption: apt module
 
-    $ ansible myserver -m apt -a 'name=python3 state=present' -u ubuntu --become
+    $ ansible myserver -u ubuntu --become -m apt -a 'name=python3 state=present'
     127.0.0.1 | SUCCESS => {
         "ansible_facts": {
             "discovered_interpreter_python": "/usr/bin/python"

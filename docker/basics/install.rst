@@ -25,6 +25,12 @@ Ubuntu
 ------
 * https://docs.docker.com/engine/getstarted/linux_install_help/
 
+.. figure:: img/release-ubuntu.png
+    :scale: 35%
+    :align: center
+
+    `Long term support and interim releases <https://ubuntu.com/about/release-cycle>`_
+
 .. code-block:: console
     :caption: Preferred
 

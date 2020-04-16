@@ -39,22 +39,22 @@ Simple list
     :caption: ``cat hosts``
 
     [dbservers]
-    db01.staging.example.com
-    db02.staging.example.com
+    db01.example.com
+    db02.example.com
 
     [appservers]
-    app01.staging.example.com
-    app02.staging.example.com
-    app03.staging.example.com
+    app01.example.com
+    app02.example.com
+    app03.example.com
 
 .. code-block:: ini
 
     [dc1]
-    db01.test.example.com
-    app01.test.example.com
+    db01.example.com
+    app01.example.com
 
     [dc2]
-    db02.test.example.com
+    db02.example.com
 
 Range
 -----
@@ -316,6 +316,7 @@ Docker
       file:
         path: "/var/jenkins_home/.ssh/jupiter"
         state: directory
+
 
 Best Practices
 ==============

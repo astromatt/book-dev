@@ -57,7 +57,7 @@ Ubuntu
     :scale: 35%
     :align: center
 
-    Long term support and interim releases
+    `Long term support and interim releases <https://ubuntu.com/about/release-cycle>`_
 
 .. code-block:: console
 
