@@ -14,7 +14,7 @@ RUN git clone https://github.com/AstroTech/ecosystem-example-c /tmp \
 
 FROM alpine
 
-RUN apk add --no-cache git gcc g++ make libpcap-dev
+RUN apk add --no-cache git gcc musl-dev libpcap-dev make
 
 RUN git clone https://github.com/AstroTech/ecosystem-example-c /tmp \
     && cd /tmp \
