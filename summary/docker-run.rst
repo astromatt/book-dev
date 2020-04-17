@@ -56,7 +56,7 @@ Artifactory
         --name artifactory \
         --detach \
         --rm \
-        --volume /home/artifactory:/var/opt/jfrog/artifactory
+        --volume /home/artifactory:/var/opt/jfrog/artifactory \
         --network ecosystem \
         --publish 8300:8081 \
         docker.bintray.io/jfrog/artifactory-oss:latest

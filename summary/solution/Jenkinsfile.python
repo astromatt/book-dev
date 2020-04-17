@@ -1,0 +1,62 @@
+pipeline {
+  agent {
+    docker {
+      image 'testenv:python'
+    }
+
+  }
+  stages {
+    stage('Unit Test') {
+      parallel {
+        stage('Unit Test') {
+          steps {
+            sh '/usr/bin/python3 -m unittest discover example-py-unittest'
+          }
+        }
+
+        stage('Pytest') {
+          steps {
+            sh 'cd example-py-pytest && /usr/bin/python3 -m pytest'
+          }
+        }
+
+        stage('Doctest') {
+          steps {
+            sh '/usr/bin/python3 -m doctest example-py-doctest/com/automationpanda/example/*.py'
+          }
+        }
+
+      }
+    }
+
+    stage('Static Code Analysis') {
+      parallel {
+        stage('Static Code Analysis') {
+          steps {
+            sh '/usr/bin/python3 -m pycodestyle .'
+          }
+        }
+
+        stage('Pylint') {
+          steps {
+            sh '/usr/bin/python3 -m pylint .'
+          }
+        }
+
+      }
+    }
+
+    stage('Built') {
+      steps {
+        sh 'python setup.py build'
+      }
+    }
+
+    stage('Push to Pip') {
+      steps {
+        sh 'python3 setup.py upload'
+      }
+    }
+
+  }
+}
