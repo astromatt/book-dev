@@ -1,6 +1,15 @@
-########################
-The Software Engineering
-########################
+##########################################################################
+The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
+##########################################################################
+
+
+:English title: The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
+:Original title: The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
+:Author: Matt Harasymczuk
+:ISBN: 978-83-957186-3-2
+:Year: 2017-2020
+:Online Access: https://dev.astrotech.io
+:License: Creative Commons Attribution-ShareAlike 4.0 International License
 
 .. figure:: /_static/AstroMatt.jpg
     :align: left
@@ -17,7 +26,9 @@ The Software Engineering
     "facebook", "https://facebook.com/matt.harasymczuk"
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
-.. hint:: This book is free and open source at https://dev.astrotech.io
+.. tip::
+    * This book is free and open source at https://dev.astrotech.io
+    * For consulting or training course requests please email matt@astrotech.io
 
 .. csv-table:: Other books from author
     :widths: 25, 20, 55
@@ -31,10 +42,6 @@ The Software Engineering
     "978-83-957186-1-8", "https://alsep.astronaut.center", "Geophysics experiments from Apollo Lunar Surface Experiments Package"
 
 This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-
-.. note:: For consulting or training course requests please email matt@astrotech.io
-
-.. warning:: Before training course please setup your environment as described here :ref:`Install`.
 
 .. raw:: html
 
@@ -52,3 +59,7 @@ This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Intern
     * Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean Startup
     * Software Architecture with Cloud and Microservices
     * Linux and Shell Programming with Bash
+
+.. note:: For consulting or training course requests please email matt@astrotech.io
+
+.. warning:: Before training course please setup your environment as described here :ref:`Install`.
