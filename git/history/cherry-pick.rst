@@ -44,13 +44,13 @@ Workflow
 
     $ git log -2
     commit 8192e9663597d1a58bb89d09b882372763395175 (HEAD -> master, origin/master, origin/HEAD)
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Fri Nov 22 13:33:39 2019 +0100
 
         Commit Two
 
     commit dafb4249e41e88bf367f326d575efa19ea888955
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Fri Nov 22 13:19:58 2019 +0100
 
         Commit One
@@ -67,13 +67,13 @@ Workflow
 
     $ git log -2
     commit 8b3440aca849c4783069625ce4aada27e8007f8c (HEAD -> master)
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Wed Nov 27 23:13:05 2019 +0100
 
         Change Readme file
 
     commit 8192e9663597d1a58bb89d09b882372763395175 (origin/master, origin/HEAD)
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Fri Nov 22 13:33:39 2019 +0100
 
         Commit Two

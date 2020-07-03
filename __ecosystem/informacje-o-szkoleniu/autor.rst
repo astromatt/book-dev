@@ -2,8 +2,17 @@
 Author
 ******
 
-:name: `Matt Harasymczuk <http://astrotech.io>`_
-:email: `devops@astrotech.io <mailto:devops@astrotech.io>`_
-:www: `http://www.astrotech.io <http://astrotech.io>`_
-:facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
-:linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
+.. figure:: /_static/AstroMatt.jpg
+    :align: left
+    :scale: 39%
+
+.. csv-table::
+    :widths: 15, 65
+
+    "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"
+    "email", "book@astronaut.center"
+    "www", "https://www.astronaut.center"
+    "github", "https://github.com/astromatt"
+    "linkedin", "https://linkedin.com/in/mattharasymczuk"
+    "facebook", "https://facebook.com/matt.harasymczuk"
+    "slideshare", "https://www.slideshare.net/astrotech/presentations"

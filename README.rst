@@ -3,9 +3,10 @@ The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
 ##########################################################################
 
 
-:English title: The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
 :Original title: The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
+:English title: The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
 :Author: Matt Harasymczuk
+:Language: English
 :ISBN: 978-83-957186-3-2
 :Year: 2017-2020
 :Online Access: https://dev.astrotech.io
@@ -18,9 +19,9 @@ The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
 .. csv-table::
     :widths: 15, 65
 
-    "author", "`Matt Harasymczuk <http://astrotech.io>`_"
-    "email", "matt@astrotech.io"
-    "www", "http://www.astrotech.io"
+    "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"
+    "email", "book@astronaut.center"
+    "www", "https://www.astronaut.center"
     "github", "https://github.com/astromatt"
     "linkedin", "https://linkedin.com/in/mattharasymczuk"
     "facebook", "https://facebook.com/matt.harasymczuk"
@@ -28,7 +29,7 @@ The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
 
 .. tip::
     * This book is free and open source at https://dev.astrotech.io
-    * For consulting or training course requests please email matt@astrotech.io
+    * For consulting or training course requests please email book@astronaut.center
 
 .. csv-table:: Other books from author
     :widths: 25, 20, 55
@@ -60,6 +61,6 @@ This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 Intern
     * Software Architecture with Cloud and Microservices
     * Linux and Shell Programming with Bash
 
-.. note:: For consulting or training course requests please email matt@astrotech.io
+.. note:: For consulting or training course requests please email book@astronaut.center
 
 .. warning:: Before training course please setup your environment as described here :ref:`Install`.

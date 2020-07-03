@@ -9,7 +9,7 @@ Limiting output
 
     $ git log -1
     commit 8192e9663597d1a58bb89d09b882372763395175 (HEAD -> master, origin/master, origin/HEAD)
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Fri Nov 22 13:33:39 2019 +0100
 
         DevOps: CI/CD #time 15m
@@ -61,11 +61,11 @@ Format
 .. code-block:: console
 
     $ git log -n5 --format='%h %ae %s'
-    8192e96 matt@astrotech.io DevOps: CI/CD #time 15m
-    dafb424 matt@astrotech.io DevOps: CI/CD #time 15m
-    ad7a58c matt@astrotech.io DevOps: Docker #time 25m
-    f9e70b6 matt@astrotech.io DevOps: Summary and Ecosystem big picture #time 5m
-    0adfae7 matt@astrotech.io DevOps: Summary and Ecosystem big picture #time 180m
+    8192e96 book@astronaut.center DevOps: CI/CD #time 15m
+    dafb424 book@astronaut.center DevOps: CI/CD #time 15m
+    ad7a58c book@astronaut.center DevOps: Docker #time 25m
+    f9e70b6 book@astronaut.center DevOps: Summary and Ecosystem big picture #time 5m
+    0adfae7 book@astronaut.center DevOps: Summary and Ecosystem big picture #time 180m
 
 .. code-block:: console
 

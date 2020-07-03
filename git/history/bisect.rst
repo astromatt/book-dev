@@ -87,7 +87,7 @@ Git Bisect
 
     $ git log -1
     commit 854ae8aec05bc77d4f55dc16255452167385302c (HEAD)
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Wed Oct 24 02:16:57 2018 +0200
 
         Virtualization: Docker #time 60m
@@ -98,8 +98,8 @@ Git Bisect
     0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  3) ######################################
     0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  4)
     0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  5) **Author**
-    0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  6)     :name: `Matt Harasymczuk <http://astrotech.io>`_
-    0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  7)     :email: matt@astrotech.io
+    0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  6)     :name: `Matt Harasymczuk <https://www.astronaut.center>`_
+    0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  7)     :email: book@astronaut.center
     [...]
 
 .. code-block:: console

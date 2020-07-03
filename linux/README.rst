@@ -10,9 +10,9 @@ Linux and Shell Programming
 .. csv-table::
     :widths: 15, 65
 
-    "author", "`Matt Harasymczuk <http://astrotech.io>`_"
-    "email", "matt@astrotech.io"
-    "www", "http://www.astrotech.io"
+    "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"
+    "email", "book@astronaut.center"
+    "www", "https://www.astronaut.center"
     "github", "https://github.com/astromatt"
     "linkedin", "https://linkedin.com/in/mattharasymczuk"
     "facebook", "https://facebook.com/matt.harasymczuk"
@@ -20,7 +20,7 @@ Linux and Shell Programming
 
 .. tip::
     * This book is free and open source at https://dev.astrotech.io
-    * For consulting or training course requests please email matt@astrotech.io
+    * For consulting or training course requests please email book@astronaut.center
 
 .. csv-table:: Other books from author
     :widths: 25, 20, 55

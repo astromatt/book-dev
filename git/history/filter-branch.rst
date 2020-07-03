@@ -36,12 +36,12 @@ Change user or email
 
         if [ "$GIT_COMMITTER_NAME" = "mharasymczuk" ]; then
             GIT_COMMITTER_NAME="Matt Harasymczuk";
-            GIT_COMMITTER_EMAIL="matt@astrotech.io";
+            GIT_COMMITTER_EMAIL="book@astronaut.center";
         fi
 
         if [ "GIT_AUTHOR_NAME" = "mharasymczuk" ]; then
             GIT_AUTHOR_NAME="Matt Harasymczuk";
-            GIT_AUTHOR_EMAIL="matt@astrotech.io";
+            GIT_AUTHOR_EMAIL="book@astronaut.center";
         fi
 
         git commit-tree "$@";

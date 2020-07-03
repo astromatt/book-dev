@@ -59,6 +59,7 @@ Git Internals
     :numbered:
     :caption: Git Internals
 
+    internals/sign.rst
     internals/hooks.rst
     internals/refs.rst
     internals/internals.rst

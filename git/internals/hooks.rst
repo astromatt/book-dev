@@ -37,7 +37,7 @@ Branch Hook
 
     #!/bin/sh
     #
-    # @author Matt Harasymczuk <matt@astrotech.io>
+    # @author Matt Harasymczuk <book@astronaut.center>
     # @since 2012-10-23
     #
     # This hook message should go to .git/hooks/commit-msg

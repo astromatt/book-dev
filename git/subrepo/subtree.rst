@@ -9,7 +9,7 @@ Add subtree
 
     $ git log -1
     commit 945d1d8d300b1ceef3378b5520ebdaa337655eac
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Thu Nov 28 00:06:53 2019 +0100
 
         First Commit
@@ -41,7 +41,7 @@ Add subtree
     $ git log -2
     commit d86741484366d84108f62f1e6120e7ed6613d8d3 (HEAD -> master)
     Merge: 945d1d8 33bed47
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Thu Nov 28 00:08:05 2019 +0100
 
         Add 'contrib/' from commit '33bed47daca3f08c396215415e6ece005970734a'
@@ -51,7 +51,7 @@ Add subtree
         git-subtree-split: 33bed47daca3f08c396215415e6ece005970734a
 
     commit 945d1d8d300b1ceef3378b5520ebdaa337655eac
-    Author: Matt Harasymczuk <matt@astrotech.io>
+    Author: Matt Harasymczuk <book@astronaut.center>
     Date:   Thu Nov 28 00:06:53 2019 +0100
 
         First Commit
