@@ -35,6 +35,8 @@ GIT Commit Sign
     uid                 [ultimate] Mark Watney <mark.watney@nasa.gov>
     ssb   rsa4096/42B317FD4BA89E7A 1970-01-01 [E]
 
+    # In this example, the GPG key ID is 3AA5C34371567BD2
+
     $ git config --global user.signingkey 3AA5C34371567BD2
     $ git config --global commit.gpgsign true
 
