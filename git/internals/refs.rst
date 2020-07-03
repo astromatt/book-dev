@@ -6,11 +6,11 @@ Git Refs
 Commit Hash
 ===========
 #. SHA1
-#. Kolizje i dlaczego SHA1
-#. Długość
-#. Posługiwanie się krótszymi hashami
-#. Na podstawie czego się generują
-#. Informacja na temat całej historii drzewa
+#. SHA1 collisions
+#. Length (40 characters)
+#. Using short hashes
+#. Generating hash
+#. Contains information about whole history
 
 
 Refs
