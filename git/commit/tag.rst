@@ -38,7 +38,7 @@ Date:   Thu Jan 1 00:00:00 1970 +0000
 
     content from master branch
 
-diff --git a/matth.md b/matth.md
+diff --git a/myfile.txt b/myfile.txt
 index 046820b..08ac55e 100644
 --- a/myfile.txt
 +++ b/myfile.txt
