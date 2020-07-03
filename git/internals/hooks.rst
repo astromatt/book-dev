@@ -34,11 +34,13 @@ Possible Hooks
 Branch Hook
 ===========
 .. code-block:: sh
+    :caption: .git/hooks/prepare-commit-msg
 
     #!/bin/sh
     #
     # @author Matt Harasymczuk <book@astronaut.center>
     # @since 2012-10-23
+    # @updated 2020-07-03
     #
     # This hook message should go to .git/hooks/commit-msg
     # Remember to add (*nix machines) executable rights: chmod +x .git/hooks/commit-msg
@@ -50,20 +52,23 @@ Branch Hook
     # The only thing you should do is to create an issue for each branch you have.
     # For example if you are working on issue DEMO-123 create a branch called DEMO-123
     # Each commit on this branch would have DEMO-123 in the commit message and Code Review process attached to it.
-    #
+
+    COMMIT_MSG_FILE=$1
+    COMMIT_SOURCE=$2
+    SHA1=$3
 
     issuekey=$(git symbolic-ref HEAD |egrep --only-matching '[A-Z]{2,10}-[0-9]{1,6}')
-    commitmsgFile="$1"
-    commitmsg=$(cat "$1")
+    message=$(cat $1)
+
 
     if [ -z "$issuekey" ]; then
-       echo "You're not working on issue branch!"
-       echo "Please create a branch named after https://jira.example.com issue."
-       echo "Commit message will be updated accordingly in order to contain branch/issuekey in the commit message."
-       exit 1
+        echo "Please work on branch with JIRA issue key in the branch name"
+        echo "Changes were not commited"
+        exit 1
     else
-       echo "$issuekey #comment $commitmsg +review" > $commitmsgFile
+       echo "$issuekey $message" > $COMMIT_MSG_FILE
     fi
+
 
 
 Assignments
