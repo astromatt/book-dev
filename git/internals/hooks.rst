@@ -73,5 +73,5 @@ Branch Hook
 
 Assignments
 ===========
-#. Stwórz hook aby wymuszał w nazwie commita ID z Jiry
-#. Stwórz hook aby do commit message dodawał ID z nazwy brancha
+#. Create Git hook which enforces JIRA issue key in commit message
+#. Create Git hook which copies JIRA issue key from branch name to commit message
