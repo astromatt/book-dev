@@ -46,7 +46,7 @@ SonarQube
 
 Docker Registry
 ===============
-.. code-block:: console
+.. code-block:: sh
 
     docker network create ecosystem
     mkdir -p /home/registry
