@@ -16,10 +16,10 @@ Jenkins
         --name jenkins \
         --detach \
         --rm \
+        --network ecosystem \
+        --publish 8100:8080 \
         --volume /home/jenkins:/var/jenkins_home \
         --volume /var/run/docker.sock:/var/run/docker.sock \
-        --net ecosystem \
-        --publish 8100:8080 \
         jenkins/jenkins
 
 
@@ -35,31 +35,31 @@ SonarQube
         --name sonarqube \
         --detach \
         --rm \
+        --network ecosystem \
+        --publish 8200:9000 \
         --volume /home/sonarqube/conf:/opt/sonarqube/conf \
         --volume /home/sonarqube/data:/opt/sonarqube/data \
         --volume /home/sonarqube/logs:/opt/sonarqube/logs \
         --volume /home/sonarqube/extensions:/opt/sonarqube/extensions \
-        --net ecosystem \
-        --publish 8200:9000 \
         sonarqube
 
 
-Artifactory
-===========
-.. code-block:: sh
+Docker Registry
+===============
+.. code-block:: console
 
     docker network create ecosystem
-    mkdir -p /home/artifactory
-    chmod 777 /home/artifactory
+    mkdir -p /home/registry
+    chmod 777 /home/registry
 
     docker run \
-        --name artifactory \
+        --name registry \
         --detach \
         --rm \
-        --volume /home/artifactory:/var/opt/jfrog/artifactory \
         --network ecosystem \
-        --publish 8300:8081 \
-        docker.bintray.io/jfrog/artifactory-oss:latest
+        --publish 8300:5000 \
+        --volume /home/registry:/var/lib/registry \
+        registry:2
 
 
 GitLab
@@ -76,12 +76,29 @@ GitLab
         --name gitlab \
         --detach \
         --rm \
-        --volume /home/gitlab/config:/etc/gitlab \
-        --volume /home/gitlab/logs:/var/log/gitlab \
-        --volume /home/gitlab/data:/var/opt/gitlab \
         --network ecosystem \
         --publish 8422:22 \
         --publish 8480:80 \
         --publish 8443:443 \
+        --volume /home/gitlab/config:/etc/gitlab \
+        --volume /home/gitlab/logs:/var/log/gitlab \
+        --volume /home/gitlab/data:/var/opt/gitlab \
         gitlab/gitlab-ce:latest
 
+
+Artifactory
+===========
+.. code-block:: sh
+
+    docker network create ecosystem
+    mkdir -p /home/artifactory
+    chmod 777 /home/artifactory
+
+    docker run \
+        --name artifactory \
+        --detach \
+        --rm \
+        --network ecosystem \
+        --publish 8600:8081 \
+        --volume /home/artifactory:/var/opt/jfrog/artifactory \
+        docker.bintray.io/jfrog/artifactory-oss:latest

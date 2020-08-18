@@ -45,6 +45,7 @@ Docker Scaling
     :numbered:
     :caption: Docker Scaling
 
+    scaling/registry.rst
     scaling/docker-compose.rst
     scaling/techniques.rst
     scaling/kubernetes.rst
