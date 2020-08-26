@@ -17,9 +17,9 @@ Install
         --detach \
         --restart always \
         --network ecosystem \
-        --publish 8400:22 \
-        --publish 8401:80 \
-        --publish 8402:443 \
+        --publish 8022:22 \
+        --publish 8000:80 \
+        --publish 8443:443 \
         --volume /home/gitlab/config:/etc/gitlab \
         --volume /home/gitlab/logs:/var/log/gitlab \
         --volume /home/gitlab/data:/var/opt/gitlab \

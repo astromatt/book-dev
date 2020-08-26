@@ -15,7 +15,7 @@ From Docker
         --restart always \
         --rm \
         --detach \
-        --publish 8002:8081 \
+        --publish 8081:8081 \
         docker.bintray.io/jfrog/artifactory-oss:latest
 
 

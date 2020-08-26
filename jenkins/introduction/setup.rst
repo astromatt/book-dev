@@ -24,7 +24,7 @@ Installing on Docker
             --detach  \
             --name jenkins \
             --rm \
-            --publish 8100:8080 \
+            --publish 8080:8080 \
             --volume /home/jenkins:/var/jenkins_home \
             --volume /var/run/docker.sock:/var/run/docker.sock \
             jenkins/jenkins
