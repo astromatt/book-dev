@@ -12,6 +12,7 @@
     /architecture/index.rst
     /puppet/index.rst
     /ansible/index.rst
+    /sonarqube/index.rst
     /vagrant/index.rst
 
 .. toctree::
