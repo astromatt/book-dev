@@ -5,8 +5,14 @@ SonarQube Install
 
 SonarQube LTS
 =============
+* Default evaluation username: admin
+* Default evaluation password: admin
+
 .. code-block:: sh
     :caption: SonarQube 7.9.x LTS
+
+    curl https://get.docker.com |sudo sh
+    sudo usermod -aG docker ubuntu   # requires logout
 
     docker network create ecosystem
     mkdir -p /home/sonarqube/
@@ -27,13 +33,16 @@ SonarQube LTS
 
 SonarQube Latest
 ================
+* Default evaluation username: admin
+* Default evaluation password: admin
+
 .. code-block:: sh
     :caption: SonarQube 8.2+
 
-    docker network create ecosystem
-    mkdir -p /home/sonarqube/
-    chmod 777 /home/sonarqube
+    curl https://get.docker.com |sudo sh
+    sudo usermod -aG docker ubuntu   # requires logout
 
+    docker network create ecosystem
     docker volume create --name sonarqube_data
     docker volume create --name sonarqube_extensions
     docker volume create --name sonarqube_logs
@@ -69,6 +78,9 @@ Database
 
 Docker Compose
 ==============
+* Default evaluation username: admin
+* Default evaluation password: admin
+
 .. code-block:: yaml
     :caption: ``sonarqube.yaml``
 

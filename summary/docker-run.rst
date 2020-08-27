@@ -6,7 +6,7 @@ Ecosystem Docker Run
 .. code-block:: sh
 
     curl https://get.docker.com |sudo sh
-    sudo usermod -aG docker ubuntu
+    sudo usermod -aG docker ubuntu   # requires logout
 
 
 Jenkins
