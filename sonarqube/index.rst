@@ -8,6 +8,7 @@ SonarQube
     :caption: SonarQube
 
     /sonarqube/about.rst
+    /sonarqube/license.rst
     /sonarqube/ecosystem.rst
     /sonarqube/install.rst
     /sonarqube/quality-models.rst
