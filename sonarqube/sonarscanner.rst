@@ -283,8 +283,8 @@ Configuration
 .. warning:: Po uruchomieniu ``SonarQube`` z obrazu ``Docker`` instalacja pluginów, a następnie restart ``SonarQube`` niszczy możliwość przeprowadzania analizy
 
 
-Assignment
-==========
+Assignments
+===========
 * ``git clone https://github.com/AstroTech/ecosystem-example-java /home/src-java``
 * ``sudo apt update && apt install openjdk-8-jdk maven``
 * ``update-alternatives --config java``
