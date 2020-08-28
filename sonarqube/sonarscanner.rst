@@ -13,8 +13,17 @@ Run
 
 Sonar Properties
 ================
-* Only required is: `sonar.projectKey`
+* There are only few required properties, such as ``sonar.projectKey`` and ``sonar.sources``
 * Other properties are optional
+
+.. code-block:: properties
+    :caption: Minimal ``sonar-project.properties`` for Java Project
+
+    sonar.projectKey=myproject
+    sonar.language=java
+    sonar.java.source=8
+    sonar.java.binaries=target/classes
+    sonar.sources=src/main/java
 
 .. code-block:: properties
     :caption: ``sonar-project.properties`` for Java Project
@@ -281,44 +290,6 @@ Configuration
 #. Uruchom analizę
 
 .. warning:: Po uruchomieniu ``SonarQube`` z obrazu ``Docker`` instalacja pluginów, a następnie restart ``SonarQube`` niszczy możliwość przeprowadzania analizy
-
-
-Assignments
-===========
-* ``git clone https://github.com/AstroTech/ecosystem-example-java /home/src-java``
-* ``sudo apt update && apt install openjdk-8-jdk maven``
-* ``update-alternatives --config java``
-* Install pitest (note jUnit dependency)
-
-.. code-block:: xml
-
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13</version>
-        <scope>test</scope>
-    </dependency>
-
-.. code-block:: xml
-
-    <plugin>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-maven</artifactId>
-        <version>1.5.2</version>
-     </plugin>
-
-.. code-block:: sh
-
-    mvn compile
-
-    # Unit Tests
-    mvn test
-
-    # Integration tests
-    mvn verify
-
-    # Mutation Tests
-    mvn org.pitest:pitest-maven:mutationCoverage
 
 
 Further Reading

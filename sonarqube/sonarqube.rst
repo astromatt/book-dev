@@ -101,6 +101,7 @@ Project News and Updates
 ========================
 * https://www.sonarqube.org/whats-new/
 
+
 Roadmap
 =======
 The 8.x LTS, which is expected in early 2021, will add significant value in the areas of security, operability, integration, and Python analysis.

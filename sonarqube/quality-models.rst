@@ -275,6 +275,16 @@ Use quality: In a specific use environment, the software product's ability to en
     Product Quality as defined in ISO/IEC 25010 [gaochundong]_
 
 
+Other Standards
+===============
+Space:
+
+    * European Cooperation for Space Standardization (ECSS) https://ecss.nl/standards/active-standards/
+
+Automotive:
+    * ISO/IEC 15504 Software Process Improvement and Capability Determination (SPICE) http://www.automotivespice.com/fileadmin/software-download/Automotive_SPICE_PAM_30.pdf
+
+
 References
 ==========
 .. [ISO25010a] https://imgv2-2-f.scribdassets.com/img/document/359403248/original/7a4d41d66f/1571558160?v=1

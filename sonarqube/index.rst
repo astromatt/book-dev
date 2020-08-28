@@ -18,4 +18,5 @@ SonarQube
     /sonarqube/sonarcloud.rst
     /sonarqube/sonarqube.rst
     /sonarqube/sonarscanner.rst
+    /sonarqube/assignments.rst
     /sonarqube/further-reading.rst
