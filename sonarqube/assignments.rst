@@ -18,7 +18,7 @@ Jenkins
     * Dockerfile :download:`solution/Dockerfile`
     * Sonar-Project.properties :download:`solution/sonar-project.properties`
     * Jenkinsfile (inline) :download:`solution/Jenkinsfile.inline`
-    * Jenkinsfile (env) :download:`solution/Dockerfile.env`
+    * Jenkinsfile (env) :download:`solution/Dockerfile`
 
 
 Pitest
