@@ -26,8 +26,8 @@ Sonar Properties
     sonar.password=admin
 
     ## About Project
-    sonar.projectKey=mypythonproject
-    sonar.projectName=My Python Project
+    sonar.projectKey=myjavaproject
+    sonar.projectName=My Java Project
     sonar.projectDescription=My Description
     sonar.links.homepage=https://www.example.com/
     sonar.links.scm=https://github.com/myuser/myproject/

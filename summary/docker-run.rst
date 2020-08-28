@@ -26,7 +26,7 @@ Jenkins
         --publish 8080:8080 \
         --volume /home/jenkins:/var/jenkins_home \
         --volume /var/run/docker.sock:/var/run/docker.sock \
-        jenkins/jenkins
+        jenkins/jenkins:alpine
 
 
 SonarQube
@@ -54,9 +54,6 @@ SonarQube
     :caption: SonarQube 8.2+
 
     docker network create ecosystem
-    mkdir -p /home/sonarqube/
-    chmod 777 /home/sonarqube
-
     docker volume create --name sonarqube_data
     docker volume create --name sonarqube_extensions
     docker volume create --name sonarqube_logs
