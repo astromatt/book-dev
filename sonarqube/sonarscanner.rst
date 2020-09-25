@@ -61,6 +61,7 @@ Sonar Properties
     sonar.sources=src/main/java
     sonar.exclusions=**/migrations/**
     sonar.java.binaries=target/classes
+    sonar.working.directory=/tmp/
 
 .. code-block:: properties
     :caption: ``sonar-project.properties`` for Python Project
@@ -97,6 +98,7 @@ Sonar Properties
     sonar.sources=.
     sonar.inclusions=**/*.py
     sonar.exclusions=**/migrations/**,**/*.pyc,**/__pycache__/**
+    sonar.working.directory=/tmp/
 
     ## Python
     sonar.python.pylint=/usr/bin/pylint

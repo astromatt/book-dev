@@ -56,3 +56,54 @@ Scrum
 .. figure:: img/scrum-week.png
     :scale: 50%
     :align: center
+
+
+Jira
+====
+.. figure:: img/jira-roadmap.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-backlog.jpg
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-backlog-kanban.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-backlog-scrum.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-builds.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-devpanel-1.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-devpanel-3.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-devpanel-2.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/bitbucket-create-branch.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-pullrequest.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-trigger.png
+    :scale: 50%
+    :align: center
+
+.. figure:: img/jira-release.png
+    :scale: 50%
+    :align: center
