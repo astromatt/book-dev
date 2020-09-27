@@ -18,24 +18,25 @@ Integrations
 .. figure:: img/sonarqube-integrations-bitbucket-d.png
     :scale: 33%
 
-    Atlassian Bitbucket integration [licensedev]_
+    Atlassian Bitbucket integration [licde]_
 
 .. figure:: img/sonarqube-integrations-github-a.png
     :scale: 33%
 
-    Github integration [licensedev]_
+    Github integration [licde]_
 
 .. figure:: img/sonarqube-integrations-azuredevops-a.png
     :scale: 33%
 
-    Azure DevOps integration [licensedev]_
+    Azure DevOps integration [licde]_
 
 .. figure:: img/sonarqube-integrations-gitlab-a.png
     :scale: 33%
 
-    GitLab integration [licensedev]_
+    GitLab integration [licde]_
 
 
 References
 ==========
 .. [sqdocs] https://docs.sonarqube.org/latest/
+.. [licde] https://www.sonarqube.org/developer-edition/

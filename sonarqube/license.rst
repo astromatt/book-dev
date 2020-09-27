@@ -19,18 +19,18 @@ The LOC count for a project is the LOC count of the project's largest branch.
     :scale: 33%
     :align: center
 
-    SonarQube Plans & Pricing [planandpricing]_
+    SonarQube Plans & Pricing [licpricing]_
 
 
 Pricing
 =======
-SonarQube is priced per instance per year and based on your lines of code (LoC). An instance is an installation of SonarQube. You pay per instance for a maximum number of LoC to be analyzed.
+SonarQube is priced per instance per year and based on your lines of code (LoC). An instance is an installation of SonarQube. You pay per instance for a maximum number of LoC to be analyzed. [licpricing]_
 
-LOCs are computed by summing up the main/program LoCs of each project analyzed. Lines of test code are never included in this number. The LoCs used for a project are the LoCs found during the most recent analysis of this project. If you start using the branch analysis feature, then the counted LOCs of a project will be the ones of the biggest branch of that project.
+LOCs are computed by summing up the main/program LoCs of each project analyzed. Lines of test code are never included in this number. The LoCs used for a project are the LoCs found during the most recent analysis of this project. If you start using the branch analysis feature, then the counted LOCs of a project will be the ones of the biggest branch of that project. [licpricing]_
 
-If you are getting close to the threshold you will be notified to either upgrade your plan or reduce the number of LOCs in your projects.
+If you are getting close to the threshold you will be notified to either upgrade your plan or reduce the number of LOCs in your projects. [licpricing]_
 
-If you reach the limit, your SonarQube instance will stop accepting new analyses.
+If you reach the limit, your SonarQube instance will stop accepting new analyses. [licpricing]_
 
 
 Community Edition
@@ -128,7 +128,7 @@ Enterprise Edition
 ==================
 * Free, 14-day evaluation license
 * Licensed by Lines of Code
-* Cost: starts at €15'000 [pricinee]
+* Cost: starts at €15'000 [pricingee]_
 
     * 1 Million LoC - €15,000
     * 5 Million LoC - €25,000
