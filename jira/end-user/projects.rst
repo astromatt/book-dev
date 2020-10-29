@@ -1,5 +1,10 @@
+*******
 Project
-=======
+*******
+
+
+Rationale
+=========
 - Project Lead
 - Categories
 
@@ -11,23 +16,29 @@ Project
 - Issue Collector
 
 Issue key
----------
+=========
 - krótki i zwięzły
 - łatwy do zapamiętania
 - 2-10 liter
 
 Project Configuration
----------------------
+=====================
 - Versions
 - Components
 - Roles and Permissions
 - Application Links
 
+
 Assignments
------------
+===========
 
 Projekt
-^^^^^^^
-- Stwórz projekt
-- Dodaj użytkownika ``jira-administrator`` do roli ``Developers``
-- Dodaj użytkownika ``jira-administrator`` do roli ``Administrators``
+-------
+#. Stwórz projekt
+#. Nazwij go jak swoje imię
+#. Klucz nazwij
+
+Konfiguracja Projektu
+---------------------
+#. Dodaj użytkownika siebie do roli ``Administrators``
+#. Dodaj użytkownika ``matt`` do roli ``Developers``

@@ -69,7 +69,7 @@ Issue Actions
 - Workflow Actions (Open, In Progress, Done)
 - Voting
 - Watching
-- Add Atachments
+- Add Attachments
 - Clone
 - Move
 - Create subtask
@@ -89,6 +89,11 @@ Time Reporting
 - Remaining Time
 - Log Work
 - Reports
+- Monte Carlo Estimation:
+
+    * https://www.infoq.com/presentations/monte-carlo/
+    * https://docs.google.com/spreadsheets/d/1BmSuj1jA2ZfhUBzPtqDBqDjMjSXMqj3QoHZGR-TesOA/edit#gid=542217325
+    * Roadmaps: Start Date, Due Date
 
 Assignments
 -----------
