@@ -29,6 +29,7 @@ End-User
     end-user/filters.rst
     end-user/dashboard.rst
     end-user/agile.rst
+    end-user/assignments.rst
 
 
 **************
