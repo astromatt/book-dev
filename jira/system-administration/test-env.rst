@@ -2,6 +2,8 @@
 Testing Environment
 *******************
 
+.. warning:: This is old script and it uses Python 2. Please upgrade to Python 3 and verify update before using!
+
 
 Clone environment
 =================
