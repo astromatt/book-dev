@@ -3,13 +3,13 @@ Assignments
 ***********
 
 
-Logging
--------
+Jira Access
+-----------
 #. Wejdź na stronę Jiry na adres podany przez prowadzącego
 #. Zaloguj się wykorzystując swoje imię jako login i hasło (bez polskich znaków i z małej litery)
 
 
-Create Project
+Project Create
 --------------
 #. Z menu u góry wybierz "Projects" -> "View Projects"
 #. Kliknij przycisk "Create Projects" (prawy górny róg)
@@ -22,8 +22,25 @@ Create Project
 
 #. Submit
 
+Project Settings
+----------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
+#. Przejdź do "Project Settings" (przycisk w menu na dole po lewej)
+#. Zakładka "Components" -> dodaj: "Frontend", "Backend", "Database"
+#. Zakładka "Versions" -> dodaj: "2021-Q1", "2021-Q2", "2021-Q3", "2021-Q4"
+#. Zakładka "Users and roles" -> dodaj siebie do roli "Administrators", dodaj użytkownika "admin" do roli "Developers"
+#. Zakładka "Issue Types" -> Task -> dodaj pole "Due Date", usuń pole "Labels"
+#. Zakładka "Issue Types" -> dodaj nową zakładkę "Dates", dodaj na niej pole "Due Date"
+#. Zakładka "General" -> zmień awatar swojego projektu na rakietę
+#. Zakładka "General" -> zmień nazwę swojego projektu na "Imię N."
 
-Create Issues
+gdzie:
+
+- "Imię" to Twoje imię
+- "N." to pierwsza litera Twojego nazwiska
+- Przykłady: "Jan T.", "Mark W.", "Melissa L.", "Matt K."
+
+Issues Create
 -------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Dodaj zadania do backlog: "One", "Two", "Three", "Four", "Five", "Six"
@@ -34,9 +51,8 @@ Create Issues
     - "Eight" - Estimate: 3
     - "Nine" - Estimate: 4
 
-
-Backlog
--------
+Issue Backlog
+-------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Zaznacz wszystkie issues za pomocą klikania i trzymania klawisza Shift
 #. Zaznacz trzy issues za pomocą klikania i trzymania klawisza Ctrl (klawisz Cmd na macOS)
@@ -45,18 +61,16 @@ Backlog
 #. Wybierz zadanie "Two" -> Prawy klawisz myszy -> "Add Flag"
 #. Wybierz zadanie "Two" -> Prawy klawisz myszy -> "Remove Flag"
 
-
-Versions
---------
+Issue Versions
+--------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Dodaj wersje: "2020-10", "2020-11", "2020-12" z datami rozpoczęcia i zakończenia miesiąca
 #. Przeciągnij zadanie "One", "Two", "Three", "Four" do wersji "2020-10"
 #. Przeciągnij zadanie "Five", "Six", "Seven" do wersji "2020-11"
 #. Przeciągnij zadanie "Eight", "Nine" do wersji "2020-12"
 
-
-Epic
-----
+Issue Epic
+----------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Dodaj Epic -> Epic Name "Logowanie", "Summary" -> "Logowanie", Due Date: "1/Nov/20"
 #. Dodaj Epic -> Epic Name "Wyszukiwarka", Summary "Wyszukiwarka", Due Date: "10/Nov/20"
@@ -66,18 +80,16 @@ Epic
 #. Do Epic "Wyszukiwarka" dodaj zadania "Four", "Five", "Seven"
 #. Kliknij na "All Issues", później na "Issues without epics" i porównaj ilość zadań
 
-
-Estimation
-----------
+Issue Estimation
+----------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. W detail view zadania "One" -> "Estimate" ustaw 3h, [menu kropeczki] -> Log Work -> Time Spent: 2h
 #. W detail view zadania "Two" -> "Estimate" ustaw 8h
 #. W detail view zadania "Three" -> "Estimate" ustaw 4h
 #. Zobacz kolorowe kółka z estymacjami w nagłówku sprintu: "To Do", "In Progress", "Done"
 
-
-Bulk Change
------------
+Issue Bulk Change
+-----------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Zaznacz zadania (trzymając Ctrl lub Cmd): "Two", "Four", "Six", "Eight"
 #. Kliknij prawym klawiszem myszy -> "Bulk Change" -> "Edit Issues" -> Next
@@ -89,9 +101,8 @@ Bulk Change
 #. Po ukończeniu klikamy "Ok, got it"
 #. Zwróć uwagę, że po zmianie część zadań w backlog nie ma story pointów (Story Pointy domyślnie mogą być przyznawane tylko zadaniom typu "Story")
 
-
-Add Sprints
------------
+Sprint Add
+----------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Dodaj pierwszy sprint:
 
@@ -105,9 +116,8 @@ Add Sprints
     - "Duration": "1 week"
     - "Start Date": "7/Nov/20 09:00 AM"
 
-
-Rozpoczęcie Sprintu
--------------------
+Sprint Start
+------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Do sprintu "2020-11 week 1" dodaj zadania: "One", "Two", "Three"
 #. Przejedź suwakiem i dodaj "Four", "Five", "Six", zwróć uwagę na zmiany liczb w okienku "Issues" i "Estimate"
@@ -117,11 +127,9 @@ Rozpoczęcie Sprintu
     - Duration: "1 week"
     - Start Date: "26/Oct/20 09:30 AM"
 
-
-Active Sprint
--------------
-#. Z menu u góry wybierz "Boards" -> Twój Board
-#. Przejdź na ekran Active Sprints
+Sprint Work
+-----------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Przenieś zadania:
 
     - "One" do "In Progress"
@@ -134,10 +142,16 @@ Active Sprint
     - Wybierz "Hide detail view
     - Wybierz "Print cards" i zmień "Card size" -> "small"
 
+Issue Log Work
+--------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Wybierz dowolne zadanie i otwórz szczegóły zadania (po prawej stronie)
+#. Wybierz z menu trzech kropek "..." (u góry) -> Log Work
+#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka "." -> Log Work
 
-Board Configuration
--------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board
+Board Configure
+---------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "General":
 
@@ -204,7 +218,6 @@ Board Configuration
         * "25/Dec/20" (pierwszy dzień Bożego Narodzenia)
         * "26/Dec/20" (drugi dzień Bożego Narodzenia)
 
-
 #. Zakładka "Issue Detail View":
 
     - Sekcja "General Fields" -> usuń: Status, Priority, Labels, Affects Version/s
@@ -212,35 +225,31 @@ Board Configuration
     - Sekcja "People" -> usuń "Reporter" i "Assignee
     - Sekcja "Links" -> usuń "Linked Issue"
 
-#. Wróć na "Active Sprint Board":
+#. Wróć na "Boards" -> Twój Board -> "Active Sprint":
 
     - Usuń wszystkie zadania z kolumny "In Progress" (powinna podświetlić się na żółto)
     - Dodaj trzy zadania do kolumny "Blocked" (powinna podświetlić się na czerwono)
 
-
-Zamykanie sprintu
------------------
+Sprint Close
+------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprint"
 #. zakończ aktualny sprint -> Prawy górny róg "Complete Sprint
 #. zadania niezakończone mają "spaść" do sprintu następnego, tj. "2020-11 week 1"
 
-
-Project Settings
-----------------
-#. Przejdź do "Project Settings" (przycisk w menu na dole po lewej)
-#. Zakładka "Components" -> dodaj: "Frontend", "Backend", "Database"
-#. Zakładka "Versions" -> dodaj: "2021-Q1", "2021-Q2", "2021-Q3", "2021-Q4"
-#. Zakładka "Users and roles" -> dodaj siebie do roli "Administrators", dodaj użytkownika "admin" do roli "Developers"
-#. Zakładka "Issue Types" -> Task -> dodaj pole "Due Date", usuń pole "Labels"
-#. Zakładka "Issue Types" -> dodaj nową zakładkę "Dates", dodaj na niej pole "Due Date"
-#. Zakładka "General" -> zmień awatar swojego projektu na rakietę
-#. Zakładka "General" -> zmień nazwę swojego projektu na "Imię N."
-
-gdzie:
-
-- "Imię" to Twoje imię
-- "N." to pierwsza litera Twojego nazwiska
-- Przykłady: "Jan T.", "Mark W.", "Melissa L.", "Matt K."
+Board Reports
+-------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Reports"
+#. Przedyskutuj "Burndown Chart"
+#. Przedyskutuj "Burnup Chart"
+#. Przedyskutuj "Sprint Report"
+#. Przedyskutuj "Velocity Chart"
+#. Przedyskutuj "Cumulative Flow Diagram"
+#. Przedyskutuj "Version Report"
+#. Przedyskutuj "Epic Report"
+#. Przedyskutuj "Control Chart"
+#. Przedyskutuj "Epic Burndown"
+#. Przedyskutuj "Release Burndown"
+#. Przedyskutuj "Time Tracking Report"
 
 Search View
 -----------
@@ -283,10 +292,22 @@ Search Advanced
 #. Wyszukaj: ``project = MYPROJECT AND fixVersion = earliestUnreleasedVersion()``
 #. Wyszukaj: ``assignee = currentUser() and statusCategory != Done``
 
-Search Advanced
----------------
-Z menu "Issues" wybrać "Search for Issues" w trybie Advanced:
-#. Wyszukaj
+Search Bulk Change
+------------------
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie MYPROJECT to nazwa Twojego projektu)
+#. Przycisk "Tools" (po prawej u góry) -> "Bulk Change" -> "all X issue(s)"
+#. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)
+#. Kliknij przycisk "Next" -> "Edit Issues" -> "Next"
+#. Zmień "Change Due Date" i ustaw na "1/Nov/20"
+#. Kliknij przycisk "Next" (na dole) -> "Confirm" -> "Ok, got it"
+
+Filter Save
+-----------
+Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Wyszukaj:
+
+.. code-block:: sql
 
     project = MYPROJECT
         AND sprint IN openSprints()
@@ -295,256 +316,311 @@ Z menu "Issues" wybrać "Search for Issues" w trybie Advanced:
              OR statusCategory = "In Progress")
 
 #. Wynik zapisz jako "Save As" (przycisk u góry nad polem wyszukiwania)
-#. Nazwij "Daily"
+#. Nazwij "Imię Daily" (gdzie Imię, to Twoje imię)
+#. Kliknij link "details" koło przycisku "Save as"
+#. Wybierz "Edit permissions"
+#. Ustaw "add Viewers":
 
-Search Advanced
----------------
-Z menu "Issues" wybrać "Search for Issues" w trybie Advanced:
-#. Wyszukaj "assignee = currentUser() and statusCategory != Done
-#. Przycisk trzy kropki "..." obok "Save" -> wybieramy Save as "My To Do
-#. kliknij link details koło przycisku "Save as
-#. Wybierz "Edit permissions" -> zmień nazwę filtru -> na "Imię Todo" (gdzie Imię, to Twoje imię)
-#. Ustaw "add Viewers" -> "Any logged-in user" -> kliknij "+Add" (ważne, inaczej nie zadziała)
-#. Upewnij się, że w polu Viewers dodane zostało "Shared with logged-in users (VIEW)
-#. Kliknij przycisk "Save
-#. Znów klikamy "Details" i wybieramy "New Subscription
-#. Wybieramy Schedule: Days per Week; Interval: "Once per day at 5:00 am" Monday
-#. Upewnij się, że jest odznaczone "Email this filter, even if there are no issues found
-#. Kliknij Subscribe
-#. Zmodyfikuj wyszukiwanie na: assignee = currentUser() AND statusCategory != "Done" AND due <= 7d
+    - "Project": Wybierz Twój projekt
+    - "Roles": "Any"
+    - kliknij "Add" (bez kliknięcia "Add" uprawnienia sie nie dodadzą)
+
+#. Upewnij się, że w polu "Viewers" dodane zostało "Project: Twój Role: Any"
 #. Kliknij przycisk "Save"
 
+Filter Subscription Create
+--------------------------
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Wyszukaj ``assignee = currentUser() and statusCategory != Done``
+#. Przycisk trzy kropki "..." obok "Save" -> wybieramy Save as "Imię Todo" (gdzie Imię, to Twoje imię)
+#. Kliknij link "Details" i wybierz "New Subscription"
+#. Wybieramy Schedule: Days per Week; Interval: "Once per day at 5:00 am" w dniu "Monday"
+#. Upewnij się, że jest odznaczone "Email this filter, even if there are no issues found"
+#. Kliknij "Subscribe"
+#. Zmodyfikuj wyszukiwanie na: ``assignee = currentUser() AND statusCategory != "Done" AND due <= 7d``
+#. Kliknij przycisk "Save"
 
+Filter Subscription Delete
+--------------------------
+#. Z menu u góry "Issues" wybrać "Manage filters" (na dole)
+#. Wybierz filtr z aktywną subskrypcją
+#. Kliknij na link "1 Subscription"
+#. Wybierz Actions "Delete" (po prawej)
 
-Z menu u góry wybierz "Boards" -> "View all boards" -> Create board (przycisk u góry po prawej)
-#. Wybierz "Create a Kanban board
-#. Board from an existing Saved Filter
-#. Kliknij przycisk "Next
-#. Board name: "Imię Todo" (gdzie Imię, to Twoje imię)
-#. Saved filter: wybrać filtr, który został stworzony wcześniej, tj. "Imię Todo" (gdzie Imię, to Twoje imię)
-#. Kliknij przycisk "Create board
-#. Przycisk Board (górny prawy róg) -> Configure
-#. Na zakładce Swimlanes
-#. Zmodyfikuj nazwę Expedite i zamień na Must
-#. Dodaj nowe: Should z JQL: priority in (High, Medium, Low)
-#. Zmodyfikuj nazwę "Everything Else" na "Could
-#. Zmień kolejność aby była: Must, Should, Could, tzn. Must ma być na górze, poniżej Should, na dole Could
-
-Z menu "Issues" wybrać "Search for Issues" w trybie Advanced:
-#. Z "FAVOURITE FILTERS" (menu po lewej) wybrać "Imię Todo"  (gdzie Imię, to Twoje imię)
-#. Zmodyfikuj zapytanie: assignee = currentUser() AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY)
+Filter Edit
+-----------
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Z "Favourite Filters" (menu po lewej) wybrać "Imię Todo" (gdzie Imię, to Twoje imię)
+#. Zmodyfikuj zapytanie: ``assignee = currentUser() AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY)``
 #. kliknij "Search" a następnie "Save"
 
-Z menu "Issues" wybrać "Search for Issues" w trybie Advanced:
-#. Wyszukaj: project = MYPROJECT and due IS EMPTY  (gdzie MYPROJECT to nazwa Twojego projektu)
-#. Przycisk Tools (po prawej u góry) -> Bulk Change -> all issue(s)
-#. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)
-#. Kliknij przycisk Next -> Edit Issues -> Next
-#. Zmień "Change Due Date" i ustaw na "1/Nov/20
-#. Kliknij przycisk "Next" (na dole) -> "Confirm" -> "Ok, got it
-#. Przejdź na Board "Imię Todo" (gdzie Imię, to Twoje imię)
+Board from Filter
+-----------------
+#. Z menu u góry wybierz "Boards" -> "View all boards"
+#. Kliknij przycisk "Create board" (przycisk u góry po prawej)
+#. Wybierz "Create a Kanban board" -> "Board from an existing Saved Filter" -> "Next"
+#. Board name: "Imię Todo" (gdzie Imię, to Twoje imię)
+#. Saved filter: wybrać filtr: "Imię Todo" (gdzie Imię, to Twoje imię)
+#. Kliknij przycisk "Create board"
+#. Przycisk Board (górny prawy róg) -> "Configure"
+#. Na zakładce "Swimlanes"
+#. Zmodyfikuj nazwę "Expedite" i zamień na "Must"
+#. Dodaj nowe: "Should" z JQL: ``priority in (High, Medium, Low)``
+#. Zmodyfikuj nazwę "Everything Else" na "Could"
+#. Zmień kolejność aby była:
+
+    - "Must" na górze
+    - "Should" w środku
+    - "Could" na dole
+
 #. Zmień w zadaniach "Four" oraz "Seven" priorytet na "Highest" (zadania powinno pojawić się w Swimlane "Must")
 #. Zmień w zadaniach "Nine" oraz "Eight" priorytet na "Lowest" (zadania powinno pojawić się w Swimlane "Could")
-#. Zwiń zadania które są w Swimlane "Could", przez kliknięcie strzałeczki obok nazwy "Could
-#. Board (u góry po prawej) -> Configure -> Na zakładce General -> "Edit Filter Query
-#. Popraw zapytanie: assignee = currentUser() AND issuetype != Epic AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY)
-#. Przycisk "Search" -> "Save
+#. Zwiń zadania które są w Swimlane "Could", przez kliknięcie strzałeczki obok nazwy "Could"
+
+Board Filter Edit
+-----------------
+#. Z menu u góry wybierz "Boards" -> "View all boards" -> "Imię Todo" (gdzie Imię, to Twoje imię)
+#. Przycisk "Board" (u góry po prawej) -> "Configure" -> Na zakładce "General" -> "Edit Filter Query"
+#. Popraw zapytanie: ``assignee = currentUser() AND issuetype != Epic AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY) ORDER BY duedate DESC, priority DESC``
+#. Przycisk "Search" -> "Save"
 #. Przejdź na Board "Imię Todo" (gdzie Imię, to Twoje imię)
 #. Zobacz czy nie ma Epiców
 
-Z menu u góry wybierz "Boards" -> View all Boards:
+Board Delete
+------------
+#. Z menu u góry wybierz "Boards" -> "View all Boards"
 #. Poszukaj swojego Board "Imię Todo" (gdzie Imię, to Twoje imię)
 #. kliknij trzy kropeczki "..." po prawej stronie
 #. Delete i potwierdzasz przyciskiem "Delete"
 
-Z menu u góry "Issues" wybrać "Manage filters" (na dole):
-#. wbierz filtr z aktywną subskrybcją
-#. klikniij na link "1 Subscription
-#. Wybierz Actions "Delete" (po prawej)
-
-Z menu u góry wybierz "Dashboards":
-#. Manage Dashboars
+Dashboard Create
+----------------
+#. Z menu u góry wybierz "Dashboards" -> "Manage Dashboards"
 #. Create new dashboard (przycisk u góry po prawej)
 #. Name "Imię Dashboard" (gdzie Imię, to Twoje imię)
-#. Start from "Blank Dashboard
-#. Add Viewers -> Project -> Twój Projekt -> Developers -> "+ Add
-#. Add Viewers -> Project -> Twój Projekt -> Administrators -> "+ Add
-#. Kliknij przycisk Add
+#. Start from "Blank Dashboard"
+#. Kliknij przycisk "Add"
 
-Z menu u góry wybierz "Dashboards" wybieirz swój Dashboard:
-#. kiknij na Add gadget
-#. Load all gadgets
-#. Wybierz z listy Filter Results i kliknij przycisk "Add gadget" (po prawej)
-#. Wybierz z listy Issue Statistics i kliknij przycisk "Add gadget" (po prawej)
-#. Wybierz z listy Sprint Burndown Gadget i kliknij przycisk "Add gadget" (po prawej)
-#. Wybierz z listy Sprint Health Gadget i kliknij przycisk "Add gadget" (po prawej)
-#. Wybierz z listy Version Report i kliknij przycisk "Add gadget" (po prawej)
-#. Wybierz z listy Days Remaning in Sprint Gadget i kliknij przycisk "Add gadget" (po prawej)
-#. Zamknij okenko X (górny prawy róg)
+Dashboard Edit
+--------------
+#. Z menu u góry wybierz "Dashboards" -> Twój Dashboard
+#. Zmień "Edit Layout" (prawy górny róg) na trzykolumnowy
 
-#. Dla gadgetu Issue Statistics ustawiamy filtr Twojego projektu, Statistic: Type Status, Sort Total, Sort Direction Descending
-#. Upewnij się, że nie jest zaznaczone "Update every 15 minutes" -> Save
+Dashboard Gadżet Create
+-----------------------
+#. Z menu u góry wybierz "Dashboards" -> Twój Dashboard
+#. Kliknij na "Add gadget" -> "Load all gadgets"
+#. Wybierz z listy "Filter Results" i kliknij przycisk "Add gadget" (po prawej)
+#. Wybierz z listy "Issue Statistics" i kliknij przycisk "Add gadget" (po prawej)
+#. Wybierz z listy "Sprint Burndown Gadget" i kliknij przycisk "Add gadget" (po prawej)
+#. Wybierz z listy "Sprint Health Gadget" i kliknij przycisk "Add gadget" (po prawej)
+#. Wybierz z listy "Version Report" i kliknij przycisk "Add gadget" (po prawej)
+#. Wybierz z listy "Days Remaining in Sprint Gadget" i kliknij przycisk "Add gadget" (po prawej)
+#. Zamknij okienko "X" (górny prawy róg)
+
+Dashboard Gadget Edit
+---------------------
+#. Z menu u góry wybierz "Dashboards" -> Twój Dashboard
 #. Edytowanie gadgetu jest w jego prawym górnym rogu po kliknięciu trzech kropek "...
+#. Gadżet "Issue Statistics" ustaw:
 
-#. Filter Results wybiierz swój Filtr "Imię Todo", Number of Results: 20, Dodaj kolumne Due Date
-#. Posortuj po Due Date przez kliknięcie kolumny
+    - Filter: Twój projekt
+    - Statistic: Type Status
+    - Sort: Total
+    - Sort Direction: Descending
+    - Upewnij się, że **nie** jest zaznaczone "Update every 15 minutes"
+    - Kliknij przycisk "Save"
 
-Version Report
-#. Wyberz Board: Imię Board
-#. Zaznacz Show board name
-#. Wybierz Version: 2020-10
-#. Zaznacz Show version name
+#. Gadżet "Filter Results" ustaw:
 
-Days Remaining in Sprint Gadget:
-#. Wybierz Board: Imię Board
-#. Zaznacz Show board name
-#. Zaznacz Show sprint name
-#. Wybierz Sprint: Next Sprint Due (auto)
+    - "Filter": "Imię Todo"
+    - "Number of Results": 20
+    - "Columns": Dodaj kolumnę "Due Date"
+    - Upewnij się, że **nie** jest zaznaczone "Update every 15 minutes"
+    - Kliknij przycisk "Save"
+    - Posortuj po "Due Date" przez kliknięcie nagłówka kolumny
 
-Sprint Burndown Gadget:
-#. Wybierz Board: Imię Board
-#. Zaznacz Show board name
-#. Zaznacz Show sprint name
-#. Wybierz Sprint: Next Sprint Due (auto)
+#. Gadżet "Version Report" ustaw:
 
-Sprint Health Gadget:
-#. Wybierz Board: Imię Board
-#. Zaznacz Show board name
-#. Zaznacz Show sprint name
-#. Wybierz Sprint: Next Sprint Due (auto)
+    - "Board": "Imię Board"
+    - Zaznacz "Show board name"
+    - "Version": "2020-10"
+    - Zaznacz "Show version name"
+    - Kliknij przycisk "Save"
 
-Przenieś wszystkie gadżedy sprintowe po prawej stronie, a pozostałe po lewej
-Zmień "Edit Layout" (prawy górny róg) na trzykolumnowy i przenieś wykresy wersji i burndown do nowej kolumny
-Zadanie do domu: Zrobić board z zadaniami dla siebie personalnie, drugi dla całego zespołu
+#. Gadżet "Days Remaining in Sprint Gadget" ustaw:
 
+    - "Board": "Imię Board"
+    - Zaznacz "Show board name"
+    - "Sprint": "Next Sprint Due (auto)"
+    - Zaznacz "Show sprint name"
+    - Kliknij przycisk "Save"
 
-#. Edytuj filtr "Imię Todo" dodając sortowanie po duedate i priority
-#. assignee = currentUser() AND issuetype != Epic AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY) ORDER BY duedate DESC, priority DESC
-#. Search -> Save
-#. Przejdź na dashboard i zobacz co się zmieniło w Filter Result
+#. Gadżet "Sprint Burndown Gadget" ustaw:
 
-Konfiguracja Workflow:
-#. skrót klawiszowy "gg" -> workflows
-#. Konfiguracja workflow (warunki, walidatory, wyzwalacze i post-funkcje)
-#. Wybieramy własny workflow i Edit
-#. Przycisk Edit po prawej stronie
-#. Przycisk Diagram
-#. Przycisk Dwie stałki do góry "^" (orworzy edytor workflow na full screen)
-#. Add Status "In Test", nie zaznaczamy "Allow all statuses to transition to this one" -> Add -> status category: In Progress -> Create
-#. Chwyć jedną kropkę z "In Progress" i polącz z jedną kropką z "In Test" (tzw. tranzycja) -> Name: To Test -> Add
-#. Dodaj tranzycję do In Progress o nazwie To In Progress
-#. Dodaj tranzycję do Done o nazwie To Done
-#. Delete Transition All do statusu Done, tak aby móc kończyć zadania tylko przetestowane
-#. Kliknij na tranzycję To Test (z In Progress do In Test) i klikamy na Conditions -> Add Condition -> Only Assignee Condition -> Add
-#. Kliknij na nazwę workflow
-#. Dodaj status In Review -> Category: In Progress -> Create
-#. Edytuj tranzycję z In Test do Done, zmień by prowadziła z In Test do In Review oraz zmień nazwę na To Review
-#. Dodaj tranzycję z In Review do Done o nazwie "To Done
-#. Edytuj tranzycję "To Review" i edytuj Post Function (menu z prawej strony) -> Add post function -> Assign to Reporter -> Add
-#. Kliknij przycisk Publish (przycisk po prawej u góry) -> Save a backup copy?: No -> Publish
+    - "Board": "Imię Board"
+    - Zaznacz "Show board name"
+    - "Sprint": "Next Sprint Due (auto)"
+    - Zaznacz "Show sprint name"
+    - Kliknij przycisk "Save"
 
-Na Twoim board:
-#. Board (prawy górny)
-#. Zakładka Columns
-#. Zwróć uwagę na Unmapped Statuses
-#. Dodaj kolumnę In Test i przenieś do niej status In Test
-#. Dodaj kolumnę In Review i przednieiś do niej status In Review
+#. Sprint "Health Gadget":
+
+    - "Board": "Imię Board"
+    - Zaznacz "Show board name"
+    - "Sprint": "Next Sprint Due (auto)"
+    - Zaznacz "Show sprint name"
+    - Kliknij przycisk "Save"
+
+#. Przenieś "Issue Statistics" oraz "Filter Results" do kolumny po lewej
+#. Przenieś "Days Remaining in Sprint Gadget" oraz "Health Gadget" do środkowej kolumny
+#. Przenieś "Sprint Burndown Gadget" oraz "Version Report" do kolumny po prawej
+
+Dashboard Many
+--------------
+#. Z menu u góry wybierz "Dashboards" -> "Manage Dashboards"
+#. Create new dashboard (przycisk u góry po prawej)
+#. Name "Imię Team Dashboard" (gdzie Imię, to Twoje imię)
+#. Start from "Imię Dashboard"
+#. Add Viewers -> Project -> Twój Projekt -> Developers -> "+ Add"
+#. Add Viewers -> Project -> Twój Projekt -> Administrators -> "+ Add"
+#. Kliknij przycisk "Add"
+
+Workflow Configure
+------------------
+#. Skrót klawiszowy "gg" -> workflows
+#. Wybieramy Twój workflow i link "Edit" (po prawej stronie)
+#. Przycisk "Diagram" (po lewej stronie)
+#. Przycisk dwie strzałki do góry "^" (otworzy edytor workflow w trybie pełnoekranowym)
+#. Przycisk "Add Status" (u góry po lewej)
+
+    - "Name": "In Test"
+    - **nie** zaznaczamy "Allow all statuses to transition to this one"
+    - Kliknij przycisk "Add"
+    - "Status category": "In Progress"
+    - Kliknij przycisk "Create"
+
+#. Chwyć jedną kropkę na brzegu statusu "In Progress" i połącz z jedną kropką na brzegu statusu "In Test"
+#. Tworzysz tzw. tranzycję:
+
+    - "Name": "To Test"
+    - Kliknij przycisk "Add"
+
+#. Ze statusu "In Test" dodaj tranzycję do "In Progress" o nazwie "To In Progress"
+#. Ze statusu "In Test" dodaj tranzycję do "Done" o nazwie "To Done"
+#. Usuń tranzycję "All" do statusu "Done" (w menu po prawej), tak aby móc przenosić do "Done" tylko zadania przetestowane
+#. Kliknij na tranzycję "To Test" (z "In Progress" do "In Test") i klikamy na "Conditions" -> "Add Condition" -> "Only Assignee Condition" -> "Add"
+#. Kliknij przycisk "Publish" (przycisk po prawej u góry) -> "Save a backup copy?": "No" -> "Publish"
+
+Workflow Edit
+-------------
+#. Skrót klawiszowy "gg" -> workflows
+#. Wybieramy Twój workflow i link "Edit" (po prawej stronie)
+#. Dodaj status "In Review" -> "Category": "In Progress" -> "Create"
+#. Edytuj tranzycję z "In Test" do "Done", zmień by prowadziła z "In Test" do "In Review" oraz zmień nazwę na "To Review"
+#. Dodaj tranzycję z "In Review" do "Done" o nazwie "To Done"
+#. Edytuj tranzycję "To Review" i edytuj "Post Function" (menu z prawej strony) -> "Add post function" -> "Assign to Reporter" -> "Add"
+#. Kliknij przycisk "Publish" (przycisk po prawej u góry) -> "Save a backup copy?": "No" -> "Publish"
+
+Workflow Board Status Mapping
+-----------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprint"
+#. Z menu "Board" (prawy górny róg) -> "Configure" -> Zakładka "Columns"
+#. Zwróć uwagę na "Unmapped Statuses" w kolumnie po prawej
+#. Dodaj kolumnę "In Test" (przycisk "Add Column") i przenieś do niej status "In Test"
+#. Dodaj kolumnę "In Review" (przycisk "Add Column") i przenieś do niej status "In Review"
 #. Wróć na Board i zobacz nowe kolumny
-#. Przenieś zadanie "Four" do "In Test" (zwróć uwagę, że nie można było go przenieść do "In Review", a kolumna Done, była tylko Rejected)
-#. Przenieś zadanie "Four" do "In Review
-#. Tylko z Review można przenieść do Done
+#. Przenieś zadanie "Four" do "In Test"
+#. Zwróć uwagę, że nie można było go przenieść do "In Review"
+#. Zwróć uwagę, że kolumna "Done" była tylko "Rejected" (przeniesienie do niej, odrzucało by zadanie)
+#. Przenieś zadanie "Four" do "In Review"
+#. Teraz na powrót kolumna "Done" ma dwa statusy: "Done" i "Rejected"
+#. Tylko z "In Review" można przenieść do "Done"
 
-Konfiguracja Screens:
+Screen Configuration
+--------------------
+#. Skrót klawiszowy "gg" -> screens
 
-#. skrót klawiszowy "gg" -> screens
-#. Add screen (po prawej u góry) -> Imię Log Work -> Add
-#. Dodaj pole Log Work
+    - Przycisk "Add screen" (po prawej u góry) -> Name: "Imię Log Work" -> Przycisk "Add"
+    - Dodaj pole "Log Work" do screen
 
-#. skrót klawiszowy "gg" -> screens
-#. Add screen (po prawej u góry) -> Imię Comment -> Add
-#. Nie dodawaj żadnego pola
+#. Skrót klawiszowy "gg" -> screens
 
-#. skrót klawiszowy "gg" -> workflows
-#. Wybierz swój workflow i Edit (po prawej)
-#. Wybierz tranzycję "To Done" (z In Review do Done) -> Edit (z menu po prawej) -> Screen: Imię Log Work -> Save
-#. Wybierz tranzycję "All" (do statusu Blocked) -> Edit (z menu po prawej) -> Screen: Imię Comment -> Save
-#. Kliknij przycisk Publish (przycisk po prawej u góry) -> Save a backup copy?: No -> Publish
+    - Przycisk "Add screen" (po prawej u góry) -> Name: "Imię Comment" -> Add
+    - Nie dodawaj żadnego pola
 
-#. Wróc na swój Board i odśwież stronę w przeglądarce (dobra praktyka po większych zmianach)
-#. Przenieś zadanie do statusu Blocked, powinno wyskoczyś okno z prośbą o komnetarz
-#. Przenieś zadanie do In Test, następnie do In Review a następnie do Done i powinno wyskoczyć okno z prośbą o zalogowanie czasu pracy
+Screen Workflow Mapping
+-----------------------
+#. Skrót klawiszowy "gg" -> workflows
 
-Rejestracja czasu pracy przy zgłoszeniu:
-#. Na Twoim boardzie
-#. Wybierz dowolne zadanie
-#. Na szczegółach zadania wybierz menu trzech kropek "..." -> Log Work
-#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka "." -> Log Work
+    - Wybierz Twój workflow -> link "Edit" (po prawej)
+    - Wybierz tranzycję "To Done" (z "In Review" do "Done") -> link "Edit" (z menu po prawej) -> "Screen": "Imię Log Work" -> Przycisk "Save"
+    - Wybierz tranzycję "All" (do statusu "Blocked") -> link "Edit" (z menu po prawej) -> "Screen": "Imię Comment" -> -> Przycisk "Save"
+    - Kliknij przycisk "Publish" (po prawej u góry) -> "Save a backup copy?": "No" -> Przycisk "Publish"
 
-Wymagalność pola globalnie we wszystkich projektach:
-#. skrót klawiszowy "gg" -> Field Configuration
-#. Default Configuration -> Configure (po prawej)
-#. Znajdź pole Due Date -> kliknij link Required (po prawej stronie)
+#. Wróć na swój Board i odśwież stronę w przeglądarce (zawsze dobrze to zrobić po zmianach konfiguracji)
+#. Przenieś zadanie do statusu "Blocked" -> powinno wyskoczyć okno z prośbą o komentarz
+#. Przenieś zadanie do "In Test", następnie do "In Review" a następnie do "Done" -> powinno wyskoczyć okno z prośbą o zalogowanie czasu pracy
 
-Wymagalność pola globalnie w określonym projekcie/projektach:
+Fields Required Global
+----------------------
+#. Skrót klawiszowy "gg" -> "Field Configuration"
+#. "Default Configuration" -> link "Configure" (po prawej)
+#. Znajdź pole "Due Date" -> kliknij link "Required" (po prawej stronie)
 
-#. skrót klawiszowy "gg" -> Field Configuration
-#. Default Configuration -> Copy (po prawej)
-#. Name: Imię Field Configuration -> Copy
-#. Imię Field Configuration -> Configure (po prawej)
-#. Znajdź pole Due Date -> kliknij link Required (po prawej stronie)
+Fields Required per Project
+---------------------------
+#. Skrót klawiszowy "gg" -> "Field Configuration"
+#. "Default Configuration" -> link "Copy" (po prawej)
+#. "Name": "Imię Field Configuration" -> przycisk "Copy"
+#. "Imię Field Configuration" -> link "Configure" (po prawej)
+#. Znajdź pole "Due Date" -> kliknij link "Required" (po prawej stronie)
 
-#. skrót klawiszowy "gg" -> Field Configuration Scheme
-#. Add field configuration scheme (po prawej) -> Imię Field Configuration Scheme -> Add
-#. Imię Field Configuration Scheme -> Confugure
-#. Tu można mapować, jakie issue type ma mieć jakie Field Configuration
-#. Associate an issue type with a field configuration (po prawej) -> Issue Type: Epic; Field Configuration: Imię Field Configuration -> Add
+#. skrót klawiszowy "gg" -> "Field Configuration Scheme"
+#. "Add field configuration scheme" (po prawej) -> "Imię Field Configuration Scheme" -> przycisk "Add"
+#. "Imię Field Configuration Scheme" -> link "Configure" (po prawej)
+#. Tu można mapować, jakie issue type ma mieć jakie "Field Configuration"
+#. "Associate an issue type with a field configuration" (po prawej):
 
-Pluginy (w instancjach Cloud i Behind the Firewall):
-#. Skrót klawiszowy "gg" -> Find apps
-#. Zarządzanie dodatkami
-#. Wpływ pluginów na wydajność Jiry
-#. Wpływ pluginów na bazę danych Jiry
-#. Wpływ pluginów na możliwość aktualizacji Jiry
+    - "Issue Type": "Epic"
+    - "Field Configuration": "Imię Field Configuration"
+    - Przycisk "Add"
 
-Analiza raportów na Boardzie
-#. Z menu u góry wybierz "Boards" -> Twój Board
+Apps Search
+-----------
+#. Skrót klawiszowy "gg" -> "Find apps"
+#. Przedyskutuj różnice między apps w Cloud i Self-Managed
+#. Przedyskutuj zarządzanie dodatkami
+#. Przedyskutuj wpływ pluginów na wydajność Jiry
+#. Przedyskutuj wpływ pluginów na bazę danych Jiry
+#. Przedyskutuj wpływ pluginów na możliwość aktualizacji Jiry
 
-#. Burndown Chart
-#. Burnup Chart
-#. Sprint Report
-#. Velocity Chart
-#. Cumulative Flow Diagram
-#. Version Report
-#. Epic Report
-#. Control Chart
-#. Epic Burndown
-#. Release Burndown
-#. Time Tracking Report
+Administration Automation
+-------------------------
+#. Python-atlassian-api:
 
-Automatyzacja zadań administracyjnych
+    - https://github.com/atlassian-api/atlassian-python-api
+    - https://github.com/atlassian-api/atlassian-python-api/tree/master/examples/jira
 
-Python-atlassian-api:
-#. https://github.com/atlassian-api/atlassian-python-api
-#. https://github.com/atlassian-api/atlassian-python-api/tree/master/examples/jira
+#. Integracja z systemami Ekosystemu narzędziowego:
 
-Integracja z systemami Ekosystemu narzędziowego:
-#. https://dev.astrotech.io/git/internals/hooks.html#branch-hook
-#. https://dev.astrotech.io/git/tools/git-flow.html#konwencje-nazewnicze
-#. https://dev.astrotech.io/summary/pictures.html#ecosystem
-#. https://dev.astrotech.io/summary/pictures.html#jira
-#. https://dev.astrotech.io/summary/pictures.html#ci-cd
+    - https://dev.astrotech.io/git/internals/hooks.html#branch-hook
+    - https://dev.astrotech.io/git/tools/git-flow.html#konwencje-nazewnicze
+    - https://dev.astrotech.io/summary/pictures.html#ecosystem
+    - https://dev.astrotech.io/summary/pictures.html#jira
+    - https://dev.astrotech.io/summary/pictures.html#ci-cd
 
-REST API:
-#. https://developer.atlassian.com/server/jira/platform/rest-apis/
-#. https://docs.atlassian.com/jira-software/REST/latest/
-#. https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples/
+#. REST API:
 
-Zakładanie zadań z URL:
-#. http://18.195.183.213:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
-#. Projects -> View All projects -> Inspect Element (źródło strony) -> znajdź: "data-project-id
-#. javascript:window.location='http://18.195.183.213:8080/secure/CreateIssueDetails!init.jspa?pid=10006&issuetype=10003&fixVersions=10015&components=10002&summary=' + document.getElementById('search_form_input').value
-Custom Field
-Issue Type i Issue Type Scheme
-Screen i Screen Scheme
-Permission Scheme
-Role i uprawnienia
+    - https://developer.atlassian.com/server/jira/platform/rest-apis/
+    - https://docs.atlassian.com/jira-software/REST/latest/
+    - https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples/
+
+#. Zakładanie zadań z URL:
+
+    - Z menu u góry wybierz "Projects" -> "View All projects" -> "Inspect Element" (źródło strony) -> znajdź: "data-project-id" (to będzie "pid")
+    - http://18.195.183.213:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
+
+    .. code-block:: javascript
+
+        javascript:window.location='http://18.195.183.213:8080/secure/CreateIssueDetails!init.jspa?pid=10006&issuetype=10003&fixVersions=10015&components=10002&summary=' + document.getElementById('search_form_input').value
