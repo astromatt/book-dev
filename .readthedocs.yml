@@ -5,14 +5,14 @@ version: 2
 
 sphinx:
   builder: html
-  configuration: conf.py
   fail_on_warning: false
+  # configuration: conf.py
 
 # Additional formats
 # formats:
 #   - pdf
-#  - htmlzip
-#  - epub
+#   - htmlzip
+#   - epub
 
 python:
   version: 3.7

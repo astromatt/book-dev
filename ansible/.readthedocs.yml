@@ -9,10 +9,10 @@ sphinx:
   fail_on_warning: false
 
 # Additional formats
-#formats:
-#  - pdf
-#  - htmlzip
-#  - epub
+# formats:
+#   - pdf
+#   - htmlzip
+#   - epub
 
 python:
   version: 3.7
