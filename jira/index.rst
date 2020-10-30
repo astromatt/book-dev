@@ -23,13 +23,12 @@ End-User
 
     end-user/keyboard-shortcuts.rst
     end-user/profile.rst
-    end-user/projects.rst
-    end-user/issues.rst
+    end-user/project.rst
+    end-user/issue.rst
+    end-user/board.rst
     end-user/jql.rst
-    end-user/filters.rst
+    end-user/filter.rst
     end-user/dashboard.rst
-    end-user/agile.rst
-    end-user/assignments.rst
 
 
 **************
@@ -41,11 +40,10 @@ Administration
     :caption: Administration
 
     administration/configuration.rst
-    administration/license.rst
     administration/issue-types.rst
-    administration/workflows.rst
-    administration/screens.rst
-    administration/fields.rst
+    administration/workflow.rst
+    administration/screen.rst
+    administration/field.rst
     administration/issue-features.rst
     administration/issue-attributes.rst
     administration/user-management.rst

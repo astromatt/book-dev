@@ -8,3 +8,6 @@ description = "Matt Harasymczuk's Jira with Atlassian Ecosystem"
 language = 'en'
 todo_emit_warnings = False
 todo_include_todos = True
+
+html_static_path = ['../_static']
+html_favicon = '../_static/favicon.png'

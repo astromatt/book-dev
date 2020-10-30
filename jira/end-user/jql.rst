@@ -313,14 +313,53 @@ More info
 Assignments
 ===========
 
-JQL i Wyszukiwanie zadań
-------------------------
-#. wyszukaj wszystkie zadania, które są w statusie "In Progress"
-#. wyszukaj zadania, które zostały zaktualizowane od wczoraj
-#. wyszukaj zadania, które należą do obecnie otwartego sprintu
-#. wyszukaj zadania oflagowane
-#. wyszukaj zadania, które należą do osób z grupy jira-administrators
-#. wyszukaj zadania, które były przypisane do Ciebie, ale już nie są
-#. Wyszukaj wszystkie zadania zaktualizowane przez Ciebie w okresie ostatniego tygodnia
+JQL Search View
+---------------
+#. Z menu "Issues" wybrać "Search for Issues"
+#. "Change View" [przycisk po prawej stronie] zmień na "List View"
+#. "Columns" [przycisk po prawej stronie]: Odznaczyć: "Created", "Updated", "Development"
+#. Columns: zaznaczyć: "Summary", "Issue Type", "Due Date", "Fix Version/s", "Epic Link"
+#. Chwytając nagłówek kolumny, przenieś "Issue Type" (T) jako pierwsza kolumna
+#. Ustawić kolumny w kolejności: "Issue Type", "Issue Key", "Epic Link", "Fix Version/s", "Due Date", "Status", "Summary"
+#. Dodać kolumny: "Original Estimate", "Remaining Estimate", "Time Spent"
+#. Z menu po prawej stronie u góry wybieramy "Export" -> "CSV (Current Fields)" -> "Delimiter" -> "Comma (,)"
 
-- Pokaż kolumny: Priority, Key, Summary, Original Time Estimate, fixVersion, Epic Name, Status
+JQL Search Basic
+----------------
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Basic
+#. "Project" -> swój projekt
+#. Kliknij na nazwę kolumny "Due Date" dwukrotnie aby posortować rosnąco
+#. "Status" -> "In Progress" oraz "Blocked"
+#. More -> "Due Date" -> "Now Overdue"
+#. Zmień zakres "Due Date" -> od "1/Oct/20" do "31/Oct/20"
+#. Zmień zakres "Due Date" -> Due in next 8 hours or is overdue
+#. Zmień zakres "Due Date" -> In range -7d to ... [pozostaw niewypełnione]
+
+JQL Search Advanced
+-------------------
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Kliknij link Advanced z paska wyszukiwania
+#. To co wpisujesz w tym polu, to tzw. JQL (Jira Query Language)
+#. W polu wyszukiwania wpisz literę "p" i zobacz co Jira Ci podpowiedziała
+#. Wybierz strzałką na klawiaturze pozycję "project" i kliknij enter
+#. Z listy wybierz znak równa się ``=``
+#. Z listy wybierz nazwę swojego projektu (można najechać i kliknąć myszką)
+#. Klikamy enter aby wyszukać, powinno nam to wyświetlić wszystkie zadania z naszego projektu
+#. Kliknij w pole wyszukiwania i po fragmencie, który wcześniej był wpisany dodaj spację i zobacz co Ci podpowiada
+#. Wybierz ``AND`` i zacznij pisać status -> mamy dwie opcje do wyboru: status i statusCategory
+#. Wybierz statusCategory -> następnie równa się ``=`` -> "In Progress" i klikamy enter aby wyszukać zadania
+#. Edytuj zapytanie i dopisz na koniec: "Epic Link" -> równa się ``=`` -> wybrać Epic "Wyszukiwarka", ale z Twojego projektu
+#. Wyczyść zapytanie
+#. w poniższych zapytaniach MYPROJECT zamień na klucz swojego projektu
+#. Wyszukaj: ``project = MYPROJECT AND fixVersion = earliestUnreleasedVersion()``
+#. Wyszukaj: ``assignee = currentUser() and statusCategory != Done``
+
+JQL Search Bulk Change
+----------------------
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie MYPROJECT to nazwa Twojego projektu)
+#. Przycisk "Tools" (po prawej u góry) -> "Bulk Change" -> "all X issue(s)"
+#. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)
+#. Kliknij przycisk "Next" -> "Edit Issues" -> "Next"
+#. Zmień "Change Due Date" i ustaw na "1/Nov/20"
+#. Kliknij przycisk "Next" (na dole) -> "Confirm" -> "Ok, got it"

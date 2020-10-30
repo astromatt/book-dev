@@ -8,6 +8,7 @@ Rationale
 * Cloud vs. Server :cite:`JiraDocumentation`
 * Ilość użytkowników
 * Długość trwania licencji
+* Co po zakończeniu okresu?
 * Jira Core vs. Software vs. Service Desk
 * Evaluation license
 

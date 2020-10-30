@@ -13,37 +13,35 @@ Dobre praktyki
 - Keep transitions from all statues
 - Simplified Workflow
 
-Workflow Functions
-==================
 
-Triggers
---------
+Workflow Triggers
+=================
+* Bitbucket:
 
-Bitbucket
-^^^^^^^^^
-* Pull request created
-* Pull request merged
-* Pull request declined
-* Pull request reopened
-* Branch created
-* Commit created
+    * Pull request created
+    * Pull request merged
+    * Pull request declined
+    * Pull request reopened
+    * Branch created
+    * Commit created
 
-Bamboo
-^^^^^^
-* Deployment successful
-* Deployment failed
+Bamboo:
 
-Crucible
-^^^^^^^^
-* Review started
-* Review abandoned
-* Review submitted for approval
-* Review closed
-* Review rejected
-* Review summarized
+    * Deployment successful
+    * Deployment failed
+
+Crucible:
+
+    * Review started
+    * Review abandoned
+    * Review submitted for approval
+    * Review closed
+    * Review rejected
+    * Review summarized
+
 
 Condition
----------
+=========
 .. csv-table:: Condition
     :header: "Name", "Description"
     :widths: 20, 80
@@ -68,7 +66,7 @@ Condition
     "Value Field", "Allows to execute a transition if the given value of a field is equal to a constant value, or simply set"
 
 Validators
-----------
+==========
 .. csv-table:: Validators
     :header: "Name", "Description"
     :widths: 20, 80
@@ -85,7 +83,7 @@ Validators
     "User Permission Validator", "Validates that the user has a permission, where the OSWorkflow variable holding the username is configurable. Obsolete"
 
 Post Functions
---------------
+==============
 .. csv-table:: Post Functions
     :header: "Name", "Description"
     :widths: 20, 80
@@ -110,8 +108,53 @@ Workflow Schemes
 Assignments
 ===========
 
-Workflow
---------
-#. Dodaj do workflow status ``In Review``, ``Blocked``, ``In Test``
-#. Przy przenoszeniu do statusu ``Done`` ma wyświetlać się okienko z logownaiem czasu
-#. Przy przenoszeniu do statusu ``Blocked`` ma wyświetlać się okienko z komentarzem (przyczyna zablokowania)
+Workflow Configure
+------------------
+#. Skrót klawiszowy "gg" -> workflows
+#. Wybieramy Twój workflow i link "Edit" (po prawej stronie)
+#. Przycisk "Diagram" (po lewej stronie)
+#. Przycisk dwie strzałki do góry "^" (otworzy edytor workflow w trybie pełnoekranowym)
+#. Przycisk "Add Status" (u góry po lewej)
+
+    - "Name": "In Test"
+    - **nie** zaznaczamy "Allow all statuses to transition to this one"
+    - Kliknij przycisk "Add"
+    - "Status category": "In Progress"
+    - Kliknij przycisk "Create"
+
+#. Chwyć jedną kropkę na brzegu statusu "In Progress" i połącz z jedną kropką na brzegu statusu "In Test"
+#. Tworzysz tzw. tranzycję:
+
+    - "Name": "To Test"
+    - Kliknij przycisk "Add"
+
+#. Ze statusu "In Test" dodaj tranzycję do "In Progress" o nazwie "To In Progress"
+#. Ze statusu "In Test" dodaj tranzycję do "Done" o nazwie "To Done"
+#. Usuń tranzycję "All" do statusu "Done" (w menu po prawej), tak aby móc przenosić do "Done" tylko zadania przetestowane
+#. Kliknij na tranzycję "To Test" (z "In Progress" do "In Test") i klikamy na "Conditions" -> "Add Condition" -> "Only Assignee Condition" -> "Add"
+#. Kliknij przycisk "Publish" (przycisk po prawej u góry) -> "Save a backup copy?": "No" -> "Publish"
+
+Workflow Edit
+-------------
+#. Skrót klawiszowy "gg" -> workflows
+#. Wybieramy Twój workflow i link "Edit" (po prawej stronie)
+#. Dodaj status "In Review" -> "Category": "In Progress" -> "Create"
+#. Edytuj tranzycję z "In Test" do "Done", zmień by prowadziła z "In Test" do "In Review" oraz zmień nazwę na "To Review"
+#. Dodaj tranzycję z "In Review" do "Done" o nazwie "To Done"
+#. Edytuj tranzycję "To Review" i edytuj "Post Function" (menu z prawej strony) -> "Add post function" -> "Assign to Reporter" -> "Add"
+#. Kliknij przycisk "Publish" (przycisk po prawej u góry) -> "Save a backup copy?": "No" -> "Publish"
+
+Workflow Board Status Mapping
+-----------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprint"
+#. Z menu "Board" (prawy górny róg) -> "Configure" -> Zakładka "Columns"
+#. Zwróć uwagę na "Unmapped Statuses" w kolumnie po prawej
+#. Dodaj kolumnę "In Test" (przycisk "Add Column") i przenieś do niej status "In Test"
+#. Dodaj kolumnę "In Review" (przycisk "Add Column") i przenieś do niej status "In Review"
+#. Wróć na Board i zobacz nowe kolumny
+#. Przenieś zadanie "Four" do "In Test"
+#. Zwróć uwagę, że nie można było go przenieść do "In Review"
+#. Zwróć uwagę, że kolumna "Done" była tylko "Rejected" (przeniesienie do niej, odrzucało by zadanie)
+#. Przenieś zadanie "Four" do "In Review"
+#. Teraz na powrót kolumna "Done" ma dwa statusy: "Done" i "Rejected"
+#. Tylko z "In Review" można przenieść do "Done"
