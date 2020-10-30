@@ -8,7 +8,7 @@ Custom Fields
 - Dobre praktyki
 - Ile?
 - Konsekwencje
-- CF w bazie dancyh
+- CF w bazie danych
 - Javascript w opisie (nie używać)
 
 

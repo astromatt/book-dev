@@ -26,13 +26,14 @@ Operators
 .. csv-table:: Operators
     :header: "Operator", "Description"
 
-    ``!=``, "Not equal (is different than)"
-    ``==``, "Equals"
     ``=``, "Equals"
+    ``==``, "Equals"
+    ``!=``, "Not equal (is different than)"
     ``>``, "Greater than"
     ``<``, "Less than"
     ``<=``, "Greater or equal"
     ``>=``, "Less or equal"
+    ``~``, "Contains text"
 
 
 View
@@ -54,7 +55,7 @@ Select issues
 -------------
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
 
 .. code-block:: sql
 
@@ -62,11 +63,11 @@ Select issues
 
 .. code-block:: sql
 
-    assignee = admin
+    assignee = "admin"
 
 .. code-block:: sql
 
-    reporter = my.username
+    reporter = "myusername"
 
 .. code-block:: sql
 
@@ -74,7 +75,7 @@ Select issues
 
 .. code-block:: sql
 
-    assignee != my.username
+    assignee != "myusername"
 
 .. code-block:: sql
 
@@ -109,24 +110,24 @@ Complex queries
 
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
         AND status = "To Do"
 
 .. code-block:: sql
 
-    project = DEMO
-        AND resolution NOT IN (Fixed, "Won't Fix")
+    project = "MYPROJECT"
+        AND resolution NOT IN ("Fixed", "Won't Fix")
 
 Ordering
 --------
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
         ORDER BY priority DESC
 
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
         ORDER BY priority DESC, key ASC
 
 Functions
@@ -165,20 +166,20 @@ Queries in History
 ------------------
 .. code-block:: sql
 
-    project = DEMO
-        AND status WAS Done
-        AND status != Done
+    project = "MYPROJECT"
+        AND status WAS "Done"
+        AND status != "Done"
 
 .. code-block:: sql
 
-    project = DEMO
-        AND status WAS Done
-        AND status != Done
+    project = "MYPROJECT"
+        AND status WAS "Done"
+        AND status != "Done"
         AND updated > -1d
 
 .. code-block:: sql
 
-    due >= 2017-03-01 AND due <= 2017-03-31
+    due >= 2000-01-01 AND due <= 2000-01-31
 
 .. code-block:: sql
 
@@ -187,15 +188,27 @@ Queries in History
 .. code-block:: sql
 
     due <= now()
-        AND statusCategory != Done
+        AND statusCategory != "Done"
 
 .. code-block:: sql
 
-    status WAS NOT "In Progress" BEFORE "2011/02/02"
-    status WAS NOT IN ("Resolved","In Progress") BEFORE "2011/02/02"
     status WAS IN ("Resolved","In Progress")
-    status WAS "Resolved" BY jsmith DURING ("2010/01/01","2011/01/01")
-    status WAS "Resolved" BY jsmith BEFORE "2011/02/02"
+
+.. code-block:: sql
+
+    status WAS NOT "In Progress" BEFORE "2000/01/01"
+
+.. code-block:: sql
+
+    status WAS NOT IN ("Resolved","In Progress") BEFORE "2000/01/01"
+
+.. code-block:: sql
+
+    status WAS "Resolved" BY "admin" DURING ("2000/01/01","2000/01/01")
+
+.. code-block:: sql
+
+    status WAS "Resolved" BY "admin" BEFORE "2000/01/01"
 
 .. code-block:: sql
 
@@ -232,38 +245,46 @@ My issues To Do
 .. code-block:: sql
 
     assignee = currentUser()
-        AND statusCategory = "To Do"
+        AND statusCategory != "Done"
 
 .. code-block:: sql
 
     assignee = currentUser()
-        AND statusCategory = "To Do"
+        AND statusCategory != "Done"
         ORDER BY priority DESC, key ASC
 
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
+        AND statusCategory != "Done"
         AND sprint IN openSprints()
         AND assignee = currentUser()
+        ORDER BY priority DESC, key ASC
 
 Tracking reported issues
 ------------------------
 .. code-block:: sql
 
     reporter = currentUser()
-        AND statusCategory != Done
+        AND statusCategory != "Done"
         AND assignee != currentUser()
+
+.. code-block:: sql
+
+    project = "IT Support"
+        AND reporter = currentUser()
+        AND statusCategory != "Done"
 
 Tracking team members work
 --------------------------
 .. code-block:: sql
 
-    statusCategory NOT IN (Done, "In Progress")
+    statusCategory = "In Progress"
         AND assignee IN membersOf("jira-administrators")
 
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
         AND updated >= -7d
         AND assignee IN membersOf("jira-administrators")
 
@@ -277,10 +298,12 @@ Daily
 -----
 .. code-block:: sql
 
-    project = DEMO
+    project = "MYPROJECT"
         AND sprint IN openSprints()
-        AND (statusCategory = "In Progress" OR Flagged is not EMPTY)
-        AND updated >= -1d
+        AND (Flagged IS NOT EMPTY
+             OR updated >= -1d
+             OR statusCategory = "In Progress")
+
 
 More info
 =========

@@ -3,8 +3,8 @@ Apps
 ****
 
 
-Atlassian Mearketplace
-======================
+Atlassian Marketplace
+=====================
 * Find new apps
 * Manage apps
 
@@ -26,8 +26,8 @@ Dobre praktyki
 * Kiedy instalować?
 * Czy zgadzać się na wszystkie pluginy?
 
-Stategia update'ów
-------------------
+Strategia update'ów
+-------------------
 * pluginy darmowe
 * pluginy komercyjne
 
@@ -46,10 +46,10 @@ Baza danych
 -----------
 * Tabelki
 * Architektura
-* Dirty hacki
+* Dirty hacks
 
 
-Ciekawe Addony
+Ciekawe Addons
 ==============
 * ``Jira Agile Cards``
 * Instalacja dodatkowych języków

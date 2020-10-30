@@ -8,7 +8,7 @@ Screens
 * Definiowanie
 * Podłączanie do workflow
 * Przypisywanie custom fields
-* Jak dodać sreen do statusu w workflow?
+* Jak dodać screen do statusu w workflow?
 
 
 Screen Schemes

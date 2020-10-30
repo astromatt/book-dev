@@ -46,7 +46,7 @@ Atlassian Python API - Instalacja
 
 .. note:: Kod biblioteki dostępny jest na GitHub https://github.com/atlassian-api/atlassian-python-api
 
-.. warning:: Wymagany Python 3.4 lub nowszy
+.. warning:: Wymagany Python 3.6 lub nowszy
 
 Atlassian Python API - Reindeksacja
 -----------------------------------

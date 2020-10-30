@@ -15,7 +15,7 @@ Issue Fields
 
     - Component Leaders
 
-- Lables
+- Labels
 - Links
 - Assignee
 - Reporter
