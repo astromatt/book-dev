@@ -5,7 +5,7 @@ Jira Licensing
 
 Rationale
 =========
-* Cloud vs. Server :cite:`JiraDocumentation`
+* Cloud vs. Server [JiraDocumentation]_ :cite:`JiraDocumentation`
 * Ilość użytkowników
 * Długość trwania licencji
 * Co po zakończeniu okresu?
@@ -55,3 +55,8 @@ Cloud
 * 0 USD, limit: 10 users
 * 7 USD, limit: 1,000 users
 * 14 USD, limit: 10,000 users
+
+
+References
+==========
+.. [JiraDocumentation] Atlassian Jira Official Documentation URL: https://confluence.atlassian.com/jirasoftwareserver/ Accessed: 2019-01-23

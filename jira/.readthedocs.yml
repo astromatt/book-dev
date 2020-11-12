@@ -9,8 +9,8 @@ sphinx:
   fail_on_warning: false
 
 # Additional formats
-# formats:
-#   - pdf
+formats:
+   - pdf
 #   - htmlzip
 #   - epub
 
