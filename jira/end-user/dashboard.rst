@@ -83,7 +83,7 @@ Dashboard Gadget Edit
 
     - "Board": "Imię Board"
     - Zaznacz "Show board name"
-    - "Version": "2020-10"
+    - "Version": "2000-01"
     - Zaznacz "Show version name"
     - Kliknij przycisk "Save"
 

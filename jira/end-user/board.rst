@@ -189,26 +189,34 @@ Board Sprint Add
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Dodaj pierwszy sprint:
 
-    - "Name": "2020-11 week 1"
+    - "Name": "2000-01 week 1"
     - "Duration": "1 week"
-    - "Start Date": "1/Nov/20 09:00 AM"
+    - "Start Date": "1/Jan/00 09:00 AM"
 
 #. Dodaj drugi sprint:
 
-    - "Name": "2020-11 week 2"
+    - "Name": "2000-01 week 2"
     - "Duration": "1 week"
-    - "Start Date": "7/Nov/20 09:00 AM"
+    - "Start Date": "7/Jan/00 09:00 AM"
+
+Board Backlog Estimation
+------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
+#. W detail view zadania "One" -> okienko "Estimate" ustaw 3 (lub pole "Story Point" przy edycji zadania)
+#. W detail view zadania "Two" -> okienko "Estimate" ustaw 8 (lub pole "Story Point" przy edycji zadania)
+#. W detail view zadania "Three" -> okienko "Estimate" ustaw 4 (lub pole "Story Point" przy edycji zadania)
+#. Zobacz kolorowe kółka z estymacjami w nagłówku sprintu: "To Do", "In Progress", "Done"
 
 Board Sprint Start
 ------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Do sprintu "2020-11 week 1" dodaj zadania: "One", "Two", "Three"
+#. Do sprintu "2000-01 week 1" dodaj zadania: "One", "Two", "Three"
 #. Przejedź suwakiem i dodaj "Four", "Five", "Six", zwróć uwagę na zmiany liczb w okienku "Issues" i "Estimate"
 #. Wystartuj sprint ustawiając:
 
     - Goal: "Ukończenie szkolenia z Jiry"
     - Duration: "1 week"
-    - Start Date: "26/Oct/20 09:30 AM"
+    - Start Date: "1/Jan/00 09:00 AM"
 
 Board Sprint Work
 -----------------
@@ -310,7 +318,7 @@ Board Sprint Close
 ------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprint"
 #. Zakończ aktualny sprint -> Prawy górny róg "Complete Sprint
-#. Zadania niezakończone mają "spaść" do sprintu następnego, tj. "2020-11 week 1"
+#. Zadania niezakończone mają "spaść" do sprintu następnego, tj. "2000-01 week 1"
 
     - Co się dzieje z otwartymi zadaniami?
     - Co się dzieje z zamkniętymi zadaniami?

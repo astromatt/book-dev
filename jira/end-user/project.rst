@@ -10,7 +10,8 @@ Rationale
 
     - Department
     - Team
-    - Project / Product
+    - Project
+    - Product
 
 - Project vs. Boards
 - Issue Collector
@@ -31,28 +32,28 @@ Project Configuration
 - Application Links
 
 
+Versions
+========
+* Semantic Versioning: major.minor.bugfix - (1.2.3, 3.9.1)
+* Konwencja nazewnicza YYYY-MM (2000-01, 2000-02, 2000-03)
+* Konwencja nazewnicza YYYY-QX - (2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4)
+* Konwencja nazewnicza YYYY - (2000, 2001, 2002, 2003)
+* Roadmap
+* Releases (with Bamboo)
+* Time Tracking Report by Version
+* affectsVersion vs. fixVersion
+
+
 Assignments
 ===========
 
-Project Create
---------------
-#. Z menu u góry wybierz "Projects" -> "View Projects"
-#. Kliknij przycisk "Create Projects" (prawy górny róg)
-#. Kliknij przycisk "Scrum software development" -> Next
-#. Ustaw:
-
-    - Project name: wpisz swoje imię i pierwszą literę nazwiska, np. "Jan T", "Mark W", "Melissa L", "Matt K"
-    - Project key: wpisz swoje imię (dużymi literami) i bez spacji pierwszą literę nazwiska, np. "JANT", "MARKW", "MELISSAL", "MATTK"
-    - Project Lead: ustaw siebie
-
-#. Submit
 
 Project Settings
 ----------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Przejdź do "Project Settings" (przycisk w menu na dole po lewej)
 #. Zakładka "Components" -> dodaj: "Frontend", "Backend", "Database"
-#. Zakładka "Versions" -> dodaj: "2021-Q1", "2021-Q2", "2021-Q3", "2021-Q4"
+#. Zakładka "Versions" -> dodaj: "2000-Q3", "2000-Q4", "2001", "2002"
 #. Zakładka "Users and roles" -> dodaj siebie do roli "Administrators", dodaj użytkownika "admin" do roli "Developers"
 #. Zakładka "Details" -> zmień awatar swojego projektu na rakietę
 #. Zakładka "Details" -> zmień nazwę swojego projektu na "Imię N." (z kropką na końcu)

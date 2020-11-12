@@ -22,3 +22,6 @@ Jira Day Poland
 * http://www.intenso.pl/jira-day/
 
 
+Updates
+=======
+* https://confluence.atlassian.com/cloud/blog

@@ -23,8 +23,10 @@ End-User
 
     end-user/keyboard-shortcuts.rst
     end-user/profile.rst
+    end-user/basics.rst
     end-user/project.rst
     end-user/issue.rst
+    end-user/issue-actions.rst
     end-user/board.rst
     end-user/jql.rst
     end-user/filter.rst

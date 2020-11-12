@@ -7,7 +7,7 @@ Issue Types
 ===========
 * Bug
 * Task
-* User Story
+* Story
 * Epic
 * Sub-task
 
@@ -15,9 +15,6 @@ Issue Types
 Issue Fields
 ============
 * Components
-
-    - Component Leaders
-
 * Labels
 * Links
 * Assignee
@@ -28,130 +25,30 @@ Custom Fields
 =============
 * kilka, maks kilkanaście
 * Team Assigned
-* Start Date (and Due Date)
-
-
-Versions
-========
-* Roadmap
-* Releases (with Bamboo)
-* Semantic Versioning: major.minor.bugfix - (1.2.3, 3.9.1)
-* Konwencja nazewnicza YYYY-MM (2000-01, 2000-02, 2000-03)
-* Konwencja nazewnicza YYYY-QX - (2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4)
-* Konwencja nazewnicza YYYY - (2000, 2001, 2002, 2003)
-* Time Tracking Report by Version
-* affectsVersion vs. fixVersion
+* Start Date
 
 
 Priorities
 ==========
-* Lower, Low, Medium, High, Highest
-* MoSCoW: Must, Should, Could
-* Low, Medium, High, Highest, Blocker
+* Highest, High, Medium, Low, Lowest
+* [MoSCoW] Must, Should, Could, Won't
+* Must, Should, Could
+* Blocker, Highest, High, Medium, Low
 * Urgent, Important, Standard
 * Important, Normal
-* Expedite, Standard
-* Top, Normal, Bottom
 * Important, Normal, Someday/Maybe
+* Expedite, Standard
 * DEFCON-1, DEFCON-2, DEFCON-3
-
-
-Statusy
-=======
-* To Do
-* In Progress
-* Done
-* In Review
-* Waiting / Blocked
-* In Test
-
-
-Resolutions
-===========
-* Fixed
-* Won't Fix
-* Duplicate
-* Cannot Reproduce
-* Incomplete
-* [Jira Agile] -> Done
-
-
-Issue Actions
-=============
-* Workflow Actions (Open, In Progress, Done)
-* Voting
-* Watching
-* Add Attachments
-* Clone
-* Move
-* Create subtask
-* Delete (kiedy?)
-* Log Work
-* Keyboard Shortcuts
-* Comment
-
-    - Mentions
-    - Rich Text Editing
-    - Tworzenie tabelek
-    - Używanie formatowania
-
-
-Time Reporting
-==============
-* Original Time Estimate
-* Remaining Time
-* Log Work
-* Reports
-* Monte Carlo Estimation:
-
-    * https://www.infoq.com/presentations/monte-carlo/
-    * https://docs.google.com/spreadsheets/d/1BmSuj1jA2ZfhUBzPtqDBqDjMjSXMqj3QoHZGR-TesOA/edit#gid=542217325
-    * Roadmaps: Start Date, Due Date
 
 
 Assignments
 ===========
 
-Issues Create
--------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Dodaj zadania do backlog: "One", "Two", "Three", "Four", "Five", "Six"
-#. Kliknij prawym klawiszem myszy na zadanie "Six" -> "Split Issue"
-
-    - "Six" - Estimate: 1
-    - "Seven" - Estimate: 2
-    - "Eight" - Estimate: 3
-    - "Nine" - Estimate: 4
-
-Issue Edit
-----------
+Issue Priority
+--------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Edytuj zadanie "One"
 #. Ustaw "Priority" na "Highest"
-
-Issue Log Work
---------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
-#. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
-#. Wybierz z menu trzech kropek "..." (u góry) -> Log Work
-#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka "." -> Log Work
-
-Issue Attachment
-----------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Edytuj zadanie "One"
-#. Do zadania dodaj załącznik
-
-    - obrazek ".png" lub ".jpg"
-    - archiwum ".zip" z przynajmniej dwoma plikami tekstowymi
-
-Issue Clone
------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Sklonuj zadanie "One"
-
-    - z załącznikami
-    - ze zachowaniem sprintu
 
 Issue Backlog
 -------------
@@ -166,29 +63,21 @@ Issue Backlog
 Issue Versions
 --------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Dodaj wersje: "2020-10", "2020-11", "2020-12" z datami rozpoczęcia i zakończenia miesiąca
-#. Przeciągnij zadanie "One", "Two", "Three", "Four" do wersji "2020-10"
-#. Przeciągnij zadanie "Five", "Six", "Seven" do wersji "2020-11"
-#. Przeciągnij zadanie "Eight", "Nine" do wersji "2020-12"
+#. Dodaj wersje: "2000-01", "2000-02", "2000-03", "2000-04", "2000-05", "2000-06" z datami rozpoczęcia i zakończenia miesiąca
+#. Przeciągnij zadanie "One", "Two", "Three", "Four" do wersji "2000-01"
+#. Przeciągnij zadanie "Five", "Six", "Seven" do wersji "2000-02"
+#. Przeciągnij zadanie "Eight", "Nine" do wersji "2000-03"
 
 Issue Epic
 ----------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Dodaj Epic -> Epic Name "Logowanie", "Summary" -> "Logowanie", Due Date: "1/Nov/20"
-#. Dodaj Epic -> Epic Name "Wyszukiwarka", Summary "Wyszukiwarka", Due Date: "10/Nov/20"
+#. Dodaj Epic -> Epic Name "Logowanie", "Summary" -> "Logowanie", Due Date: "1/Jan/21"
+#. Dodaj Epic -> Epic Name "Wyszukiwarka", Summary "Wyszukiwarka", Due Date: "31/Jan/21"
 #. Zmień "Logowanie" Epic Color na jasny niebieski
 #. Zmień "Wyszukiwarka" Epic Color na jasny czerwony
 #. Do Epic "Logowanie" dodaj zadania "One", "Two", "Three"
 #. Do Epic "Wyszukiwarka" dodaj zadania "Four", "Five", "Seven"
 #. Kliknij na "All Issues", później na "Issues without epics" i porównaj ilość zadań
-
-Issue Estimation
-----------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. W detail view zadania "One" -> "Estimate" ustaw 3h, [menu kropeczki] -> Log Work -> Time Spent: 2h
-#. W detail view zadania "Two" -> "Estimate" ustaw 8h
-#. W detail view zadania "Three" -> "Estimate" ustaw 4h
-#. Zobacz kolorowe kółka z estymacjami w nagłówku sprintu: "To Do", "In Progress", "Done"
 
 Issue Bulk Change
 -----------------
@@ -215,14 +104,16 @@ Issue Sub-Tasks
 #. Edytuj zadanie "Nine"
 #. Dodaj trzy sub-taski:
 
-    - status pierwszego: "To Do"
-    - status drugiego: "In Progress"
-    - status trzeciego: "Done"
-    - wyceń każde z zadań na 2h
+    - Summary: "A", Priority: "Highest", Status: "To Do",
+    - summary: "B", Priority: "Low", Status: "In Progress"
+    - summary: "C", Priority: "Medium", Status: "Done"
+
+#. Estymuj zadania, tylko jeżeli widzisz pole
 
 Issue Move
 ----------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Przenieś zadanie z projektu do innego projektu
-
-    - nie wysyłaj informacji mailem o zmianach
+#. Wybierz zadanie "Eight"
+#. Z karty zadania po prawej stronie wybierz menu trzy kropki "..." (po prawej u góry)
+#. Z menu wybierz "More Actions" -> wpisz "Move"
+#. Przenieś zadanie do projektu "SCRUM"
