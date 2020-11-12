@@ -36,15 +36,15 @@ Self-managed
 * Free year of maintenance
 * https://www.atlassian.com/software/jira/pricing?tab=self-managed
 
-* 10 USD, limit: 10 users
-* 3,500 USD, limit: 25 users
-* 6,800 USD, limit: 50
-* 13,300 USD, limit: 100
-* 26,400 USD, limit: 250
-* 40,000 USD, limit: 500
-* 60,000 USD, limit: 2,000
-* 120,000 USD, limit: 10,000
-* 200,000 USD, limit: 10,001+
+* 10 users - 10 USD
+* 25 users - 3,500 USD
+* 50 users - 6,800 USD
+* 100 users - 13,300 USD
+* 250 users - 26,400 USD
+* 500 users - 40,000 USD
+* 2,000 users - 60,000 USD
+* 10,000 users - 120,000 USD
+* 10,001+ users - 200,000 USD
 
 
 Cloud
@@ -52,9 +52,9 @@ Cloud
 * Monthly per user
 * https://www.atlassian.com/software/jira/pricing
 
-* 0 USD, limit: 10 users
-* 7 USD, limit: 1,000 users
-* 14 USD, limit: 10,000 users
+* 10 users - 0 USD
+* 1,000 users - 7 USD
+* 10,000 users - 14 USD
 
 
 References

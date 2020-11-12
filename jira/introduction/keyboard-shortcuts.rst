@@ -27,6 +27,7 @@ Global shortcuts
     "``g`` then `p``", "Browse to a project"
     "``[``", "Toggle sidebar"
 
+
 Navigating issues
 =================
 .. csv-table:: Global shortcuts
@@ -45,6 +46,7 @@ Navigating issues
     "``t``", "Switch filter view"
     "``y``", "Detail view order by"
 
+
 Issue actions
 =============
 .. csv-table:: Global shortcuts
@@ -58,6 +60,7 @@ Issue actions
     "``l``", "Edit issue labels"
     "``,``", "Jump to fields for editing"
     "``i``", "Assign to me"
+
 
 Board shortcuts
 ===============
@@ -75,6 +78,7 @@ Board shortcuts
     "``-``", "Toggle all swimlanes"
     "``s`` then ``t``", "Send to top"
     "``s`` then ``b``", "Send to bottom"
+
 
 Service desk
 ============

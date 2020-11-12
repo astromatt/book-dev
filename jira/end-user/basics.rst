@@ -9,17 +9,24 @@ Rationale
 - Jira
 
 
+Project
+=======
+- Project
+- Project Type
+- Project Name
+- Project Key
+- Project Lead
+
+
 Issue
 =====
 - Issue
 - Issue Type
 - Field
-- Custom Field
 
 
-Projects
-========
-- Project
+Board
+=====
 - Board
 - Backlog
 - Active Sprint

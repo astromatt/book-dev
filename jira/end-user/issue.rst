@@ -3,6 +3,14 @@ Issue
 *****
 
 
+Rationale
+=========
+* Create Issue
+* View Issue
+* Edit Issue
+* Show Issue on Backlog
+
+
 Issue Types
 ===========
 * Bug
@@ -12,13 +20,31 @@ Issue Types
 * Sub-task
 
 
-Issue Fields
-============
-* Components
-* Labels
-* Links
-* Assignee
+Fields
+======
+* Summary
+* Issue Type
 * Reporter
+* Components
+* Description
+* Fix Version/s
+* Priority
+* Labels
+* Attachment
+* Linked Issues
+* Assignee
+* Epic Link
+* Sprint
+* Comment
+* Status
+* Affects Version/s
+* Created Date
+* Updated Date
+* Due Date
+* Comments
+* Sub-Tasks
+* Votes
+* Watchers
 
 
 Custom Fields
@@ -26,10 +52,14 @@ Custom Fields
 * kilka, maks kilkanaście
 * Team Assigned
 * Start Date
+* Business Value
+* Manday
+* Severity
+* Risk
 
 
-Priorities
-==========
+Priority
+========
 * Highest, High, Medium, Low, Lowest
 * [MoSCoW] Must, Should, Could, Won't
 * Must, Should, Could

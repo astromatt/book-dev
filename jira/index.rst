@@ -11,6 +11,7 @@ Introduction
     introduction/requirements.rst
     introduction/licensing.rst
     introduction/conferences.rst
+    introduction/keyboard-shortcuts.rst
 
 
 ********
@@ -21,7 +22,6 @@ End-User
     :numbered:
     :caption: End-User
 
-    end-user/keyboard-shortcuts.rst
     end-user/profile.rst
     end-user/basics.rst
     end-user/project.rst
