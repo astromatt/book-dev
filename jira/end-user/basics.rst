@@ -43,7 +43,7 @@ Basics Project Create
 #. Ustaw:
 
     - Project name: wpisz swoje imię i pierwszą literę nazwiska, np. "Jan T", "Mark W", "Melissa L", "Matt K"
-    - Project key: wpisz swoje imię (dużymi literami) i bez spacji pierwszą literę nazwiska, np. "JANT", "MARKW", "MELISSAL", "MATTK"
+    - Project key: pozostaw tak jak Jira zasugerowała
     - Project Lead: ustaw siebie
 
 #. Submit
