@@ -336,7 +336,7 @@ JQL Search Basic
 #. Kliknij na nazwę kolumny "Due Date" dwukrotnie aby posortować rosnąco
 #. "Status" -> "In Progress" oraz "Blocked"
 #. More -> "Due Date" -> "Now Overdue"
-#. Zmień zakres "Due Date" -> od "1/Oct/20" do "31/Oct/20"
+#. Zmień zakres "Due Date" -> od "1/Jan/00" do "31/Jan/00"
 #. Zmień zakres "Due Date" -> Due in next 8 hours or is overdue
 #. Zmień zakres "Due Date" -> In range -7d to ... [pozostaw niewypełnione]
 
@@ -366,5 +366,5 @@ JQL Search Bulk Change
 #. Przycisk "Tools" (po prawej u góry) -> "Bulk Change" -> "all X issue(s)"
 #. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)
 #. Kliknij przycisk "Next" -> "Edit Issues" -> "Next"
-#. Zmień "Change Due Date" i ustaw na "1/Nov/20"
+#. Zmień "Change Due Date" i ustaw na "1/Nov/00"
 #. Kliknij przycisk "Next" (na dole) -> "Confirm" -> "Ok, got it"

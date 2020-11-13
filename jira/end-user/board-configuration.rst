@@ -160,19 +160,19 @@ Board Configuration Working Days
     - "Time Zone" -> "(GMT+01:00) Warsaw"
     - Dodaj "Non-Working Days" (wybierz trzy dowolne święta):
 
-        * "1/Jan/20" (Nowy Rok)
-        * "6/Jan/20" (Święto Trzech Króli)
-        * "?/?/20" (pierwszy dzień Wielkiej Nocy)
-        * "?/?/20" (drugi dzień Wielkiej Nocy)
-        * "1/May/20" (Święto Państwowe)
-        * "3/May/20" (Święto Narodowe Trzeciego Maja)
-        * "?/?/20" (pierwszy dzień Zielonych Świątek) [pięćdziesiąt dni po wielkanocy]
-        * "?/?/20" (dzień Bożego Ciała) [sześćdziesiąt dni po wielkanocy]
-        * "15/Aug/20" (Wniebowzięcie Najświętszej Marii Panny / Święto Wojska Polskiego)
-        * "1/Nov/20" (Wszystkich Świętych)
-        * "11/Nov/20" (Narodowe Święto Niepodległości)
-        * "25/Dec/20" (pierwszy dzień Bożego Narodzenia)
-        * "26/Dec/20" (drugi dzień Bożego Narodzenia)
+        * "1/Jan/00" (Nowy Rok)
+        * "6/Jan/00" (Święto Trzech Króli)
+        * "?/?/00" (pierwszy dzień Wielkiej Nocy)
+        * "?/?/00" (drugi dzień Wielkiej Nocy)
+        * "1/May/00" (Święto Państwowe)
+        * "3/May/00" (Święto Narodowe Trzeciego Maja)
+        * "?/?/00" (pierwszy dzień Zielonych Świątek) [pięćdziesiąt dni po wielkanocy]
+        * "?/?/00" (dzień Bożego Ciała) [sześćdziesiąt dni po wielkanocy]
+        * "15/Aug/00" (Wniebowzięcie Najświętszej Marii Panny / Święto Wojska Polskiego)
+        * "1/Nov/00" (Wszystkich Świętych)
+        * "11/Nov/00" (Narodowe Święto Niepodległości)
+        * "25/Dec/00" (pierwszy dzień Bożego Narodzenia)
+        * "26/Dec/00" (drugi dzień Bożego Narodzenia)
 
 Board Configuration Issue Detail View
 -------------------------------------

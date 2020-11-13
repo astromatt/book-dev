@@ -53,7 +53,9 @@ Project Settings
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Przejdź do "Project Settings" (przycisk w menu na dole po lewej)
 #. Zakładka "Components" -> dodaj: "Frontend", "Backend", "Database"
-#. Zakładka "Versions" -> dodaj: "2000-Q3", "2000-Q4", "2001", "2002"
+#. Zakładka "Versions" -> dodaj: "2000-07", "2000-08", "2000-09", "2000-10", "2000-11", "2000-12"
+#. Zakładka "Versions" -> dodaj: "2001-Q1", "2001-Q2", "2001-Q3", "2001-Q4"
+#. Zakładka "Versions" -> dodaj: "2002", "2003", "2004"
 #. Zakładka "Users and roles" -> dodaj siebie do roli "Administrators", dodaj użytkownika "admin" do roli "Developers"
 #. Zakładka "Details" -> zmień awatar swojego projektu na rakietę
 #. Zakładka "Details" -> zmień nazwę swojego projektu na "Imię N." (z kropką na końcu)

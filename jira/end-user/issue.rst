@@ -111,8 +111,8 @@ Issue Versions
 Issue Epic
 ----------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Dodaj Epic -> Epic Name "Logowanie", "Summary" -> "Logowanie", Due Date: "1/Jan/21"
-#. Dodaj Epic -> Epic Name "Wyszukiwarka", Summary "Wyszukiwarka", Due Date: "31/Jan/21"
+#. Dodaj Epic -> Epic Name "Logowanie", "Summary" -> "Logowanie", Due Date: "1/Jan/00"
+#. Dodaj Epic -> Epic Name "Wyszukiwarka", Summary "Wyszukiwarka", Due Date: "31/Jan/00"
 #. Zmień "Logowanie" Epic Color na jasny niebieski
 #. Zmień "Wyszukiwarka" Epic Color na jasny czerwony
 #. Do Epic "Logowanie" dodaj zadania "One", "Two", "Three"
