@@ -89,35 +89,6 @@ Select issues
 
     Flagged IS NOT EMPTY
 
-Complex queries
----------------
-
-.. code-block:: sql
-
-    status = "To Do" OR status = "In Progress"
-
-.. code-block:: sql
-
-    status IN ("To Do", "In Progress")
-
-.. code-block:: sql
-
-    status NOT IN ("To Do", "In Progress")
-
-.. code-block:: sql
-
-    statusCategory NOT IN ("To Do", "In Progress")
-
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        AND status = "To Do"
-
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        AND resolution NOT IN ("Fixed", "Won't Fix")
-
 Ordering
 --------
 .. code-block:: sql
@@ -130,21 +101,101 @@ Ordering
     project = "MYPROJECT"
         ORDER BY priority DESC, key ASC
 
-Functions
----------
+Complex queries
+---------------
 .. code-block:: sql
 
-    currentLogin()
-    lastLogin()
-    now()
-    startOfDay()
-    startOfWeek()
-    startOfMonth()
-    startOfYear()
-    endOfDay()
-    endOfWeek()
-    endOfMonth()
-    endOfYear()
+    project = "MYPROJECT"
+        AND status = "In Progress"
+
+.. code-block:: sql
+
+    status = "To Do"
+        OR status = "In Progress"
+
+.. code-block:: sql
+
+    status IN ("To Do", "In Progress")
+
+.. code-block:: sql
+
+    status NOT IN ("To Do", "In Progress")
+
+.. code-block:: sql
+
+    statusCategory NOT IN ("To Do", "Done")
+
+.. code-block:: sql
+
+    project = "MYPROJECT"
+        AND resolution NOT IN ("Fixed", "Won't Fix")
+
+Functions
+---------
+* https://support.atlassian.com/jira-software-cloud/docs/advanced-search-reference-jql-functions/
+* https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html
+
+.. csv-table:: JQL functions in `Jira Core`
+    :header: "Function", "Description"
+
+    "cascadeOption()",                   "Search for issues that match the selected values of a 'cascading select' custom field"
+    "componentsLeadByUser()",            "Find issues in components that are led by a specific user"
+    "currentLogin()",                    "Perform searches based on the time at which the current user's session began"
+    "currentUser()",                     "Perform searches based on the currently logged-in user"
+    "earliestUnreleasedVersion()", "     "Perform searches based on the earliest unreleased version in a project"
+    "endOfDay()",                        "Perform searches based on the end of the current day"
+    "endOfMonth()",                      "Perform searches based on the end of the current month"
+    "endOfWeek()",                       "Search for issues that are due by the end of the last day of the current week"
+    "endOfYear()",                       "Perform searches based on the end of the current year"
+    "issueHistory()",                    "Find issues that you have recently viewed, i.e. issues that are in the 'Recent Issues' section of the 'Issues' drop-down menu"
+    "issuesWithRemoteLinksByGlobalId()", "Perform searches based on issues that are associated with remote links that have any of the specified global ids"
+    "lastLogin()",                       "Perform searches based on the time at which the current user's previous session began"
+    "latestReleasedVersion()",           "Perform searches based on the latest released version (i.e. the most recent version that has been released) of a specified project"
+    "linkedissue",                       "Searches for epics and subtasks. If the issue is not an epic, the search returns all subtasks for the issue"
+    "linkedIssues()",                    "Searches for issues that are linked to an issue"
+    "membersOf()",                       "Perform searches based on the members of a particular group"
+    "now()",                             "Perform searches based on the current time"
+    "parentEpic()",                      "Search for issues and sub-tasks that are linked to an epic"
+    "projectsLeadByUser()",              "Find issues in projects that are led by a specific user"
+    "projectsWhereUserHasPermission()",  "Find issues in projects where you have a specific permission"
+    "projectsWhereUserHasRole()",        "Find issues in projects where you have a specific role"
+    "releasedVersions()",                "Perform searches based on the released versions (i.e. versions that your Jira administrator has released) of a specified project"
+    "standardIssueTypes()",              "Perform searches based on "standard" Issue Types, that is, search for issues that are not sub-tasks"
+    "startOfDay()",                      "Perform searches based on the start of the current day"
+    "startOfMonth()",                    "Perform searches based on the start of the current month"
+    "startOfWeek()",                     "Search for new issues created since the start of the first day of the current week"
+    "startOfYear()",                     "Perform searches based on the start of the current year"
+    "subtaskIssueTypes()",               "Perform searches based on issues that are sub-tasks"
+    "unreleasedVersions()",              "Perform searches based on the unreleased versions (i.e. versions that your Jira administrator has not yet released) of a specified project"
+    "updatedBy()",                       "Search for issues that were updated by a specific user, optionally within the specified time range"
+    "votedIssues()",                     "Perform searches based on issues for which you have voted"
+    "watchedIssues()",                   "Perform searches based on issues that you are watching"
+
+.. csv-table:: JQL functions in `Jira Software`
+    :header: "Function", "Description"
+
+    "closedSprints()", "Search for issues that are assigned to a completed Sprint"
+    "futureSprints()", "Search for issues that are assigned to a sprint that hasn't been started yet"
+    "openSprints()",   "Search for issues that are assigned to a sprint that was started, but has not yet been completed"
+
+.. csv-table:: JQL functions in `Jira Service Management`
+    :header: "Function", "Description"
+
+    "approved()",            "Search for requests that required approval and have a final decision of approved"
+    "approver()",            "Search for requests that require or required approval by a user"
+    "breached()",            "Returns issues that whose most recent SLA has missed its goal"
+    "completed()",           "Returns issues that have an SLA that has completed at least one cycle"
+    "elapsed()",             "Returns issues whose SLA clock is at a certain point relative to a cycle's start event"
+    "everbreached()",        "Returns issues that have missed one of their SLA goals"
+    "myApproval()",          "Search for requests that require approval or have required approval by the current user"
+    "myPending()",           "Search for requests that require approval by the current user"
+    "organizationMembers()", "Search for all requests sent by the members of an organization"
+    "paused()",              "Returns issues that have an SLA that is paused due to a condition"
+    "pending()",             "Search for requests that require approval"
+    "pendingBy()",           "Search for requests that require approval by a certain user"
+    "remaining()",           "Returns issues whose SLA clock is at a certain point relative to the goal"
+    "running()",             "Returns issues that have an SLA that is running, regardless of the calendar"
+    "withinCalendarHours()", "Returns issues that have an SLA that is running according to the SLA calendar"
 
 .. code-block:: sql
 
@@ -312,7 +363,7 @@ Daily
 More info
 =========
 * https://confluence.atlassian.com/jira064/advanced-searching-720416661.html
-* https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html#Advancedsearching-functionsreference-endOfWeekendOfWeek()
+* https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html
 
 
 Assignments

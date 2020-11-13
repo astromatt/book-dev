@@ -21,16 +21,16 @@ Assignments
 
 Filter Save
 -----------
-Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
+#. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
 #. Wyszukaj:
 
-.. code-block:: sql
+    .. code-block:: sql
 
-    project = MYPROJECT
-        AND sprint IN openSprints()
-        AND (Flagged IS NOT EMPTY
-             OR updated >= -1d
-             OR statusCategory = "In Progress")
+        project = "MYPROJECT"
+            AND sprint IN openSprints()
+            AND (Flagged IS NOT EMPTY
+                 OR updated >= -1d
+                 OR statusCategory = "In Progress")
 
 #. Wynik zapisz jako "Save As" (przycisk u góry nad polem wyszukiwania)
 #. Nazwij "Imię Daily" (gdzie Imię, to Twoje imię)
@@ -54,7 +54,14 @@ Filter Subscription Create
 #. Wybieramy Schedule: Days per Week; Interval: "Once per day at 5:00 am" w dniu "Monday"
 #. Upewnij się, że jest odznaczone "Email this filter, even if there are no issues found"
 #. Kliknij "Subscribe"
-#. Zmodyfikuj wyszukiwanie na: ``assignee = currentUser() AND statusCategory != "Done" AND due <= 7d``
+#. Zmodyfikuj wyszukiwanie na:
+
+    .. code-block:: sql
+
+        assignee = currentUser()
+            AND statusCategory != "Done"
+            AND due <= 7d
+
 #. Kliknij przycisk "Save"
 
 Filter Subscription Delete
@@ -68,7 +75,15 @@ Filter Edit
 -----------
 #. Z menu "Issues" wybrać "Search for Issues" w trybie Advanced
 #. Z "Favourite Filters" (menu po lewej) wybrać "Imię Todo" (gdzie Imię, to Twoje imię)
-#. Zmodyfikuj zapytanie: ``assignee = currentUser() AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY)``
+#. Zmodyfikuj zapytanie:
+
+    .. code-block:: sql
+
+        assignee = currentUser()
+            AND (statusCategory != Done
+                 AND due <= 7d
+                 OR Flagged is not EMPTY)
+
 #. kliknij "Search" a następnie "Save"
 
 Filter Board
@@ -98,7 +113,17 @@ Filter Board Edit
 -----------------
 #. Z menu u góry wybierz "Boards" -> "View all boards" -> "Imię Todo" (gdzie Imię, to Twoje imię)
 #. Przycisk "Board" (u góry po prawej) -> "Configure" -> Na zakładce "General" -> "Edit Filter Query"
-#. Popraw zapytanie: ``assignee = currentUser() AND issuetype != Epic AND (statusCategory != Done AND due <= 7d OR Flagged is not EMPTY) ORDER BY duedate DESC, priority DESC``
+#. Popraw zapytanie:
+
+    .. code-block:: sql
+
+        assignee = currentUser()
+            AND issuetype != Epic
+            AND (statusCategory != Done
+                 AND due <= 7d
+                 OR Flagged is not EMPTY)
+            ORDER BY duedate DESC, priority DESC
+
 #. Przycisk "Search" -> "Save"
 #. Przejdź na Board "Imię Todo" (gdzie Imię, to Twoje imię)
 #. Zobacz czy nie ma Epiców
