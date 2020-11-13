@@ -5,77 +5,10 @@ Board
 
 Project Management
 ==================
-- Prowadzenie projektów
 - Kanban
 - Scrum
-- Portfolio
 - Scrum + Kanban
-
-
-Artifacts
-=========
-- Backlog
-- Sprintlog
-- Task board
-- Units:
-
-    - Story Points
-    - Business Value
-
-Epic
-====
-- Brak worków (np. Poprawki błędów)
-- Doważalne (określone w czasie, mają datę początku i końca)
-- Dobre praktyki:
-
-    - Due Date
-    - Start Date
-    - Assignee
-
-- optymalna długość
-- kategoryzowanie
-- timeline i roadmapa
-- planowanie kwartalne
-- przypisywanie Epiców do wersji
-- board epików
-- Business Value epików
-
-
-Estimation
-==========
-- Time Estimate
-- Manday
-- Story Point
-- Business Value
-- #NoEstimates and Monte Carlo simulation (https://www.infoq.com/presentations/monte-carlo)
-
-
-Metrics
-=======
-- Velocity
-- Capacity
-- Maturity
-
-
-Planning and Refinement
-=======================
-- Estimation
-- How big your tasks should be?
-- Estimation support systems
-- Sprint goal
-- Acceptance Criteria
-- Definition of Done
-- Time Tracking
-
-
-Dobre praktyki
-==============
-- Kryteria akceptacyjne
-- Sekcja w description: INFO
-- Sekcja w description: BEFORE
-- Sekcja w description: TODO
-- Sekcja w description: AFTER
-- używanie (/) i (x)
+- Portfolio
 
 
 Board
@@ -140,101 +73,12 @@ Board
 - Quick Filters dla Daily
 
 
-Charts
-======
-- Burn-down Chart
-- Burn-up Chart
-- Control Chart
-- Cumulative Flow Diagram
-- Epic Burndown
-- Epic Report
-- Release Burndown
-- Sprint Report
-- Velocity Chart
-- Version Report
-- Version Burndown
-- Refine Reports
-
-
-Kanban
-======
-- What’s Kanban?
-- Pull system
-- JIT
-- Context switching
-- Kanban Board
-- Improvement:
-
-    - Muda
-    - Jidoka
-    - Kaizen
-    - Bottlenecks
-    - Metrics
-    - Lean
-
-- Workflow:
-
-    - Columns
-    - Swimlanes
-    - Expedite
-    - Priority
-    - SLA
-
 
 Assignments
 ===========
 
-Board Sprint Add
-----------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Dodaj pierwszy sprint:
-
-    - "Name": "2000-01 week 1"
-    - "Duration": "1 week"
-    - "Start Date": "1/Jan/00 09:00 AM"
-
-#. Dodaj drugi sprint:
-
-    - "Name": "2000-01 week 2"
-    - "Duration": "1 week"
-    - "Start Date": "7/Jan/00 09:00 AM"
-
-Board Backlog Estimation
-------------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. W detail view zadania "One" -> okienko "Estimate" ustaw 3 (lub pole "Story Point" przy edycji zadania)
-#. W detail view zadania "Two" -> okienko "Estimate" ustaw 8 (lub pole "Story Point" przy edycji zadania)
-#. W detail view zadania "Three" -> okienko "Estimate" ustaw 4 (lub pole "Story Point" przy edycji zadania)
-#. Zobacz kolorowe kółka z estymacjami w nagłówku sprintu: "To Do", "In Progress", "Done"
-
-Board Sprint Start
-------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Do sprintu "2000-01 week 1" dodaj zadania: "One", "Two", "Three"
-#. Przejedź suwakiem i dodaj "Four", "Five", "Six", zwróć uwagę na zmiany liczb w okienku "Issues" i "Estimate"
-#. Wystartuj sprint ustawiając:
-
-    - Goal: "Ukończenie szkolenia z Jiry"
-    - Duration: "1 week"
-    - Start Date: "1/Jan/00 09:00 AM"
-
-Board Sprint Work
------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
-#. Przenieś zadania:
-
-    - "One" do "In Progress"
-    - "Two" do "In Progress"
-    - "Three" do "Done"
-
-#. Dodaj flagę do zadania "Four"
-#. Z menu "Board" prawy górny róg:
-
-    - Wybierz "Hide detail view
-    - Wybierz "Print cards" i zmień "Card size" -> "small"
-
-Board Configure
----------------
+Board Configure General
+-----------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "General":
@@ -244,6 +88,10 @@ Board Configure
     - Osoby które mają uprawnienia do "Filter" będą widziały i mogły otworzyć Board
     - To nie znaczy, że będę widziały zadania (to wymaga uprawnień w projekcie)
 
+Board Configure Columns
+-----------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Columns":
 
     - Dodaj kolumnę "Blocked" w "Category" -> "In Progress"
@@ -253,17 +101,29 @@ Board Configure
     - W kolumnie "In Progress" -> "Min" ustaw na: "1"
     - Zaznacz "Days in column"
 
+Board Configure Swimlanes
+-------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Swimlanes":
 
     - Wybierz "Base Swimlanes on" -> "Queries"
     - Dodaj Swimlane "Story" z JQL -> ``issuetype = Story``
     - Dodaj Swimlane "Task" z JQL -> ``issuetype = Task``
 
+Board Configure Quick Filters
+-----------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Quick Filters":
 
     - Zmień nazwę "Recently Updated" na "Daily"
     - Zmień JQL dla "Daily" na: ``updatedDate >= -1d OR Flagged IS NOT EMPTY``
 
+Board Configure Card Colors
+---------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Card colours":
 
     - Zmień "Colours based on" -> "Priorities"
@@ -271,17 +131,29 @@ Board Configure
     - Zmień kolor "Medium" na żółty (FFFF00)
     - Zmień kolor "Low" oraz "Lowest" na zielony (00FF00)
 
+Board Configure Card Layout
+---------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Card layout":
 
     - W sekcji "Backlog" -> wyświetl pole "Due Date"
     - W sekcji "Active sprints" -> wyświetl pole "Due Date"
     - Usuń wyświetlanie pola "Due Date" z sekcji Backlog (ale zostaw w "Active Sprint")
 
+Board Configure Estimation
+--------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Estimation":
 
     - Zmień "Estimation Statistic" na "Original Time Estimate"
     - Zaznacz "Time Tracking" -> "Remaining Estimate and Time Spent"
 
+Board Configure Working Days
+----------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Working days":
 
     - Wybierz "Region" -> "Europe"
@@ -302,6 +174,10 @@ Board Configure
         * "25/Dec/20" (pierwszy dzień Bożego Narodzenia)
         * "26/Dec/20" (drugi dzień Bożego Narodzenia)
 
+Board Configure Issue Detail View
+---------------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Issue Detail View":
 
     - Sekcja "General Fields" -> usuń: Status, Priority, Labels, Affects Version/s
@@ -309,41 +185,11 @@ Board Configure
     - Sekcja "People" -> usuń "Reporter" i "Assignee
     - Sekcja "Links" -> usuń "Linked Issue"
 
+Board Configure Active Sprint
+-----------------------------
+#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
+#. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Wróć na "Boards" -> Twój Board -> "Active Sprint":
 
     - Usuń wszystkie zadania z kolumny "In Progress" (powinna podświetlić się na żółto)
     - Dodaj trzy zadania do kolumny "Blocked" (powinna podświetlić się na czerwono)
-
-Board Sprint Close
-------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprint"
-#. Zakończ aktualny sprint -> Prawy górny róg "Complete Sprint
-#. Zadania niezakończone mają "spaść" do sprintu następnego, tj. "2000-01 week 1"
-
-    - Co się dzieje z otwartymi zadaniami?
-    - Co się dzieje z zamkniętymi zadaniami?
-    - Co się dzieje z zamkniętymi subtaskami, ale otwartym zadaniem?
-    - Co się dzieje z otwartymi subtaskami ale zamkniętym zadaniem?
-
-Board Reports
--------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Reports"
-#. Przedyskutuj "Burndown Chart"
-#. Przedyskutuj "Burnup Chart"
-#. Przedyskutuj "Sprint Report"
-#. Przedyskutuj "Velocity Chart"
-#. Przedyskutuj "Cumulative Flow Diagram"
-#. Przedyskutuj "Version Report"
-#. Przedyskutuj "Epic Report"
-#. Przedyskutuj "Control Chart"
-#. Przedyskutuj "Epic Burndown"
-#. Przedyskutuj "Release Burndown"
-#. Przedyskutuj "Time Tracking Report"
-
-
-
-
-
-
-
-

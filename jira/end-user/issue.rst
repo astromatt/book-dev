@@ -71,6 +71,16 @@ Priority
 * DEFCON-1, DEFCON-2, DEFCON-3
 
 
+Description
+===========
+- Kryteria akceptacyjne
+- Sekcja w description: INFO
+- Sekcja w description: BEFORE
+- Sekcja w description: TODO
+- Sekcja w description: AFTER
+- używanie (/) i (x)
+
+
 Assignments
 ===========
 
@@ -139,11 +149,3 @@ Issue Sub-Tasks
     - summary: "C", Priority: "Medium", Status: "Done"
 
 #. Estymuj zadania, tylko jeżeli widzisz pole
-
-Issue Move
-----------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Wybierz zadanie "Eight"
-#. Z karty zadania po prawej stronie wybierz menu trzy kropki "..." (po prawej u góry)
-#. Z menu wybierz "More Actions" -> wpisz "Move"
-#. Przenieś zadanie do projektu "SCRUM"
