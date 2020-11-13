@@ -27,13 +27,18 @@ Operators
     :header: "Operator", "Description"
 
     ``=``, "Equals"
-    ``==``, "Equals"
     ``!=``, "Not equal (is different than)"
     ``>``, "Greater than"
     ``<``, "Less than"
     ``<=``, "Greater or equal"
     ``>=``, "Less or equal"
     ``~``, "Contains text"
+    ``(...)``, "List"
+    ``AND``, "Conjunction"
+    ``OR``, "Disjunction"
+    ``ORDER BY``, "Ordering"
+    ``ASC``, "Ascending"
+    ``DESC``, "Descending"
 
 
 View
