@@ -35,7 +35,10 @@ Estimation
 - Manday
 - Story Point
 - Business Value
-- #NoEstimates and Monte Carlo simulation (https://www.infoq.com/presentations/monte-carlo)
+- ``#NoEstimates`` and Monte Carlo simulation:
+
+    * https://www.infoq.com/presentations/monte-carlo
+    * https://docs.google.com/spreadsheets/d/1BmSuj1jA2ZfhUBzPtqDBqDjMjSXMqj3QoHZGR-TesOA/edit#gid=542217325
 
 
 Metrics
