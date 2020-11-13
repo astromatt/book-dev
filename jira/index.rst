@@ -28,7 +28,7 @@ End-User
     end-user/issue.rst
     end-user/issue-actions.rst
     end-user/board-usage.rst
-    end-user/board-configure.rst
+    end-user/board-configuration.rst
     end-user/jql.rst
     end-user/filter.rst
     end-user/dashboard.rst

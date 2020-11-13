@@ -35,8 +35,8 @@ Board
 Assignments
 ===========
 
-Project Create
---------------
+Basics Project Create
+---------------------
 #. Z menu u góry wybierz "Projects" -> "View Projects"
 #. Kliknij przycisk "Create Projects" (prawy górny róg)
 #. Kliknij przycisk "Scrum software development" -> Next
@@ -48,8 +48,8 @@ Project Create
 
 #. Submit
 
-Issues Create
--------------
+Basics Issue Create
+-------------------
 #. Z menu u góry kliknij przycisk "Create"
 #. Dodaj zadanie:
 
@@ -57,13 +57,13 @@ Issues Create
     - Issue Type: "Story"
     - Summary: "One"
 
-Issues Create In Backlog
-------------------------
+Basics Issue Create in Backlog
+------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Dodaj zadania do backlog: "Two", "Three", "Four", "Five", "Six"
 
-Issues Split
-------------
+Basics Issue Split
+------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
 #. Kliknij prawym klawiszem myszy na zadanie "Six" -> "Split Issue"
 

@@ -45,7 +45,7 @@ Dashboard Edit
 #. Z menu u góry wybierz "Dashboards" -> Twój Dashboard
 #. Zmień "Edit Layout" (prawy górny róg) na trzykolumnowy
 
-Dashboard Gadżet Create
+Dashboard Gadget Create
 -----------------------
 #. Z menu u góry wybierz "Dashboards" -> Twój Dashboard
 #. Kliknij na "Add gadget" -> "Load all gadgets"

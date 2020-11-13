@@ -1,6 +1,6 @@
-*****
-Board
-*****
+*******************
+Board Configuration
+*******************
 
 
 Project Management
@@ -77,8 +77,8 @@ Board
 Assignments
 ===========
 
-Board Configure General
------------------------
+Board Configuration General
+---------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "General":
@@ -88,8 +88,8 @@ Board Configure General
     - Osoby które mają uprawnienia do "Filter" będą widziały i mogły otworzyć Board
     - To nie znaczy, że będę widziały zadania (to wymaga uprawnień w projekcie)
 
-Board Configure Columns
------------------------
+Board Configuration Columns
+---------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Columns":
@@ -101,8 +101,8 @@ Board Configure Columns
     - W kolumnie "In Progress" -> "Min" ustaw na: "1"
     - Zaznacz "Days in column"
 
-Board Configure Swimlanes
--------------------------
+Board Configuration Swimlanes
+-----------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Swimlanes":
@@ -111,8 +111,8 @@ Board Configure Swimlanes
     - Dodaj Swimlane "Story" z JQL -> ``issuetype = Story``
     - Dodaj Swimlane "Task" z JQL -> ``issuetype = Task``
 
-Board Configure Quick Filters
------------------------------
+Board Configuration Quick Filters
+---------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Quick Filters":
@@ -120,8 +120,8 @@ Board Configure Quick Filters
     - Zmień nazwę "Recently Updated" na "Daily"
     - Zmień JQL dla "Daily" na: ``updatedDate >= -1d OR Flagged IS NOT EMPTY``
 
-Board Configure Card Colors
----------------------------
+Board Configuration Card Colors
+-------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Card colours":
@@ -131,8 +131,8 @@ Board Configure Card Colors
     - Zmień kolor "Medium" na żółty (FFFF00)
     - Zmień kolor "Low" oraz "Lowest" na zielony (00FF00)
 
-Board Configure Card Layout
----------------------------
+Board Configuration Card Layout
+-------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Card layout":
@@ -141,8 +141,8 @@ Board Configure Card Layout
     - W sekcji "Active sprints" -> wyświetl pole "Due Date"
     - Usuń wyświetlanie pola "Due Date" z sekcji Backlog (ale zostaw w "Active Sprint")
 
-Board Configure Estimation
---------------------------
+Board Configuration Estimation
+------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Estimation":
@@ -150,15 +150,15 @@ Board Configure Estimation
     - Zmień "Estimation Statistic" na "Original Time Estimate"
     - Zaznacz "Time Tracking" -> "Remaining Estimate and Time Spent"
 
-Board Configure Working Days
-----------------------------
+Board Configuration Working Days
+--------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Working days":
 
     - Wybierz "Region" -> "Europe"
     - "Time Zone" -> "(GMT+01:00) Warsaw"
-    - Dodaj "Non-Working Days":
+    - Dodaj "Non-Working Days" (wybierz trzy dowolne święta):
 
         * "1/Jan/20" (Nowy Rok)
         * "6/Jan/20" (Święto Trzech Króli)
@@ -174,8 +174,8 @@ Board Configure Working Days
         * "25/Dec/20" (pierwszy dzień Bożego Narodzenia)
         * "26/Dec/20" (drugi dzień Bożego Narodzenia)
 
-Board Configure Issue Detail View
----------------------------------
+Board Configuration Issue Detail View
+-------------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Zakładka "Issue Detail View":
@@ -185,8 +185,8 @@ Board Configure Issue Detail View
     - Sekcja "People" -> usuń "Reporter" i "Assignee
     - Sekcja "Links" -> usuń "Linked Issue"
 
-Board Configure Active Sprint
------------------------------
+Board Configuration Active Sprint
+---------------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprints"
 #. Z menu "Board" (prawy górny róg) -> "Configure"
 #. Wróć na "Boards" -> Twój Board -> "Active Sprint":

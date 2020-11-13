@@ -1,6 +1,6 @@
-*********************
-Profile Configuration
-*********************
+*******
+Profile
+*******
 
 
 * Jira Language

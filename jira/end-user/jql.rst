@@ -187,12 +187,16 @@ Queries in History
 
 .. code-block:: sql
 
+    due >= startOfMonth(-1w) AND due <= endOfMonth(+2w)
+
+.. code-block:: sql
+
     due <= now()
         AND statusCategory != "Done"
 
 .. code-block:: sql
 
-    status WAS IN ("Resolved","In Progress")
+    status WAS IN ("Done", "Rejected")
 
 .. code-block:: sql
 
@@ -200,15 +204,15 @@ Queries in History
 
 .. code-block:: sql
 
-    status WAS NOT IN ("Resolved","In Progress") BEFORE "2000/01/01"
-
-.. code-block:: sql
-
-    status WAS "Resolved" BY "admin" DURING ("2000/01/01","2000/01/01")
+    status WAS NOT IN ("Done", "Rejected") BEFORE "2000/01/01"
 
 .. code-block:: sql
 
     status WAS "Resolved" BY "admin" BEFORE "2000/01/01"
+
+.. code-block:: sql
+
+    status WAS "Resolved" BY "admin" DURING ("2000/01/01", "2000/01/31")
 
 .. code-block:: sql
 
@@ -219,7 +223,7 @@ Queries in History
     AFTER "date"
     BEFORE "date"
     BY "username"
-    DURING ("date1","date2")
+    DURING ("date1", "date2")
     ON "date"
     FROM "oldvalue"
     TO "newvalue"
@@ -230,7 +234,7 @@ Queries in History
 
 .. code-block:: sql
 
-    priority CHANGED BY freddo BEFORE endOfWeek() AFTER startOfWeek()
+    priority CHANGED BY "admin" BEFORE endOfWeek() AFTER startOfWeek()
 
 .. code-block:: sql
 
@@ -285,14 +289,14 @@ Tracking team members work
 .. code-block:: sql
 
     project = "MYPROJECT"
-        AND updated >= -7d
         AND assignee IN membersOf("jira-administrators")
+        AND updated >= -7d
 
 .. code-block:: sql
 
     assignee IN membersOf("jira-administrators")
-        AND updated >= startOfWeek(-7d)
-        AND updated <= endOfWeek(-7d)
+        AND updated >= startOfWeek()
+        AND updated <= endOfWeek()
 
 Daily
 -----
@@ -308,6 +312,7 @@ Daily
 More info
 =========
 * https://confluence.atlassian.com/jira064/advanced-searching-720416661.html
+* https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html#Advancedsearching-functionsreference-endOfWeekendOfWeek()
 
 
 Assignments
