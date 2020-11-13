@@ -143,7 +143,7 @@ Functions
 
 .. csv-table:: JQL functions in `Jira Core`
     :header: "Function", "Description"
-    :widths: 15, 85
+    :widths: 20, 80
 
     ``cascadeOption()``,                   "Search for issues that match the selected values of a 'cascading select' custom field"
     ``componentsLeadByUser()``,            "Find issues in components that are led by a specific user"
@@ -180,7 +180,7 @@ Functions
 
 .. csv-table:: JQL functions in `Jira Software`
     :header: "Function", "Description"
-    :widths: 15, 85
+    :widths: 20, 80
 
     ``closedSprints()``, "Search for issues that are assigned to a completed Sprint"
     ``futureSprints()``, "Search for issues that are assigned to a sprint that hasn't been started yet"
@@ -188,7 +188,7 @@ Functions
 
 .. csv-table:: JQL functions in `Jira Service Management`
     :header: "Function", "Description"
-    :widths: 15, 85
+    :widths: 20, 80
 
     ``approved()``,            "Search for requests that required approval and have a final decision of approved"
     ``approver()``,            "Search for requests that require or required approval by a user"
