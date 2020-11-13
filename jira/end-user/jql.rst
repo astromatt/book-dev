@@ -25,6 +25,7 @@ Operators
 =========
 .. csv-table:: Operators
     :header: "Operator", "Description"
+    :widths: 5, 95
 
     ``=``, "Equals"
     ``!=``, "Not equal (is different than)"
