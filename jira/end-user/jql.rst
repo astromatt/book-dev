@@ -137,6 +137,7 @@ Functions
 
 .. csv-table:: JQL functions in `Jira Core`
     :header: "Function", "Description"
+    :widths: 15, 85
 
     "``cascadeOption()``",                   "Search for issues that match the selected values of a 'cascading select' custom field"
     "``componentsLeadByUser()``",            "Find issues in components that are led by a specific user"
@@ -151,7 +152,7 @@ Functions
     "``issuesWithRemoteLinksByGlobalId()``", "Perform searches based on issues that are associated with remote links that have any of the specified global ids"
     "``lastLogin()``",                       "Perform searches based on the time at which the current user's previous session began"
     "``latestReleasedVersion()``",           "Perform searches based on the latest released version (i.e. the most recent version that has been released) of a specified project"
-    "``linkedissue",``                       "Searches for epics and subtasks. If the issue is not an epic, the search returns all subtasks for the issue"
+    "``linkedissue``",                       "Searches for epics and subtasks. If the issue is not an epic, the search returns all subtasks for the issue"
     "``linkedIssues()``",                    "Searches for issues that are linked to an issue"
     "``membersOf()``",                       "Perform searches based on the members of a particular group"
     "``now()``",                             "Perform searches based on the current time"
@@ -173,6 +174,7 @@ Functions
 
 .. csv-table:: JQL functions in `Jira Software`
     :header: "Function", "Description"
+    :widths: 15, 85
 
     "``closedSprints()``", "Search for issues that are assigned to a completed Sprint"
     "``futureSprints()``", "Search for issues that are assigned to a sprint that hasn't been started yet"
@@ -180,6 +182,7 @@ Functions
 
 .. csv-table:: JQL functions in `Jira Service Management`
     :header: "Function", "Description"
+    :widths: 15, 85
 
     "``approved()``",            "Search for requests that required approval and have a final decision of approved"
     "``approver()``",            "Search for requests that require or required approval by a user"
