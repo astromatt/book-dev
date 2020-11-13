@@ -12,8 +12,8 @@ Profile Configuration
 Assignments
 ===========
 
-Profile Edit
-------------
+Profile Configuration
+---------------------
 #. Prawy górny róg -> kliknij na Avatar -> Profile
 #. Przejdź do swojego profilu
 #. Ustaw strefę czasową na "Europe/Warsaw (GMT+01:00)"

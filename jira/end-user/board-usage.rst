@@ -156,7 +156,7 @@ Board Usage Sprint Close
 ------------------------
 #. Z menu u góry wybierz "Boards" -> Twój Board -> "Active Sprint"
 #. Zakończ aktualny sprint -> Prawy górny róg "Complete Sprint
-#. Zadania niezakończone mają "spaść" do sprintu następnego, tj. "2000-01 week 1"
+#. Zadania niezakończone mają "spaść" do sprintu następnego, tj. "2000-01 week 2"
 
     - Co się dzieje z otwartymi zadaniami?
     - Co się dzieje z zamkniętymi zadaniami?

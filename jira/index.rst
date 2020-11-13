@@ -8,7 +8,6 @@ Introduction
     :numbered:
     :caption: Introduction
 
-    introduction/requirements.rst
     introduction/licensing.rst
     introduction/conferences.rst
     introduction/keyboard-shortcuts.rst
@@ -22,6 +21,7 @@ End-User
     :numbered:
     :caption: End-User
 
+    end-user/requirements.rst
     end-user/profile.rst
     end-user/basics.rst
     end-user/project.rst
@@ -42,6 +42,7 @@ Administration
     :numbered:
     :caption: Administration
 
+    administration/requirements.rst
     administration/configuration.rst
     administration/issue-types.rst
     administration/workflow.rst
@@ -62,6 +63,7 @@ System Administration
     :numbered:
     :caption: System Administration
 
+    system-administration/requirements.rst
     system-administration/install.rst
     system-administration/upgrade.rst
     system-administration/backup.rst
