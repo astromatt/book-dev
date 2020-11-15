@@ -32,6 +32,7 @@ End-User
     end-user/jql.rst
     end-user/filter.rst
     end-user/dashboard.rst
+    end-user/automation.rst
 
 
 **************
