@@ -71,7 +71,7 @@ Check (or clear) the Smart Commits option for a repository.
 
     Fix a bug +review CR-MYPROJECT
     Fix a bug +review CR-MYPROJECT @mwatney @jtwardowski
-    Implement rework on past work +review CR-MYPROJECT-128
+    Implement rework on past work +review CR-MYPROJECT-69
 
 .. todo:: Smart commits images
 
@@ -129,10 +129,10 @@ GIT
 .. code-block:: console
 
     $ git log --format='"%ai", "%h", "%s"'
-    "2020-10-14 01:04:38 +0200", "d5a4d6b", "MYPROJECT-10 git commit message #time 69m"
+    "2020-10-14 01:04:38 +0200", "d5a4d6b", "MYPROJECT-69 git commit message #time 69m"
 
     $ git log --format='"%aI", "%h", "%an", "%ae", "%s"'
-    "2020-10-14T01:04:38+02:00", "d5a4d6b", "Matt Harasymczuk", "matt@astrotech.io", "MYPROJECT-10 git commit message #time 69m"
+    "2020-10-14T01:04:38+02:00", "d5a4d6b", "Matt Harasymczuk", "matt@astrotech.io", "MYPROJECT-69 git commit message #time 69m"
 
     $ git log --format='"%aI", "%h", "%an", "%ae", "%s"' > ~/Desktop/git-log.csv
 
