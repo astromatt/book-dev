@@ -46,37 +46,42 @@ Branch Hook
 
     #!/bin/sh
     #
-    # @author Matt Harasymczuk <book@astronaut.center>
+    # @author Matt Harasymczuk <matt@astrotech.io>
     # @since 2012-10-23
-    # @updated 2020-07-03
+    # @updated 2020-11-15
     #
-    # This hook message should go to .git/hooks/commit-msg
-    # Remember to add (*nix machines) executable rights: chmod +x .git/hooks/commit-msg
-    # Hook checks branch you're currently on and add its name to commit message.
-    # It adds commit message as a comment in jira connected with this issue.
-    # Moreover it creates a Code Review in Crucible.
+    # This simple hook gets Jira issue ID from the branch you are currently committing to.
+    # If you used Jira development panel "Create Branch", your branch name should be:
+    # "feature/MYPROJECT-69-some-issue-summary" and in such case it would get "MYPROJECT-69".
+    # Then hook prepends issue ID to your current commit message linking commit and Jira issue together.
+    # You'll never forget about adding issue id to the commit message anymore! :}
     #
-    # You'll never forget about this things anymore :}
-    # The only thing you should do is to create an issue for each branch you have.
-    # For example if you are working on issue DEMO-123 create a branch called DEMO-123
-    # Each commit on this branch would have DEMO-123 in the commit message and Code Review process attached to it.
+    # To install hook just put following script (with comment) in ".git/hooks/prepare-commit-msg"
+    # On *nix machines (macOS, Linux, etc) you have to add executable rights:
+    # ``chmod +x .git/hooks/prepare-commit-msg``
+    # That's it. You can commit to test if it works.
+    # Remember before committing to check out branch with proper name, such as:
+    # "feature/MYPROJECT-69-some-issue-summary"
 
     COMMIT_MSG_FILE=$1
     COMMIT_SOURCE=$2
-    SHA1=$3
+    COMMIT_HASH=$3
 
     issuekey=$(git symbolic-ref HEAD |egrep --only-matching '[A-Z]{2,10}-[0-9]{1,6}')
     message=$(cat $1)
 
 
     if [ -z "$issuekey" ]; then
-        echo "Please work on branch with JIRA issue key in the branch name"
-        echo "Changes were not committed"
+        echo "You are currently on a branch without JIRA issue ID in its name."
+        echo "Changes were not committed."
+        echo "If you want to commit anyway, just remove executable rights for this hook:"
+        echo "chmod -x .git/hooks/prepare-commit-msg"
+        echo "But remember to re-enable it later on, by executing:
+        echo "chmod +x .git/hooks/prepare-commit-msg"
         exit 1
     else
        echo "$issuekey $message" > $COMMIT_MSG_FILE
     fi
-
 
 
 Assignments

@@ -54,6 +54,7 @@ Administration
     administration/user-management.rst
     administration/apps.rst
     administration/dirty-hack.rst
+    system-administration/automation.rst
 
 
 *********************
@@ -73,6 +74,7 @@ System Administration
     system-administration/performance.rst
     system-administration/database.rst
     system-administration/api-scripting.rst
+    system-administration/automation.rst
 
 **********
 References

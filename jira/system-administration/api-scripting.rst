@@ -33,6 +33,7 @@ DevTools Ecosystem Integration
 * https://dev.astrotech.io/summary/pictures.html#ci-cd
 * ``git log --oneline --format='"%h", "%an", "%ae", "%ad", "%s"' --date=iso > ~/Desktop/git-log.csv``
 
+
 REST API
 ========
 * https://developer.atlassian.com/server/jira/platform/rest-apis/

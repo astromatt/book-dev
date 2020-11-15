@@ -6,7 +6,7 @@ author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 language = 'en'
 
-todo_emit_warnings = False
+todo_emit_warnings = True
 todo_include_todos = True
 
 html_static_path = ['../_static']
