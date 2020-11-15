@@ -57,11 +57,9 @@ Branch Hook
     # You'll never forget about adding issue id to the commit message anymore! :}
     #
     # To install hook just put following script (with comment) in ".git/hooks/prepare-commit-msg"
-    # On *nix machines (macOS, Linux, etc) you have to add executable rights:
-    # ``chmod +x .git/hooks/prepare-commit-msg``
-    # That's it. You can commit to test if it works.
-    # Remember before committing to check out branch with proper name, such as:
-    # "feature/MYPROJECT-69-some-issue-summary"
+    # On *nix machines (macOS, Linux, etc) add executable rights: ``chmod +x .git/hooks/prepare-commit-msg``
+    # That's it. You can commit to test if it works. Remember before committing to check out branch
+    # with proper name, such as: "feature/MYPROJECT-69-some-issue-summary".
 
     COMMIT_MSG_FILE=$1
     COMMIT_SOURCE=$2
@@ -76,7 +74,7 @@ Branch Hook
         echo "Changes were not committed."
         echo "If you want to commit anyway, just remove executable rights for this hook:"
         echo "chmod -x .git/hooks/prepare-commit-msg"
-        echo "But remember to re-enable it later on, by executing:
+        echo "But remember to re-enable it later on, by executing:"
         echo "chmod +x .git/hooks/prepare-commit-msg"
         exit 1
     else
