@@ -44,11 +44,37 @@ Atlassian Python API
     print(data)
 
 
+Dev Panel
+=========
+* Create Branch
+* Branches
+* Commits
+* Pull Requests
+* Reviews
+* CI/CD Builds
+* Releases
+
+.. figure:: img/jira-board-devpanel-backlog.png
+.. figure:: img/jira-board-devpanel-issue.png
+.. figure:: img/jira-board-devpanel-sprint-1.png
+.. figure:: img/jira-board-devpanel-sprint-2.png
+.. figure:: img/bitbucket-builds.png
+.. figure:: img/bitbucket-createbranch.png
+.. figure:: img/bitbucket-pullrequest.png
+
+
+Releases
+========
+* Trigger CI/CD Builds
+
+.. figure:: img/jira-release-overview.png
+
+
 Smart Commits
 =============
 * Log in to Jira Software as a user with administrative permissions.
-* * Go to Administration > Applications > DVCS accounts.
-Check (or clear) the Smart Commits option for a repository.
+* Go to Administration > Applications > DVCS accounts.
+* Check (or clear) the Smart Commits option for a repository.
 * https://support.atlassian.com/bitbucket-cloud/docs/enable-smart-commits/
 * https://confluence.atlassian.com/fisheye/using-smart-commits-960155400.html
 
@@ -71,7 +97,7 @@ Check (or clear) the Smart Commits option for a repository.
 
     Fix a bug +review CR-MYPROJECT
     Fix a bug +review CR-MYPROJECT @mwatney @jtwardowski
-    Implement rework on past work +review CR-MYPROJECT-69
+    Implement rework on past work +review CR-MYPROJECT-128
 
 .. todo:: Smart commits images
 
@@ -129,10 +155,10 @@ GIT
 .. code-block:: console
 
     $ git log --format='"%ai", "%h", "%s"'
-    "2020-10-14 01:04:38 +0200", "d5a4d6b", "MYPROJECT-69 git commit message #time 69m"
+    "2020-10-14 01:04:38 +0200", "d5a4d6b", "MYPROJECT-10 git commit message #time 69m"
 
     $ git log --format='"%aI", "%h", "%an", "%ae", "%s"'
-    "2020-10-14T01:04:38+02:00", "d5a4d6b", "Matt Harasymczuk", "matt@astrotech.io", "MYPROJECT-69 git commit message #time 69m"
+    "2020-10-14T01:04:38+02:00", "d5a4d6b", "Matt Harasymczuk", "matt@astrotech.io", "MYPROJECT-10 git commit message #time 69m"
 
     $ git log --format='"%aI", "%h", "%an", "%ae", "%s"' > ~/Desktop/git-log.csv
 
@@ -175,3 +201,11 @@ GIT
     else
        echo "$issuekey $message" > $COMMIT_MSG_FILE
     fi
+
+.. figure:: img/devops-gitflow.png
+
+
+CI/CD
+=====
+.. figure:: img/devops-ecosystem.png
+.. figure:: img/devops-cicd.png

@@ -29,6 +29,7 @@ End-User
     end-user/issue-actions.rst
     end-user/board-usage.rst
     end-user/board-configuration.rst
+    end-user/board-reports.rst
     end-user/jql.rst
     end-user/filter.rst
     end-user/dashboard.rst
@@ -54,7 +55,7 @@ Administration
     administration/user-management.rst
     administration/apps.rst
     administration/dirty-hack.rst
-    system-administration/automation.rst
+    administration/automation.rst
 
 
 *********************

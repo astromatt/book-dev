@@ -42,6 +42,9 @@ Versions
 * Releases (with Bamboo)
 * Time Tracking Report by Version
 
+.. figure:: img/jira-release-versions.png
+.. figure:: img/jira-release-overview.png
+
 
 AffectsVersion vs FixVersion
 ============================
@@ -59,7 +62,6 @@ Fix Version/s:
 
 Assignments
 ===========
-
 
 Project Details
 ---------------

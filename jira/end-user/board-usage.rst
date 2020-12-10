@@ -3,28 +3,35 @@ Board Usage
 ***********
 
 
-Rationale
-=========
-* Project vs Board
+Project Management
+==================
+- Kanban
+- Scrum
+- Scrum + Kanban
+- Portfolio
+- Scrum vs. Kanban
 
-.. figure:: img/jira-board-vs-project-1.png
+    - Scrum -> Rozwój (Story)
+    - Kanban -> Utrzymanie (Task)
+    - Praca w Scrum i Kanban jednocześnie
+    - Konstytucja zespołu i dobre praktyki
 
-.. figure:: img/jira-board-vs-project-2.png
-
-.. figure:: img/jira-board-vs-project-3.png
-
-.. figure:: img/jira-board-vs-project-4.png
-
-.. figure:: img/jira-board-vs-project-5.png
-
-.. figure:: img/jira-board-vs-project-6.png
+.. figure:: img/jira-board-select.jpg
+.. figure:: img/agile-wheel-1.png
+.. figure:: img/agile-wheel-2.png
+.. figure:: img/scrum-sprint-week-continuous.png
+.. figure:: img/scrum-daily-timer.png
+.. figure:: img/scrum-userstory.png
 
 
-Artifacts
-=========
+Scrum
+=====
 - Backlog
 - Sprintlog
 - Task board
+
+.. figure:: img/jira-board-backlog-scrum.png
+.. figure:: img/jira-board-sprint.png
 
 
 Epic
@@ -46,6 +53,29 @@ Epic
 - Business Value epików
 
 
+Planning and Refinement
+=======================
+.. figure:: img/agile-epic-decomposition-01-mindmapping.jpg
+.. figure:: img/agile-epic-decomposition-02-epics.jpg
+.. figure:: img/agile-epic-decomposition-03-epic.jpg
+.. figure:: img/agile-epic-decomposition-04-epics.jpg
+.. figure:: img/agile-epic-decomposition-05-ordering.jpg
+.. figure:: img/agile-epic-decomposition-06-ordered.jpg
+.. figure:: img/agile-epic-decomposition-07-todecompose.jpg
+.. figure:: img/agile-epic-decomposition-08-decomposition.jpg
+.. figure:: img/agile-epic-decomposition-09-ordering.jpg
+.. figure:: img/agile-epic-decomposition-10-ordered.jpg
+.. figure:: img/agile-epic-decomposition-11-estimation.jpg
+.. figure:: img/agile-epic-decomposition-12-priorities.jpg
+.. figure:: img/agile-epic-decomposition-13-sprints.jpg
+.. figure:: img/agile-epic-decomposition-14-issues.jpg
+.. figure:: img/agile-epic-decomposition-15-jira.jpg
+.. figure:: img/agile-epic-decomposition-16-epicmaping.jpg
+.. figure:: img/agile-epic-decomposition-17-board.jpg
+.. figure:: img/agile-epic-decomposition-18-risk.jpg
+.. figure:: img/agile-epic-decomposition-19-portfolio.jpg
+
+
 Estimation
 ==========
 - Time Estimate
@@ -64,6 +94,9 @@ Metrics
 - Capacity
 - Maturity
 
+.. figure:: img/scrum-capacity-sprint.png
+.. figure:: img/scrum-capacity-backlog.png
+
 
 Planning and Refinement
 =======================
@@ -74,6 +107,11 @@ Planning and Refinement
 - Acceptance Criteria
 - Definition of Done
 - Time Tracking
+
+
+Roadmap
+=======
+.. figure:: img/jira-board-roadmap.png
 
 
 Kanban
@@ -100,21 +138,7 @@ Kanban
     - Priority
     - SLA
 
-
-Charts
-======
-- Burn-down Chart
-- Burn-up Chart
-- Control Chart
-- Cumulative Flow Diagram
-- Epic Burndown
-- Epic Report
-- Release Burndown
-- Sprint Report
-- Velocity Chart
-- Version Report
-- Version Burndown
-- Refine Reports
+.. figure:: img/jira-board-backlog-kanban.png
 
 
 Assignments
@@ -166,31 +190,16 @@ Board Usage Sprint Work
 #. Dodaj flagę do zadania `Four`
 #. Z menu `Board` prawy górny róg:
 
-    - Wybierz `Hide detail view
+    - Wybierz `Hide detail view`
     - Wybierz `Print cards` i zmień `Card size` -> `small`
 
 Board Usage Sprint Close
 ------------------------
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprint`
-#. Zakończ aktualny sprint -> Prawy górny róg `Complete Sprint
+#. Zakończ aktualny sprint -> Prawy górny róg `Complete Sprint`
 #. Zadania niezakończone mają `spaść` do sprintu następnego, tj. `2000-01 week 2`
 
     - Co się dzieje z otwartymi zadaniami?
     - Co się dzieje z zamkniętymi zadaniami?
     - Co się dzieje z zamkniętymi subtaskami, ale otwartym zadaniem?
     - Co się dzieje z otwartymi subtaskami ale zamkniętym zadaniem?
-
-Board Usage Reports
--------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Reports`
-#. Przedyskutuj `Burndown Chart`
-#. Przedyskutuj `Burnup Chart`
-#. Przedyskutuj `Sprint Report`
-#. Przedyskutuj `Velocity Chart`
-#. Przedyskutuj `Cumulative Flow Diagram`
-#. Przedyskutuj `Version Report`
-#. Przedyskutuj `Epic Report`
-#. Przedyskutuj `Control Chart`
-#. Przedyskutuj `Epic Burndown`
-#. Przedyskutuj `Release Burndown`
-#. Przedyskutuj `Time Tracking Report`

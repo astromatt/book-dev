@@ -28,6 +28,9 @@ Rationale
     - Burndown
     - Days Remaining
 
+.. figure:: img/jira-dashboard-sprinthealth.png
+.. figure:: img/jira-dashboard.png
+
 
 Assignments
 ===========
@@ -60,13 +63,13 @@ Dashboard Gadget Create
 Dashboard Gadget Edit
 ---------------------
 #. Z menu u góry wybierz `Dashboards` -> Twój Dashboard
-#. Edytowanie gadgetu jest w jego prawym górnym rogu po kliknięciu trzech kropek `...
+#. Edytowanie gadgetu jest w jego prawym górnym rogu po kliknięciu trzech kropek `...`
 #. Gadżet `Issue Statistics` ustaw:
 
-    - Filter: Twój projekt
-    - Statistic: Type Status
-    - Sort: Total
-    - Sort Direction: Descending
+    - `Filter`: Twój projekt
+    - `Statistic`: `Type Status`
+    - `Sort`: `Total`
+    - `Sort Direction`: `Descending`
     - Upewnij się, że **nie** jest zaznaczone `Update every 15 minutes`
     - Kliknij przycisk `Save`
 

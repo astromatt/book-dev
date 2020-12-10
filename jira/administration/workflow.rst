@@ -13,6 +13,9 @@ Dobre praktyki
 - Keep transitions from all statues
 - Simplified Workflow
 
+.. figure:: img/jira-workflow-progress,test,review.png
+.. figure:: img/jira-workflow-simplified.png
+
 
 Workflow Triggers
 =================
@@ -38,6 +41,11 @@ Crucible:
     * Review closed
     * Review rejected
     * Review summarized
+
+.. figure:: img/jira-workflow-simplified,triggers.png
+.. figure:: img/jira-triggers-1.png
+.. figure:: img/jira-triggers-2.png
+.. figure:: img/jira-triggers-3.png
 
 
 Condition
@@ -65,6 +73,7 @@ Condition
     "User Is In Project Role", "Condition to allow only users in a given project role to execute a transition"
     "Value Field", "Allows to execute a transition if the given value of a field is equal to a constant value, or simply set"
 
+
 Validators
 ==========
 .. csv-table:: Validators
@@ -81,6 +90,7 @@ Validators
     "Previous State Validator", "Validates that the issue has previously transitioned through a specific state"
     "Regular Expression Check", "Validate field contents against a regular expression during a workflow transition"
     "User Permission Validator", "Validates that the user has a permission, where the OSWorkflow variable holding the username is configurable. Obsolete"
+
 
 Post Functions
 ==============
@@ -103,6 +113,94 @@ Post Functions
 
 Workflow Schemes
 ================
+
+
+Use Cases
+=========
+.. figure:: img/jira-workflow-aprooval.png
+
+    aprooval
+
+.. figure:: img/jira-workflow-core.jpeg
+
+    core
+
+.. figure:: img/jira-workflow-default.png
+
+    default
+
+.. figure:: img/jira-workflow-dev-1.png
+
+    dev
+
+.. figure:: img/jira-workflow-dev-2.png
+
+    dev
+
+.. figure:: img/jira-workflow-feedback.png
+
+    feedback
+
+.. figure:: img/jira-workflow-processmgmt.png
+
+    processmgmt
+
+.. figure:: img/jira-workflow-procurement.png
+
+    procurement
+
+.. figure:: img/jira-workflow-progress,test,review.png
+
+    progress
+
+.. figure:: img/jira-workflow-projectmgmt.png
+
+    projectmgmt
+
+.. figure:: img/jira-workflow-publishing.png
+
+    publishing
+
+.. figure:: img/jira-workflow-qa,review.png
+
+    qa
+
+.. figure:: img/jira-workflow-qa,stage,deploy,problem.jpg
+
+    qa
+
+.. figure:: img/jira-workflow-qa,stage,deploy.png
+
+    qa
+
+.. figure:: img/jira-workflow-qa.png
+
+    qa
+
+.. figure:: img/jira-workflow-recruitment.png
+
+    recruitment
+
+.. figure:: img/jira-workflow-risk.jpg
+
+    risk
+
+.. figure:: img/jira-workflow-select.png
+
+    select
+
+.. figure:: img/jira-workflow-simplified.png
+
+    simplified
+
+.. figure:: img/jira-workflow-support.png
+
+    support
+
+.. figure:: img/jira-workflow-taskmgmt.png
+
+    taskmgmt
+
 
 
 Assignments

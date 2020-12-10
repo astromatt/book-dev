@@ -3,37 +3,46 @@ Board Configuration
 *******************
 
 
-Project Management
-==================
-- Kanban
-- Scrum
-- Scrum + Kanban
-- Portfolio
+Board vs. Project
+=================
+- Board z wielu projektów
+- Board z części jednego projektu
+- Board dla Projektu
+- Wiele boardów do jednego projektu (różne estymaty)
+- Wiele projektów czy wiele boardów (np. po komponentach)?
+
+
+.. figure:: img/jira-board-vs-project-1.png
+
+.. figure:: img/jira-board-vs-project-2.png
+
+.. figure:: img/jira-board-vs-project-3.png
+
+.. figure:: img/jira-board-vs-project-4.png
+
+.. figure:: img/jira-board-vs-project-5.png
+
+.. figure:: img/jira-board-vs-project-6.png
+
+
+
+Sprints
+=======
+- Wielkość (ilość zadań, capacity chart)
+- Długość (tydzień)
+- Konwencja nazewnicza (YYYY-MM week W) (2017-03 week 2, 2017-03 week 3)
+
+
+Active Sprint
+=============
+- Otwieranie i zamykanie sprintów
+- Flagowanie zadań
+- Scope Changes
+- Auto assign
 
 
 Board
 =====
-- Scrum vs. Kanban
-
-    - Scrum -> Rozwój (Story)
-    - Kanban -> Utrzymanie (Task)
-    - Praca w Scrum i Kanban jednocześnie
-    - Konstytucja zespołu i dobre praktyki
-
-- Board vs. Project
-
-    - Board z wielu projektów
-    - Board z części jednego projektu
-    - Board dla Projektu
-    - Wiele boardów do jednego projektu (różne estymaty)
-    - Wiele projektów czy wiele boardów (np. po komponentach)?
-
-- Sprinty:
-
-    - Wielkość (ilość zadań, capacity chart)
-    - Długość (tydzień)
-    - Konwencja nazewnicza (YYYY-MM week W) (2017-03 week 2, 2017-03 week 3)
-
 - Uprawnienia
 - Konfiguracja
 - Kolumny
@@ -49,6 +58,9 @@ Board
     - wg. wersji
 
 - Quick Filters
+
+    - Quick Filters dla Daily
+
 - Card Colors
 - Card Layout
 
@@ -65,13 +77,20 @@ Board
 
 - Working Days
 - Issue Detail View
-- Portfolio na bazie Kanban Board
-- Scope Changes
-- Otwieranie i zamykanie sprintów
-- Auto assign
-- Flagowanie zadań
-- Quick Filters dla Daily
 
+
+Portfolio
+=========
+- Portfolio na bazie Kanban Board
+
+.. figure:: img/agile-epic-decomposition-19-portfolio.jpg
+.. figure:: img/agile-epic-decomposition-18-risk.jpg
+
+
+Cloud
+=====
+.. figure:: img/jira-board-roadmap.png
+.. figure:: img/jira-board-features.png
 
 
 Assignments
@@ -96,8 +115,8 @@ Board Configuration Columns
 
     - Dodaj kolumnę `Blocked` w `Category` -> `In Progress`
     - Dodaj status `Rejected` w `Category` -> `Done` do kolumny `Done` i zaznacz `Set resolution`
-    - Column Constraints `Issue Count, excluding sub-tasks
-    - W kolumnie `Blocked` -> `Max` ustaw na: `2
+    - Column Constraints `Issue Count`, excluding sub-tasks
+    - W kolumnie `Blocked` -> `Max` ustaw na: `2`
     - W kolumnie `In Progress` -> `Min` ustaw na: `1`
     - Zaznacz `Days in column`
 
@@ -127,9 +146,9 @@ Board Configuration Card Colors
 #. Zakładka `Card colours`:
 
     - Zmień `Colours based on` -> `Priorities`
-    - Zmień kolor `Highest` oraz `High` na czerwony (FF0000)
-    - Zmień kolor `Medium` na żółty (FFFF00)
-    - Zmień kolor `Low` oraz `Lowest` na zielony (00FF00)
+    - Zmień kolor `Highest` oraz `High` na czerwony (`FF0000`)
+    - Zmień kolor `Medium` na żółty (`FFFF00`)
+    - Zmień kolor `Low` oraz `Lowest` na zielony (`00FF00`)
 
 Board Configuration Card Layout
 -------------------------------
@@ -180,9 +199,9 @@ Board Configuration Issue Detail View
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Issue Detail View`:
 
-    - Sekcja `General Fields` -> usuń: Status, Priority, Labels, Affects Version/s
-    - Sekcja `Date Fields` -> dodaj `Due Date`, usuń: `Created` i `Updated
-    - Sekcja `People` -> usuń `Reporter` i `Assignee
+    - Sekcja `General Fields` -> usuń: `Status`, `Priority`, `Labels`, `Affects Version/s`
+    - Sekcja `Date Fields` -> dodaj `Due Date`, usuń: `Created` i `Updated`
+    - Sekcja `People` -> usuń `Reporter` i `Assignee`
     - Sekcja `Links` -> usuń `Linked Issue`
 
 Board Configuration Active Sprint
