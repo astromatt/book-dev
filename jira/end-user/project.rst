@@ -41,7 +41,20 @@ Versions
 * Roadmap
 * Releases (with Bamboo)
 * Time Tracking Report by Version
-* affectsVersion vs. fixVersion
+
+
+AffectsVersion vs FixVersion
+============================
+Affects Version/s:
+
+    * MyApp 1.0 (assume this is unsupported)
+    * MyApp 2.0
+    * MyApp 3.0
+
+Fix Version/s:
+
+    * MyApp 2.0.1
+    * MyApp 3.0.5
 
 
 Assignments

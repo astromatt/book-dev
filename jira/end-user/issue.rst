@@ -20,22 +20,6 @@ Issue Types
 * Sub-task
 
 
-Affects Version vs Fix Version
-==============================
-Affects Version/s:
-
-    * Windows 95
-    * Windows 98
-    * Windows 2000
-
-Fix Version/s:
-
-    * Windows 98 SE
-    * Windows XP
-    * Windows 7
-    * Windows 10
-
-
 Priority
 ========
 * Highest, High, Medium, Low, Lowest
