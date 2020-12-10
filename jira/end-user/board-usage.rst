@@ -38,18 +38,18 @@ Epic
 ====
 - Brak worków (np. Poprawki błędów)
 - Doważalne (określone w czasie, mają datę początku i końca)
-- Dobre praktyki:
+- Wymagalność:
 
-    - Due Date
-    - Start Date
-    - Assignee
+    - `Due Date`
+    - `Start Date`
+    - `Assignee`
 
-- optymalna długość
-- kategoryzowanie
-- timeline i roadmapa
-- planowanie kwartalne
-- przypisywanie Epiców do wersji
-- board epików
+- Optymalna długość
+- Kategoryzowanie
+- Timeline i roadmapa
+- Planowanie kwartalne
+- Przypisywanie Epiców do wersji
+- Board epików
 - Business Value epików
 
 

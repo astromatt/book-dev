@@ -134,7 +134,7 @@ Complex queries
 .. code-block:: sql
 
     project = "MYPROJECT"
-        AND resolution NOT IN ("Fixed", "Won't Fix")
+        AND resolution NOT IN ("Done", "Won't Do")
 
 Functions
 ---------
@@ -239,7 +239,7 @@ Queries in History
 
 .. code-block:: sql
 
-    due >= 2000-01-01 AND due <= 2000-01-31
+    due >= "2000-01-01" AND due <= "2000-01-31"
 
 .. code-block:: sql
 
@@ -260,19 +260,19 @@ Queries in History
 
 .. code-block:: sql
 
-    status WAS NOT "In Progress" BEFORE "2000/01/01"
+    status WAS NOT "In Progress" BEFORE "2000-01-01"
 
 .. code-block:: sql
 
-    status WAS NOT IN ("Done", "Rejected") BEFORE "2000/01/01"
+    status WAS NOT IN ("Done", "Rejected") BEFORE "2000-01-01"
 
 .. code-block:: sql
 
-    status WAS "Resolved" BY "admin" BEFORE "2000/01/01"
+    status WAS "Resolved" BY "admin" BEFORE "2000-01-01"
 
 .. code-block:: sql
 
-    status WAS "Resolved" BY "admin" DURING ("2000/01/01", "2000/01/31")
+    status WAS "Resolved" BY "admin" DURING ("2000-01-01", "2000-01-31")
 
 .. code-block:: sql
 
@@ -397,8 +397,8 @@ JQL Search Basic
 #. `Status` -> `In Progress` oraz `Blocked`
 #. More -> `Due Date` -> `Now Overdue`
 #. Zmień zakres `Due Date` -> od `1/Jan/00` do `31/Jan/00`
-#. Zmień zakres `Due Date` -> Due in next 8 hours or is overdue
-#. Zmień zakres `Due Date` -> In range -7d to ... [pozostaw niewypełnione]
+#. Zmień zakres `Due Date` -> `Due in next 8 hours or is overdue`
+#. Zmień zakres `Due Date` -> `In range -7d to ...`` [pozostaw niewypełnione]
 
 JQL Search Advanced
 -------------------
@@ -411,18 +411,18 @@ JQL Search Advanced
 #. Z listy wybierz nazwę swojego projektu (można najechać i kliknąć myszką)
 #. Klikamy enter aby wyszukać, powinno nam to wyświetlić wszystkie zadania z naszego projektu
 #. Kliknij w pole wyszukiwania i po fragmencie, który wcześniej był wpisany dodaj spację i zobacz co Ci podpowiada
-#. Wybierz ``AND`` i zacznij pisać status -> mamy dwie opcje do wyboru: status i statusCategory
-#. Wybierz statusCategory -> następnie równa się ``=`` -> `In Progress` i klikamy enter aby wyszukać zadania
+#. Wybierz ``AND`` i zacznij pisać `status` -> mamy dwie opcje do wyboru: `status` i `statusCategory`
+#. Wybierz `statusCategory` -> następnie równa się ``=`` -> `In Progress` i klikamy enter aby wyszukać zadania
 #. Edytuj zapytanie i dopisz na koniec: `Epic Link` -> równa się ``=`` -> wybrać Epic `Wyszukiwarka`, ale z Twojego projektu
 #. Wyczyść zapytanie
-#. w poniższych zapytaniach MYPROJECT zamień na klucz swojego projektu
+#. w poniższych zapytaniach `MYPROJECT` zamień na klucz swojego projektu
 #. Wyszukaj: ``project = MYPROJECT AND fixVersion = earliestUnreleasedVersion()``
 #. Wyszukaj: ``assignee = currentUser() and statusCategory != Done``
 
 JQL Search Bulk Change
 ----------------------
 #. Z menu `Issues` wybrać `Search for Issues` w trybie Advanced
-#. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie MYPROJECT to nazwa Twojego projektu)
+#. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie `MYPROJECT` to nazwa Twojego projektu)
 #. Przycisk `Tools` (po prawej u góry) -> `Bulk Change` -> `all X issue(s)`
 #. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)
 #. Kliknij przycisk `Next` -> `Edit Issues` -> `Next`

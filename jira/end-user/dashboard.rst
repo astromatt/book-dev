@@ -124,6 +124,6 @@ Dashboard Many
 #. Create new dashboard (przycisk u góry po prawej)
 #. Name `Imię Team Dashboard` (gdzie Imię, to Twoje imię)
 #. Start from `Imię Dashboard`
-#. Add Viewers -> Project -> Twój Projekt -> Developers -> `+ Add`
-#. Add Viewers -> Project -> Twój Projekt -> Administrators -> `+ Add`
+#. `Add Viewers` -> `Project` -> Twój Projekt -> `Developers` -> `+ Add`
+#. `Add Viewers` -> `Project` -> Twój Projekt -> `Administrators` -> `+ Add`
 #. Kliknij przycisk `Add`

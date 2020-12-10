@@ -5,42 +5,41 @@ Issue
 
 Rationale
 =========
-* Create Issue
-* View Issue
-* Edit Issue
-* Show Issue on Backlog
+* `Create Issue`
+* `View Issue`
+* `Edit Issue`
+* `Show Issue on Backlog`
 
 
 Issue Types
 ===========
-* Bug
-* Task
-* Story
-* Epic
-* Sub-task
+* `Bug`
+* `Task`
+* `Story`
+* `Epic`
+* `Sub-task`
 
 
 Priority
 ========
-* Highest, High, Medium, Low, Lowest
-* [MoSCoW] Must, Should, Could, Won't
-* Must, Should, Could
-* Blocker, Highest, High, Medium, Low
-* Urgent, Important, Standard
-* Important, Normal
-* Important, Normal, Someday/Maybe
-* Expedite, Standard
-* DEFCON-1, DEFCON-2, DEFCON-3
+* `Highest`, `High`, `Medium`, `Low`, `Lowest`
+* `Blocker`, `Highest`, `High`, `Medium`, `Low`
+* MoSCoW: `Must`, `Should`, `Could`, `Won't`
+* `Must`, `Should`, `Could`
+* `Important`, `Normal`
+* `Expedite`, `Standard`
+* `Urgent`, `Important`, `Standard`
 
 
 Description
 ===========
 - Kryteria akceptacyjne
-- Sekcja w description: INFO
-- Sekcja w description: BEFORE
-- Sekcja w description: TODO
-- Sekcja w description: AFTER
+- Sekcja w description: *INFO*
+- Sekcja w description: *BEFORE*
+- Sekcja w description: *TODO*
+- Sekcja w description: *AFTER*
 - używanie (/) i (x)
+
 
 Date Fields
 ===========
@@ -48,6 +47,7 @@ Date Fields
 * `Updated Date`
 * `Due Date`
 * `Start Date` (Jira Cloud)
+
 
 Other Fields
 ============

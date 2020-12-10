@@ -6,11 +6,8 @@ Board Reports
 Rationale
 =========
 .. figure:: img/jira-report-select-1.png
-.. figure:: img/jira-report-select-2.png
-.. figure:: img/jira-report-select-3.png
-.. figure:: img/jira-report-select-4.jpg
-.. figure:: img/jira-report-select-kanban.png
 .. figure:: img/jira-report-select-scrum.png
+.. figure:: img/jira-report-select-kanban.png
 
 
 Burn-down Chart

@@ -5,37 +5,35 @@ Issue Actions
 
 Statusy
 =======
-* To Do
-* In Progress
-* Done
-* In Review
-* Waiting / Blocked
-* In Test
+* `To Do`
+* `In Progress`
+* `Done`
+* `In Review`
+* `Waiting / Blocked`
+* `In Test`
 
 
 Resolutions
 ===========
-* Fixed
-* Won't Fix
-* Duplicate
-* Cannot Reproduce
-* Incomplete
-* [Jira Agile] -> Done
+* `Done`
+* `Won't Do`
+* `Duplicate`
+* `Cannot Reproduce`
 
 
 Issue Actions
 =============
-* Workflow Actions (Open, In Progress, Done)
-* Voting
-* Watching
-* Add Attachments
-* Clone
-* Move
-* Create subtask
-* Delete (kiedy?)
-* Log Work
-* Keyboard Shortcuts
-* Comment
+* `Workflow Actions` (`Open`, `In Progress`, `Done`)
+* `Voting`
+* `Watching`
+* `Add Attachments`
+* `Clone`
+* `Move`
+* `Create subtask`
+* `Delete` (kiedy?)
+* `Log Work`
+* `Keyboard Shortcuts`
+* `Comment`
 
     - Mentions
     - Rich Text Editing
@@ -45,15 +43,14 @@ Issue Actions
 
 Time Reporting
 ==============
-* Original Time Estimate
-* Remaining Time
-* Log Work
+* `Original Time Estimate`
+* `Remaining Time`
+* `Log Work`
 * Reports
-* Monte Carlo Estimation:
 
-    * https://www.infoq.com/presentations/monte-carlo/
-    * https://docs.google.com/spreadsheets/d/1BmSuj1jA2ZfhUBzPtqDBqDjMjSXMqj3QoHZGR-TesOA/edit#gid=542217325
-    * Roadmaps: Start Date, Due Date
+.. figure:: img/jira-report-timetracking-1.png
+.. figure:: img/jira-report-timetracking-2.png
+.. figure:: img/jira-report-timetracking-3.png
 
 
 Assignments
@@ -74,7 +71,7 @@ Issue Log Work
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
 #. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
 #. Wybierz z menu trzech kropek `...` (u góry) -> Log Work
-#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka `.` -> Log Work
+#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka `.` -> `Log Work`
 
 Issue Clone
 -----------

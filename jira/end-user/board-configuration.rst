@@ -11,17 +11,11 @@ Board vs. Project
 - Wiele boardów do jednego projektu (różne estymaty)
 - Wiele projektów czy wiele boardów (np. po komponentach)?
 
-
 .. figure:: img/jira-board-vs-project-1.png
-
 .. figure:: img/jira-board-vs-project-2.png
-
 .. figure:: img/jira-board-vs-project-3.png
-
 .. figure:: img/jira-board-vs-project-4.png
-
 .. figure:: img/jira-board-vs-project-5.png
-
 .. figure:: img/jira-board-vs-project-6.png
 
 
@@ -83,8 +77,8 @@ Portfolio
 =========
 - Portfolio na bazie Kanban Board
 
-.. figure:: img/agile-epic-decomposition-19-portfolio.jpg
 .. figure:: img/agile-epic-decomposition-18-risk.jpg
+.. figure:: img/agile-epic-decomposition-19-portfolio.jpg
 
 
 Cloud
