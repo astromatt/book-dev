@@ -8,6 +8,7 @@ Rationale
 - Issue Tracker
 - Jira
 
+.. figure:: img/agile-wheel-2.png
 
 Project
 =======
@@ -37,12 +38,12 @@ Assignments
 
 Basics Project Create
 ---------------------
-#. Z menu u góry wybierz "Projects" -> "View Projects"
-#. Kliknij przycisk "Create Projects" (prawy górny róg)
-#. Kliknij przycisk "Scrum software development" -> Next
+#. Z menu u góry wybierz `Projects` -> `View Projects`
+#. Kliknij przycisk `Create Projects` (prawy górny róg)
+#. Kliknij przycisk `Scrum software development` -> Next
 #. Ustaw:
 
-    - Project name: wpisz swoje imię i pierwszą literę nazwiska, np. "Jan T", "Mark W", "Melissa L", "Matt K"
+    - Project name: wpisz swoje imię i pierwszą literę nazwiska, np. `Jan T`, `Mark W`, `Melissa L`, `Matt K`
     - Project key: pozostaw tak jak Jira zasugerowała
     - Project Lead: ustaw siebie
 
@@ -50,24 +51,26 @@ Basics Project Create
 
 Basics Issue Create
 -------------------
-#. Z menu u góry kliknij przycisk "Create"
+#. Z menu u góry kliknij przycisk `Create`
 #. Dodaj zadanie:
 
     - Project: Twój project
-    - Issue Type: "Story"
-    - Summary: "One"
+    - Issue Type: `Story`
+    - Summary: `One`
 
 Basics Issue Create in Backlog
 ------------------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Dodaj zadania do backlog: "Two", "Three", "Four", "Five", "Six"
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Dodaj zadania do backlog: `Two`, `Three`, `Four`, `Five`, `Six`
 
 Basics Issue Split
 ------------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Kliknij prawym klawiszem myszy na zadanie "Six" -> "Split Issue"
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Kliknij prawym klawiszem myszy na zadanie `Six` -> `Split Issue`
 
-    - "Six"
-    - "Seven"
-    - "Eight"
-    - "Nine"
+    - `Six`
+    - `Seven`
+    - `Eight`
+    - `Nine`
+
+#. Zwróć uwagę, że trzeba kliknąć prawym klawiszem myszy na zadaniu w backlog (na jego treści, a nie kluczu)

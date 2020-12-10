@@ -20,3 +20,7 @@ Requirements Access
 -------------------
 #. Wejdź na stronę Jiry na adres podany przez prowadzącego
 #. Zaloguj się wykorzystując swoje imię jako login i hasło (bez polskich znaków i z małej litery)
+
+Requirements Admin
+------------------
+#. Poproś trenera o nadanie uprawnień administracyjnych w Jirze

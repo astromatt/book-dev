@@ -48,22 +48,42 @@ Assignments
 ===========
 
 
-Project Settings
+Project Details
+---------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Zakładka `Details` -> zmień awatar swojego projektu na rakietę
+#. Zakładka `Details` -> zmień nazwę swojego projektu na `Imię N.` (z kropką na końcu)
+
+Project Components
+------------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Przejdź na zakładkę `Components`
+#. Dodaj: `Frontend`, `Backend`, `Database`
+#. Aby przycisk `Add` stał się aktywny musisz:
+    * dodać komponent należy wpisać jego nazwę (w polu po lewej)
+    * z ostatniej listy rozwijanej (po prawej przy zaraz koło przycisku add) wybrać jedną z opcji np. `Unassigned`
+
+Project Versions
 ----------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Przejdź do "Project Settings" (przycisk w menu na dole po lewej)
-#. Zakładka "Components" -> dodaj: "Frontend", "Backend", "Database"
-#. Zakładka "Versions" -> dodaj: "2000-07", "2000-08", "2000-09", "2000-10", "2000-11", "2000-12"
-#. Zakładka "Versions" -> dodaj: "2001-Q1", "2001-Q2", "2001-Q3", "2001-Q4"
-#. Zakładka "Versions" -> dodaj: "2002", "2003", "2004"
-#. Zakładka "Users and roles" -> dodaj siebie do roli "Administrators", dodaj użytkownika "admin" do roli "Developers"
-#. Zakładka "Details" -> zmień awatar swojego projektu na rakietę
-#. Zakładka "Details" -> zmień nazwę swojego projektu na "Imię N." (z kropką na końcu)
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Przejdź na zakładkę `Versions`
+#. Dodając wersje w tym zadaniu nie musisz ustawiać dat rozpoczęcia i zakończenia
+#. Możesz dodać wersje z dzisiejszą datą, ale dla uproszczenia w zadaniach, a później w JQL i filtrach będę stosował konwencję z rokiem `2000`
+#. Dodaj: `2000-07`, `2000-08`, `2000-09`, `2000-10`, `2000-11`, `2000-12`
+#. Dodaj: `2001-Q1`, `2001-Q2`, `2001-Q3`, `2001-Q4`
+#. Dodaj: `2002`, `2003`, `2004`
+
+Project Roles
+-------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Przejdź na zakładkę `Users and roles`
+#. Dodaj siebie do roli `Administrators`
+#. Dodaj użytkownika `admin` do roli `Developers`
 
 Project Fields
 --------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Przejdź do "Project Settings" (przycisk w menu na dole po lewej)
-#. Zakładka "Issue Types" -> Task -> przycisk "Fields" (górny prawy róg) -> dodaj pole "Due Date", usuń pole "Labels"
-#. Zakładka "Issue Types" -> Story -> przycisk "Fields" (górny prawy róg) -> dodaj nową zakładkę "Estimate", dodaj na niej pole "Time Tracking" oraz "Story Points"
-#. Zwróć uwagę, że ta zakładka pojawiła się w prawie każdym Issue Type (poza Bug)
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Przejdź na zakładkę `Issue Types`:
+#. Wybierz `Task` -> przycisk `Fields` (górny prawy róg) -> dodaj pole `Due Date`, usuń pole `Labels`
+#. Wybierz `Story` -> przycisk `Fields` (górny prawy róg) -> dodaj nową zakładkę `Estimate` , dodaj na niej pole `Time Tracking` oraz `Story Points`; pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka; dodaje się poprzez kliknięcie na znak `(+)`
+#. Zwróć uwagę, że ta zakładka pojawiła się w prawie każdym `Issue Type` (poza `Bug`)

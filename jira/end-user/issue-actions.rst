@@ -64,28 +64,28 @@ Issue Attachment
 * Obrazek: :download:`download/image.png`
 * Archiwum: :download:`download/archive.zip`
 
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Edytuj zadanie "One"
-#. Do zadania dodaj załączniki: obrazek ".png " oraz archiwum ".zip" z dwoma plikami tekstowymi
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Edytuj zadanie `One`
+#. Do zadania dodaj załączniki: obrazek `.png ` oraz archiwum `.zip` z dwoma plikami tekstowymi
 #. Zwróć uwagę, że aby dodawać załączniki do Jiry, ich obsługa musi być włączona w panelu administracyjnym
 
 Issue Log Work
 --------------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
 #. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
-#. Wybierz z menu trzech kropek "..." (u góry) -> Log Work
-#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka "." -> Log Work
+#. Wybierz z menu trzech kropek `...` (u góry) -> Log Work
+#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka `.` -> Log Work
 
 Issue Clone
 -----------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Sklonuj zadanie "One"
-#. Nowe zadanie nazwij "Ten"
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Sklonuj zadanie `One`
+#. Nowe zadanie nazwij `Ten`
 
 Issue Move
 ----------
-#. Z menu u góry wybierz "Boards" -> Twój Board -> "Backlog"
-#. Wybierz zadanie "Ten"
-#. Z karty zadania po prawej stronie wybierz menu trzy kropki "..." (po prawej u góry)
-#. Z menu wybierz "More Actions" -> wpisz "Move"
-#. Przenieś zadanie do projektu "SCRUM"
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Wybierz zadanie `Ten`
+#. Z karty zadania po prawej stronie wybierz menu trzy kropki `...` (po prawej u góry)
+#. Z menu wybierz `More Actions` -> wpisz `Move`
+#. Przenieś zadanie do projektu `SCRUM`
