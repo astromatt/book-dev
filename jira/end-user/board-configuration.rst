@@ -200,9 +200,9 @@ Board Configuration Issue Detail View
 
 Board Configuration Active Sprint
 ---------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
-#. Z menu `Board` (prawy górny róg) -> `Configure`
-#. Wróć na `Boards` -> Twój Board -> `Active Sprint`:
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Wystartuj sprint `2000-01 week 2`
+#. Przejdź na `Boards` -> Twój Board -> `Active Sprint`:
 
     - Usuń wszystkie zadania z kolumny `In Progress` (powinna podświetlić się na żółto)
     - Dodaj trzy zadania do kolumny `Blocked` (powinna podświetlić się na czerwono)
