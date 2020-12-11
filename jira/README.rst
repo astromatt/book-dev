@@ -19,7 +19,7 @@ Jira with Atlassian Ecosystem
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
 .. tip::
-    * This book is free and open source at https://dev.astrotech.io
+    * This book is free and open source at https://jira.astrotech.io
     * For consulting or training course requests please email book@astronaut.center
 
 .. csv-table:: Other books from author

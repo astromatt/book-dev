@@ -148,9 +148,11 @@ Board Usage Estimation
 ----------------------
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
 #. W detail view zadania `One` -> okienko `Estimate` ustaw 3 (lub pole `Story Point` przy edycji zadania)
-#. W detail view zadania `Two` -> okienko `Estimate` ustaw 8 (lub pole `Story Point` przy edycji zadania)
 #. W detail view zadania `Three` -> okienko `Estimate` ustaw 4 (lub pole `Story Point` przy edycji zadania)
-#. Zobacz kolorowe kółka z estymacjami w nagłówku sprintu: `To Do`, `In Progress`, `Done`
+#. W detail view zadania `Five` -> okienko `Estimate` ustaw 8 (lub pole `Story Point` przy edycji zadania)
+#. Zwróć uwagę, że estymować można tylko zadania typu `Story`
+
+.. note:: Story Points (jak sama nazwa wskazuje) domyślnie mogą być przyznawane tylko zadaniom typu `Story`. Można to zmienić w konfiguracji (wymaga uprawnień administratora) `Custom Field` -> `Story Points` -> Ikona trybiku (po prawej) -> `Configure` -> `Applicable contexts for scheme` -> `Edit Configuration`.
 
 Board Usage Sprint Create
 -------------------------
@@ -178,6 +180,8 @@ Board Usage Sprint Start
     - Duration: `1 week`
     - Start Date: `1/Jan/00 09:00 AM`
 
+#. Co oznaczają wartości z estymacjami w nagłówku sprintu: `To Do`, `In Progress`, `Done` (w rozpoczętym sprincie, na ekranie `Backlog` w prawym górnym rogu - trzy kolorowe owale).
+
 Board Usage Sprint Work
 -----------------------
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
@@ -192,6 +196,8 @@ Board Usage Sprint Work
 
     - Wybierz `Hide detail view`
     - Wybierz `Print cards` i zmień `Card size` -> `small`
+
+#. Zobacz jak zmieniły się wartości z estymacjami w nagłówku sprintu: `To Do`, `In Progress`, `Done` (w rozpoczętym sprincie, na ekranie `Backlog` w prawym górnym rogu - trzy kolorowe owale).
 
 Board Usage Sprint Close
 ------------------------
