@@ -96,7 +96,7 @@ Board Configuration General
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `General`:
 
-    - Usuń administratora `admin@example.com`
+    - Dodaj administratora `admin@example.com`
     - Zwróć uwagę na `Edit Filter Shares`, `View Permissions`
     - Osoby które mają uprawnienia do `Filter` będą widziały i mogły otworzyć Board
     - To nie znaczy, że będę widziały zadania (to wymaga uprawnień w projekcie)
