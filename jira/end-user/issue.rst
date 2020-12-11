@@ -34,10 +34,10 @@ Priority
 Description
 ===========
 - Kryteria akceptacyjne
-- Sekcja w description: *INFO*
-- Sekcja w description: *BEFORE*
-- Sekcja w description: *TODO*
-- Sekcja w description: *AFTER*
+- Sekcja w description: **INFO**
+- Sekcja w description: **BEFORE**
+- Sekcja w description: **TODO**
+- Sekcja w description: **AFTER**
 - używanie (/) i (x)
 
 

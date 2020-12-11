@@ -137,6 +137,10 @@ Use Cases
 
     dev
 
+.. figure:: img/jira-workflow-epics.png
+
+    Epics
+
 .. figure:: img/jira-workflow-feedback.png
 
     feedback
@@ -192,6 +196,10 @@ Use Cases
 .. figure:: img/jira-workflow-simplified.png
 
     simplified
+
+.. figure:: img/jira-workflow-simplified,dev.png
+
+    simplified dev
 
 .. figure:: img/jira-workflow-support.png
 

@@ -72,6 +72,9 @@ Board
 - Working Days
 - Issue Detail View
 
+.. figure:: img/jira-board-daysincolumn.png
+
+    Days in Column
 
 Portfolio
 =========

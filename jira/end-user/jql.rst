@@ -5,10 +5,12 @@ JQL - JIRA Query Language
 
 Where to find?
 ==============
-* Issues -> Search for Issues
+* `Issues` -> `Search for Issues`
 
-    * Basic -> Advanced
-    * Detail View -> List View
+    * `Basic` -> `Advanced`
+    * `Detail View` -> `List View`
+
+- Konfiguracja kolumn wyświetlania
 
 
 Where is used?
@@ -44,13 +46,13 @@ Operators
 
 View
 ====
-- Konfiguracja Kolumn wyszukiwania
+- Konfiguracja kolumn wyświetlania
 - Import / Export CSV
 
     - All fields
     - current fields
 
-- Limit wyświetlania wyników dla JQL (change: General Configuration -> Advanced Settings -> ``jira.search.views.default.max``)
+- Limit wyświetlania wyników dla JQL (change: `General Configuration` -> `Advanced Settings` -> ``jira.search.views.default.max``)
 
 
 JQL Examples
@@ -78,6 +80,18 @@ Select issues
 .. code-block:: sql
 
     summary ~ "Hello"
+
+.. code-block:: sql
+
+    summary ~ "Hell*"
+
+.. code-block:: sql
+
+    summary ~ "*ell"
+
+.. code-block:: sql
+
+    summary ~ "*ell*"
 
 .. code-block:: sql
 
@@ -135,6 +149,15 @@ Complex queries
 
     project = "MYPROJECT"
         AND resolution NOT IN ("Done", "Won't Do")
+
+.. code-block:: sql
+
+    project = "MYPROJECT"
+        AND assignee = "admin"
+        AND (Flagged IS NOT EMPTY
+             OR updated >= -1d
+             OR statusCategory = "In Progress")
+
 
 Functions
 ---------
@@ -294,11 +317,58 @@ Queries in History
 
 .. code-block:: sql
 
-    priority CHANGED BY "admin" BEFORE endOfWeek() AFTER startOfWeek()
+    priority CHANGED BY "admin"
 
 .. code-block:: sql
 
-    status CHANGED FROM "In Progress" TO "Open"
+    priority CHANGED BY "admin" AFTER startOfWeek()
+
+.. code-block:: sql
+
+    priority CHANGED BY "admin" AFTER startOfWeek() BEFORE endOfWeek()
+
+.. code-block:: sql
+
+    priority CHANGED BY "admin" DURING ("2000-01-01", "2000-01-31")
+
+.. code-block:: sql
+
+    status CHANGED
+        FROM "In Progress"
+        TO "Open"
+
+.. code-block:: sql
+
+    status CHANGED
+        FROM "In Progress"
+        TO "Open"
+        BY "admin"
+
+.. code-block:: sql
+
+    status CHANGED
+        FROM "In Progress"
+        TO "Open"
+        BY "admin"
+        DURING ("2000-01-01", "2000-01-31")
+
+.. code-block:: sql
+
+    status CHANGED
+        FROM "In Progress"
+        TO "Open"
+        BY "admin"
+        AFTER startOfWeek()
+        BEFORE endOfWeek()
+
+.. code-block:: sql
+
+    status CHANGED
+        FROM "In Progress"
+        TO "Open"
+        BY membersOf("jira-administrators")
+        AFTER startOfWeek()
+        BEFORE endOfWeek()
 
 
 Useful Queries
@@ -371,7 +441,7 @@ Daily
 
 More info
 =========
-* https://confluence.atlassian.com/jira064/advanced-searching-720416661.html
+* https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-939938733.html
 * https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html
 
 

@@ -15,6 +15,10 @@ Rationale
 
 - Współdzielenie
 
+.. figure:: img/jira-filter-share-before.png
+.. figure:: img/jira-filter-share-after.png
+.. figure:: img/jira-filter-share-confirm.png
+
 
 Assignments
 ===========
@@ -70,6 +74,7 @@ Filter Subscription Delete
 #. Wybierz filtr z aktywną subskrypcją
 #. Kliknij na link `1 Subscription`
 #. Wybierz Actions `Delete` (po prawej)
+#. Uwaga: usuń tylko subskrypcję a nie filtr! - będziemy z niego jeszcze korzystać
 
 Filter Edit
 -----------
@@ -108,6 +113,7 @@ Filter Board
 #. Zmień w zadaniach `Four` oraz `Seven` priorytet na `Highest` (zadania powinno pojawić się w Swimlane `Must`)
 #. Zmień w zadaniach `Nine` oraz `Eight` priorytet na `Lowest` (zadania powinno pojawić się w Swimlane `Could`)
 #. Zwiń zadania które są w Swimlane `Could`, przez kliknięcie strzałeczki obok nazwy `Could`
+#. Pamiętaj, że aby zadania wyświetlały się na Twoim boardzie, muszą być do Ciebie przypisane! (Ty musisz być ustawiony jako assignee)
 
 Filter Board Edit
 -----------------

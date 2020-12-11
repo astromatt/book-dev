@@ -5,7 +5,9 @@ Board Reports
 
 Rationale
 =========
-.. figure:: img/jira-report-select-1.png
+.. figure:: img/jira-report-select-agile.png
+.. figure:: img/jira-report-select-issueanalysis.png
+.. figure:: img/jira-report-select-mgmt.png
 .. figure:: img/jira-report-select-scrum.png
 .. figure:: img/jira-report-select-kanban.png
 
