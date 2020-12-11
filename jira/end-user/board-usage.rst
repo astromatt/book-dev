@@ -152,7 +152,7 @@ Board Usage Estimation
 #. W detail view zadania `Five` -> okienko `Estimate` ustaw 8 (lub pole `Story Point` przy edycji zadania)
 #. Zwróć uwagę, że estymować można tylko zadania typu `Story`
 
-.. note:: Story Points (jak sama nazwa wskazuje) domyślnie mogą być przyznawane tylko zadaniom typu `Story`. Można to zmienić w konfiguracji (wymaga uprawnień administratora) `Custom Field` -> `Story Points` -> Ikona trybiku (po prawej) -> `Configure` -> `Applicable contexts for scheme` -> `Edit Configuration`.
+.. note:: `Story Points` (jak sama nazwa wskazuje) domyślnie mogą być przyznawane tylko zadaniom typu `Story`. Można to zmienić w konfiguracji (wymaga uprawnień administratora) `Custom Field` -> `Story Points` -> Ikona trybiku (po prawej) -> `Configure` -> `Applicable contexts for scheme` -> `Edit Configuration`.
 
 Board Usage Sprint Create
 -------------------------
@@ -176,9 +176,9 @@ Board Usage Sprint Start
 #. Przejedź suwakiem i dodaj `Four`, `Five`, `Six`, zwróć uwagę na zmiany liczb w okienku `Issues` i `Estimate`
 #. Wystartuj sprint ustawiając:
 
-    - Goal: `Ukończenie szkolenia z Jiry`
-    - Duration: `1 week`
-    - Start Date: `1/Jan/00 09:00 AM`
+    - `Goal`: `Ukończenie szkolenia z Jiry`
+    - `Duration`: `1 week`
+    - `Start Date`: `1/Jan/00 09:00 AM`
 
 #. Co oznaczają wartości z estymacjami w nagłówku sprintu: `To Do`, `In Progress`, `Done` (w rozpoczętym sprincie, na ekranie `Backlog` w prawym górnym rogu - trzy kolorowe owale).
 

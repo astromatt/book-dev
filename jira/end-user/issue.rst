@@ -158,7 +158,7 @@ Issue Bulk Change
 #. Po chwili klikamy `Refresh`
 #. Po ukończeniu klikamy `Ok, got it`
 
-.. note:: Zwróć uwagę, że po zmianie część zadań w backlog nie ma estymacji w Story Pointach. Te wartości nie zniknęły i są nadal przypisane do zadania, ale na obecnym widoku są ukryte. Story Points (jak sama nazwa wskazuje) domyślnie mogą być przyznawane tylko zadaniom typu `Story`. Można to zmienić w konfiguracji (wymaga uprawnień administratora) `Custom Field` -> `Story Points` -> Ikona trybiku (po prawej) -> `Configure` -> `Applicable contexts for scheme` -> `Edit Configuration`.
+.. note:: Zwróć uwagę, że po zmianie część zadań w backlog nie ma estymacji w `Story Point`. Te wartości nie zniknęły i są nadal przypisane do zadania, ale na obecnym widoku są ukryte. `Story Points` (jak sama nazwa wskazuje) domyślnie mogą być przyznawane tylko zadaniom typu `Story`. Można to zmienić w konfiguracji (wymaga uprawnień administratora) `Custom Field` -> `Story Points` -> Ikona trybiku (po prawej) -> `Configure` -> `Applicable contexts for scheme` -> `Edit Configuration`.
 
 Issue Links
 -----------
