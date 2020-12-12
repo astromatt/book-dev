@@ -73,7 +73,7 @@ import subprocess
 import sys
 from datetime import date
 
-needs_sphinx = '3.0'
+needs_sphinx = '3.3'
 
 imgmath_image_format = 'png'
 imgmath_latex = 'latex'
@@ -122,6 +122,22 @@ pygments_style = 'borland'
 autodoc_typehints = "description"
 autosectionlabel_maxdepth = 4
 
+bibtex_bibliography_header = ".. rubric:: References"
+bibtex_footbibliography_header = bibtex_bibliography_header
+bibtex_default_style = 'alpha'
+bibtex_bibfiles = [
+    '_references/bibliography.bib',
+    '_references/images.bib',
+    '_references/video.bib',
+    'numpy/_references/bibliography.bib',
+    'stdlib/_references/bibliography.bib',
+]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
+
 sys.path.insert(0, os.path.abspath('_extensions'))
 
 extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
@@ -131,14 +147,15 @@ extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%
 # 2 - sequence number of image in header level 2
 #       will use x.1, x.2, … if located directly under a header level 1,
 #       will use 1, 2, … if at the document level
-numfig_secnum_depth = 0
+# etc...
+numfig_secnum_depth = 1
 numfig = True
 smartquotes = False
 numfig_format = {
     'section': 'Section %s.',
     'figure': 'Figure %s.',
     'table': 'Table %s.',
-    'code-block': 'Listing %s.'}
+    'code-block': 'Code %s.'}
 
 project_slug = re.sub(r'[\W]+', '', project)
 sha1 = subprocess.run('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True, encoding='utf-8').stdout.strip()
@@ -162,8 +179,11 @@ html_copy_source = False
 
 if html_theme == 'sphinx_rtd_theme':
     html_context.update({
-        'css_files': ['_static/light.css', '_static/print.css'],
-        'script_files': ['_static/jquery.min.js', '_static/onload.js', mathjax_path]})
+        'css_files': ['_static/light.css',
+                      '_static/print.css'],
+        'script_files': ['_static/jquery.min.js',
+                         '_static/onload.js',
+                         mathjax_path]})
 
 if html_theme == 'thesis':
     html_context.update({
