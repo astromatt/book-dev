@@ -17,4 +17,8 @@
 
 .. toctree::
 
+    /devops/ssh.rst
+
+.. toctree::
+
     /summary/index.rst

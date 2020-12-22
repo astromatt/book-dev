@@ -562,6 +562,12 @@ Docker Hub
         $ docker run myusername/myimg
 
 
+Use Cases
+=========
+* https://github.com/docker-library/python
+* https://github.com/docker-library/gcc
+
+
 Assignments
 ===========
 

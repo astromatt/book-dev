@@ -40,6 +40,11 @@ Design Philosophy
 #. Efficient Storage
 
 
+Use Cases
+=========
+* https://www.gitops.tech
+
+
 Assignments
 ===========
 

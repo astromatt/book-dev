@@ -173,6 +173,12 @@ Limiting resources
 * https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
 
 
+Use Cases
+=========
+* https://12factor.net
+* https://www.gitops.tech
+
+
 Assignments
 ===========
 

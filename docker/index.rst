@@ -8,8 +8,8 @@ Docker Basics
     :numbered:
     :caption: Docker Basics
 
-    basics/install.rst
     basics/about.rst
+    basics/install.rst
     basics/cli.rst
 
 *****************

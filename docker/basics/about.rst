@@ -38,6 +38,7 @@ Docker image vs container
     Container
         Running instance of an image
 
+
 Layers
 ======
 .. glossary::
