@@ -209,3 +209,34 @@ CI/CD
 =====
 .. figure:: img/devops-ecosystem.png
 .. figure:: img/devops-cicd.png
+
+
+Jira Workflow Triggers
+======================
+* Bitbucket:
+
+    * Pull request created
+    * Pull request merged
+    * Pull request declined
+    * Pull request reopened
+    * Branch created
+    * Commit created
+
+Bamboo:
+
+    * Deployment successful
+    * Deployment failed
+
+Crucible:
+
+    * Review started
+    * Review abandoned
+    * Review submitted for approval
+    * Review closed
+    * Review rejected
+    * Review summarized
+
+.. figure:: img/jira-workflow-simplified,triggers.png
+.. figure:: img/jira-triggers-1.png
+.. figure:: img/jira-triggers-2.png
+.. figure:: img/jira-triggers-3.png
