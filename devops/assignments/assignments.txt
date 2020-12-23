@@ -661,6 +661,9 @@ Wchodzimy na ekran z podsumowaniem wyniku budowania -> Stage Build -> Rozwiń kr
 docker exec -it -u root jenkins ls /root/.m2
 Jenkins - Backup
 sudo tar zcf /home/jenkins.tar.gz /home/jenkins/
+du -hs /home/jenkins.tar.gz
+"rm -fr /home/jenkins.tar.gz
+# Skasuj plik, aby nie przeszkadzał nam w przyszłości"
 SonarQube - instalacja
 docker network create ecosystem
 docker volume create --name sonarqube_data
@@ -812,6 +815,8 @@ FROM alpine
 RUN apk add --no-cache openjdk8 maven docker
 COPY .m2 /root/.m2
 WORKDIR /data
+
+
 # Klawisz `Esc` a później `:wq`"
 "docker rm $(docker ps -aq)
 # nie przejmuj się błędami, dotyczą informacji, że nie można usunąć działających obrazów (i dobrze)"
@@ -858,6 +863,50 @@ docker build . -t myapp:cicd"
 (powód: niespełnienie Quality Gate - Project does not pass the quality gate.)"
 Zmień w Quality Gate "Technical Debt" na 50
 Uruchom Build ponownie, tym razem powinien przejść
+PITest - uruchamianie manualne
+cd /home/ubuntu/src-java/
+"vim pom.xml
+# Przejście do trybu edycji klawisz `a`
+# W sekcji <project><build><plugins>
+# Dopisz treść:
+
+        <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.6.1</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.pitest</groupId>
+                    <artifactId>pitest-junit5-plugin</artifactId>
+                    <version>0.12</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
+# Klawisz `Esc` a później `:wq`"
+mvn compile
+mvn test
+mvn org.pitest:pitest-maven:mutationCoverage
+git add pom.xml
+git commit -m "Mutation Testing"
+git pull --rebase
+"git push
+# username: root
+# hasło: abcdefghi"
+PITest - SonarQube
+W Administration -> Marketplace -> Wyszukaj pluginu "Mutation Analysis" -> Install
+"Na górze w pasku ""SonarQube needs to be restarted in order to
+install 1 plugins"" -> kliknij restart server -> następnie zaczekaj około minuty i odśwież stronę"
+"W Administration -> Configuration -> General Settings -> z menu po lewej wybierz Mutation Analysis
+Upewnij się, że wszystko jest ok"
+cd /home/ubuntu/src-java/
+docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+Wynik powinien być "EXECUTION SUCCESS"
+"The goal of this plugin is to bring PIT results to SonarQube.
+""Survived mutants"" are seen as SonarQube issues.
+""Killed mutants"" show as a coverage measure in the class containing the mutant.
+If code is not covered by any test, that code will not be mutated; prior test coverage is a precondition for mutation testing.
+Finally, if the percentage of ""Survived mutants"" in a source file exceeds a configurable threshold, the plugin creates a SonarQube issue on the source file."
 
 sudo mkdir -p /home/registry
 sudo chmod 777 /home/registry
