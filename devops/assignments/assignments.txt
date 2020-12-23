@@ -979,8 +979,8 @@ Build powinien się udać"
 - Gitlab: http://<GITLAB_IP>:8000/dashboard/projects
 - wybierz swój projekt
 - Zobacz zawartość pliku `Jenkinsfile`"
-Aby zobaczyć czy image został umieszczony w registry
-curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
+"curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
+# Aby zobaczyć czy image został umieszczony w registry"
 Podsumowanie
 cd /home/ubuntu/src-java/
 "cat Dockerfile
@@ -1051,9 +1051,25 @@ docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner
 docker build . -t localhost:5000/myapp:$(git log -1 --format=""%h"")
 docker push localhost:5000/myapp:$(git log -1 --format=""%h"")
 docker rmi localhost:5000/myapp:$(git log -1 --format=""%h"")"
-
 Jenkins - optymalizacja cache
 Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
 "Przeglądnij wyniki kroków Build, Test Unit, Test Integration
 # Za każdym razem ściągane są te same zależności"
+mkdir .run/
+touch build.sh
+touch test-unit.sh
+touch test-smoke.sh
+touch test-static-analysis.sh
+touch test-mutation.sh
+touch test-feature.sh
+touch test-regression.sh
+touch test-ui.sh
+touch test-integration.sh
+touch test-load.sh
+touch test-security.sh
+touch publish-artifact.sh
+touch deploy-dev.sh
+touch deploy-test.sh
+touch deploy-preprod.sh
+touch deploy-prod.sh
 ANKIETA
