@@ -75,6 +75,7 @@ Project Components
 #. Przejdź na zakładkę `Components`
 #. Dodaj: `Frontend`, `Backend`, `Database`
 #. Aby przycisk `Add` stał się aktywny musisz:
+
     * dodać komponent należy wpisać jego nazwę (w polu po lewej)
     * z ostatniej listy rozwijanej (po prawej przy zaraz koło przycisku add) wybrać jedną z opcji np. `Unassigned`
 
