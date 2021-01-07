@@ -71,7 +71,7 @@ Issue Actions Attachment
 
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Edytuj zadanie `One`
-#. Do zadania dodaj załączniki: obrazek `.png ` oraz archiwum `.zip` z dwoma plikami tekstowymi
+#. Do zadania dodaj załączniki: obrazek `.png` oraz archiwum `.zip` z dwoma plikami tekstowymi
 #. Zwróć uwagę, że aby dodawać załączniki do Jiry, ich obsługa musi być włączona w panelu administracyjnym
 
 Issue Actions Log Work
