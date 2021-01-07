@@ -235,7 +235,10 @@ if 'sphinx.ext.mathjax' in extensions:
     mathjax_config = {
         'extensions': ['tex2jax.js'],
         'jax': ['input/TeX', 'output/HTML-CSS']}
-    html_context['script_files'].append(mathjax_path)
+    if 'script_files' in html_context:
+        html_context['script_files'] += [mathjax_path]
+    else:
+        html_context['script_files'] = [mathjax_path]
 
 
 latex_documents = [('index', f'{project_slug}.tex', project, author, latex_documentclass)]

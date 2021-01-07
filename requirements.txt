@@ -3,4 +3,3 @@ sphinx_rtd_theme
 sphinxcontrib-bibtex==2.0.*
 
 # sphinxjp.themes.revealjs
-
