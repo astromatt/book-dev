@@ -65,13 +65,13 @@ Assignments
 
 Project Details
 ---------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Zakładka `Details` -> zmień awatar swojego projektu na rakietę
 #. Zakładka `Details` -> zmień nazwę swojego projektu na `Imię N.` (z kropką na końcu)
 
 Project Components
 ------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Components`
 #. Dodaj: `Frontend`, `Backend`, `Database`
 #. Aby przycisk `Add` stał się aktywny musisz:
@@ -81,7 +81,7 @@ Project Components
 
 Project Versions
 ----------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Versions`
 #. Dodając wersje w tym zadaniu nie musisz ustawiać dat rozpoczęcia i zakończenia
 #. Możesz dodać wersje z dzisiejszą datą, ale dla uproszczenia w zadaniach, a później w JQL i filtrach będę stosował konwencję z rokiem `2000`
@@ -91,14 +91,14 @@ Project Versions
 
 Project Roles
 -------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Users and roles`
 #. Dodaj siebie do roli `Administrators`
 #. Dodaj użytkownika `admin` do roli `Developers`
 
 Project Fields
 --------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` -> `Project Settings` (przycisk koła zębatego w menu na dole po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Issue Types`:
 #. Wybierz `Task` -> przycisk `Fields` (górny prawy róg) -> dodaj pole `Due Date`, usuń pole `Labels`
 #. Wybierz `Story` -> przycisk `Fields` (górny prawy róg) -> dodaj nową zakładkę `Estimate` , dodaj na niej pole `Time Tracking` oraz `Story Points`; pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka; dodaje się poprzez kliknięcie na znak `(+)`
