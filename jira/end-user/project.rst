@@ -100,7 +100,7 @@ Project Roles
 Project Fields
 --------------
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
-#. Przejdź na zakładkę `Issue Types`:
-#. Wybierz `Task` -> przycisk `Fields` (górny prawy róg) -> dodaj pole `Due Date`, usuń pole `Labels`
-#. Wybierz `Story` -> przycisk `Fields` (górny prawy róg) -> dodaj nową zakładkę `Estimate` , dodaj na niej pole `Time Tracking` oraz `Story Points`; pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka; dodaje się poprzez kliknięcie na znak `(+)`
+#. Przejdź na zakładkę `Issue Types` a następnie w prawym górnym rogu wybierz przycisk `Fields`
+#. Wybierz `Task` -> dodaj pole `Due Date`, usuń pole `Labels`
+#. Wybierz `Story` -> dodaj nową zakładkę `Estimate` , dodaj na niej pole `Time Tracking` oraz `Story Points`; pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka; dodaje się poprzez kliknięcie na znak `(+)`
 #. Zwróć uwagę, że ta zakładka pojawiła się w prawie każdym `Issue Type` (poza `Bug`)
