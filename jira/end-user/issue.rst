@@ -93,13 +93,13 @@ Assignments
 
 Issue Priority
 --------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
 #. Edytuj zadanie `One`
 #. Ustaw `Priority` na `Highest`
 
 Issue Backlog
 -------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
 #. Zaznacz wszystkie issues za pomocą klikania i trzymania klawisza `shift`
 #. Zaznacz trzy dowolne issues za pomocą klikania i trzymania klawisza `ctrl` (klawisz `cmd` na macOS)
 #. Wybierz zadanie `One` -> prawy klawisz myszy -> `Send to Bottom of the backlog`
@@ -109,16 +109,13 @@ Issue Backlog
 
 Issue Versions
 --------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
 #. Otwórz menu z wersjami po lewej stronie od backlog
 #. Dodaj wersje:
 
     * `2000-01` (z datą rozpoczęcia i zakończenia),
     * `2000-02` (z datą rozpoczęcia i zakończenia),
     * `2000-03` (bez ustawiania dat),
-    * `2000-04` (bez ustawiania dat),
-    * `2000-05` (bez ustawiania dat),
-    * `2000-06` (bez ustawiania dat),
 
 #. Przeciągnij zadanie `One`, `Two`, `Three`, `Four` do wersji `2000-01`
 #. Przeciągnij zadanie `Five`, `Six`, `Seven` do wersji `2000-02`
@@ -126,7 +123,7 @@ Issue Versions
 
 Issue Epic
 ----------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
 #. Dodaj `Epic` z polami:
 
     * `Epic Name`: `Logowanie`
@@ -139,16 +136,21 @@ Issue Epic
     * `Summary`: `Wyszukiwarka`
     * `Due Date`: `31/Jan/00`
 
+#. Jeżeli przy tworzeniu `Epic` nie widzisz pola `Due Date` to:
+
+    * sprawdź czy w `Configure fields` (przycisk na górze po prawej okienka popup) jest zaznaczone pole `Due Date` (aby się wyświetlało)
+    * sprawdź czy w `Project settings` (trybik w menu po lewej na dole) -> zakładka `Issue types` -> `Epic` -> na liście jest pole `Due Date`
+
 #. Do `Logowanie` dodaj zadania: `One`, `Two`, `Three`
 #. Do `Wyszukiwarka` dodaj zadania: `Four`, `Five`, `Seven`
 #. Zmień kolor `Logowanie` na jasny niebieski
 #. Zmień kolor `Wyszukiwarka` na jasny czerwony
-#. Rozwiń opcję `All Issues` i zobacz ilość zadań
-#. Rozwiń opcję `Issues without epics` i zobacz ilość zadań
+#. Kliknij opcję `All Issues` i zobacz ilość zadań
+#. Kliknij opcję `Issues without epics` i zobacz ilość zadań
 
 Issue Bulk Change
 -----------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
 #. Zaznacz zadania (trzymając `ctrl` lub `cmd`): `Two`, `Four`, `Six`, `Eight`
 #. Kliknij prawym klawiszem myszy -> `Bulk Change` -> `Edit Issues` -> `Next`
 #. Zmień issue type na `Task`
@@ -162,19 +164,21 @@ Issue Bulk Change
 
 Issue Links
 -----------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
-#. Edytuj zadanie `Nine`
-#. Powiąż zadanie linkami jako `is blocked by`/`blocks` z `Eight`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
+#. Powiąż zadanie linkami:
+
+    * `Linked Issues`: `blocks`
+    * `Issue`: `Eight`
 
 Issue Sub-Tasks
 ---------------
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
-#. Edytuj zadanie `Nine`
+#. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
+#. Aby zmienić status trzeba najpierw stworzyć zadanie, a później w jego edycji kliknąć jeden z przycisków na górze ekranu
 #. Dodaj trzy sub-taski:
 
-    - Summary: `A`, Priority: `Highest`, Status: `To Do`,
-    - summary: `B`, Priority: `Low`, Status: `In Progress`
-    - summary: `C`, Priority: `Medium`, Status: `Done`
-
-#. Aby zmienić status trzeba najpierw stworzyć zadanie, a później w jego edycji kliknąć jeden z przycisków na górze ekranu
+    * Summary: `A`, Priority: `Highest`, Status: `To Do`,
+    * summary: `B`, Priority: `Low`, Status: `In Progress`
+    * summary: `C`, Priority: `Medium`, Status: `Done`
 
