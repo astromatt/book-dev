@@ -115,15 +115,6 @@ version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'
 copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
 
-if 'sphinx.ext.mathjax' in extensions:
-    imgmath_image_format = 'png'
-    imgmath_latex = 'latex'
-    # mathjax_path = '_static/mathjax.js'
-    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-    mathjax_config = {
-        'extensions': ['tex2jax.js'],
-        'jax': ['input/TeX', 'output/HTML-CSS']}
-
 exclude_patterns = [
     '.*',
     'venv*',
@@ -225,18 +216,27 @@ html_context = {}
 html_copy_source = False
 html_style = '_static/light.css'
 
-# if html_theme == 'sphinx_rtd_theme':
-html_context.update({
-    'css_files': ['_static/light.css',
-                  '_static/print.css'],
-    'script_files': ['_static/jquery.min.js',
-                     '_static/onload.js',
-                     mathjax_path]})
+if html_theme == 'sphinx_rtd_theme':
+    html_context.update({
+        'css_files': ['_static/light.css', '_static/print.css'],
+        'script_files': ['_static/jquery.min.js', '_static/onload.js']})
 
 if html_theme == 'thesis':
     html_context.update({
         'css_files': ['_static/theme-overrides.css'],
-        'script_files': [mathjax_path]})
+        'script_files': []})
+
+
+if 'sphinx.ext.mathjax' in extensions:
+    imgmath_image_format = 'png'
+    imgmath_latex = 'latex'
+    # mathjax_path = '_static/mathjax.js'
+    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+    mathjax_config = {
+        'extensions': ['tex2jax.js'],
+        'jax': ['input/TeX', 'output/HTML-CSS']}
+    html_context['script_files'].append(mathjax_path)
+
 
 latex_documents = [('index', f'{project_slug}.tex', project, author, latex_documentclass)]
 latex_elements = {

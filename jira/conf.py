@@ -11,3 +11,6 @@ todo_include_todos = True
 
 html_favicon = '../_static/favicon.png'
 html_static_path = ['../_static']
+html_context.update({
+        'css_files': ['light.css', 'print.css'],
+        'script_files': ['jquery.min.js', 'onload.js']})
