@@ -8,8 +8,8 @@ Rationale
 .. figure:: img/jira-report-select-agile.png
 .. figure:: img/jira-report-select-issueanalysis.png
 .. figure:: img/jira-report-select-mgmt.png
-.. figure:: img/jira-report-select-scrum.png
-.. figure:: img/jira-report-select-kanban.png
+.. figure:: img/jira-report-select-ng-scrum.png
+.. figure:: img/jira-report-select-ng-kanban.png
 
 
 Burn-down Chart

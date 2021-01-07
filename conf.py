@@ -165,16 +165,6 @@ autosectionlabel_maxdepth = 4
 autosectionlabel_prefix_document = True
 
 
-if 'sphinx.ext.mathjax' in extensions:
-    imgmath_image_format = 'png'
-    imgmath_latex = 'latex'
-    # mathjax_path = '_static/mathjax.js'
-    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-    mathjax_config = {
-        'extensions': ['tex2jax.js'],
-        'jax': ['input/TeX', 'output/HTML-CSS']}
-
-
 if 'nbsphinx' in extensions:
     # https://nbsphinx.readthedocs.io/en/latest/usage.html
     nbsphinx_input_prompt = 'In [%s]:'
