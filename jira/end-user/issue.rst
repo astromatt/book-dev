@@ -173,12 +173,10 @@ Issue Links
 
 Issue Sub-Tasks
 ---------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt
 #. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
-#. Aby zmienić status trzeba najpierw stworzyć zadanie, a później w jego edycji kliknąć jeden z przycisków na górze ekranu
 #. Dodaj trzy sub-taski:
 
-    * Summary: `A`, Priority: `Highest`, Status: `To Do`,
-    * summary: `B`, Priority: `Low`, Status: `In Progress`
-    * summary: `C`, Priority: `Medium`, Status: `Done`
-
+    * Summary: `A`, Priority: `Highest`
+    * summary: `B`, Priority: `Low`
+    * summary: `C`, Priority: `Medium`
