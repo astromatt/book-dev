@@ -87,7 +87,7 @@ Project Versions
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Versions`
 #. Dodając wersje w tym zadaniu nie musisz ustawiać dat rozpoczęcia i zakończenia
-#. Dla uproszczenia w zadaniach, a później w JQL i filtrach będę stosował konwencję z rokiem `2000`
+#. Dla uproszczenia w zadaniach, a później w `JQL` i filtrach będę stosował konwencję z rokiem `2000`
 #. Możesz dodać wersje z dzisiejszą datą (rokiem), ale w kolejnych zadaniach pamiętaj, żeby podmieniać na swoje nazwy
 #. Dodaj: `2000-Q2`, `2000-Q3`
 #. Dodaj: `2001`, `2002`

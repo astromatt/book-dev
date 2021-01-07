@@ -461,7 +461,7 @@ JQL Search View
 
 JQL Search Basic
 ----------------
-#. Z menu `Issues` wybrać `Search for Issues` w trybie Basic
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Basic`
 #. `Project` -> swój projekt
 #. Kliknij na nazwę kolumny `Due Date` dwukrotnie aby posortować rosnąco
 #. `Status` -> `In Progress` oraz `Blocked`
@@ -472,9 +472,9 @@ JQL Search Basic
 
 JQL Search Advanced
 -------------------
-#. Z menu `Issues` wybrać `Search for Issues` w trybie Advanced
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Kliknij link Advanced z paska wyszukiwania
-#. To co wpisujesz w tym polu, to tzw. JQL (Jira Query Language)
+#. To co wpisujesz w tym polu, to tzw. `JQL (Jira Query Language)`
 #. W polu wyszukiwania wpisz literę `p` i zobacz co Jira Ci podpowiedziała
 #. Wybierz strzałką na klawiaturze pozycję `project` i kliknij enter
 #. Z listy wybierz znak równa się ``=``
@@ -491,7 +491,7 @@ JQL Search Advanced
 
 JQL Search Bulk Change
 ----------------------
-#. Z menu `Issues` wybrać `Search for Issues` w trybie Advanced
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie `MYPROJECT` to nazwa Twojego projektu)
 #. Przycisk `Tools` (po prawej u góry) -> `Bulk Change` -> `all X issue(s)`
 #. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)

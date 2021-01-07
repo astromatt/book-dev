@@ -25,7 +25,7 @@ Assignments
 
 Filter Save
 -----------
-#. Z menu `Issues` wybrać `Search for Issues` w trybie Advanced
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Wyszukaj:
 
     .. code-block:: sql
@@ -51,7 +51,7 @@ Filter Save
 
 Filter Subscription Create
 --------------------------
-#. Z menu `Issues` wybrać `Search for Issues` w trybie Advanced
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Wyszukaj ``assignee = currentUser() and statusCategory != Done``
 #. Przycisk trzy kropki `...` obok `Save` -> wybieramy Save as `Imię Todo` (gdzie Imię, to Twoje imię)
 #. Kliknij link `Details` i wybierz `New Subscription`
@@ -78,7 +78,7 @@ Filter Subscription Delete
 
 Filter Edit
 -----------
-#. Z menu `Issues` wybrać `Search for Issues` w trybie Advanced
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Z `Favourite Filters` (menu po lewej) wybrać `Imię Todo` (gdzie Imię, to Twoje imię)
 #. Zmodyfikuj zapytanie:
 
@@ -102,7 +102,7 @@ Filter Board
 #. Przycisk Board (górny prawy róg) -> `Configure`
 #. Na zakładce `Swimlanes`
 #. Zmodyfikuj nazwę `Expedite` i zamień na `Must`
-#. Dodaj nowe: `Should` z JQL: ``priority in (High, Medium, Low)``
+#. Dodaj nowe: `Should` z `JQL`: ``priority in (High, Medium, Low)``
 #. Zmodyfikuj nazwę `Everything Else` na `Could`
 #. Zmień kolejność aby była:
 
@@ -132,7 +132,7 @@ Filter Board Edit
 
 #. Przycisk `Search` -> `Save`
 #. Przejdź na Board `Imię Todo` (gdzie Imię, to Twoje imię)
-#. Zobacz czy nie ma Epiców
+#. Zobacz czy nie ma zadań typu `Epic`
 
 Filter Board Portfolio
 ----------------------
@@ -142,7 +142,7 @@ Filter Board Portfolio
 #. Stwórz board Kanban z Epikami:
 
     - Stwórz `Swimlane` dla kwartałów
-    - Określ aby w kolumnie `In Progress` mogły być maksymalnie 3 Epiku
+    - Określ aby w kolumnie `In Progress` mogły być maksymalnie 3 zadania
 
 #. Stwórz board zadań przypisanych do Ciebie:
 

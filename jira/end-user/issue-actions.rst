@@ -70,7 +70,7 @@ Issue Log Work
 --------------
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
-#. Wybierz z menu trzech kropek `...` (u góry) -> Log Work
+#. Wybierz z menu trzech kropek `...` (u góry) -> `Log Work`
 #. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka `.` -> `Log Work`
 
 Issue Clone

@@ -45,12 +45,12 @@ Dashboard Create
 
 Dashboard Edit
 --------------
-#. Z menu u góry wybierz `Dashboards` -> Twój Dashboard
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Zmień `Edit Layout` (prawy górny róg) na trzykolumnowy
 
 Dashboard Gadget Create
 -----------------------
-#. Z menu u góry wybierz `Dashboards` -> Twój Dashboard
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Kliknij na `Add gadget` -> `Load all gadgets`
 #. Wybierz z listy `Filter Results` i kliknij przycisk `Add gadget` (po prawej)
 #. Wybierz z listy `Issue Statistics` i kliknij przycisk `Add gadget` (po prawej)
@@ -62,7 +62,7 @@ Dashboard Gadget Create
 
 Dashboard Gadget Edit
 ---------------------
-#. Z menu u góry wybierz `Dashboards` -> Twój Dashboard
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytowanie gadgetu jest w jego prawym górnym rogu po kliknięciu trzech kropek `...`
 #. Gadżet `Issue Statistics` ustaw:
 
