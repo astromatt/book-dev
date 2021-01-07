@@ -15,10 +15,12 @@ extensions = [
     # 'sphinx.ext.doctest',
     # 'sphinx.ext.extlinks',
     # 'sphinx.ext.graphviz',
-    # 'sphinx.ext.mathjax',
+    'sphinx.ext.mathjax',
     'sphinx.ext.todo',
     # 'sphinx.ext.viewcode',
     'sphinxcontrib.bibtex',
+    # 'recommonmark',
+    # 'nbsphinx'
 ]
 
 suppress_warnings = [
@@ -42,7 +44,7 @@ suppress_warnings = [
     # 'toc.circular',
     'toc.secnum',
     # 'epub.unknown_project_files',
-    # 'autosectionlabel.*',
+    'autosectionlabel.*',
 ]
 
 html_static_path = [
@@ -64,6 +66,14 @@ html_static_path = [
 # beamer  - For writing presentations (see LaTeX/Presentations).
 latex_documentclass = 'report'
 
+if 'recommonmark' in extensions:
+    def setup(app):
+        from recommonmark.transform import AutoStructify
+        app.add_config_value('recommonmark_config', {
+            'enable_eval_rst': True,
+        }, True)
+        app.add_transform(AutoStructify)
+
 
 # -- Standard book config -----------------------------------------------------
 
@@ -74,73 +84,12 @@ import sys
 from datetime import date
 
 needs_sphinx = '3.3'
-
-imgmath_image_format = 'png'
-imgmath_latex = 'latex'
-
-# mathjax_path = '_static/mathjax.js'
-mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-mathjax_config = {
-    'extensions': ['tex2jax.js'],
-    'jax': ['input/TeX', 'output/HTML-CSS'],
-}
-
-exclude_patterns = [
-    '__ecosystem/**',
-    '__process/**',
-    '_layouts/**',
-    '*/_slides/**',
-    '.*',
-    'venv*',
-    'virtualenv*',
-    '.venv*',
-    '.virtualenv*',
-    '_build',
-    '_extensions',
-    '_img',
-    '_slides',
-    '_i18n',
-    '_static',
-    '_themes',
-    '_tmp',
-    '**/contrib/*',
-    '**/solution/*',
-    '**/solutions/*',
-    '**/_template.rst',
-    '**.ipynb_checkpoints',
-    'README.rst',
-    'TODO.rst',
-    '**/_TODO.rst',
-    'Thumbs.db',
-    '.DS_Store',
-]
-
-master_doc = 'index'
-templates_path = ['_templates']
-highlight_language = 'python3'
-pygments_style = 'borland'
-autodoc_typehints = "description"
-autosectionlabel_maxdepth = 4
-
-bibtex_bibliography_header = ".. rubric:: References"
-bibtex_footbibliography_header = bibtex_bibliography_header
-bibtex_default_style = 'alpha'
-bibtex_bibfiles = [
-    '_references/bibliography.bib',
-    '_references/images.bib',
-    '_references/video.bib',
-    'numpy/_references/bibliography.bib',
-    'stdlib/_references/bibliography.bib',
-]
-
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
 
 sys.path.insert(0, os.path.abspath('_extensions'))
-
-extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
 
 # 0 - sequence number of image in whole document
 # 1 - sequence number of image in header level 1 (only if :numbered: option is present at toctree directive)
@@ -165,6 +114,114 @@ today = date.today().strftime('%Y-%m-%d')
 version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'
 copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
+
+if 'sphinx.ext.mathjax' in extensions:
+    imgmath_image_format = 'png'
+    imgmath_latex = 'latex'
+    # mathjax_path = '_static/mathjax.js'
+    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+    mathjax_config = {
+        'extensions': ['tex2jax.js'],
+        'jax': ['input/TeX', 'output/HTML-CSS']}
+
+exclude_patterns = [
+    '.*',
+    'venv*',
+    'virtualenv*',
+    '.venv*',
+    '.virtualenv*',
+    '_build',
+    '_extensions',
+    '_img',
+    '_slides',
+    '_i18n',
+    '_static',
+    '_themes',
+    '_tmp',
+    '_contrib',
+    '__ecosystem/**',
+    '__process/**',
+    '_layouts/**',
+    '*/_slides/**',
+    '**/contrib',
+    '**/solution',
+    '**/solutions',
+    '**/assignments',
+    '**/_template.rst',
+    '**.ipynb_checkpoints',
+    'README.rst',
+    'TODO.rst',
+    '**/_TODO.rst',
+    'Thumbs.db',
+    '.DS_Store',
+]
+
+master_doc = 'index'
+templates_path = ['_templates']
+highlight_language = 'python3'
+pygments_style = 'borland'
+autodoc_typehints = "description"
+autosectionlabel_maxdepth = 4
+autosectionlabel_prefix_document = True
+
+
+if 'sphinx.ext.mathjax' in extensions:
+    imgmath_image_format = 'png'
+    imgmath_latex = 'latex'
+    # mathjax_path = '_static/mathjax.js'
+    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+    mathjax_config = {
+        'extensions': ['tex2jax.js'],
+        'jax': ['input/TeX', 'output/HTML-CSS']}
+
+
+if 'nbsphinx' in extensions:
+    # https://nbsphinx.readthedocs.io/en/latest/usage.html
+    nbsphinx_input_prompt = 'In [%s]:'
+    nbsphinx_output_prompt = 'Out [%s]:'
+    nbsphinx_execute = 'always'
+    nbsphinx_allow_errors = True
+    nbsphinx_timeout = 5
+    nbsphinx_execute_arguments = [
+        "--InlineBackend.figure_formats={'svg'}",  # 'pdf'
+        "--InlineBackend.rc={'figure.dpi': 96}"]
+    suppress_warnings += ['nbsphinx',
+                          'nbsphinx.localfile',
+                          'nbsphinx.gallery',
+                          'nbsphinx.thumbnail',
+                          'nbsphinx.notebooktitle',
+                          'nbsphinx.ipywidgets']
+
+
+if 'sphinxcontrib.bibtex' in extensions:
+    bibtex_bibliography_header = ".. rubric:: References"
+    bibtex_footbibliography_header = bibtex_bibliography_header
+    bibtex_default_style = 'alpha'
+    bibtex_bibfiles = [
+        '_references/bibliography.bib',
+        '_references/images.bib',
+        '_references/video.bib',
+        'agile/_references/bibliography.bib',
+        'agile/_references/images.bib',
+        'agile/_references/video.bib',
+        'architecture/_references/bibliography.bib',
+        'docker/_references/bibliography.bib',
+        'git/_references/bibliography.bib',
+        'jenkins/_references/bibliography.bib',
+        'jira/_references/bibliography.bib',
+        'linux/_references/bibliography.bib']
+
+
+if 'sphinx.ext.extlinks' in extensions:
+    extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
+
+
+if 'sphinx.ext.doctest' in extensions:
+    import doctest
+    trim_doctest_flags = False
+    # doctest_global_cleanup = """"""
+    # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
+    # doctest_default_flags = doctest.FAIL_FAST | doctest.IGNORE_EXCEPTION_DETAIL
 
 html_show_sphinx = False
 html_use_smartypants = False

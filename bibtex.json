@@ -1,0 +1,33 @@
+{
+    "cited": {
+        "agile/agile/roadmap-vs-backlog": [
+            "ScrumGuide"
+        ],
+        "agile/introduction/agile-vs-devops": [
+            "AgileManifesto2001",
+            "ScrumGuide"
+        ],
+        "architecture/iaas/amazon-aws": [
+            "AWSDocumentation",
+            "AWSLoadBallancer"
+        ],
+        "docker/basics/about": [
+            "DockerDocumentation"
+        ],
+        "git/basics/introduction": [
+            "GitDocumentation"
+        ],
+        "git/tools/git": [
+            "GitDocumentation"
+        ],
+        "jenkins/introduction/about": [
+            "JenkinsDocumentation"
+        ],
+        "jira/introduction/licensing": [
+            "JiraDocumentation"
+        ],
+        "linux/introduction/agenda": [
+            "LinuxKernelDocumentation"
+        ]
+    }
+}
