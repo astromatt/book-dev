@@ -223,6 +223,7 @@ html_title = project
 html_favicon = '_static/favicon.png'
 html_context = {}
 html_copy_source = False
+html_style = '_static/light.css'
 
 if html_theme == 'sphinx_rtd_theme':
     html_context.update({

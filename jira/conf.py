@@ -9,5 +9,6 @@ language = 'en'
 todo_emit_warnings = True
 todo_include_todos = True
 
-html_static_path = ['../_static']
 html_favicon = '../_static/favicon.png'
+html_static_path = ['../_static']
+html_style = 'light.css'
