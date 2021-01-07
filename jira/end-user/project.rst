@@ -63,6 +63,18 @@ Fix Version/s:
     * MyApp 3.0.5
 
 
+Demonstration
+=============
+* Go to project settings
+* Change project avatar
+* Change project name
+* Add project component (mention `Default assignee` problem)
+* Add and reorder versions
+* Add user to role
+* Add field to issue (mention switching to `Field` tab)
+* Add tab to issue fields
+
+
 Assignments
 ===========
 

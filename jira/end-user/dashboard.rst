@@ -32,6 +32,23 @@ Rationale
 .. figure:: img/jira-dashboard.png
 
 
+Demonstration
+=============
+* Create `Blank Dashboard`
+* Edit dashboard
+* Add gadgets:
+
+    * `Filter Result`
+    * `Filter Statistics`
+    * `Sprint Burndown Gadget`
+    * `Sprint Health Gadget`
+    * `Version Report`
+    * `Days Remaining in Sprint Gadget`
+
+* Edit Gadget
+* Create another dashboard (show switching)
+
+
 Assignments
 ===========
 
@@ -60,11 +77,18 @@ Dashboard Gadget Create
 #. Wybierz z listy `Days Remaining in Sprint Gadget` i kliknij przycisk `Add gadget` (po prawej)
 #. Zamknij okienko `X` (górny prawy róg)
 
-Dashboard Gadget Edit
+Dashboard Gadget Move
 ---------------------
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytowanie gadgetu jest w jego prawym górnym rogu po kliknięciu trzech kropek `...`
-#. Gadżet `Issue Statistics` ustaw:
+#. Przenieś `Issue Statistics` oraz `Filter Results` do kolumny po lewej
+#. Przenieś `Days Remaining in Sprint Gadget` oraz `Health Gadget` do środkowej kolumny
+#. Przenieś `Sprint Burndown Gadget` oraz `Version Report` do kolumny po prawej
+
+Dashboard Gadget Edit Issue Statistics
+--------------------------------------
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
+#. Edytuj gadżet `Issue Statistics` i ustaw:
 
     - `Filter`: Twój projekt
     - `Statistic`: `Type Status`
@@ -73,7 +97,10 @@ Dashboard Gadget Edit
     - Upewnij się, że **nie** jest zaznaczone `Update every 15 minutes`
     - Kliknij przycisk `Save`
 
-#. Gadżet `Filter Results` ustaw:
+Dashboard Gadget Edit Filter Results
+------------------------------------
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
+#. Edytuj gadżet `Filter Results` i ustaw:
 
     - `Filter`: `Imię Todo`
     - `Number of Results`: 20
@@ -82,7 +109,10 @@ Dashboard Gadget Edit
     - Kliknij przycisk `Save`
     - Posortuj po `Due Date` przez kliknięcie nagłówka kolumny
 
-#. Gadżet `Version Report` ustaw:
+Dashboard Gadget Edit Version Report
+------------------------------------
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
+#. Edytuj gadżet  `Version Report` i ustaw:
 
     - `Board`: `Imię Board`
     - Zaznacz `Show board name`
@@ -90,7 +120,10 @@ Dashboard Gadget Edit
     - Zaznacz `Show version name`
     - Kliknij przycisk `Save`
 
-#. Gadżet `Days Remaining in Sprint Gadget` ustaw:
+Dashboard Gadget Edit Days Remaining in Sprint Gadget
+-----------------------------------------------------
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
+#. Edytuj gadżet `Days Remaining in Sprint Gadget` i ustaw:
 
     - `Board`: `Imię Board`
     - Zaznacz `Show board name`
@@ -98,7 +131,10 @@ Dashboard Gadget Edit
     - Zaznacz `Show sprint name`
     - Kliknij przycisk `Save`
 
-#. Gadżet `Sprint Burndown Gadget` ustaw:
+Dashboard Gadget Edit Sprint Burndown Gadget
+--------------------------------------------
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
+#. Edytuj gadżet `Sprint Burndown Gadget` i ustaw:
 
     - `Board`: `Imię Board`
     - Zaznacz `Show board name`
@@ -106,17 +142,16 @@ Dashboard Gadget Edit
     - Zaznacz `Show sprint name`
     - Kliknij przycisk `Save`
 
-#. Sprint `Health Gadget`:
+Dashboard Gadget Edit Health Gadget
+-----------------------------------
+#. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
+#. Edytuj gadżet `Sprint Health Gadget` i ustaw:
 
     - `Board`: `Imię Board`
     - Zaznacz `Show board name`
     - `Sprint`: `Next Sprint Due (auto)`
     - Zaznacz `Show sprint name`
     - Kliknij przycisk `Save`
-
-#. Przenieś `Issue Statistics` oraz `Filter Results` do kolumny po lewej
-#. Przenieś `Days Remaining in Sprint Gadget` oraz `Health Gadget` do środkowej kolumny
-#. Przenieś `Sprint Burndown Gadget` oraz `Version Report` do kolumny po prawej
 
 Dashboard Many
 --------------

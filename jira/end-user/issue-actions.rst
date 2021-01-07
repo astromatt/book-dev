@@ -53,35 +53,43 @@ Time Reporting
 .. figure:: img/jira-report-timetracking-3.png
 
 
+Demonstration
+=============
+* Add issue attachment
+* Log work
+* Clone issue
+* Move issue
+
+
 Assignments
 ===========
 
-Issue Attachment
-----------------
+Issue Actions Attachment
+------------------------
 * Obrazek: :download:`download/image.png`
 * Archiwum: :download:`download/archive.zip`
 
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Edytuj zadanie `One`
 #. Do zadania dodaj załączniki: obrazek `.png ` oraz archiwum `.zip` z dwoma plikami tekstowymi
 #. Zwróć uwagę, że aby dodawać załączniki do Jiry, ich obsługa musi być włączona w panelu administracyjnym
 
-Issue Log Work
---------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+Issue Actions Log Work
+----------------------
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
 #. Wybierz z menu trzech kropek `...` (u góry) -> `Log Work`
 #. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka `.` -> `Log Work`
 
-Issue Clone
------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+Issue Actions Clone
+-------------------
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Sklonuj zadanie `One`
 #. Nowe zadanie nazwij `Ten`
 
-Issue Move
-----------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+Issue Actions Move
+------------------
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Wybierz zadanie `Ten`
 #. Z karty zadania po prawej stronie wybierz menu trzy kropki `...` (po prawej u góry)
 #. Z menu wybierz `More Actions` -> wpisz `Move`

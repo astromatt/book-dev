@@ -34,6 +34,14 @@ Board
 - Active Sprint
 
 
+Demonstration
+=============
+* Create project: scrum project, set name, set key, set project lead
+* Create issue: select project, issuetype, set summary
+* Create issue in backlog
+* Split issue in backlog
+
+
 Assignments
 ===========
 

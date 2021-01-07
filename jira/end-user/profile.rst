@@ -11,6 +11,14 @@ Profile
 * Email filtering practices in your email client
 
 
+Demonstration
+=============
+* Change avatar
+* Change language
+* Change timezone
+* Change autowatch
+
+
 Assignments
 ===========
 

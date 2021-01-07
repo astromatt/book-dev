@@ -141,12 +141,22 @@ Kanban
 .. figure:: img/jira-board-backlog-kanban.png
 
 
+Demonstration
+=============
+* Estimate issue
+* Add sprint: set name, set duration, set start date
+* Add issues to sprint
+* Start sprint: set goal
+* Active sprint: move issues, add flag, print cards (on paper)
+* Close sprint: drop issues to next sprint
+
+
 Assignments
 ===========
 
 Board Usage Estimation
 ----------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
 #. W detail view zadania `One` -> okienko `Estimate` ustaw 3 (lub pole `Story Point` przy edycji zadania)
 #. W detail view zadania `Three` -> okienko `Estimate` ustaw 4 (lub pole `Story Point` przy edycji zadania)
 #. W detail view zadania `Five` -> okienko `Estimate` ustaw 8 (lub pole `Story Point` przy edycji zadania)
@@ -156,7 +166,7 @@ Board Usage Estimation
 
 Board Usage Sprint Create
 -------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
 #. Dodaj pierwszy sprint:
 
     - `Name`: `2000-01 week 1`
@@ -171,7 +181,7 @@ Board Usage Sprint Create
 
 Board Usage Sprint Start
 ------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
 #. Do sprintu `2000-01 week 1` dodaj zadania: `One`, `Two`, `Three`
 #. Przejedź suwakiem i dodaj `Four`, `Five`, `Six`, zwróć uwagę na zmiany liczb w okienku `Issues` i `Estimate`
 #. Wystartuj sprint ustawiając:
@@ -184,7 +194,7 @@ Board Usage Sprint Start
 
 Board Usage Sprint Work
 -----------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Przenieś zadania:
 
     - `One` do `In Progress`
@@ -201,7 +211,7 @@ Board Usage Sprint Work
 
 Board Usage Sprint Close
 ------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprint`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprint` (w menu po lewej)
 #. Zakończ aktualny sprint -> Prawy górny róg `Complete Sprint`
 #. Zadania niezakończone mają `spaść` do sprintu następnego, tj. `2000-01 week 2`
 

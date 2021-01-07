@@ -20,6 +20,18 @@ Rationale
 .. figure:: img/jira-filter-share-confirm.png
 
 
+Demonstration
+=============
+* Create filter, set name, set permissions (mention `Add`)
+* Create subscription: Every Monday at 5 am
+* Delete subscription (mention, not to delete filter)
+* Edit filter
+* Create board `My TODO` from filter
+* Edit filter for board `My TODO`
+* Create board portfolio with `Epic` issues
+* Delete board `My TODO`
+
+
 Assignments
 ===========
 
@@ -91,29 +103,14 @@ Filter Edit
 
 #. kliknij `Search` a następnie `Save`
 
-Filter Board
-------------
+Filter Board Create
+-------------------
 #. Z menu u góry wybierz `Boards` -> `View all boards`
 #. Kliknij przycisk `Create board` (przycisk u góry po prawej)
 #. Wybierz `Create a Kanban board` -> `Board from an existing Saved Filter` -> `Next`
 #. Board name: `Imię Todo` (gdzie Imię, to Twoje imię)
 #. Saved filter: wybrać filtr: `Imię Todo` (gdzie Imię, to Twoje imię)
 #. Kliknij przycisk `Create board`
-#. Przycisk Board (górny prawy róg) -> `Configure`
-#. Na zakładce `Swimlanes`
-#. Zmodyfikuj nazwę `Expedite` i zamień na `Must`
-#. Dodaj nowe: `Should` z `JQL`: ``priority in (High, Medium, Low)``
-#. Zmodyfikuj nazwę `Everything Else` na `Could`
-#. Zmień kolejność aby była:
-
-    - `Must` na górze
-    - `Should` w środku
-    - `Could` na dole
-
-#. Zmień w zadaniach `Four` oraz `Seven` priorytet na `Highest` (zadania powinno pojawić się w Swimlane `Must`)
-#. Zmień w zadaniach `Nine` oraz `Eight` priorytet na `Lowest` (zadania powinno pojawić się w Swimlane `Could`)
-#. Zwiń zadania które są w Swimlane `Could`, przez kliknięcie strzałeczki obok nazwy `Could`
-#. Pamiętaj, że aby zadania wyświetlały się na Twoim boardzie, muszą być do Ciebie przypisane! (Ty musisz być ustawiony jako assignee)
 
 Filter Board Edit
 -----------------

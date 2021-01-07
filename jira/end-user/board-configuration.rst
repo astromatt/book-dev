@@ -90,12 +90,47 @@ Cloud
 .. figure:: img/jira-board-features.png
 
 
+Demonstration
+=============
+* Open `Board configuration`
+* General configuration
+* Columns (add columns, multiple status in one column, column constraints)
+* Swimlanes: separate features from maintenance
+* Quick filters: Daily
+* Card colors: red, yellow, green by priorities
+* Card layout: show due date in active sprint and backlog
+* Estimation: `Original Time Tracking` and `Remaining Estimate and Time Spent`
+* Working days: set region, set timezone, set dates
+* Issue Detail View: add fields, remove fields
+* Active Sprint: move issues between columns with constraints
+
+
 Assignments
 ===========
 
+Board Configuration Setup
+-------------------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
+#. Dodaj poniższe zadania do sprintu `2000-01 week 2`:
+
+    - `Four`
+    - `Five`
+    - `Six`
+    - `Seven`
+    - `Eight`
+    - `Nine`
+
+#. Wyrzuć ze sprintu zadania: `One` i `Two`
+#. Wystartuj sprint ustawiając:
+
+    - `Name`: `2000-01 week 2`
+    - `Goal`: `Ukończenie szkolenia z Jiry`
+    - `Duration`: `1 week`
+    - `Start Date`: `7/Jan/00 09:00 AM`
+
 Board Configuration General
 ---------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `General`:
 
@@ -106,7 +141,7 @@ Board Configuration General
 
 Board Configuration Columns
 ---------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Columns`:
 
@@ -117,9 +152,9 @@ Board Configuration Columns
     - W kolumnie `In Progress` -> `Min` ustaw na: `1`
     - Zaznacz `Days in column`
 
-Board Configuration Swimlanes
------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+Board Configuration Swimlanes Features Maintenance
+--------------------------------------------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Swimlanes`:
 
@@ -127,9 +162,30 @@ Board Configuration Swimlanes
     - Dodaj Swimlane `Story` z JQL -> ``issuetype = Story``
     - Dodaj Swimlane `Task` z JQL -> ``issuetype = Task``
 
+#. Zobacz `Active Sprints` jak wygląda board
+
+Board Configuration Swimlanes MoSCoW
+------------------------------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu `Board` (prawy górny róg) -> `Configure`
+#. Zakładka `Swimlanes` (zmodyfikuj dotychczasowe ustawienia)
+#. Zmodyfikuj nazwę `Expedite` i zamień na `Must`
+#. Dodaj nowe: `Should` z `JQL`: ``priority in (High, Medium, Low)``
+#. Zmodyfikuj nazwę `Everything Else` na `Could`
+#. Zmień kolejność aby była:
+
+    - `Must` na górze
+    - `Should` w środku
+    - `Could` na dole
+
+#. Zmień w zadaniach `Four` oraz `Seven` priorytet na `Highest` (zadania powinno pojawić się w Swimlane `Must`)
+#. Zmień w zadaniach `Nine` oraz `Eight` priorytet na `Lowest` (zadania powinno pojawić się w Swimlane `Could`)
+#. Zwiń zadania które są w Swimlane `Could`, przez kliknięcie strzałeczki obok nazwy `Could`
+#. Pamiętaj, że aby zadania wyświetlały się na Twoim boardzie, muszą być do Ciebie przypisane! (Ty musisz być ustawiony jako assignee)
+
 Board Configuration Quick Filters
 ---------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Quick Filters`:
 
@@ -138,7 +194,7 @@ Board Configuration Quick Filters
 
 Board Configuration Card Colors
 -------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Card colours`:
 
@@ -149,7 +205,7 @@ Board Configuration Card Colors
 
 Board Configuration Card Layout
 -------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Card layout`:
 
@@ -159,7 +215,7 @@ Board Configuration Card Layout
 
 Board Configuration Estimation
 ------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Estimation`:
 
@@ -168,13 +224,13 @@ Board Configuration Estimation
 
 Board Configuration Working Days
 --------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Working days`:
 
-    - Wybierz `Region` -> `Europe`
-    - `Time Zone` -> `(GMT+01:00) Warsaw`
-    - Dodaj `Non-Working Days` (wybierz trzy dowolne święta):
+    - `Region`: `Europe`
+    - `Time Zone`: `(GMT+01:00) Warsaw`
+    - `Non-Working Days` (wybierz trzy dowolne święta):
 
         * `1/Jan/00` (Nowy Rok)
         * `6/Jan/00` (Święto Trzech Króli)
@@ -192,7 +248,7 @@ Board Configuration Working Days
 
 Board Configuration Issue Detail View
 -------------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints`
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Issue Detail View`:
 
@@ -201,11 +257,10 @@ Board Configuration Issue Detail View
     - Sekcja `People` -> usuń `Reporter` i `Assignee`
     - Sekcja `Links` -> usuń `Linked Issue`
 
-Board Configuration Active Sprint
----------------------------------
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
-#. Wystartuj sprint `2000-01 week 2`
-#. Przejdź na `Boards` -> Twój Board -> `Active Sprint`:
+Board Configuration Column Constraints
+--------------------------------------
+#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
+#. Przejdź na `Boards` -> Twój Board -> `Active Sprint` (w menu po lewej):
 
     - Usuń wszystkie zadania z kolumny `In Progress` (powinna podświetlić się na żółto)
     - Dodaj trzy zadania do kolumny `Blocked` (powinna podświetlić się na czerwono)

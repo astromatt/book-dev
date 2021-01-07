@@ -87,6 +87,21 @@ Custom Fields
 * Risk
 
 
+Demonstration
+=============
+* Edit issue and modify values
+* Change inline issue field value
+* Select multiple issues in backlog (`ctrl` and `shift`)
+* Send to top, send to bottom
+* Add flag, remove flag
+* Create version from backlog view
+* Drag issues to versions
+* Create `Epic`
+* Drag issue to `Epic`
+* Bulk change multiple issues in backlog
+* Edit issue and create issue link
+* Create issue subtask and change priority
+
 
 Assignments
 ===========
@@ -99,7 +114,7 @@ Issue Priority
 
 Issue Backlog
 -------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Zaznacz wszystkie issues za pomocą klikania i trzymania klawisza `shift`
 #. Zaznacz trzy dowolne issues za pomocą klikania i trzymania klawisza `ctrl` (klawisz `cmd` na macOS)
 #. Wybierz zadanie `One` -> prawy klawisz myszy -> `Send to Bottom of the backlog`
@@ -109,7 +124,7 @@ Issue Backlog
 
 Issue Versions
 --------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
 #. Otwórz menu z wersjami po lewej stronie od backlog
 #. Dodaj wersje:
 
@@ -123,7 +138,7 @@ Issue Versions
 
 Issue Epic
 ----------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
 #. Dodaj `Epic` z polami:
 
     * `Epic Name`: `Logowanie`
@@ -150,7 +165,7 @@ Issue Epic
 
 Issue Bulk Change
 -----------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
 #. Zaznacz zadania (trzymając `ctrl` lub `cmd`): `Two`, `Four`, `Six`, `Eight`
 #. Kliknij prawym klawiszem myszy -> `Bulk Change` -> `Edit Issues` -> `Next`
 #. Zmień issue type na `Task`
@@ -164,7 +179,7 @@ Issue Bulk Change
 
 Issue Links
 -----------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
 #. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
 #. Powiąż zadanie linkami:
 
@@ -173,7 +188,7 @@ Issue Links
 
 Issue Sub-Tasks
 ---------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
 #. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
 #. Dodaj trzy sub-taski:
 
