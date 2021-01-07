@@ -72,8 +72,8 @@ Assignments
 
 Apps Search
 -----------
-#. Skrót klawiszowy "gg" -> "Find apps"
-#. Przedyskutuj różnice między apps w Cloud i Self-Managed
+#. Skrót klawiszowy ``gg`` -> `Find apps`
+#. Przedyskutuj różnice między apps w `Cloud` i `Self-Managed`
 #. Przedyskutuj zarządzanie dodatkami
 #. Przedyskutuj wpływ pluginów na wydajność Jiry
 #. Przedyskutuj wpływ pluginów na bazę danych Jiry

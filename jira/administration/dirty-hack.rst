@@ -61,7 +61,7 @@ REST API
 
 Create Issue From URL
 =====================
-* Z menu u góry wybierz "Projects" -> "View All projects" -> "Inspect Element" (źródło strony) -> znajdź: "data-project-id" (to będzie "pid")
+* Z menu u góry wybierz `Projects` -> `View All projects` -> `Inspect Element` (źródło strony) -> znajdź: `data-project-id` (to będzie `pid`)
 * http://18.195.183.213:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
 
 .. code-block:: javascript

@@ -75,10 +75,10 @@ Assignments
 
 Priorytety
 ----------
-#. Zmień priorytety na MoSCoW, zmień ikony i kolory (czerwony, zielony, szary)
+#. Zmień `Priorities` na `MoSCoW`, zmień ikony i kolory (czerwony, zielony, szary)
 
 Role
 ----
-#. Dodaj rolę "Scrum Master"
+#. Dodaj rolę `Scrum Master`
 #. Dodaj do roli w projekcie użytkownika z JIRY
-#. Zmień w Permission scheme, aby tylko Scrum Master mógł otwierać i zamykać sprinty
+#. Zmień w `Permission scheme`, aby tylko `Scrum Master` mógł otwierać i zamykać sprinty

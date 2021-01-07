@@ -45,7 +45,7 @@ REST API
 
 Create Issue From URL
 =====================
-* Z menu u góry wybierz "Projects" -> "View All projects" -> "Inspect Element" (źródło strony) -> znajdź: "data-project-id" (to będzie "pid")
+* Z menu u góry wybierz `Projects` -> `View All projects` -> `Inspect Element` (źródło strony) -> znajdź: `data-project-id` (to będzie `pid`)
 * http://18.195.183.213:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
 
 .. code-block:: javascript
@@ -74,10 +74,10 @@ Atlassian Python API - Reindeksacja
 Atlassian Python API - Project Administrators
 ---------------------------------------------
 #. Stwórz skrypt ``jira-administrators.py``
-#. Skrypt ma wyliistować wszystkich administratorów projektów w JIRA w tabelce, wraz z ich emailem jako link "mailto"
+#. Skrypt ma wylistować wszystkich administratorów projektów w JIRA w tabelce, wraz z ich e-mailem jako link `mailto`
 
-    - Wynik zapisz w Confluence i dodaj się do watchers strony, by być powiadamianym o zmianach
-    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/jira-admins.html`` i skonfiguruj nginx aby wyświetlał tą stronę
+    - Wynik zapisz w `Confluence` i dodaj się do `watchers` strony, by być powiadamianym o zmianach
+    - Jeżeli nie masz zainstalowanego `Confluence` to zrzuć do pliku ``/var/www/jira-admins.html`` i skonfiguruj nginx aby wyświetlał tą stronę
 
 :Podpowiedź: Aby uruchomić Confluence możesz wykorzystać Docker
 

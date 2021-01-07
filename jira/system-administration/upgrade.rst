@@ -6,7 +6,7 @@ Upgrade
 Instalacja nowej wersji
 =======================
 #. Wejdź na stronę https://www.atlassian.com/software/jira/download
-#. Kliknij prawym na przycisk Download obok wydania Jira TAR.GZ i "Copy Link Location"
+#. Kliknij prawym na przycisk `Download` obok wydania Jira `TAR.GZ` i `Copy Link Location`
 #. Uruchom polecenia poniżej:
 
     .. code-block:: console
