@@ -10,6 +10,7 @@ Rationale
 
 .. figure:: img/agile-wheel-2.png
 
+
 Project
 =======
 - Project

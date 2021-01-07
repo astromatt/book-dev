@@ -3,6 +3,8 @@ Profile
 *******
 
 
+Profile
+=======
 * Jira Language
 * Avatar (gravatar)
 * Email notifications

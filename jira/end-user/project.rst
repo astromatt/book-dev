@@ -19,9 +19,9 @@ Rationale
 
 Issue key
 =========
-- krótki i zwięzły
-- łatwy do zapamiętania
-- 2-10 liter
+- short
+- easy to remember
+- 2-10 uppercase letters
 
 
 Project Configuration
@@ -35,9 +35,12 @@ Project Configuration
 Versions
 ========
 * Semantic Versioning: major.minor.bugfix - (1.2.3, 3.9.1)
-* Konwencja nazewnicza YYYY-MM (2000-01, 2000-02, 2000-03)
-* Konwencja nazewnicza YYYY-QX - (2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4)
-* Konwencja nazewnicza YYYY - (2000, 2001, 2002, 2003)
+* Convention:
+
+    * ``YYYY-MM`` - 2000-01, 2000-02, 2000-03
+    * ``YYYY-QX`` - 2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4
+    * ``YYYY`` - 2000, 2001, 2002, 2003
+
 * Roadmap
 * Releases (with Bamboo)
 * Time Tracking Report by Version

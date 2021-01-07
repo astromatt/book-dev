@@ -33,12 +33,12 @@ Priority
 
 Description
 ===========
-- Kryteria akceptacyjne
-- Sekcja w description: **INFO**
-- Sekcja w description: **BEFORE**
-- Sekcja w description: **TODO**
-- Sekcja w description: **AFTER**
-- używanie (/) i (x)
+- Acceptance criteria
+- Description: **INFO**
+- Description: **BEFORE**
+- Description: **TODO**
+- Description: **AFTER**
+- using (/) and (x)
 
 
 Date Fields
@@ -93,7 +93,7 @@ Assignments
 
 Issue Priority
 --------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Edytuj zadanie `One`
 #. Ustaw `Priority` na `Highest`
 
@@ -109,7 +109,7 @@ Issue Backlog
 
 Issue Versions
 --------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Otwórz menu z wersjami po lewej stronie od backlog
 #. Dodaj wersje:
 
@@ -123,7 +123,7 @@ Issue Versions
 
 Issue Epic
 ----------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Dodaj `Epic` z polami:
 
     * `Epic Name`: `Logowanie`
@@ -150,7 +150,7 @@ Issue Epic
 
 Issue Bulk Change
 -----------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Zaznacz zadania (trzymając `ctrl` lub `cmd`): `Two`, `Four`, `Six`, `Eight`
 #. Kliknij prawym klawiszem myszy -> `Bulk Change` -> `Edit Issues` -> `Next`
 #. Zmień issue type na `Task`
@@ -164,7 +164,7 @@ Issue Bulk Change
 
 Issue Links
 -----------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
 #. Powiąż zadanie linkami:
 
@@ -173,7 +173,7 @@ Issue Links
 
 Issue Sub-Tasks
 ---------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
 #. Dodaj trzy sub-taski:
 
