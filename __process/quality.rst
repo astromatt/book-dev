@@ -63,7 +63,7 @@ Proces przeglądu kodu
 =====================
 Kolejnym elementem, który znacząco przyczynia się do wysokiej jakości wytwarzanych rozwiązań jest tzw. system *Pull Request* w ramach oprogramowania do przeglądu kodu (ang. *Code Review*). Zarówno do przetrzymywania repozytoriów kodu źródłowego jak i obsługi procesu *Pull Request* wykorzystywane jest narzędzie przechowujące kod źródłowy systemu. Aplikacja ta pozwala w prosty i intuicyjny wprowadzać komentarze do kodu źródłowego co wspiera komunikację osób biorących udział w rozwoju oprogramowania.
 
-W miarę zwiększania dojrzałości systemu oraz wzrostu osób tworzących aplikację istnieje możliwość konfiguracji, aby zmiana w kodzie źródłowym wymagała akceptacji przynajmniej dwóch innych programistów oraz pozytywnego wyniku budowania i testów w systemie *Continuous Integration*.
+W miarę zwiększania dojrzałości systemu oraz wzrostu osób tworzących aplikację istnieje możliwość konfiguracji, aby zmiana w kodzie źródłowym wymagała akceptacji przynajmniej dwóch innych programistów oraz pozytywnego wyniku budowania i testów w systemie *Continuous Integration*.
 
 
 Zarządzanie projektem oraz zadaniami

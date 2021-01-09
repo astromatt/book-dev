@@ -10,13 +10,13 @@ Cloud Foundry is an open platform as a service (PaaS) that provides a choice of 
 - https://www.infoq.com/presentations/devops-cloud-foundry
 - https://www.infoq.com/presentations/trends-cloud-foundry
 
-.. figure:: img/cloud-foundry-architecture-01.png
+..  figure:: ../_img/cloud-foundry-architecture-01.png
     :scale: 50%
     :align: center
 
     Cloud Foundry Architecture
 
-.. figure:: img/cloud-foundry-architecture-02.png
+..  figure:: ../_img/cloud-foundry-architecture-02.png
     :scale: 50%
     :align: center
 

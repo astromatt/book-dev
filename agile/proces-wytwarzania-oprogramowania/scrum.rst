@@ -97,7 +97,7 @@ SCRUM jest skalowalny, tzn. może być zastosowany w projektach, w których bier
 
 Podział systemu na moduły i całego zespołu na mniejsze zespoły
 
-Produkcja dużego systemu wymaga podzielenia jego architektury na mniejsze moduły (podsystemy). Podział ten odbywa się zgodnie z tym, jakie Klient dostrzega wartości w poszczególnych częściach systemu oraz zgodnie z możliwościami technologicznymi. Cały zespół również jest dzielony na mniejsze zespoły (Scrum Teamy),  które zajmują się pracą nad przypisanymi im modułami systemu. Oprócz tych zespołów wydziela się również zespół poziomu systemu, w skład którego wchodzą architekci, liderzy zespołów, menedżerowie produktów oraz zespół zapewnienia jakości, który zajmuje się myśleniem, działaniem i wdrażaniem SCRUMa na poziomie systemu oraz uzupełnianiem Product Backlogu o testy integracyjne i demonstracje na poziomie systemu, punkty kontroli jakości oraz dystrybucje testowe.
+Produkcja dużego systemu wymaga podzielenia jego architektury na mniejsze moduły (podsystemy). Podział ten odbywa się zgodnie z tym, jakie Klient dostrzega wartości w poszczególnych częściach systemu oraz zgodnie z możliwościami technologicznymi. Cały zespół również jest dzielony na mniejsze zespoły (Scrum Teamy),  które zajmują się pracą nad przypisanymi im modułami systemu. Oprócz tych zespołów wydziela się również zespół poziomu systemu, w skład którego wchodzą architekci, liderzy zespołów, menedżerowie produktów oraz zespół zapewnienia jakości, który zajmuje się myśleniem, działaniem i wdrażaniem SCRUMa na poziomie systemu oraz uzupełnianiem Product Backlogu o testy integracyjne i demonstracje na poziomie systemu, punkty kontroli jakości oraz dystrybucje testowe.
 
 W przypadku SCRUMa wprowadzanego na dużą skalę, pojawia się wymagany element w DoD: pomyślny wynik testów integracyjnych.
 
@@ -109,7 +109,7 @@ Backlog Refinement
 ------------------
 Definicją tego spotkania jest wszelkiego rodzaju praca na backlogu, tj. np jego priorytetyzacja, dekompozycja zadań oraz czyszczenie rejestru zmian produktu. Podczas Refinementu zespół wraz z Product Ownerem, układa sobie pracę pod następne iteracje oraz dokonuje wstępnego oszacowania wielkości zadań oraz określenia kryteriów akceptacyjnych poszczególnych zadań.
 
-Aby skutecznie przeprowadzić refinement należy ustalić co będzie produkowane - potrzeba uporządkowanego Product Backlogu, zrozumienia jego elementów, zrozumienia aktualnego stanu produktów, wyliczonej pojemności zespołu oraz wiedzy na temat historycznej wydajności zespołu.
+Aby skutecznie przeprowadzić refinement należy ustalić co będzie produkowane - potrzeba uporządkowanego Product Backlogu, zrozumienia jego elementów, zrozumienia aktualnego stanu produktów, wyliczonej pojemności zespołu oraz wiedzy na temat historycznej wydajności zespołu.
 
 Sprint Planning
 ---------------

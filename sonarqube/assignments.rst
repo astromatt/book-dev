@@ -15,10 +15,10 @@ Jenkins
     * SonarScanner: ``sonarsource/sonar-scanner-cli:latest``
 
 :Solution:
-    * Dockerfile :download:`solution/Dockerfile`
-    * Sonar-Project.properties :download:`solution/sonar-project.properties`
-    * Jenkinsfile (inline) :download:`solution/Jenkinsfile.inline`
-    * Jenkinsfile (env) :download:`solution/Dockerfile`
+    * Dockerfile :download:`_solution/Dockerfile`
+    * Sonar-Project.properties :download:`_solution/sonar-project.properties`
+    * Jenkinsfile (inline) :download:`_solution/Jenkinsfile.inline`
+    * Jenkinsfile (env) :download:`_solution/Dockerfile`
 
 
 Pitest

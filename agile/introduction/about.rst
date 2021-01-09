@@ -28,7 +28,7 @@ Obszar procesowy
 - Fundamenty Scrum i główne zasady
 - Multidyscyplinarne i samo-organizujące się zespoły
 - Łączenie rozwoju i utrzymania oprogramowania
-- Czym różnią się Epic, User Story, Task, Requirement
+- Czym różnią się Epic, User Story, Task, Requirement
 - Cykl życia aplikacji, podejście SDLC (Waterfall i Scrum)
 - Praca wielu zespołów nad jednym produktem
 - Jak wykrywać marnotrawstwa i zastosować technikę Continuous Improvement

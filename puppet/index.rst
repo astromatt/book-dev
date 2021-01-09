@@ -273,7 +273,7 @@ Narzędzia pomocnicze
 
 Facter
 ------
-* Przyjrzyj się wynikom poleceń:
+* Przyjrzyj się wynikom poleceń:
 
     .. code-block:: console
 
@@ -686,7 +686,7 @@ Hostname change
     - Manifest do tego zadania zapisz w pliku ``/etc/puppet/code/hostname.pp``
     - Za pomocą manifestu zmień hostname maszyny na ``ecosystem.local``
     - Upewnij się, że po wpisaniu polecenia ``hostname`` będzie ustawiona na odpowiednią wartość
-    - (jeżeli korzystasz z Vagrant) Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
+    - (jeżeli korzystasz z Vagrant) Upewnij się, że hostname nie przywróci się do domyślnej wartości po ponownym uruchomieniu
     - Hostname zmienia się na dwa sposoby:
 
         * podmiana zawartości pliku ``/etc/hostname`` i uruchomienie ``hostname -F /etc/hostname``

@@ -9,11 +9,14 @@ Docker network
 Adapters
 ========
 
-.. figure:: img/docker-networking.png
+.. figure:: ../_img/docker-networking.png
     :scale: 35%
     :align: center
 
     Docker network
+
+.. figure:: ../_img/docker-stack-05-kubernetes.png
+.. figure:: ../_img/docker-stack-06-architecture.png
 
 Bridge
 ------

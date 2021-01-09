@@ -5,13 +5,13 @@ Agile vs. DevOps
 
 Agile, Scrum, Lean, XP...
 =========================
-.. figure:: img/agility-v1.png
+..  figure:: ../_img/agility-v1.png
     :scale: 75%
     :align: center
 
     Agility is achieved only by combining Business Practices and Technical Craftsmanship. Agile is not only about Scrum.
 
-.. figure:: img/agility-v2.png
+..  figure:: ../_img/agility-v2.png
     :name: figure-agility
     :scale: 75%
     :align: center
@@ -36,7 +36,7 @@ Agile można rozumieć jako sześć spójnych i łączących się dyscyplin:
 Spotify Engineering Culture @youtube.com
 ========================================
 
-.. figure:: img/spotify-engineering-culture-01.png
+..  figure:: ../_img/spotify-engineering-culture-01.png
     :scale: 25%
     :align: center
 

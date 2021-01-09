@@ -12,25 +12,25 @@ Rationale
 * ISO/IEC 9126 Software Quality Model (1993)
 * ISO/IEC 25010 Software Quality Model (2011)
 
-.. figure:: img/qualitymodels-lifecycle-code.png
+.. figure:: _img/qualitymodels-lifecycle-code.png
     :scale: 75%
     :align: center
 
     Software phases [trevinchow]_
 
-.. figure:: img/qualitymodels-capers1996-a.png
+.. figure:: _img/qualitymodels-capers1996-a.png
     :scale: 100%
     :align: center
 
     Capers, Jones. Applied Software Measurement: Global Analysis of Productivity and Quality. 1996. [Capers1996]_
 
-.. figure:: img/qualitymodels-ambler2009-a.jpg
+.. figure:: _img/qualitymodels-ambler2009-a.jpg
     :scale: 66%
     :align: center
 
     Ambler, Scott W. Length of Feedback Cycle. 2009. [Ambler2009]_
 
-.. figure:: img/qualitymodels-lifecycle-bug.jpg
+.. figure:: _img/qualitymodels-lifecycle-bug.jpg
     :scale: 100%
     :align: center
 
@@ -54,19 +54,19 @@ The McCall model details these three perspective definitions (product modificati
 Metrics (To control): Define metrics and methods
 In the figure below, there are 11 quality elements on the left and 23 quality standards on the right.
 
-.. figure:: img/qualitymodel-mccall1977-a.png
+.. figure:: _img/qualitymodel-mccall1977-a.png
     :scale: 50%
     :align: center
 
     Product Quality as defined in Jim McCall Software Quality Model (1977) [gaochundong]_
 
-.. figure:: img/qualitymodel-mccall1977-b.png
+.. figure:: _img/qualitymodel-mccall1977-b.png
     :scale: 50%
     :align: center
 
     Product Quality as defined in Jim McCall Software Quality Model (1977) [gaochundong]_
 
-.. figure:: img/qualitymodel-mccall1977-c.png
+.. figure:: _img/qualitymodel-mccall1977-c.png
     :scale: 50%
     :align: center
 
@@ -95,13 +95,13 @@ The middle attribute contains 7 quality elements:
 
 It can be seen that the Boehm model is somewhat similar to the McCall model. The difference is that the McCall model mainly focuses on the accurate measurement of high-level attributes ("As-is utility"), while the Boehm model is based on a wider range of attributes, and maintains the maintainability. More attention.
 
-.. figure:: img/qualitymodel-boehm1978-a.png
+.. figure:: _img/qualitymodel-boehm1978-a.png
     :scale: 50%
     :align: center
 
     Product Quality as defined in Barry W. Boehm Software Quality Model (1978) [gaochundong]_
 
-.. figure:: img/qualitymodel-boehm1978-b.png
+.. figure:: _img/qualitymodel-boehm1978-b.png
     :scale: 50%
     :align: center
 
@@ -141,7 +141,7 @@ Chose a set of high-level quality attributes necessary for the evaluation.
     #. Determine how each property effects the quality attributes.
     #. Evaluate the model and identify weaknesses.
 
-.. figure:: img/qualitymodel-dromey-a.png
+.. figure:: _img/qualitymodel-dromey-a.png
     :scale: 75%
     :align: center
 
@@ -163,25 +163,25 @@ The ISO/IEC 9126 model is based on the McCall and Boehm models, while adding fun
     #. Maintainability: The ability of a software product to be modified. Modifications may include corrections, improvements or the degree of adaptation of the software to changes in the environment, requirements and functional specifications;
     #. Portability: The ability of a software product to migrate from one environment to another.
 
-.. figure:: img/qualitymodel-iso9126-a.png
+.. figure:: _img/qualitymodel-iso9126-a.png
     :scale: 75%
     :align: center
 
     Product Quality as defined in ISO/IEC 9126 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso9126-b.png
+.. figure:: _img/qualitymodel-iso9126-b.png
     :scale: 75%
     :align: center
 
     Product Quality as defined in ISO/IEC 9126 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso9126-c.png
+.. figure:: _img/qualitymodel-iso9126-c.png
     :scale: 75%
     :align: center
 
     Product Quality as defined in ISO/IEC 9126 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso9126-d.png
+.. figure:: _img/qualitymodel-iso9126-d.png
     :scale: 50%
     :align: center
 
@@ -190,7 +190,7 @@ The ISO/IEC 9126 model is based on the McCall and Boehm models, while adding fun
 
 ISO/IEC 9128
 ============
-.. figure:: img/qualitymodel-iso9128-a.png
+.. figure:: _img/qualitymodel-iso9128-a.png
     :scale: 75%
     :align: center
 
@@ -220,55 +220,55 @@ ISO/IEC 25010 adds new software usage quality, which contains 5 characteristics 
 
 Use quality: In a specific use environment, the software product's ability to enable specific users to achieve specific goals of effectiveness, productivity, safety, and satisfaction.
 
-.. figure:: img/qualitymodel-iso25010-a.jpeg
+.. figure:: _img/qualitymodel-iso25010-a.jpeg
     :scale: 125%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [ISO25010a]_
 
-.. figure:: img/qualitymodel-iso25010-b.png
+.. figure:: _img/qualitymodel-iso25010-b.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [ISO25010b]_
 
-.. figure:: img/qualitymodel-iso25010-c.png
+.. figure:: _img/qualitymodel-iso25010-c.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [ISO25010c]_
 
-.. figure:: img/qualitymodel-iso25010-d.png
+.. figure:: _img/qualitymodel-iso25010-d.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso25010-e.png
+.. figure:: _img/qualitymodel-iso25010-e.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso25010-f.png
+.. figure:: _img/qualitymodel-iso25010-f.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso25010-g.png
+.. figure:: _img/qualitymodel-iso25010-g.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso25010-h.png
+.. figure:: _img/qualitymodel-iso25010-h.png
     :scale: 100%
     :align: center
 
     Product Quality as defined in ISO/IEC 25010 [gaochundong]_
 
-.. figure:: img/qualitymodel-iso25010-i.png
+.. figure:: _img/qualitymodel-iso25010-i.png
     :scale: 100%
     :align: center
 

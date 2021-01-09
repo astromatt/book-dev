@@ -2,13 +2,13 @@
 Directory Structure
 *******************
 
-.. figure:: img/directory-tree.gif
+.. figure:: ../_img/directory-tree.gif
     :align: center
     :scale: 100%
 
     Linux directory tree
 
-.. figure:: img/unix-directory-structure.png
+.. figure:: ../_img/unix-directory-structure.png
     :align: center
     :scale: 100%
 
@@ -17,4 +17,4 @@ Directory Structure
 .. csv-table:: Directory Structure
     :header-rows: 1
     :widths: 20, 80
-    :file: data/directory-structure.csv
+    :file: ../_data/directory-structure.csv

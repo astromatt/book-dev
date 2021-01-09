@@ -1,5 +1,5 @@
 *****************************************
-Procesy Continuous Integration i Delivery
+Procesy Continuous Integration i Delivery
 *****************************************
 
 Proces ciągłej integracji polega na automatycznym uruchamianiu testów aplikacji tj. testów jednostkowych, testów integracyjnych, testów regresyjnych i funkcjonalnych dla każdej wprowadzonej zmiany. Dzięki zastosowaniu Continuous Integration (CI) programiści otrzymują natychmiastową informację czy ich zmiany w kodzie nie destabilizują pracy systemu oraz negatywnie wpływają na całą aplikację.
@@ -16,13 +16,13 @@ Poszczególne mniejsze fragmenty wytwarzanego oprogramowania muszą przejść ok
 
 Wykorzystywanie metody Continuous Delivery w pracy Firmie jest skutkiem nastawienia na konkretne i dobre efekty. Dzięki niej oszczędza się także czas i pieniądze, które wykorzystuje się na dalszy, coraz bardziej zaawansowany rozwój.
 
-Do procesu zarówno Continuous Integration jak i Continuous Delivery w Firmie wykorzystywany jest system Jenkins. Oprogramowanie to pozwala na automatyzację kroków procesu znacząco obniżając czas i koszt tworzenia kolejnych przyrostów. W kolejnych krokach działania tego narzędzia jest pobranie kodu źródłowego, jego kompilacja, poddanie go testom jednostkowym i funkcjonalnym a na samym końcu analiza statyczna kodu źródłowego i zbudowanie artefaktu gotowego do wdrożenia na środowisko testowe lub/i produkcyjne.
+Do procesu zarówno Continuous Integration jak i Continuous Delivery w Firmie wykorzystywany jest system Jenkins. Oprogramowanie to pozwala na automatyzację kroków procesu znacząco obniżając czas i koszt tworzenia kolejnych przyrostów. W kolejnych krokach działania tego narzędzia jest pobranie kodu źródłowego, jego kompilacja, poddanie go testom jednostkowym i funkcjonalnym a na samym końcu analiza statyczna kodu źródłowego i zbudowanie artefaktu gotowego do wdrożenia na środowisko testowe lub/i produkcyjne.
 
 Continuous Integration
 ======================
 Proces ciągłej integracji polega na automatycznym uruchamianiu testów aplikacji tj. testów jednostkowych, testów integracyjnych, testów regresyjnych i funkcjonalnych dla każdej wprowadzonej zmiany. Dzięki zastosowaniu Continuous Integration (CI) programiści otrzymują natychmiastową informację czy ich zmiany w kodzie nie destabilizują pracy systemu oraz negatywnie wpływają na całą aplikację.
 
-Proces CI w ramach Firmy jest realizowany za pomocą systemu do automatycznego budowania - Jenkins. System ten periodycznie odpytuje repozytorium o zmiany w repozytorium i w przypadku wykrycia takowych uruchamia z góry zdefiniowane akcje, tj. wymienione powyżej.
+Proces CI w ramach Firmy jest realizowany za pomocą systemu do automatycznego budowania - Jenkins. System ten periodycznie odpytuje repozytorium o zmiany w repozytorium i w przypadku wykrycia takowych uruchamia z góry zdefiniowane akcje, tj. wymienione powyżej.
 
 Plany w Jenkinsie dzielą się na różne kategorie:
 
@@ -48,14 +48,14 @@ Automatyczne testowanie, ciągłe scalanie i ciągłe wdrażanie oprogramowania 
 
 Poszczególne mniejsze fragmenty wytwarzanego oprogramowania muszą przejść określone etapy walidacji na swojej drodze do publikacji. Kod jest kompilowany i pakowany za każdym razem, gdy dokonywana jest zmiana w systemie kontroli wersji. Następnie jest wielokrotnie testowany. Dopiero po tym może zostać wdrożony.
 
-.. figure:: img/cicd-loop.png
+..  figure:: ../_img/cicd-loop.png
     :scale: 50%
     :align: center
 
-    Koncepcja metody Continuous Delivery. Poszczególne kroki procesu zapętlają się tworząc niekończącą się pętlę.
+    Koncepcja metody Continuous Delivery. Poszczególne kroki procesu zapętlają się tworząc niekończącą się pętlę.
 
-Wykorzystywanie metody Continuous Delivery w pracy Firmy jest skutkiem nastawienia na konkretne i dobre efekty. Dzięki niej Firma również oszczędza czas i pieniądze, które wykorzystuje na dalszy, coraz bardziej zaawansowany rozwój.
+Wykorzystywanie metody Continuous Delivery w pracy Firmy jest skutkiem nastawienia na konkretne i dobre efekty. Dzięki niej Firma również oszczędza czas i pieniądze, które wykorzystuje na dalszy, coraz bardziej zaawansowany rozwój.
 
 Continuous Deployment
 =====================
-Proces produkcji oprogramowania charakteryzujący się wdrażaniem zmian na środowisko produkcyjne po każdej wprowadzonej poprawce lub nowej funkcjonalności. Proces ten charakteryzuje dojrzałe oprogramowanie oraz 100% zaufanie testom automatycznym. Continuous Deployment jest rozwinięciem idei Continuous Delivery.
+Proces produkcji oprogramowania charakteryzujący się wdrażaniem zmian na środowisko produkcyjne po każdej wprowadzonej poprawce lub nowej funkcjonalności. Proces ten charakteryzuje dojrzałe oprogramowanie oraz 100% zaufanie testom automatycznym. Continuous Deployment jest rozwinięciem idei Continuous Delivery.

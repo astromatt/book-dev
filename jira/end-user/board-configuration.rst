@@ -11,12 +11,12 @@ Board vs. Project
 - Wiele boardów do jednego projektu (różne estymaty)
 - Wiele projektów czy wiele boardów (np. po komponentach)?
 
-.. figure:: img/jira-board-vs-project-1.png
-.. figure:: img/jira-board-vs-project-2.png
-.. figure:: img/jira-board-vs-project-3.png
-.. figure:: img/jira-board-vs-project-4.png
-.. figure:: img/jira-board-vs-project-5.png
-.. figure:: img/jira-board-vs-project-6.png
+..   figure:: ../_img//jira-board-vs-project-1.png
+..   figure:: ../_img//jira-board-vs-project-2.png
+..   figure:: ../_img//jira-board-vs-project-3.png
+..   figure:: ../_img//jira-board-vs-project-4.png
+..   figure:: ../_img//jira-board-vs-project-5.png
+..   figure:: ../_img//jira-board-vs-project-6.png
 
 
 Board
@@ -56,7 +56,7 @@ Board
 - Working Days
 - Issue Detail View
 
-.. figure:: img/jira-board-daysincolumn.png
+..   figure:: ../_img//jira-board-daysincolumn.png
 
     Days in Column
 
@@ -64,14 +64,14 @@ Portfolio
 =========
 - Portfolio na bazie Kanban Board
 
-.. figure:: img/agile-decomposition-19-risk.jpg
-.. figure:: img/agile-decomposition-20-portfolio.jpg
+..   figure:: ../_img//agile-decomposition-19-risk.jpg
+..   figure:: ../_img//agile-decomposition-20-portfolio.jpg
 
 
 Cloud
 =====
-.. figure:: img/jira-board-roadmap.png
-.. figure:: img/jira-board-features.png
+..   figure:: ../_img//jira-board-roadmap.png
+..   figure:: ../_img//jira-board-features.png
 
 
 Demonstration

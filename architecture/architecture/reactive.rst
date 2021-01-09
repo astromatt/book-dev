@@ -1,7 +1,7 @@
 Reactive
 ========
 
-.. figure:: img/microservices-reactive.png
+..  figure:: ../_img/microservices-reactive.png
     :scale: 50%
     :align: center
 

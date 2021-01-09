@@ -1,0 +1,11 @@
+{
+    "cited": {
+        "agile/roadmap-vs-backlog": [
+            "ScrumGuide"
+        ],
+        "introduction/agile-vs-devops": [
+            "AgileManifesto2001",
+            "ScrumGuide"
+        ]
+    }
+}

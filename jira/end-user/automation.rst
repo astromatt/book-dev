@@ -54,20 +54,20 @@ Dev Panel
 * CI/CD Builds
 * Releases
 
-.. figure:: img/jira-board-devpanel-backlog.png
-.. figure:: img/jira-board-devpanel-issue.png
-.. figure:: img/jira-board-devpanel-sprint-1.png
-.. figure:: img/jira-board-devpanel-sprint-2.png
-.. figure:: img/bitbucket-builds.png
-.. figure:: img/bitbucket-createbranch.png
-.. figure:: img/bitbucket-pullrequest.png
+..   figure:: ../_img//jira-board-devpanel-backlog.png
+..   figure:: ../_img//jira-board-devpanel-issue.png
+..   figure:: ../_img//jira-board-devpanel-sprint-1.png
+..   figure:: ../_img//jira-board-devpanel-sprint-2.png
+..   figure:: ../_img//bitbucket-builds.png
+..   figure:: ../_img//bitbucket-createbranch.png
+..   figure:: ../_img//bitbucket-pullrequest.png
 
 
 Releases
 ========
 * Trigger CI/CD Builds
 
-.. figure:: img/jira-release-overview.png
+..   figure:: ../_img//jira-release-overview.png
 
 
 Smart Commits
@@ -202,13 +202,13 @@ GIT
        echo "$issuekey $message" > $COMMIT_MSG_FILE
     fi
 
-.. figure:: img/devops-gitflow.png
+..   figure:: ../_img//devops-gitflow.png
 
 
 CI/CD
 =====
-.. figure:: img/devops-ecosystem.png
-.. figure:: img/devops-cicd.png
+..   figure:: ../_img//devops-ecosystem.png
+..   figure:: ../_img//devops-cicd.png
 
 
 Jira Workflow Triggers
@@ -236,7 +236,7 @@ Crucible:
     * Review rejected
     * Review summarized
 
-.. figure:: img/jira-workflow-simplified,triggers.png
-.. figure:: img/jira-triggers-1.png
-.. figure:: img/jira-triggers-2.png
-.. figure:: img/jira-triggers-3.png
+..   figure:: ../_img//jira-workflow-simplified,triggers.png
+..   figure:: ../_img//jira-triggers-1.png
+..   figure:: ../_img//jira-triggers-2.png
+..   figure:: ../_img//jira-triggers-3.png

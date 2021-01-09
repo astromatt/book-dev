@@ -20,7 +20,7 @@ Docker Containers
     :numbered:
     :caption: Docker Containers
 
-    container/basic-usage.rst
+    container/usage.rst
     container/run.rst
     container/exec.rst
     container/network.rst
@@ -35,7 +35,7 @@ Docker Images
     :caption: Docker Images
 
     image/build.rst
-    image/docker-registry.rst
+    image/registry.rst
 
 **************
 Docker Scaling

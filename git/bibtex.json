@@ -1,0 +1,10 @@
+{
+    "cited": {
+        "basics/introduction": [
+            "GitDocumentation"
+        ],
+        "tools/git": [
+            "GitDocumentation"
+        ]
+    }
+}

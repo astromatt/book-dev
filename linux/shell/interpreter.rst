@@ -9,7 +9,7 @@ Configuration files
 - ~/.bash_logout
 - /etc/bashrc
 
-.. figure:: img/bash-colors.png
+.. figure:: ../_img/bash-colors.png
     :align: center
     :scale: 100%
 

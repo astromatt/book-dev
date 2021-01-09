@@ -25,7 +25,7 @@ Ubuntu
 ------
 * https://docs.docker.com/engine/getstarted/linux_install_help/
 
-.. figure:: img/release-ubuntu.png
+.. figure:: ../_img/release-ubuntu.png
     :scale: 35%
     :align: center
 
@@ -60,4 +60,4 @@ Assignments
 Install
 -------
 #. Zainstaluj ``Docker``
-#. Czym różni się ``Docker`` od ``Vagrant``?
+#. Czym różni się ``Docker`` od ``Vagrant``?

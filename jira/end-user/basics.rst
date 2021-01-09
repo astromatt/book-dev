@@ -8,7 +8,7 @@ Rationale
 - Issue Tracker
 - Jira
 
-.. figure:: img/agile-wheel-2.png
+..   figure:: ../_img//agility-bigpicture-advanced.png
 
 
 Project

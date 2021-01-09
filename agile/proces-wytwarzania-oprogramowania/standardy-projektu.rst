@@ -17,9 +17,9 @@ Firma jest organizacją dbającą o jakość wytworzonych rozwiązań. Dla popra
 Języki programowania
 ====================
 
-Dostrzegając, iż na świecie Java de facto stała się standardem podjęliśmy decyzję aby projekty informatyczne były wytwarzane są w tym języku. Firma wytwarza oprogramowanie wykorzystując Javę po stronie serwerowej oraz w język Java Script po stronie klienta. Do pomniejszych zadań, skryptów lub narzędzi wykorzystywane są języki tj. Python, Ruby, Shell Script.
+Dostrzegając, iż na świecie Java de facto stała się standardem podjęliśmy decyzję aby projekty informatyczne były wytwarzane są w tym języku. Firma wytwarza oprogramowanie wykorzystując Javę po stronie serwerowej oraz w język Java Script po stronie klienta. Do pomniejszych zadań, skryptów lub narzędzi wykorzystywane są języki tj. Python, Ruby, Shell Script.
 
-Dopuszcza się zwiększenie procentu wykorzystania innych języków lub zastosowanie technologii niewymienionych w powyższym zestawieniu jeżeli tylko jest to uzasadniona biznesowo lub informatycznie zmiana. W takim przypadku ma zastosowanie procedura wprowadzania nowych technologii w projektach.
+Dopuszcza się zwiększenie procentu wykorzystania innych języków lub zastosowanie technologii niewymienionych w powyższym zestawieniu jeżeli tylko jest to uzasadniona biznesowo lub informatycznie zmiana. W takim przypadku ma zastosowanie procedura wprowadzania nowych technologii w projektach.
 
 Dokładną listę technologii precyzuje stosowny załącznik do dokumentu.
 
@@ -36,7 +36,7 @@ W przypadku zapotrzebowania na zmianę technologii, architektury lub podziału a
 System kontroli wersji
 ======================
 
-Firma jako standard systemu kontroli wersji wybrała rozwiązanie Git. Aplikacja ta jest narzędziem pozwalającym na śledzenie zmian oraz ich autorów. Git został wybrany, jako że na chwilę obecną jest najpopularniejszym oprogramowaniem tego typu na rynku i ma największe wsparcie wśród narzędzi deweloperskich. Ponadto w sieci Internet zgromadzone są duże zasoby wiedzy dotyczącej korzystania z tego oprogramowania, a społeczność chętnie pomaga rozwiązywać najczęściej spotykane problemy.
+Firma jako standard systemu kontroli wersji wybrała rozwiązanie Git. Aplikacja ta jest narzędziem pozwalającym na śledzenie zmian oraz ich autorów. Git został wybrany, jako że na chwilę obecną jest najpopularniejszym oprogramowaniem tego typu na rynku i ma największe wsparcie wśród narzędzi deweloperskich. Ponadto w sieci Internet zgromadzone są duże zasoby wiedzy dotyczącej korzystania z tego oprogramowania, a społeczność chętnie pomaga rozwiązywać najczęściej spotykane problemy.
 
 Zastosowanie Git w projekcie wiąże się z przestrzeganiem odpowiednich konwencji nazewniczych oraz procesu wprowadzania funkcjonalności w aplikacji. Informacje te są zamieszczone w oddzielnym paragrafie “Konwencja nazewnicza w systemie kontroli wersji”.
 
@@ -52,15 +52,15 @@ Budowanie projektu i zarządzanie zależnościami
 
 Do automatyzacji budowania projektu oraz zarządzania jego zależnościami zostały wybrane rozwiązania Maven i Gradle.
 
-Dla aplikacji zbudowanych przy użyciu innego języka programowania niż Java przewiduje się użycie odmiennych, specyficznych dla danej technologii rozwiązań.
+Dla aplikacji zbudowanych przy użyciu innego języka programowania niż Java przewiduje się użycie odmiennych, specyficznych dla danej technologii rozwiązań.
 
 Warstwowa architektura rozwiązań
 ================================
 
-Wśród aplikacji wytwarzanych w ramach projektów można wyróżnić co najmniej trzy główne warstwy, w ramach których zastosowanie mają różne technologie:
+Wśród aplikacji wytwarzanych w ramach projektów można wyróżnić co najmniej trzy główne warstwy, w ramach których zastosowanie mają różne technologie:
 
 * warstwa widoku (frontendu),
 * warstwa logiki biznesowej (backendu),
 * warstwa persystencji (bazy danych).
 
-Podział ten przyjął się jako standard na świecie. Dzięki wykorzystaniu takiego rozróżnienia Firma jest w stanie skutecznie tworzyć niezależne od siebie elementy aplikacji, które później stanowią całość oprogramowania.
+Podział ten przyjął się jako standard na świecie. Dzięki wykorzystaniu takiego rozróżnienia Firma jest w stanie skutecznie tworzyć niezależne od siebie elementy aplikacji, które później stanowią całość oprogramowania.

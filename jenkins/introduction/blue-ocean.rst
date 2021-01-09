@@ -14,7 +14,7 @@ About Blue Ocean
 
 Build Pipeline
 ==============
-.. figure:: img/blueocean-pipeline.png
+.. figure:: ../_img/blueocean-pipeline.png
     :scale: 50%
     :align: center
 
@@ -23,7 +23,7 @@ Build Pipeline
 
 Build Failure
 =============
-.. figure:: img/blueocean-success.png
+.. figure:: ../_img/blueocean-success.png
     :scale: 75%
     :align: center
 
@@ -32,7 +32,7 @@ Build Failure
 
 Build Success
 =============
-.. figure:: img/blueocean-failing.png
+.. figure:: ../_img/blueocean-failing.png
     :scale: 50%
     :align: center
 

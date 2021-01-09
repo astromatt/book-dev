@@ -1,4 +1,4 @@
-Bezpieczeństwo aplikacji, kodu źródłowego i danych
+Bezpieczeństwo aplikacji, kodu źródłowego i danych
 ==================================================
 
 Ataki na systemy informatyczne mają z reguły u swoich podstaw wprowadzenie do systemu danych, których typ nie został przewidziany w czasie jego tworzenia.
@@ -10,15 +10,15 @@ Bez względu na charakter jaki posiadają niedozwolone dane wprowadzane do syste
 
 Ogólne środki zaradcze
 ----------------------
-Akceptacja tylko tych danych, które zostały przewidziane w fazie projektowania systemu. 
+Akceptacja tylko tych danych, które zostały przewidziane w fazie projektowania systemu.
 
-Metoda ta polega na weryfikacji danych wejściowych i zbadaniu czy spełniają one założone z reguły biznesowe kryteria jakości. Jeżeli nie - są odrzucane i nie mogą dostać się głębiej do struktur systemu. Jednym z przykładów może być zaimplementowanie w systemie weryfikacji poprawności danych w polu reprezentującym PESEL, która sprawdzi i wykluczy możliwości wprowadzenia w tym polu innych znaków niż cyfry (np. litery, znak plus).
+Metoda ta polega na weryfikacji danych wejściowych i zbadaniu czy spełniają one założone z reguły biznesowe kryteria jakości. Jeżeli nie - są odrzucane i nie mogą dostać się głębiej do struktur systemu. Jednym z przykładów może być zaimplementowanie w systemie weryfikacji poprawności danych w polu reprezentującym PESEL, która sprawdzi i wykluczy możliwości wprowadzenia w tym polu innych znaków niż cyfry (np. litery, znak plus).
 
 Weryfikacja i odrzucanie danych wejściowych, przez wzgląd na zawartość złośliwą
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Weryfikacja ta opiera się sprawdzeniu czy dane wejściowe nie noszą znamion próby ataku. Np. próba wykrywania w danych komend systemu operacyjnego (np. ``su``), elementów języka SQL, czy też kont użytkowników systemowych (np. ``root``).
 
-Dla niektórych pól zastosowanie tej techniki jest w ogóle niemożliwe. Ingeruje ona w treść wprowadzanych danych również, kiedy nie stanowią one zagrożenia, a wyeliminowanie wszystkich potencjalnie groźnych słów kluczowych jest zadaniem trudnym w implementacji i utrzymaniu. Z tego powodu stosuje się sprawdzenia wystąpień jedynie symboli sterujących i oznaczanie ich jako nieaktywne - wówczas słowa kluczowe nie będą interpretowane jako polecenia systemowe, czy też kod wykonywalny. 
+Dla niektórych pól zastosowanie tej techniki jest w ogóle niemożliwe. Ingeruje ona w treść wprowadzanych danych również, kiedy nie stanowią one zagrożenia, a wyeliminowanie wszystkich potencjalnie groźnych słów kluczowych jest zadaniem trudnym w implementacji i utrzymaniu. Z tego powodu stosuje się sprawdzenia wystąpień jedynie symboli sterujących i oznaczanie ich jako nieaktywne - wówczas słowa kluczowe nie będą interpretowane jako polecenia systemowe, czy też kod wykonywalny.
 
 Weryfikacja danych po stronie serwera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,7 +34,7 @@ Możliwa weryfikacja:
 
     * długości danych wejściowych oraz czy mieszczą się one w dopuszczalnych zakresach wartości i słownikach,
     * czy dane wejściowe zawierają znaki niedozwolone,
-    * danych po stronie serwerowej systemu, nawet wtedy, kiedy po stronie klienckiej wykonuje się identyczne weryfikacje, 
+    * danych po stronie serwerowej systemu, nawet wtedy, kiedy po stronie klienckiej wykonuje się identyczne weryfikacje,
     * plików cookie,
     * danych wprowadzonych w pola ukryte,
     * wartości ze względu na występowanie niedozwolonych słów i znaków, sugerujących próbę wprowadzenia danych złośliwych (np. elementów języka SQL, Java, itp.),
@@ -46,11 +46,11 @@ Kontrola dostępu
 ----------------
 Podstawową kwestią ochrony systemów centralnych i końcowych oraz danych jest wprowadzenie odpowiedniej kontroli dostępu, którą należy stosować w celu:
 
-    * Ograniczenia możliwości działania użytkowników, 
-    * Ograniczenia dostępu użytkowników do zasobów, 
+    * Ograniczenia możliwości działania użytkowników,
+    * Ograniczenia dostępu użytkowników do zasobów,
     * Definicji funkcji, które użytkownicy mogą stosować do danych.
 
-Mechanizmy kontroli dostępu powinny uniemożliwiać nieuprawnionym: przeglądania, modyfikowania i kopiowania danych. Dodatkowo, mogą powstrzymać przed zastosowaniem złośliwego kodu lub nieuprawnionych działań przez napastnika, wykorzystującego zależności infrastruktury. 
+Mechanizmy kontroli dostępu powinny uniemożliwiać nieuprawnionym: przeglądania, modyfikowania i kopiowania danych. Dodatkowo, mogą powstrzymać przed zastosowaniem złośliwego kodu lub nieuprawnionych działań przez napastnika, wykorzystującego zależności infrastruktury.
 
 Dostęp do informacji w systemach oraz dokumentacji a informacja publiczna
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -60,9 +60,9 @@ Wyżej wymienione repozytoria są objęte tzw. klauzulą informacji zastrzeżone
 
 Użytkowanie sprzętu prywatnego
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Aby zapewnić bezpieczeństwo środowiska pracy w organizacji regulamin polityki bezpieczeństwa Firmy zabrania używania urządzeń prywatnych do wykorzystania w celu służbowym w Firmie. 
+Aby zapewnić bezpieczeństwo środowiska pracy w organizacji regulamin polityki bezpieczeństwa Firmy zabrania używania urządzeń prywatnych do wykorzystania w celu służbowym w Firmie.
 
-Odstępstwo od tej reguły może mieć miejsce tylko i wyłącznie za zgodą kierownika, architekta lub stosownego zastępcy Dyrektora i musi być dobrze umotywowane. W powyższych i uzasadnionych przypadkach muszą zostać spełnione obowiązujące w Firmie standardy bezpieczeństwa, w stopniu nie niższym niż te, dotyczące pracy na służbowych komputerach.
+Odstępstwo od tej reguły może mieć miejsce tylko i wyłącznie za zgodą kierownika, architekta lub stosownego zastępcy Dyrektora i musi być dobrze umotywowane. W powyższych i uzasadnionych przypadkach muszą zostać spełnione obowiązujące w Firmie standardy bezpieczeństwa, w stopniu nie niższym niż te, dotyczące pracy na służbowych komputerach.
 
 Na szczególną uwagę należy zwrócić aby:
 
@@ -77,7 +77,7 @@ Weryfikacja i sprawdzanie danych wejściowych
 --------------------------------------------
 Ataki na systemy informatyczne mają z reguły u swoich podstaw wprowadzenie do systemu danych, których typ nie został przewidziany w czasie jego tworzenia.
 
-Istotą ataków bardzo często jest wprowadzenie takich danych, które system informatyczny, w którejś ze swoich warstw, zinterpretuje jako komendy lub polecenia, zmieniając w ten sposób jego działanie. Dane te wówczas mogą nie wpływać bezpośrednio na działanie systemu, ale powodować udostępnienie danych, które nie miały być dostępne, przekształcać działanie systemu na skutek modyfikacji parametrów kontrolujących jego działanie.
+Istotą ataków bardzo często jest wprowadzenie takich danych, które system informatyczny, w którejś ze swoich warstw, zinterpretuje jako komendy lub polecenia, zmieniając w ten sposób jego działanie. Dane te wówczas mogą nie wpływać bezpośrednio na działanie systemu, ale powodować udostępnienie danych, które nie miały być dostępne, przekształcać działanie systemu na skutek modyfikacji parametrów kontrolujących jego działanie.
 
 Bez względu na charakter jaki posiadają niedozwolone dane wprowadzane do systemu - w zabezpieczaniu systemów przed atakami kluczowe jest weryfikowanie danych wejściowych.
 
@@ -87,13 +87,13 @@ Ogólne środki zaradcze
 
 Akceptacja tylko tych danych, które zostały przewidziane w fazie projektowania systemu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Metoda ta polega na weryfikacji danych wejściowych i zbadaniu czy spełniają one założone z reguły biznesowe kryteria jakości. Jeżeli nie - są odrzucane i nie mogą dostać się głębiej do struktur systemu. Jednym z przykładów może być zaimplementowanie w systemie weryfikacji poprawności danych w polu reprezentującym PESEL, która sprawdzi i wykluczy możliwości wprowadzenia w tym polu innych znaków niż cyfry (np. litery, znak plus).
+Metoda ta polega na weryfikacji danych wejściowych i zbadaniu czy spełniają one założone z reguły biznesowe kryteria jakości. Jeżeli nie - są odrzucane i nie mogą dostać się głębiej do struktur systemu. Jednym z przykładów może być zaimplementowanie w systemie weryfikacji poprawności danych w polu reprezentującym PESEL, która sprawdzi i wykluczy możliwości wprowadzenia w tym polu innych znaków niż cyfry (np. litery, znak plus).
 
 Weryfikacja i odrzucanie danych wejściowych, przez wzgląd na zawartość złośliwą
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Weryfikacja ta opiera się sprawdzeniu czy dane wejściowe nie noszą znamion próby ataku. Np. próba wykrywania w danych komend systemu operacyjnego (np. ``su``), elementów języka SQL, czy też kont użytkowników systemowych (np. ``root``).
 
-Dla niektórych pól zastosowanie tej techniki jest w ogóle niemożliwe. Ingeruje ona w treść wprowadzanych danych również, kiedy nie stanowią one zagrożenia, a wyeliminowanie wszystkich potencjalnie groźnych słów kluczowych jest zadaniem trudnym w implementacji i utrzymaniu. Z tego powodu stosuje się sprawdzenia wystąpień jedynie symboli sterujących i oznaczanie ich jako nieaktywne - wówczas słowa kluczowe nie będą interpretowane jako polecenia systemowe, czy też kod wykonywalny. 
+Dla niektórych pól zastosowanie tej techniki jest w ogóle niemożliwe. Ingeruje ona w treść wprowadzanych danych również, kiedy nie stanowią one zagrożenia, a wyeliminowanie wszystkich potencjalnie groźnych słów kluczowych jest zadaniem trudnym w implementacji i utrzymaniu. Z tego powodu stosuje się sprawdzenia wystąpień jedynie symboli sterujących i oznaczanie ich jako nieaktywne - wówczas słowa kluczowe nie będą interpretowane jako polecenia systemowe, czy też kod wykonywalny.
 
 Weryfikacja danych po stronie serwera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,7 +109,7 @@ Możliwa weryfikacja:
 
     * długości danych wejściowych oraz czy mieszczą się one w dopuszczalnych zakresach wartości i słownikach,
     * czy dane wejściowe zawierają znaki niedozwolone,
-    * danych po stronie serwerowej systemu, nawet wtedy, kiedy po stronie klienckiej wykonuje się identyczne weryfikacje, 
+    * danych po stronie serwerowej systemu, nawet wtedy, kiedy po stronie klienckiej wykonuje się identyczne weryfikacje,
     * plików cookie,
     * danych wprowadzonych w pola ukryte,
     * wartości ze względu na występowanie niedozwolonych słów i znaków, sugerujących próbę wprowadzenia danych złośliwych (np. elementów języka SQL, Java, itp.),
@@ -122,7 +122,7 @@ Szczegółowy opis zagrożeń i obrony
 
 Cross-site Scripting
 ^^^^^^^^^^^^^^^^^^^^
-Atakiem typu cross-site scripting zagrożone są serwery sieci, serwery aplikacji i środowiska aplikacji. Ataki te są możliwe, kiedy napastnik używa aplikacji internetowej do wprowadzenia złośliwego kodu, często języka skryptowego JavaScript lub aktywnych zawartości, takich jak: ActiveX, VBscript, Shockwave, Flash, itp. 
+Atakiem typu cross-site scripting zagrożone są serwery sieci, serwery aplikacji i środowiska aplikacji. Ataki te są możliwe, kiedy napastnik używa aplikacji internetowej do wprowadzenia złośliwego kodu, często języka skryptowego JavaScript lub aktywnych zawartości, takich jak: ActiveX, VBscript, Shockwave, Flash, itp.
 
 Złośliwy kod ukrywany jest często przez używanie technik kodujących, takich jak: Unicode.
 
@@ -134,9 +134,9 @@ Do dwóch głównych kategorii cross-site scripting zalicza się:
 Do głównych zagrożeń zalicza się:
 
     * proste zakłócenia np. wyświetlanie nieoczekiwanej zawartości,
-    * przeadresowywanie użytkownika do innej strony, 
+    * przeadresowywanie użytkownika do innej strony,
     * "porwania" (hijack) sesji,
-    * ujawnienia nieautoryzowanej zawartości i zmian zawartości witryny.
+    * ujawnienia nieautoryzowanej zawartości i zmian zawartości witryny.
 
 :Środki kontrolno-zaradcze:
 
@@ -158,14 +158,14 @@ SQL Injection
 ^^^^^^^^^^^^^
 Napastnicy mogą bezpośrednio przesyłać zapytania lub polecenia do silnika bazy danych, kiedy dane wejściowe użytkownika nie są rygorystycznie sprawdzane.
 
-Niedostatecznie zweryfikowane parametry mogą zawierać polecenie SQL, które w momencie skierowania do aplikacji zostaną umieszczone w  dynamicznym zapytaniu bazy danych, wykonywanym zgodnie z uprawnieniami konta aplikacji. Poziom zagrożenia wzrasta wraz z poziomem uprzywilejowania konta.
+Niedostatecznie zweryfikowane parametry mogą zawierać polecenie SQL, które w momencie skierowania do aplikacji zostaną umieszczone w  dynamicznym zapytaniu bazy danych, wykonywanym zgodnie z uprawnieniami konta aplikacji. Poziom zagrożenia wzrasta wraz z poziomem uprzywilejowania konta.
 
 Skutkami mogą być:
 
     * narażenie prywatności danych klienta,
     * dostęp do osobistych danych klienta (dane finansowe, medyczne, itp.),
     * nieuprawniona zmiana hasła administratora albo innych haseł klienta,
-    * nieautoryzowana zmiana danych i oddziaływanie na integralność bazy danych,
+    * nieautoryzowana zmiana danych i oddziaływanie na integralność bazy danych,
     * utrata podstawowych tabel.
 
 :Środki kontrolno zaradcze:
@@ -189,7 +189,7 @@ Zależnie od języka programowania lub skryptu i systemu operacyjnego, możliwa 
 :Środki kontrolno-zaradcze:
 
     * Należy sprawdzać czy dane wejściowe są akceptowalne; jeśli nie - odrzucać je.
-    * Nigdy nie należy pozwalać serwerowi sieci pracować jako ADMINISTRATOR  lub ROOT.
+    * Nigdy nie należy pozwalać serwerowi sieci pracować jako ADMINISTRATOR  lub ROOT.
     * Aplikacja sieci powinna funkcjonować z minimalnymi uprawnieniami wymaganymi do wykonywania jej funkcji.
     * Jeżeli polecenia OS muszą zostać użyte, wszystkie parametry wprowadzane do nich powinny być bardzo dokładnie sprawdzone. Dane wprowadzane przez użytkownika nie mogą być przekazywane wprost do polecenia systemowego bez analizy składniowej.
     * Należy zaimplementować odpowiednie mechanizmy obsługi ewentualnych błędów, upływu przewidzianego czasu lub blokad podczas prośby.
@@ -205,9 +205,9 @@ Jeżeli aplikacje i serwery sieciowe nie sprawdzają albo nie obsługują prawid
 
 :Środki kontrolno-zaradcze:
 
-    * Należy wykorzystywać funkcje normalizacji ścieżki zawartej w języku programowania.
-    * Należy usuwać niebezpieczne elementy ścieżek, takie jak '../' oraz ich warianty Unicode z danych wejściowych systemu. 
-    * Należy używać bezwzględnych ścieżek, wykorzystując zmienne środowiskowe lub konfigurację do określenia lokalizacji plików i katalogów.
+    * Należy wykorzystywać funkcje normalizacji ścieżki zawartej w języku programowania.
+    * Należy usuwać niebezpieczne elementy ścieżek, takie jak '../' oraz ich warianty Unicode z danych wejściowych systemu.
+    * Należy używać bezwzględnych ścieżek, wykorzystując zmienne środowiskowe lub konfigurację do określenia lokalizacji plików i katalogów.
     * Należy sprawdzać czy dane wejściowe są akceptowalne; jeśli nie - odrzucać je.
 
 
@@ -249,7 +249,7 @@ Wiele aplikacji programowych dla dalszego postępowania i funkcjonowania, częst
 
 Jeżeli ciąg "XXX\0YYY" zostanie poprawnie przyjęty przez aplikację, zostanie skrócony do postaci "XXX". Dzieje się tak dlatego, że zerowe bajty (\0) są interpretowane jako zakończenie ciągu.
 
-Aplikacje, które nie sprawdzają adekwatnie danych wejściowych mogą zostać oszukane poprzez wprowadzenie bajtów zerowych w "kluczowych" parametrach. Jest to zwykle wykonywane przez kodowanie URL bajtów zerowych (%00). W wyjątkowych sytuacjach możliwe jest użycie znaków Unicode.
+Aplikacje, które nie sprawdzają adekwatnie danych wejściowych mogą zostać oszukane poprzez wprowadzenie bajtów zerowych w "kluczowych" parametrach. Jest to zwykle wykonywane przez kodowanie URL bajtów zerowych (%00). W wyjątkowych sytuacjach możliwe jest użycie znaków Unicode.
 
 Skutkami ataku mogą być:
 
@@ -258,11 +258,11 @@ Skutkami ataku mogą być:
     * Wykonanie poleceń OS
     * Wydanie polecenia parametrom
     * Ominięcie kontroli podczas szukania podciągów w parametrach
-    * Odcięcie ciągów przekazanych do zapytań SQL 
+    * Odcięcie ciągów przekazanych do zapytań SQL
 
 :Środki kontrolno-zaradcze:
 
-    * Przed czynnościami aplikacyjnymi należy sprawdzić wszystkie dane wejściowe i zapewnić poprawną interpretację danych.
+    * Przed czynnościami aplikacyjnymi należy sprawdzić wszystkie dane wejściowe i zapewnić poprawną interpretację danych.
 
 Przepełnione bufory
 ^^^^^^^^^^^^^^^^^^^
@@ -276,7 +276,7 @@ Zjawisko to wiąże się z przekazaniem dużej ilości danych, przekraczających
 
 Normalizacja
 ------------
-Normalizacja (ang. normalization lub canonicalization, c14n - dotyczące normalizacji do postaci kanonicznej) jest to proces konwersji na prostszą formę. Aplikacje sieciowe muszą obsługiwać normalizacje różnych danych wejściowych oraz wyjściowych, od kodowania URL do tłumaczenia adresu IP. 
+Normalizacja (ang. normalization lub canonicalization, c14n - dotyczące normalizacji do postaci kanonicznej) jest to proces konwersji na prostszą formę. Aplikacje sieciowe muszą obsługiwać normalizacje różnych danych wejściowych oraz wyjściowych, od kodowania URL do tłumaczenia adresu IP.
 
 Unicode
 ^^^^^^^
@@ -304,24 +304,24 @@ Jeżeli dane zawarte są w URL, konieczne jest kodowanie zachowujące odpowiedni
 
 Jednakże dane używane przez aplikacje sieciowe nie są ograniczane w ten sposób. Wcześniejsza wersja HTML pozwalała na pełen zakres zbioru znaków ISO-8859-1 (ISO Latin-1). Specyfikacja HTML 4.0 została rozszerzona, aby zezwolić na dowolne znaki w zbiorze Unicode.
 
-Dla kodowania znaku w URL, 8-bitowy kod szesnastkowy poprzedzany jest prefiksem %. Do przykładów zalicza się: zbiór znaków US-ASCII, który reprezentuje spację z dziesiętnym kodem 32 (20 w kodzie szesnastkowym). Korzystający z aplikacji sieciowych mają zatem możliwość widzieć spacje, które zostały zamienione na następujący ciąg znaków "%20" w URL.
+Dla kodowania znaku w URL, 8-bitowy kod szesnastkowy poprzedzany jest prefiksem %. Do przykładów zalicza się: zbiór znaków US-ASCII, który reprezentuje spację z dziesiętnym kodem 32 (20 w kodzie szesnastkowym). Korzystający z aplikacji sieciowych mają zatem możliwość widzieć spacje, które zostały zamienione na następujący ciąg znaków "%20" w URL.
 
 Choć niektóre znaki nie potrzebują kodowania URL, kod 8 bitowy może być zakodowany.
 
-W związku z tym, że kodowanie URL zezwala w rzeczywistości na przekazywanie dowolnych danych serwerowi, koniczne okazuje się podjęcie stosownych środków ostrożności przez aplikacje sieciowe. Brak ich może spowodować stan, w którym aplikacja będzie podatna na złośliwe działania.
+W związku z tym, że kodowanie URL zezwala w rzeczywistości na przekazywanie dowolnych danych serwerowi, koniczne okazuje się podjęcie stosownych środków ostrożności przez aplikacje sieciowe. Brak ich może spowodować stan, w którym aplikacja będzie podatna na złośliwe działania.
 
 :Środki kontrolno-zaradcze:
 
     * Nie należy używać metody GET do zatwierdzania zmiany w formularzu; aby uniknąć dodawania danych do URL używaj HTTP POST.
     * Jeśli URL ma być użyty do przekazywania danych do serwera sieci, należy ograniczyć rodzaje przekazywanych danych i nie zezwalać na dane tekstowe. Należy stosować zasady sprawdzenia w celu wyczyszczenia danych i zapewnienia ich poprawnego typu i rozmiaru.
     * Nie należy opierać się na sprawdzeniu po stronie klienta.
-    * Dane wrażliwe, związane z bezpieczeństwem, lub obszerne objętościowo należy wysyłać wyłącznie za pomocą metody POST, ze względu na przechowywanie URL w logach dostępowych serwera. 
+    * Dane wrażliwe, związane z bezpieczeństwem, lub obszerne objętościowo należy wysyłać wyłącznie za pomocą metody POST, ze względu na przechowywanie URL w logach dostępowych serwera.
 
 Manipulacja parametrami
 -----------------------
 Napastnik może przeprowadzić atak na niewystarczająco zabezpieczone aplikacje, modyfikując dane zawarte w plikach cookie, nagłówkach HTTP lub URL w sposób niezgodny z zamierzeniami twórców aplikacji. Jeżeli aplikacja pozwoli na przyjęcie tak zmodyfikowanych danych (np. tokenu sesji), może dojść do przełamania zabezpieczeń.
 
-Nie można zatem przyjąć, że dane przesłane do przeglądarki pozostaną niezmienione, chyba, że są kryptograficznie chronione na poziomie aplikacji. SSL nie chroni przed tego typu atakami, ponieważ dane są zmienione po stronie klienta, przed ich wysłaniem do serwera. 
+Nie można zatem przyjąć, że dane przesłane do przeglądarki pozostaną niezmienione, chyba, że są kryptograficznie chronione na poziomie aplikacji. SSL nie chroni przed tego typu atakami, ponieważ dane są zmienione po stronie klienta, przed ich wysłaniem do serwera.
 
 Manipulacja plikami cookie
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -355,7 +355,7 @@ Przepełnienie bufora: napastnik usuwa maksymalną długość wprowadzanych dany
 Kod początkowy:
 
     ``<input name="userid" type="hidden" maxlength="10">``
- 
+
 Kod zmieniony:
 
     ``<input name="userid" type="hidden">``
@@ -365,7 +365,7 @@ Zwiększenie przywilejów: zmiana wartości ‘n’ na ‘y’ powodująca, stan
 Kod początkowy:
 
     ``<input name="adminaccess" type="hidden" value="n">``
- 
+
 Kod zmieniony:
 
     ``<input name="adminaccess" type="hidden" value="y">``
@@ -373,19 +373,19 @@ Kod zmieniony:
 :Środki kontrolno-zaradcze:
 
     * Zawsze należy sprawdzać dane wejściowe po stronie serwera. Nie należy polegać na sprawdzeniu ze strony klienta.
-    * Należy unikać pól ukrytych, używać pojedynczych tokenów sesji do wskazywania danych zmagazynowanych w cache po stronie serwera. Jeśli aplikacja wymaga sprawdzenia cech użytkownika, weryfikuje sesję plików cookie z tabelą sesji oraz wskazuje dane użytkownika w cache / bazie danych.
-    * Jeżeli nie ma możliwości wprowadzenia powyższych rozwiązań i konieczne jest użycie pól ukrytych, należy połączyć pary nazw i wartości w pojedynczy ciąg i dopisać tajny klucz (który nigdy nie pojawi się w danym formularzu) na końcu ciągu. Ciągiem nazywa się wychodzącą treść formularza. Jest dla niej generowany MD5, SHA lub podobny jednostronny hash nazywany "outgoing form digest" dodawany do formularza jako dodatkowe ukryte pole.
-    * Kiedy formularz zostaje odebrany przez serwer, pary nazw i wartości są ponownie łączone z tajnym kluczem tworząc przychodzącą treść formularza. Form digest przychodzącej treści formularza jest generowany i porównywany z zawartym w treści formularza. Jeżeli sumy kontrolne nie są identyczne, oznacza to, że ukryte pole zostało zmienione. Technika ta może być też stosowana w przypadku URL w celu uniemożliwienia manipulacji parametrami.
+    * Należy unikać pól ukrytych, używać pojedynczych tokenów sesji do wskazywania danych zmagazynowanych w cache po stronie serwera. Jeśli aplikacja wymaga sprawdzenia cech użytkownika, weryfikuje sesję plików cookie z tabelą sesji oraz wskazuje dane użytkownika w cache / bazie danych.
+    * Jeżeli nie ma możliwości wprowadzenia powyższych rozwiązań i konieczne jest użycie pól ukrytych, należy połączyć pary nazw i wartości w pojedynczy ciąg i dopisać tajny klucz (który nigdy nie pojawi się w danym formularzu) na końcu ciągu. Ciągiem nazywa się wychodzącą treść formularza. Jest dla niej generowany MD5, SHA lub podobny jednostronny hash nazywany "outgoing form digest" dodawany do formularza jako dodatkowe ukryte pole.
+    * Kiedy formularz zostaje odebrany przez serwer, pary nazw i wartości są ponownie łączone z tajnym kluczem tworząc przychodzącą treść formularza. Form digest przychodzącej treści formularza jest generowany i porównywany z zawartym w treści formularza. Jeżeli sumy kontrolne nie są identyczne, oznacza to, że ukryte pole zostało zmienione. Technika ta może być też stosowana w przypadku URL w celu uniemożliwienia manipulacji parametrami.
 
 Manipulacja nagłówkiem http
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Nagłówki HTTP wykorzystywane są do przekazywania danych z sieci klienta do serwera dla żądań HTTP i odwrotnie dla odpowiedzi HTTP. 
+Nagłówki HTTP wykorzystywane są do przekazywania danych z sieci klienta do serwera dla żądań HTTP i odwrotnie dla odpowiedzi HTTP.
 
 Istnieje możliwość wprowadzenia kontroli nadchodzących nagłówków, ale w takich przypadkach należy pamiętać, że jeśli pochodzą one od klienta mogą być zmienione przez napastnika.
 
-Jako przykład można zastosować nagłówek referencyjny, który zwykle zawiera URL strony, z której pochodzi żądanie. Istnieje możliwość sprawdzenia takiego nagłówka w celu weryfikacji, czy żądanie pochodzi z wiarygodnego URL (np. własnego), tak, aby przeszkodzić napastnikom zapisanie stron sieci, zmodyfikowanie formularzy i przesłanie ich z innego komputera.
+Jako przykład można zastosować nagłówek referencyjny, który zwykle zawiera URL strony, z której pochodzi żądanie. Istnieje możliwość sprawdzenia takiego nagłówka w celu weryfikacji, czy żądanie pochodzi z wiarygodnego URL (np. własnego), tak, aby przeszkodzić napastnikom zapisanie stron sieci, zmodyfikowanie formularzy i przesłanie ich z innego komputera.
 
-Nie jest to jednak bezpieczny mechanizm, gdyż napastnik może zmodyfikować nagłówek referencyjny HTTP tak, aby wyglądał na pochodzący z wiarygodnej strony. 
+Nie jest to jednak bezpieczny mechanizm, gdyż napastnik może zmodyfikować nagłówek referencyjny HTTP tak, aby wyglądał na pochodzący z wiarygodnej strony.
 
 :Środki kontrolno-zaradcze:
 
@@ -393,13 +393,13 @@ Nie jest to jednak bezpieczny mechanizm, gdyż napastnik może zmodyfikować nag
 
 Manipulacje w URL
 ^^^^^^^^^^^^^^^^^
-Formularze HTML mogą przedkładać swoje wyniki z zastosowaniem albo HTTP POST albo HTTP GET. W przypadku stosowania metody HTTP GET, wszystkie nazwy elementów i wartości formularza pojawiają się w ciągu zapytań URL, co daje szanse napastnikowi na łatwą manipulację wartościami lub próbę przekazania nieoczekiwanych danych.
+Formularze HTML mogą przedkładać swoje wyniki z zastosowaniem albo HTTP POST albo HTTP GET. W przypadku stosowania metody HTTP GET, wszystkie nazwy elementów i wartości formularza pojawiają się w ciągu zapytań URL, co daje szanse napastnikowi na łatwą manipulację wartościami lub próbę przekazania nieoczekiwanych danych.
 
 :Środki kontrolno-zaradcze:
 
-    * Należy unikać używania parametrów w ciągu zapytań.
+    * Należy unikać używania parametrów w ciągu zapytań.
     * Jeżeli parametry muszą być przedłożone do serwera, należy upewnić się czy towarzyszą im ważne tokeny sesji.
-    * Jeżeli parametru nie można usunąć z ciągu zapytań, należy go chronić kryptograficznie z zastosowaniem silnych algorytmów kryptograficznych.
+    * Jeżeli parametru nie można usunąć z ciągu zapytań, należy go chronić kryptograficznie z zastosowaniem silnych algorytmów kryptograficznych.
 
 Jest to możliwe za pomocą następujących metod:
 
@@ -409,7 +409,7 @@ Jest to możliwe za pomocą następujących metod:
 
 Ujawnianie informacji i prywatność użytkownika
 ----------------------------------------------
-Napastnicy używają szeregu metod, aby uzyskać informacje, które mogłyby stanowić podstawę do przeprowadzenia ataku na witryny lub infrastruktury wspomagające. 
+Napastnicy używają szeregu metod, aby uzyskać informacje, które mogłyby stanowić podstawę do przeprowadzenia ataku na witryny lub infrastruktury wspomagające.
 
 Komendy po stronie klienta
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -418,11 +418,11 @@ Dodawanie i utrzymywanie komentarzy w kodzie źródłowym było standardową pra
 :Środki kontrolno-zaradcze:
 
     * Należy usuwać komentarze z kodu zanim zostaną przeniesione do usług produkcyjnych (oprócz dotyczących praw autorskich, licencji czy własności intelektualnej!).
-    * Należy upewniać się czy w procedurach zapewnienia jakości istnieje możliwość usunięcia wszystkich komentarzy przed przeniesieniem do produkcji.
+    * Należy upewniać się czy w procedurach zapewnienia jakości istnieje możliwość usunięcia wszystkich komentarzy przed przeniesieniem do produkcji.
 
 Komendy debugowania
 ^^^^^^^^^^^^^^^^^^^
-Często umieszcza się włączniki debugowania w HTML, aby umożliwić ich włączanie na dodatkowych poziomach logowania lub zgłaszania. Umieszczanie tego kodu (i logiki od strony serwera w celu interpretacji) w usługach produkcyjnych powoduje poważne zagrożenie, które zapewnia napastnikowi zwiększone przywileje dotyczące usług i podległej infrastruktury.
+Często umieszcza się włączniki debugowania w HTML, aby umożliwić ich włączanie na dodatkowych poziomach logowania lub zgłaszania. Umieszczanie tego kodu (i logiki od strony serwera w celu interpretacji) w usługach produkcyjnych powoduje poważne zagrożenie, które zapewnia napastnikowi zwiększone przywileje dotyczące usług i podległej infrastruktury.
 
 :Środki kontrolno-zaradcze:
 
@@ -435,42 +435,42 @@ Niewłaściwa obsługa błędnego kodu umożliwia napastnikowi uzyskanie informa
 
     * przepływ aplikacji,
     * dodatkową informację serwera sieciowego,
-    * typ i wersję bazy danych, 
+    * typ i wersję bazy danych,
     * typ i wersję systemu operacyjnego,
-    * typ i wersję skryptu / języka programowania, 
+    * typ i wersję skryptu / języka programowania,
     * fizyczne ścieżki,
     * pliki otwarte do odczytu i do zapisu,
-    * nazwy, wartości, typy i cele zmiennych, 
+    * nazwy, wartości, typy i cele zmiennych,
     * segmenty kodu źródłowego skryptu i zapytań SQL,
     * struktury baz danych i tabeli.
 
 :Środki kontrolno-zaradcze:
 
-    * Należy unikać raportowania użytkownikowi komunikatów o błędach w systemach produkcji. Jeżeli są one jednak nieuniknione, muszą być odpowiednio zakodowane i nie mogą ujawniać informacji napastnikowi. 
-    * W celu wychwytywania błędów dla wewnętrznej obsługi należy zapewnić właściwą rejestrację i logowanie.
+    * Należy unikać raportowania użytkownikowi komunikatów o błędach w systemach produkcji. Jeżeli są one jednak nieuniknione, muszą być odpowiednio zakodowane i nie mogą ujawniać informacji napastnikowi.
+    * W celu wychwytywania błędów dla wewnętrznej obsługi należy zapewnić właściwą rejestrację i logowanie.
 
 Wyliczenie pliku / aplikacji
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Jest to powszechna technika stosowana do identyfikacji aplikacji  i plików, które mogą być podatne na wykorzystanie lub mogą stanowić podstawę ataku. Napastnicy poszukują: 
+Jest to powszechna technika stosowana do identyfikacji aplikacji  i plików, które mogą być podatne na wykorzystanie lub mogą stanowić podstawę ataku. Napastnicy poszukują:
 
 * plików lub aplikacji wrażliwych,
-* plików lub aplikacji ukrytych lub bez odnośników 
+* plików lub aplikacji ukrytych lub bez odnośników
 * kopii lub plików czasowych.
 
 :Środki kontrolno-zaradcze:
 
     * Należy usuwać wszystkie pliki testowe z serwera sieci.
     * Należy usuwać niechciane lub nieużywane pliki z serwerów.
-    * Należy wyszukiwać i usuwać kopie zapasowe i pliki tymczasowe. 
+    * Należy wyszukiwać i usuwać kopie zapasowe i pliki tymczasowe.
     * Należy blokować dostęp z zewnątrz do plików, które powinny pozostać na serwerze, ale użytkownik nie powinien mieć do nich dostępu.
 
 Cache przeglądarki
 ^^^^^^^^^^^^^^^^^^
-Informacje wrażliwe często przechowywane są w pamięci cache przeglądarki i dostępne dla każdej osoby mającej dostęp do dysku twardego urządzenia (np. w komputerach biurowych, kawiarenkach internetowych czy w bibliotekach).
+Informacje wrażliwe często przechowywane są w pamięci cache przeglądarki i dostępne dla każdej osoby mającej dostęp do dysku twardego urządzenia (np. w komputerach biurowych, kawiarenkach internetowych czy w bibliotekach).
 
 :Środki kontrolno-zaradcze:
 
-    * Aplikacje muszą przekazywać informacje wrażliwe wyłącznie zamierzonemu odbiorcy, tylko w przypadku kiedy jest to absolutnie konieczne.
+    * Aplikacje muszą przekazywać informacje wrażliwe wyłącznie zamierzonemu odbiorcy, tylko w przypadku kiedy jest to absolutnie konieczne.
     * Jeśli to możliwe należy wcześniej wygaszać strony, które mogą zawierać wrażliwy materiał.
     * Komenda "Pragma No-cache" na wszystkich stronach mogących zawierać materiał wrażliwy, informuje przeglądarki, że nie powinny przechowywać kopii stron.
 
@@ -484,19 +484,19 @@ Przeglądarki często zachowują historię ostatnio odwiedzonych witryn, które 
 
 Autouzupełnianie
 ^^^^^^^^^^^^^^^^
-Przeglądarki internetowe obsługują funkcję Autouzupełniania. Dzięki niej dane wejściowe użytkowników mogą być zachowane dla przyszłego użycia i prezentowane użytkownikowi komputera po kliknięciu na pole formularza sieciowego z tą samą nazwą. 
+Przeglądarki internetowe obsługują funkcję Autouzupełniania. Dzięki niej dane wejściowe użytkowników mogą być zachowane dla przyszłego użycia i prezentowane użytkownikowi komputera po kliknięciu na pole formularza sieciowego z tą samą nazwą.
 
-Jeżeli funkcja ta jest uruchomiona na komputerach wspólnych (w bibliotekach, biurach, kawiarenkach internetowych), informacja wprowadzana przez klientów do pól wejściowych (mogąca też zawierać dane osobowe czy finansowe), może być widzialna dla innych użytkowników korzystających z komputera. 
+Jeżeli funkcja ta jest uruchomiona na komputerach wspólnych (w bibliotekach, biurach, kawiarenkach internetowych), informacja wprowadzana przez klientów do pól wejściowych (mogąca też zawierać dane osobowe czy finansowe), może być widzialna dla innych użytkowników korzystających z komputera.
 
 :Środki kontrolno-zaradcze:
 
-    * Należy ostrzegać klientów o istnieniu funkcji i zalecać jej wyłączenie w przypadku korzystania z urządzeń wspólnych.
-    * Należy informować klientów, że funkcja zostaje włączona na wspólnie użytkowanych urządzeniach na ich własne ryzyko. 
+    * Należy ostrzegać klientów o istnieniu funkcji i zalecać jej wyłączenie w przypadku korzystania z urządzeń wspólnych.
+    * Należy informować klientów, że funkcja zostaje włączona na wspólnie użytkowanych urządzeniach na ich własne ryzyko.
     * Należy wyłączać funkcję w polach hasła/PIN.
     * Należy wyłączać funkcję w polach kart i danych kont bankowych.
     * Istnieje również możliwość całkowitego wyłączenia funkcji.
     * Przechowywanie hasła i hasła zakodowane sprzętowo
-    * Poważne zagrożenie bezpieczeństwa powodować może włamanie do bazy danych, która przechowuje hasła. 
+    * Poważne zagrożenie bezpieczeństwa powodować może włamanie do bazy danych, która przechowuje hasła.
 
 :Środki kontrolno-zaradcze:
 
@@ -504,7 +504,7 @@ Jeżeli funkcja ta jest uruchomiona na komputerach wspólnych (w bibliotekach, b
     * Aby uniemożliwić przeglądarkom zapisywanie haseł, kodów PIN itp należy stosować formularze uwierzytelnienia (GAS)
     * Jeżeli hasła bądź PINy muszą być przechowywane, w postaci umożliwiającej odtworzenie, należy zapewnić ich szyfrowanie przy użyciu silnych algorytmów szyfrujących, oraz zagwarantować bezpieczeństwo klucza szyfrującego.
     * Edukacja użytkownika
-    * Nie każdy użytkownik komputera i Internetu jest ekspertem od bezpieczeństwa komputerów, w związku z tym wielu z nich nie rozumie, dlaczego bezpieczeństwo jest tak istotne.
+    * Nie każdy użytkownik komputera i Internetu jest ekspertem od bezpieczeństwa komputerów, w związku z tym wielu z nich nie rozumie, dlaczego bezpieczeństwo jest tak istotne.
 
 :Środki kontrolno-zaradcze:
 
@@ -516,32 +516,32 @@ Ukryte pola mogą być przydatne, jednak mogą też stanowić znaczące ryzyko d
 
 :Środki kontrolno-zaradcze:
 
-    * Wartości, które mogą zostać użyte przez napastnika do uzyskania nieoczekiwanej odpowiedzi (względnie do otrzymania danych innej osoby albo wygenerowania warunku błędu mogącego stanowić podstawę do ataku) powinny być zawsze kodowane albo haszowane. 
+    * Wartości, które mogą zostać użyte przez napastnika do uzyskania nieoczekiwanej odpowiedzi (względnie do otrzymania danych innej osoby albo wygenerowania warunku błędu mogącego stanowić podstawę do ataku) powinny być zawsze kodowane albo haszowane.
     * Należy unikać przechowywania identyfikatorów sesji w tych polach.
     * Nigdy nie należy przechowywać haseł ani PINów w ukrytych polach.
-    * Wszelkie dane osobowe (zdefiniowane w ustawie o ochronie danych osobowych) i informacje finansowe powinny być kodowane i przesyłane w szyfrowanej sesji SSL.
+    * Wszelkie dane osobowe (zdefiniowane w ustawie o ochronie danych osobowych) i informacje finansowe powinny być kodowane i przesyłane w szyfrowanej sesji SSL.
     * Pola te powinny być zawsze rygorystycznie sprawdzane, po stronie serwera.
     * Nigdy nie należy używać ukrytych pól do komend kontrolnych serwera sieci.
 
 Historia konta
 ^^^^^^^^^^^^^^
-Użytkownicy aplikacji nie mogą sprawdzać, czy nieupoważnione osoby uzyskały dostęp do ich konta lub czy posługiwały się nim w sposób niewłaściwy. 
+Użytkownicy aplikacji nie mogą sprawdzać, czy nieupoważnione osoby uzyskały dostęp do ich konta lub czy posługiwały się nim w sposób niewłaściwy.
 
 :Środki kontrolno-zaradcze:
 
     * Należy stosować wyświetlanie czasu ostatniego logowania, daty i adresu IP źródła po prawidłowym uwierzytelnieniu.
     * Należy stworzyć szczegółową sekcję historii konta dla uwierzytelnionych użytkowników, obejmującą:
-    * odnotowany czas i datę, 
+    * odnotowany czas i datę,
     * modyfikacje konta np. zmiana hasła,
     * transakcje finansowe, itp.
 
 Zgłaszanie incydentu
 ^^^^^^^^^^^^^^^^^^^^
-W przypadku pojawienia się podejrzanych zmian na koncie lub stronie użytkownika, musi on wiedzieć w jaki sposób zgłosić incydent firmie. Brak przejrzystej i prostej instrukcji niesie ryzyko nie zgłoszenia problemów.
+W przypadku pojawienia się podejrzanych zmian na koncie lub stronie użytkownika, musi on wiedzieć w jaki sposób zgłosić incydent firmie. Brak przejrzystej i prostej instrukcji niesie ryzyko nie zgłoszenia problemów.
 
 :Środki kontrolno-zaradcze:
 
-    * Dostawcy powinni zachęcać użytkowników do zgłaszania incydentów oraz informować o sposobach kontaktu.
+    * Dostawcy powinni zachęcać użytkowników do zgłaszania incydentów oraz informować o sposobach kontaktu.
     * Incydent powinien zostać zgłoszony do przełożonego liniowego, a ten powinien zgłosić go zgodnie ze ścieżką formalną do kierownika projektu lub/i stosownego dyrektora.
 
 Informacje wrażliwe i kod źródłowy
@@ -558,8 +558,8 @@ Pliki cookie mogą być przeglądane i modyfikowane. Jeżeli zawierają informac
 
 :Środki kontrolno-zaradcze:
 
-    * Nie należy przechowywać danych osobowych ani informacji finansowych w plikach cookie. 
-    * Nie należy przechowywać szczegółów uwierzytelnienia w plikach cookie. 
+    * Nie należy przechowywać danych osobowych ani informacji finansowych w plikach cookie.
+    * Nie należy przechowywać szczegółów uwierzytelnienia w plikach cookie.
     * Jeżeli identyfikator sesji jest przechowywany w plikach cookie - należy zapewnić jego haszowanie.
     * Zawartość plików cookie należy zabezpieczać przy pomocy bezpiecznych algorytmów szyfrujących.
     * Aby zapobiec wysyłaniu przez przeglądarkę plików cookie przez nieszyfrowane połączenie - należy przeanalizować użycie etykiety bezpieczeństwa.
@@ -568,18 +568,18 @@ Kryptografia
 ^^^^^^^^^^^^
 Kryptografia służy do zapewnienia:
 
-    * poufności (dane są rozumiane wyłącznie przez upoważnione osoby) 
+    * poufności (dane są rozumiane wyłącznie przez upoważnione osoby)
     * integralności (dane nie są zmienione w trakcie przesyłania)
     * uwierzytelniania (dane pochodzą od określonej osoby)
 
 Należy jednak pamiętać, że nie jest ona ostatecznym rozwiązaniem dla ochrony danych, a skomplikowaną funkcją kontrolną. Do listy problemów należy m.in:
 
-    * pozorne poczucie bezpieczeństwa, 
+    * pozorne poczucie bezpieczeństwa,
     * własne, niesprawdzone procedury kodowania,
-    * wykorzystanie niewiarygodnych i niepotwierdzonych procedur kodowania,
+    * wykorzystanie niewiarygodnych i niepotwierdzonych procedur kodowania,
     * odzyskanie systemu / danych,
     * zarządzanie kluczami i ich odzyskiwanie,
-    * typ / moc algorytmu, 
+    * typ / moc algorytmu,
     * długości kluczy,
     * generowanie liczb kluczowych / losowych.
 
@@ -587,24 +587,24 @@ Należy jednak pamiętać, że nie jest ona ostatecznym rozwiązaniem dla ochron
 
     Wdrażając kodowanie należy:
 
-        * zapoznać się z wymaganiami firmy i bezpieczeństwa, 
-        * ściśle współpracować z technicznymi zespołami informatyki i bezpieczeństwa, 
-        * nie próbować samodzielnie opracowywać procedur kodowania, 
-        * nie wykorzystywać niezatwierdzonych lub niewiarygodnych procedur kodowania, tylko tych zaakceptowanych i zatwierdzonych,
+        * zapoznać się z wymaganiami firmy i bezpieczeństwa,
+        * ściśle współpracować z technicznymi zespołami informatyki i bezpieczeństwa,
+        * nie próbować samodzielnie opracowywać procedur kodowania,
+        * nie wykorzystywać niezatwierdzonych lub niewiarygodnych procedur kodowania, tylko tych zaakceptowanych i zatwierdzonych,
         * dokumentować rozwiązania,
         * dokładnie testować rozwiązania (kodowanie, dekodowanie, odzyskiwanie),
-        * zapewnić gruntowne sprawdzenie systemu zarządzania kluczami (manualnego lub informatycznego) oraz odpowiednie przeszkolenie personelu obsługi. Funkcjonować musi możliwość odzyskania zaszyfrowanych danych w celach dochodzeniowych,
+        * zapewnić gruntowne sprawdzenie systemu zarządzania kluczami (manualnego lub informatycznego) oraz odpowiednie przeszkolenie personelu obsługi. Funkcjonować musi możliwość odzyskania zaszyfrowanych danych w celach dochodzeniowych,
         * stosować odpowiednie długości kluczy.
 
 Kontrola dostępu
 ----------------
 Podstawową kwestią ochrony systemów centralnych i końcowych oraz danych jest wprowadzenie odpowiedniej kontroli dostępu, którą należy stosować w celu:
 
-    * Ograniczenia możliwości działania użytkowników, 
-    * Ograniczenia dostępu użytkowników do zasobów, 
+    * Ograniczenia możliwości działania użytkowników,
+    * Ograniczenia dostępu użytkowników do zasobów,
     * Definicji funkcji, które użytkownicy mogą stosować do danych.
 
-Mechanizmy kontroli dostępu powinny uniemożliwiać nieuprawnionym: przeglądania, modyfikowania i kopiowania danych. Dodatkowo, mogą powstrzymać przed zastosowaniem złośliwego kodu lub nieuprawnionych działań przez napastnika, wykorzystującego zależności infrastruktury. 
+Mechanizmy kontroli dostępu powinny uniemożliwiać nieuprawnionym: przeglądania, modyfikowania i kopiowania danych. Dodatkowo, mogą powstrzymać przed zastosowaniem złośliwego kodu lub nieuprawnionych działań przez napastnika, wykorzystującego zależności infrastruktury.
 
 Dostęp do informacji w systemach oraz dokumentacji a informacja publiczna
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -614,9 +614,9 @@ Wyżej wymienione repozytoria są objęte tzw. klauzulą informacji zastrzeżone
 
 Użytkowanie sprzętu prywatnego
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Aby zapewnić bezpieczeństwo środowiska pracy w organizacji regulamin polityki bezpieczeństwa Firmy zabrania używania urządzeń prywatnych do wykorzystania w celu służbowym w Firmie. 
+Aby zapewnić bezpieczeństwo środowiska pracy w organizacji regulamin polityki bezpieczeństwa Firmy zabrania używania urządzeń prywatnych do wykorzystania w celu służbowym w Firmie.
 
-Odstępstwo od tej reguły może mieć miejsce tylko i wyłącznie za zgodą kierownika, architekta lub stosownego zastępcy Dyrektora i musi być dobrze umotywowane. W powyższych i uzasadnionych przypadkach muszą zostać spełnione obowiązujące w Firmie standardy bezpieczeństwa, w stopniu nie niższym niż te, dotyczące pracy na służbowych komputerach.
+Odstępstwo od tej reguły może mieć miejsce tylko i wyłącznie za zgodą kierownika, architekta lub stosownego zastępcy Dyrektora i musi być dobrze umotywowane. W powyższych i uzasadnionych przypadkach muszą zostać spełnione obowiązujące w Firmie standardy bezpieczeństwa, w stopniu nie niższym niż te, dotyczące pracy na służbowych komputerach.
 
 Na szczególną uwagę należy zwrócić aby:
 
@@ -629,14 +629,14 @@ Na szczególną uwagę należy zwrócić aby:
 
 Klasyfikacja danych i autoryzacja dostępu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Dane mogą zostać niewłaściwie skontrolowane, a w efekcie bezprawnie ujawnione, w sytuacji, kiedy nie użyjemy klasyfikacji albo w przypadku, kiedy będzie ona niewłaściwa. 
+Dane mogą zostać niewłaściwie skontrolowane, a w efekcie bezprawnie ujawnione, w sytuacji, kiedy nie użyjemy klasyfikacji albo w przypadku, kiedy będzie ona niewłaściwa.
 
-Bez efektywnej procedury uwierzytelniania i autoryzacji dostęp do danych lub systemu może zostać nieodpowiednio przyznany bez wiedzy właściciela systemu lub danych.
+Bez efektywnej procedury uwierzytelniania i autoryzacji dostęp do danych lub systemu może zostać nieodpowiednio przyznany bez wiedzy właściciela systemu lub danych.
 
 :Środki kontrolno-zaradcze:
 
-    * Wszystkie dane używane przez aplikacje muszą być sklasyfikowane zgodnie z zasadami stosowanymi przez grupę.
-    * Procedura autoryzacji musi być wprowadzona, regularnie przeglądana i udokumentowana.
+    * Wszystkie dane używane przez aplikacje muszą być sklasyfikowane zgodnie z zasadami stosowanymi przez grupę.
+    * Procedura autoryzacji musi być wprowadzona, regularnie przeglądana i udokumentowana.
 
 Nieoczekiwany dostęp do zasobów
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -654,7 +654,7 @@ Działania ochronne kluczowych zasobów, procedur lub danych bazujących na pros
 
 :Środki kontrolno-zaradcze:
 
-    * Zawsze należy stosować odpowiednią kontrolę procedur, zasobów i danych oraz zadbać o stosowny poziom zabezpieczeń organizacyjnych.
+    * Zawsze należy stosować odpowiednią kontrolę procedur, zasobów i danych oraz zadbać o stosowny poziom zabezpieczeń organizacyjnych.
 
 Dostęp do kodu źródłowego
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -667,15 +667,15 @@ Ograniczenie dostępu do kodu źródłowego aplikacji rozwijanych w ramach Firmy
 
 :Środki kontrolno-zaradcze:
 
-    * Centralne repozytorium kodu źródłowego znajduje się na serwerze do którego dostęp jest kontrolowany. Zarówno część systemowa jak i aplikacyjna serwera repozytorium jest chroniona hasłem lub/i kluczem a uprawnienia są nadawane na podstawie przynależności do odpowiedniej grupy w katalogu użytkowników.
+    * Centralne repozytorium kodu źródłowego znajduje się na serwerze do którego dostęp jest kontrolowany. Zarówno część systemowa jak i aplikacyjna serwera repozytorium jest chroniona hasłem lub/i kluczem a uprawnienia są nadawane na podstawie przynależności do odpowiedniej grupy w katalogu użytkowników.
 
 Serwer powinien pozwalać na nadanie uprawnień na minimum trzech poziomach:
 
     * read-only - tylko do odczytu,
-    * read-write - odczyt i zapis,
+    * read-write - odczyt i zapis,
     * administrator - osoba nadająca uprawnienia, oraz kontrolująca proces.
 
-Serwer powinien zapewniać separację pomiędzy projektami oraz repozytoriami i gałęziami  (ang. branch)  rozwojowymi w repozytoriach na podobnych zasadach jak powyżej.
+Serwer powinien zapewniać separację pomiędzy projektami oraz repozytoriami i gałęziami  (ang. branch)  rozwojowymi w repozytoriach na podobnych zasadach jak powyżej.
 
 Poszczególne projekty powinny odzwierciedlać strukturę projektową i być niedostępne dla osób nieprzydzielonych do danego projektu.
 
@@ -705,7 +705,7 @@ Do najczęstszych naruszeń bezpieczeństwa w zakresie fizycznego dostępu nale�
 
         * osobiste, telefoniczne lub elektroniczne poinformowanie przełożonego liniowego o zaistniałym incydencie,
         * zgłoszenie Incydentu w systemie ITSM Firmy,
-        * osobiście, telefonicznie lub elektronicznie poinformować o wystąpieniu incydentu odpowiedni zespół ds. bezpieczeństwa fizycznego / sieciowego.
+        * osobiście, telefonicznie lub elektronicznie poinformować o wystąpieniu incydentu odpowiedni zespół ds. bezpieczeństwa fizycznego / sieciowego.
         * Egzekucja kary adekwatnej do naruszenia.
 
         W przypadku konieczności zobrazowania problemu i poparcia go stosownym fragmentem dopuszcza się możliwość wklejenia zanonimizowanego fragmentu kodu:
@@ -714,7 +714,7 @@ Do najczęstszych naruszeń bezpieczeństwa w zakresie fizycznego dostępu nale�
         * należy dołożyć wszelkich starań aby kod był w miarę najkrótszy, tj. obrazował tylko i wyłącznie problematyczną linijkę / linijki, a nie większy zakres.
         * kod przeznaczony do udostępnienia i który spełnia powyższe kryteria powinien być skonsultowany z kierownikiem projektu lub/i architektem.
         * Przez Internet przekazuję ZASZYFROWANE informacje - nie odszyfrowane.
-        * Pracownicy Firmy powinni być świadomi, że użytkowanie tego zasobu jest monitorowane w celu ustalenia nieprawidłowych działań przy wykorzystaniu zasobów sieci.
+        * Pracownicy Firmy powinni być świadomi, że użytkowanie tego zasobu jest monitorowane w celu ustalenia nieprawidłowych działań przy wykorzystaniu zasobów sieci.
 
 Rejestracja zdarzenia
 ^^^^^^^^^^^^^^^^^^^^^
@@ -735,13 +735,13 @@ Brak należytych mechanizmów rejestracji zdarzenia w aplikacjach może powodowa
     * pliki rejestru muszą być sklasyfikowane według Polityki Bezpieczeństwa Systemów Teleinformatycznych,
     * próby uwierzytelnienia np. (wy)logowanie, nieudane logowanie,
     * próby autoryzacji, w tym czas, sukces/porażka, autoryzowany zasób lub funkcja, do których użytkownik żądający autoryzacji chciał uzyskać dostęp,
-    * funkcje administracyjne, takie jak: przeglądanie danych użytkownika,  zarządzanie kontami, aktywacja lub deaktywacja rejestracji zdarzenia, itp.,
+    * funkcje administracyjne, takie jak: przeglądanie danych użytkownika,  zarządzanie kontami, aktywacja lub deaktywacja rejestracji zdarzenia, itp.,
     * rejestracja informacji debugowych nie może prowadzić do zapisania wrażliwych danych prywatnego konta użytkownika w rejestrze zdarzeń (np. haseł, czy kodów PIN),
-    * rejestry nie mogą usuwać istniejących zapisów bez ich skopiowania lub zarchiwizowania. Archiwa i kopie zapisów muszą być chronione i przechowane zgodnie z ich klasyfikacjami i celami,
+    * rejestry nie mogą usuwać istniejących zapisów bez ich skopiowania lub zarchiwizowania. Archiwa i kopie zapisów muszą być chronione i przechowane zgodnie z ich klasyfikacjami i celami,
     * zawartości rejestrów mogą być ujawniane w uzasadnionych przypadkach tylko osobom mającym odpowiednią autoryzację właściciela systemu lub danych, którego system lub baza jest monitorowana,
-    * indywidualni użytkownicy nie mogą aktualizować ani usuwać pozycji w rejestrach zdarzeń. Pliki rejestru mogą być uaktualnione tylko przez serwis rejestracji zdarzenia, 
-    * komunikaty sieciowe. 
+    * indywidualni użytkownicy nie mogą aktualizować ani usuwać pozycji w rejestrach zdarzeń. Pliki rejestru mogą być uaktualnione tylko przez serwis rejestracji zdarzenia,
+    * komunikaty sieciowe.
 
-W sytuacji kiedy ocena ryzyka wskazuje na potrzebę jednoznacznego potwierdzenia działań wykonanych przez podmiot lub osobę, przeznaczone dla nich mechanizmy i rejestry muszą spełniać normy, które mają niepodważalną moc dowodową przed sądem.
+W sytuacji kiedy ocena ryzyka wskazuje na potrzebę jednoznacznego potwierdzenia działań wykonanych przez podmiot lub osobę, przeznaczone dla nich mechanizmy i rejestry muszą spełniać normy, które mają niepodważalną moc dowodową przed sądem.
 
- 
+

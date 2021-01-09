@@ -11,7 +11,7 @@ Basic Configuration
 - `Application Links`
 - Change date format
 
-.. figure:: img/jira-date-format.png
+..   figure:: ../_img//jira-date-format.png
     :scale: 75%
     :align: center
 

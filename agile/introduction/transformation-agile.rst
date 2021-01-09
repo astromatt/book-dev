@@ -29,7 +29,7 @@ Just started
 - Zespół: Kalendarze zespołów
 - Zespół: Karty Retrospektyw
 - Zespół: Lidera zespołu
-- Zespół: Opóźniające się wdrożenia
+- Zespół: Opóźniające się wdrożenia
 - Zespół: Planowanie
 - Zespół: Problem z pojemnością sprintów - Puste sprinty
 - Zespół: Refinement
@@ -88,7 +88,7 @@ Advanced
 - Zespół: Product Owner wewnętrzny a zewnętrzny
 - Zespół: Scientific Method przy eksperymentowaniu i wyciąganiu wniosków
 - Zespół: Wciągnięcie Klienta w proces jako Product Owner
-- Zespół: Włączenie Klienta przy pomocy Product Ownera w priorytetyzację backlogu oraz ustawianie zakresu sprintów
+- Zespół: Włączenie Klienta przy pomocy Product Ownera w priorytetyzację backlogu oraz ustawianie zakresu sprintów
 
 
 Expert

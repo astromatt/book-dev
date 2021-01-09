@@ -82,7 +82,7 @@ Crontab formatting
 Short notation
 --------------
 .. csv-table:: Short notation
-    :file: data/crontab.csv
+    :file: ../_data/crontab.csv
     :widths: 20, 80
     :header-rows: 1
 

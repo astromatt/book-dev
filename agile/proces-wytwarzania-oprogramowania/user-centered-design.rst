@@ -2,25 +2,25 @@
 Projektowanie zorientowane na użytkownika - *User-centred design*
 *****************************************************************
 
-W Firmie znajduje się specjalna komórka zajmująca się opracowywaniem oprogramowania pod kątem jakości doświadczenia użytkowników.
+W Firmie znajduje się specjalna komórka zajmująca się opracowywaniem oprogramowania pod kątem jakości doświadczenia użytkowników.
 
-Zespół User Experience prowadzi badania potrzeb użytkowników, prace analityczne i optymalizujące procesy biznesowe, opracowuje e-usługi, prowadzi  prace nad ergonomią rozwiązań (usability, architektura informacji), tworzy projekty graficzne interfejsu użytkownika (*GUI*), implementacje stworzonych rozwiązań (*front-end development*), a także zapewnia testowanie powstałych rozwiązań z udziałem użytkowników (usability testing). Zespół dba również o dostosowywanie produktów do potrzeb osób niepełnosprawnych, co jest szczególnie istotne w kontekście publicznego dostępu do wybranych systemów informatycznych.
+Zespół User Experience prowadzi badania potrzeb użytkowników, prace analityczne i optymalizujące procesy biznesowe, opracowuje e-usługi, prowadzi  prace nad ergonomią rozwiązań (usability, architektura informacji), tworzy projekty graficzne interfejsu użytkownika (*GUI*), implementacje stworzonych rozwiązań (*front-end development*), a także zapewnia testowanie powstałych rozwiązań z udziałem użytkowników (usability testing). Zespół dba również o dostosowywanie produktów do potrzeb osób niepełnosprawnych, co jest szczególnie istotne w kontekście publicznego dostępu do wybranych systemów informatycznych.
 
-.. figure:: img/user-centered-design-phases.png
+..  figure:: ../_img/user-centered-design-phases.png
     :scale: 100%
     :align: center
 
     Znaczenie User Experience
 
-Rozwiązania tworzone są zgodnie z metodologią User-centered design,  w której potrzeby, wymagania i ograniczenia końcowego użytkownika są szczegółowo badane na każdym etapie procesu projektowego. Ze względu na swoją specyfikę, zespół stale współpracuje z zespołami programistycznymi i włącza się w ich prace. Zajmuje się także wewnętrznym odbiorem stworzonych przez programistów systemów i sprawdza je pod kątem użyteczności. Całość działań jest możliwa dzięki iteracyjnemu systemowi tworzenia oprogramowania stosowanemu w Firmie.
+Rozwiązania tworzone są zgodnie z metodologią User-centered design,  w której potrzeby, wymagania i ograniczenia końcowego użytkownika są szczegółowo badane na każdym etapie procesu projektowego. Ze względu na swoją specyfikę, zespół stale współpracuje z zespołami programistycznymi i włącza się w ich prace. Zajmuje się także wewnętrznym odbiorem stworzonych przez programistów systemów i sprawdza je pod kątem użyteczności. Całość działań jest możliwa dzięki iteracyjnemu systemowi tworzenia oprogramowania stosowanemu w Firmie.
 
-.. figure:: img/user-centered-design-iterations.jpg
+..  figure:: ../_img/user-centered-design-iterations.jpg
     :scale: 100%
     :align: center
 
-    Projektowanie zorientowane na użytkownika w iteracyjnym systemie wytwarzania oprogramowania
- 
-Proces planowania wydajności systemu 
+    Projektowanie zorientowane na użytkownika w iteracyjnym systemie wytwarzania oprogramowania
+
+Proces planowania wydajności systemu
 ====================================
 
 Firma w ramach przygotowania Projektu, określiła, że jednym z kluczowych elementów poprawnego działania aplikacji jest jego wydajność. Decyzja taka wynikła z faktu docelowego wykorzystywania systemu Projektu do codziennej równoległej pracy znacznej liczby użytkowników.
@@ -33,7 +33,7 @@ Proces planowania wydajności systemu zawierał:
 
 Pierwsze dwa punkty mają swoje odzwierciedlenie w Projekcie Technicznym. Celem niniejszego dokumentu jest doprecyzowanie trzeciego punktu.
 
-Firma wdrożyła praktykę projektową Ciągłej Integracji (ang. *Continuous Integration*, *CI*).
+Firma wdrożyła praktykę projektową Ciągłej Integracji (ang. *Continuous Integration*, *CI*).
 
 Testy wydajnościowe
 ===================

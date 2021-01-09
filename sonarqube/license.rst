@@ -15,7 +15,7 @@ Plans & Pricing https://www.sonarsource.com/plans-and-pricing/
 LOC are computed by summing up the LOC of each project analyzed.
 The LOC count for a project is the LOC count of the project's largest branch.
 
-.. figure:: img/sonarqube-license-a.png
+.. figure:: _img/sonarqube-license-a.png
     :scale: 33%
     :align: center
 
@@ -105,19 +105,19 @@ Developer Edition
     * **T-SQL**
     * **Swift**
 
-.. figure:: img/sonarqube-feature-branch-a.png
+.. figure:: _img/sonarqube-feature-branch-a.png
     :scale: 33%
     :align: center
 
     Branch Analysis [licde]_
 
-.. figure:: img/sonarqube-feature-pr-a.png
+.. figure:: _img/sonarqube-feature-pr-a.png
     :scale: 50%
     :align: center
 
     Pull Request decoration [licde]_
 
-.. figure:: img/sonarqube-feature-security-a.png
+.. figure:: _img/sonarqube-feature-security-a.png
     :scale: 50%
     :align: center
 
@@ -174,19 +174,19 @@ Enterprise Edition
     * **RPG**
     * **VB6**
 
-.. figure:: img/sonarqube-feature-portfolio-a.png
+.. figure:: _img/sonarqube-feature-portfolio-a.png
     :scale: 75%
     :align: center
 
     Portfolio Management  [licee]_
 
-.. figure:: img/sonarqube-feature-portfolio-b.png
+.. figure:: _img/sonarqube-feature-portfolio-b.png
     :scale: 75%
     :align: center
 
     Portfolio Management  [licee]_
 
-.. figure:: img/sonarqube-feature-security-b.png
+.. figure:: _img/sonarqube-feature-security-b.png
     :scale: 33%
     :align: center
 
@@ -206,7 +206,7 @@ Data Center Edition
 
 Data Center Edition is ideal for mission-critical enterprise deployments that need a secure and reliable infrastructure to manage code quality and security. It allows distributed teams to collaborate on large projects by combining SonarSource's industry-leading, open source code quality and security tools, ensuring maximum uptime and data resiliency.
 
-.. figure:: img/sonarqube-feature-portfolio-c.png
+.. figure:: _img/sonarqube-feature-portfolio-c.png
     :scale: 100%
 
     Portfolio Management Portfolios, Metrics consolidation, Executive reporting, Project Transfer (from multiple SonarQube servers into a central instance) [licdce]_

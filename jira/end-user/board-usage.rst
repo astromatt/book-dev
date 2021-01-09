@@ -16,12 +16,12 @@ Project Management
     - Praca w Scrum i Kanban jednocześnie
     - Konstytucja zespołu i dobre praktyki
 
-.. figure:: img/jira-board-select.jpg
-.. figure:: img/agile-wheel-1.png
-.. figure:: img/agile-wheel-2.png
-.. figure:: img/scrum-sprint-week-continuous.png
-.. figure:: img/scrum-daily-timer.png
-.. figure:: img/scrum-userstory.png
+..   figure:: ../_img//jira-board-select.jpg
+..   figure:: ../_img//agility-bigpicture-simple.png
+..   figure:: ../_img//agility-bigpicture-advanced.png
+..   figure:: ../_img//scrum-sprint-week-continuous.png
+..   figure:: ../_img//scrum-daily-timer.png
+..   figure:: ../_img//scrum-userstory.png
 
 
 Scrum
@@ -30,8 +30,8 @@ Scrum
 - Sprintlog
 - Task board
 
-.. figure:: img/jira-board-backlog-scrum.png
-.. figure:: img/jira-board-sprint.png
+..   figure:: ../_img//jira-board-backlog-scrum.png
+..   figure:: ../_img//jira-board-sprint.png
 
 
 Epic
@@ -55,26 +55,26 @@ Epic
 
 Planning and Refinement
 =======================
-.. figure:: img/agile-decomposition-01-mindmapping.jpg
-.. figure:: img/agile-decomposition-02-epics.jpg
-.. figure:: img/agile-decomposition-03-epic.jpg
-.. figure:: img/agile-decomposition-04-epics.jpg
-.. figure:: img/agile-decomposition-05-ordering.jpg
-.. figure:: img/agile-decomposition-06-ordered.jpg
-.. figure:: img/agile-decomposition-07-todecompose.jpg
-.. figure:: img/agile-decomposition-08-decomposition.jpg
-.. figure:: img/agile-decomposition-09-ordering.jpg
-.. figure:: img/agile-decomposition-10-ordered.jpg
-.. figure:: img/agile-decomposition-11-estimation-resample.png
-.. figure:: img/agile-decomposition-12-estimation.jpg
-.. figure:: img/agile-decomposition-13-priorities.jpg
-.. figure:: img/agile-decomposition-14-sprints.jpg
-.. figure:: img/agile-decomposition-15-issues.jpg
-.. figure:: img/agile-decomposition-16-jira.jpg
-.. figure:: img/agile-decomposition-17-epicmaping.jpg
-.. figure:: img/agile-decomposition-18-board.jpg
-.. figure:: img/agile-decomposition-19-risk.jpg
-.. figure:: img/agile-decomposition-20-portfolio.jpg
+..   figure:: ../_img//agile-decomposition-01-mindmapping.jpg
+..   figure:: ../_img//agile-decomposition-02-epics.jpg
+..   figure:: ../_img//agile-decomposition-03-epic.jpg
+..   figure:: ../_img//agile-decomposition-04-epics.jpg
+..   figure:: ../_img//agile-decomposition-05-ordering.jpg
+..   figure:: ../_img//agile-decomposition-06-ordered.jpg
+..   figure:: ../_img//agile-decomposition-07-todecompose.jpg
+..   figure:: ../_img//agile-decomposition-08-decomposition.jpg
+..   figure:: ../_img//agile-decomposition-09-ordering.jpg
+..   figure:: ../_img//agile-decomposition-10-ordered.jpg
+..   figure:: ../_img//agile-decomposition-11-estimation-resample.png
+..   figure:: ../_img//agile-decomposition-12-estimation.jpg
+..   figure:: ../_img//agile-decomposition-13-priorities.jpg
+..   figure:: ../_img//agile-decomposition-14-sprints.jpg
+..   figure:: ../_img//agile-decomposition-15-issues.jpg
+..   figure:: ../_img//agile-decomposition-16-jira.jpg
+..   figure:: ../_img//agile-decomposition-17-epicmaping.jpg
+..   figure:: ../_img//agile-decomposition-18-board.jpg
+..   figure:: ../_img//agile-decomposition-19-risk.jpg
+..   figure:: ../_img//agile-decomposition-20-portfolio.jpg
 
 
 Sprints
@@ -92,7 +92,7 @@ Sprints
     * 2000-02 week 2
     * 2000-02 week 3
 
-.. figure:: img/scrum-capacity-sprint.png
+..   figure:: ../_img//scrum-capacity-sprint.png
 
 
 Active Sprint
@@ -120,7 +120,7 @@ Metrics
 - Capacity
 - Maturity
 
-.. figure:: img/scrum-capacity-backlog.png
+..   figure:: ../_img//scrum-capacity-backlog.png
 
 
 Planning and Refinement
@@ -136,7 +136,7 @@ Planning and Refinement
 
 Roadmap
 =======
-.. figure:: img/jira-board-roadmap.png
+..   figure:: ../_img//jira-board-roadmap.png
 
 
 Kanban
@@ -163,7 +163,7 @@ Kanban
     - Priority
     - SLA
 
-.. figure:: img/jira-board-backlog-kanban.png
+..   figure:: ../_img//jira-board-backlog-kanban.png
 
 
 Demonstration

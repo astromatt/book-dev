@@ -2,7 +2,7 @@
 Manifest Agile
 **************
 
-Wytwarzając oprogramowanie i pomagając innym w tym zakresie, odkrywamy lepsze sposoby wykonywania tej pracy.
+Wytwarzając oprogramowanie i pomagając innym w tym zakresie, odkrywamy lepsze sposoby wykonywania tej pracy.
 
 W wyniku tych doświadczeń przedkładamy:
 
@@ -11,4 +11,4 @@ W wyniku tych doświadczeń przedkładamy:
 * **Współpracę z klientem** ponad formalne ustalenia.
 * **Reagowanie na zmiany** ponad podążanie za planem.
 
-Doceniamy to, co wymieniono po prawej stronie, jednak bardziej cenimy to, co po lewej.
+Doceniamy to, co wymieniono po prawej stronie, jednak bardziej cenimy to, co po lewej.

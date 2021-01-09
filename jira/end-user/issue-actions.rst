@@ -48,9 +48,9 @@ Time Reporting
 * `Log Work`
 * Reports
 
-.. figure:: img/jira-report-timetracking-1.png
-.. figure:: img/jira-report-timetracking-2.png
-.. figure:: img/jira-report-timetracking-3.png
+..   figure:: ../_img//jira-report-timetracking-1.png
+..   figure:: ../_img//jira-report-timetracking-2.png
+..   figure:: ../_img//jira-report-timetracking-3.png
 
 
 Demonstration
@@ -66,8 +66,8 @@ Assignments
 
 Issue Actions Attachment
 ------------------------
-* Obrazek: :download:`download/image.png`
-* Archiwum: :download:`download/archive.zip`
+* Obrazek: :download:`../_download/image.png`
+* Archiwum: :download:`../_download/archive.zip`
 
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Edytuj zadanie `One`

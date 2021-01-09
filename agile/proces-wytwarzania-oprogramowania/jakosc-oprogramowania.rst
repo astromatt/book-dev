@@ -33,7 +33,7 @@ Na ich podstawie wykonywane są testy mierzące wydajność aplikacji.
 
 Aby utrzymać wysoki standard jakości oprogramowania został wdrożony system SonarQube. Oprogramowanie to pozwala na wyświetlanie wyników statycznej analizy kodu źródłowego w prostej i przejrzystej formie. Dzięki jego wykorzystaniu deweloperzy mają możliwość zobaczenia najczęściej popełnianych błędów oraz ich rozwiązania.
 
-Kolejnym elementem, który znacząco przyczynia się do wysokiej jakości wytwarzanych rozwiązań jest tzw. system Pull Requestów, tj. oprogramowanie do przeglądu kodu (ang. *Code Review*). Zarówno do przetrzymywania repozytoriów kodu źródłowego jak i obsługi procesu Pull Request wykorzystywane jest narzędzie Stash. Aplikacja ta pozwala w prosty i intuicyjny wprowadzać komentarze do kodu źródłowego co wspiera komunikację programistów. Wg. obecnych ustawień każda zmiana w kodzie źródłowym wymaga akceptacji przynajmniej dwóch innych programistów oraz pozytywnego wyniku budowania i testów w systemie Continuous Integration. 
+Kolejnym elementem, który znacząco przyczynia się do wysokiej jakości wytwarzanych rozwiązań jest tzw. system Pull Requestów, tj. oprogramowanie do przeglądu kodu (ang. *Code Review*). Zarówno do przetrzymywania repozytoriów kodu źródłowego jak i obsługi procesu Pull Request wykorzystywane jest narzędzie Stash. Aplikacja ta pozwala w prosty i intuicyjny wprowadzać komentarze do kodu źródłowego co wspiera komunikację programistów. Wg. obecnych ustawień każda zmiana w kodzie źródłowym wymaga akceptacji przynajmniej dwóch innych programistów oraz pozytywnego wyniku budowania i testów w systemie Continuous Integration.
 
 Testowanie automatyczne
 =======================

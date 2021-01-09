@@ -78,19 +78,19 @@ Bitbucket Integration
 
 SonarQube Commercial Editions tightly integrate with Atlassian Bitbucket Server so your team can write clean, quality code all day long!
 
-.. figure:: img/sonarqube-integrations-bitbucket-a.png
+.. figure:: _img/sonarqube-integrations-bitbucket-a.png
     :scale: 66%
     :align: center
 
     Atlassian Bitbucket Server integration [sqbb]_
 
-.. figure:: img/sonarqube-integrations-bitbucket-b.png
+.. figure:: _img/sonarqube-integrations-bitbucket-b.png
     :scale: 50%
     :align: center
 
     Atlassian Bitbucket Server integration [sqbb]_
 
-.. figure:: img/sonarqube-integrations-bitbucket-c.png
+.. figure:: _img/sonarqube-integrations-bitbucket-c.png
     :scale: 75%
     :align: center
 

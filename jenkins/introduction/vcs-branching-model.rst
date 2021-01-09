@@ -5,7 +5,7 @@ Version Control Branching Model
 
 Git Flow
 ========
-.. figure:: img/vcs-gitflow.png
+.. figure:: ../_img/vcs-gitflow.png
     :scale: 50%
     :align: center
 
@@ -14,7 +14,7 @@ Git Flow
 
 Lean Git Flow
 =============
-.. figure:: img/vcs-gitflow-lean.png
+.. figure:: ../_img/vcs-gitflow-lean.png
     :scale: 50%
     :align: center
 
@@ -23,7 +23,7 @@ Lean Git Flow
 
 GitHub Flow
 ===========
-.. figure:: img/vcs-githubflow.png
+.. figure:: ../_img/vcs-githubflow.png
     :scale: 50%
     :align: center
 
@@ -32,7 +32,7 @@ GitHub Flow
 
 Pull Request
 ============
-.. figure:: img/vcs-pull-request.png
+.. figure:: ../_img/vcs-pull-request.png
     :scale: 50%
     :align: center
 

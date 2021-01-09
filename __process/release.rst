@@ -8,18 +8,18 @@ System jest aktywnie działającym oprogramowaniem, które znajduje zastosowanie
 
 Wybór jednostki badawczej
 =========================
-System został wdrożony w polskim habitacie znajdującym się na terenie byłego lotniska wojskowego (*ICAO: EPPI*, :numref:`figure-process-lunares-map`) w Pile 100 km na północ od Poznania. Powodem wdrożenia systemu w tej placówce było bezpośrednie zaangażowanie autora pracy w tworzenie bazy kosmicznej oraz przygotowanie symulacji.
+System został wdrożony w polskim habitacie znajdującym się na terenie byłego lotniska wojskowego (*ICAO: EPPI*, :numref:`figure-process-lunares-map`) w Pile 100 km na północ od Poznania. Powodem wdrożenia systemu w tej placówce było bezpośrednie zaangażowanie autora pracy w tworzenie bazy kosmicznej oraz przygotowanie symulacji.
 
 .. figure:: img/lunares-map.png
     :name: figure-process-lunares-map
 
-    Mapa satelitarna lotniska w Pile z zaznaczoną lokalizacją umiejscowienia habitatu. Źródło: *Google Maps*.
+    Mapa satelitarna lotniska w Pile z zaznaczoną lokalizacją umiejscowienia habitatu. Źródło: *Google Maps*.
 
-Autor pracy brał udział w trzech symulacjach misji kosmicznych w charakterze astronauty. Ponadto uczestniczył w czterech misjach w roli *CAPCOM* (osoba komunikująca się z astronautami) jak również operatora centrum kontroli misji (ang. *Mission Control Center*, *MCC*) oraz głównego badacza (ang. *Primary Investigator*, *PI*).
+Autor pracy brał udział w trzech symulacjach misji kosmicznych w charakterze astronauty. Ponadto uczestniczył w czterech misjach w roli *CAPCOM* (osoba komunikująca się z astronautami) jak również operatora centrum kontroli misji (ang. *Mission Control Center*, *MCC*) oraz głównego badacza (ang. *Primary Investigator*, *PI*).
 
 Doświadczenie zdobyte w trakcie uczestnictwa w symulacjach zarówno jako członek *MCC* jak i astronauta pozwoliło na zaprojektowanie oraz stworzenie systemu dedykowanego do rozwiązania realnie istniejących problemów w tej placówce naukowej.
 
-Habitat (:numref:`figure-process-lunares-outside`, :numref:`figure-process-lunares-inside`), jest budynkiem posiadającym na chwilę obecną ponad 220 inteligentnych sensorów, tj. czujniki dymu, CO2, czujniki temperatury i wilgotności względnej, otwarcia zaworów, otwarcia drzwi, kontrolerów oświetlenia, itp. pozwalających na stałe monitorowanie parametrów środowiskowych. Uczestnicy zamykani są na dwutygodniowe symulacje misji kosmicznych, podczas których zbierane są dodatkowo dane biomedyczne. Charakter izolacji pozwala na lepszą jakość danych oraz mniejszą liczbę szumu. Jest to sytuacja pożądana w przypadku rozwoju systemu w trakcie jego wykorzystania.
+Habitat (:numref:`figure-process-lunares-outside`, :numref:`figure-process-lunares-inside`), jest budynkiem posiadającym na chwilę obecną ponad 220 inteligentnych sensorów, tj. czujniki dymu, CO2, czujniki temperatury i wilgotności względnej, otwarcia zaworów, otwarcia drzwi, kontrolerów oświetlenia, itp. pozwalających na stałe monitorowanie parametrów środowiskowych. Uczestnicy zamykani są na dwutygodniowe symulacje misji kosmicznych, podczas których zbierane są dodatkowo dane biomedyczne. Charakter izolacji pozwala na lepszą jakość danych oraz mniejszą liczbę szumu. Jest to sytuacja pożądana w przypadku rozwoju systemu w trakcie jego wykorzystania.
 
 .. figure:: img/lunares-outside.png
     :name: figure-process-lunares-outside
@@ -64,4 +64,4 @@ Przed każdą misją uczestnicy symulacji zarówno z *MCC* jak i astronauci byli
 
 Podczas szkolenia poruszano tematy związane z użytkowaniem systemu, wprowadzaniem danych i wymagalnością pól, systemem czasu i synchronizacji zegarów, opóźnień komunikacyjnych oraz możliwości generowania wykresów dla parametrów środowiskowych.
 
-W trakcie jednej z symulacji system był wykorzystywany również przez osobę niewidomą wykorzystującą czytnik ekranu. Astronauta ten nie miał problemów z poruszaniem się po aplikacji i wprowadzaniem danych. Uwagi dotyczące użyteczności ekranów zostały uwzględnione w kolejnych poprawkach do systemu.
+W trakcie jednej z symulacji system był wykorzystywany również przez osobę niewidomą wykorzystującą czytnik ekranu. Astronauta ten nie miał problemów z poruszaniem się po aplikacji i wprowadzaniem danych. Uwagi dotyczące użyteczności ekranów zostały uwzględnione w kolejnych poprawkach do systemu.

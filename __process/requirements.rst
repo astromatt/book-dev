@@ -3,7 +3,7 @@ Wymagania systemu
 *****************
 
 
-Wymagania definiują zakres funkcjonalności oraz zachowania się systemu. W projektach inżynieryjnych wymagania dzielą się na:
+Wymagania definiują zakres funkcjonalności oraz zachowania się systemu. W projektach inżynieryjnych wymagania dzielą się na:
 
     - wymagania funkcjonalne,
     - wymagania niefunkcjonalne.
@@ -13,7 +13,7 @@ Wymagania funkcjonalne określają zakres użyteczności systemu, tj. co system 
 
 Wymagania funkcjonalne
 ======================
-System do wsparcia baz księżycowych i marsjańskich powinien wyręczać użytkownika końcowego w skomplikowanych i podatnych na błędy sytuacjach. Musi wspierać tworzenie i śledzenie harmonogramu dnia, planowania czasu, wykonalności zadań, tworzenia raportów oraz całej sfery przetwarzania danych i ich analizy. Wszystkie umieszczone w systemie informacje stanowią źródło potencjalnych powiązań, które mogą wpływać na wydajność pracy i jakość życia astronautów.
+System do wsparcia baz księżycowych i marsjańskich powinien wyręczać użytkownika końcowego w skomplikowanych i podatnych na błędy sytuacjach. Musi wspierać tworzenie i śledzenie harmonogramu dnia, planowania czasu, wykonalności zadań, tworzenia raportów oraz całej sfery przetwarzania danych i ich analizy. Wszystkie umieszczone w systemie informacje stanowią źródło potencjalnych powiązań, które mogą wpływać na wydajność pracy i jakość życia astronautów.
 
 Drugorzędnym celem stworzenia systemu jest możliwość badania korelacji między zbieranymi danymi, tj. informacje psychologiczne, relacje socjodynamiczne, informacje na temat stanu medycznego oraz parametry środowiskowe. Platforma ma umożliwiać badaczom zastosowanie mechanizmów analizy numerycznej i uczenia maszynowego w celu detekcji anomalii, predykcji wartości, analizy intencji, transformacji mowy w tekst i przetwarzania obrazów.
 

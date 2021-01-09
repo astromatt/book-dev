@@ -8,14 +8,14 @@ Environmental Variables
 .. csv-table:: Environmental Variables
     :header-rows: 1
     :widths: 20, 80
-    :file: data/environmental-variables.csv
+    :file: ../_data/environmental-variables.csv
 
 Environmental Variables
 =======================
 
 PS1
 ---
-.. figure:: img/bash-colors.png
+.. figure:: ../_img/bash-colors.png
     :align: center
     :scale: 50%
 

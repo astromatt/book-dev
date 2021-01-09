@@ -5,7 +5,7 @@ Proces wytwarzania oprogramowania
 *********************************
 
 
-Przez proces wytwarzania oprogramowania rozumie się ogół czynności prowadzących do powstania aplikacji. W skład procesu wchodzą:
+Przez proces wytwarzania oprogramowania rozumie się ogół czynności prowadzących do powstania aplikacji. W skład procesu wchodzą:
 
     - analiza biznesowa oraz zebranie wymagań funkcjonalnych i niefunkcjonalnych,
     - analiza systemowa oraz architektura systemu,

@@ -3,6 +3,11 @@ Sonar Scanner
 *************
 
 
+Rationale
+=========
+.. figure:: _img/sonarqube-bigpicture.png
+
+
 Run
 ===
 .. code-block:: sh

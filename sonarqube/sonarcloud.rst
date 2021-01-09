@@ -23,3 +23,6 @@ Bitbucket Integration
       "sonarHost": "https://sonarcloud.io",
       "sonarProjectKey": "MyProjectKey"
     }
+
+
+.. figure:: _img/sonarqube-bigpicture.png

@@ -5,15 +5,15 @@ Proces kontroli wersji i zmian
 
 W ramach projektu zadbano o jakość opracowanych rozwiązań. Dla poprawy kodu aplikacji stworzonego w ramach systemu mają zastosowanie ogólnie przyjęte dobre praktyki wytwarzania oprogramowania oraz konwencje nazewnicze zgodne o ogólnoświatowym standardem.
 
-Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym oprogramowaniu, które jest aktywnie rozwijane zachodzi konieczność wprowadzenia systemu kontroli wersji takiego jak np. *Git*. Narzędzie to pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą zaletą tego typu systemu jest możliwość równoległej pracy nad systemem przez wiele osób. Zaproponowany system kontroli zmian pozwala na dowolne skalowanie zespołu programistów i jest zgodny ze standardem dobrych praktyk inżynierii oprogramowania na świecie.
+Projekty informatyczne, w których wytwarzanie zaangażowane jest wiele osób wymagają odpowiedniego podejścia do zarządzania zarówno wersjami jak i kodem źródłowym. W każdym oprogramowaniu, które jest aktywnie rozwijane zachodzi konieczność wprowadzenia systemu kontroli wersji takiego jak np. *Git*. Narzędzie to pozwala w prosty i efektywny sposób na scalanie i śledzenie zmian wprowadzanych przez programistów. Największą zaletą tego typu systemu jest możliwość równoległej pracy nad systemem przez wiele osób. Zaproponowany system kontroli zmian pozwala na dowolne skalowanie zespołu programistów i jest zgodny ze standardem dobrych praktyk inżynierii oprogramowania na świecie.
 
-Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. *commit*) oraz gałęzi (ang. *branch*) z nowymi funkcjonalnościami oraz poprawkami błędów. Przyjęta konwencja jest standardem opartym na schemacie *Git Flow*.
+Aby utrzymać przejrzystość oraz możliwość szybkiego śledzenia zmian, w systemie kontroli wersji został przyjęty standard nazewnictwa kolejnych przyrostów (ang. *commit*) oraz gałęzi (ang. *branch*) z nowymi funkcjonalnościami oraz poprawkami błędów. Przyjęta konwencja jest standardem opartym na schemacie *Git Flow*.
 
 Aby zachować spójność ze standardem opisu zmian w systemach informatycznych zastosowano opisy w języku angielskim. Każda zmiana w systemie kontroli wersji jest opisana według następującego przykładu:
 
     ``ID-1337 Moduł: Opis przyrostu funkcjonalności #time 120m``
 
-Powyższy przykład pokazuje zastosowanie odpowiedniego identyfikatora zadania w systemie do zarządzania projektem. Następny element w opisie zmiany określa etykietka modułu, w którym wprowadzono usprawnienia. Pozostała część opisu powinna jak najlepiej oddawać charakter wprowadzonej poprawki opisując dokładnie zmiany. Na końcu całego opisu zastosowano identyfikator ``#time`` informujący o ilości minut, która została poświęcona na wprowadzanie zmiany. Zastosowanie takiego formatu pozwala na raportowanie czasu pracy oraz umożliwia lepsze planowanie zmian w systemie zadań. Długość pierwszej linii opisu wraz z identyfikatorem nie powinna przekraczać 80 znaków.
+Powyższy przykład pokazuje zastosowanie odpowiedniego identyfikatora zadania w systemie do zarządzania projektem. Następny element w opisie zmiany określa etykietka modułu, w którym wprowadzono usprawnienia. Pozostała część opisu powinna jak najlepiej oddawać charakter wprowadzonej poprawki opisując dokładnie zmiany. Na końcu całego opisu zastosowano identyfikator ``#time`` informujący o ilości minut, która została poświęcona na wprowadzanie zmiany. Zastosowanie takiego formatu pozwala na raportowanie czasu pracy oraz umożliwia lepsze planowanie zmian w systemie zadań. Długość pierwszej linii opisu wraz z identyfikatorem nie powinna przekraczać 80 znaków.
 
 Dzięki zastosowaniu takiej konstrukcji system do przechowywania repozytorium może wymieniać informacje z aplikacją do zarządzania zadaniami oraz przyporządkowywać dany kod przypadkom użycia. Umożliwia to także łatwą weryfikację oraz śledzenie postępu pracy nad konkretną funkcjonalnością.
 
@@ -42,7 +42,7 @@ Proces i umiejscowienie poszczególnych gałęzi rozwojowych w ramach projektu z
 
 Gałąź kodu produkcyjnego
 ========================
-W repozytorium główną gałęzią jest ``master``. Przechowywana jest w nim stabilna wersja kodu będąca odpowiednikiem zmiany znajdującej się na środowisku produkcyjnym. Scalenie kodu do *brancha* ``master`` jest równoważne z wydaniem nowej wersji. Jest to dopuszczalne jedynie, gdy testy automatyczne, funkcjonalne, regresyjne i jednostkowe nie pozostawiają wątpliwości na temat stabilności oraz braku defektów we wprowadzonych zmianach. Branch ten odpowiada sytuacji na serwerze produkcyjnym z działającą aplikacją operującą na rzeczywistych danych. Grafika poglądowa :numref:`figure-process-gitflow-master` przedstawia wizualizację procesu wprowadzania zmian do gałęzi ``master``.
+W repozytorium główną gałęzią jest ``master``. Przechowywana jest w nim stabilna wersja kodu będąca odpowiednikiem zmiany znajdującej się na środowisku produkcyjnym. Scalenie kodu do *brancha* ``master`` jest równoważne z wydaniem nowej wersji. Jest to dopuszczalne jedynie, gdy testy automatyczne, funkcjonalne, regresyjne i jednostkowe nie pozostawiają wątpliwości na temat stabilności oraz braku defektów we wprowadzonych zmianach. Branch ten odpowiada sytuacji na serwerze produkcyjnym z działającą aplikacją operującą na rzeczywistych danych. Grafika poglądowa :numref:`figure-process-gitflow-master` przedstawia wizualizację procesu wprowadzania zmian do gałęzi ``master``.
 
 .. figure:: img/gitflow-lean.png
     :name: figure-process-gitflow-master
@@ -54,7 +54,7 @@ Gałąź integracyjna
 ==================
 W dużych repozytoriach, nad którymi pracuje wiele osób równocześnie, tj. więcej niż jeden 6±3 osobowy zespół, zachodzi konieczność wprowadzenia integracyjnej gałęzi rozwojowej. Zabieg ten ma na celu zabezpieczenie brancha ``master`` przez scalaniem kodu mogącego zaburzyć jego stabilność. Dzięki takiemu podejściu proces staje się nieznacznie bardziej skomplikowany, ale za to pewniejszy i przewidywalny.
 
-W takim przypadku w repozytorium główną gałęzią rozwojową staje się *branch* ``develop``. Przechowywana jest w nim najnowsza wersja oprogramowania ze scalonymi ukończonymi funkcjonalnościami. Gałąź ``develop`` powinna przechowywać kod, co do którego poprawności nie ma zastrzeżeń. Kod powinien się budować oraz być odpowiednio przetestowany. Z gałęzi rozwojowej ``develop`` w każdym momencie można stworzyć tzw. kandydata do wdrożenia (ang. *release candidate*) i branch ``release/X.Y``, gdzie litery ``X`` i ``Y`` symbolizują kolejną wersję zgodną z semantic versioning.
+W takim przypadku w repozytorium główną gałęzią rozwojową staje się *branch* ``develop``. Przechowywana jest w nim najnowsza wersja oprogramowania ze scalonymi ukończonymi funkcjonalnościami. Gałąź ``develop`` powinna przechowywać kod, co do którego poprawności nie ma zastrzeżeń. Kod powinien się budować oraz być odpowiednio przetestowany. Z gałęzi rozwojowej ``develop`` w każdym momencie można stworzyć tzw. kandydata do wdrożenia (ang. *release candidate*) i branch ``release/X.Y``, gdzie litery ``X`` i ``Y`` symbolizują kolejną wersję zgodną z semantic versioning.
 
 .. figure:: img/gitflow-master-develop.png
     :name: figure-process-gitflow-develop
@@ -79,7 +79,7 @@ Wprowadzenie gałęzi integracyjnej, która w standardzie *Git Flow* nazywana je
 
 gdzie sekwencja numeryczna odpowiadająca kolejnej wersji np. ``release/1.4`` lub ``release/1.12``. Schemat procesu zobrazowano na :numref:`figure-process-gitflow-release` Identyfikatory ``X.Y`` oznaczają numer wersji zgodnie z wcześniejszym opisem konwencji *semantic versioning*, tj. ``major.minor``. Konwencja nazewnicza wersji przedstawiona jest w podrozdziale ":ref:`Konwencja nazewnicza wersji`".
 
-Następnie na gałęzi z rodziny ``release/*`` uruchamiane są testy oraz w razie konieczności wprowadzane są poprawki przedwdrożeniowe. Po pozytywnym przejściu przez proces weryfikacji jakości gałąź jest scalana z ``master`` a zmiana jest oznaczana numerem wersji wdrożenia. Wszelkie akcje użytkownika końcowego oraz testera są zautomatyzowane tak, aby proces weryfikacji odbywał się autonomicznie.
+Następnie na gałęzi z rodziny ``release/*`` uruchamiane są testy oraz w razie konieczności wprowadzane są poprawki przedwdrożeniowe. Po pozytywnym przejściu przez proces weryfikacji jakości gałąź jest scalana z ``master`` a zmiana jest oznaczana numerem wersji wdrożenia. Wszelkie akcje użytkownika końcowego oraz testera są zautomatyzowane tak, aby proces weryfikacji odbywał się autonomicznie.
 
 .. figure:: img/gitflow-release.png
     :name: figure-process-gitflow-release
@@ -114,7 +114,7 @@ Gałęzie rozwojowe z rodziny ``feature/*`` (:numref:`figure-process-gitflow-fea
 
 Gałęzie poprawek planowanych
 ============================
-Gałęzie ``bugfix/*`` (:numref:`figure-process-gitflow-bugfix`) służą do wprowadzania poprawek błędów znalezionych podczas produkcji oprogramowania a system scalania ich z kodem źródłowym jest podobny do obsługi zmian w ramach kategorii ``feature/*``. Podobnie jak w przypadku wdrażania planowanych funkcjonalności gałęzie te nie powinny istnieć dłużej niż sprint. Wszystkie planowane zmiany muszą zostać zgranulowane do zadań odpowiednich w stosunku do iteracji.
+Gałęzie ``bugfix/*`` (:numref:`figure-process-gitflow-bugfix`) służą do wprowadzania poprawek błędów znalezionych podczas produkcji oprogramowania a system scalania ich z kodem źródłowym jest podobny do obsługi zmian w ramach kategorii ``feature/*``. Podobnie jak w przypadku wdrażania planowanych funkcjonalności gałęzie te nie powinny istnieć dłużej niż sprint. Wszystkie planowane zmiany muszą zostać zgranulowane do zadań odpowiednich w stosunku do iteracji.
 
 .. figure:: img/gitflow-bugfix.png
     :name: figure-process-gitflow-bugfix
@@ -143,7 +143,7 @@ Przed wprowadzeniem jakichkolwiek zmian do gałęzi integracyjnych wymagany jest
 
     Schemat procesu scalania zmian.
 
-Na karcie *Pull Request* zgodnie ze schematem :numref:`figure-process-pull-request` system ciągłej integracji zamieszcza informacje o wyniku statycznej analizy oraz testów. Gdy wszystkie testy zakończą się bez błędów, a zmiana uzyska zgodę (ang. *approve*) innych członków zespołu wytwarzającego oprogramowanie, pojawia się możliwość scalenia funkcjonalności do docelowej gałęzi (zwykle ``develop``).
+Na karcie *Pull Request* zgodnie ze schematem :numref:`figure-process-pull-request` system ciągłej integracji zamieszcza informacje o wyniku statycznej analizy oraz testów. Gdy wszystkie testy zakończą się bez błędów, a zmiana uzyska zgodę (ang. *approve*) innych członków zespołu wytwarzającego oprogramowanie, pojawia się możliwość scalenia funkcjonalności do docelowej gałęzi (zwykle ``develop``).
 
 .. figure:: img/gitflow-pull-request.png
     :name: figure-process-pull-request
@@ -165,7 +165,7 @@ Po scaleniu gałęzi ``release/X.Y`` następuje proces oznaczania odpowiedniego 
 
 Konwencja nazewnicza wersji
 ===========================
-W ramach projektu na poziomie systemowym ma zastosowanie konwencja nazewnicza semantycznego wersjonowania (ang. *Semantic Versioning*). Kolejnym przyrostom aplikacji przyporządkowana jest unikalna nazwa zobrazowana na listingu poniżej:
+W ramach projektu na poziomie systemowym ma zastosowanie konwencja nazewnicza semantycznego wersjonowania (ang. *Semantic Versioning*). Kolejnym przyrostom aplikacji przyporządkowana jest unikalna nazwa zobrazowana na listingu poniżej:
 
     ``X.Y.Z``
 
@@ -173,7 +173,7 @@ Każda z kolejnych części rozdzielonych kropką jest liczbą naturalną (przyk
 
 Wersja ``major`` jest używana do określania zmian niekompatybilnych wstecznie lub przełomowych względem publicznie dostępnego interfejsu systemu (ang. *Application Programming Interface*, *API*). Wszystkie narzędzia produkowane wewnętrznie lub zewnętrznie powinny precyzyjnie określać wersję zależności ``major`` aplikacji, gdyż ma to krytyczny wpływ na ich działanie oraz kompatybilność.
 
-Wersja ``minor`` jest używana do określenia kolejnych przyrostów funkcjonalności aplikacji. Zgodnie z konwencją nazewniczą funkcjonalności w publicznym *API* dla danej wersji powinny wyłącznie przyrastać, chyba że jest to jasno określone i przeprowadzone zgodnie z polityką wyprowadzania zmian z użycia (ang. *deprecation policy*). Wprowadzone zmiany w wersji ``minor`` nie powinny powodować niekompatybilności pomiędzy oprogramowaniem zewnętrznym i wewnętrznym. Pozwala to na bezpieczną aktualizację systemów bez obawy o błędne działanie systemu. Z doświadczenia autora wynika, iż reguła ta jest często naruszana i należy bezwzględnie zwracać uwagę na testy oprogramowania przy jakichkolwiek nawet najmniejszych zmianach zależności.
+Wersja ``minor`` jest używana do określenia kolejnych przyrostów funkcjonalności aplikacji. Zgodnie z konwencją nazewniczą funkcjonalności w publicznym *API* dla danej wersji powinny wyłącznie przyrastać, chyba że jest to jasno określone i przeprowadzone zgodnie z polityką wyprowadzania zmian z użycia (ang. *deprecation policy*). Wprowadzone zmiany w wersji ``minor`` nie powinny powodować niekompatybilności pomiędzy oprogramowaniem zewnętrznym i wewnętrznym. Pozwala to na bezpieczną aktualizację systemów bez obawy o błędne działanie systemu. Z doświadczenia autora wynika, iż reguła ta jest często naruszana i należy bezwzględnie zwracać uwagę na testy oprogramowania przy jakichkolwiek nawet najmniejszych zmianach zależności.
 
 Wersja ``bugfix`` jest przeznaczona do wyłącznie dla numeracji poprawek bezpieczeństwa oraz funkcjonalności, wprowadzonych omyłkowo lub zauważonych podczas zwiększenia wersji ``minor``. Aktualizacja systemu do najnowszej wersji ``bugfix`` w ramach tej samej ``major`` i ``minor`` powinna być bezproblemowa i nie powinna wprowadzać, żadnych zmian w systemie poza eliminacją wykrytych błędów. Podobnie jak w przypadku aktualizacji oprogramowania z wersją ``minor`` tak również wersje ``bugfix`` potrafią być sporadycznie nośnikiem nowych błędów. Należy wykonywać testy automatyczne przy każdej aktualizacji zależności zewnętrznych nawet dotyczących wersji ``bugfix``.
 

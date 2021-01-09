@@ -8,10 +8,12 @@ Rationale
 SonarLint is an IDE extension that helps you detect and fix quality issues as you write code.
 Like a spell checker, SonarLint squiggles flaws so that they can be fixed before committing code. [officialpage]_
 
-.. image:: img/sonarlint-a.jpg
+.. figure:: _img/sonarqube-bigpicture.png
+
+.. image:: _img/sonarlint-a.jpg
     :class: hidden
 
-.. image:: img/sonarlint-b.mp4
+.. image:: _img/sonarlint-b.mp4
     :class: hidden
 
 .. raw:: html

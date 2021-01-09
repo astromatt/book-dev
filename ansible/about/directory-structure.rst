@@ -12,9 +12,9 @@ Basic Project
     project
     ├── config.yaml
     ├── inventory
-    │   ├── group_vars
-    │   ├── host_vars
-    │   └── hosts
+    │   ├── group_vars
+    │   ├── host_vars
+    │   └── hosts
     ├── provision.yaml
     └── site.yaml
 
@@ -37,7 +37,7 @@ Roles
     ├── config.yaml
     ├── provision.yaml
     ├── roles
-    │   └── requirements.yaml
+    │   └── requirements.yaml
     └── setup.yaml
 
 

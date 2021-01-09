@@ -53,17 +53,17 @@ All SQALE indices represent costs. These costs can be calculated in work unit, i
 
 The method also defines a global index: For any element of the hierarchy of the source code artefacts, the remediation cost relating to all the characteristics of the quality model can be estimated by adding all remediation costs linked to all the requirements of the quality model. This derived measurement is called: SQALE Quality Index: SQI For the AGILE Software Development, the SQI index correspond to the design debt (or technical debt) of the project. The method also defines index densities which allow comparing the products quality of different size (for example SQID: SQALE Quality Density Index).
 
-.. figure:: img/qualitymodel-sqale-a.png
+.. figure:: _img/qualitymodel-sqale-a.png
     :scale: 100%
 
     Technical Debt Pyramid. In this example, the amount of critical debt (that means related to the « Reliability » and “Security ” layers of the pyramid) is 10.4 days, or 20% of total. [SQALE]_
 
-.. figure:: img/qualitymodel-sqale-b.png
+.. figure:: _img/qualitymodel-sqale-b.png
     :scale: 100%
 
     Technical Debt Pyramid. The reliability of your application depends also on other efforts performed on additional activities like peer reviews, beta testing, etc. [SQALE]_
 
-.. figure:: img/qualitymodel-sqale-c.png
+.. figure:: _img/qualitymodel-sqale-c.png
     :scale: 100%
 
     Technical Debt Pyramid. Business Impact [SQALE]_
