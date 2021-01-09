@@ -445,6 +445,15 @@ More info
 * https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html
 
 
+Demonstration
+=============
+* Change: list view, add headers, sort headers, order data
+* Change: basic -> advanced
+* Show: export CSV, bulk change
+* Basic: select project, status, other fields, due date range
+* Advanced: autocompletion, scalar and list operators, functions
+
+
 Assignments
 ===========
 

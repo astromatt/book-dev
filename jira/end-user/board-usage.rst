@@ -76,6 +76,31 @@ Planning and Refinement
 .. figure:: img/agile-epic-decomposition-19-portfolio.jpg
 
 
+Sprints
+=======
+- Wielkość (ilość zadań, capacity chart)
+- Sprint Goal
+- Sprint Duration (week)
+- Sprint Name (YYYY-MM week N):
+
+    * 2000-01 week 1
+    * 2000-01 week 2
+    * 2000-01 week 3
+    * 2000-01 week 4
+    * 2000-02 week 1
+    * 2000-02 week 2
+    * 2000-02 week 3
+
+.. figure:: img/scrum-capacity-sprint.png
+
+
+Active Sprint
+=============
+- Open and close sprint
+- Flag issues
+- Scope changes
+
+
 Estimation
 ==========
 - Time Estimate
@@ -94,7 +119,6 @@ Metrics
 - Capacity
 - Maturity
 
-.. figure:: img/scrum-capacity-sprint.png
 .. figure:: img/scrum-capacity-backlog.png
 
 

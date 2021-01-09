@@ -19,22 +19,6 @@ Board vs. Project
 .. figure:: img/jira-board-vs-project-6.png
 
 
-
-Sprints
-=======
-- Wielkość (ilość zadań, capacity chart)
-- Długość (tydzień)
-- Konwencja nazewnicza (YYYY-MM week W) (2017-03 week 2, 2017-03 week 3)
-
-
-Active Sprint
-=============
-- Otwieranie i zamykanie sprintów
-- Flagowanie zadań
-- Scope Changes
-- Auto assign
-
-
 Board
 =====
 - Uprawnienia
