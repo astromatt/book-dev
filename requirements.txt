@@ -1,5 +1,5 @@
 sphinx==3.4.*
 sphinx_rtd_theme
-sphinxcontrib-bibtex==2.0.*
+sphinxcontrib-bibtex
 
 # sphinxjp.themes.revealjs
