@@ -55,25 +55,26 @@ Epic
 
 Planning and Refinement
 =======================
-.. figure:: img/agile-epic-decomposition-01-mindmapping.jpg
-.. figure:: img/agile-epic-decomposition-02-epics.jpg
-.. figure:: img/agile-epic-decomposition-03-epic.jpg
-.. figure:: img/agile-epic-decomposition-04-epics.jpg
-.. figure:: img/agile-epic-decomposition-05-ordering.jpg
-.. figure:: img/agile-epic-decomposition-06-ordered.jpg
-.. figure:: img/agile-epic-decomposition-07-todecompose.jpg
-.. figure:: img/agile-epic-decomposition-08-decomposition.jpg
-.. figure:: img/agile-epic-decomposition-09-ordering.jpg
-.. figure:: img/agile-epic-decomposition-10-ordered.jpg
-.. figure:: img/agile-epic-decomposition-11-estimation.jpg
-.. figure:: img/agile-epic-decomposition-12-priorities.jpg
-.. figure:: img/agile-epic-decomposition-13-sprints.jpg
-.. figure:: img/agile-epic-decomposition-14-issues.jpg
-.. figure:: img/agile-epic-decomposition-15-jira.jpg
-.. figure:: img/agile-epic-decomposition-16-epicmaping.jpg
-.. figure:: img/agile-epic-decomposition-17-board.jpg
-.. figure:: img/agile-epic-decomposition-18-risk.jpg
-.. figure:: img/agile-epic-decomposition-19-portfolio.jpg
+.. figure:: img/agile-decomposition-01-mindmapping.jpg
+.. figure:: img/agile-decomposition-02-epics.jpg
+.. figure:: img/agile-decomposition-03-epic.jpg
+.. figure:: img/agile-decomposition-04-epics.jpg
+.. figure:: img/agile-decomposition-05-ordering.jpg
+.. figure:: img/agile-decomposition-06-ordered.jpg
+.. figure:: img/agile-decomposition-07-todecompose.jpg
+.. figure:: img/agile-decomposition-08-decomposition.jpg
+.. figure:: img/agile-decomposition-09-ordering.jpg
+.. figure:: img/agile-decomposition-10-ordered.jpg
+.. figure:: img/agile-decomposition-11-estimation-resample.png
+.. figure:: img/agile-decomposition-12-estimation.jpg
+.. figure:: img/agile-decomposition-13-priorities.jpg
+.. figure:: img/agile-decomposition-14-sprints.jpg
+.. figure:: img/agile-decomposition-15-issues.jpg
+.. figure:: img/agile-decomposition-16-jira.jpg
+.. figure:: img/agile-decomposition-17-epicmaping.jpg
+.. figure:: img/agile-decomposition-18-board.jpg
+.. figure:: img/agile-decomposition-19-risk.jpg
+.. figure:: img/agile-decomposition-20-portfolio.jpg
 
 
 Sprints

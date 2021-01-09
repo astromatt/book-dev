@@ -64,8 +64,8 @@ Portfolio
 =========
 - Portfolio na bazie Kanban Board
 
-.. figure:: img/agile-epic-decomposition-18-risk.jpg
-.. figure:: img/agile-epic-decomposition-19-portfolio.jpg
+.. figure:: img/agile-decomposition-19-risk.jpg
+.. figure:: img/agile-decomposition-20-portfolio.jpg
 
 
 Cloud
