@@ -8,11 +8,7 @@ What is docker?
 * :cite:`DockerDocumentation`
 
 .. figure:: ../_img/docker-vs-lxc.png
-    :scale: 50%
-    :align: center
-
-    Docker vs LXC
-
+.. figure:: ../_img/docker-arch.png
 
 .. figure:: ../_img/docker-stack-01-baremetal.png
 .. figure:: ../_img/docker-stack-02-virtualization-1.png

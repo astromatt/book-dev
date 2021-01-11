@@ -17,6 +17,7 @@ Jenkins
     mkdir -p /home/jenkins
     chmod 777 /home/jenkins
     chmod 777 /var/run/docker.sock
+    ln -s /home/jenkins /var/jenkins_home
 
     docker run \
         --name jenkins \
@@ -32,26 +33,6 @@ Jenkins
 SonarQube
 =========
 .. code-block:: sh
-    :caption: SonarQube 7.9.x LTS
-
-    docker network create ecosystem
-    mkdir -p /home/sonarqube/
-    chmod 777 /home/sonarqube
-
-    docker run \
-        --name sonarqube \
-        --detach \
-        --rm \
-        --network ecosystem \
-        --publish 9000:9000 \
-        --volume /home/sonarqube/conf:/opt/sonarqube/conf \
-        --volume /home/sonarqube/data:/opt/sonarqube/data \
-        --volume /home/sonarqube/logs:/opt/sonarqube/logs \
-        --volume /home/sonarqube/extensions:/opt/sonarqube/extensions \
-        sonarqube:lts
-
-.. code-block:: sh
-    :caption: SonarQube 8.2+
 
     docker network create ecosystem
     docker volume create --name sonarqube_data
@@ -80,38 +61,88 @@ SonarQube
 
 Sonar Scanner
 =============
-.. code-block:: sh
-
-    docker pull sonarsource/sonar-scanner-cli
+* ``sonar-project.properties``
+* Further Reading: https://dev.astrotech.io/sonarqube/sonarscanner.html
+* Further Reading: https://python.astrotech.io/devsecops/ci-cd/static-analysis.html
 
 .. code-block:: properties
-    :caption: ``sonar-project.properties``
+    :caption: Java
 
-    # sonar.host.url=http://localhost:9000
+    ## Sonar Server
+    sonar.host.url=http://sonarqube:9000/
+    sonar.login=admin
+    sonar.password=admin
 
+    ## About Project
     sonar.projectKey=myproject
     sonar.projectName=myproject
-    sonar.projectVersion=1.0
-    sonar.projectDescription=My Description
-
-    sonar.links.homepage=https://www.example.com/
-    sonar.links.scm=https://github.com/myuser/myproject/
-    sonar.links.issue=https://github.com/myuser/myproject/issues
-    sonar.links.ci=https://github.com/myuser/myproject/cicd
-
-    sonar.language=java
     sonar.sourceEncoding=UTF-8
-    sonar.verbose=true
 
+    ## SonarScanner Config
+    sonar.verbose=false
+    sonar.log.level=INFO
+    sonar.showProfiling=false
+    sonar.projectBaseDir=/usr/src/
+    sonar.working.directory=/tmp/
+
+    ## Build Breaker
+    sonar.buildbreaker.skip=false
+    sonar.buildbreaker.queryInterval=10000
+    sonar.buildbreaker.queryMaxAttempts=1000
+
+    ## Debugging
+    # sonar.verbose=true
+    # sonar.log.level=DEBUG
+    # sonar.showProfiling=true
+    # sonar.scanner.dumpToFile=/tmp/sonar-project.properties
+
+    ## Java
+    sonar.language=java
+    sonar.java.source=8
+    sonar.java.binaries=target/classes
     sonar.sources=src/main/java
     sonar.exclusions=**/migrations/**
-    sonar.java.binaries=target/classes
-    sonar.java.source=8
+
+.. code-block:: properties
+    :caption: Python
+
+    ## Sonar Server
+    sonar.host.url=http://sonarqube:9000/
+    sonar.login=admin
+    sonar.password=admin
+
+    ## About Project
+    sonar.projectKey=myproject
+    sonar.projectName=myproject
+    sonar.sourceEncoding=UTF-8
+
+    ## SonarScanner Config
+    sonar.verbose=false
+    sonar.log.level=INFO
+    sonar.showProfiling=false
+    sonar.projectBaseDir=/usr/src/
+    sonar.working.directory=/tmp/
+
+    ## Build Breaker
+    sonar.buildbreaker.skip=false
+    sonar.buildbreaker.queryInterval=10000
+    sonar.buildbreaker.queryMaxAttempts=1000
+
+    ## Debugging
+    # sonar.verbose=true
+    # sonar.log.level=DEBUG
+    # sonar.showProfiling=true
+    # sonar.scanner.dumpToFile=/tmp/sonar-project.properties
+
+    ## Python
+    sonar.language=py
+    sonar.sources=.
+    sonar.inclusions=**/*.py
+    sonar.exclusions=**/migrations/**,**/*.pyc,**/__pycache__/**
 
 .. code-block:: sh
 
-    export SONARQUBE_URL='http://...:9000'
-    docker run --rm -e SONAR_HOST_URL="${SONARQUBE_URL}" -v /home/src-java:/usr/src sonarsource/sonar-scanner-cli
+    docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
 
 
 Docker Registry
@@ -172,3 +203,53 @@ Artifactory
         --publish 8081:8081 \
         --volume /home/artifactory:/var/opt/jfrog/artifactory \
         docker.bintray.io/jfrog/artifactory-oss:latest
+
+
+Tests
+=====
+.. code-block:: sh
+    :caption: ``make-artifact.sh``
+
+    #!/bin/sh
+
+    REGISTRY='localhost:5000'
+    NAME='myapp'
+    VERSION="$(git log -1 --format='%h')"
+
+    IMAGE="$REGISTRY/$NAME:$VERSION"
+
+    docker build . -t $IMAGE
+    docker push $IMAGE
+    docker rmi $IMAGE
+
+.. code-block:: sh
+    :caption: ``test-functional.sh``
+
+    #!/bin/sh
+
+    cd example-py-doctest/
+    python3 -m doctest -v doctests/*
+
+.. code-block:: sh
+    :caption: ``test-integration.sh``
+
+    #!/bin/sh
+
+    pip install -r requirements.txt
+    cd example-py-pytest/
+    python3 -m pytest
+
+.. code-block:: sh
+    :caption: ``test-static.sh``
+
+    #!/bin/sh
+
+    docker run --rm --net ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+
+.. code-block:: sh
+    :caption: ``test-unit.sh``
+
+    #!/bin/sh
+
+    cd example-py-unittest
+    python3 -m unittest
