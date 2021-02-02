@@ -29,6 +29,7 @@ Alpine
 ------
 * Image size is 5.53 MB
 * Edge is the newest version
+* https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated
 
 .. code-block:: console
 
@@ -40,7 +41,10 @@ Debian
 * Debian version names are from Toy Story
 * Sid is always unstable
 * https://www.debian.org/releases/
-* https://www.debian.org/doc/manuals/debian-faq/ch-ftparchives#s-sourceforcodenames
+* Version Names - https://www.debian.org/doc/manuals/debian-faq/ch-ftparchives#s-sourceforcodenames
+* Docker Hub: https://hub.docker.com/_/debian?tab=tags&page=1&ordering=last_updated
+* Release Table: https://en.wikipedia.org/wiki/Debian_version_history#Release_table
+* Release Timeline: https://en.wikipedia.org/wiki/Debian_version_history#Release_timeline
 
 .. code-block:: console
 
@@ -51,7 +55,9 @@ Ubuntu
 * Image size is 66 MB
 * Ubuntu version numbers are YY.MM
 * LTS or 'Long Term Support' releases are published every two years in April
-* https://ubuntu.com/about/release-cycle
+* Release Cycle - https://ubuntu.com/about/release-cycle
+* Version Names - https://wiki.ubuntu.com/DevelopmentCodeNames
+* Docker Hub - https://hub.docker.com/_/ubuntu?tab=tags&page=1&ordering=last_updated
 
 .. figure:: ../_img/release-ubuntu.png
     :scale: 35%

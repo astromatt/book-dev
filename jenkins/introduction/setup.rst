@@ -15,6 +15,7 @@ Installing on Docker
         $ mkdir -p /home/jenkins
         $ chmod 777 /home/jenkins
         $ chmod 777 /var/run/docker.sock
+        $ ln -s /home/jenkins /var/jenkins_home
 
 #. Run Docker container:
 
