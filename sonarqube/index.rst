@@ -19,4 +19,5 @@ SonarQube
     sonarqube.rst
     sonarscanner.rst
     assignments.rst
+    lapd.rst
     further-reading.rst

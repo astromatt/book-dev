@@ -96,7 +96,7 @@ Powinien być plik "sonar-project.properties" z odpowiednią zawartością
 ssh -i ~/Desktop/2020-09-gazsystem.pem -l ubuntu <TWOJE_IP>
 sudo mkdir -p /home/jenkins
 sudo chmod 777 /home/jenkins
-sudo chmod 777 /var/run/docker.sock
+sudo chmod 666 /var/run/docker.sock
 "docker run \
     --name jenkins \
     --detach \

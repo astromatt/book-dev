@@ -22,7 +22,7 @@ Jenkins and Docker Daemon
 
 .. code-block:: console
 
-    $ chmod 777 /var/run/docker.sock
+    $ chmod 666 /var/run/docker.sock
     $ docker run -v /var/run/docker.sock:/var/run/docker.sock ...
 
 
