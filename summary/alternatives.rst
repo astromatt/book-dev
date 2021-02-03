@@ -5,13 +5,16 @@ Ecosystem Alternatives
 .. contents::
 
 
+Collaboration
+=============
+
 Api
-===
-* Swagger
-* reDoc
+---
+* Swagger https://petstore3.swagger.io
+* reDoc https://github.com/Redocly/redoc
 
 Documentation
-=============
+-------------
 * Sphinx Doc https://www.sphinx-doc.org/
 * Docuzaurus https://docusaurus.io
 * Jekyll https://jekyllrb.com
@@ -20,19 +23,51 @@ Documentation
 * Gatsby https://www.gatsbyjs.com/docs/
 * VuePress https://vuepress.vuejs.org
 
-
-Binary Repository
-=================
+Instant Messaging
+-----------------
 Server:
 
-    * Artifactory
-    * Nexus
-    * Docker Registry
+    * Rocket Chat https://rocket.chat
 
 Cloud:
 
-    * Docker Hub
-    * Hashicorp Atlas (Vagrant)
+    * Slack https://slack.com/
+    * Microsoft Teams https://www.microsoft.com/en-us/microsoft-teams/group-chat-software
+    * Zoom https://zoom.us
+    * Google Meet https://meet.google.com
+    * Cisco Webex https://www.webex.com
+
+Issue Tracker
+-------------
+Server:
+
+    * Jira
+    * Redmine
+    * Kunagi
+    * Git Lab
+
+Cloud:
+
+    * Jira Cloud
+    * Trello
+    * Asana
+    * Git Lab
+    * Github
+
+Knowledge Base
+--------------
+Server:
+
+    * Confluence
+    * Wiki
+    * GitLab
+
+Cloud:
+
+    * Confluence Cloud
+    * Media Wiki
+    * GitLab
+    * Github
 
 
 CI/CD
@@ -53,29 +88,11 @@ Cloud:
     * GitHub Actions
 
 
-Code Repository
-===============
-Server:
-
-    * GitLab
-    * Bitbucket Server
-    * Github Enterprise
-    * Gerrit
-
-Cloud:
-
-    * GitLab
-    * GitHub
-    * Bitbucket Cloud
-
-
-Data Exploration
-================
-* Apache Superset
-
+Data
+====
 
 Database
-========
+--------
 SQL:
 
     * SQLite
@@ -98,58 +115,48 @@ Time Series:
     * Prometheus
     * InfluxDB
 
-
-Instant Messaging
-=================
-Server:
-
-    * Rocket Chat
-
-Cloud:
-
-    * Slack
-    * Microsoft Teams
+Data Exploration
+----------------
+* Apache Superset
+* Pandas
+* Numpy
+* Dask
 
 
-Issue Tracker
-=============
-Server:
-
-    * Jira
-    * Redmine
-    * Kunagi
-    * Git Lab
-
-Cloud:
-
-    * Jira Cloud
-    * Trello
-    * Asana
-    * Git Lab
-    * Github
-
-
-Knowledge Base
-==============
-Server:
-
-    * Confluence
-    * Wiki
-    * GitLab
-
-Cloud:
-
-    * Confluence Cloud
-    * Media Wiki
-    * GitLab
-    * Github
-
-
-Logging
+Quality
 =======
-* Statsd
-* Sentry
-* Nagios
+* SonarQube https://www.sonarqube.org
+* SonarCloud https://sonarcloud.io
+* Coveralls https://coveralls.io
+
+Static Code Analysis
+--------------------
+* SonarLint https://www.sonarlint.org
+* SonarScanner https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+* Findbugs http://findbugs.sourceforge.net
+* PMD https://pmd.github.io
+* Checkstyle https://checkstyle.sourceforge.io
+
+Code Coverage
+-------------
+* JaCoCo https://www.jacoco.org/jacoco/
+* Cobertura http://cobertura.github.io/cobertura/
+
+Mutation Testing
+----------------
+* PiTest http://pitest.org
+
+Load Testing
+------------
+* Locust https://locust.io
+* Gatling https://gatling.io
+* JMeter https://jmeter.apache.org
+
+BDD Testing
+-----------
+* Lettuce http://lettuce.it
+* Cucumber https://cucumber.io
+* JBehave https://jbehave.org
 
 
 Monitoring
@@ -166,32 +173,11 @@ Cloud:
 
     * New Relic
 
-
-Provisioning
-============
-* Ansible
-* Puppet
-* Chef
-* Salt Stack
-
-
-Quality
-=======
-Server:
-
-    * SonarQube
-    * SonarLint
-    * SonarScanner
-    * Findbugs
-    * PMD
-    * Checkstyle
-    * JaCoCo
-    * PiTest
-
-Cloud:
-
-    * SonarCloud
-    * Coveralls
+Logging
+-------
+* Statsd
+* Sentry
+* Nagios
 
 
 User Directory
@@ -203,34 +189,63 @@ User Directory
 
 Versioning
 ==========
+
+Version Control System
+----------------------
 * GIT
 * Mercurial
 * SVN
 
-
-Virtualization
-==============
-* Docker
-* Vagrant
-
-
-Container Runtime
-=================
+Code Repository
+---------------
 Server:
 
-    * Kubernetes
-    * Docker Swarm
-    * Apache Mesos
+    * GitLab
+    * Bitbucket Server
+    * Github Enterprise
+    * Gerrit
 
 Cloud:
 
-    * Amazon ECS
-    * Amazon EKS
-    * Google Cloud Kubernetes
+    * GitLab
+    * GitHub
+    * Bitbucket Cloud
 
+Binary Repository
+-----------------
+Server:
+
+    * Artifactory
+    * Nexus
+    * Docker Registry
+
+Cloud:
+
+    * Docker Hub
+    * Hashicorp Atlas (Vagrant)
+
+
+Virtualization
+==============
+* Docker https://www.docker.com
+* Vagrant https://www.vagrantup.com
+
+Container Runtime
+-----------------
+Server:
+
+    * Kubernetes https://kubernetes.io
+    * Docker Swarm https://docs.docker.com/engine/swarm/
+    * Apache Mesos http://mesos.apache.org
+
+Cloud:
+
+    * Amazon ECS https://aws.amazon.com/ecs/
+    * Amazon EKS https://aws.amazon.com/eks/
+    * Google Kubernetes Engine https://cloud.google.com/kubernetes-engine/
 
 Infrastructure as a Service
-===========================
+---------------------------
 Server:
 
     * OpenStack
@@ -241,9 +256,8 @@ Cloud:
     * Amazon AWS EC2
     * Google Cloud Platform
 
-
 Platform as a Service
-=====================
+---------------------
 Server:
 
     * Apache Flynn
@@ -254,3 +268,11 @@ Cloud:
     * Heroku
     * Amazon Lambda
     * Google App Engine
+
+
+Provisioning
+============
+* Ansible
+* Puppet
+* Chef
+* Salt Stack
