@@ -8,6 +8,17 @@ Ecosystem Alternatives
 Api
 ===
 * Swagger
+* reDoc
+
+Documentation
+=============
+* Sphinx Doc https://www.sphinx-doc.org/
+* Docuzaurus https://docusaurus.io
+* Jekyll https://jekyllrb.com
+* Github pages
+* Executable Book Project https://executablebooks.org/
+* Gatsby https://www.gatsbyjs.com/docs/
+* VuePress https://vuepress.vuejs.org
 
 
 Binary Repository
@@ -31,29 +42,30 @@ Server:
     * Jenkins
     * Team City
     * Bamboo
-    * Git Lab
+    * GitLab
 
 Cloud:
 
     * Bitbucket Pipelines
     * Travis
     * Circle CI
-    * Git Lab Cloud
+    * GitLab Cloud
+    * GitHub Actions
 
 
 Code Repository
 ===============
 Server:
 
-    * Git Lab
+    * GitLab
     * Bitbucket Server
     * Github Enterprise
     * Gerrit
 
 Cloud:
 
-    * Git Lab
-    * Github
+    * GitLab
+    * GitHub
     * Bitbucket Cloud
 
 
@@ -61,25 +73,30 @@ Data Exploration
 ================
 * Apache Superset
 
+
 Database
 ========
+SQL:
 
-SQL
----
-* SQLite
-* PostgreSQL
-* MariaDB
-* Oracle
-* MSSQL
+    * SQLite
+    * PostgreSQL
+    * MariaDB
+    * Oracle
+    * MSSQL
 
-NoSQL
------
-* MongoDB
-* Amazon Dynamo
-* CouchDB
-* Neo4j
-* Redis
-* Riak
+NoSQL:
+
+    * MongoDB
+    * Amazon Dynamo
+    * CouchDB
+    * Neo4j
+    * Redis
+    * Riak
+
+Time Series:
+
+    * Prometheus
+    * InfluxDB
 
 
 Instant Messaging
@@ -92,6 +109,7 @@ Cloud:
 
     * Slack
     * Microsoft Teams
+
 
 Issue Tracker
 =============
@@ -117,13 +135,13 @@ Server:
 
     * Confluence
     * Wiki
-    * Git Lab
+    * GitLab
 
 Cloud:
 
     * Confluence Cloud
     * Media Wiki
-    * Git Lab
+    * GitLab
     * Github
 
 
@@ -156,12 +174,19 @@ Provisioning
 * Chef
 * Salt Stack
 
+
 Quality
 =======
 Server:
 
     * SonarQube
     * SonarLint
+    * SonarScanner
+    * Findbugs
+    * PMD
+    * Checkstyle
+    * JaCoCo
+    * PiTest
 
 Cloud:
 
@@ -173,6 +198,7 @@ User Directory
 ==============
 * LDAP
 * Active Directory
+* KeyCloak
 
 
 Versioning
@@ -186,6 +212,21 @@ Virtualization
 ==============
 * Docker
 * Vagrant
+
+
+Container Runtime
+=================
+Server:
+
+    * Kubernetes
+    * Docker Swarm
+    * Apache Mesos
+
+Cloud:
+
+    * Amazon ECS
+    * Amazon EKS
+    * Google Cloud Kubernetes
 
 
 Infrastructure as a Service
@@ -213,18 +254,3 @@ Cloud:
     * Heroku
     * Amazon Lambda
     * Google App Engine
-
-
-Container Runtime
-=================
-Server:
-
-    * Kubernetes
-    * Docker Swarm
-    * Apache Mesos
-
-Cloud:
-
-    * Amazon ECS
-    * Amazon EKS
-    * Google Cloud Kubernetes
