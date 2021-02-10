@@ -187,6 +187,11 @@ Example 3
     }
 
 
+Further Reading
+===============
+* https://oss.cloudogu.com/jenkins/pipeline-syntax/html
+
+
 Assignments
 ===========
 

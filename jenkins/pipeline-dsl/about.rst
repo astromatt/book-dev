@@ -74,3 +74,8 @@ Multi Stage
             }
         }
     }
+
+
+Further Reading
+===============
+* https://oss.cloudogu.com/jenkins/pipeline-syntax/html
