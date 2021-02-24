@@ -17,3 +17,6 @@ Clean data
 .. literalinclude:: src/jira-delete-projects.py
     :caption: Jira delete projects
     :language: python
+
+.. image:: ../_img/jira-priority-normal.png
+
