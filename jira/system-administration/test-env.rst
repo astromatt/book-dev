@@ -18,5 +18,3 @@ Clean data
     :caption: Jira delete projects
     :language: python
 
-.. image:: ../_img/jira-priority-normal.png
-

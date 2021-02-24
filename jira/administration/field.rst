@@ -79,3 +79,8 @@ Field Custom Group Picker
     - Pole ma być wymagane przy tworzeniu nowego zadania
     - Podpowiedź: typ `Checkbox`
 
+
+
+.. image:: ../_img/jira-priority-normal.png
+
+
