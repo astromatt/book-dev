@@ -14,10 +14,10 @@ Jenkins
 .. code-block:: sh
 
     docker network create ecosystem
-    mkdir -p /home/jenkins
-    chmod 777 /home/jenkins
-    chmod 666 /var/run/docker.sock
-    ln -s /home/jenkins /var/jenkins_home
+    sudo mkdir -p /home/jenkins
+    sudo chmod 777 /home/jenkins
+    sudo chmod 666 /var/run/docker.sock
+    sudo ln -s /home/jenkins /var/jenkins_home
 
     docker run \
         --name jenkins \
@@ -72,11 +72,11 @@ Sonar Scanner
     ## Sonar Server
     sonar.host.url=http://sonarqube:9000/
     sonar.login=admin
-    sonar.password=admin
+    sonar.password=abcdefghi
 
     ## About Project
-    sonar.projectKey=myproject
-    sonar.projectName=myproject
+    sonar.projectKey=myjavaproject
+    sonar.projectName=myjavaproject
     sonar.sourceEncoding=UTF-8
 
     ## SonarScanner Config
@@ -110,11 +110,11 @@ Sonar Scanner
     ## Sonar Server
     sonar.host.url=http://sonarqube:9000/
     sonar.login=admin
-    sonar.password=admin
+    sonar.password=abcdefghi
 
     ## About Project
-    sonar.projectKey=myproject
-    sonar.projectName=myproject
+    sonar.projectKey=mypythonproject
+    sonar.projectName=mypythonproject
     sonar.sourceEncoding=UTF-8
 
     ## SonarScanner Config
@@ -151,8 +151,8 @@ Docker Registry
 .. code-block:: sh
 
     docker network create ecosystem
-    mkdir -p /home/registry
-    chmod 777 /home/registry
+    sudo mkdir -p /home/registry
+    sudo chmod 777 /home/registry
 
     docker run \
         --name registry \
@@ -224,8 +224,8 @@ GitLab
 .. code-block:: sh
 
     docker network create ecosystem
-    mkdir -p /home/gitlab
-    chmod 777 /home/gitlab
+    sudo mkdir -p /home/gitlab
+    sudo chmod 777 /home/gitlab
 
     docker run \
         --name gitlab \
@@ -246,8 +246,8 @@ Artifactory
 .. code-block:: sh
 
     docker network create ecosystem
-    mkdir -p /home/artifactory
-    chmod 777 /home/artifactory
+    sudo mkdir -p /home/artifactory
+    sudo chmod 777 /home/artifactory
 
     docker run \
         --name artifactory \
