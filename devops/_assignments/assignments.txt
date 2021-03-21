@@ -1,10 +1,9 @@
 MattH
-3.122.236.152
+54.93.65.133
 Jaki jest główny język programowania z którym pracujesz?
 Ile masz lat doświadczenia w programowaniu?
 Ile masz lat doświadczenia w administracji systemami Unixowymi?
 Z jakiego systemu operacyjnego korzystasz podczas szkolenia (nazwa + wersja)
-Preferowana godzina rozpoczęcia szkolenia
 SSH
 "Zainstaluj klient SSH (np. w instalatorze GIT na windows, PuTTY, lub za pomocą apt-get albo brew)
 # Jeżeli korzystasz z PuTTY konieczne będzie przekonwertowanie klucza .pem do .ppk
@@ -36,6 +35,7 @@ ssh szkolenie"
 "# Jak komuś nie działa edycja pliku ~/.ssh/config
 # To wpisać w terminalu:
 ssh -i ~/Desktop/szkolenie.pem  -l ubuntu <TWOJ_ADRES_IP>"
+clear
 "# Sprawdzić czy jesteś zalogowany na użytkownika ubuntu
 whoami"
 GIT - konfiguracja
@@ -56,6 +56,8 @@ exit
 ssh szkolenie
 "# Uruchom polecenie `id` i upewnij się, że na samym końcu linii jest docker
 id"
+"# aby wyjść trzeba przycisnąć klawisz `q`
+htop"
 Docker - wyszukiwanie i ściąganie kontenerów
 docker ps
 docker ps -a
@@ -219,11 +221,11 @@ docker run -d -it --name host3 --rm --network mynetwork alpine
 docker network inspect mynetwork
 docker kill host1 host2 host3
 Docker - udostępnianie katalogów
-sudo mkdir /home/data
-sudo chown ubuntu /home/data/
-cd /home/data/
+sudo mkdir /home/src
+sudo chown ubuntu /home/src
+cd /home/src
 echo 'hello' > hello.txt
-docker run -it -v /home/data:/data alpine
+docker run -it -v /home/src:/data alpine
 ls /data/
 echo 'hello world' > /data/hello.txt
 exit
@@ -237,7 +239,7 @@ print(name)
 
 # Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
 # Litery pojawią się na dole ekranu w pasku statusu"
-docker run -v /home/data:/data python:alpine python /data/myscript.py
+docker run -v /home/src:/data python:alpine python /data/myscript.py
 pwd
 echo $(pwd)
 docker run -it --workdir /home alpine
@@ -260,7 +262,9 @@ sudo chmod 777 /home/gitlab
     --volume /home/gitlab/logs:/var/log/gitlab \
     --volume /home/gitlab/data:/var/opt/gitlab \
     gitlab/gitlab-ce:latest"
-docker logs -f gitlab
+"# z trybu logów wychodzi się klikając klawisz `ctrl+c`
+docker logs -f gitlab"
+sudo du -hs /home/gitlab/
 "Otwórz zakładkę w przeglądarce
 - strona: http://TWOJE_IP:8000/
 - New password: abcdefghi
@@ -281,9 +285,10 @@ GIT - Zakładanie projektu
 9. Upewnij się, że wpisałeś swoje dane, a nie ""JanT-java""
 10. Visibility Level: Public
 11. Create Project"
+Udało się zaimportować projekt z Github do Twojej instancji GitLab
 Java - Instalowanie zależności
 "# Przejdź do katalogu z kodem źródłowym
-cd /home/data/"
+cd /home/src/"
 "# Zaktualizuj definicje pakietów
 sudo apt update"
 "# Zainstaluj zależności projektu
@@ -292,9 +297,8 @@ sudo apt install -y openjdk-8-jdk maven"
 sudo update-alternatives --config java"
 java -version
 Java - Budowanie projektu
-"git clone http://<GITLAB_IP>:8000/root/JanT-java.git /home/data/src-java/
-# gdzie JanT to Twoje imię i pierwsza litera nazwiska (jak w wierszu pierwszym w Twojej kolumnie)"
-cd /home/data/src-java/
+git clone http://<GITLAB_IP>:8000/root/java.git /home/src/java
+cd /home/src/java
 "# Uruchom proces budowania
 mvn compile
 
@@ -323,7 +327,7 @@ docker run -p 8080:8080 --name jenkins --network ecosystem --rm -v /home/jenkins
 sudo chmod 777 /home/jenkins
 docker run -p 8080:8080 --name jenkins --network ecosystem --rm -v /home/jenkins:/var/jenkins_home jenkins/jenkins:alpine
 otwórz przeglądarkę na http://<TWOJE_IP>:8080/
-ker
+cat /var/jenkins_home/secrets/initialAdminPassword
 Install Suggested Plugins
 "# https://dev.astrotech.io/jenkins/introduction/good-engineering-practices.html
 
@@ -366,16 +370,15 @@ po dwóch minutach odświeżamy stronę (jeżeli sama się nie przeładowała) i
 # Alternatywnie można wejść na stronę http://<TWOJE_IP>:8080/blue/"
 Jenkins - Dodawanie repozytorium w Blue Ocean
 Na popupie "Welcome to Jenkins" -> klikamy "Create a new Pipeline" -> i wybieramy GIT
-"http://<GITLAB_IP>:8000/root/markw.git
+"http://<GITLAB_IP>:8000/root/java.git
 
-# gdzie `markw` to Twoje imię i pierwsza litera nazwiska [jak kolumna w spreadsheet]
 # WAŻNE jest dodanie `.git` na końcu!!"
 "Create credential: login ""root"", hasło ""abcdefghi""
 - kliknąć Create Credential
 # ważne aby to zrobić przed Create Pipeline
 
 Upewnij się, że jest zaznaczone:
-Use existing credential: root/****** (Git username/password for http://<GITLAB_IP>:8000/root/markw.git)
+Use existing credential: root/****** (Git username/password for http://<GITLAB_IP>:8000/root/java.git)
 
 Jeszcze raz upewnij się, że jest `.git` na końcu adresu `Repository URL`
 
@@ -397,24 +400,7 @@ Rozwiń kroki i zobacz co tam jest napisane
 - Gitlab: http://<GITLAB_IP>:8000/dashboard/projects
 - wybierz swój projekt
 - Zobacz zawartość pliku `Jenkinsfile`"
-Jenkins - dodawanie kolejnego stage
-Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
-"Klikamy na plus (na środku ekranu jako ""dodaj stage"" - plus w górnej linijce)
-Nazywamy Stage: ""Test""
-Add Step -> ""shell script"" -> wpisujemy: echo ""testing...""
-[na górze] klikamy ""Save""
-[na środku]  ""Save & run"""
-Powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę
-Build powinien się udać (to znaczy mieć zielony thick-mark w kolumnie status)
-Kliknij na swojego build i przejdź do ekranu podsumowania budowania
-Rozwiń kroki i zobacz co tam jest napisane
-Zmień stage, przez kliknięcie na inną kropkę na osi "Pipeline"
-Rozwiń kroki i zobacz co tam jest napisane
-"Otwórz w przeglądarce
-- Gitlab: http://<GITLAB_IP>:8000/dashboard/projects
-- wybierz swój projekt
-- Zobacz zawartość pliku `Jenkinsfile`"
-Jenkins - dodawanie kolejnego kroku
+Jenkins - budowanie
 Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
 "Klikamy na kropkę w stage ""Build""
 - wybierz z menu po prawej stronie ""Shell Script""
@@ -436,11 +422,28 @@ docker exec -it -u root jenkins sh
 ps aux
 "mvn --version
 # powinno wyskoczyć: sh: mvn: not found"
-apk add maven
+apk add maven openjdk8
 mvn --version
 "Przejdź na przeglądarkę
 - powtórz build - zaokrąglona strzałeczka `Rerun` [w menu u góry]
 - Build powinien się udać"
+Jenkins - dodawanie kolejnego stage
+Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+"Klikamy na plus (na środku ekranu jako ""dodaj stage"" - plus w górnej linijce)
+Nazywamy Stage: ""Test""
+Add Step -> ""shell script"" -> wpisujemy: echo ""testing...""
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+Powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę
+Build powinien się udać (to znaczy mieć zielony thick-mark w kolumnie status)
+Kliknij na swojego build i przejdź do ekranu podsumowania budowania
+Rozwiń kroki i zobacz co tam jest napisane
+Zmień stage, przez kliknięcie na inną kropkę na osi "Pipeline"
+Rozwiń kroki i zobacz co tam jest napisane
+"Otwórz w przeglądarce
+- Gitlab: http://<GITLAB_IP>:8000/dashboard/projects
+- wybierz swój projekt
+- Zobacz zawartość pliku `Jenkinsfile`"
 Jenkins - uruchamianie testów jednostkowych
 Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
 "Klikamy na kropkę w stage ""Test""
@@ -469,12 +472,13 @@ Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] klikn
 Kliknij na swojego build i przejdź do ekranu podsumowania budowania i wybierz stage "Test"
 Docker - Budowanie obrazów FROM
 Przejdź do terminala na maszynie w AWS
-cd /home/data/src-java
+cd /home/src/java
+docker rmi $(docker images -q)
 git clean -fdx
 git reset --hard
 git pull
 git status
-ls -la
+git
 cat Dockerfile
 "vim Dockerfile
 # Przejście do trybu edycji klawisz `a`
@@ -500,7 +504,7 @@ docker run -it myapp:0.1
 exit
 "docker ps -a
 # Zauważ, że były takie kontenery myapp w wersji 0.1"
-docker run -it -v /home/data/src-java:/data myapp:0.1
+docker run -it -v /home/src/java:/data myapp:0.1
 "ls -la /
 # Zauważ, że pojawił się katalog `/data`"
 "ls -la /data
@@ -531,19 +535,19 @@ apk add openjdk8
 "mvn verify
 # Powinno zwrócić: BUILD SUCCESS"
 exit
-"ls -la /home/data/src-java/
+"ls -la /home/src/java
 # Powinien się pojawić katalog target
 # Katalog jest wynikiem budowania na kontenerze"
-ls -la /home/data/src-java/target/
+ls -la /home/src/java/target/
 "git clean -fdx
 # Powinno wyrzucić błąd: Permission denied"
-docker run -it -v /home/data/src-java:/data myapp:0.1
+docker run -it -v /home/src/java:/data myapp:0.1
 "whoami
 # powinno zwrócić `root`"
 exit
 sudo git clean -fdx
 Docker - Budowanie obrazów WORKDIR
-docker run -it -v /home/data/src-java:/data myapp:0.1
+docker run -it -v /home/src/java:/data myapp:0.1
 "pwd
 # Zauważ, że jesteś w głównym katalogu"
 cd /data
@@ -556,7 +560,7 @@ cd /data
 apk add openjdk8 maven
 mvn compile
 exit
-"vim /home/data/src-java/Dockerfile
+"vim /home/src/java/Dockerfile
 # Przejście do trybu edycji klawisz `a`
 # Wpisz treść:
 
@@ -566,7 +570,7 @@ WORKDIR /data
 # Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
 # (Litery pojawią się na dole ekranu w pasku statusu)"
 docker build . -t myapp:0.2
-docker run -it -v /home/data/src-java:/data myapp:0.2
+docker run -it -v /home/src/java:/data myapp:0.2
 "pwd
 # Zauważ, że jesteś w katalogu /data"
 apk add openjdk8 maven
@@ -581,7 +585,7 @@ exit
 # W jednej z linii powinien się wyświetlać myapp 0.2
 # Zwróć uwagę, że rozmiar nie różni się zbytnio od wersji 0.1"
 Docker - Budowanie obrazów RUN (instalacja zależności)
-"vim /home/data/src-java/Dockerfile
+"vim /home/src/java/Dockerfile
 # Przejście do trybu edycji klawisz `a`
 # Wpisz treść:
 
@@ -591,7 +595,7 @@ WORKDIR /data
 
 # Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
 # (Litery pojawią się na dole ekranu w pasku statusu)"
-"cat /home/data/src-java/Dockerfile
+"cat /home/src/java/Dockerfile
 # Na ekranie powinno się wyświetlić:
 
 FROM alpine
@@ -601,7 +605,7 @@ docker build . -t myapp:0.3
 "docker images
 # W jednej z linii powinien się wyświetlać myapp 0.3
 # Zwróć uwagę, że rozmiar jest większy niż wersji 0.1 oraz 0.2"
-docker run -it -v /home/data/src-java:/data myapp:0.3
+docker run -it -v /home/src/java:/data myapp:0.3
 "mvn compile
 # ściąga z internetu wszystkie zależności
 # Powinno zwrócić: BUILD SUCCESS"
@@ -659,7 +663,7 @@ docker run -it -v /home/ubuntu/.m2:/root/.m2 myapp
 # Powinno zwrócić: BUILD SUCCESS"
 exit
 ls -la /root/.m2/repository/
-docker run -it -v /home/data/src-java:/data -v /home/ubuntu/.m2:/root/.m2 myapp
+docker run -it -v /home/src/java:/data -v /home/ubuntu/.m2:/root/.m2 myapp
 "mvn compile
 # Nie powinno niczego ściągać z internetu
 # Powinno zwrócić: BUILD SUCCESS"
@@ -672,7 +676,7 @@ docker run -it -v /home/data/src-java:/data -v /home/ubuntu/.m2:/root/.m2 myapp
 exit
 docker run -t -v /home/ubuntu/.m2:/root/.m2 myapp mvn compile
 Docker - Budowanie obrazów COPY .m2
-cp /home/ubuntu/.m2 /home/data/src-java/.m2
+cp -r /home/ubuntu/.m2 /home/src/java/.m2
 "vim Dockerfile
 # Przejście do trybu edycji klawisz `a`
 # Wpisz treść:
@@ -769,7 +773,7 @@ docker rmi -f myapp:latest
 docker rmi -f myapp:$(git log -1 --format='%h')
 df -h
 GIT - Zapis konfiguracji
-cd /home/data/src-java/
+cd /home/src/java
 "cat Dockerfile
 # Na ekranie powinno się wyświetlić:
 
@@ -886,8 +890,8 @@ du -hs /home/jenkins.tar.gz
 "sudo rm -fr /home/jenkins.tar.gz
 # Skasuj plik, aby nie przeszkadzał nam w przyszłości"
 Docker - Przygotowanie obrazu dla naszego środowiska budowania i testów
-cd /home/data/src-java/
-cp -r /home/ubuntu/.m2 /home/data/src-java/.m2
+cd /home/src/java
+cp -r /home/ubuntu/.m2 /home/src/java/.m2
 git pull
 "vim Dockerfile
 # Zwróć uwagę, żeby nie było ENTRYPOINT w pliku
@@ -954,7 +958,7 @@ find / -name *.jar
 
 # Wynik /var/jenkins_home/workspace/matth-java_master/?/.m2/repository"
 SonarQube - instalacja
-cd /home/data/src-java/
+cd /home/src/java
 docker network create ecosystem
 docker volume create --name sonarqube_data
 docker volume create --name sonarqube_extensions
@@ -979,29 +983,27 @@ docker images
 - hasło: admin"
 Zmień hasło na abcdefghi
 SonarQube - analiza manualna
-cd /home/data/src-java/
-"vim /home/data/src-java/sonar-project.properties
+cd /home/src/java
+"vim /home/src/java/sonar-project.properties
 # Przejście do trybu edycji klawisz `a`
 # Wpisz treść:
 
 
-## SonarQube
+## Sonar Server
 sonar.host.url=http://sonarqube:9000/
 sonar.login=admin
 sonar.password=abcdefghi
 
-## Project
+## About Project
 sonar.projectKey=myjavaproject
+sonar.projectName=myjavaproject
+sonar.sourceEncoding=UTF-8
 
-## Language
-sonar.language=java
-sonar.java.source=8
-
-## Paths
+## SonarScanner Config
+sonar.verbose=false
+sonar.log.level=INFO
+sonar.showProfiling=false
 sonar.projectBaseDir=/usr/src/
-sonar.sources=src/main/java
-sonar.exclusions=**/migrations/**
-sonar.java.binaries=target/classes
 sonar.working.directory=/tmp/
 
 ## Build Breaker
@@ -1009,19 +1011,33 @@ sonar.buildbreaker.skip=false
 sonar.buildbreaker.queryInterval=10000
 sonar.buildbreaker.queryMaxAttempts=1000
 
+## Debugging
+# sonar.verbose=true
+# sonar.log.level=DEBUG
+# sonar.showProfiling=true
+# sonar.scanner.dumpToFile=/tmp/sonar-project.properties
+
+## Java
+sonar.language=java
+sonar.java.source=8
+sonar.java.binaries=target/classes
+sonar.sources=src/main/java
+sonar.exclusions=**/migrations/**
+
+
 # Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
 # (Litery pojawią się na dole ekranu w pasku statusu)"
-"cat /home/data/src-java/sonar-project.properties
+"cat /home/src/java/sonar-project.properties
 # Upewnij się czy zawartość jest poprawna"
 mvn compile
 mvn test
 mvn verify
-"docker run --rm --network ecosystem -v /home/data/src-java:/usr/src sonarsource/sonar-scanner-cli
+"docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
 # Jeżeli wyskakuje error: no 'target/classes' to znaczy, że nie wykonano compile wcześniej"
 otwórz przeglądarkę na http://<TWOJE_IP>:9000/ i odśwież stronę
 Na dashboard w SonarQube pojawił się "myjavaproject"
 SonarQube - Security
-cd /home/data/src-java/
+cd /home/src/java
 otwórz przeglądarkę na http://<TWOJE_IP>:9000
 "Administration (z paska u góry) -> Security (zakładka) -> Users
 # otwórz przeglądarkę na http://<TWOJE_IP>:9000/admin/users"
@@ -1036,7 +1052,7 @@ otwórz przeglądarkę na http://<TWOJE_IP>:9000
 "Project (z paska u góry) -> myproject -> Project Settings (po prawej u góry) -> Permissions
 # http://<twoje-ip>:9000/project_roles?id=myjavaproject"
 Wyszukujemy użytkownika myproject i zaznaczamy tylko jednego checkboxa "Execute Analysis"
-"vim /home/data/src-java/sonar-project.properties
+"vim /home/src/java/sonar-project.properties
 # Przejście do trybu edycji klawisz `a`
 # Wpisz treść:
 
@@ -1045,13 +1061,13 @@ sonar.password=abcdefghi
 
 # Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
 # (Litery pojawią się na dole ekranu w pasku statusu)"
-sudo chown -R ubuntu:ubuntu /home/data
+sudo chown -R ubuntu:ubuntu /home/src
 mvn compile
 mvn test
 mvn verify
-docker run --rm --network ecosystem -v /home/data/src-java:/usr/src sonarsource/sonar-scanner-cli
+docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
 SonarQube - token
-cd /home/data/src-java/
+cd /home/src/java
 otwórz przeglądarkę na http://<TWOJE_IP>:9000
 "Administration (z paska u góry) -> Security (zakładka) -> Users
 # otwórz przeglądarkę na http://<TWOJE_IP>:9000/admin/users"
@@ -1062,7 +1078,7 @@ Na liście użytkowników kliknij ikonę trzech kresek (po prawej) w kolumnie To
 - Skopiuj wygenerowany token
 - Pamiętaj, że jak odświeżysz albo przeładujesz stronę, to token zniknie i nie będzie nigdy wyświetlany
 - Tokeny są do użytku tylko w jednym miejscu, np. w procesie uploadu wyników do SonarQube"
-"vim /home/data/src-java/sonar-project.properties
+"vim /home/src/java/sonar-project.properties
 # Przejście do trybu edycji klawisz `a`
 
 # Usuń linie sonar.login i sonar.password, które były wcześniej
@@ -1073,9 +1089,39 @@ sonar.login=<tu wklej token>
 
 # Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
 # (Litery pojawią się na dole ekranu w pasku statusu)"
-docker run --rm --network ecosystem -v /home/data/src-java:/usr/src sonarsource/sonar-scanner-cli
+docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
+SonarQube - Build Breaker
+Wejdź na sonarqube http://<TWOJE_IP>:9000/
+W Administration (w menu u góry) -> Marketplace (zakładka) -> Wyszukaj pluginu "Build Breaker" -> Install
+"Na górze w pasku ""SonarQube needs to be restarted in order to
+install 1 plugins"" -> kliknij restart server -> następnie zaczekaj około minuty i odśwież stronę"
+W Administration -> Marketplace ->Zakładka Installed -> Tu powinien być "Build Breaker"
+"W Administration (w pasku u góry)
+-> Configuration (zakładka)
+-> General Settings (z menu rozwijanego)
+-> Build Breaker (z menu po lewej)
+Upewnij się, że wszystko jest ok "
+"Z menu u góry wybieramy Quality Gates
+-> Create (przycisk po lewej u góry)
+-> Name: My Quality Gate
+-> Add Condition (przycisk po prawej u góry)
+-> wybierz `On Overall Code`
+-> Quality Gate fails when `Technical Debt` is greater than `1`
+-> przycisk Add Condition"
+"W sekcji ""Projects"" (poniżej sekcji Conditions, którą właśnie edytowałeś/aś)
+na zakładce ""All"" zaznacz ""myjavaproject"" aby aktywować Quality Gate w projekcie
+Upewnij się, że ""myjavaproject"" ma zaznaczony checkbox"
+"docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
+
+Uruchom Build ponownie, który powinien sfailować
+(powód: niespełnienie Quality Gate - Project does not pass the quality gate.)"
+Zmień w Quality Gate "Technical Debt" na 50
+"Uruchom Build ponownie
+docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
+
+Tym razem powinien przejść"
 GIT - zapisanie konfiguracji
-cd /home/data/src-java/
+cd /home/src/java
 git status
 git add --all
 "git status
@@ -1109,13 +1155,8 @@ docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner
 "Build powinien się nie powieść, ze względu na błąd w Stage Static Code Analysis w kroku `docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli`
 Komunikat błędu w na końcu trzeciej linii `docker: not found
 `"
-Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
-"Kliknij szarą kropkę ""Start""
-- Settings (w menu po prawej na dole)
-- zmień z `Agent docker myapp` na `Agent any`
-- [na górze] klikamy ""Save""
-- [na środku]  ""Save & run""
-- Build powinien się udać"
+docker exec -it -u root jenkins apk add docker
+Build powinien się powieść
 SonarQube - Build Breaker
 Wejdź na sonarqube http://<TWOJE_IP>:9000/
 W Administration (w menu u góry) -> Marketplace (zakładka) -> Wyszukaj pluginu "Build Breaker" -> Install
@@ -1147,7 +1188,7 @@ Konieczne jest uruchomienie całego budowania, a nie tylko tego jednego kroku.
 Inaczej analiza SonarScanner zakończy się błędem, że brakuje `target/classes`
 Tym razem powinien przejść"
 PITest - uruchamianie manualne
-cd /home/data/src-java/
+cd /home/src/java
 "vim pom.xml
 # Przejście do trybu edycji klawisz `a`
 # W sekcji <project><build><plugins>
@@ -1173,10 +1214,10 @@ mvn test
 mvn verify
 mvn org.pitest:pitest-maven:mutationCoverage
 cd target/pit-reports/*/com.example.javamavenjunithelloworld
-"python3 -m http.server 8888
+"python3 -m http.server 8088
 # Aby wyłączyć server wciśnij kombinację klawiszy `ctrl+c`"
-Otwórz przeglądarkę na http://<TWOJE_IP>:8888
-cd /home/data/src-java/
+Otwórz przeglądarkę na http://<TWOJE_IP>:8088
+cd /home/src/java
 git add pom.xml
 git commit -m "Mutation Testing"
 git pull --rebase
@@ -1184,7 +1225,7 @@ git pull --rebase
 # username: root
 # hasło: abcdefghi"
 PITest - SonarQube
-cd /home/data/src-java/
+cd /home/src/java
 "W Administration (w pasku u góry)
 -> Marketplace (zakładka)
 -> Wyszukaj pluginu ""Mutation Analysis"" -> Install"
@@ -1200,7 +1241,7 @@ Wynik powinien być "EXECUTION SUCCESS"
 If code is not covered by any test, that code will not be mutated; prior test coverage is a precondition for mutation testing.
 Finally, if the percentage of ""Survived mutants"" in a source file exceeds a configurable threshold, the plugin creates a SonarQube issue on the source file."
 PITest - Jenkins
-cd /home/data/src-java/
+cd /home/src/java
 Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
 "Musimy dodać nowy stage o nazwie ""Mutation Testing""
 
@@ -1243,7 +1284,7 @@ Build powinien się udać"
 
 
 
-cd /home/data/src-java/
+cd /home/src/java
 sudo mkdir -p /home/registry
 sudo chmod 777 /home/registry
 "docker run \
@@ -1257,7 +1298,7 @@ sudo chmod 777 /home/registry
 git pull
 docker ps -a
 Registry - Publikowanie obrazów
-cd /home/data/src-java/
+cd /home/src/java
 docker images
 docker rm $(docker ps -aq)
 docker rmi $(docker images -q)
@@ -1266,7 +1307,8 @@ docker rmi $(docker images -q)
 docker pull alpine
 docker pull alpine:latest
 docker pull docker.io/library/alpine:latest
-docker pull localhost:5000/alpine:latest
+"docker pull localhost:5000/alpine:latest
+# Powinno się nie powieść: Error response from daemon ... manifest unknown"
 "docker push localhost:5000/alpine:latest
 # Powinno się nie powieść: An image does not exist locally with the tag: localhost:5000/alpine"
 docker tag alpine:latest localhost:5000/alpine:latest
@@ -1274,7 +1316,7 @@ docker tag alpine:latest localhost:5000/alpine:latest
 # Powinien pojawić się: localhost:5000/alpine"
 docker push localhost:5000/alpine:latest
 Registry - Publikowanie obrazów
-cd /home/data/src-java/
+cd /home/src/java
 docker build . -t myapp
 docker build . -t myapp:$(git log -1 --format='%h')
 docker images
@@ -1292,8 +1334,8 @@ curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
 - wybierz swój projekt
 - Zobacz zawartość pliku `Jenkinsfile`"
 Registry - UI
-cd /home/data/src-java/
-"vim registry-ui.yml
+cd /home/src
+"vim /home/src/registry-ui.yml
 # Przejście do trybu edycji klawisz `a`
 
 listen_addr: 0.0.0.0:8888
@@ -1340,12 +1382,12 @@ purge_tags_keep_count: 2
         --rm \
         --network ecosystem \
         --publish 8888:8888 \
-        --volume $(pwd)/registry-ui.yml:/opt/config.yml:ro \
+        --volume /home/src/registry-ui.yml:/opt/config.yml:ro \
         quiq/docker-registry-ui"
 "Otwórz w przeglądarce
 http://<TWOJE_IP>:8888/"
 Registry - Jenkins
-cd /home/data/src-java/
+cd /home/src/java
 docker rm $(docker ps -aq)
 docker rmi $(docker images -q)
 "vim Dockerfile
@@ -1401,7 +1443,7 @@ Build powinien się udać"
 "curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
 # Aby zobaczyć czy image został umieszczony w registry"
 Podsumowanie
-cd /home/data/src-java/
+cd /home/src/java
 git reset --hard
 git clean -fdx
 git pull
@@ -1481,7 +1523,7 @@ docker build . -t localhost:5000/myapp:$(git log -1 --format=""%h"")
 docker push localhost:5000/myapp:$(git log -1 --format=""%h"")
 docker rmi localhost:5000/myapp:$(git log -1 --format=""%h"")"
 Jenkins - optymalizacja cache
-cd /home/data/src-java/
+cd /home/src/java
 mkdir run/
 touch run/build.sh
 touch run/test-unit.sh
@@ -1502,6 +1544,8 @@ touch run/deploy-prod.sh
 "grep -Po ""^\s+sh '\K.+(?=')"" Jenkinsfile
 
 Wpisujemy linijki z do odpowiednich plików"
+"grep -Po ""^\s+sh '\K.+(?=')"" Jenkinsfile |sh
+Uruchomi wszystkie kroki pipeline (tak, jakby to zrobił Jenkins)"
 chmod +x run/*
 git add run/
 git commit -am "Run Scripts"
