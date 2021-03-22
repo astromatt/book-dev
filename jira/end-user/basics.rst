@@ -70,7 +70,15 @@ Basics Issue Create
 Basics Issue Create in Backlog
 ------------------------------
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
-#. Dodaj zadania do backlog: `Two`, `Three`, `Four`, `Five`, `Six`
+#. Na dole w backlog jest napis `Create Issue`
+#. Klikając na ikonkę, wybierz `Task` (niebieska ikona)
+#. Dodaj zadania do backlog:
+
+    - `Two`,
+    - `Three`,
+    - `Four`,
+    - `Five`,
+    - `Six`.
 
 Basics Issue Split
 ------------------
