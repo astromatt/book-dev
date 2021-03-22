@@ -13,8 +13,8 @@ Dobre praktyki
 - Keep transitions from all statues
 - Simplified Workflow
 
-..   figure:: ../_img//jira-workflow-progress,test,review.png
-..   figure:: ../_img//jira-workflow-simplified.png
+.. figure:: ../_img/jira-workflow-progress,test,review.png
+.. figure:: ../_img/jira-workflow-simplified.png
 
 
 Workflow Triggers
@@ -42,10 +42,10 @@ Crucible:
     * Review rejected
     * Review summarized
 
-..   figure:: ../_img//jira-workflow-simplified,triggers.png
-..   figure:: ../_img//jira-triggers-1.png
-..   figure:: ../_img//jira-triggers-2.png
-..   figure:: ../_img//jira-triggers-3.png
+.. figure:: ../_img/jira-workflow-simplified,triggers.png
+.. figure:: ../_img/jira-triggers-1.png
+.. figure:: ../_img/jira-triggers-2.png
+.. figure:: ../_img/jira-triggers-3.png
 
 
 Condition
@@ -117,95 +117,95 @@ Workflow Schemes
 
 Use Cases
 =========
-..   figure:: ../_img//jira-workflow-aprooval.png
+.. figure:: ../_img/jira-workflow-aprooval.png
 
     aprooval
 
-..   figure:: ../_img//jira-workflow-core.jpeg
+.. figure:: ../_img/jira-workflow-core.jpeg
 
     core
 
-..   figure:: ../_img//jira-workflow-default.png
+.. figure:: ../_img/jira-workflow-default.png
 
     default
 
-..   figure:: ../_img//jira-workflow-dev-1.png
+.. figure:: ../_img/jira-workflow-dev-1.png
 
     dev
 
-..   figure:: ../_img//jira-workflow-dev-2.png
+.. figure:: ../_img/jira-workflow-dev-2.png
 
     dev
 
-..   figure:: ../_img//jira-workflow-epics.png
+.. figure:: ../_img/jira-workflow-epics.png
 
     Epics
 
-..   figure:: ../_img//jira-workflow-feedback.png
+.. figure:: ../_img/jira-workflow-feedback.png
 
     feedback
 
-..   figure:: ../_img//jira-workflow-processmgmt.png
+.. figure:: ../_img/jira-workflow-processmgmt.png
 
     processmgmt
 
-..   figure:: ../_img//jira-workflow-procurement.png
+.. figure:: ../_img/jira-workflow-procurement.png
 
     procurement
 
-..   figure:: ../_img//jira-workflow-progress,test,review.png
+.. figure:: ../_img/jira-workflow-progress,test,review.png
 
     progress
 
-..   figure:: ../_img//jira-workflow-projectmgmt.png
+.. figure:: ../_img/jira-workflow-projectmgmt.png
 
     projectmgmt
 
-..   figure:: ../_img//jira-workflow-publishing.png
+.. figure:: ../_img/jira-workflow-publishing.png
 
     publishing
 
-..   figure:: ../_img//jira-workflow-qa,review.png
+.. figure:: ../_img/jira-workflow-qa,review.png
 
     qa
 
-..   figure:: ../_img//jira-workflow-qa,stage,deploy,problem.jpg
+.. figure:: ../_img/jira-workflow-qa,stage,deploy,problem.jpg
 
     qa
 
-..   figure:: ../_img//jira-workflow-qa,stage,deploy.png
+.. figure:: ../_img/jira-workflow-qa,stage,deploy.png
 
     qa
 
-..   figure:: ../_img//jira-workflow-qa.png
+.. figure:: ../_img/jira-workflow-qa.png
 
     qa
 
-..   figure:: ../_img//jira-workflow-recruitment.png
+.. figure:: ../_img/jira-workflow-recruitment.png
 
     recruitment
 
-..   figure:: ../_img//jira-workflow-risk.jpg
+.. figure:: ../_img/jira-workflow-risk.jpg
 
     risk
 
-..   figure:: ../_img//jira-workflow-select.png
+.. figure:: ../_img/jira-workflow-select.png
 
     select
 
-..   figure:: ../_img//jira-workflow-simplified.png
+.. figure:: ../_img/jira-workflow-simplified.png
 
     simplified
 
-..   figure:: ../_img//jira-workflow-simplified,dev.png
+.. figure:: ../_img/jira-workflow-simplified,dev.png
 
     simplified dev
 
-..   figure:: ../_img//jira-workflow-support.png
+.. figure:: ../_img/jira-workflow-support.png
 
     support
 
-..   figure:: ../_img//jira-workflow-taskmgmt.png
+.. figure:: ../_img/jira-workflow-taskmgmt.png
 
     taskmgmt
 

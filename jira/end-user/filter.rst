@@ -15,9 +15,9 @@ Rationale
 
 - Współdzielenie
 
-..   figure:: ../_img//jira-filter-share-before.png
-..   figure:: ../_img//jira-filter-share-after.png
-..   figure:: ../_img//jira-filter-share-confirm.png
+.. figure:: ../_img/jira-filter-share-before.png
+.. figure:: ../_img/jira-filter-share-after.png
+.. figure:: ../_img/jira-filter-share-confirm.png
 
 
 Demonstration

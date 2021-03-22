@@ -5,7 +5,7 @@ Jira Licensing
 
 Rationale
 =========
-* Cloud vs. Server [JiraDocumentation]_ :cite:`JiraDocumentation`
+* Cloud vs. Server [JiraDocumentation]_
 * Ilość użytkowników
 * Długość trwania licencji
 * Co po zakończeniu okresu?
@@ -36,15 +36,15 @@ Self-managed
 * Free year of maintenance
 * https://www.atlassian.com/software/jira/pricing?tab=self-managed
 
-* 10 users - 10 USD
-* 25 users - 3,500 USD
-* 50 users - 6,800 USD
-* 100 users - 13,300 USD
-* 250 users - 26,400 USD
-* 500 users - 40,000 USD
-* 2,000 users - 60,000 USD
-* 10,000 users - 120,000 USD
-* 10,001+ users - 200,000 USD
+* 10 users - 10 USD one time payment
+* 25 users - 3,500 USD one time payment
+* 50 users - 6,800 USD one time payment
+* 100 users - 13,300 USD one time payment
+* 250 users - 26,400 USD one time payment
+* 500 users - 40,000 USD one time payment
+* 2,000 users - 60,000 USD one time payment
+* 10,000 users - 120,000 USD one time payment
+* 10,001+ users - 200,000 USD one time payment
 
 
 Cloud
@@ -52,9 +52,9 @@ Cloud
 * Monthly per user
 * https://www.atlassian.com/software/jira/pricing
 
-* 10 users - 0 USD
-* 1,000 users - 7 USD
-* 10,000 users - 14 USD
+* 10 users - 0 USD monthly per user
+* 1,000 users - 7 USD monthly per user
+* 10,000 users - 14 USD monthly per user
 
 
 References

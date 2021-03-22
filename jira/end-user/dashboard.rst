@@ -28,8 +28,8 @@ Rationale
     - Burndown
     - Days Remaining
 
-..   figure:: ../_img//jira-dashboard-sprinthealth.png
-..   figure:: ../_img//jira-dashboard.png
+.. figure:: ../_img/jira-dashboard-sprinthealth.png
+.. figure:: ../_img/jira-dashboard.png
 
 
 Demonstration

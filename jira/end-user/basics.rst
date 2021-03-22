@@ -8,7 +8,7 @@ Rationale
 - Issue Tracker
 - Jira
 
-..   figure:: ../_img//agility-bigpicture-advanced.png
+.. figure:: ../_img/agility-bigpicture-advanced.png
 
 
 Project
@@ -64,7 +64,7 @@ Basics Issue Create
 #. Dodaj zadanie:
 
     - Project: Twój project
-    - Issue Type: `Story`
+    - Issue Type: `Task`
     - Summary: `One`
 
 Basics Issue Create in Backlog

@@ -24,3 +24,7 @@ Requirements Access
 Requirements Admin
 ------------------
 #. Poproś trenera o nadanie uprawnień administracyjnych w Jirze
+
+Requirements View
+-----------------
+#. Po zalogowaniu wybierz `Explore Projects`

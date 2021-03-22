@@ -48,9 +48,9 @@ Time Reporting
 * `Log Work`
 * Reports
 
-..   figure:: ../_img//jira-report-timetracking-1.png
-..   figure:: ../_img//jira-report-timetracking-2.png
-..   figure:: ../_img//jira-report-timetracking-3.png
+.. figure:: ../_img/jira-report-timetracking-1.png
+.. figure:: ../_img/jira-report-timetracking-2.png
+.. figure:: ../_img/jira-report-timetracking-3.png
 
 
 Demonstration
