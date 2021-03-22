@@ -27,6 +27,7 @@ End-User
     end-user/project.rst
     end-user/issue.rst
     end-user/issue-actions.rst
+    end-user/issue-timetracking.rst
     end-user/board-usage.rst
     end-user/board-configuration.rst
     end-user/board-reports.rst

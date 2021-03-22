@@ -40,23 +40,10 @@ Issue Actions
     - Używanie formatowania
 
 
-Time Reporting
-==============
-* `Log Work`
-* `Original Time Estimate`
-* `Remaining Time`
-* `Log Work`
-* Reports
-
-.. figure:: ../_img/jira-report-timetracking-1.png
-.. figure:: ../_img/jira-report-timetracking-2.png
-.. figure:: ../_img/jira-report-timetracking-3.png
-
 
 Demonstration
 =============
 * Add issue attachment
-* Log work
 * Clone issue
 * Move issue
 
@@ -73,13 +60,6 @@ Issue Actions Attachment
 #. Edytuj zadanie `One`
 #. Do zadania dodaj załączniki: obrazek ``image.png`` oraz archiwum ``archive.zip`` z dwoma plikami tekstowymi
 #. Zwróć uwagę, że aby dodawać załączniki do Jiry, ich obsługa musi być włączona w panelu administracyjnym
-
-Issue Actions Log Work
-----------------------
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
-#. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
-#. Wybierz z menu trzech kropek ``...`` (u góry) -> `Log Work`
-#. Alternatywnie po wybraniu zadania klikasz skrót klawiszowy kropka ``.`` -> `Log Work`
 
 Issue Actions Clone
 -------------------
