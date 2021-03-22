@@ -118,4 +118,4 @@ Project Fields
 #. Przejdź na zakładkę `Issue Types`
 #. Wybierz `Task`, a następnie w prawym górnym rogu wybierz przycisk `Fields` -> dodaj pole `Due Date`, usuń pole `Labels`
 #. Wybierz `Story`, a następnie w prawym górnym rogu wybierz przycisk `Fields` -> dodaj nową zakładkę `Estimate` , dodaj na niej pole `Time Tracking` oraz `Story Points`; pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka; nową zakładkę dodaje się poprzez kliknięcie na znak `(+)`
-#. Zwróć uwagę, że ta zakładka pojawiła się w prawie każdym `Issue Type` (poza `Bug`)
+#. Zwróć uwagę, że ta zakładka `Estimate`, która stworzyłeś/aś pojawiła się w prawie każdym `Issue Type` (poza `Bug`)

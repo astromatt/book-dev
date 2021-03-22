@@ -186,6 +186,8 @@ Issue Links
     * `Linked Issues`: `blocks`
     * `Issue`: `Eight`
 
+.. note:: Jeżeli po wpisaniu słowa `Eight` w pole `Linked Issue` Jira nie znajduje zadania, to spróbuj wpisać klucz zadania, np. ``MH-8``. Wtedy Jira powinna podpowiedzieć pełną nazwę zadania.
+
 Issue Sub-Tasks
 ---------------
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
