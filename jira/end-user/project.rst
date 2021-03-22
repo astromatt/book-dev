@@ -45,7 +45,7 @@ Versions
 * Releases (with Bamboo)
 * Time Tracking Report by Version
 
-.. figure:: ../_img/scrum-capacity-sprint.png
+.. figure:: ../_img/scrum-capacity-backlog.png
 .. figure:: ../_img/jira-release-versions.png
 .. figure:: ../_img/jira-release-overview.png
 
