@@ -4,15 +4,15 @@ Project Configure
 
 Rationale
 ---------
-- Issue Collector
+* Issue Collector
 
 
 Project Configuration
 ---------------------
-- Versions
-- Components
-- Users and Roles
-- Application Links
+* Versions
+* Components
+* Users and Roles
+* Application Links
 
 
 

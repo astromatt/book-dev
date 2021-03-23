@@ -4,28 +4,28 @@ JQL Dashboard
 
 Rationale
 ---------
-- Edit Layout
-- Share
-- Tworzenie
-- Publikacja
-- Dodawanie gadżetów
+* Edit Layout
+* Share
+* Tworzenie
+* Publikacja
+* Dodawanie gadżetów
 
-    - Filter Results
-    - Issue Statistics
-    - Average Age Chart
-    - Resolution Time
+    * Filter Results
+    * Issue Statistics
+    * Average Age Chart
+    * Resolution Time
 
-- Wallboard plugin
+* Wallboard plugin
 
-    - Tables
-    - Graphs
-    - Pie charts
+    * Tables
+    * Graphs
+    * Pie charts
 
-- Jira Agile Reports
+* Jira Agile Reports
 
-    - Sprint Health Report
-    - Burndown
-    - Days Remaining
+    * Sprint Health Report
+    * Burndown
+    * Days Remaining
 
 .. figure:: ../_img/jira-dashboard-sprinthealth.png
 .. figure:: ../_img/jira-dashboard.png
@@ -89,68 +89,68 @@ Dashboard Gadget Edit Issue Statistics
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Issue Statistics` i ustaw:
 
-    - `Filter`: Twój projekt
-    - `Statistic`: `Type Status`
-    - `Sort`: `Total`
-    - `Sort Direction`: `Descending`
-    - Upewnij się, że **nie** jest zaznaczone `Update every 15 minutes`
-    - Kliknij przycisk `Save`
+    * `Filter`: Twój projekt
+    * `Statistic`: `Type Status`
+    * `Sort`: `Total`
+    * `Sort Direction`: `Descending`
+    * Upewnij się, że **nie** jest zaznaczone `Update every 15 minutes`
+    * Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Filter Results
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Filter Results` i ustaw:
 
-    - `Filter`: `Imię Todo`
-    - `Number of Results`: 20
-    - `Columns`: Dodaj kolumnę `Due Date`
-    - Upewnij się, że **nie** jest zaznaczone `Update every 15 minutes`
-    - Kliknij przycisk `Save`
-    - Posortuj po `Due Date` przez kliknięcie nagłówka kolumny
+    * `Filter`: `Imię Todo`
+    * `Number of Results`: 20
+    * `Columns`: Dodaj kolumnę `Due Date`
+    * Upewnij się, że **nie** jest zaznaczone `Update every 15 minutes`
+    * Kliknij przycisk `Save`
+    * Posortuj po `Due Date` przez kliknięcie nagłówka kolumny
 
 Dashboard Gadget Edit Version Report
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet  `Version Report` i ustaw:
 
-    - `Board`: `Imię Board`
-    - Zaznacz `Show board name`
-    - `Version`: `2000-01`
-    - Zaznacz `Show version name`
-    - Kliknij przycisk `Save`
+    * `Board`: `Imię Board`
+    * Zaznacz `Show board name`
+    * `Version`: `2000-01`
+    * Zaznacz `Show version name`
+    * Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Days Remaining in Sprint Gadget
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Days Remaining in Sprint Gadget` i ustaw:
 
-    - `Board`: `Imię Board`
-    - Zaznacz `Show board name`
-    - `Sprint`: `Next Sprint Due (auto)`
-    - Zaznacz `Show sprint name`
-    - Kliknij przycisk `Save`
+    * `Board`: `Imię Board`
+    * Zaznacz `Show board name`
+    * `Sprint`: `Next Sprint Due (auto)`
+    * Zaznacz `Show sprint name`
+    * Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Sprint Burndown Gadget
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Sprint Burndown Gadget` i ustaw:
 
-    - `Board`: `Imię Board`
-    - Zaznacz `Show board name`
-    - `Sprint`: `Next Sprint Due (auto)`
-    - Zaznacz `Show sprint name`
-    - Kliknij przycisk `Save`
+    * `Board`: `Imię Board`
+    * Zaznacz `Show board name`
+    * `Sprint`: `Next Sprint Due (auto)`
+    * Zaznacz `Show sprint name`
+    * Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Health Gadget
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Sprint Health Gadget` i ustaw:
 
-    - `Board`: `Imię Board`
-    - Zaznacz `Show board name`
-    - `Sprint`: `Next Sprint Due (auto)`
-    - Zaznacz `Show sprint name`
-    - Kliknij przycisk `Save`
+    * `Board`: `Imię Board`
+    * Zaznacz `Show board name`
+    * `Sprint`: `Next Sprint Due (auto)`
+    * Zaznacz `Show sprint name`
+    * Kliknij przycisk `Save`
 
 Dashboard Many
 ^^^^^^^^^^^^^^

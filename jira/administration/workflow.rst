@@ -5,13 +5,13 @@ Workflow
 
 Dobre praktyki
 ==============
-- Directed graph
-- Complete graph
-- Few vertices
-- Lots of Edges
-- Try simple and add statuses
-- Keep transitions from all statues
-- Simplified Workflow
+* Directed graph
+* Complete graph
+* Few vertices
+* Lots of Edges
+* Try simple and add statuses
+* Keep transitions from all statues
+* Simplified Workflow
 
 .. figure:: ../_img/jira-workflow-progress,test,review.png
 .. figure:: ../_img/jira-workflow-simplified.png
@@ -222,17 +222,17 @@ Workflow Configure
 #. Przycisk dwie strzałki do góry ``^`` (otworzy edytor workflow w trybie pełnoekranowym)
 #. Przycisk `Add Status` (u góry po lewej)
 
-    - `Name`: `In Test`
-    - **nie** zaznaczamy `Allow all statuses to transition to this one`
-    - Kliknij przycisk `Add`
-    - `Status category`: `In Progress`
-    - Kliknij przycisk `Create`
+    * `Name`: `In Test`
+    * **nie** zaznaczamy `Allow all statuses to transition to this one`
+    * Kliknij przycisk `Add`
+    * `Status category`: `In Progress`
+    * Kliknij przycisk `Create`
 
 #. Chwyć jedną kropkę na brzegu statusu `In Progress` i połącz z jedną kropką na brzegu statusu `In Test`
 #. Tworzysz tzw. tranzycję:
 
-    - `Name`: `To Test`
-    - Kliknij przycisk `Add`
+    * `Name`: `To Test`
+    * Kliknij przycisk `Add`
 
 #. Ze statusu `In Test` dodaj tranzycję do `In Progress` o nazwie `To In Progress`
 #. Ze statusu `In Test` dodaj tranzycję do `Done` o nazwie `To Done`

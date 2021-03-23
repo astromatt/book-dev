@@ -5,20 +5,20 @@ DB Performance
 
 Dobre praktyki
 ==============
-- Terminal z połączeniem SSH do produkcji Background color RED
+* Terminal z połączeniem SSH do produkcji Background color RED
 
 
 About
 =====
-- AO = Add-On (plugins)
-- cwd_user i cwd_directories
-- jiraissue
-- mailserver
-- filtersubscription
-- worklog
-- customfieldvalue i customfield
-- project i project_key
-- fileattachment
+* AO = Add-On (plugins)
+* cwd_user i cwd_directories
+* jiraissue
+* mailserver
+* filtersubscription
+* worklog
+* customfieldvalue i customfield
+* project i project_key
+* fileattachment
 
 .. code-block:: console
 
@@ -82,7 +82,7 @@ Restore data with ``psql`` from plaintext SQL
 
 Change JIRA DB config
 =====================
-- Change ``/var/atlassian/application-data/jira/dbconfig.xml``
+* Change ``/var/atlassian/application-data/jira/dbconfig.xml``
 
 .. code-block:: console
 

@@ -5,19 +5,19 @@ Backup
 
 Procedure
 =========
-- XML (http://localhost:8080/secure/admin/XmlBackup!default.jspa)
-- ``rsync``:
+* XML (http://localhost:8080/secure/admin/XmlBackup!default.jspa)
+* ``rsync``:
 
-    - ``JIRA_HOME="/var/atlassian/application-data/jira"``
-    - ``JIRA_INSTALL="/opt/atlassian/jira/"``
-    - database replication
-    - ``pg_dump`` i ``pg_restore``
+    * ``JIRA_HOME="/var/atlassian/application-data/jira"``
+    * ``JIRA_INSTALL="/opt/atlassian/jira/"``
+    * database replication
+    * ``pg_dump`` i ``pg_restore``
 
-- database replication consistency and ``rsync`` while upgrading
-- ``/var/atlassian/application-data/jira/.jira-home.lock``
-- Cold standby in alternative datacenter
-- database replication between datacenter
-- cold standby and licensing (same SEN number)
+* database replication consistency and ``rsync`` while upgrading
+* ``/var/atlassian/application-data/jira/.jira-home.lock``
+* Cold standby in alternative datacenter
+* database replication between datacenter
+* cold standby and licensing (same SEN number)
 
 
 Script
@@ -37,8 +37,8 @@ Administracja - backup
 #. Usuń katalogi ``$JIRA_HOME`` i ``$JIRA_INSTALL``
 #. Przywróć oba katalogi do:
 
-    - ``/opt/jira/home``
-    - ``/opt/jira/install``
+    * ``/opt/jira/home``
+    * ``/opt/jira/install``
 
 #. Podmienić skrypty startowe
 #. Uruchom Jirę z nowej lokalizacji

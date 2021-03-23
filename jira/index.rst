@@ -35,9 +35,10 @@ End-User
     end-user/issue-workflow.rst
 
     end-user/board-agile.rst
-    end-user/board-scrum.rst
     end-user/board-kanban.rst
+    end-user/board-scrum.rst
     end-user/board-estimation.rst
+    end-user/board-sprint.rst
     end-user/board-configuration.rst
     end-user/board-reports.rst
 

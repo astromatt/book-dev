@@ -3,15 +3,18 @@ Performance Tuning
 ******************
 
 
-- JProfiler
-- MAT (Memory Analyzer Tool) [heapdump and MAT from Eclipse]
-- Performance SQL
-- own database indexes
-- *pgpool* and database cache
-- *nginx* as a SSL terminator
-- *Varnish* caching *REST* responses (JSON) and static files
-- Java Melody
-- New Relic
+Rationale
+=========
+* JProfiler
+* MAT (Memory Analyzer Tool) [heapdump and MAT from Eclipse]
+* Performance SQL
+* own database indexes
+* *pgpool* and database cache
+* *nginx* as a SSL terminator
+* *Varnish* caching *REST* responses (JSON) and static files
+* Java Melody
+* New Relic
+
 
 Cache
 =====
@@ -21,15 +24,15 @@ Cache
 
 Optymalizacje
 =============
-- Wyłączyć Activity Stream
-- Update gadżetów na Dashboardzie (update na bazie dla wszystkich gadgetów)
-- Edukacja użytkowników aby nie mieli odpalonych miliona zakładek z JIRĄ
-- Czy wszystkie monitory z Wallboardami są potrzebne?
+* Wyłączyć Activity Stream
+* Update gadżetów na Dashboardzie (update na bazie dla wszystkich gadgetów)
+* Edukacja użytkowników aby nie mieli odpalonych miliona zakładek z JIRĄ
+* Czy wszystkie monitory z Wallboardami są potrzebne?
 
 
 Database
 ========
-- ``/var/atlassian/application-data/jira/dbconfig.xml``
+* ``/var/atlassian/application-data/jira/dbconfig.xml``
 
 .. code-block:: xml
 
@@ -48,10 +51,10 @@ Database
 
 Garbage Collector
 =================
-- Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
-- G1 GC ``-XX:+UseG1GC``
-- ``Xmx``
-- ``/opt/atlassian/jira/bin/setenv.sh``
+* Jakub Kubryński on Garbage Collector https://www.youtube.com/watch?v=LCr3XyHdaZk
+* G1 GC ``-XX:+UseG1GC``
+* ``Xmx``
+* ``/opt/atlassian/jira/bin/setenv.sh``
 
 .. literalinclude:: src/jira-gc.sh
     :caption: Jira Garbage Collector
@@ -60,13 +63,13 @@ Garbage Collector
 
 Monitorowanie
 =============
-- http://www.stagemonitor.org/
-- New Relic
-- JavaMelody
-- JIRA embedded tools (in settings):
+* http://www.stagemonitor.org/
+* New Relic
+* JavaMelody
+* JIRA embedded tools (in settings):
 
-    - JMX monitoring
-    - SQL profiling
+    * JMX monitoring
+    * SQL profiling
 
 
 Rozwiązywanie problemów
@@ -75,11 +78,10 @@ Rozwiązywanie problemów
 
     grep '/rest' /opt/atlassian/jira/logs/access_log.* |awk '{print $7}' |sort |uniq -c |sort -n
 
-- Dużo zapytań API (varnish requestów, np. dashboardów)
-- Inne usługi wysycające pamięć na maszynie, aż do limitów JAVY
-- Przy port forwardnig ``ssh -L 5432:localhost:5432 root@adresIP`` w ``/var/lib/pgsql/data/pg_hba.conf`` musi być md5 przy IPv4 i IPv6
-
-- Create issue by URL: http://localhost:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
+* Dużo zapytań API (varnish requestów, np. dashboardów)
+* Inne usługi wysycające pamięć na maszynie, aż do limitów JAVY
+* Przy port forwardnig ``ssh -L 5432:localhost:5432 root@adresIP`` w ``/var/lib/pgsql/data/pg_hba.conf`` musi być md5 przy IPv4 i IPv6
+* Create issue by URL: http://localhost:8080/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10002
 
 
 Assignments

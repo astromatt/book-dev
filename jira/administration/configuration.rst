@@ -5,11 +5,11 @@ Configuration
 
 Basic Configuration
 ===================
-- Skrót klawiszowy ``gg``
-- Estymacja różnych issuetype (nie tylko Story)
-- `Re-index`
-- `Application Links`
-- Change date format
+* Skrót klawiszowy ``gg``
+* Estymacja różnych issuetype (nie tylko Story)
+* `Re-index`
+* `Application Links`
+* Change date format
 
 .. figure:: ../_img/jira-date-format.png
     :scale: 75%

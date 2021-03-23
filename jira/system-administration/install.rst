@@ -112,8 +112,8 @@ Configuration
 
 Websudo
 -------
-- automatic admin logout
-- admin rights notification
+* automatic admin logout
+* admin rights notification
 
 .. code-block:: sh
 

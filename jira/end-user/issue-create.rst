@@ -38,9 +38,9 @@ Issue Create New
 #. Z menu u góry kliknij przycisk `Create`
 #. Dodaj zadanie:
 
-    - Project: Twój project
-    - Issue Type: `Task`
-    - Summary: `One`
+    * Project: Twój project
+    * Issue Type: `Task`
+    * Summary: `One`
 
 Issue Create in Backlog
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -49,21 +49,21 @@ Issue Create in Backlog
 #. Klikając na ikonkę, wybierz `Task` (niebieska ikona)
 #. Dodaj zadania do backlog:
 
-    - `Two`,
-    - `Three`,
-    - `Four`,
-    - `Five`,
-    - `Six`.
+    * `Two`,
+    * `Three`,
+    * `Four`,
+    * `Five`,
+    * `Six`.
 
 Issue Create Split
 ^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
 #. Kliknij prawym klawiszem myszy na zadanie `Six` -> `Split Issue`
 
-    - `Six`
-    - `Seven`
-    - `Eight`
-    - `Nine`
+    * `Six`
+    * `Seven`
+    * `Eight`
+    * `Nine`
 
 #. Zwróć uwagę, że trzeba kliknąć prawym klawiszem myszy na zadaniu w backlog (na jego treści, a nie kluczu)
 

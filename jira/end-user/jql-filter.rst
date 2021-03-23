@@ -4,15 +4,15 @@ JQL Filter
 
 Rationale
 ---------
-- Tworzenie
-- Subskrypcja
-- Uprawnienia
+* Tworzenie
+* Subskrypcja
+* Uprawnienia
 
-    - Przydział do ról
-    - Przydział do grup
-    - Publiczny
+    * Przydział do ról
+    * Przydział do grup
+    * Publiczny
 
-- Współdzielenie
+* Współdzielenie
 
 .. figure:: ../_img/jira-filter-share-before.png
 .. figure:: ../_img/jira-filter-share-after.png
@@ -53,9 +53,9 @@ Filter Save
 #. Wybierz `Edit permissions`
 #. Ustaw `add Viewers`:
 
-    - `Project`: Wybierz Twój projekt
-    - `Roles`: `Any`
-    - kliknij `Add` (bez kliknięcia `Add` uprawnienia sie nie dodadzą)
+    * `Project`: Wybierz Twój projekt
+    * `Roles`: `Any`
+    * kliknij `Add` (bez kliknięcia `Add` uprawnienia sie nie dodadzą)
 
 #. Upewnij się, że w polu `Viewers` dodane zostało `Project: Twój Role: Any`
 #. Kliknij przycisk `Save`
@@ -142,13 +142,14 @@ Filter Board Portfolio
 #. Z menu u góry wybierz `Boards` -> `View all boards`
 #. Kliknij przycisk `Create board` (przycisk u góry po prawej)
 #. Wybierz `Create a Kanban board` -> `Board from an existing Saved Filter` -> `Next` -> `Imię Portfolio` (gdzie Imię, to Twoje imię)
-#. Stwórz dwa `Swimlane`: `2000-Q1` i `2000-Q1`, zapytania
-    - Określ aby w kolumnie `In Progress` mogły być maksymalnie 3 zadania
+#. Stwórz dwa `Swimlane`: `2000-Q1` i `2000-Q1`, zapytania:
+
+    * Określ aby w kolumnie `In Progress` mogły być maksymalnie 3 zadania
 
 #. Stwórz board zadań przypisanych do Ciebie:
 
-    - zadania mogą być w dowolnym projekcie
-    - board ma być publiczny
+    * zadania mogą być w dowolnym projekcie
+    * board ma być publiczny
 
 .. note:: Board nie może korzystać z Kanban Backlog, a dokładnie z opcji `Epics panel`. Jeżeli ta opcja w konfiguracji board jest włączona, to Epiki zostaną wykorzystane jako panel w widoku backlog (a tego nie chcemy).
 

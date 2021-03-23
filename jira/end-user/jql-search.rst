@@ -50,13 +50,13 @@ Operators
 
 View
 ----
-- Konfiguracja kolumn wyświetlania
-- Import / Export CSV
+* Konfiguracja kolumn wyświetlania
+* Import / Export CSV
 
-    - All fields
-    - current fields
+    * All fields
+    * current fields
 
-- Limit wyświetlania wyników dla JQL (change: `General Configuration` -> `Advanced Settings` -> ``jira.search.views.default.max``)
+* Limit wyświetlania wyników dla JQL (change: `General Configuration` -> `Advanced Settings` -> ``jira.search.views.default.max``)
 
 
 Select issues

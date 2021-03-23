@@ -76,8 +76,8 @@ Atlassian Python API - Project Administrators
 #. Stwórz skrypt ``jira-administrators.py``
 #. Skrypt ma wylistować wszystkich administratorów projektów w JIRA w tabelce, wraz z ich e-mailem jako link `mailto`
 
-    - Wynik zapisz w `Confluence` i dodaj się do `watchers` strony, by być powiadamianym o zmianach
-    - Jeżeli nie masz zainstalowanego `Confluence` to zrzuć do pliku ``/var/www/jira-admins.html`` i skonfiguruj nginx aby wyświetlał tą stronę
+    * Wynik zapisz w `Confluence` i dodaj się do `watchers` strony, by być powiadamianym o zmianach
+    * Jeżeli nie masz zainstalowanego `Confluence` to zrzuć do pliku ``/var/www/jira-admins.html`` i skonfiguruj nginx aby wyświetlał tą stronę
 
 :Podpowiedź: Aby uruchomić Confluence możesz wykorzystać Docker
 
@@ -92,5 +92,5 @@ Atlassian Python API - Changelog
 #. Napisz skrypt ``jira-changelog.py``
 #. Wygeneruj Changelog, tj. listę zadań które zmieniły się pomiędzy dwoma wersjami (wykorzystaj JQL)
 
-    - Wynik zapisz w Confluence na osobnej stronie dla każdej wersji
-    - Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/changelog-XXX.html`` i skonfiguruj nginx aby wyświetlał tą stronę, XXX to nazwa wersji
+    * Wynik zapisz w Confluence na osobnej stronie dla każdej wersji
+    * Jeżeli nie masz zainstalowanego Confluence to zrzuć do pliku ``/var/www/changelog-XXX.html`` i skonfiguruj nginx aby wyświetlał tą stronę, XXX to nazwa wersji
