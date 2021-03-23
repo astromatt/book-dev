@@ -1,13 +1,12 @@
-*******************
 Board Configuration
-*******************
+===================
 
 
 Board vs. Project
-=================
-- Board z wielu projektów
-- Board z części jednego projektu
+-----------------
 - Board dla Projektu
+- Board z części jednego projektu
+- Board z wielu projektów
 - Wiele boardów do jednego projektu (różne estymaty)
 - Wiele projektów czy wiele boardów (np. po komponentach)?
 
@@ -20,7 +19,7 @@ Board vs. Project
 
 
 Board
-=====
+-----
 - Uprawnienia
 - Konfiguracja
 - Kolumny
@@ -34,6 +33,7 @@ Board
 
     - wg. priorytetów
     - wg. wersji
+    - po duedate
 
 - Quick Filters
 
@@ -60,8 +60,9 @@ Board
 
     Days in Column
 
+
 Portfolio
-=========
+---------
 - Portfolio na bazie Kanban Board
 
 .. figure:: ../_img/agile-decomposition-19-risk.jpg
@@ -69,13 +70,13 @@ Portfolio
 
 
 Cloud
-=====
+-----
 .. figure:: ../_img/jira-board-roadmap.png
 .. figure:: ../_img/jira-board-features.png
 
 
 Demonstration
-=============
+-------------
 * Open `Board configuration`
 * General configuration
 * Columns (add columns, multiple status in one column, column constraints)
@@ -90,10 +91,10 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
 Board Configuration Setup
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
 #. Dodaj poniższe zadania do sprintu `2000-01 week 2`:
 
@@ -113,7 +114,7 @@ Board Configuration Setup
     - `Start Date`: `7/Jan/00 09:00 AM`
 
 Board Configuration General
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `General`:
@@ -124,7 +125,7 @@ Board Configuration General
     - To nie znaczy, że będę widziały zadania (to wymaga uprawnień w projekcie)
 
 Board Configuration Columns
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Columns`:
@@ -137,7 +138,7 @@ Board Configuration Columns
     - Zaznacz `Days in column`
 
 Board Configuration Swimlanes Features Maintenance
---------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Swimlanes`:
@@ -149,18 +150,18 @@ Board Configuration Swimlanes Features Maintenance
 #. Zobacz `Active Sprints` jak wygląda board
 
 Board Configuration Swimlanes MoSCoW
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Swimlanes` (zmodyfikuj dotychczasowe ustawienia)
-#. Zmodyfikuj nazwę `Expedite` i zamień na `Must`
-#. Dodaj nowe: `Should` z `JQL`: ``priority in (High, Medium, Low)``
+#. Zmodyfikuj pierwszego swimlane i zamień na `Must`  z `JQL`: ``priority = Highest``
+#. Zmodyfikuj drugi swimlane i zamień na `Should` z `JQL`: ``priority in (High, Medium, Low)``
 #. Zmodyfikuj nazwę `Everything Else` na `Could`
-#. Zmień kolejność aby była:
+#. Zmień kolejność aby:
 
-    - `Must` na górze
-    - `Should` w środku
-    - `Could` na dole
+    - `Must` było na górze
+    - `Should` było w środku
+    - `Could` było na dole
 
 #. Zmień w zadaniach `Four` oraz `Seven` priorytet na `Highest` (zadania powinno pojawić się w Swimlane `Must`)
 #. Zmień w zadaniach `Nine` oraz `Eight` priorytet na `Lowest` (zadania powinno pojawić się w Swimlane `Could`)
@@ -168,7 +169,7 @@ Board Configuration Swimlanes MoSCoW
 #. Pamiętaj, że aby zadania wyświetlały się na Twoim boardzie, muszą być do Ciebie przypisane! (Ty musisz być ustawiony jako assignee)
 
 Board Configuration Quick Filters
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Quick Filters`:
@@ -177,7 +178,7 @@ Board Configuration Quick Filters
     - Zmień JQL dla `Daily` na: ``updatedDate >= -1d OR Flagged IS NOT EMPTY``
 
 Board Configuration Card Colors
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Card colours`:
@@ -188,7 +189,7 @@ Board Configuration Card Colors
     - Zmień kolor `Low` oraz `Lowest` na zielony (`00FF00`)
 
 Board Configuration Card Layout
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Card layout`:
@@ -198,7 +199,7 @@ Board Configuration Card Layout
     - Usuń wyświetlanie pola `Due Date` z sekcji Backlog (ale zostaw w `Active Sprint`)
 
 Board Configuration Estimation
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Estimation`:
@@ -207,14 +208,19 @@ Board Configuration Estimation
     - Zaznacz `Time Tracking` -> `Remaining Estimate and Time Spent`
 
 Board Configuration Working Days
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
+#. Uwaga dotycząca następnego punktu: zadanie ma zademonstrować dodawanie dat świąt, a później i tak nie będziemy z tego korzystali, dlatego:
+
+    - wybierz trzy dowolne święta (nie ma znaczenia jakie)
+    - święta mogą być z obecnego roku (żeby nie przeglądać 20 lat wstecz)
+
 #. Zakładka `Working days`:
 
     - `Region`: `Europe`
     - `Time Zone`: `(GMT+01:00) Warsaw`
-    - `Non-Working Days` (wybierz trzy dowolne święta):
+    - `Non-Working Days`:
 
         * `1/Jan/00` (Nowy Rok)
         * `6/Jan/00` (Święto Trzech Króli)
@@ -231,7 +237,7 @@ Board Configuration Working Days
         * `26/Dec/00` (drugi dzień Bożego Narodzenia)
 
 Board Configuration Issue Detail View
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Issue Detail View`:
@@ -242,7 +248,7 @@ Board Configuration Issue Detail View
     - Sekcja `Links` -> usuń `Linked Issue`
 
 Board Configuration Column Constraints
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
 #. Przejdź na `Boards` -> Twój Board -> `Active Sprint` (w menu po lewej):
 

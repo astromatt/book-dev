@@ -21,19 +21,29 @@ End-User
     :numbered:
     :caption: End-User
 
-    end-user/requirements.rst
-    end-user/profile.rst
-    end-user/basics.rst
-    end-user/project.rst
-    end-user/issue.rst
+    end-user/about-requirements.rst
+    end-user/about-profile.rst
+    end-user/about-basics.rst
+
+    end-user/project-create.rst
+    end-user/project-configure.rst
+    end-user/project-versions.rst
+
+    end-user/issue-create.rst
+    end-user/issue-fields.rst
     end-user/issue-actions.rst
     end-user/issue-timetracking.rst
+
+    end-user/board-agile.rst
     end-user/board-usage.rst
+    end-user/board-estimation.rst
     end-user/board-configuration.rst
     end-user/board-reports.rst
-    end-user/jql.rst
-    end-user/filter.rst
-    end-user/dashboard.rst
+
+    end-user/jql-search.rst
+    end-user/jql-filter.rst
+    end-user/jql-dashboard.rst
+
     end-user/automation.rst
     introduction/further-reading.rst
 

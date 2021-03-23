@@ -1,10 +1,9 @@
-**********
 Automation
-**********
+==========
 
 
 Atlassian Python API
-====================
+--------------------
 * https://github.com/atlassian-api/atlassian-python-api
 * https://github.com/atlassian-api/atlassian-python-api/tree/master/examples/jira
 
@@ -45,7 +44,7 @@ Atlassian Python API
 
 
 Dev Panel
-=========
+---------
 * Create Branch
 * Branches
 * Commits
@@ -64,14 +63,14 @@ Dev Panel
 
 
 Releases
-========
+--------
 * Trigger CI/CD Builds
 
 .. figure:: ../_img/jira-release-overview.png
 
 
 Smart Commits
-=============
+-------------
 * Log in to Jira Software as a user with administrative permissions.
 * Go to Administration > Applications > DVCS accounts.
 * Check (or clear) the Smart Commits option for a repository.
@@ -103,7 +102,7 @@ Smart Commits
 
 
 GIT
-===
+---
 .. code-block:: console
 
     $ git log --oneline
@@ -206,13 +205,13 @@ GIT
 
 
 CI/CD
-=====
+-----
 .. figure:: ../_img/devops-ecosystem.png
 .. figure:: ../_img/devops-cicd.png
 
 
 Jira Workflow Triggers
-======================
+----------------------
 * Bitbucket:
 
     * Pull request created

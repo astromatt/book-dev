@@ -1,10 +1,9 @@
-*******************
 Issue Time Tracking
-*******************
+===================
 
 
 Admin
-=====
+-----
 * ``gg`` + `Time Tracking`
 * Deactivate
 
@@ -12,7 +11,7 @@ Admin
 
 
 Time Reporting
-==============
+--------------
 * `Log Work`
 * `Original Time Estimate`
 * `Remaining Time`
@@ -24,7 +23,7 @@ Time Reporting
 
 
 Demonstration
-=============
+-------------
 * Change `Time Tracking` display format to hours
 * Demonstrate how to `log work` on Jira issue
 * Show how `original estimate`, `remaining time` and `log work` are calculated
@@ -35,10 +34,10 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
 Issue Log Work
---------------
+^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
 #. Wybierz z menu trzech kropek ``...`` (u góry) -> `Log Work`

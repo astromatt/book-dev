@@ -1,10 +1,9 @@
-*******
-Profile
-*******
-
-
 Profile
 =======
+
+
+Profile
+-------
 * Jira Language
 * Avatar (gravatar)
 * Email notifications
@@ -12,7 +11,7 @@ Profile
 
 
 Demonstration
-=============
+-------------
 * Change avatar
 * Change language
 * Change timezone
@@ -20,10 +19,10 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
 Profile Configuration
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 #. Prawy górny róg -> kliknij na `Avatar` (obrazek użytkownika) -> `Profile`
 #. Przejdź do swojego profilu
 #. Ustaw strefę czasową na `Europe/Warsaw (GMT+01:00)`

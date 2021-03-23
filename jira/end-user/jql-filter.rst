@@ -61,6 +61,8 @@ Filter Save
 #. Upewnij się, że w polu `Viewers` dodane zostało `Project: Twój Role: Any`
 #. Kliknij przycisk `Save`
 
+.. note:: W zapytaniu JQL zamiast ``project = "MYPROJECT"`` podstaw swoją nazwę projektu.
+
 Filter Subscription Create
 --------------------------
 #. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
@@ -79,6 +81,8 @@ Filter Subscription Create
             AND due <= 7d
 
 #. Kliknij przycisk `Save`
+
+.. note:: Zwróć uwagę, że przycisk trzy kropki `...` obok `Save` pojawi się tylko wtedy, kiedy edytujesz filtr oraz jego zapytanie `JSQ` jest zmodyfikowane. Jeżeli tworzysz nowy filtr, to przycisk trzech kropek się nie pojawi.
 
 Filter Subscription Delete
 --------------------------
@@ -133,18 +137,21 @@ Filter Board Edit
 
 Filter Board Portfolio
 ----------------------
+#. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
+#. Stwórz filtr, który wyszukuje w Twoim projekcie zadań typu `Epic`
+#. Nazwij filtr: `Imię Portfolio` (gdzie Imię, to Twoje imię)
 #. Z menu u góry wybierz `Boards` -> `View all boards`
 #. Kliknij przycisk `Create board` (przycisk u góry po prawej)
-#. Wybierz `Create a Kanban board` -> `Board from an existing Saved Filter` -> `Next`
-#. Stwórz board Kanban z Epikami:
-
-    - Stwórz `Swimlane` dla kwartałów
+#. Wybierz `Create a Kanban board` -> `Board from an existing Saved Filter` -> `Next` -> `Imię Portfolio` (gdzie Imię, to Twoje imię)
+#. Stwórz dwa `Swimlane`: `2000-Q1` i `2000-Q1`, zapytania
     - Określ aby w kolumnie `In Progress` mogły być maksymalnie 3 zadania
 
 #. Stwórz board zadań przypisanych do Ciebie:
 
     - zadania mogą być w dowolnym projekcie
     - board ma być publiczny
+
+.. note:: Board nie może korzystać z Kanban Backlog, a dokładnie z opcji `Epics panel`. Jeżeli ta opcja w konfiguracji board jest włączona, to Epiki zostaną wykorzystane jako panel w widoku backlog (a tego nie chcemy).
 
 Filter Board Delete
 -------------------

@@ -1,10 +1,9 @@
-*********
 Dashboard
-*********
+=========
 
 
 Rationale
-=========
+---------
 - Edit Layout
 - Share
 - Tworzenie
@@ -33,7 +32,7 @@ Rationale
 
 
 Demonstration
-=============
+-------------
 * Create `Blank Dashboard`
 * Edit dashboard
 * Add gadgets:
@@ -50,10 +49,10 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
 Dashboard Create
-----------------
+^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> `Manage Dashboards`
 #. Create new dashboard (przycisk u góry po prawej)
 #. Name `Imię Dashboard` (gdzie Imię, to Twoje imię)
@@ -61,12 +60,12 @@ Dashboard Create
 #. Kliknij przycisk `Add`
 
 Dashboard Edit
---------------
+^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Zmień `Edit Layout` (prawy górny róg) na trzykolumnowy
 
 Dashboard Gadget Create
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Kliknij na `Add gadget` -> `Load all gadgets`
 #. Wybierz z listy `Filter Results` i kliknij przycisk `Add gadget` (po prawej)
@@ -78,7 +77,7 @@ Dashboard Gadget Create
 #. Zamknij okienko `X` (górny prawy róg)
 
 Dashboard Gadget Move
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytowanie gadgetu jest w jego prawym górnym rogu po kliknięciu trzech kropek `...`
 #. Przenieś `Issue Statistics` oraz `Filter Results` do kolumny po lewej
@@ -86,7 +85,7 @@ Dashboard Gadget Move
 #. Przenieś `Sprint Burndown Gadget` oraz `Version Report` do kolumny po prawej
 
 Dashboard Gadget Edit Issue Statistics
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Issue Statistics` i ustaw:
 
@@ -98,7 +97,7 @@ Dashboard Gadget Edit Issue Statistics
     - Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Filter Results
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Filter Results` i ustaw:
 
@@ -110,7 +109,7 @@ Dashboard Gadget Edit Filter Results
     - Posortuj po `Due Date` przez kliknięcie nagłówka kolumny
 
 Dashboard Gadget Edit Version Report
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet  `Version Report` i ustaw:
 
@@ -121,7 +120,7 @@ Dashboard Gadget Edit Version Report
     - Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Days Remaining in Sprint Gadget
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Days Remaining in Sprint Gadget` i ustaw:
 
@@ -132,7 +131,7 @@ Dashboard Gadget Edit Days Remaining in Sprint Gadget
     - Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Sprint Burndown Gadget
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Sprint Burndown Gadget` i ustaw:
 
@@ -143,7 +142,7 @@ Dashboard Gadget Edit Sprint Burndown Gadget
     - Kliknij przycisk `Save`
 
 Dashboard Gadget Edit Health Gadget
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> Twój `Dashboard`
 #. Edytuj gadżet `Sprint Health Gadget` i ustaw:
 
@@ -154,7 +153,7 @@ Dashboard Gadget Edit Health Gadget
     - Kliknij przycisk `Save`
 
 Dashboard Many
---------------
+^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Dashboards` -> `Manage Dashboards`
 #. Create new dashboard (przycisk u góry po prawej)
 #. Name `Imię Team Dashboard` (gdzie Imię, to Twoje imię)

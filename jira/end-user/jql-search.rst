@@ -468,6 +468,9 @@ JQL Search View
 #. Dodać kolumny: `Original Estimate`, `Remaining Estimate`, `Time Spent`
 #. Z menu po prawej stronie u góry wybieramy `Export` -> `CSV (Current Fields)` -> `Delimiter` -> `Comma (,)`
 
+.. note:: Gdyby któraś kolumna (np. `issue type`) mimo zaznaczenia nie była widoczna, odśwież ekran Jiry (nawet kilka razy).
+          Zwróć też uwagę, że kolumna `issue type` jest widoczna jako literka ``T`` i są w niej tylko ikony typów zadań.
+
 JQL Search Basic
 ----------------
 #. Z menu u góry wybierz `Issues` -> `Search for Issues`
