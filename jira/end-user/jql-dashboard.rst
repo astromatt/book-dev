@@ -1,5 +1,5 @@
-Dashboard
-=========
+JQL Dashboard
+=============
 
 
 Rationale

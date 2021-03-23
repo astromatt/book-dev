@@ -93,7 +93,6 @@ Git Bisect
         Virtualization: Docker #time 60m
 
     $ git blame README.rst
-    0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  1) ######################################
     0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  2) DevOps and Development Tools Ecosystem
     0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  3) ######################################
     0cf6c38c (Matt Harasymczuk 2018-01-04 22:59:47 +0100  4)

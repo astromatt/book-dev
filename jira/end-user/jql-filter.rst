@@ -1,10 +1,9 @@
-******
-Filter
-******
+JQL Filter
+==========
 
 
 Rationale
-=========
+---------
 - Tworzenie
 - Subskrypcja
 - Uprawnienia
@@ -21,7 +20,7 @@ Rationale
 
 
 Demonstration
-=============
+-------------
 * Create filter, set name, set permissions (mention `Add`)
 * Create subscription: Every Monday at 5 am
 * Delete subscription (mention, not to delete filter)
@@ -33,10 +32,10 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
 Filter Save
------------
+^^^^^^^^^^^
 #. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Wyszukaj:
 
@@ -64,7 +63,7 @@ Filter Save
 .. note:: W zapytaniu JQL zamiast ``project = "MYPROJECT"`` podstaw swoją nazwę projektu.
 
 Filter Subscription Create
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Wyszukaj ``assignee = currentUser() and statusCategory != Done``
 #. Przycisk trzy kropki `...` obok `Save` -> wybieramy Save as `Imię Todo` (gdzie Imię, to Twoje imię)
@@ -85,7 +84,7 @@ Filter Subscription Create
 .. note:: Zwróć uwagę, że przycisk trzy kropki `...` obok `Save` pojawi się tylko wtedy, kiedy edytujesz filtr oraz jego zapytanie `JSQ` jest zmodyfikowane. Jeżeli tworzysz nowy filtr, to przycisk trzech kropek się nie pojawi.
 
 Filter Subscription Delete
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry `Issues` wybrać `Manage filters` (na dole)
 #. Wybierz filtr z aktywną subskrypcją
 #. Kliknij na link `1 Subscription`
@@ -93,7 +92,7 @@ Filter Subscription Delete
 #. Uwaga: usuń tylko subskrypcję a nie filtr! - będziemy z niego jeszcze korzystać
 
 Filter Edit
------------
+^^^^^^^^^^^
 #. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Z `Favourite Filters` (menu po lewej) wybrać `Imię Todo` (gdzie Imię, to Twoje imię)
 #. Zmodyfikuj zapytanie:
@@ -108,7 +107,7 @@ Filter Edit
 #. kliknij `Search` a następnie `Save`
 
 Filter Board Create
--------------------
+^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> `View all boards`
 #. Kliknij przycisk `Create board` (przycisk u góry po prawej)
 #. Wybierz `Create a Kanban board` -> `Board from an existing Saved Filter` -> `Next`
@@ -117,7 +116,7 @@ Filter Board Create
 #. Kliknij przycisk `Create board`
 
 Filter Board Edit
------------------
+^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> `View all boards` -> `Imię Todo` (gdzie Imię, to Twoje imię)
 #. Przycisk `Board` (u góry po prawej) -> `Configure` -> Na zakładce `General` -> `Edit Filter Query`
 #. Popraw zapytanie:
@@ -136,7 +135,7 @@ Filter Board Edit
 #. Zobacz czy nie ma zadań typu `Epic`
 
 Filter Board Portfolio
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu `Issues` wybrać `Search for Issues` w trybie `Advanced`
 #. Stwórz filtr, który wyszukuje w Twoim projekcie zadań typu `Epic`
 #. Nazwij filtr: `Imię Portfolio` (gdzie Imię, to Twoje imię)
@@ -154,7 +153,7 @@ Filter Board Portfolio
 .. note:: Board nie może korzystać z Kanban Backlog, a dokładnie z opcji `Epics panel`. Jeżeli ta opcja w konfiguracji board jest włączona, to Epiki zostaną wykorzystane jako panel w widoku backlog (a tego nie chcemy).
 
 Filter Board Delete
--------------------
+^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Boards` -> `View all Boards`
 #. Poszukaj swojego Board `Imię Todo` (gdzie Imię, to Twoje imię)
 #. kliknij trzy kropeczki `...` po prawej stronie

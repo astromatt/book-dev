@@ -83,8 +83,8 @@ Planning and Refinement
 .. figure:: ../_img/agile-decomposition-05-ordering.jpg
 .. figure:: ../_img/agile-decomposition-06-ordered.jpg
 .. figure:: ../_img/agile-decomposition-07-todecompose.jpg
-.. figure:: ../_img/agile-decomposition-08-decomposition.jpg
 .. figure:: ../_img/scrum-userstory.png
+.. figure:: ../_img/agile-decomposition-08-decomposition.jpg
 .. figure:: ../_img/agile-decomposition-09-ordering.jpg
 .. figure:: ../_img/agile-decomposition-10-ordered.jpg
 .. figure:: ../_img/agile-decomposition-11-estimation-resample.png
@@ -97,6 +97,27 @@ Planning and Refinement
 .. figure:: ../_img/agile-decomposition-18-board.jpg
 .. figure:: ../_img/agile-decomposition-19-risk.jpg
 .. figure:: ../_img/agile-decomposition-20-portfolio.jpg
+
+
+Scrum vs Kanban
+---------------
+- Kanban
+- Scrum
+- Scrum + Kanban
+- Portfolio
+- Scrum vs. Kanban
+- Scrum and Kanban
+
+    - Scrum -> Product Development (Story)
+    - Kanban -> Maintenance and Bug-fixing (Task)
+    - Team constitution and good practices
+
+.. figure:: ../_img/jira-board-select.jpg
+.. figure:: ../_img/agility-bigpicture-simple.png
+.. figure:: ../_img/agility-bigpicture-advanced.png
+.. figure:: ../_img/scrum-sprint-week-continuous.png
+.. figure:: ../_img/scrum-daily-timer.png
+
 
 
 References

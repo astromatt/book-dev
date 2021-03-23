@@ -1,15 +1,14 @@
-**************
-Project Config
-**************
+Project Configure
+=================
 
 
 Rationale
-=========
+---------
 - Issue Collector
 
 
 Project Configuration
-=====================
+---------------------
 - Versions
 - Components
 - Users and Roles
@@ -18,7 +17,7 @@ Project Configuration
 
 
 Demonstration
-=============
+-------------
 * Go to project settings
 * Change project avatar
 * Change project name
@@ -29,16 +28,16 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
-Project Details
----------------
+Project Configure Details
+^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Zakładka `Details` -> zmień awatar swojego projektu na rakietę
 #. Zakładka `Details` -> zmień nazwę swojego projektu na `Imię N.` (z kropką na końcu)
 
-Project Components
-------------------
+Project Configure Components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Components`
 #. Dodaj: `Frontend`, `Backend`, `Database`
@@ -47,15 +46,15 @@ Project Components
     * dodać komponent należy wpisać jego nazwę (w polu po lewej)
     * z ostatniej listy rozwijanej (po prawej przy zaraz koło przycisku add) wybrać jedną z opcji np. `Unassigned`
 
-Project Roles
--------------
+Project Configure Roles
+^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Users and roles`
 #. Dodaj siebie do roli `Administrators`
 #. Dodaj użytkownika `admin` do roli `Developers`
 
-Project Fields
---------------
+Project Configure Fields
+^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Issue Types`
 #. Wybierz `Task`, a następnie w prawym górnym rogu wybierz przycisk `Fields` -> dodaj pole `Due Date`, usuń pole `Labels`

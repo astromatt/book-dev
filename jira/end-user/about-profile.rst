@@ -1,5 +1,5 @@
-Profile
-=======
+About Profile
+=============
 
 
 Profile
@@ -21,8 +21,8 @@ Demonstration
 Assignments
 -----------
 
-Profile Configuration
-^^^^^^^^^^^^^^^^^^^^^
+About Profile Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Prawy górny róg -> kliknij na `Avatar` (obrazek użytkownika) -> `Profile`
 #. Przejdź do swojego profilu
 #. Ustaw strefę czasową na `Europe/Warsaw (GMT+01:00)`

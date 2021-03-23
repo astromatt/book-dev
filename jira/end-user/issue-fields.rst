@@ -1,5 +1,62 @@
-Issue
-=====
+Issue Fields
+============
+
+
+Main Fields
+-----------
+* `Status`
+* `Sub-Tasks`
+* `Issue Type`
+
+
+Date Fields
+-----------
+* `Created Date`
+* `Updated Date`
+* `Due Date`
+* `Start Date` (Jira Cloud)
+
+
+User Picker
+-----------
+* `Assignee`
+* `Reporter`
+* `Watchers`
+
+
+Text Field
+----------
+* `Summary`
+* `Description`
+* `Comments`
+
+Description:
+
+    * Acceptance criteria
+    * Description: **INFO**
+    * Description: **BEFORE**
+    * Description: **TODO**
+    * Description: **AFTER**
+    * using (/) and (x)
+
+
+Label Field
+-----------
+* `Labels`
+* `Components`
+
+
+Other Fields
+------------
+* `Attachment`
+* `Linked Issues`
+* `Votes`
+
+
+Jira Software
+-------------
+* `Sprint`
+* `Epic Link`
 
 
 Priority
@@ -13,49 +70,21 @@ Priority
 * `Urgent`, `Important`, `Standard`
 
 
-Description
------------
-- Acceptance criteria
-- Description: **INFO**
-- Description: **BEFORE**
-- Description: **TODO**
-- Description: **AFTER**
-- using (/) and (x)
-
-
-Date Fields
------------
-* `Created Date`
-* `Updated Date`
-* `Due Date`
-* `Start Date` (Jira Cloud)
-
-
-Other Fields
-------------
-* `Summary`
-* `Comments`
-* `Reporter`
-* `Assignee`
-* `Labels`
-* `Components`
-* `Attachment`
-* `Linked Issues`
-* `Epic Link`
-* `Sprint`
-* `Status`
-* `Sub-Tasks`
-* `Votes`
-* `Watchers`
-
-* `Created Date`
-* `Updated Date`
-* `Due Date`
-* `Issue Type`
-* `Description`
+Version
+-------
 * `Fix Version/s`
 * `Affects Version/s`
-* `Priority`
+
+Affects Version/s:
+
+    * MyApp 1.0 (assume this is unsupported)
+    * MyApp 2.0
+    * MyApp 3.0
+
+Fix Version/s:
+
+    * MyApp 2.0.1
+    * MyApp 3.0.5
 
 
 Custom Fields
@@ -73,23 +102,22 @@ Demonstration
 -------------
 * Edit issue and modify values
 * Change inline issue field value
-* Bulk change multiple issues in backlog
 * Edit issue and create issue link
-* Create issue subtask and change priority
-* Bulk change multiple issues in backlog
+* Change priority
+* Create custom fields
 
 
 Assignments
 -----------
 
-Issue Priority
-^^^^^^^^^^^^^^
+Issue Fields Priority
+^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Edytuj zadanie `One`
 #. Ustaw `Priority` na `Highest`
 
-Issue Links
-^^^^^^^^^^^
+Issue Fields Issue Link
+^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
 #. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
 #. Powiąż zadanie linkami:
@@ -98,27 +126,3 @@ Issue Links
     * `Issue`: `Eight`
 
 .. note:: Jeżeli po wpisaniu słowa `Eight` w pole `Linked Issue` Jira nie znajduje zadania, to spróbuj wpisać klucz zadania, np. ``MH-8``. Wtedy Jira powinna podpowiedzieć pełną nazwę zadania.
-
-Issue Sub-Tasks
-^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
-#. Edytuj zadanie `Nine` (skrót klawiszowy ``e``)
-#. Dodaj trzy sub-taski:
-
-    * Summary: `A`, Priority: `Highest`
-    * summary: `B`, Priority: `Low`
-    * summary: `C`, Priority: `Medium`
-
-Issue Bulk Change
-^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` -> `Backlog` (w menu po lewej stronie)
-#. Zaznacz zadania (trzymając `ctrl` lub `cmd`): `Two`, `Four`, `Six`, `Eight`
-#. Kliknij prawym klawiszem myszy -> `Bulk Change` -> `Edit Issues` -> `Next`
-#. Zmień issue type na `Task`
-#. Rozwiń na dole `Unavailable Actions` i zobacz co tam jest
-#. Kliknij `Next` (na dole)
-#. Potwierdzamy `Confirm`
-#. Po chwili klikamy `Refresh`
-#. Po ukończeniu klikamy `Ok, got it`
-
-.. note:: Zwróć uwagę, że po zmianie część zadań w backlog nie ma estymacji w `Story Point`. Te wartości nie zniknęły i są nadal przypisane do zadania, ale na obecnym widoku są ukryte. `Story Points` (jak sama nazwa wskazuje) domyślnie mogą być przyznawane tylko zadaniom typu `Story`. Można to zmienić w konfiguracji (wymaga uprawnień administratora) `Custom Field` -> `Story Points` -> Ikona trybiku (po prawej) -> `Configure` -> `Applicable contexts for scheme` -> `Edit Configuration`.

@@ -2,27 +2,8 @@ Issue Actions
 =============
 
 
-Statusy
--------
-* `To Do`
-* `In Progress`
-* `Done`
-* `In Review`
-* `Waiting / Blocked`
-* `In Test`
-
-
-Resolutions
------------
-* `Done`
-* `Won't Do`
-* `Duplicate`
-* `Cannot Reproduce`
-
-
 Issue Actions
 -------------
-* `Workflow Actions` (`Open`, `In Progress`, `Done`)
 * `Voting`
 * `Watching`
 * `Add Attachments`
@@ -33,10 +14,12 @@ Issue Actions
 * `Keyboard Shortcuts`
 * `Comment`
 
-    - Mentions
-    - Rich Text Editing
-    - Tworzenie tabelek
-    - Używanie formatowania
+Comments
+--------
+* Mentions
+* Rich Text Editing
+* Tworzenie tabelek
+* Używanie formatowania
 
 
 Demonstration

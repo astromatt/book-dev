@@ -1,20 +1,22 @@
-*************************
-JQL - JIRA Query Language
-*************************
+JQL Search
+==========
+
+
+Rationale
+---------
+* JQL - JIRA Query Language
 
 
 Where to find?
-==============
+--------------
 * `Issues` -> `Search for Issues`
-
-    * `Basic` -> `Advanced`
-    * `Detail View` -> `List View`
-
-- Konfiguracja kolumn wyświetlania
+* `Basic` -> `Advanced`
+* `Detail View` -> `List View`
+* Konfiguracja kolumn wyświetlania
 
 
 Where is used?
-==============
+--------------
 * Searching Issues
 * Board Configuration
 * Filters for Dashboard
@@ -24,7 +26,9 @@ Where is used?
 
 
 Operators
-=========
+---------
+* Operators capital letter
+
 .. csv-table:: Operators
     :header: "Operator", "Description"
     :widths: 5, 95
@@ -45,7 +49,7 @@ Operators
 
 
 View
-====
+----
 - Konfiguracja kolumn wyświetlania
 - Import / Export CSV
 
@@ -54,10 +58,6 @@ View
 
 - Limit wyświetlania wyników dla JQL (change: `General Configuration` -> `Advanced Settings` -> ``jira.search.views.default.max``)
 
-
-JQL Examples
-============
-* Operators capital letter
 
 Select issues
 -------------
@@ -109,6 +109,7 @@ Select issues
 
     Flagged IS NOT EMPTY
 
+
 Ordering
 --------
 .. code-block:: sql
@@ -120,6 +121,7 @@ Ordering
 
     project = "MYPROJECT"
         ORDER BY priority DESC, key ASC
+
 
 Complex queries
 ---------------
@@ -153,7 +155,6 @@ Complex queries
 .. code-block:: sql
 
     project = "MYPROJECT"
-        AND assignee = "admin"
         AND (Flagged IS NOT EMPTY
              OR updated >= -1d
              OR statusCategory = "In Progress")
@@ -245,8 +246,19 @@ Functions
 
     Sprint IN futureSprints()
 
+
 Queries in History
 ------------------
+.. code-block:: sql
+
+    AFTER "date"
+    BEFORE "date"
+    BY "username"
+    DURING ("date1", "date2")
+    ON "date"
+    FROM "oldvalue"
+    TO "newvalue"
+
 .. code-block:: sql
 
     project = "MYPROJECT"
@@ -300,16 +312,6 @@ Queries in History
 .. code-block:: sql
 
     status CHANGED BY currentUser()
-
-.. code-block:: sql
-
-    AFTER "date"
-    BEFORE "date"
-    BY "username"
-    DURING ("date1", "date2")
-    ON "date"
-    FROM "oldvalue"
-    TO "newvalue"
 
 .. code-block:: sql
 
@@ -371,9 +373,6 @@ Queries in History
         BEFORE endOfWeek()
 
 
-Useful Queries
-==============
-
 My issues To Do
 ---------------
 .. code-block:: sql
@@ -395,6 +394,7 @@ My issues To Do
         AND assignee = currentUser()
         ORDER BY priority DESC, key ASC
 
+
 Tracking reported issues
 ------------------------
 .. code-block:: sql
@@ -408,6 +408,7 @@ Tracking reported issues
     project = "IT Support"
         AND reporter = currentUser()
         AND statusCategory != "Done"
+
 
 Tracking team members work
 --------------------------
@@ -428,6 +429,7 @@ Tracking team members work
         AND updated >= startOfWeek()
         AND updated <= endOfWeek()
 
+
 Daily
 -----
 .. code-block:: sql
@@ -439,14 +441,14 @@ Daily
              OR statusCategory = "In Progress")
 
 
-More info
-=========
+Further Reading
+---------------
 * https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-939938733.html
 * https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html
 
 
 Demonstration
-=============
+-------------
 * Change: list view, add headers, sort headers, order data
 * Change: basic -> advanced
 * Show: export CSV, bulk change
@@ -455,10 +457,10 @@ Demonstration
 
 
 Assignments
-===========
+-----------
 
 JQL Search View
----------------
+^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Issues` -> `Search for Issues`
 #. `Change View` [przycisk po prawej stronie] zmień na `List View`
 #. `Columns` [przycisk po prawej stronie]: Odznaczyć: `Created`, `Updated`, `Development`
@@ -468,11 +470,10 @@ JQL Search View
 #. Dodać kolumny: `Original Estimate`, `Remaining Estimate`, `Time Spent`
 #. Z menu po prawej stronie u góry wybieramy `Export` -> `CSV (Current Fields)` -> `Delimiter` -> `Comma (,)`
 
-.. note:: Gdyby któraś kolumna (np. `issue type`) mimo zaznaczenia nie była widoczna, odśwież ekran Jiry (nawet kilka razy).
-          Zwróć też uwagę, że kolumna `issue type` jest widoczna jako literka ``T`` i są w niej tylko ikony typów zadań.
+.. note:: Gdyby któraś kolumna (np. `issue type`) mimo zaznaczenia nie była widoczna, odśwież ekran Jiry (nawet kilka razy). Zwróć też uwagę, że kolumna `issue type` jest widoczna jako literka ``T`` i są w niej tylko ikony typów zadań.
 
 JQL Search Basic
-----------------
+^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Issues` -> `Search for Issues`
 #. Upewnij się, że jesteś w trybie wyszukiwania: `Basic`
 #. `Project` -> swój projekt
@@ -484,7 +485,7 @@ JQL Search Basic
 #. Zmień zakres `Due Date` -> `In range -7d to ...`` [pozostaw niewypełnione]
 
 JQL Search Advanced
--------------------
+^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Issues` -> `Search for Issues`
 #. Upewnij się, że jesteś w trybie wyszukiwania: `Advanced`
 #. Kliknij link Advanced z paska wyszukiwania
@@ -504,7 +505,7 @@ JQL Search Advanced
 #. Wyszukaj: ``assignee = currentUser() and statusCategory != Done``
 
 JQL Search Bulk Change
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Issues` -> `Search for Issues`
 #. Upewnij się, że jesteś w trybie wyszukiwania: `Advanced`
 #. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie `MYPROJECT` to nazwa Twojego projektu)

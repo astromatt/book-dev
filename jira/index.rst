@@ -1,6 +1,5 @@
 .. include:: README.rst
 
-************
 Introduction
 ************
 .. toctree::
@@ -13,7 +12,6 @@ Introduction
     introduction/keyboard-shortcuts.rst
 
 
-********
 End-User
 ********
 .. toctree::
@@ -30,12 +28,15 @@ End-User
     end-user/project-versions.rst
 
     end-user/issue-create.rst
+    end-user/issue-backlog.rst
     end-user/issue-fields.rst
     end-user/issue-actions.rst
     end-user/issue-timetracking.rst
+    end-user/issue-workflow.rst
 
     end-user/board-agile.rst
-    end-user/board-usage.rst
+    end-user/board-scrum.rst
+    end-user/board-kanban.rst
     end-user/board-estimation.rst
     end-user/board-configuration.rst
     end-user/board-reports.rst
@@ -48,7 +49,6 @@ End-User
     introduction/further-reading.rst
 
 
-**************
 Administration
 **************
 .. toctree::
@@ -70,7 +70,6 @@ Administration
     administration/automation.rst
 
 
-*********************
 System Administration
 *********************
 .. toctree::
@@ -89,7 +88,7 @@ System Administration
     system-administration/api-scripting.rst
     system-administration/automation.rst
 
-**********
+
 References
 **********
 .. toctree::

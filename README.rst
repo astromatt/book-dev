@@ -1,4 +1,3 @@
-##########################################################################
 The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
 ##########################################################################
 
@@ -20,7 +19,7 @@ The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow
     :widths: 15, 65
 
     "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"
-    "email", "book@astronaut.center"
+    "email", "matt@astrotech.io"
     "www", "https://www.astronaut.center"
     "github", "https://github.com/astromatt"
     "linkedin", "https://linkedin.com/in/mattharasymczuk"

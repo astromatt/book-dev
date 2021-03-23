@@ -1,126 +1,18 @@
-Board Usage
-===========
+Board Kanban
+============
 
 
-Project Management
-------------------
-- Kanban
-- Scrum
-- Scrum + Kanban
-- Portfolio
-- Scrum vs. Kanban
-
-    - Scrum -> Rozwój (Story)
-    - Kanban -> Utrzymanie (Task)
-    - Praca w Scrum i Kanban jednocześnie
-    - Konstytucja zespołu i dobre praktyki
-
-.. figure:: ../_img/jira-board-select.jpg
-.. figure:: ../_img/agility-bigpicture-simple.png
-.. figure:: ../_img/agility-bigpicture-advanced.png
-.. figure:: ../_img/scrum-sprint-week-continuous.png
-.. figure:: ../_img/scrum-daily-timer.png
-
-
-Scrum
------
-- Backlog
-- Sprintlog
-- Task board
-
-.. figure:: ../_img/jira-board-backlog-scrum.png
-.. figure:: ../_img/jira-board-sprint.png
-
-
-Epic
-----
-- Brak worków (np. Poprawki błędów)
-- Doważalne (określone w czasie, mają datę początku i końca)
-- Wymagalność:
-
-    - `Due Date`
-    - `Start Date`
-    - `Assignee`
-
-- Optymalna długość
-- Kategoryzowanie
-- Timeline i roadmapa
-- Planowanie kwartalne
-- Przypisywanie Epiców do wersji
-- Board epików
-- Business Value epików
-
-
-Sprints
--------
-- Wielkość (ilość zadań, capacity chart)
-- Sprint Goal
-- Sprint Duration (week)
-- Sprint Name (YYYY-MM week N):
-
-    * 2000-01 week 1
-    * 2000-01 week 2
-    * 2000-01 week 3
-    * 2000-01 week 4
-    * 2000-02 week 1
-    * 2000-02 week 2
-    * 2000-02 week 3
-
-..   figure:: ../_img/scrum-capacity-sprint.png
-
-
-Active Sprint
--------------
-- Open and close sprint
-- Flag issues
-- Scope changes
-
-
-Estimation
-----------
-- Time Estimate
-- Manday
-- Story Point (SML, Fibonacci, Planning Poker)
-- Business Value
-- ``#NoEstimates`` and Monte Carlo simulation:
-
-    * https://www.infoq.com/presentations/monte-carlo
-    * https://docs.google.com/spreadsheets/d/1BmSuj1jA2ZfhUBzPtqDBqDjMjSXMqj3QoHZGR-TesOA/edit#gid=542217325
-
-
-Metrics
--------
-- Velocity
-- Capacity
-- Maturity
-
-.. figure:: ../_img/scrum-capacity-backlog.png
-
-
-Planning and Refinement
------------------------
-- Estimation
-- How big your tasks should be?
-- Estimation support systems
-- Sprint goal
-- Acceptance Criteria
-- Definition of Done
-- Time Tracking
-
-
-Roadmap
--------
-.. figure:: ../_img/jira-board-roadmap.png
-
-
-Kanban
-------
+Rationale
+---------
 - What’s Kanban?
 - Pull system
 - JIT
 - Context switching
 - Kanban Board
-- Improvement:
+
+
+Improvement
+-----------
 
     - Muda
     - Jidoka
@@ -129,15 +21,23 @@ Kanban
     - Metrics
     - Lean
 
-- Workflow:
 
-    - Columns
-    - Swimlanes
-    - Expedite
-    - Priority
-    - SLA
+Kanban Board
+------------
+- Workflow
+- Columns
+- Swimlanes
+- Expedite
+- Priority
+- SLA
 
 .. figure:: ../_img/jira-board-backlog-kanban.png
+
+
+Backlog
+-------
+* Kanban backlog
+* Sub-Task view (expand)
 
 
 Demonstration

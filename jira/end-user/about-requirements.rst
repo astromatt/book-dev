@@ -1,5 +1,5 @@
-Requirements
-============
+About Requirements
+==================
 
 
 Requirements
@@ -15,15 +15,15 @@ Requirements
 Assignments
 -----------
 
-Requirements Access
-^^^^^^^^^^^^^^^^^^^
+About Requirements Access
+^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Wejdź na stronę Jiry na adres podany przez prowadzącego
 #. Zaloguj się wykorzystując swoje imię jako login i hasło (bez polskich znaków i z małej litery)
 
-Requirements Admin
-^^^^^^^^^^^^^^^^^^
+About Requirements Admin
+^^^^^^^^^^^^^^^^^^^^^^^^
 #. Poproś trenera o nadanie uprawnień administracyjnych w Jirze
 
-Requirements View
-^^^^^^^^^^^^^^^^^
+About Requirements View
+^^^^^^^^^^^^^^^^^^^^^^^
 #. Po zalogowaniu wybierz `Explore Projects`

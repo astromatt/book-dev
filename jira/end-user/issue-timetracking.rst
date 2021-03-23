@@ -36,8 +36,8 @@ Demonstration
 Assignments
 -----------
 
-Issue Log Work
-^^^^^^^^^^^^^^
+Issue TimeTracking LogWork
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej stronie)
 #. Wybierz dowolne zadanie i otwórz szczegóły zadania na nowej zakładce w przeglądarce
 #. Wybierz z menu trzech kropek ``...`` (u góry) -> `Log Work`

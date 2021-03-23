@@ -5,7 +5,7 @@ Jira Licensing
 
 Rationale
 =========
-* Cloud vs. Server [JiraDocumentation]_
+* Cloud vs. Server [#JiraDocumentation]_
 * Ilość użytkowników
 * Długość trwania licencji
 * Co po zakończeniu okresu?
@@ -29,34 +29,52 @@ For Data Center:
 * Updates to future pricing: To reflect these investments and accelerate further innovation, we will increase the price of our Data Center subscriptions.
 
 
-Self-managed
-============
+Data Center
+===========
 * One time payment
 * Perpetual license
 * Free year of maintenance
-* https://www.atlassian.com/software/jira/pricing?tab=self-managed
 
-* 10 users - 10 USD one time payment
-* 25 users - 3,500 USD one time payment
-* 50 users - 6,800 USD one time payment
-* 100 users - 13,300 USD one time payment
-* 250 users - 26,400 USD one time payment
-* 500 users - 40,000 USD one time payment
-* 2,000 users - 60,000 USD one time payment
-* 10,000 users - 120,000 USD one time payment
-* 10,001+ users - 200,000 USD one time payment
+* 500 users - 42,000 USD
+* 1,000 users - 72,000 USD
+* 2,000 users - 120,000 USD
+* 3,000 users - 165,000 USD
+* 4,000 users - 210,000 USD
+* 5,000 users - 255,000 USD
+* 6,000 users - 300,000 USD
+* 7,000 users - 345,000 USD
+* 8,000 users - 390,000 USD
+* 9,000 users - 435,000 USD
+* 10,000 users - 480,000 USD
+* 15,000 users - 525,000 USD
+* 20,000 users - 570,000 USD
+* 25,000 users - 615,000 USD
+* 30,000 users - 660,000 USD
+* 35,000 users - 705,000 USD
+* 40,000 users - 750,000 USD
+* 45,000 users - 795,000 USD
+* 50,000 users - 840,000 USD
+* 50,001+ users - 885,000 USD
+
+* Source: [#JiraPricingDataCenter]_
 
 
 Cloud
 =====
 * Monthly per user
-* https://www.atlassian.com/software/jira/pricing
 
-* 10 users - 0 USD monthly per user
-* 1,000 users - 7 USD monthly per user
-* 10,000 users - 14 USD monthly per user
+* 10 users - 0 USD (Free)
+* 1,000 users - 7 USD (Standard)
+* 10,000 users - 14 USD (Premium)
+* 10,000 users - Quote (Enterprise)
+
+* Source: [#JiraPricingCloud]_
 
 
 References
 ==========
-.. [JiraDocumentation] Atlassian Jira Official Documentation URL: https://confluence.atlassian.com/jirasoftwareserver/ Accessed: 2019-01-23
+.. [#JiraDocumentation] Atlassian Jira Official Documentation. Accessed: 2019-01-23. URL: https://confluence.atlassian.com/jirasoftwareserver/
+
+.. [#JiraPricingCloud] Cloud - Plans and pricing. Accessed: 2019-03-23. URL: https://www.atlassian.com/software/jira/pricing?tab=cloud
+
+.. [#JiraPricingDataCenter] Data Center - Plans and pricing. Accessed: 2019-03-23. URL: https://www.atlassian.com/software/jira/pricing?tab=data-center

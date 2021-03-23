@@ -1,6 +1,6 @@
 project = 'The Software Engineering'
 author = 'Matt Harasymczuk'
-email = 'book-dev@astrotech.io'
+email = 'matt@astrotech.io'
 
 language = 'en'
 html_theme = 'sphinx_rtd_theme'

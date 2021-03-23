@@ -1,17 +1,16 @@
-**************
 Project Create
-**************
+==============
 
 
 Rationale
-=========
+---------
 * What is Jira project
 * How Jira project relates to your projects?
 * Scrum vs Kanban project boards
 
 
 Project Attributes
-==================
+------------------
 * Project Type
 * Project Name
 * Project Key
@@ -19,7 +18,7 @@ Project Attributes
 
 
 Categories
-==========
+----------
 * Department
 * Team
 * Project
@@ -27,13 +26,13 @@ Categories
 
 
 Project Name
-============
+------------
 * Can be changed
 * Filters in JQL are using it (so it might break things)
 
 
-Issue key
-=========
+Issue Key
+---------
 * Can be Changed, but a lot of stuff is using it (so a lot of things my break)
 * short
 * easy to remember
@@ -41,16 +40,16 @@ Issue key
 
 
 Demonstration
-=============
+-------------
 * View all projects
 * Create project: scrum project, set name, set key, set project lead
 
 
 Assignments
-===========
+-----------
 
-Basics Project Create
----------------------
+Project Create New
+^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> `View Projects`
 #. Kliknij przycisk `Create Projects` (prawy górny róg)
 #. Kliknij przycisk `Scrum software development` -> Next

@@ -1,10 +1,9 @@
-****************
 Project Versions
-****************
+================
 
 
 Versions
-========
+--------
 * Semantic Versioning:
 
     * ``major.minor.bugfix`` (``1.0.0``, ``1.0.1``, ``1.1.0``. ``2.0.0``)
@@ -24,32 +23,18 @@ Versions
 .. figure:: ../_img/jira-release-overview.png
 
 
-AffectsVersion vs FixVersion
-============================
-Affects Version/s:
-
-    * MyApp 1.0 (assume this is unsupported)
-    * MyApp 2.0
-    * MyApp 3.0
-
-Fix Version/s:
-
-    * MyApp 2.0.1
-    * MyApp 3.0.5
-
-
 Demonstration
-=============
+-------------
 * Add versions
 * Change version start and end date
 * Reorder versions
 
 
 Assignments
-===========
+-----------
 
-Project Versions
-----------------
+Project Versions Add
+^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Przejdź na zakładkę `Versions`
 #. Dodając wersje w tym zadaniu nie musisz ustawiać dat rozpoczęcia i zakończenia
