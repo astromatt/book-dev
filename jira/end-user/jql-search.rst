@@ -437,9 +437,26 @@ Daily
     project = "MYPROJECT"
         AND sprint IN openSprints()
         AND (Flagged IS NOT EMPTY
-             OR updated >= -1d
-             OR statusCategory = "In Progress")
+             OR statusCategory = "In Progress"
+             OR updated >= -1d)
 
+.. code-block:: sql
+
+    project = "MYPROJECT" AND (
+        priority = Must
+        OR Flagged IS NOT EMPTY
+        OR statusCategory = "In Progress")
+
+.. code-block:: sql
+
+    project = "MYPROJECT" AND (
+        priority = Must
+        OR Flagged IS NOT EMPTY
+        OR statusCategory = "In Progress"
+        OR statusCategory in ("To Do", "Done")
+        AND (updated >= startOfDay(-1d)
+            OR (updated <= startOfWeek(1d)
+            AND updated >= startOfDay(-3d))))
 
 Further Reading
 ---------------
