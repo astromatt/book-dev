@@ -73,8 +73,8 @@ Cloud
 
 References
 ==========
-.. [#JiraDocumentation] Atlassian Jira Official Documentation. Accessed: 2019-01-23. URL: https://confluence.atlassian.com/jirasoftwareserver/
+.. [#JiraDocumentation] Atlassian Jira Official Documentation. Accessed: 2021-04-07. URL: https://confluence.atlassian.com/jirasoftwareserver/
 
-.. [#JiraPricingCloud] Cloud - Plans and pricing. Accessed: 2019-03-23. URL: https://www.atlassian.com/software/jira/pricing?tab=cloud
+.. [#JiraPricingCloud] Cloud - Plans and pricing. Accessed: 2021-04-07. URL: https://www.atlassian.com/software/jira/pricing?tab=cloud
 
-.. [#JiraPricingDataCenter] Data Center - Plans and pricing. Accessed: 2019-03-23. URL: https://www.atlassian.com/software/jira/pricing?tab=data-center
+.. [#JiraPricingDataCenter] Data Center - Plans and pricing. Accessed: 2021-04-07. URL: https://www.atlassian.com/software/jira/pricing?tab=data-center
