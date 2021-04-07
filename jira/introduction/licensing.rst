@@ -1,10 +1,9 @@
-**************
 Jira Licensing
-**************
+==============
 
 
 Rationale
-=========
+---------
 * Cloud vs. Server [#JiraDocumentation]_
 * Ilość użytkowników
 * Długość trwania licencji
@@ -14,7 +13,7 @@ Rationale
 
 
 Cloud Transition
-================
+----------------
 .. warning:: Atlassian is making changes to server and Data Center products, including the end of sale for new server licenses on February 2, 2021 and the end of support for server on February 2, 2024. https://www.atlassian.com/migration/journey-to-cloud
 
 For server:
@@ -30,7 +29,7 @@ For Data Center:
 
 
 Data Center
-===========
+-----------
 * One time payment
 * Perpetual license
 * Free year of maintenance
@@ -60,7 +59,7 @@ Data Center
 
 
 Cloud
-=====
+-----
 * Monthly per user
 
 * 10 users - 0 USD (Free)
@@ -71,10 +70,24 @@ Cloud
 * Source: [#JiraPricingCloud]_
 
 
+Atlassian Access
+----------------
+* Enterprise-grade security and centralized administration across all your Atlassian cloud products.
+* Active Directory Sync
+* SAML Single Sign-on (SSO)
+* Audit log
+
+* $3 / month / user - First 10-250
+* $2 / month / user - Next 251-1000
+* $1 / month / user - Next 1001+
+
+
 References
-==========
+----------
 .. [#JiraDocumentation] Atlassian Jira Official Documentation. Accessed: 2021-04-07. URL: https://confluence.atlassian.com/jirasoftwareserver/
 
 .. [#JiraPricingCloud] Cloud - Plans and pricing. Accessed: 2021-04-07. URL: https://www.atlassian.com/software/jira/pricing?tab=cloud
 
 .. [#JiraPricingDataCenter] Data Center - Plans and pricing. Accessed: 2021-04-07. URL: https://www.atlassian.com/software/jira/pricing?tab=data-center
+
+.. [#AtlassianAccessPricing] Atlassian Access - How much does Atlassian Access cost?.  Accessed: 2021-04-07. URL: https://www.atlassian.com/software/access/pricing
