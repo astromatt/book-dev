@@ -14,7 +14,7 @@ Rationale
 
 Cloud Transition
 ----------------
-.. warning:: Atlassian is making changes to server and Data Center products, including the end of sale for new server licenses on February 2, 2021 and the end of support for server on February 2, 2024. https://www.atlassian.com/migration/journey-to-cloud
+.. warning:: Atlassian is making changes to server and Data Center products, including the end of sale for new server licenses (cease new feature development in our server product line) on February 2, 2021 and the end of support for server on February 2, 2024. On February 2, 2021 PT, we will increase the price of maintenance for existing server licenses to ensure the continued security and maintenance of our server platform. https://www.atlassian.com/migration/journey-to-cloud
 
 For server:
 

@@ -10,7 +10,7 @@ todo_include_todos = True
 suppress_warnings = ['toc.secnum']
 
 extensions = [
-    'sphinxcontrib.bibtex',
+    #'sphinxcontrib.bibtex',
     'sphinx.ext.todo',
 ]
 
