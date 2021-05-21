@@ -209,10 +209,13 @@ Version Control System:
     * GIT
     * Mercurial
     * SVN
+    * Perforce
+    * CVS
 
 Server:
 
     * GitLab
+    * Gitea
     * Bitbucket Server
     * Github Enterprise
     * Gerrit
@@ -220,6 +223,7 @@ Server:
 Cloud:
 
     * GitLab
+    * Gitea
     * GitHub
     * Bitbucket Cloud
 

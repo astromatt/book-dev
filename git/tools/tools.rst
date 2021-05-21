@@ -13,6 +13,7 @@ In the Cloud
 * GitHub
 * Bitbucket Cloud
 * GitLab
+* Gitea
 
 On Premise
 ----------
