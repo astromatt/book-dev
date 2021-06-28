@@ -8,6 +8,8 @@ Rationale
 * How Jira project relates to your projects?
 * Scrum vs Kanban project boards
 
+.. figure:: ../_img/jira-project.png
+
 
 Project Attributes
 ------------------
@@ -16,13 +18,16 @@ Project Attributes
 * Project Key
 * Project Lead
 
+.. figure:: ../_img/jira-project-types.png
+
 
 Categories
 ----------
-* Department
-* Team
 * Project
 * Product
+* Team
+
+.. figure:: ../_img/jira-project-categories.png
 
 
 Project Name

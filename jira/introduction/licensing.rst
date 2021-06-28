@@ -11,6 +11,8 @@ Rationale
 * Jira Core vs. Software vs. Service Desk
 * Evaluation license
 
+.. figure:: ../_img/jira-product-family.png
+
 
 Cloud Transition
 ----------------
@@ -26,6 +28,9 @@ For Data Center:
 
 * The future of Data Center: If you aren’t ready to move to cloud, we'll continue to offer our self-managed enterprise edition, Data Center. In addition to continued investment in new features, we’ll look to make using cloud and Data Center together easier for you and your users through a more unified administration experience and improved integrations between the two offerings.
 * Updates to future pricing: To reflect these investments and accelerate further innovation, we will increase the price of our Data Center subscriptions.
+
+
+.. figure:: ../_img/jira-product-timeline.png
 
 
 Data Center

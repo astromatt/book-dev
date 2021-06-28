@@ -57,4 +57,4 @@ Project Versions Edit
     * `Release Data`: `2000-06-30`
     * Zaakceptuj klikając `Save`
 
-.. note:: Wpisuj daty w formacie `1/4/2000`, wtedy kalendarz pozwoli Ci łatwiej wybrać datę z przeszłości.
+.. note:: Wpisuj daty w formacie `6/30/2000` (US Format), wtedy kalendarz pozwoli Ci łatwiej wybrać datę z przeszłości.
