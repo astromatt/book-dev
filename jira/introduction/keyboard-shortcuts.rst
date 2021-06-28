@@ -16,7 +16,7 @@ Global shortcuts
 ================
 .. csv-table:: Global shortcuts
     :header: "Key", "Description"
-    :widths: 10, 90
+    :widths: 20, 80
 
     "``\``", "Starred and recent"
     "``/``", "Quick search"
@@ -32,7 +32,7 @@ Navigating issues
 =================
 .. csv-table:: Global shortcuts
     :header: "Key", "Description"
-    :widths: 10, 90
+    :widths: 20, 80
 
     "``o`` or ``Enter``", "View selected issue"
     "``j``", "Next issue"
@@ -51,7 +51,7 @@ Issue actions
 =============
 .. csv-table:: Global shortcuts
     :header: "Key", "Description"
-    :widths: 10, 90
+    :widths: 20, 80
 
     "``e``", "Edit issue"
     "``a``", "Assign issue"
@@ -66,7 +66,7 @@ Board shortcuts
 ===============
 .. csv-table:: Global shortcuts
     :header: "Key", "Description"
-    :widths: 10, 90
+    :widths: 20, 80
 
     "``1``", "Backlog"
     "``2``", "Active sprints/Kanban board"
@@ -84,7 +84,7 @@ Service desk
 ============
 .. csv-table:: Global shortcuts
     :header: "Key", "Description"
-    :widths: 10, 90
+    :widths: 20, 80
 
     "``o`` or ``Enter``", "View selected issue"
     "``j``", "Next issue"
