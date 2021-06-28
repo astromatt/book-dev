@@ -24,7 +24,7 @@ Global shortcuts
     "``c``", "Create issue"
     "``?``", "Keyboard shortcuts"
     "``g`` then ``i``", "Find issues"
-    "``g`` then `p``", "Browse to a project"
+    "``g`` then ``p``", "Browse to a project"
     "``[``", "Toggle sidebar"
 
 
