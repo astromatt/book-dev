@@ -4,11 +4,13 @@ Project Versions
 
 Versions
 --------
-* Semantic Versioning:
+* Semantic Versioning ``major.minor.bugfix``:
 
-    * ``major.minor.bugfix`` (``1.0.0``, ``1.0.1``, ``1.1.0``. ``2.0.0``)
+    * Major: ``1.0.0``, ``2.0.0``, ``3.0.0``
+    * Minor:  ``1.1.0``. ``1.2.0``, ``1.3.0``,
+    * Bugfix: ``1.0.1``, ``1.0.2``, ``1.0.3``
 
-* Convention:
+* Time Convention:
 
     * ``YYYY-MM`` - 2000-01, 2000-02, 2000-03
     * ``YYYY-QQ`` - 2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4
@@ -54,3 +56,5 @@ Project Versions Edit
     * `Start Date`: `2000-04-01`
     * `Release Data`: `2000-06-30`
     * Zaakceptuj klikając `Save`
+
+.. note:: Wpisuj daty w formacie `1/4/2000`, wtedy kalendarz pozwoli Ci łatwiej wybrać datę z przeszłości.
