@@ -42,8 +42,8 @@ Project Versions Add
 #. Dodając wersje w tym zadaniu nie musisz ustawiać dat rozpoczęcia i zakończenia
 #. Dla uproszczenia w zadaniach, a później w `JQL` i filtrach będę stosował konwencję z rokiem `2000`
 #. Możesz dodać wersje z dzisiejszą datą (rokiem), ale w kolejnych zadaniach pamiętaj, żeby podmieniać na swoje nazwy
-#. Dodaj wersje: `2000-Q2`, `2000-Q3`
-#. Dodaj wersje: `2001`, `2002`
+#. Dodaj wersje: `2000-Q2`, `2000-Q3`, `2000-Q4`
+#. Dodaj wersje: `2001`, `2002`, `2003`
 
 Project Versions Edit
 ^^^^^^^^^^^^^^^^^^^^^
