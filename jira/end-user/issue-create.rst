@@ -44,7 +44,7 @@ Issue Create New
 
 Issue Create in Backlog
 ^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Na dole w backlog jest napis `Create Issue`
 #. Klikając na ikonkę, wybierz `Task` (niebieska ikona)
 #. Dodaj zadania do backlog:
@@ -57,7 +57,7 @@ Issue Create in Backlog
 
 Issue Create Split
 ^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog`
 #. Kliknij prawym klawiszem myszy na zadanie `Six` -> `Split Issue`
 
     * `Six`

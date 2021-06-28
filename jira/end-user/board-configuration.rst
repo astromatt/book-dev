@@ -95,7 +95,7 @@ Assignments
 
 Board Configuration Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej)
 #. Dodaj poniższe zadania do sprintu `2000-01 week 2`:
 
     * `Four`
@@ -115,7 +115,7 @@ Board Configuration Setup
 
 Board Configuration General
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `General`:
 
@@ -126,7 +126,7 @@ Board Configuration General
 
 Board Configuration Columns
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Columns`:
 
@@ -139,7 +139,7 @@ Board Configuration Columns
 
 Board Configuration Swimlanes Features Maintenance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Swimlanes`:
 
@@ -151,7 +151,7 @@ Board Configuration Swimlanes Features Maintenance
 
 Board Configuration Swimlanes MoSCoW
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Swimlanes` (zmodyfikuj dotychczasowe ustawienia)
 #. Zmodyfikuj pierwszego swimlane i zamień na `Must`  z `JQL`: ``priority = Highest``
@@ -170,7 +170,7 @@ Board Configuration Swimlanes MoSCoW
 
 Board Configuration Quick Filters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Quick Filters`:
 
@@ -179,7 +179,7 @@ Board Configuration Quick Filters
 
 Board Configuration Card Colors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Card colours`:
 
@@ -190,7 +190,7 @@ Board Configuration Card Colors
 
 Board Configuration Card Layout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Card layout`:
 
@@ -200,7 +200,7 @@ Board Configuration Card Layout
 
 Board Configuration Estimation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Estimation`:
 
@@ -209,7 +209,7 @@ Board Configuration Estimation
 
 Board Configuration Working Days
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Uwaga dotycząca następnego punktu: zadanie ma zademonstrować dodawanie dat świąt, a później i tak nie będziemy z tego korzystali, dlatego:
 
@@ -238,7 +238,7 @@ Board Configuration Working Days
 
 Board Configuration Issue Detail View
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Z menu `Board` (prawy górny róg) -> `Configure`
 #. Zakładka `Issue Detail View`:
 
@@ -249,8 +249,6 @@ Board Configuration Issue Detail View
 
 Board Configuration Column Constraints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
-#. Przejdź na `Boards` -> Twój Board -> `Active Sprint` (w menu po lewej):
-
-    * Usuń wszystkie zadania z kolumny `In Progress` (powinna podświetlić się na żółto)
-    * Dodaj trzy zadania do kolumny `Blocked` (powinna podświetlić się na czerwono)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprint` (w menu po lewej)
+#. Usuń wszystkie zadania z kolumny `In Progress` (powinna podświetlić się na żółto)
+#. Dodaj trzy zadania do kolumny `Blocked` (powinna podświetlić się na czerwono)

@@ -47,7 +47,7 @@ Assignments
 
 Board Estimation Story Points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej)
 #. W detail view zadania `One` -> okienko `Estimate` ustaw 3 (lub pole `Story Point` przy edycji zadania)
 #. W detail view zadania `Three` -> okienko `Estimate` ustaw 4 (lub pole `Story Point` przy edycji zadania)
 #. W detail view zadania `Five` -> okienko `Estimate` ustaw 8 (lub pole `Story Point` przy edycji zadania)

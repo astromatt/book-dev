@@ -105,7 +105,7 @@ Assignments
 
 Board Usage Reports
 ^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Reports`
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Reports`
 #. Przedyskutuj `Burndown Chart`
 #. Przedyskutuj `Burnup Chart`
 #. Przedyskutuj `Sprint Report`

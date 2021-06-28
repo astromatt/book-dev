@@ -50,7 +50,7 @@ Assignments
 
 Board Sprint Create
 ^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej)
 #. Dodaj pierwszy sprint:
 
     * `Name`: `2000-01 week 1`
@@ -66,7 +66,7 @@ Board Sprint Create
 
 Board Sprint Start
 ^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Backlog` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Backlog` (w menu po lewej)
 #. Do sprintu `2000-01 week 1` dodaj zadania: `One`, `Two`, `Three`
 #. Przejedź suwakiem i dodaj `Four`, `Five`, `Six`, zwróć uwagę na zmiany liczb w okienku `Issues` i `Estimate`
 #. Wystartuj sprint ustawiając:
@@ -79,7 +79,7 @@ Board Sprint Start
 
 Board Sprint Work
 ^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprints` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprints` (w menu po lewej)
 #. Przenieś zadania:
 
     * `One` do `In Progress`
@@ -97,7 +97,7 @@ Board Sprint Work
 
 Board Sprint Close
 ^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Boards` -> Twój Board -> `Active Sprint` (w menu po lewej)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Active Sprint` (w menu po lewej)
 #. Zakończ aktualny sprint -> Prawy górny róg `Complete Sprint`
 #. Zadania niezakończone mają `spaść` do sprintu następnego, tj. `2000-01 week 2`
 
