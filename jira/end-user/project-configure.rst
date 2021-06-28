@@ -35,6 +35,7 @@ Project Configure Details
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
 #. Zakładka `Details` -> zmień awatar swojego projektu na rakietę
 #. Zakładka `Details` -> zmień nazwę swojego projektu na `Imię N.` (z kropką na końcu)
+#. `Save Details`
 
 Project Configure Components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -47,11 +48,12 @@ Project Configure Components
 Project Configure Roles
 ^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej)
-#. Przejdź na zakładkę:
+#. Przejdź na zakładkę (menu po lewej):
 
     * Server: `Users and roles`
     * Cloud: `People`
 
+#. Przycisk `Add people` jest u góry p prawej
 #. Dodaj siebie do roli `Administrators`
 #. Dodaj użytkownika `admin` do roli `Administrators`
 
@@ -59,9 +61,13 @@ Project Configure Fields
 ^^^^^^^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej)
 #. Przejdź na zakładkę `Issue Types`
-#. Wybierz `Task`, a następnie w prawym górnym rogu wybierz przycisk `Fields` -> dodaj pole `Due Date`, usuń pole `Labels`
+#. Wybierz `Task`, a następnie w prawym górnym rogu wybierz przycisk `Fields` -> i zakładkę `Field Tab`
+#. Pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka
+#. Do listy na środku ekranu dodaj pole `Due Date` (pole do wprowadzania na dole)
+#. Usuń pole `Labels`
+
+#. nową zakładkę dodaje się poprzez kliknięcie na znak `(+)`
 #. Wybierz `Story`, a następnie w prawym górnym rogu wybierz przycisk `Fields`
-#. Pasek z zakładkami jest u góry tam gdzie jest `Field Tab` i ikonka ołówka; nową zakładkę dodaje się poprzez kliknięcie na znak `(+)`
 #. Dodaj nową zakładkę `Estimate`
 #. Dodaj na niej pole `Time Tracking` oraz `Story Points`
 #. Zwróć uwagę, że ta zakładka `Estimate`, która stworzyłeś/aś pojawiła się w prawie każdym `Issue Type` (poza `Bug`); możesz to sprawdzić klikając przycisk `Create` w menu na górze i zmieniając `Issue Type`

@@ -11,7 +11,7 @@ Versions
 * Convention:
 
     * ``YYYY-MM`` - 2000-01, 2000-02, 2000-03
-    * ``YYYY-QX`` - 2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4
+    * ``YYYY-QQ`` - 2000-Q1, 2000-Q2, 2000-Q3, 2000-Q4
     * ``YYYY`` - 2000, 2001, 2002, 2003
 
 * Roadmap
@@ -35,10 +35,22 @@ Assignments
 
 Project Versions Add
 ^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej na samym dole)
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej)
 #. Przejdź na zakładkę `Versions`
 #. Dodając wersje w tym zadaniu nie musisz ustawiać dat rozpoczęcia i zakończenia
 #. Dla uproszczenia w zadaniach, a później w `JQL` i filtrach będę stosował konwencję z rokiem `2000`
 #. Możesz dodać wersje z dzisiejszą datą (rokiem), ale w kolejnych zadaniach pamiętaj, żeby podmieniać na swoje nazwy
-#. Dodaj: `2000-Q2`, `2000-Q3`
-#. Dodaj: `2001`, `2002`
+#. Dodaj wersje: `2000-Q2`, `2000-Q3`
+#. Dodaj wersje: `2001`, `2002`
+
+Project Versions Edit
+^^^^^^^^^^^^^^^^^^^^^
+#. Z menu u góry wybierz `Projects` -> Twój Projekt -> `Project Settings` (przycisk koła zębatego w menu po lewej)
+#. Przejdź na zakładkę `Versions`
+#. Wybierz wersję `2000-Q2` i kliknij na trzy kropeczki w tym samym wierszu po prawej stronie
+#. Z menu wybierz `Edit`
+#. Zmień daty na:
+
+    * `Start Date`: `2000-04-01`
+    * `Release Data`: `2000-06-30`
+    * Zaakceptuj klikając `Save`

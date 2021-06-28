@@ -52,8 +52,15 @@ Project Create New
 ^^^^^^^^^^^^^^^^^^
 #. Z menu u góry wybierz `Projects` -> `View Projects`
 #. Kliknij przycisk `Create Projects` (prawy górny róg)
-#. Kliknij przycisk `Scrum software development` -> Next
+#. Server: Kliknij przycisk `Scrum software development` -> Next
+#. Cloud:
+
+    * Z menu po lewej wybierz `Software development`
+    * Scrum (na środku ekranu)
+    * Przycisk `Use Template` (na dole po prawej)
+    * Na ekranie `Choose a project type` wybierz  `Select a company managed project` klikając przyscisk na dole ekranu po prawej (jest to tzw. classic project)
+
 #. Project name: wpisz swoje imię i pierwszą literę nazwiska, np. `Jan T`, `Mark W`, `Melissa L`, `Matt K`
 #. Project key: pozostaw tak jak Jira zasugerowała
-#. Project Lead: ustaw siebie
-#. Submit
+#. Server: w polu `Project Lead` ustaw siebie
+#. Przycisk `Create`
