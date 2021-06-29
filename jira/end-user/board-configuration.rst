@@ -135,7 +135,6 @@ Board Configuration Columns
     * Column Constraints `Issue Count`, excluding sub-tasks
     * W kolumnie `Blocked` -> `Max` ustaw na: `2`
     * W kolumnie `In Progress` -> `Min` ustaw na: `1`
-    * Zaznacz `Days in column`
 
 Board Configuration Swimlanes Features Maintenance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -197,6 +196,7 @@ Board Configuration Card Layout
     * W sekcji `Backlog` -> wyświetl pole `Due Date`
     * W sekcji `Active sprints` -> wyświetl pole `Due Date`
     * Usuń wyświetlanie pola `Due Date` z sekcji Backlog (ale zostaw w `Active Sprint`)
+    * Zaznacz `Days in column`
 
 Board Configuration Estimation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -42,7 +42,7 @@ Demonstration
 * Create Kanban Board
 * Show Expedite swimlane
 * Set WIP limits (min, max)
-* Set days in column
+* Set days in column (Cloud: card layout tab)
 * Add Kanban Backlog
 
 
