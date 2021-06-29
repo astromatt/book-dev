@@ -13,6 +13,9 @@ Estimation
     * https://www.infoq.com/presentations/monte-carlo
     * https://docs.google.com/spreadsheets/d/1BmSuj1jA2ZfhUBzPtqDBqDjMjSXMqj3QoHZGR-TesOA/edit#gid=542217325
 
+.. figure:: ../_img/agile-estimation-planningpoker.jpg
+.. figure:: ../_img/agile-estimation-fibonacci.png
+
 
 Metrics
 -------

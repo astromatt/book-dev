@@ -1,170 +1,15 @@
-JQL Search
-==========
+Search Functions
+================
 
 
 Rationale
 ---------
-* JQL - JIRA Query Language
-
-
-Where to find?
---------------
-* `Issues` -> `Search for Issues`
-* `Basic` -> `Advanced`
-* `Detail View` -> `List View`
-* Konfiguracja kolumn wyświetlania
-
-
-Where is used?
---------------
-* Searching Issues
-* Board Configuration
-* Filters for Dashboard
-* Filters for Subscriptions
-* Bulk edit (to change limit: ``echo 'jira.bulk.edit.limit.issue.count = 1000' >> $JIRA_HOME/jira-config.properties``)
-* ``jira.issue.editable = true`` dla statusu Done (Workflow)
-
-
-Operators
----------
-* Operators capital letter
-
-.. csv-table:: Operators
-    :header: "Operator", "Description"
-    :widths: 5, 95
-
-    ``=``, "Equals"
-    ``!=``, "Not equal (is different than)"
-    ``>``, "Greater than"
-    ``<``, "Less than"
-    ``<=``, "Greater or equal"
-    ``>=``, "Less or equal"
-    ``~``, "Contains text"
-    ``(...)``, "List"
-    ``AND``, "Conjunction"
-    ``OR``, "Disjunction"
-    ``ORDER BY``, "Ordering"
-    ``ASC``, "Ascending"
-    ``DESC``, "Descending"
-
-
-View
-----
-* Konfiguracja kolumn wyświetlania
-* Import / Export CSV
-
-    * All fields
-    * current fields
-
-* Limit wyświetlania wyników dla JQL (change: `General Configuration` -> `Advanced Settings` -> ``jira.search.views.default.max``)
-
-
-Select issues
--------------
-.. code-block:: sql
-
-    project = "MYPROJECT"
-
-.. code-block:: sql
-
-    status = "To Do"
-
-.. code-block:: sql
-
-    assignee = "admin"
-
-.. code-block:: sql
-
-    reporter = "myusername"
-
-.. code-block:: sql
-
-    summary ~ "Hello"
-
-.. code-block:: sql
-
-    summary ~ "Hell*"
-
-.. code-block:: sql
-
-    summary ~ "*ell"
-
-.. code-block:: sql
-
-    summary ~ "*ell*"
-
-.. code-block:: sql
-
-    assignee != "myusername"
-
-.. code-block:: sql
-
-    statusCategory = "To Do"
-
-.. code-block:: sql
-
-    statusCategory != "Done"
-
-.. code-block:: sql
-
-    Flagged IS NOT EMPTY
-
-
-Ordering
---------
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        ORDER BY priority DESC
-
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        ORDER BY priority DESC, key ASC
-
-
-Complex queries
----------------
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        AND status = "In Progress"
-
-.. code-block:: sql
-
-    status = "To Do"
-        OR status = "In Progress"
-
-.. code-block:: sql
-
-    status IN ("To Do", "In Progress")
-
-.. code-block:: sql
-
-    status NOT IN ("To Do", "In Progress")
-
-.. code-block:: sql
-
-    statusCategory NOT IN ("To Do", "Done")
-
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        AND resolution NOT IN ("Done", "Won't Do")
-
-.. code-block:: sql
-
-    project = "MYPROJECT"
-        AND (Flagged IS NOT EMPTY
-             OR updated >= -1d
-             OR statusCategory = "In Progress")
-
-
-Functions
----------
 * https://support.atlassian.com/jira-software-cloud/docs/advanced-search-reference-jql-functions/
 * https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-functions-reference-939938746.html
 
+
+Jira Core
+---------
 .. csv-table:: JQL functions in `Jira Core`
     :header: "Function", "Description"
     :widths: 20, 80
@@ -202,6 +47,9 @@ Functions
     ``votedIssues()``,                     "Perform searches based on issues for which you have voted"
     ``watchedIssues()``,                   "Perform searches based on issues that you are watching"
 
+
+Jira Software
+-------------
 .. csv-table:: JQL functions in `Jira Software`
     :header: "Function", "Description"
     :widths: 20, 80
@@ -210,6 +58,9 @@ Functions
     ``futureSprints()``, "Search for issues that are assigned to a sprint that hasn't been started yet"
     ``openSprints()``,   "Search for issues that are assigned to a sprint that was started, but has not yet been completed"
 
+
+Jira Service Management
+-----------------------
 .. csv-table:: JQL functions in `Jira Service Management`
     :header: "Function", "Description"
     :widths: 20, 80
@@ -230,6 +81,9 @@ Functions
     ``running()``,             "Returns issues that have an SLA that is running, regardless of the calendar"
     ``withinCalendarHours()``, "Returns issues that have an SLA that is running according to the SLA calendar"
 
+
+Examples
+--------
 .. code-block:: sql
 
     assignee = currentUser()
@@ -247,31 +101,87 @@ Functions
     Sprint IN futureSprints()
 
 
-Queries in History
-------------------
+My issues To Do
+---------------
 .. code-block:: sql
 
-    AFTER "date"
-    BEFORE "date"
-    BY "username"
-    DURING ("date1", "date2")
-    ON "date"
-    FROM "oldvalue"
-    TO "newvalue"
+    assignee = currentUser()
+        AND statusCategory != "Done"
 
 .. code-block:: sql
 
-    project = "MYPROJECT"
-        AND status WAS "Done"
-        AND status != "Done"
+    assignee = currentUser()
+        AND statusCategory != "Done"
+        ORDER BY priority DESC, key ASC
 
 .. code-block:: sql
 
     project = "MYPROJECT"
-        AND status WAS "Done"
-        AND status != "Done"
-        AND updated > -1d
+        AND statusCategory != "Done"
+        AND sprint IN openSprints()
+        AND assignee = currentUser()
+        ORDER BY priority DESC, key ASC
 
+
+Tracking reported issues
+------------------------
+.. code-block:: sql
+
+    reporter = currentUser()
+        AND statusCategory != "Done"
+        AND assignee != currentUser()
+
+.. code-block:: sql
+
+    project = "IT Support"
+        AND reporter = currentUser()
+        AND statusCategory != "Done"
+
+
+Tracking team members work
+--------------------------
+.. code-block:: sql
+
+    statusCategory = "In Progress"
+        AND assignee IN membersOf("jira-administrators")
+
+.. code-block:: sql
+
+    project = "MYPROJECT"
+        AND assignee IN membersOf("jira-administrators")
+        AND updated >= -7d
+
+.. code-block:: sql
+
+    assignee IN membersOf("jira-administrators")
+        AND updated >= startOfWeek()
+        AND updated <= endOfWeek()
+
+
+Daily
+-----
+.. code-block:: sql
+
+    project = "MYPROJECT"
+        AND sprint IN openSprints()
+        AND (Flagged IS NOT EMPTY
+             OR statusCategory = "In Progress"
+             OR updated >= -1d)
+
+.. code-block:: sql
+
+    project = "MYPROJECT" AND (
+        priority = Highest
+        OR Flagged IS NOT EMPTY
+        OR statusCategory = "In Progress"
+        OR statusCategory in ("To Do", "Done")
+        AND (updated >= startOfDay(-1d)
+            OR (updated <= startOfWeek(1d)
+            AND updated >= startOfDay(-3d))))
+
+
+Time Searches
+-------------
 .. code-block:: sql
 
     due >= "2000-01-01" AND due <= "2000-01-31"
@@ -289,88 +199,6 @@ Queries in History
     due <= now()
         AND statusCategory != "Done"
 
-.. code-block:: sql
-
-    status WAS IN ("Done", "Rejected")
-
-.. code-block:: sql
-
-    status WAS NOT "In Progress" BEFORE "2000-01-01"
-
-.. code-block:: sql
-
-    status WAS NOT IN ("Done", "Rejected") BEFORE "2000-01-01"
-
-.. code-block:: sql
-
-    status WAS "Resolved" BY "admin" BEFORE "2000-01-01"
-
-.. code-block:: sql
-
-    status WAS "Resolved" BY "admin" DURING ("2000-01-01", "2000-01-31")
-
-.. code-block:: sql
-
-    status CHANGED BY currentUser()
-
-.. code-block:: sql
-
-    assignee CHANGED
-
-.. code-block:: sql
-
-    priority CHANGED BY "admin"
-
-.. code-block:: sql
-
-    priority CHANGED BY "admin" AFTER startOfWeek()
-
-.. code-block:: sql
-
-    priority CHANGED BY "admin" AFTER startOfWeek() BEFORE endOfWeek()
-
-.. code-block:: sql
-
-    priority CHANGED BY "admin" DURING ("2000-01-01", "2000-01-31")
-
-.. code-block:: sql
-
-    status CHANGED
-        FROM "In Progress"
-        TO "Open"
-
-.. code-block:: sql
-
-    status CHANGED
-        FROM "In Progress"
-        TO "Open"
-        BY "admin"
-
-.. code-block:: sql
-
-    status CHANGED
-        FROM "In Progress"
-        TO "Open"
-        BY "admin"
-        DURING ("2000-01-01", "2000-01-31")
-
-.. code-block:: sql
-
-    status CHANGED
-        FROM "In Progress"
-        TO "Open"
-        BY "admin"
-        AFTER startOfWeek()
-        BEFORE endOfWeek()
-
-.. code-block:: sql
-
-    status CHANGED
-        FROM "In Progress"
-        TO "Open"
-        BY membersOf("jira-administrators")
-        AFTER startOfWeek()
-        BEFORE endOfWeek()
 
 
 My issues To Do
@@ -458,6 +286,7 @@ Daily
             OR (updated <= startOfWeek(1d)
             AND updated >= startOfDay(-3d))))
 
+
 Further Reading
 ---------------
 * https://confluence.atlassian.com/jirasoftwareserver/advanced-searching-939938733.html
@@ -466,44 +295,19 @@ Further Reading
 
 Demonstration
 -------------
-* Change: list view, add headers, sort headers, order data
-* Change: basic -> advanced
-* Show: export CSV, bulk change
-* Basic: select project, status, other fields, due date range
 * Advanced: autocompletion, scalar and list operators, functions
 
 
 Assignments
 -----------
 
-JQL Search View
-^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Issues` -> `Search for Issues`
-#. `Change View` [przycisk po prawej stronie] zmień na `List View`
-#. `Columns` [przycisk po prawej stronie]: Odznaczyć: `Created`, `Updated`, `Development`
-#. Columns: zaznaczyć: `Summary`, `Issue Type`, `Due Date`, `Fix Version/s`, `Epic Link`
-#. Chwytając nagłówek kolumny, przenieś `Issue Type` (T) jako pierwsza kolumna
-#. Ustawić kolumny w kolejności: `Issue Type`, `Issue Key`, `Epic Link`, `Fix Version/s`, `Due Date`, `Status`, `Summary`
-#. Dodać kolumny: `Original Estimate`, `Remaining Estimate`, `Time Spent`
-#. Z menu po prawej stronie u góry wybieramy `Export` -> `CSV (Current Fields)` -> `Delimiter` -> `Comma (,)`
+Search Advanced Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Przejdź do wyszukiwania zadań:
 
-.. note:: Gdyby któraś kolumna (np. `issue type`) mimo zaznaczenia nie była widoczna, odśwież ekran Jiry (nawet kilka razy). Zwróć też uwagę, że kolumna `issue type` jest widoczna jako literka ``T`` i są w niej tylko ikony typów zadań.
+    * Cloud: Z menu `Filters` wybrać `Advanced Issue Search`
+    * Server: Z menu `Issues` wybrać `Search for Issues`
 
-JQL Search Basic
-^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Issues` -> `Search for Issues`
-#. Upewnij się, że jesteś w trybie wyszukiwania: `Basic`
-#. `Project` -> swój projekt
-#. Kliknij na nazwę kolumny `Due Date` dwukrotnie aby posortować rosnąco
-#. `Status` -> `In Progress` oraz `Blocked`
-#. More -> `Due Date` -> `Now Overdue`
-#. Zmień zakres `Due Date` -> od `1/Jan/00` do `31/Jan/00`
-#. Zmień zakres `Due Date` -> `Due in next 8 hours or is overdue`
-#. Zmień zakres `Due Date` -> `In range -7d to ...`` [pozostaw niewypełnione]
-
-JQL Search Advanced
-^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Issues` -> `Search for Issues`
 #. Upewnij się, że jesteś w trybie wyszukiwania: `Advanced`
 #. Kliknij link Advanced z paska wyszukiwania
 #. To co wpisujesz w tym polu, to tzw. `JQL (Jira Query Language)`
@@ -520,14 +324,3 @@ JQL Search Advanced
 #. w poniższych zapytaniach `MYPROJECT` zamień na klucz swojego projektu
 #. Wyszukaj: ``project = MYPROJECT AND fixVersion = earliestUnreleasedVersion()``
 #. Wyszukaj: ``assignee = currentUser() and statusCategory != Done``
-
-JQL Search Bulk Change
-^^^^^^^^^^^^^^^^^^^^^^
-#. Z menu u góry wybierz `Issues` -> `Search for Issues`
-#. Upewnij się, że jesteś w trybie wyszukiwania: `Advanced`
-#. Wyszukaj: ``project = MYPROJECT and due IS EMPTY`` (gdzie `MYPROJECT` to nazwa Twojego projektu)
-#. Przycisk `Tools` (po prawej u góry) -> `Bulk Change` -> `all X issue(s)`
-#. Zaznacz wszystkie (checkboxem do zaznaczania wszystkich na raz, nie rób tego pojedynczo)
-#. Kliknij przycisk `Next` -> `Edit Issues` -> `Next`
-#. Zmień `Change Due Date` i ustaw na `1/Nov/00`
-#. Kliknij przycisk `Next` (na dole) -> `Confirm` -> `Ok, got it`

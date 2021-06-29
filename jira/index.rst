@@ -42,9 +42,15 @@ End-User
     end-user/board-configuration.rst
     end-user/board-reports.rst
 
-    end-user/jql-search.rst
-    end-user/jql-filter.rst
-    end-user/jql-dashboard.rst
+    end-user/search-basic.rst
+    end-user/search-advanced.rst
+    end-user/search-functions.rst
+    end-user/search-history.rst
+
+    end-user/filter-manage.rst
+    end-user/filter-subscription.rst
+    end-user/filter-board.rst
+    end-user/filter-dashboard.rst
 
     end-user/automation.rst
     introduction/further-reading.rst

@@ -2,6 +2,11 @@ Automation
 ==========
 
 
+Agile Cards
+-----------
+.. figure:: ../_img/jira-apps-agilecards.jpg
+
+
 Atlassian Python API
 --------------------
 * https://github.com/atlassian-api/atlassian-python-api
