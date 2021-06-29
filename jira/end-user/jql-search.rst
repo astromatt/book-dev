@@ -443,14 +443,14 @@ Daily
 .. code-block:: sql
 
     project = "MYPROJECT" AND (
-        priority = Must
+        priority = Highest
         OR Flagged IS NOT EMPTY
         OR statusCategory = "In Progress")
 
 .. code-block:: sql
 
     project = "MYPROJECT" AND (
-        priority = Must
+        priority = Highest
         OR Flagged IS NOT EMPTY
         OR statusCategory = "In Progress"
         OR statusCategory in ("To Do", "Done")
