@@ -1,5 +1,5 @@
-JQL Search
-==========
+Search Advanced
+===============
 
 
 Rationale

@@ -1,5 +1,5 @@
-Search Functions
-================
+Search History
+==============
 
 
 
