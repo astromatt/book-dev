@@ -30,6 +30,57 @@ Jenkins
         jenkins/jenkins:alpine
 
 
+GITea
+=====
+.. code-block:: sh
+
+    docker network create ecosystem
+    sudo mkdir -p /home/gitea
+    sudo chmod 777 /home/gitea
+
+    docker run \
+        --name gitea \
+        --detach \
+        --rm \
+        --env USER_UID=1000 \
+        --env USER_GID=1000 \
+        --network ecosystem \
+        --publish 3000:3000 \
+        --publish 2222:22 \
+        --volume /home/gitea:/data \
+        --volume /etc/timezone:/etc/timezone:ro \
+        --volume /etc/localtime:/etc/localtime:ro \
+        gitea/gitea
+
+.. code-block:: sh
+
+    docker network create ecosystem
+    sudo mkdir -p /home/gitea
+    sudo chmod 777 /home/gitea
+
+    docker run \
+        --name gitea \
+        --detach \
+        --rm \
+        --network ecosystem \
+        --publish 3000:3000 \
+        --publish 2222:22 \
+        --volume /home/gitea/data:/var/lib/gitea \
+        --volume /home/gitea/config:/etc/gitea \
+        --volume /etc/timezone:/etc/timezone:ro \
+        --volume /etc/localtime:/etc/localtime:ro \
+        gitea/gitea:latest-rootless
+
+
+.. code-block:: sh
+
+    --env GITEA__database__DB_TYPE=postgres
+    --env GITEA__database__HOST=db:5432
+    --env GITEA__database__NAME=gitea
+    --env GITEA__database__USER=gitea
+    --env GITEA__database__PASSWD=gitea
+
+
 SonarQube
 =========
 .. code-block:: sh
@@ -54,9 +105,9 @@ SonarQube
 
 .. code-block:: sh
 
-    -e SONAR_JDBC_URL=... \
-    -e SONAR_JDBC_USERNAME=... \
-    -e SONAR_JDBC_PASSWORD=...
+    --env SONAR_JDBC_URL=... \
+    --env SONAR_JDBC_USERNAME=... \
+    --env SONAR_JDBC_PASSWORD=...
 
     # SONAR_JDBC_URL=jdbc:postgresql://localhost:5432/sonarqube?currentSchema=my_schema
 

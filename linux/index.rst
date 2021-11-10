@@ -47,6 +47,7 @@ Shell Programming
     shell/variables.rst
     shell/conditionals.rst
     shell/loops.rst
+    shell/redirections.rst
     shell/pipe.rst
     shell/stdout-and-stderr.rst
     shell/arrays.rst

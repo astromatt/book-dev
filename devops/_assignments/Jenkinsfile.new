@@ -1,0 +1,28 @@
+pipeline {
+  agent {
+    docker { image 'myapp:cicd' }
+  }
+
+  stages {
+    stage('Build') { steps { sh 'run/build.sh' }}
+
+    parallel {
+        stage('Test Feature')       { steps { sh 'run/test-feature.sh' }}
+        stage('Test Integration')   { steps { sh 'run/test-integration.sh' }}
+        stage('Test Load')          { steps { sh 'run/test-load.sh' }}
+        stage('Test Mutation')      { steps { sh 'run/test-mutation.sh' }}
+        stage('Test Regression')    { steps { sh 'run/test-regression.sh' }}
+        stage('Test Security')      { steps { sh 'run/test-security.sh' }}
+        stage('Test Smoke')         { steps { sh 'run/test-smoke.sh' }}
+        stage('Test Static')        { steps { sh 'run/test-static.sh' }}
+        stage('Test UI')            { steps { sh 'run/test-ui.sh' }}
+        stage('Test Unit')          { steps { sh 'run/test-unit.sh' }}
+    }
+
+    stage('Publish')        { steps { sh 'run/publish-artifact.sh' }}
+    stage('Deploy Dev')     { steps { sh 'run/deploy-dev.sh' }}
+    stage('Deploy Test')    { steps { sh 'run/deploy-test.sh' }}
+    stage('Deploy Preprod') { steps { sh 'run/deploy-preprod.sh' }}
+    stage('Deploy Prod')    { steps { sh 'run/deploy-prod.sh' }}
+  }
+}

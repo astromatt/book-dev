@@ -5,7 +5,10 @@ Instalacja
 
 Instalacja
 ==========
-* skąd pobrać (https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-X.X.X-x64.bin)
+* skąd pobrać
+
+    * https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-X.X.X-x64.bin
+
 * jakie polecenia
 * forwarding portów
 * SSL proxy

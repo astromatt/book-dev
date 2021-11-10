@@ -1,0 +1,4 @@
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+RUN adduser cicd -D -u 1000 -s /bin/ash -h /home
+COPY .m2 /home/.m2

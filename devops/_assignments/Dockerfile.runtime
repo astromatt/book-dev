@@ -1,4 +1,6 @@
-FROM alpine
+FROM alpine:3.14
 RUN apk add --no-cache openjdk8 maven
 COPY . /data
 WORKDIR /data
+COPY .m2 /root/.m2
+ENTRYPOINT ["mvn"]

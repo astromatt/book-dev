@@ -1,0 +1,2073 @@
+Czynność,Gdzie,Polecenie
+,,
+Jaki jest główny język programowania z którym pracujesz?,Uczestnik,
+Ile masz lat doświadczenia w programowaniu?,Uczestnik,
+Ile masz lat doświadczenia w administracji systemami Unixowymi?,Uczestnik,
+Z jakiego systemu operacyjnego korzystasz podczas szkolenia (nazwa + wersja),Uczestnik,
+SSH - Konfiguracja,-,
+"1. Zainstaluj klient SSH  (np. w instalatorze GIT na windows, PuTTY, lub za pomocą apt-get albo brew)
+2. Na windows najłatwiej jest zainstalować GIT, który ma wbudowanego konsolowego klienta SSH, oraz auto-updater)
+3. Jeżeli korzystasz z PuTTY konieczne będzie przekonwertowanie klucza .pem do .ppk:
+- Program `putty-gen` pozwala na konwersję klucza
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html#putty-private-key",TwójKomputer,
+Pobierz klucz .pem podany przez prowadzącego i zapisz go na pulpicie jako `szkolenie.pem`,TwójKomputer,
+Uruchom Terminal (np. Git Bash),TwójKomputer,
+Sprawdź wersję SSH i wpisz w komórkę w arkuszu kalkulacyjnym,TwójKomputer,ssh -V
+"Zmień uprawnienia do pliku klucza:
+- Polecenie trzeba wykonać tylko dla Linux albo macOS
+- Jeżeli korzystasz z Windows, to nie jest konieczne",TwójKomputer,chmod 400 ~/Desktop/szkolenie.pem
+Połącz się do przydzielonego serwera,TwójKomputer,ssh -i ~/Desktop/szkolenie.pem -l ubuntu $PRZYDZIELONE_IP
+Sprawdź czy jesteś zalogowany na użytkownika ubuntu,PrzydzielonyHost,whoami
+System Operacyjny - konfiguracja,-,clear
+"Ustaw zmienną środowiskową PRZYDZIELONE_IP na wartość przydzielonego Tobie IP serwera:
+- Zamiast 0.0.0.0 wpisz przydzielony adres
+- Przekieruj wyjście do pliku `~/.profile`
+- Dzięki temu zmienna będzie ustawiana przy każdym logowaniu",PrzydzielonyHost,"echo ""export PRZYDZIELONE_IP=0.0.0.0"" >> ~/.profile"
+"Ustaw zmienną środowiskową znaku zachęty:
+- Zmienna pozwoli na wizualne odróżnienie serwera
+- Przekieruj wyjście do pliku `~/.profile`
+- Dzięki temu zmienna będzie ustawiana przy każdym logowaniu",PrzydzielonyHost,"echo ""export PS1='\n\[\033[01;32m\]PrzydzielonyHost\[\033[00m\]: '"" >> ~/.profile"
+"Zaczytaj plik `~.profile`, aby już teraz uaktywnić zmienne środowiskowe",PrzydzielonyHost,source ~/.profile
+Wyświetl listę procesów,PrzydzielonyHost,ps aux
+"Wyświetl listę procesów, które mają w nazwie bash",PrzydzielonyHost,ps aux |grep bash
+"Wyświetl listę procesów, które mają w nazwie python",PrzydzielonyHost,ps aux |grep python
+Wyświetl listę procesów która będzie się aktualizowała na ekranie,PrzydzielonyHost,htop
+GIT - konfiguracja,-,clear
+"Ustaw imię i nazwisko dla użytkownika git:
+- Możesz pozostawić ""Pan Twardowski"" (postać z legendy polskiej o pierwszym kosmonaucie :)
+- Lub wpisać swoje imię i nazwisko
+- Podczas szkolenia nie będzie miało to znaczenia",PrzydzielonyHost,"git config --global user.name ""Pan Twardowski"""
+"Ustaw adres email dla użytkownika git:
+- Możesz pozostawić ""pan.twardowski@polsa.gov.pl""
+- Lub wpisać swój email
+- Podczas szkolenia nie będzie miało to znaczenia",PrzydzielonyHost,"git config --global user.email ""pan.twardowski@polsa.gov.pl"""
+Docker,-,clear
+Zainstaluj Docker,PrzydzielonyHost,curl https://get.docker.com |sudo sh
+"Sprawdź wersje Docker, która się zainstalowała",PrzydzielonyHost,docker --version
+Dodaj użytkownika `ubuntu` do grupy `docker` w systemie operacyjnym,PrzydzielonyHost,sudo usermod -aG docker ubuntu
+Wyloguj się z maszyny. Jest to konieczne aby ustawienia grupy zostały zaktualizowane.,PrzydzielonyHost,logout
+"Połącz się ponownie do maszyny. Jeżeli korzystasz z Putty to musisz połączyć się tak, jak na początku.",TwójKomputer,ssh -i ~/Desktop/szkolenie.pem -l ubuntu $PRZYDZIELONE_IP
+"Uruchom polecenie `id` i upewnij się, że na samym końcu linii jest docker",PrzydzielonyHost,id
+Docker - wyszukiwanie obrazów,-,clear
+"Wyszukaj obrazu o nazwie `python`:
+- Alternatywnie możesz sprawdzić przez stronę internetową
+- https://hub.docker.com/
+- https://hub.docker.com/search?q=python&type=image
+- https://hub.docker.com/_/python",PrzydzielonyHost,docker search python
+Wyszukaj obrazu o nazwie `jira`,PrzydzielonyHost,docker search jira
+Wyszukaj obrazu o nazwie `java`,PrzydzielonyHost,docker search java
+Wyszukaj obrazu o nazwie `openjdk`,PrzydzielonyHost,docker search openjdk
+Wyszukaj obrazu o nazwie `gcc`,PrzydzielonyHost,docker search gcc
+Wyszukaj obrazu o nazwie `alpine`,PrzydzielonyHost,docker search alpine
+Wyszukaj obrazu o nazwie `ubuntu`,PrzydzielonyHost,docker search ubuntu
+Wyszukaj obrazu o nazwie `debian`,PrzydzielonyHost,docker search debian
+Docker - pobieranie obrazów,-,clear
+Pobierz obraz o nazwie `alpine`.,PrzydzielonyHost,docker pull alpine
+Pobierz obraz o nazwie `ubuntu`.,PrzydzielonyHost,docker pull ubuntu
+Pobierz obraz o nazwie `debian`.,PrzydzielonyHost,docker pull debian
+Wyświetl pobrane obrazy.,PrzydzielonyHost,docker images
+Docker - pobieranie obrazów w różnych wersjach (tagach),-,clear
+Pobierz obraz o nazwie `python`.,PrzydzielonyHost,docker pull python
+Pobierz obraz o nazwie `python` i tagu: `alpine`.,PrzydzielonyHost,docker pull python:alpine
+Pobierz obraz o nazwie `python` i tagu: `3.10`.,PrzydzielonyHost,docker pull python:3.10
+Pobierz obraz o nazwie `python` i tagu: `3.10-alpine`.,PrzydzielonyHost,docker pull python:3.10-alpine
+Pobierz obraz o nazwie `python` i tagu: `3.10-bullseye`.,PrzydzielonyHost,docker pull python:3.10-bullseye
+Pobierz obraz o nazwie `python` i tagu: `3.10-slim-bullseye`.,PrzydzielonyHost,docker pull python:3.10-slim-bullseye
+Pobierz obraz o nazwie `python` i tagu: `3.10-buster`.,PrzydzielonyHost,docker pull python:3.10-buster
+Pobierz obraz o nazwie `python` i tagu: `3.10-slim-buster`.,PrzydzielonyHost,docker pull python:3.10-slim-buster
+Wyświetl pobrane obrazy i porównaj wielkości obrazów w zależności od systemu operacyjnego.,PrzydzielonyHost,docker images
+"Docker - uruchamianie obrazów, tj. tworzenie kontenerów",-,clear
+"Uruchom obraz o nazwie `alpine`. Uruchomienie obrazu jest tożsame ze stworzeniem kontenera. Zwróć uwagę, że kontener natychmiast się zamknie. Był stworzony tylko na czas wykonania domyślnego programu (`CMD` lub `ENTRYPOINT`). O tych instrukcjach opowiem później przy omawianiu pliku `Dockerfile`. Wtedy też nayczymy sie to zmieniać. ",PrzydzielonyHost,docker run alpine
+"Sprawdź czas uruchamiana obrazu `alpine`. Zwróć uwagę, że docker pozwala uruchomić cały system operacyjny w około pół sekundy czasu rzeczywistego, tj. około 2 setnych sekundy czasu procesora.",PrzydzielonyHost,time docker run alpine
+"Sprawdź czas uruchamiana obrazu `ubuntu`. Zwróć uwagę, że `alpine` jest znacznie mniejszy od `ubuntu`, ale czas uruchomienia jednego i drugiego nie różni się znacznie. W obu przypadkach są to ułamki sekund czasu systemowego.",PrzydzielonyHost,time docker run ubuntu
+Wyświetl aktualnie działające kontenery.,PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte.",PrzydzielonyHost,docker ps -a
+Docker - tworzenie kontenerów do wykonania poleceń,-,clear
+Uruchom obraz o nazwie `alpine` i wykonaj w nim polecenie `echo 'hello world'`.,PrzydzielonyHost,docker run alpine echo 'hello world'
+Wyświetl aktualnie działające kontenery.,PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte.",PrzydzielonyHost,docker ps -a
+Docker - wielokrotne tworzenie kontenerów i zarządzanie pozostałościami,-,clear
+"Uruchom obraz o nazwie `alpine`, a kontener nazwij `hello`. Po uruchomieniu ma wykonać polecenie `echo 'hello world'`. ",PrzydzielonyHost,docker run --name hello alpine echo 'hello world'
+"Wykonaj ponownie to samo polecenie. Tym razem powinno zwrócić błąd, że maszyna o tej nazwie już istnieje.",PrzydzielonyHost,docker run --name hello alpine echo 'hello world'
+"Wyświetl pozostałości po kontenerach. Zwróć uwagę, że katalog `/var/lib/docker/containers` ma uprawnienia, które nie pozwalają przeglądać jego zawartości zwykłym użytkownikom i potrzebne jest wykonanie polecenia jako `root` (korzystając z `sudo`).",PrzydzielonyHost,sudo ls /var/lib/docker/containers
+Usunięcie pozostałości po maszynie o nazwie `hello`.,PrzydzielonyHost,docker rm hello
+"Uruchom obraz o nazwie `alpine`, a kontener nazwij `hello`. Po uruchomieniu ma wykonać polecenie `echo 'hello world'`.",PrzydzielonyHost,docker run --name hello --rm alpine echo 'hello world'
+"Uruchom obraz o nazwie `alpine`, a K=kontener nazwij `hello`. Po uruchomieniu ma wykonać polecenie `echo 'hello world'`. Tym razem polecenie nie wyrzuca błędu, gdyż dzieki fladze `--rm` pozostałości po kontenerze `hello` zostały natychmiast usunięte jak tylko się zamknął.",PrzydzielonyHost,docker run --name hello --rm alpine echo 'hello world'
+Wyświetl aktualnie działające kontenery.,PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte.",PrzydzielonyHost,docker ps -a
+Docker - tworzenie kontenerów w różnych wersjach,-,clear
+Uruchom kontener na podstawie obrazu `python`.,PrzydzielonyHost,docker run python
+Uruchom kontener na podstawie obrazu `python` w wersji `3`.,PrzydzielonyHost,docker run python:3
+Uruchom kontener na podstawie obrazu `python` w wersji `3.10`.,PrzydzielonyHost,docker run python:3.10
+Uruchom kontener na podstawie obrazu `python` w wersji `3.10` na systemie operacyjnym `alpine`.,PrzydzielonyHost,docker run python:3.10-alpine
+Wyświetl aktualnie działające kontenery.,PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte.",PrzydzielonyHost,docker ps -a
+Docker - tworzenie kontenerów w różnych wersjach,-,clear
+"Uruchom kontener na podstawie obrazu `python` w wersji `3.10` na systemie operacyjnym `alpine`. Wyświetl wersję `python`,",PrzydzielonyHost,docker run python:3.10-alpine python --version
+"Uruchom kontener na podstawie obrazu `python` w wersji `3.10` na systemie operacyjnym `alpine`. Wyświetl tekst `hello world`,",PrzydzielonyHost,"docker run python:3.10-alpine python -c 'print(""hello world"")'"
+"Uruchom kontener na podstawie obrazu `python` w wersji `3.10` na systemie operacyjnym `alpine`. Wyświetl wersję `python`, korzystając z Pythonowej instrukcji  `sys.version`.",PrzydzielonyHost,docker run python:3.10-alpine python -c 'import sys; print(sys.version)'
+Wyświetl aktualnie działające kontenery.,PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte.",PrzydzielonyHost,docker ps -a
+Docker - informacje o jądrze systemu operacyjnego,-,clear
+Wyświetl szczegóły na temat kernela w systemie operacyjnym.,PrzydzielonyHost,uname -a
+Wyświetl szczegóły na temat kernela w kontenerze `alpine` ,PrzydzielonyHost,docker run alpine uname -a
+Wyświetl szczegóły na temat kernela w kontenerze `ubuntu` ,PrzydzielonyHost,docker run ubuntu uname -a
+Docker - informacje o systemie operacyjnym,-,clear
+Wyświetl informacje na temat wydania systemu operacyjnego,PrzydzielonyHost,cat /etc/os-release
+Wyświetl informacje na temat wydania systemu operacyjnego w kontenerze `alpine`.,PrzydzielonyHost,docker run alpine cat /etc/os-release
+Wyświetl informacje na temat wydania systemu operacyjnego w kontenerze `ubuntu`.,PrzydzielonyHost,docker run ubuntu cat /etc/os-release
+Docker - tryb interaktywny,-,clear
+"Uruchom kontener na podstawie obrazu `bash`, tak by wyświetlił `hello world` na ekranie.",PrzydzielonyHost,docker run bash echo 'hello world'
+"Uruchom kontener na podstawie obrazu `bash` w trybie interaktywnym, tj. z możliwością wpisywania poleceń. Zwróć uwagę, że znak zachęty (prompt) się zmienił i wygląda teraz inaczej. Jest to zależne od konfiguracji interpretera w systemie operacyjnym. Aby wyjść z maszyny trzeba zakończyć proces (wpisać `exit`) lub przerwać proces (skrót klawiszowy `ctrl-d`). Zwróć uwagę, że wszystkie zmiany, które dokonasz na kontenerze zostaną usunięte po jego zamknięciu. Zwróć uwagę, że prawie wszystkie kontenery w świecie dockerowym nie mają SSH i poza dockerem nie da się do nich połączyć. To dodatkowo podnosi bezpieczeństwo tego rozwiązania.",PrzydzielonyHost,docker run -it bash
+Zdefiniuj zmienną `text` o wartości `hello world`,Kontener,text='hello world'
+Wypisz `hello world` na ekranie.,Kontener,echo $text
+"Wyjdź z interpretera. Spowoduje to zamknięcie kontenera. Zwróć uwagę, że wszystkie zmiany, które dokonasz na kontenerze zostaną usunięte po jego zamknięciu.",Kontener,exit
+"Uruchom kontener na podstawie obrazu `python:3.10` w trybie interaktywnym. Jesteś teraz w interaktywnej konsoli Pythona i możesz tu wykonać dowole instrukcje w tym języku.
+ Zwróć uwagę, że znak zachęty (prompt) się zmienił i wygląda teraz inaczej. Aby wyjść z maszyny trzeba zakończyć proces (wpisać `exit()`) lub przerwać proces (skrót klawiszowy `ctrl-d`).",PrzydzielonyHost,docker run -it python:3.10
+Zdefiniuj zmienną `text` o wartości `hello world`,Kontener,text = 'hello world'
+Wypisz zmienną `text` na ekranie,Kontener,print(text)
+"Wyjdź z interpretera. Spowoduje to zamknięcie kontenera. Zwróć uwagę, że wszystkie zmiany, które dokonasz na kontenerze zostaną usunięte po jego zamknięciu.",Kontener,exit()
+Docker - tworzenie aliasów poleceń,-,clear
+Stwórz alias `run_python` uruchamiający obraz `python:3.10` w trybie interaktywnym.,PrzydzielonyHost,alias run_python='docker run -it python:3.10'
+Uruchom kontener za pomocą aliasu `run_python`.,Kontener,run_python
+Wypisz `hello world` na ekranie.,Kontener,print('hello world')
+Wyjdź z interpretera. ,Kontener,exit()
+Usuń alias `run_python`.,PrzydzielonyHost,unalias run_python
+Stwórz alias `run_java` uruchamiający obraz `openjdk:16-jdk-alpine` w trybie interaktywnym.,PrzydzielonyHost,alias run_java='docker run -it openjdk:16-jdk-alpine'
+Uruchom kontener za pomocą aliasu `run_python`.,PrzydzielonyHost,run_java
+Wypisz na ekranie `hello world`.,Kontener,"System.out.println(""hello world"");"
+Wyjdź z kontenera za pomocą skrótu klawiszowego `ctrl+d`.,Kontener,# ctrl+d
+Usuń alias `run_java`,PrzydzielonyHost,unalias java
+Docker - zatrzymywanie kontenerów,-,clear
+"Uruchom kontener w tle, na podstawie obrazu `bash` i nazwij go `myshell`. ",PrzydzielonyHost,docker run -d --rm -it --name myshell bash
+Wyświetl aktualnie działające kontenery. Kontener `myshell` jest aktualnie uruchomiony.,,docker ps
+"To polecenie może trwać około 10-15 sekund. `docker stop` pozwala procesowi na zakończenie wszystkich zadań i samodzielne wyłączenie się. Przydatne jak np. mamy bazę danych i chcemy aby wszystkie informacje przed zamknięciem bezpiecznie się zapisały, a podłączeni klienci się rozłączyli.",PrzydzielonyHost,docker stop myshell
+"Wyświetl aktualnie działające kontenery. Zwróć uwagę, że tym razem nie ma działającego kontenera `myshell`.",PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte. Zwróć uwagę, że kontener `myshell` znajduje się na tej liście jako zamknięty.",PrzydzielonyHost,docker ps -a
+Docker - ubijanie kontenerów,-,clear
+"Uruchom kontener w tle, na podstawie obrazu `bash` i nazwij go `myshell`. ",PrzydzielonyHost,docker run -d --rm -it --name myshell bash
+Wyświetl aktualnie działające kontenery. Kontener `myshell` jest aktualnie uruchomiony.,PrzydzielonyHost,docker ps
+"To polecenie powinno wykonać się błyskawicznie. `docker kill` nie pozwala procesowi na skończenie czegokolwiek, tylko natychmiast odcina kontener od kernela. Jest to przydatne jeżeli proces np. się zawiesi i przestanie odpowiadać.Poza bazami danych i procesami, które zapisują na dysk nie musimy się martwić o skracanie życia kontenerom. Docker daje nam bardzo łatwą możliwość ponownego stworzenia identycznego kontenera. Dlatego w świecie dockerowym ""nie naprawia"" się niedziałających kontenerów, tylko ubija i stawia nowe w ich miejsce.",PrzydzielonyHost,docker kill myshell
+Docker - wysyłanie kontenerów do tła i przywracanie,-,clear
+Uruchom kontener na podstawie obrazu `bash` i nazwij go `myshell`. ,PrzydzielonyHost,docker run --rm -it --name myshell bash
+"Użycie skrótu klawiszowego `ctrl+p+q` (proces quit) przeniesie proces do tła (czyli go nie zakończy, ale tylko ukryje). Istnieje możliwość przywracania procesów z tła.",Kontener,# ctrl+p+q
+"Wyświetl aktualnie działające kontenery. Zwróć uwagę, że wśród działających kontenerów jest `myshell`.",PrzydzielonyHost,docker ps
+Przywróć kontener z tła.,PrzydzielonyHost,docker attach myshell
+Zamknij kontener,Kontener,exit
+"Wyświetl aktualnie działające kontenery. Zwróć uwagę, że tym razem nie ma działającego kontenera `myshell`.",PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte. Zwróć uwagę, że kontener `myshell` znajduje się na tej liście jako zamknięty.",PrzydzielonyHost,docker ps -a
+"Uruchom kontener w tle, na podstawie obrazu `bash` i nazwij go `myshell`. ",PrzydzielonyHost,docker run --rm -it -d --name myshell bash
+Przywróć kontener z tła.,PrzydzielonyHost,docker attach myshell
+Zamknij kontener,Kontener,exit
+Docker - łączenie się do działających kontenerów,-,clear
+"Uruchom kontener na podstawie obrazu `alpine` i nazwij go `sleeper`, ma wykonać polecenie `sleep 3600` (tj. zaczekaj godzinę, wartość jest w sekundach).",PrzydzielonyHost,docker run --rm -d --name sleeper alpine sleep 1000
+`docker exec` pozwala na podłączenie się do działającej instancji i wykonanie polecenia (tu uruchomienie interaktywnego terminala `sh`). `docker exec` otworzy nowy proces w tej maszynie (a nie podłączy się do już działającego). ,PrzydzielonyHost,docker exec -it sleeper sh
+"Polecenie `ps aux` powinno wylistować wszystkie procesy działające na maszynie. Jednym z nich powinien być proces `sleep 3600`, z `PID` (proces ID) równym 1 (to jest nasz główny proces). Jego zakończenie na maszynie (tj. upłynięcie 3600 sekund) zamknie kontener. Jakiekolwiek sesje utworzone w międzyczasie zostaną również zamknięte, nawet jeżeli były aktywne i coś wykonywały.",Kontener,ps aux
+"Zamknij dodatkową sesję z kontenerem. Dopiero jak główny proces na maszynie się zakończy, to Docker zamyka kontener. Dlatego można bezpiecznie wyjść z maszyny, np. za pomocą `exit` co nie zamknie pierwotnego procesu i jednocześnie maszyny.",Kontener,exit
+"Wyświetl aktualnie działające kontenery. Zwróć uwagę, że kontener `sleeper` nadal jest aktywny.",PrzydzielonyHost,docker ps
+Zabij kontener `sleeper`,PrzydzielonyHost,docker kill sleeper
+Docker - introspekcja działających kontenerów,-,clear
+"Uruchom kontener na podstawie obrazu `alpine` i nazwij go `sleeper`, ma wykonać polecenie `sleep 3600` (tj. zaczekaj godzinę, wartość jest w sekundach).",PrzydzielonyHost,docker run --rm -d --name sleeper alpine sleep 1000
+"Wyświetli opcje konfiguracyjne (sieciowe, ścieżki itp) kontenera. Zwróć uwagę, że wynik jest w formacie JSON, czyli można go łatwo sparsować.",PrzydzielonyHost,docker inspect sleeper
+Wyświetl procesy wewnątrz kontenera `sleeper`.,PrzydzielonyHost,docker top sleeper
+Wyświetl wszystkie logi aktualnego procesu działającego w kontenerze `sleeper`.,PrzydzielonyHost,docker logs sleeper
+Wyświetl 5 ostatnich linii logów aktualnego procesu działającego w kontenerze `sleeper`.,PrzydzielonyHost,docker logs -n5 sleeper
+"Wyświetl logi aktualnego procesu działającego w kontenerze `sleeper` w trybie ciągłym, tzn. że za każdym razem kiedy proces dopisze coś do logów, to automatycznie wyświetli się na ekranie. ",PrzydzielonyHost,docker logs -f sleeper
+Z trybu tego wychodzi się za pomocą skrótu klawiszowego `ctrl+c`. Nie spowoduje to zamknięcia procesu ani kontenera.,Kontener,# ctrl+c
+Zabij kontener `sleeper`,PrzydzielonyHost,docker kill sleeper
+Docker - usuwanie wszystkich kontenerów,-,clear
+Wyświetl aktualnie działające kontenery.,PrzydzielonyHost,docker ps
+"Wyświetl wszystkie kontenery, zarówno działające, jak i te, które już zostały zamknięte.",PrzydzielonyHost,docker ps -a
+"Wyświetl numery ID kontenerów, zarówno działających, jak i tych, które zostały już zamknięte.",PrzydzielonyHost,docker ps -aq
+"Przekaż wynik polecenia `docker ps -aq` do `docker rm`. Usunie to wszystkie kontenery. `docker rm` bez flagi `-f` nie usuwa działających kontenerów. Wykonanie jest bezpieczne i usunie tylko kontenery, które nie są uruchomione.",PrzydzielonyHost,docker rm $(docker ps -aq)
+"Wyświetl numery ID kontenerów, zarówno działających, jak i tych, które zostały już zamknięte. Zwróć uwagę, że lista jest pusta.",PrzydzielonyHost,docker ps -a
+Docker - usuwanie wszystkich obrazów,-,clear
+Wyświetl wszystkie pobrane obrazy.,PrzydzielonyHost,docker images
+Wyświetl numery ID wszystkich pobranych obrazów.,PrzydzielonyHost,docker images -q
+Usuń obraz `alpine`.,PrzydzielonyHost,docker rmi alpine
+"Polecenie usuwa wszystkie obrazy. Może się zdarzyć, że niektóre obrazy wzajemnie się wskazują i nie będzie możliwe ich łatwe usunięcie. Wystąpi wtedy tzw. konflikt. Konflikty występują również, jeżeli aktualnie jest uruchomiony kontener na podstawie obrazu. Wtedy należy usunąć je z przełącznikiem `-f` tzw. force.",PrzydzielonyHost,docker rmi $(docker images -q)
+"Wyświetl wszystkie pobrane obrazy. Zauważ, że lista jest prawie pusta. Pozostało kilka obrazów, przy usuwaniu których wystąpiły konflikty.",PrzydzielonyHost,docker images
+"Usuń wszystkie obrazy ""siłowo"", nawet jeżeli pojawiły się konflikty.",PrzydzielonyHost,docker rmi -f $(docker images -q)
+"Wyświetl wszystkie pobrane obrazy. Zauważ, że lista jest pusta.",PrzydzielonyHost,docker images
+Docker - zmienne środowiskowe z linii poleceń,-,clear
+,PrzydzielonyHost,docker run -it alpine env
+,PrzydzielonyHost,docker run -it -e NAME='Mark Watney' alpine
+,Kontener,env
+,Kontener,exit
+,PrzydzielonyHost,docker run -it -e NAME='Mark Watney' alpine env
+,PrzydzielonyHost,docker run -it --env NAME='Mark Watney' alpine env
+,PrzydzielonyHost,docker run -it -e FIRSTNAME='Mark' -e LASTNAME='Watney' alpine env
+,PrzydzielonyHost,docker run -it -e DB_NAME='astronauts' -e DB_USER='markwatney' -e DB_PASSWORD='myVoiceIsMyPassword' -e DB_HOST='localhost' -e DB_PORT=5432 -e STAGE='prod' alpine env
+,PrzydzielonyHost,docker run -it -e DB_NAME='astronauts' -e DB_USER='markwatney' -e DB_PASSWORD='myVoiceIsMyPassword' -e DB_HOST='localhost' -e DB_PORT=5432 -e STAGE='prod' alpine env |sort
+Docker - zmienne środowiskowe z pliku .env,PrzydzielonyHost,clear
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,sudo mkdir /home/docker
+,PrzydzielonyHost,sudo chown ubuntu:ubuntu /home/docker
+,PrzydzielonyHost,cd /home/docker
+,PrzydzielonyHost,"vim /home/docker/test.env
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+STAGE='test'
+DB_NAME=test
+DB_USER=test
+DB_PASSWORD=test
+DB_HOST=localhost
+DB_PORT=1337
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# Litery pojawią się na dole ekranu w pasku statusu"
+,PrzydzielonyHost,"vim /home/docker/prod.env
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+STAGE='prod'
+DB_NAME=astronauts
+DB_USER=markwatney
+DB_PASSWORD=myVoiceIsMyPassword
+DB_HOST=localhost
+DB_PORT=5432
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# Litery pojawią się na dole ekranu w pasku statusu"
+,PrzydzielonyHost,cat /home/docker/test.env
+,PrzydzielonyHost,cat /home/docker/prod.env
+,PrzydzielonyHost,docker run --env-file=/home/docker/test.env -it alpine env
+,PrzydzielonyHost,docker run --env-file=/home/docker/prod.env -it alpine env
+Docker - konfiguracja sieci,PrzydzielonyHost,clear
+,PrzydzielonyHost,docker run -d -it --rm --name host1 alpine
+,PrzydzielonyHost,docker run -d -it --rm --name host2 alpine
+,PrzydzielonyHost,docker exec host1 ifconfig
+,PrzydzielonyHost,docker exec host2 ifconfig
+,PrzydzielonyHost,ping -c4 172.17.0.2
+,PrzydzielonyHost,ping -c4 172.17.0.3
+,PrzydzielonyHost,ping -c4 host1
+,PrzydzielonyHost,ping -c4 host2
+,PrzydzielonyHost,docker exec host1 ping -c4 172.17.0.2
+,PrzydzielonyHost,docker exec host2 ping -c4 172.17.0.3
+,PrzydzielonyHost,docker network create mynetwork
+,PrzydzielonyHost,docker network ls
+,PrzydzielonyHost,"docker network inspect mynetwork
+
+# Zwróć uwagę, że to JSON"
+,PrzydzielonyHost,"docker exec host1 ping -c4 host2
+
+# powinno zwrócić: `ping: bad address 'host2'`"
+,PrzydzielonyHost,docker network connect mynetwork host1
+,PrzydzielonyHost,docker network connect mynetwork host2
+,PrzydzielonyHost,docker exec host1 ping -c4 host2
+,PrzydzielonyHost,docker exec host2 ping -c4 host1
+,PrzydzielonyHost,ping -c4 host1
+,PrzydzielonyHost,ping -c4 host2
+,PrzydzielonyHost,docker run -d -it --rm --name host3 --network mynetwork alpine
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker exec host1 ping -c4 host3
+,PrzydzielonyHost,docker exec host3 ping -c4 host1
+,PrzydzielonyHost,docker exec host3 ping -c4 host2
+,PrzydzielonyHost,docker network inspect mynetwork
+,PrzydzielonyHost,docker kill host1 host2 host3
+,PrzydzielonyHost,docker network rm mynetwork
+Docker - konfiguracja udostępniania portów sieciowych,PrzydzielonyHost,clear
+,PrzydzielonyHost,"docker run -p 8000:80 alpine
+
+# Przypisz port 80 z kontenera
+# do portu 8000 maszyny hosta
+# na wszystkich interfejsach"
+,PrzydzielonyHost,"docker run -p 127.0.0.1:8000:80 alpine
+
+# Przypisz port 80 z kontenera
+# do portu 8000 maszyny hosta
+# na interfejsie 127.0.0.1 (loopback)"
+,PrzydzielonyHost,docker run -p 8000:8000 alpine
+,PrzydzielonyHost,docker run -p 8000:8000 -p 9000:9000 alpine
+,PrzydzielonyHost,docker run -p 8000:8000 -p 9000:9000 -p 127.0.0.1:8000:80 alpine
+,PrzydzielonyHost,docker run -d --rm -p 8000:8000 alpine sleep 100
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker run -p 8000:8000 -p 9000:9000 -p 127.0.0.1:8000:80 -d alpine sleep 100
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker run -p 127.0.0.1:8000:80/udp -d alpine sleep 100
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker rm $(docker ps -aq)
+Docker - montowanie plików,PrzydzielonyHost,clear
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,sudo mkdir /home/src
+,PrzydzielonyHost,cd /home/src/
+,PrzydzielonyHost,echo 'hello' > /home/src/myfile.txt
+,PrzydzielonyHost,docker run -it -v /home/src/myfile.txt:/data/hello.txt alpine
+,Kontener,date > /data/hello.txt
+,Kontener,exit
+,PrzydzielonyHost,cat /home/docker/myfile.txt
+,PrzydzielonyHost,docker run -it -v /home/src/myfile.txt:/data/hello.txt:ro alpine
+,Kontener,"date > /data/hello.txt
+
+# Read-only file system"
+,Kontener,exit
+Docker - montowanie katalogów,PrzydzielonyHost,clear
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,docker run -it -v /home/src:/data alpine
+,Kontener,ls /data/
+,Kontener,echo 'hello world' > /data/hello.txt
+,Kontener,exit
+,PrzydzielonyHost,cat /home/src/hello.txt
+,PrzydzielonyHost,docker run -it -v /home/src:/data:ro alpine
+,Kontener,"date > /data/hello.txt
+
+# Read-only file system"
+,PrzydzielonyHost,"vim myscript.py
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+name = 'Mark Watney'
+print(name)
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# Litery pojawią się na dole ekranu w pasku statusu"
+,PrzydzielonyHost,docker run -v /home/src:/data python:3.10-alpine python /data/myscript.py
+,PrzydzielonyHost,pwd
+,PrzydzielonyHost,echo $(pwd)
+,PrzydzielonyHost,docker run -it --workdir /home alpine
+,PrzydzielonyHost,docker run -v $(pwd):/data python:3.10-alpine python /data/myscript.py
+,PrzydzielonyHost,alias python='docker run -v $(pwd):/data --workdir /data python:3.10-alpine python'
+,PrzydzielonyHost,python myscript.py
+,PrzydzielonyHost,unalias python
+Docker - montowanie wolumenów,PrzydzielonyHost,clear
+,,
+,-,Gitea - Instalacja
+,PrzydzielonyHost,sudo mkdir /home/gitea
+,PrzydzielonyHost,sudo chmod 777 /home/gitea
+,PrzydzielonyHost,"docker run \
+    --name gitea \
+    --detach \
+    --rm \
+    --env USER_UID=1000 \
+    --env USER_GID=1000 \
+    --network ecosystem \
+    --publish 3000:3000 \
+    --publish 2222:22 \
+    --volume /home/gitea:/data \
+    --volume /etc/timezone:/etc/timezone:ro \
+    --volume /etc/localtime:/etc/localtime:ro \
+    gitea/gitea"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- http://$PRZYDZIELONE_IP:3000/"
+,Gitea,"Ustaw opcje konfiguracyjne:
+- SSH Server Domain: $PRZYDZIELONE_IP
+- Gitea Base URL: http://$PRZYDZIELONE_IP:3000/"
+,Gitea,"Rozwiń sekcję ""Administrator Account Settings"" [na samym dole] i wpisz:
+- Username: root
+- Password: abcdefghi
+- Email: admin@example.com"
+,-,Gitea - Zakładanie projektu
+,Gitea,"Kliknij ikonę ""+"" [prawy górny róg]
+- ""New Migration""
+- Wybierz ""GIT"" [pierwszy kafelek po lewej u góry]
+- ""Migrate / Clone From URL"" wpisz https://github.com/sages-pl/example-helloworld-java.git
+- Wszystkie pozostałe opcje pozostaw domyślne
+- Przycisk Migrate Repository [zielony na dole]"
+,PrzydzielonyHost,sudo mkdir /home/src
+,PrzydzielonyHost,sudo chmod 777 /home/src
+,PrzydzielonyHost,"git clone http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java.git /home/src/java
+- username: root
+- hasło: abcdefghi"
+,-,GitLab - Instalacja
+,PrzydzielonyHost,docker network create ecosystem
+,PrzydzielonyHost,sudo mkdir -p /home/gitlab
+,PrzydzielonyHost,sudo chmod 777 /home/gitlab
+,PrzydzielonyHost,"docker run \
+    --name gitlab \
+    --detach \
+    --rm \
+    --network ecosystem \
+    --publish 8022:22 \
+    --publish 8000:80 \
+    --publish 8443:443 \
+    --volume /home/gitlab/config:/etc/gitlab \
+    --volume /home/gitlab/logs:/var/log/gitlab \
+    --volume /home/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest"
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker logs gitlab
+,PrzydzielonyHost,"docker logs -f gitlab
+
+# Aby wyjść z trybu logów naży wcisnąć `ctrl+c`"
+,PrzydzielonyHost,"docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
+
+# Skopiuj hasło"
+,-,GitLab - Zakładanie projektu
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- http://$PRZYDZIELONE_IP:8000/
+- username: root
+- hasło: abcdefghi"
+,GitLab,"1. New Project (niebieski przycisk u góry po prawej)
+2. Import project (trzecia zakładka od lewej)
+3. Repo by URL (drugi w dolnym rzędzie)
+4. Git repository URL: https://github.com/sages-pl/example-helloworld-java.git
+5. Username i password zostawić puste
+6. Project name i project slug ma być domyślny
+7. Visibility Level: Private
+8. Create Project"
+,GitLab,Powinno wyświetlić się repozytoium z plikami w Gitlabie
+,-,Java - Instalowanie zależności
+,PrzydzielonyHost,"# Przejdź do katalogu z kodem źródłowym
+
+cd /home/src/"
+,PrzydzielonyHost,"# Zaktualizuj definicje pakietów
+
+sudo apt update"
+,PrzydzielonyHost,"# Zainstaluj zależności projektu
+
+sudo apt install -y openjdk-8-jdk maven"
+,PrzydzielonyHost,"# Wybierz wersję Java 8, tj. opcja numer 2 ze ścieżką
+# ""/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java""
+
+sudo update-alternatives --config java"
+,PrzydzielonyHost,"java -version
+
+# Powinno się wyświetlić:
+# openjdk version ""1.8.0"""
+,-,Java - Budowanie projektu
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"mvn compile
+
+# Uruchom proces budowania
+# Przy pierwszym uruchomieniu może chwilę potrwać
+# ściąganie zależności"
+,PrzydzielonyHost,"mvn test
+
+# Uruchom testy jednostkowe
+# Przy pierwszym uruchomieniu może chwilę potrwać
+# ściąganie zależności"
+,PrzydzielonyHost,"mvn verify
+
+# Uruchom testy integracyjne
+# Przy pierwszym uruchomieniu może chwilę potrwać
+# ściąganie zależności"
+,-,Jenkins - Instalacja i uruchamianie
+,PrzydzielonyHost,https://hub.docker.com/search?q=jenkins&type=image
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,docker network create ecosystem
+,PrzydzielonyHost,docker pull jenkins/jenkins
+,PrzydzielonyHost,docker pull jenkins/jenkins:centos
+,PrzydzielonyHost,docker pull jenkins/jenkins:alpine
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker run jenkins/jenkins:alpine
+,PrzydzielonyHost,docker run -p 8080:8080 jenkins/jenkins:alpine
+,PrzydzielonyHost,"Otwórz w przeglądarce:
+- http://$PRZYDZIELONE_IP:8080/"
+,PrzydzielonyHost,wpisz hasło z terminala pomiędzy gwiazdkami
+,PrzydzielonyHost,sudo mkdir -p /home/jenkins
+,PrzydzielonyHost,docker run -p 8080:8080 --name jenkins --network ecosystem --rm -v /home/jenkins:/var/jenkins_home jenkins/jenkins:alpine
+,PrzydzielonyHost,sudo chmod 777 /home/jenkins
+,PrzydzielonyHost,docker run -p 8080:8080 --name jenkins --network ecosystem --rm -v /home/jenkins:/var/jenkins_home jenkins/jenkins:alpine
+,Jenkins,"Otwórz w przeglądarce:
+- http://$PRZYDZIELONE_IP:8080/"
+,Jenkins,Wklej hasło skopiowane z konsoli
+,Jenkins,Install Suggested Plugins
+,Jenkins,"# https://dev.astrotech.io/jenkins/introduction/good-engineering-practices.html
+
+Create First Admin User
+- Username: admin
+- Password: abcdefghi
+- Fullname: Admin
+- E-mail address: admin@example.com
+
+Save and continue"
+,Jenkins,"Instance Configuration
+- Jenkins URL: [zostawiamy domyślne]"
+,Jenkins,"Jenkins is ready!
+- Start using Jenkins"
+,PrzydzielonyHost,sudo ln -s /home/jenkins /var/jenkins_home
+,PrzydzielonyHost,"docker stop jenkins
+
+# Powinno to zamknąć proces Jenkinsa i kontener"
+,PrzydzielonyHost,"docker ps
+
+# Powinien nie wyświetlać działającego kontenera Jenkins"
+,PrzydzielonyHost,ls -la /home/jenkins
+,PrzydzielonyHost,docker run -d -p 8080:8080 --name jenkins --network ecosystem --rm -v /home/jenkins:/var/jenkins_home jenkins/jenkins:alpine
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker logs jenkins
+,PrzydzielonyHost,docker logs -n5 jenkins
+,PrzydzielonyHost,"docker logs -f jenkins
+# Następnie wyenterować tyle razy, aby tekst zniknął z ekranu"
+,-,Jenkins - Instalacja Blue Ocean
+,Jenkins,"[lewe menu]
+-> Konfiguracja [Manage Jenkins]
+-> Zarządzaj Wtyczkami [Manage Plugins]
+-> wybierz zakładkę Dostępne [Available]
+
+(albo przejdź na stronę http://$PRZYDZIELONE_IP:8080/pluginManager/available)"
+,Jenkins,"na zakładce dostępne szukamy ""BlueOcean Aggregator"", na końcu listy wyników wyszukiwania"
+,Jenkins,"zaznaczamy ""Blue Ocean"" i klikamy przycisk na dole ""Download now and install after restart"""
+,Jenkins,"na dole ekranu zaznaczamy opcję ""Restart Jenkins when installation is complete and no jobs are running"""
+,Jenkins,po dwóch minutach odświeżamy stronę (jeżeli sama się nie przeładowała) i logujemy się do Jenkinsa
+,Jenkins,[lewe menu] -> Back to Dashboard
+,Jenkins,"[lewe menu] -> Open Blue Ocean
+# Alternatywnie można wejść na stronę http://$PRZYDZIELONE_IP:8080/blue/"
+,PrzydzielonyHost,"docker restart jenkins
+
+# Gdyby opcja ""Restart Jenkins"" nie została zaznaczona podczas instalcji
+# To trzeba zrestartować kontener ręcznie"
+,-,Jenkins - Dodawanie repozytorium w Blue Ocean
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,history |grep clone
+,Jenkins,"Na pop-upie ""Welcome to Jenkins"" -> klikamy ""Create a new Pipeline"" -> i wybieramy GIT"
+,Jenkins,"http://$PRZYDZIELONE_IP:8000/root/example-java.git
+
+# WAŻNE jest dodanie `.git` na końcu!!"
+,Jenkins,"Create credential: login ""root"", hasło ""abcdefghi""
+- kliknąć Create Credential
+# ważne aby to zrobić przed Create Pipeline
+
+Upewnij się, że jest zaznaczone:
+Use existing credential: root/******
+(Git username/password for http://$PRZYDZIELONE_IP:8000/root/example-java.git)
+
+Jeszcze raz upewnij się, że jest `.git` na końcu adresu `Repository URL`
+
+Później kliknij `Create Pipeline`"
+,Jenkins,"Powinien wyskoczyć pop-up ""You don't have any branches that contain a Jenkinsfile"""
+,-,Jenkins - środowisko uruchomienia
+,Jenkins,"# Na pop-upie ""You don't have any branches that contain a Jenkinsfile""
+# -> klikamy ""Create Pipeline"""
+,Jenkins,"Upewnij się, że nie wyskakuje ""Connecting to GIT""...
+Jeżeli jest Connecting to GIT to znaczy, że zrobiłeś literówkę w username, haśle lub nie ma `.git` na końcu"
+,Jenkins,"klikamy na plus (na środku ekranu jako ""dodaj stage""),
+[po prawej] nazywamy stage ""Environment""
+Add Step -> ""shell script"" -> wpisujemy: env
+Zwróć uwagę na spacje, wielkość liter i powójne cudzysłowia
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,-,Jenkins - Konfiguracja budowania (pierwsze kroki)
+,Jenkins,"klikamy na plus (na środku ekranu jako ""dodaj stage""),
+[po prawej] nazywamy stage ""Build""
+Add Step -> ""shell script"" -> wpisujemy: echo ""building...""
+Zwróć uwagę na spacje, wielkość liter i powójne cudzysłowia
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Po 20 sekundach powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę"
+,Jenkins,Build powinien się udać (to znaczy mieć zielony thick-mark w kolumnie status)
+,Jenkins,Kliknij na swojego build i przejdź do ekranu podsumowania budowania
+,Jenkins,Rozwiń wszystkie kroki i zobacz co tam jest napisane
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Jenkins - dodawanie kolejnego stage
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Klikamy na plus (na środku ekranu jako ""dodaj stage"" - plus w górnej linijce)
+Nazywamy Stage: ""Test""
+Add Step -> ""shell script"" -> wpisujemy: echo ""testing...""
+Zwróć uwagę na spacje, wielkość liter i powójne cudzysłowia
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Po 20 sekundach powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę"
+,Jenkins,Build powinien się udać (to znaczy mieć zielony thick-mark w kolumnie status)
+,Jenkins,Kliknij na swojego build i przejdź do ekranu podsumowania budowania
+,Jenkins,Rozwiń wszystkie kroki i zobacz co tam jest napisane
+,Jenkins,"Zmień stage, przez kliknięcie na inną kropkę na osi ""Pipeline"""
+,Jenkins,Rozwiń wszystkie kroki i zobacz co tam jest napisane
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Jenkins - dodawanie kolejnego kroku
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Klikamy na kropkę w stage ""Build""
+- wybierz z menu po prawej stronie ""Shell Script""
+- Zamiast echo ""building..."" napisz ""mvn compile""
+Zwróć uwagę na spacje, wielkość liter i powójne cudzysłowia
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę"
+,Jenkins,Build powinien się NIE udać (to znaczy mieć czerwony X w kolumnie status)
+,Jenkins,Kliknij na swojego build i przejdź do ekranu podsumowania budowania
+,Jenkins,"Przejdź na stage, który się nie powiódł i rozwiń nieudane kroki i zobacz co tam jest napisane"
+,Jenkins,"Na końcu drugiej linii nieudanego kroku powinna się znaleźć informacja ""mvn: not found"""
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Jenkins - uprawnienia
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"whoami
+
+# Powinno zwrócić: ubuntu"
+,PrzydzielonyHost,"ls -la /home/jenkins/
+
+# Zwróć uwagę na to kto i jaka grupa jest właścicielem plików"
+,PrzydzielonyHost,ls -n /home/jenkins/
+,PrzydzielonyHost,"id
+
+# Powinno zwrócić:
+# uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev),118(lxd),998(docker)"
+,PrzydzielonyHost,docker exec -it jenkins ash
+,Kontener,ps aux
+,Kontener,"whoami
+# powinno zwrócić `jenkins`"
+,Kontener,"id
+
+# Powinno zwrócić:
+# uid=1000(jenkins) gid=1000(jenkins) groups=1000(jenkins)"
+,Kontener,"ls -la /var/jenkins_home/
+
+# Zwróć uwagę na to kto i jaka grupa jest właścicielem plików"
+,Kontener,ls -n /home/jenkins/
+,Kontener,exit
+,PrzydzielonyHost,cat /etc/passwd |grep 1000
+,PrzydzielonyHost,docker exec jenkins cat /etc/passwd |grep 1000
+,PrzydzielonyHost,grep root /etc/passwd
+,PrzydzielonyHost,docker exec jenkins grep root /etc/passwd
+,PrzydzielonyHost,"cat /etc/passwd
+
+# Konta systemowe mają UID poniżej 1000
+# Konta użytkowników mają UIC 1000 lub większy"
+,PrzydzielonyHost,docker exec -it -u root jenkins ash
+,Kontener,"whoami
+
+# Powinno zwrócić:
+# root"
+,Kontener,"id
+
+# Powinno zwrócić:
+# uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)"
+,-,Jenkins - instalowanie zależności na maszynie z Jenkinsem
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"mvn --version
+
+# Wyskoczy informacja, że maven jest i w której werjsi
+# To dlaczego w Jenkinsie był błąd, że nie znaleziono mvn"
+,PrzydzielonyHost,docker exec -itu root jenkins apk add maven
+,Jenkins,"Przejdź na przeglądarkę
+- powtórz build - zaokrąglona strzałeczka `Rerun` [w menu u góry]
+- Build powinien się NIE udać"
+,Jenkins,"Kliknij na swojego build i przejdź do ekranu podsumowania budowania
+Przejdź na stage, który się nie powiódł i rozwiń nieudane kroki i zobacz co tam jest napisane
+
+# Linie około 415-417
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project my-app: Compilation failure: Compilation failure:
+[ERROR] Source option 5 is no longer supported. Use 6 or later.
+[ERROR] Target option 1.5 is no longer supported. Use 1.6 or later."
+,PrzydzielonyHost,"docker exec -it -u root jenkins apk search openjdk |sort
+
+# Nazwę paczki można także sprawdzić przez wyszykiwarkę na stronie:
+# https://pkgs.alpinelinux.org/packages
+# https://pkgs.alpinelinux.org/packages?name=openjdk*&branch=edge
+# https://pkgs.alpinelinux.org/contents?repo=community&page=1&arch=x86_64&branch=edge&name=openjdk8"
+,PrzydzielonyHost,docker exec -it -u root jenkins apk add openjdk8
+,PrzydzielonyHost,docker exec -it -u root jenkins ash
+,Kontener,mvn --version
+,Kontener,JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/ mvn --version
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+
+Klikamy na kropkę w stage ""Build""
+- wybierz z menu po prawej stronie ""Shell Script""
+- Zamiast ""mvn compile"" wpisz ""JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/ mvn compile""
+Zwróć uwagę na spacje, wielkość liter i powójne cudzysłowia
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run""
+
+Powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę
+Build powinien się udać (to znaczy mieć zielony tick-mark w kolumnie status)"
+,Gitea,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Jenkins - ustawianie zmiennych środowiskowych
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+
+Klikamy na kropkę ""start""
+- wybierz po prawej stronie ""Environment""
+- plusem dodaj nową zmienną
+- nazwę zmiennej nazwij `JAVA_HOME`
+- a wartość to `/usr/lib/jvm/java-1.8-openjdk/`
+
+Klikamy na kropkę ""Build""
+- wybierz po prawej stronie ""Shell Script""
+- Zamiast ""JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/ mvn compile"" wpisz ""mvn compile""
+
+Zwróć uwagę na spacje, wielkość liter i powójne cudzysłowia
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run""
+
+Powinno samoczynnie przejść do wyników budowania, jak nie, to odświeżyć stronę"
+,Jenkins,Build powinien się udać (to znaczy mieć zielony tick-mark w kolumnie status)
+,Gitea,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Jenkins - uruchamianie testów jednostkowych
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+
+Klikamy na kropkę w stage ""Test"":
+
+- wybierz z menu po prawej stronie `Shell Script`
+- Zamiast `echo ""testing...""` napisz `mvn test`
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Kliknij na swojego build i przejdź do ekranu podsumowania budowania i wybierz stage ""Test"""
+,Jenkins,Rozwiń krok i zobacz co tam jest napisane
+,-,Jenkins - uruchamianie testów integracyjnych
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Klikamy na kropkę w stage ""Test"":
+
+- kliknij na symbol ""plus w okręgu"" poniżej napisu ""Test"" na środku ekranu
+- to spowoduje stworzenie nowego Stage, który będzie równoległy do poprzedniego
+- Po prawej stronie nazwij stage: ""Test Integration""
+- W menu po prawej stronie wybierz ""Add step"" -> `Shell Script`
+- Wpisz `mvn verify`
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Kliknij na swojego build i przejdź do ekranu podsumowania budowania i wybierz stage ""Test"""
+,Jenkins,"Rozwiń krok ""Test Integration"" i zobacz co tam jest napisane"
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Klikamy na kropkę w stage ""Test"" i zmieniamy w menu po prawej jako stage ""Test Unit""
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Kliknij na swojego build i przejdź do ekranu podsumowania budowania i wybierz stage ""Test"""
+,Gitea,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,System Operacyjny - Backup
+,PrzydzielonyHost,cd /home/ && clear
+,PrzydzielonyHost,tar cf /tmp/backup-$(date +%F).tar.gz /home/
+,PrzydzielonyHost,du -hs /tmp/backup-*
+,PrzydzielonyHost,rm /tmp/backup-*
+,-,Docker - Budowanie obrazów FROM
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,git clean -fdx
+,PrzydzielonyHost,git reset --hard
+,PrzydzielonyHost,git pull
+,PrzydzielonyHost,git status
+,PrzydzielonyHost,ls -la
+,PrzydzielonyHost,cat Dockerfile
+,PrzydzielonyHost,"vim Dockerfile
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"cat Dockerfile
+# Na ekranie powinno się wyświetlić:
+
+FROM alpine"
+,PrzydzielonyHost,"docker build . -t myapp:0.1
+# Kropka po poleceniu build, a przed parametrem `-t` jest ważna"
+,PrzydzielonyHost,"docker images
+# W jednej z linii powinien się wyświetlać myapp 0.1"
+,PrzydzielonyHost,"docker run myapp:0.1
+# Aplikacja się uruchomiła i od razu zamknęła"
+,PrzydzielonyHost,docker run -it myapp:0.1
+,Kontener,"ls -la /
+# Zauważ, że nie ma się katalogu `/data`"
+,Kontener,exit
+,PrzydzielonyHost,"docker ps -a
+# Zauważ, że były takie kontenery myapp w wersji 0.1"
+,PrzydzielonyHost,docker run -it -v /home/src/java:/data myapp:0.1
+,Kontener,"ls -la /
+# Zauważ, że pojawił się katalog `/data`"
+,Kontener,"ls -la /data
+# Powinno wyświetlić nam pliki z kodem źródłowym z Javy"
+,Kontener,cd /data
+,Kontener,"mvn compile
+# Powinno zwrócić /bin/sh: mvn: not found"
+,Kontener,apk add maven
+,Kontener,"# Build powinien się nie powieść
+# No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?"
+,Kontener,java -version
+,Kontener,apk search openjdk |sort
+,Kontener,"apk --print-arch
+
+# Powinno być identyczne do uname -m
+# x86_64"
+,Przeglądarka,"https://pkgs.alpinelinux.org/packages
+# wyszukaj `openjdk*`"
+,Przeglądarka,"https://pkgs.alpinelinux.org/packages?name=openjdk8*&branch=edge&arch=x86_64
+# Wybierz architekturę x86_64
+# Wyszukaj `openjdk8*`"
+,Przeglądarka,https://pkgs.alpinelinux.org/packages?name=openjdk*&branch=edge
+,Kontener,apk add openjdk8
+,Kontener,"mvn compile
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn test
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn verify
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,PrzydzielonyHost,"ls -la /home/src/java/
+# Powinien się pojawić katalog target
+# Katalog jest wynikiem budowania na kontenerze"
+,PrzydzielonyHost,ls -la /home/src/java/target/
+,PrzydzielonyHost,"git clean -fdx
+# Powinno wyrzucić błąd: Permission denied"
+,PrzydzielonyHost,docker run -it -v /home/src/java:/data myapp:0.1
+,Kontener,"whoami
+# powinno zwrócić `root`"
+,Kontener,exit
+,PrzydzielonyHost,sudo git clean -fdx
+,-,Docker - Budowanie obrazów WORKDIR
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker run -it -v /home/src/java:/data myapp:0.1
+,Kontener,"pwd
+# Zauważ, że jesteś w głównym katalogu"
+,Kontener,cd /data
+,Kontener,"ls -la /
+# Zauważ, że pojawił się katalog `/data`"
+,Kontener,"ls -la /data
+# Powinno wyświetlić pliki z kodem źródłowym Javy"
+,Kontener,"mvn compile
+# Powinno wyrzucić błąd: /bin/sh: mvn: not found"
+,Kontener,apk add openjdk8 maven
+,Kontener,mvn compile
+,Kontener,exit
+,PrzydzielonyHost,"vim /home/src/java/Dockerfile
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+WORKDIR /data
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker build . -t myapp:0.2
+,Kontener,docker run -it -v /home/src/java:/data myapp:0.2
+,Kontener,"pwd
+# Zauważ, że jesteś w katalogu /data"
+,Kontener,apk add openjdk8 maven
+,Kontener,"mvn compile
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn test
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn verify
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,PrzydzielonyHost,"docker images
+# W jednej z linii powinien się wyświetlać myapp 0.2
+# Zwróć uwagę, że rozmiar nie różni się zbytnio od wersji 0.1"
+,-,Docker - Budowanie obrazów RUN (instalacja zależności)
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"vim /home/src/java/Dockerfile
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+RUN apk add openjdk8 maven
+WORKDIR /data
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"cat /home/src/java/Dockerfile
+# Na ekranie powinno się wyświetlić:
+
+FROM alpine
+RUN apk add openjdk8 maven
+WORKDIR /data"
+,PrzydzielonyHost,docker build . -t myapp:0.3
+,PrzydzielonyHost,"docker images
+# W jednej z linii powinien się wyświetlać myapp 0.3
+# Zwróć uwagę, że rozmiar jest większy niż wersji 0.1 oraz 0.2"
+,Kontener,docker run -it -v /home/src/java:/data myapp:0.3
+,Kontener,"mvn compile
+# ściąga z internetu wszystkie zależności
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn test
+# ściąga z internetu wszystkie zależności
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn verify
+# ściąga z internetu wszystkie zależności
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,-,Docker - Budowanie obrazów RUN (optymalizacja)
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"vim Dockerfile
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker build . -t myapp:0.4
+,PrzydzielonyHost,docker images
+,-,Docker - Budowanie obrazów COPY
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,sudo git clean -fdx
+,PrzydzielonyHost,"vim Dockerfile
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+COPY . /data
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"cat Dockerfile
+# Na ekranie powinno się wyświetlić:
+
+FROM alpine
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+COPY . /data"
+,PrzydzielonyHost,docker build . -t myapp:0.5
+,PrzydzielonyHost,docker run -it myapp:0.5
+,Kontener,"mvn compile
+# ściąga z internetu wszystkie zależności
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,PrzydzielonyHost,docker tag myapp:0.5 myapp:latest
+,-,Docker - budowanie optymalizacja maven cache (podlinkowanie)
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker run -it -v /home/ubuntu/.m2:/root/.m2 myapp:0.5
+,Kontener,"mvn compile
+# Nie powinno niczego ściągać z internetu
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,Kontener,ls -la /root/.m2/repository/
+,PrzydzielonyHost,docker run -it -v /home/src/java:/data -v /home/ubuntu/.m2:/root/.m2 myapp:0.5
+,Kontener,"mvn compile
+# Nie powinno niczego ściągać z internetu
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn test
+# Nie powinno niczego ściągać z internetu
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,"mvn verify
+# Nie powinno niczego ściągać z internetu
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,PrzydzielonyHost,docker run -t -v /home/ubuntu/.m2:/root/.m2 myapp:0.5 mvn compile
+,PrzydzielonyHost,docker run -v /home/ubuntu/.m2:/root/.m2 myapp:0.5 mvn compile
+,-,Docker - Budowanie obrazów COPY .m2
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,cp -a /home/ubuntu/.m2 /home/src/java/.m2
+,PrzydzielonyHost,"vim Dockerfile
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+RUN apk add openjdk8 maven
+WORKDIR /data
+COPY . /data
+COPY .m2 /root/.m2
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker build . -t myapp:0.6
+,Kontener,docker run -it myapp:0.6
+,Kontener,"mvn compile
+# Nie powinno niczego ściągać z internetu
+# Powinno zwrócić: BUILD SUCCESS"
+,Kontener,exit
+,PrzydzielonyHost,docker run -it myapp:0.6 mvn compile
+,PrzydzielonyHost,docker tag myapp:0.6 myapp:latest
+,-,Docker - Budowanie obrazów ENTRYPOINT
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"vim Dockerfile
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine
+RUN apk add openjdk8 maven
+WORKDIR /data
+COPY . /data
+COPY .m2 /root/.m2
+ENTRYPOINT [""mvn""]
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker build . -t myapp:0.7
+,PrzydzielonyHost,docker run -t myapp:0.7 compile
+,PrzydzielonyHost,docker run -t myapp:0.7 test
+,PrzydzielonyHost,docker run -t myapp:0.7 verify
+,-,Docker - uruchamianie alias
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker tag myapp:0.7 myapp:latest
+,PrzydzielonyHost,docker run -t myapp compile
+,PrzydzielonyHost,docker run -t myapp test
+,PrzydzielonyHost,docker run -t myapp verify
+,PrzydzielonyHost,"alias myapp='docker run -t myapp'
+# jeżeli chcesz mieć to na stałe to dopisz do pliku ~/.profile"
+,PrzydzielonyHost,myapp compile
+,PrzydzielonyHost,myapp verify
+,PrzydzielonyHost,myapp test
+,PrzydzielonyHost,myapp compile && myapp test && myapp verify
+,PrzydzielonyHost,unalias myapp
+,-,Docker - budowanie tagowanie wersji z GIT
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"git log
+
+# Aby wyjść wciśnij klawisz `q`"
+,PrzydzielonyHost,git log -1
+,PrzydzielonyHost,git log -1 --format='%h'
+,PrzydzielonyHost,"man git-log
+# Około 814 linii (numer linii w pasku statusu na dole)
+# Używaj klawisza `page down` do przesuwania tekstu o stronę (`cmd+strzałka w dół` na macOS)
+# Wychodzi się za pomocą klawisza `q`"
+,PrzydzielonyHost,"git log --format='""%h"", ""%aI"", ""%ae"", ""%an""'"
+,PrzydzielonyHost,docker build . -t myapp:$(git log -1 --format='%h')
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker tag myapp:$(git log -1 --format='%h') myapp:latest
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker run -t myapp --version
+,PrzydzielonyHost,docker run -t myapp compile
+,PrzydzielonyHost,docker run -t myapp test
+,PrzydzielonyHost,docker run -t myapp verify
+,-,Docker - usunięcie kontenerów z historii
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,docker ps -a
+,PrzydzielonyHost,docker ps -aq
+,PrzydzielonyHost,"docker rm $(docker ps -aq)
+# Polecenie nie usunie obecnie działających kontenerów
+# W tym przypadku rzuci error: You cannot remove a running container"
+,PrzydzielonyHost,docker ps -a
+,-,Docker - usunięcie image z historii
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,df -h
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker images -q
+,PrzydzielonyHost,"docker rmi $(docker images -q)
+# Polecenie nie usunie obecnie działających kontenerów
+# W tym przypadku rzuci error: image is being used by running container"
+,PrzydzielonyHost,df -h
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker rmi -f myapp:0.1 myapp:0.2 myapp:0.3 myapp:0.4 myapp:0.5 myapp:0.6 myapp:0.7 myapp:latest
+,PrzydzielonyHost,docker rmi -f myapp:$(git log -1 --format='%h')
+,PrzydzielonyHost,df -h
+,-,GIT - Zapis konfiguracji
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"cat Dockerfile
+
+# Na ekranie powinno się wyświetlić:
+
+FROM alpine
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+COPY . /data
+COPY .m2 /root/.m2
+ENTRYPOINT [""mvn""]"
+,PrzydzielonyHost,ls -la
+,PrzydzielonyHost,"rm -fr target/
+# Wykonać to polecenie jeżeli w naszym katalogu znajduje się target/"
+,PrzydzielonyHost,git status
+,PrzydzielonyHost,git add Dockerfile
+,PrzydzielonyHost,"git status
+
+# W sekcji Changes to be committed powinien być jeden plik:
+# modified:   Dockerfile
+# jeżeli jest więcej, to znaczy że coś jest nie tak i trzeba przeczyścić repozytorium (zapytaj trenera)"
+,PrzydzielonyHost,"git commit -m ""Dockerfile"""
+,PrzydzielonyHost,git pull --rebase
+,PrzydzielonyHost,"git push
+
+# username: root
+# hasło: abcdefghi"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Dockerfile`"
+,-,Jenkins - Budowanie w kontenerach Docker
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,Jenkins,https://github.com/jenkinsci/docker/blob/master/README.md#usage-1
+,Jenkins,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:8080/manage
+
+Następnie przejdź do ""Manage Plugins"" [górny rząd na środku]
+- Available [druga zakładka]
+- Wpisać w wyszukiwarke na górze ""Docker Pipeline""
+- Zaznacz i zainstaluj ""Download now and install after restart""
+- Po dwóch minutach odśwież stronę z Jenkinsem
+- Wejdź na Blue Ocean [w menu po lewej]"
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,Klikamy na kropkę Build
+,Jenkins,"Z menu po prawej, na samym dole jest Settings"
+,Jenkins,"Z menu, które się rozwinęło wybieramy:
+- Agent: docker
+- Image: alpine
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Build powinien się nie powieść, ze względu na błąd w Stage Build w kroku `docker pull alpine`
+Komunikat błędu na końcu drugiej linii `docker: not found`"
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,docker exec -u root jenkins apk add docker
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> Restart Build [po prawej]
+,Jenkins,"Build powinien się nie powieść, ze względu na błąd w Stage Build w kroku `docker pull alpine`
+Komunikat błędu na początku trzeciej linii `Cannot connect to the Docker daemon at unix:///var/run/docker.sock`"
+,PrzydzielonyHost,docker exec -it jenkins sh
+,PrzydzielonyHost,ls -ls /var/run/docker.sock
+,PrzydzielonyHost,docker stop jenkins
+,PrzydzielonyHost,history |grep jenkins
+,PrzydzielonyHost,docker run -d -p 8080:8080 --name jenkins  --network ecosystem --rm -v /home/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:alpine
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> Restart Build [po prawej]
+,Jenkins,"Build powinien się nie powieść, ze względu na błąd w Stage Build w kroku `docker pull alpine`
+Komunikat błędu na końcu drugiej linii `docker: not found
+`"
+,PrzydzielonyHost,docker exec -u root jenkins apk add docker
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> Restart Build [po prawej]
+,Jenkins,"Build powinien się nie powieść, ze względu na błąd w Stage Build w kroku `docker pull alpine`
+Komunikat błędu w trzeciej linii `Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock`"
+,PrzydzielonyHost,"docker exec jenkins whoami
+# jenkins"
+,PrzydzielonyHost,"ls -la /var/run/docker.sock
+# Powinno zwrócić:
+# srw-rw---- 1 root docker 0 Dec 21 10:49 /var/run/docker.sock"
+,PrzydzielonyHost,"sudo chmod 666 /var/run/docker.sock
+sudo chmod o+rw /var/run/docker.sock
+
+# Takie podejście może być tylko na czas szkolenia, aby nie tracić czasu
+# Na produkcji można lepiej zmienić uprawnienia, lub dodać usera do grupy"
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> Restart Build [po prawej]
+,Jenkins,"Build powinien się nie powieść, ze względu na błąd w Stage Build w kroku `mvn compile`
+Komunikat błędu na końcu drugiej linii `mvn: not found`"
+,PrzydzielonyHost,"docker exec -u root jenkins apk add maven
+
+# Tym razem to polecenie nie rozwiąże problemu
+# Buildy są na innej maszynie (czystym alpine)"
+,Przeglądarka,Na https://hub.docker.com poszukać maven
+,Przeglądarka,"# Na image maven przejść na zakładkę tag i przefiltrować w poszukiwaniu 3-openjdk-8
+# Alternatywnie wejść na https://hub.docker.com/_/maven?tab=tags&name=3-openjdk-8"
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,Klikamy na kropkę Build
+,Jenkins,"Z menu po prawej, na samym dole jest Settings"
+,Jenkins,"Z menu, które się rozwinęło wybieramy:
+- Agent: docker
+- Image: maven:3-openjdk-8
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Build powinien się powieść
+Wchodzimy na ekran z podsumowaniem wyniku budowania -> Stage Build -> Rozwiń kroki"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Jenkins - Buduj wszystkie stage na Docker
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Klikamy na szarą kropkę ""Start"" i z menu po prawej wybieramy:
+- (to jest edycja agenta dla wszystkich stage w całym Pipeline)
+- Agent: docker
+- Image: maven:3-openjdk-8
+
+Usuń także zmienną środowiskową JAVA_HOME
+
+# Wcześniej ustawiliśmy konfigurację, tylko dla jednego Stage
+# W tym kroku ustawiliśmy dla wszystkich stage
+# I możemy przywrócić domyślne wartości dla Build
+
+Klikamy na kropkę Build:
+- W menu po prawej, na samym dole jest Settings
+- Agent: any
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Build powinien się powieść
+Wchodzimy na ekran z podsumowaniem wyniku budowania -> Stage Build -> Rozwiń kroki"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Docker - Przygotowanie obrazu dla naszego środowiska budowania i testów
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,cp -r /home/ubuntu/.m2 /home/src/java/.m2
+,PrzydzielonyHost,sudo chown -R ubuntu /home/src/java/.m2
+,PrzydzielonyHost,git pull
+,PrzydzielonyHost,"vim Dockerfile
+# Zwróć uwagę, żeby nie było:
+# - ENTRYPOINT (inaczej Jenkins nie działa)
+# - COPY . /data (to nie jest nam potrzebne)
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+COPY .m2 /root/.m2
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker ps -a
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,df -h
+,PrzydzielonyHost,docker build . -t myapp:cicd
+,PrzydzielonyHost,"docker images
+# Powinno zawierać myapp z tagiem cicd"
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania
+-> [prawy górny róg] kliknąć Ołówek [edit]
+
+Edytujemy szarą kropkę ""Start"" i w menu po prawej zmieniamy:
+- Image: myapp:cicd
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,Build powinien się udać
+,PrzydzielonyHost,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Docker - Przygotowanie obrazu dla naszego środowiska budowania i testów (optymalizacja)
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,mv Dockerfile Dockerfile.cicd
+,PrzydzielonyHost,cp Dockerfile.cicd Dockerfile.runtime
+,PrzydzielonyHost,"vim Dockerfile.runtime
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+COPY . /data
+COPY .m2 /root/.m2
+ENTRYPOINT [""mvn""]
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"cat Dockerfile.cicd
+
+# Na ekranie powinno się wypisać:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+COPY .m2 /root/.m2"
+,PrzydzielonyHost,"cat Dockerfile.runtime
+
+# Na ekranie powinno się wypisać:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+WORKDIR /data
+COPY . /data
+COPY .m2 /root/.m2
+ENTRYPOINT [""mvn""]"
+,-,Jenkins/Docker - Debugging
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania
+-> [prawy górny róg] kliknąć Ołówek [edit]
+
+Edytujemy stage Build i w menu po prawej zmieniamy:
+- Step -> Shell Script (mvn compile) -> i wpisujemy: mvn compile && sleep 3600
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run""
+
+Build powinien ""zawiesić"" na 3600 sekund (1 godzinę)
+W tym czasie można wejść na maszynę i dokonać inspekcji lub naprawy
+To bardzo dobry sposób debuggingu problemów z CI/CD"
+,PrzydzielonyHost,docker ps |grep myapp
+,PrzydzielonyHost,"docker exec -it 17e965dd3be4 sh
+# Zamiast 17e965dd3be4 podstaw ID kontenera, podpatrzone w `docker ps`"
+,Kontener,hostname
+,Kontener,pwd
+,Kontener,id
+,Kontener,whoami
+,Kontener,grep 1000 /etc/passwd
+,Kontener,cat /etc/passwd
+,Kontener,env |sort
+,Kontener,find / -name *.jar
+,Kontener,ls /root
+,Kontener,ls /root/.m2
+,Kontener,echo $HOME
+,Kontener,mvn compile -X
+,Kontener,mvn test -X
+,Kontener,mvn verify -X
+,Kontener,"mvn help:evaluate -Dexpression=settings.localRepository
+
+# https://mkyong.com/maven/where-is-maven-local-repository/
+# http://maven.apache.org/settings.html
+
+# Wynik /var/jenkins_home/workspace/matth-java_master/?/.m2/repository"
+,-,Jenkins/Docker - Optymalizacja
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"vim Dockerfile.cicd
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+RUN adduser cicd -D -u 1000 -h /home
+COPY .m2 /home/.m2
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker build . -f Dockerfile.cicd -t myapp:cicd
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania
+-> [prawy górny róg] kliknąć Ołówek [edit]
+
+Edytujemy stage Build i w menu po prawej zmieniamy:
+- Step -> Shell Script (mvn compile) -> i wpisujemy: mvn compile
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"# Build powinien przestać się zawieszać
+# Po około 30 sekundach powinien się powieść (zielony kolor)"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,PrzydzielonyHost,git add Dockerfile.cicd Dockerfile.runtime
+,PrzydzielonyHost,git rm Dockerfile
+,PrzydzielonyHost,"git commit -m ""Dockerfile"""
+,PrzydzielonyHost,git pull --rebase && git push
+,-,SonarQube - instalacja
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"docker network create ecosystem
+
+# Jeżeli wcześniej był stworzony network (a go robiliśmy)
+# To powinna się pojawić informacja:
+# ""Error response from daemon: network with name ecosystem already exists"""
+,PrzydzielonyHost,docker volume create --name sonarqube_data
+,PrzydzielonyHost,docker volume create --name sonarqube_extensions
+,PrzydzielonyHost,docker volume create --name sonarqube_logs
+,PrzydzielonyHost,"docker run \
+    --name sonarqube \
+    --detach \
+    --rm \
+    --network ecosystem \
+    --publish 9000:9000 \
+    --volume sonarqube_data:/opt/sonarqube/data \
+    --volume sonarqube_logs:/opt/sonarqube/logs \
+    --volume sonarqube_extensions:/opt/sonarqube/extensions \
+    sonarqube"
+,PrzydzielonyHost,docker ps
+,PrzydzielonyHost,sudo ls /var/lib/docker/volumes
+,PrzydzielonyHost,docker exec sonarqube cat /etc/os-release
+,PrzydzielonyHost,docker images
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:9000/
+- Username: admin
+- Password: admin"
+,Przeglądarka,Zmień hasło na abcdefghi
+,-,SonarQube - analiza manualna
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"vim /home/src/java/sonar-project.properties
+
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+
+## SonarQube
+sonar.host.url=http://sonarqube:9000/
+sonar.login=admin
+sonar.password=abcdefghi
+
+## Project
+sonar.projectKey=myjavaproject
+
+## Language
+sonar.language=java
+sonar.java.source=8
+
+## Paths
+sonar.projectBaseDir=/usr/src/
+sonar.sources=src/main/java
+sonar.exclusions=**/migrations/**
+sonar.java.binaries=target/classes
+sonar.working.directory=/tmp/
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"cat /home/src/java/sonar-project.properties
+# Upewnij się czy zawartość jest poprawna"
+,PrzydzielonyHost,mvn compile
+,PrzydzielonyHost,mvn test
+,PrzydzielonyHost,mvn verify
+,PrzydzielonyHost,"docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
+
+# Jeżeli wyskakuje error: no 'target/classes' to znaczy, że nie wykonano compile wcześniej"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:9000/
+- Odśwież stronę
+- Na dashboard w SonarQube pojawił się ""myjavaproject"""
+,-,SonarQube - Security
+,PrzydzielonyHost,cd /home/src/java/
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:9000
+- Administration [z paska u góry]
+- Security [zakładka]
+- Users"
+,SonarQube,"Create User [prawy górny róg]
+- Login: myusername
+- Name: myusername
+- Email: [pusty]
+- Password: abcdefghi
+- Przycisk Create
+
+# Zwróć uwagę na wielkość liter, bo SonarQube to rozróżnia"
+,SonarQube,"Project (z paska u góry) -> myproject -> Project Settings (po prawej u góry) -> Permissions
+# http://$PRZYDZIELONE_IP:9000/project_roles?id=myjavaproject"
+,SonarQube,"Wyszukujemy użytkownika myproject i zaznaczamy tylko jednego checkboxa ""Execute Analysis"""
+,PrzydzielonyHost,"vim /home/src/java/sonar-project.properties
+# Przejście do trybu edycji klawisz `a`
+# Wpisz treść:
+
+sonar.login=myusername
+sonar.password=abcdefghi
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,sudo chown -R ubuntu:ubuntu /home/src
+,PrzydzielonyHost,mvn compile
+,PrzydzielonyHost,mvn test
+,PrzydzielonyHost,mvn verify
+,PrzydzielonyHost,docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
+,-,SonarQube - token
+,PrzydzielonyHost,cd /home/src/java/
+,SonarQube,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:9000
+- Administration [z paska u góry]
+- Security [zakładka]
+- Users"
+,SonarQube,Na liście użytkowników kliknij ikonę trzech kresek (po prawej) w kolumnie Token dla usera myproject
+,SonarQube,"Generate Tokens
+- Enter Token Name: MyProject SonarScanner AWS Terminal
+- Przycisk Generate
+- Skopiuj wygenerowany token
+- Pamiętaj, że jak odświeżysz albo przeładujesz stronę, to token zniknie i nie będzie nigdy wyświetlany
+- Tokeny są do użytku tylko w jednym miejscu, np. w procesie uploadu wyników do SonarQube"
+,PrzydzielonyHost,"vim /home/src/java/sonar-project.properties
+# Przejście do trybu edycji klawisz `a`
+
+# Usuń linie sonar.login i sonar.password, które były wcześniej
+# To jest ważne, jeżeli nie usuniesz sonar.password z trzeciej linijki, to nie będzie działać
+# Następnie wpisz treść:
+
+sonar.login=<tu wklej token>
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,docker run --rm --network ecosystem -v /home/src/java:/usr/src sonarsource/sonar-scanner-cli
+,-,GIT - zapisanie konfiguracji
+,PrzydzielonyHost,cd /home/src/java/
+,PrzydzielonyHost,git status
+,PrzydzielonyHost,git add sonar-project.properties
+,PrzydzielonyHost,"git status
+# W sekcji Changes to be committed powinno być:
+- new file:   sonar-project.properties
+
+# jeżeli jest więcej, to znaczy że coś jest nie tak i trzeba przeczyścić repozytorium (zapytaj trenera)
+# Trzeba będzie go usunąć za pomocą ``git rm -fr NAZWA_PLIKU``"
+,PrzydzielonyHost,"git commit -m ""Sonar Properties"""
+,PrzydzielonyHost,"git pull --rebase
+
+# username: root
+# hasło: abcdefghi"
+,PrzydzielonyHost,"git push
+
+# username: root
+# hasło: abcdefghi"
+,Gitea,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `sonar-project.properties`"
+,-,SonarQube - analiza automatyczna w Jenkins
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Dodaj nowy stage na prawo od Test i nazwij go ""Static Code Analysis""
+Add Step -> ""shell script"" -> wpisujemy: echo ""static code analysis...""
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,Build powinien się udać
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania
+-> [prawy górny róg] kliknąć Ołówek [edit]
+
+Edytujemy stage o nazwie ""Static Code Analysis""
+Edytuj krok ""shell script"" -> zmień zawartość
+
+docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli"
+,Jenkins,"# Build powinien się nie powieść
+
+# Ze względu na błąd w Stage Static Code Analysis w kroku:
+# `docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli`
+
+# Komunikat błędu w na końcu trzeciej linii `docker: not found`"
+,PrzydzielonyHost,docker exec -u root jenkins apk add openjdk8 maven
+,Jenkins,"Wchodzimy na ekran z podsumowaniem wyniku budowania
+-> [prawy górny róg] kliknąć Ołówek [edit]
+
+Kliknij szarą kropkę ""Start""
+- W menu po prawej
+- Zmień z `Agent docker myapp` na `Agent any`
+- Dodaj zmienną środowiskową: JAVA_HOME i ustaw ją na /usr/lib/jvm/java-1.8-openjdk/
+
+Kliknij w kropkę ""Static Code Analysis""
+- Dodaj step ""Shell Scrip"" o treści ""mvn compile""
+- Przenieś go powyżej kroku ""docker run ...""
+
+- [na górze] klikamy ""Save""
+- [na środku]  ""Save & run"""
+,Jenkins,Build powinien się udać
+,-,SonarQube - Build Breaker (plugin jest teraz deprecated)
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,"vim /home/src/java/sonar-project.properties
+
+# Przejście do trybu edycji klawisz `a`
+# Dopisz na koniec sekcję:
+
+## Build Breaker
+sonar.buildbreaker.skip=false
+sonar.buildbreaker.queryInterval=10000
+sonar.buildbreaker.queryMaxAttempts=1000
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"cat /home/src/java/sonar-project.properties
+# Upewnij się czy zawartość jest jak poniżej:
+
+## SonarQube
+sonar.host.url=http://sonarqube:9000/
+sonar.login=admin
+sonar.password=abcdefghi
+
+## Project
+sonar.projectKey=myjavaproject
+
+## Language
+sonar.language=java
+sonar.java.source=8
+
+## Paths
+sonar.projectBaseDir=/usr/src/
+sonar.sources=src/main/java
+sonar.exclusions=**/migrations/**
+sonar.java.binaries=target/classes
+sonar.working.directory=/tmp/
+
+## Build Breaker
+sonar.buildbreaker.skip=false
+sonar.buildbreaker.queryInterval=10000
+sonar.buildbreaker.queryMaxAttempts=1000"
+,Przeglądarka,Wejdź na sonarqube http://$PRZYDZIELONE_IP:9000/
+,SonarQube,"W Administration (w menu u góry) -> Marketplace (zakładka) -> Wyszukaj pluginu ""Build Breaker"" -> Install"
+,SonarQube,"Na górze w pasku ""SonarQube needs to be restarted in order to
+install 1 plugins"" -> kliknij restart server -> następnie zaczekaj około minuty i odśwież stronę"
+,,"W Administration -> Marketplace ->Zakładka Installed -> Tu powinien być ""Build Breaker"""
+,SonarQube,"W Administration (w pasku u góry)
+-> Configuration (zakładka)
+-> General Settings (z menu rozwijanego)
+-> Build Breaker (z menu po lewej)
+Upewnij się, że wszystko jest ok "
+,SonarQube,"Z menu u góry wybieramy Quality Gates
+-> Create (przycisk po lewej u góry)
+-> Name: My Quality Gate
+-> Add Condition (przycisk po prawej u góry)
+-> wybierz `On Overall Code`
+-> Quality Gate fails when `Technical Debt` is greater than `1`
+-> przycisk Add Condition"
+,SonarQube,"W sekcji ""Projects"" (poniżej sekcji Conditions, którą właśnie edytowałeś/aś)
+na zakładce ""All"" zaznacz ""myjavaproject"" aby aktywować Quality Gate w projekcie
+Upewnij się, że ""myjavaproject"" ma zaznaczony checkbox"
+,Jenkins,"Uruchom Build ponownie, który powinien sfailować
+(powód: niespełnienie Quality Gate - Project does not pass the quality gate.)
+# Błąd będzie około 115 linii w pierwszej linii Exception
+# W liniach 105,106,107 jest informacja o warunkach, których nie spełnił"
+,SonarQube,"Zmień w Quality Gate ""Technical Debt"" na 50"
+,Jenkins,"Uruchom Build ponownie
+Konieczne jest uruchomienie całego budowania, a nie tylko tego jednego kroku.
+Inaczej analiza SonarScanner zakończy się błędem, że brakuje `target/classes`
+Tym razem powinien przejść"
+,Gitea,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `sonar-project.properties`"
+,-,PITest - uruchamianie manualne
+,PrzydzielonyHost,cd /home/src/java/
+,PrzydzielonyHost,"vim pom.xml
+# Przejście do trybu edycji klawisz `a`
+# W sekcji <project><build><plugins>
+# Dopisz treść:
+
+        <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.6.1</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.pitest</groupId>
+                    <artifactId>pitest-junit5-plugin</artifactId>
+                    <version>0.12</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"Gdyby był error: Failed to execute goal org.pitest:pitest-maven:1.6.1:mutationCoverage (default-cli) on project my-app: Execution default-cli of goal org.pitest:pitest-maven:1.6.1:mutationCoverage failed: Coverage generation minion exited abnormally!
+
+To należy skasować sekcję dependencies z pluginu org.pitest
+
+
+vim pom.xml
+# Przejście do trybu edycji klawisz `a`
+# W sekcji <project><build><plugins>
+# Dopisz treść:
+
+        <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.6.1</version>
+        </plugin>
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,mvn compile
+,PrzydzielonyHost,mvn test
+,PrzydzielonyHost,mvn verify
+,PrzydzielonyHost,mvn org.pitest:pitest-maven:mutationCoverage
+,PrzydzielonyHost,cd target/pit-reports/*
+,PrzydzielonyHost,"python3 -m http.server 8888
+# Aby wyłączyć server wciśnij kombinację klawiszy `ctrl+c`"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:8888
+- Przeglądnij raport Pitest"
+,PrzydzielonyHost,cd /home/src/java/
+,PrzydzielonyHost,git add pom.xml
+,PrzydzielonyHost,"git commit -m ""Mutation Testing"""
+,PrzydzielonyHost,git pull --rebase
+,PrzydzielonyHost,"git push
+# username: root
+# hasło: abcdefghi"
+,-,PITest - SonarQube
+,PrzydzielonyHost,cd /home/src/java/
+,SonarQube,"W Administration (w pasku u góry)
+-> Marketplace (zakładka)
+-> Wyszukaj pluginu ""Mutation Analysis"" -> Install"
+,SonarQube,"Na górze w pasku ""SonarQube needs to be restarted in order to
+install 1 plugins"" -> kliknij restart server -> następnie zaczekaj około minuty i odśwież stronę"
+,SonarQube,"W Administration -> Configuration -> General Settings -> z menu po lewej wybierz Mutation Analysis
+Upewnij się, że wszystko jest ok"
+,PrzydzielonyHost,docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+,PrzydzielonyHost,"Wynik powinien być ""EXECUTION SUCCESS"""
+,SonarQube,"The goal of this plugin is to bring PIT results to SonarQube.
+""Survived mutants"" are seen as SonarQube issues.
+""Killed mutants"" show as a coverage measure in the class containing the mutant.
+If code is not covered by any test, that code will not be mutated; prior test coverage is a precondition for mutation testing.
+Finally, if the percentage of ""Survived mutants"" in a source file exceeds a configurable threshold, the plugin creates a SonarQube issue on the source file."
+,-,PITest - Jenkins
+,PrzydzielonyHost,cd /home/src/java/
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Musimy dodać nowy stage o nazwie ""Mutation Testing""
+
+Problem w tym, że testy mutacyjne muszą wykonać się po:
+- kompilacji
+- testach jednostkowych
+- testach integracyjnych
+
+Ale przed Statyczną analizą kodu źródłowego.
+
+Ze względu na to, że:
+- Pitest potrzebuje coverage oraz wykrycia testów do uruchomienia
+- SonarScanner zbiera wyniki Pitest i wrzuca je do SonarQube."
+,Jenkins,"Dodaj nowy stage o nazwie ""Static Code Analysis""
+Add Step -> ""shell script"" -> wpisujemy:
+
+docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+
+""Static Code Analysis"" będzie identyczny do już istniejącego
+Przez co mamy dwa kroki ""Static Code Analysis"""
+,Jenkins,"Zmodyfikuj stage ""Static Code Analysis"" (ten stary; w środku po testach a przed nowym static code analysis)
+
+Zmień nazwę na: Mutation Testing
+Zmodyfikuj istniejący krok -> ""shell script"" -> wpisujemy: echo ""mutation testing...""
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run""
+Build powinien się udać"
+,Jenkins,"Musimy teraz odwrócić kolejność, tzn. Stage ""Mutation"" musi być przed ""Static Code Analysis""
+# Kiedyś w blue ocean była możliwość przeciągania stage, ale teraz już nie ma
+# Trzeba podmienić je ręczenie metodą Kopiego-pejsta (ctrl+c, ctrl+v)"
+,Jenkins,"Edytujemy stage o nazwie ""Mutation Testing""
+Edytuj krok ""shell script"" -> zmień zawartość
+
+mvn org.pitest:pitest-maven:mutationCoverage
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run""
+Build powinien się udać"
+,-,Jenkins - Smoke test
+,-,Jenkins - BDD (Functional)
+,-,Jenkins - Load test
+,-,Registry - Instalacja
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,sudo mkdir -p /home/registry
+,PrzydzielonyHost,sudo chmod 777 /home/registry
+,PrzydzielonyHost,"docker run \
+    --detach \
+    --rm \
+    --name registry \
+    --net ecosystem \
+    --publish 5000:5000 \
+    --volume /home/registry:/var/lib/registry \
+    registry:2"
+,PrzydzielonyHost,git pull
+,PrzydzielonyHost,docker ps
+,-,Registry - Publikowanie obrazów
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker rm $(docker ps -aq)
+,PrzydzielonyHost,docker rmi $(docker images -q)
+,PrzydzielonyHost,docker pull alpine
+,PrzydzielonyHost,docker pull alpine:latest
+,PrzydzielonyHost,docker pull docker.io/library/alpine:latest
+,PrzydzielonyHost,docker pull localhost:5000/alpine:latest
+,PrzydzielonyHost,"docker push localhost:5000/alpine:latest
+# Powinno się nie powieść: An image does not exist locally with the tag: localhost:5000/alpine"
+,PrzydzielonyHost,docker tag alpine:latest localhost:5000/alpine:latest
+,PrzydzielonyHost,"docker images
+# Powinien pojawić się: localhost:5000/alpine"
+,PrzydzielonyHost,docker push localhost:5000/alpine:latest
+,PrzydzielonyHost,curl -s http://localhost:5000/v2/alpine/tags/list
+,-,Registry - Publikowanie obrazów
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker build . -f Dockerfile.runtime -t myapp:latest
+,PrzydzielonyHost,docker build . -f Dockerfile.runtime -t myapp:$(git log -1 --format='%h')
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker build . -f Dockerfile.runtime -t localhost:5000/myapp:$(git log -1 --format='%h')
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker push localhost:5000/myapp:$(git log -1 --format='%h')
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,docker rmi localhost:5000/myapp:$(git log -1 --format='%h')
+,PrzydzielonyHost,docker images
+,PrzydzielonyHost,df -h
+,Przeglądarka,http://$PRZYDZIELONE_IP:5000/v2/myapp/tags/list
+,PrzydzielonyHost,curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
+,-,Registry - UI
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,sudo mkdir -p /home/registry-ui
+,PrzydzielonyHost,sudo chmod 777 /home/registry-ui/
+,PrzydzielonyHost,"vim /home/registry-ui/config.yml
+# Przejście do trybu edycji klawisz `a`
+
+listen_addr: 0.0.0.0:8888
+base_path: /
+
+registry_url: http://registry:5000
+verify_tls: true
+
+# registry_username: user
+# registry_password: pass
+
+# The same one should be configured on Docker registry as Authorization Bearer token.
+event_listener_token: token
+event_retention_days: 7
+
+event_database_driver: sqlite3
+event_database_location: data/registry_events.db
+# event_database_driver: mysql
+# event_database_location: user:password@tcp(localhost:3306)/docker_events
+
+cache_refresh_interval: 10
+
+# If users can delete tags.
+# If set to False, then only admins listed below.
+anyone_can_delete: false
+
+# Users allowed to delete tags.
+# This should be sent via X-WEBAUTH-USER header from your proxy.
+admins: []
+
+# Debug mode. Affects only templates.
+debug: true
+
+# How many days to keep tags but also keep the minimal count provided no matter how old.
+purge_tags_keep_days: 90
+purge_tags_keep_count: 2
+
+
+# Aby zapisać i wyjść: wciśnij klawisz `Esc` a później wpisz `:wq` (wq - write and quit)
+# (Litery pojawią się na dole ekranu w pasku statusu)"
+,PrzydzielonyHost,"docker run \
+        --name=registry-ui \
+        --detach \
+        --rm \
+        --network ecosystem \
+        --publish 8888:8888 \
+        --volume /home/registry-ui/config.yml:/opt/config.yml:ro \
+        quiq/docker-registry-ui"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:8888/
+- Przeglądnij projektu myapp
+- Porównaj wersje obrazów"
+,-,Registry - Jenkins
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,docker rm $(docker ps -aq)
+,PrzydzielonyHost,docker rmi $(docker images -q)
+,PrzydzielonyHost,cp -a /home/ubuntu/.m2 .m2
+,PrzydzielonyHost,"cat Dockerfile.cicd
+
+# Upewnij się, że treść jest poprwna:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+RUN adduser cicd -D -u 1000 -s /bin/ash -h /home
+COPY .m2 /home/.m2"
+,PrzydzielonyHost,docker build . -f Dockerfile.cicd -t myapp:cicd
+,PrzydzielonyHost,"git status
+
+# Powinien być tylko Dockerfile.cicd
+# Jeżeli jest coś innego powiedz trenerowi"
+,PrzydzielonyHost,"git commit -am ""Dockerfile"""
+,PrzydzielonyHost,git pull --rebase
+,PrzydzielonyHost,git push
+,Jenkins,Edytuj pipeline w Jenkinsie
+,Jenkins,"Dodaj nowy stage i nazwij go ""Publish Artifact""
+Add Step -> ""shell script"" -> wpisujemy: echo ""publishing artifact...""
+Zwróć uwagę na wielkość liter, spacje i rodzaj cudzysłowów
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,Build powinien się udać
+,Jenkins,"Edytuj pipeline w Jenkinsie i w stage ""Publish Artifact"" usuń obecny krok, i dodaj trzy nowe kroki (""shell script)"":
+
+docker build . -f Dockerfile.runtime -t localhost:5000/myapp:$(git log -1 --format=""%h"")
+docker push localhost:5000/myapp:$(git log -1 --format=""%h"")
+docker rmi localhost:5000/myapp:$(git log -1 --format=""%h"")
+
+# Uwaga, to ma być jako trzy osobne ""shell scripty"", a nie w jednym
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,"Build powinien się NIE udać
+# COPY failed: file not found in build context or excluded by .dockerignore: stat .m2: file does not exist"
+,Jenkins,"Edytuj pipeline w Jenkinsie i w stage ""Publish Artifact"" dodaj jako pierwszy krok (""shell script):
+cp -a ~/.m2 .m2
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,Build powinien się udać
+,Przeglądarka,http://$PRZYDZIELONE_IP:8888/library/myapp
+,PrzydzielonyHost,"curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
+# Aby zobaczyć czy image został umieszczony w registry"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Registry - Jenkins update latest
+,Jenkins,"Edytuj pipeline w Jenkinsie i w stage ""Publish Artifact"" dodaj trzy nowe kroki (""shell script"").
+Nowe kroki dodaj po kroku docker push, a przed docker rmi
+
+docker tag localhost:5000/myapp:$(git log -1 --format=""%h"") localhost:5000/myapp:latest
+docker push localhost:5000/myapp:latest
+docker rmi localhost:5000/myapp:latest
+
+# Uwaga, to ma być jako trzy osobne ""shell scripty"", a nie w jednym
+
+[na górze] klikamy ""Save""
+[na środku]  ""Save & run"""
+,Jenkins,Build powinien się udać
+,Przeglądarka,http://$PRZYDZIELONE_IP:8888/library/myapp
+,PrzydzielonyHost,"curl -s http://localhost:5000/v2/myapp/tags/list |python3 -m json.tool
+# Aby zobaczyć czy image został umieszczony w registry"
+,Przeglądarka,"Otwórz stronę w przeglądarce:
+- URL: http://$PRZYDZIELONE_IP:3000/root/example-helloworld-java
+- Zobacz zawartość pliku: `Jenkinsfile`"
+,-,Podsumowanie
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,git reset --hard
+,PrzydzielonyHost,git clean -fdx
+,PrzydzielonyHost,git pull
+,PrzydzielonyHost,clear
+,PrzydzielonyHost,"cat Dockerfile.cicd
+# Powinno wyświetlić:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+RUN adduser cicd -D -u 1000 -s /bin/ash -h /home
+COPY .m2 /home/.m2"
+,PrzydzielonyHost,"cat Dockerfile.runtime
+# Powinno wyświetlić:
+
+FROM alpine:3.14
+RUN apk add --no-cache openjdk8 maven
+COPY . /data
+WORKDIR /data
+COPY .m2 /root/.m2
+ENTRYPOINT [""mvn""]"
+,PrzydzielonyHost,"cat sonar-project.properties
+# Powinno wyświetlić:
+
+## SonarQube
+sonar.host.url=http://sonarqube:9000/
+sonar.login=e1feddc7144986696d58eb9575e7c78847fab18c
+
+## Project
+sonar.projectKey=myjavaproject
+
+## Language
+sonar.language=java
+sonar.java.source=8
+
+## Paths
+sonar.projectBaseDir=/usr/src/
+sonar.sources=src/main/java
+sonar.exclusions=**/migrations/**
+sonar.java.binaries=target/classes
+sonar.working.directory=/tmp/
+
+## Build Breaker
+sonar.buildbreaker.skip=false
+sonar.buildbreaker.queryInterval=10000
+sonar.buildbreaker.queryMaxAttempts=1000"
+,PrzydzielonyHost,"pipeline {
+  agent any
+  stages {
+    stage('Environment') {
+      steps {
+        sh 'env'
+        sh 'java -version'
+        sh 'mvn --version'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'mvn compile'
+      }
+    }
+
+    stage('Test') {
+      parallel {
+        stage('Unit Test') {
+          steps {
+            sh 'mvn test'
+          }
+        }
+
+        stage('Integration Test') {
+          steps {
+            sh 'mvn verify'
+          }
+        }
+
+      }
+    }
+
+    stage('Static Code Analysis') {
+      steps {
+        sh 'mvn compile'
+        sh 'mvn test'
+        sh 'mvn verify'
+        sh 'mvn org.pitest:pitest-maven:mutationCoverage'
+        sh 'docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli'
+      }
+    }
+
+    stage('Publish Artifact') {
+      steps {
+        sh 'cp -a ~/.m2 .m2'
+        sh 'docker build . -f Dockerfile.runtime -t localhost:5000/myapp:$(git log -1 --format=""%h"")'
+        sh 'docker tag localhost:5000/myapp:$(git log -1 --format=""%h"") localhost:5000/myapp:latest'
+        sh 'docker push localhost:5000/myapp:$(git log -1 --format=""%h"")'
+        sh 'docker push localhost:5000/myapp:latest'
+        sh 'docker rmi localhost:5000/myapp:latest'
+        sh 'docker rmi localhost:5000/myapp:$(git log -1 --format=""%h"")'
+      }
+    }
+
+  }
+  environment {
+    JAVA_HOME = '/usr/lib/jvm/java-1.8-openjdk/'
+  }"
+,PrzydzielonyHost,"grep -Po ""^\s+sh '\K.+(?=')"" Jenkinsfile
+# Powinno wyświetlić:
+
+env
+java -version
+mvn --version
+mvn compile
+mvn test
+mvn verify
+mvn compile
+mvn test
+mvn verify
+mvn org.pitest:pitest-maven:mutationCoverage
+docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+cp -a ~/.m2 .m2
+docker build . -f Dockerfile.runtime -t localhost:5000/myapp:$(git log -1 --format=""%h"")
+docker tag localhost:5000/myapp:$(git log -1 --format=""%h"") localhost:5000/myapp:latest
+docker push localhost:5000/myapp:$(git log -1 --format=""%h"")
+docker push localhost:5000/myapp:latest
+docker rmi localhost:5000/myapp:latest
+docker rmi localhost:5000/myapp:$(git log -1 --format=""%h"")"
+,-,Jenkins - optymalizacja cache
+,PrzydzielonyHost,cd /home/src/java/ && clear
+,PrzydzielonyHost,mkdir run/
+,PrzydzielonyHost,touch run/build.sh
+,PrzydzielonyHost,touch run/test-unit.sh
+,PrzydzielonyHost,touch run/test-smoke.sh
+,PrzydzielonyHost,touch run/test-static.sh
+,PrzydzielonyHost,touch run/test-mutation.sh
+,PrzydzielonyHost,touch run/test-feature.sh
+,PrzydzielonyHost,touch run/test-regression.sh
+,PrzydzielonyHost,touch run/test-ui.sh
+,PrzydzielonyHost,touch run/test-integration.sh
+,PrzydzielonyHost,touch run/test-load.sh
+,PrzydzielonyHost,touch run/test-security.sh
+,PrzydzielonyHost,touch run/publish-artifact.sh
+,PrzydzielonyHost,touch run/deploy-dev.sh
+,PrzydzielonyHost,touch run/deploy-test.sh
+,PrzydzielonyHost,touch run/deploy-preprod.sh
+,PrzydzielonyHost,touch run/deploy-prod.sh
+,PrzydzielonyHost,chmod +x run/*
+,PrzydzielonyHost,"pipeline {
+  agent {
+    docker { image 'myapp:cicd' }
+  }
+
+  stages {
+    stage('Build') { steps { sh 'run/build.sh' }}
+
+    parallel {
+        stage('Test Feature')       { steps { sh 'run/test-feature.sh' }}
+        stage('Test Integration')   { steps { sh 'run/test-integration.sh' }}
+        stage('Test Load')          { steps { sh 'run/test-load.sh' }}
+        stage('Test Mutation')      { steps { sh 'run/test-mutation.sh' }}
+        stage('Test Regression')    { steps { sh 'run/test-regression.sh' }}
+        stage('Test Security')      { steps { sh 'run/test-security.sh' }}
+        stage('Test Smoke')         { steps { sh 'run/test-smoke.sh' }}
+        stage('Test Static')        { steps { sh 'run/test-static.sh' }}
+        stage('Test UI')            { steps { sh 'run/test-ui.sh' }}
+        stage('Test Unit')          { steps { sh 'run/test-unit.sh' }}
+    }
+
+    stage('Publish')        { steps { sh 'run/publish-artifact.sh' }}
+    stage('Deploy Dev')     { steps { sh 'run/deploy-dev.sh' }}
+    stage('Deploy Test')    { steps { sh 'run/deploy-test.sh' }}
+    stage('Deploy Preprod') { steps { sh 'run/deploy-preprod.sh' }}
+    stage('Deploy Prod')    { steps { sh 'run/deploy-prod.sh' }}
+  }
+}"
+,PrzydzielonyHost,awk -F\' '{print $4}' Jenkinsfile
+,PrzydzielonyHost,"awk -F\' '{print $4}' Jenkinsfile |grep -v '^$'
+
+## Powinno wyświetlić:
+# run/build.sh
+# run/test-feature.sh
+# run/test-integration.sh
+# run/test-load.sh
+# run/test-mutation.sh
+# run/test-regression.sh
+# run/test-security.sh
+# run/test-smoke.sh
+# run/test-static-code-analysis.sh
+# run/test-ui.sh
+# run/test-unit.sh
+# run/publish-artifact.sh
+# run/deploy-dev.sh
+# run/deploy-test.sh
+# run/deploy-preprod.sh
+# run/deploy-prod.sh"
+,PrzydzielonyHost,git add Jenkinsfile run/
+,PrzydzielonyHost,"git commit -am ""Run Scripts"""
+,PrzydzielonyHost,git pull --rebase
+,PrzydzielonyHost,"git push
+- root
+- abcdefghi"
+,Jenkins,Wchodzimy na ekran z podsumowaniem wyniku budowania -> [prawy górny róg] kliknąć Ołówek [edit]
+,Jenkins,"Save -> Save & Run
+Build powinien się udać"
+,PrzydzielonyHost,cat Jenkinsfile
+,PrzydzielonyHost,"grep -Po ""^\s+sh '\K.+(?=')"" Jenkinsfile"
+,-,Jenkins - optymalizacja cache
+,,ANKIETA
