@@ -3,6 +3,15 @@
 
 version: 2
 
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.10"
+
+python:
+  install:
+    - requirements: requirements.txt
+
 sphinx:
   builder: html
   configuration: conf.py
@@ -13,11 +22,3 @@ sphinx:
 #   - pdf
 #   - htmlzip
 #   - epub
-
-python:
-  version: 3.8
-  install:
-    - requirements: requirements.txt
-
-build:
-  image: latest
