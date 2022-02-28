@@ -127,6 +127,11 @@
     .fa-arrow-circle-right:before {content: '>>'}
 
     /* Read the docs footer on bottom left menu */
-    .rst-current-version {background: var(--menu-background) !important;}
+    .rst-current-version {background: var(--menu-background) !important}
     .rst-versions {display: none;}
+
+    /* lists */
+    section ul li {list-style: disc}
+    section ul li p {margin-bottom: 0.5rem}
+    section h2 {margin-top: 2rem}
 }

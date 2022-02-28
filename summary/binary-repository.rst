@@ -2,6 +2,9 @@ Binary Repository
 =================
 
 
+.. contents::
+
+
 Docker Registry
 ---------------
 .. code-block:: sh
@@ -61,7 +64,7 @@ Docker Registry UI
     purge_tags_keep_days: 90
     purge_tags_keep_count: 2
 
-.. code-block:: console
+.. code-block:: sh
 
     docker run \
         --name=registry-ui \

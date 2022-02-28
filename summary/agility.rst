@@ -2,6 +2,9 @@ Agility
 =======
 
 
+.. contents::
+
+
 Slides
 ------
 .. figure:: img/agility-v2.png

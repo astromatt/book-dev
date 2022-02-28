@@ -2,6 +2,9 @@ Quality Control
 ===============
 
 
+.. contents::
+
+
 Sonar Qube
 ----------
 .. code-block:: sh
@@ -156,36 +159,36 @@ Alternatives
 ------------
 Server side quality monitoring:
 
-* SonarLint https://www.sonarlint.org
-* SonarQube https://www.sonarqube.org
-* SonarScanner https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
-* Findbugs http://findbugs.sourceforge.net
-* PMD https://pmd.github.io
-* Checkstyle https://checkstyle.sourceforge.io
+    * SonarLint https://www.sonarlint.org
+    * SonarQube https://www.sonarqube.org
+    * SonarScanner https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+    * Findbugs http://findbugs.sourceforge.net
+    * PMD https://pmd.github.io
+    * Checkstyle https://checkstyle.sourceforge.io
 
 Cloud based quality monitoring:
 
-* SonarCloud https://sonarcloud.io
-* Coveralls https://coveralls.io
+    * SonarCloud https://sonarcloud.io
+    * Coveralls https://coveralls.io
 
 Code Coverage:
 
-* JaCoCo https://www.jacoco.org/jacoco/
-* Cobertura http://cobertura.github.io/cobertura/
+    * JaCoCo https://www.jacoco.org/jacoco/
+    * Cobertura http://cobertura.github.io/cobertura/
 
 
 Mutation Testing:
 
-* PiTest http://pitest.org
+    * PiTest http://pitest.org
 
 Load Testing:
 
-* Locust https://locust.io
-* Gatling https://gatling.io
-* JMeter https://jmeter.apache.org
+    * Locust https://locust.io
+    * Gatling https://gatling.io
+    * JMeter https://jmeter.apache.org
 
 BDD Testing:
 
-* Lettuce http://lettuce.it
-* Cucumber https://cucumber.io
-* JBehave https://jbehave.org
+    * Lettuce http://lettuce.it
+    * Cucumber https://cucumber.io
+    * JBehave https://jbehave.org
