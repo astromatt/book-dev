@@ -3,22 +3,26 @@
 .. toctree::
     :maxdepth: 1
 
-    /agility/index.rst
-    /linux/index.rst
-    /jira/index.rst
-    /git/index.rst
-    /docker/index.rst
-    /jenkins/index.rst
-    /architecture/index.rst
-    /puppet/index.rst
-    /ansible/index.rst
-    /sonarqube/index.rst
-    /vagrant/index.rst
+    agility/index.rst
+    linux/index.rst
+    jira/index.rst
+    git/index.rst
+    docker/index.rst
+    jenkins/index.rst
+    architecture/index.rst
+    puppet/index.rst
+    ansible/index.rst
+    sonarqube/index.rst
+    vagrant/index.rst
 
 .. toctree::
 
-    /devops/ssh.rst
+    devops/ssh.rst
 
 .. toctree::
 
-    /summary/index.rst
+    summary/index.rst
+
+.. toctree::
+
+    further-reading.rst
