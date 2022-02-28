@@ -1,13 +1,19 @@
-*******
 Summary
 *******
+
 
 .. toctree::
     :maxdepth: 2
     :numbered:
     :caption: Summary
 
-    docker-run.rst
-    docker-compose.rst
-    alternatives.rst
-    pictures.rst
+    agility.rst
+    binary-repository.rst
+    continuous-integration.rst
+    database.rst
+    documentation.rst
+    provisioning.rst
+    quality-control.rst
+    system-administration.rst
+    version-control.rst
+    virtualization.rst

@@ -3,7 +3,7 @@
 .. toctree::
     :maxdepth: 1
 
-    /agile/index.rst
+    /agility/index.rst
     /linux/index.rst
     /jira/index.rst
     /git/index.rst
