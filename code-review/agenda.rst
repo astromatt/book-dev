@@ -1,5 +1,8 @@
 Agenda
 ======
+* Training course: 9:00 - 17:00
+* Lunch break: 13:15 - 14:00
+* 10 min break every one/one-and-half hour
 
 
 Dzień 1
@@ -12,9 +15,9 @@ Dzień 1
 6. Proces Code Review
 7. Automatyzacja Code Review
 
+
 Dzień 2
 -------
-* Zadanie - Smok
 8. Podstawy optymalizacji i wydajności systemów
 9. Jakość kodu
 10. Dobre praktyki
@@ -23,3 +26,11 @@ Dzień 2
 13. Logowanie
 14. Zależności
 15. Podsumowanie
+
+
+Zadania
+-------
+* Zadanie - Smok: alpha i beta (nie podglądaj)
+* Code Review
+* Ankieta dojrzałości
+* Architectural Decision Records

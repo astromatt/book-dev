@@ -7,7 +7,7 @@ Rationale
 * Zasady clean code
 * Nazewnictwo zmiennych, długość nazw, funkcji, klas i pakietów
 * Kod po polsku czy angielsku?
-* Liczba paramterów, typy i wzorce konstrukcyjne
+* Liczba parametrów, typy i wzorce konstrukcyjne
 * Zasady SOLID
 * Zmienne statyczne, do czego służą i kiedy stosować
 * Importy wszystkiego czy wybiórcze
@@ -59,13 +59,13 @@ Identification Numbers
 ----------------------
 * https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
 
-.. code-block:: java
+.. code-block:: python
 
     class Obywatel:
         getPESEL()
         getNIP()
 
-.. code-block:: java
+.. code-block:: python
 
     class Citizen:
         getSSN()
@@ -80,57 +80,65 @@ Tell - don't ask
 
 Bad:
 
->>> class Light:
-...     status = 'off'
->>>
->>>
->>> light = Light()
->>> light.status = 'on'
->>> light.status = 'off'
+.. code-block:: python
+
+    class Light:
+        status = 'off'
+
+
+    light = Light()
+    light.status = 'on'
+    light.status = 'off'
 
 Good:
 
->>> class Light:
-...     status = 'off'
-...
-...     def switch_on(self):
-...         self.status = 'on'
-...
-...     def switch_off(self):
-...         self.status = 'off'
->>>
->>>
->>> light = Light()
->>> light.switch_on()
->>> light.switch_off()
+.. code-block:: python
+
+    class Light:
+        status = 'off'
+
+        def switch_on(self):
+            self.status = 'on'
+
+        def switch_off(self):
+            self.status = 'off'
+
+
+    light = Light()
+    light.switch_on()
+    light.switch_off()
 
 Bad:
 
->>> class Hero:
-...     health: int = 10
->>>
->>>
->>> hero = Hero()
->>>
->>> while hero.health > 0:
-...     hero.health -= 2
+.. code-block:: python
+
+    class Hero:
+        health: int = 10
+
+
+    hero = Hero()
+
+    while hero.health > 0:
+        hero.health -= 2
 
 Good:
 
->>> class Hero:
-...     health: int = 10
-...
-...     def is_alive(self):
-...         return self.health > 0
-...
-...     def take_damage(self, damage):
-...         self.health -= damage
->>>
->>>
->>> hero = Hero()
->>>
->>> while hero.is_alive():
-...     hero.take_damage(2)
+.. code-block:: python
+
+    class Hero:
+        health: int = 10
+
+        def is_alive(self):
+            return self.health > 0
+
+        def take_damage(self, damage):
+            self.health -= damage
+
+
+    hero = Hero()
+
+    while hero.is_alive():
+        hero.take_damage(2)
 
 
 Setters, Getters, Deleters
@@ -144,64 +152,67 @@ Setters, Getters, Deleters
 
 Accessing class fields using setter and getter:
 
->>> class Astronaut:
-...     _name: str
-...
-...     def set_name(self, name):
-...         self._name = name
-...
-...     def get_name(self):
-...         return self._name
->>>
->>>
->>> astro = Astronaut()
->>> astro.set_name('Mark Watney')
->>> result = astro.get_name()
->>> print(result)
-Mark Watney
+.. code-block:: python
+
+    class Astronaut:
+        _name: str
+
+        def set_name(self, name):
+            self._name = name
+
+        def get_name(self):
+            return self._name
+
+
+    astro = Astronaut()
+    astro.set_name('Mark Watney')
+    result = astro.get_name()
+
 
 Problem with setters and getters:
 
->>> class Point:
-...     _x: int
-...     _y: int
-...
-...     def get_x(self):
-...         return self._x
-...
-...     def set_x(self, value):
-...         self._x = value
-...
-...     def del_x(self):
-...         del self._x
-...
-...     def get_y(self):
-...         return self._y
-...
-...     def set_y(self, value):
-...         self._x = value
-...
-...     def del_y(self):
-...         del self._y
+.. code-block:: python
+
+    class Point:
+        _x: int
+        _y: int
+
+        def get_x(self):
+            return self._x
+
+        def set_x(self, value):
+            self._x = value
+
+        def del_x(self):
+            del self._x
+
+        def get_y(self):
+            return self._y
+
+        def set_y(self, value):
+            self._x = value
+
+        def del_y(self):
+            del self._y
 
 Rationale for Setters and Getters:
 
->>> class Temperature:
-...     kelvin: int
-...
-...     def set_kelvin(self, kelvin):
-...         if kelvin < 0:
-...             raise ValueError('Kelvin cannot be negative')
-...         else:
-...             self._kelvin = kelvin
-...
->>>
->>> t = Temperature()
->>> t.set_kelvin(-1)
-Traceback (most recent call last):
-ValueError: Kelvin cannot be negative
+.. code-block:: python
 
-Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor admin:
+    class Temperature:
+        kelvin: int
+
+        def set_kelvin(self, kelvin):
+            if kelvin < 0:
+                raise ValueError('Kelvin cannot be negative')
+            else:
+                self._kelvin = kelvin
+
+
+    t = Temperature()
+    t.set_kelvin(-1)
+    # Traceback (most recent call last):
+    # ValueError: Kelvin cannot be negative
 
 
 References
