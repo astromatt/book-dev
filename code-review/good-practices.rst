@@ -19,6 +19,16 @@ Rationale
 * Modyfikatory dostępu: private, protected, public
 
 
+Komentarze
+----------
+* Kiedy komentować
+* Co komentować
+* Zakomentowany kod
+* TODO i FIXME
+* JavaDoc w komentarzach
+
+
+
 Code Language
 -------------
 * ``import this`` - The Zen of Python, by Tim Peters
@@ -222,4 +232,5 @@ References
 
 Assignments
 -----------
-* Razem z trenerem omówcie filmik Uncle Boba dotyczący
+* Razem z trenerem omówcie filmik Uncle Boba dotyczący hidden classes
+* Razem z trenerem oglądnijcie filmik Ruby i JS (opcjonalnie)
