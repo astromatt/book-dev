@@ -143,18 +143,10 @@ Polish
        jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę
 
 
-Hints
------
-* `from random import randint`
-* `randint(a, b)` returns random integer between a and b (inclusive)
-* note, that randint will include both ends, that is `a` and `b`!
-
-
 Solution
 --------
 * EN: Note, that this will spoil your fun and learning
 * PL: Zwróć uwagę, że to zepsuje Twoją zabawę i naukę
-* :ref:`Architecture Decision Records`
-* :download:`Basic <assignments/dragon_alpha_basic.py>`
-* :download:`Intermediate <assignments/dragon_alpha_intermediate.py>`
-* :download:`Advanced <assignments/dragon_alpha_advanced.py>`
+* :download:`Python Basic <assignments/dragon_alpha_basic.py>`
+* :download:`Python Intermediate <assignments/dragon_alpha_intermediate.py>`
+* :download:`Python Advanced <assignments/dragon_alpha_advanced.py>`

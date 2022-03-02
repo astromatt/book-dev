@@ -15,11 +15,6 @@ About
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
 
-English
--------
-.. todo:: English Translation
-
-
 Polish
 ------
 1. Zmodyfikuj smoka z pierwszej części
@@ -70,5 +65,4 @@ Solution
 --------
 * EN: Note, that this will spoil your fun and learning
 * PL: Zwróć uwagę, że to zepsuje Twoją zabawę i naukę
-* :download:`Architecture Decision Records <assignments/dragon_api_adr.py>`
-* :download:`Solution <assignments/dragon_beta.py>`
+* :download:`Solution in Python <assignments/dragon_beta.py>`
