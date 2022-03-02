@@ -18,8 +18,8 @@ Code Review
     complexity.rst
     quality.rst
     good-practices.rst
-    design-patterns.rst
     solid.rst
+    design-patterns.rst
     tests.rst
     sonarqube.rst
     logging.rst
