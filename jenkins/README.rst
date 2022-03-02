@@ -1,5 +1,5 @@
-CI/CD with Jenkins
-##################
+Jenkins
+#######
 
 
 .. figure:: ../_static/AstroMatt.jpg

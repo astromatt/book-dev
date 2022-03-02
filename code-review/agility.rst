@@ -180,3 +180,8 @@ Agile vs agility
 References
 ----------
 .. [#ytAgileIsDead] https://www.youtube.com/watch?v=a-BOSpxYJ9M
+
+
+Assignments
+-----------
+* Oglądnijcie z trenerem filmik Spotify Engineering Culture 1 i 2

@@ -1,5 +1,5 @@
-CI/CD with Docker
-#################
+Docker
+######
 
 
 .. figure:: ../_static/AstroMatt.jpg

@@ -17,6 +17,7 @@ Rationale
 * Skuteczność notyfikacji
 * Czy PO powinien być w Code Review?
 * Co oznacza akceptacja Code Review?
+* Czytelność wyrażeń regularnych
 
 
 Use Cases

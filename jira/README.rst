@@ -1,5 +1,5 @@
-Jira with Atlassian Ecosystem
-#############################
+Atlassian Jira
+##############
 
 
 .. figure:: ../_static/AstroMatt.jpg

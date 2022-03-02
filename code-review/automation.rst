@@ -12,3 +12,9 @@ Rationale
 * Quality Gates
 * Triggerowanie statusów w Jira
 * Automatyzacja narzędzi Atlassian (Atlassian Python API)
+
+
+Further Reading
+---------------
+* https://dev.astrotech.io/jira/end-user/automation.html
+* https://dev.astrotech.io/jira/end-user/board-scrum.html

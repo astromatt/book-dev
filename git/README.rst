@@ -1,5 +1,5 @@
-CI/CD with Git and Git Flow
-###########################
+Git
+###
 
 
 .. figure:: ../_static/AstroMatt.jpg

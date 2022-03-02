@@ -1,6 +1,10 @@
 .. include:: /README.rst
 
 .. toctree::
+
+    install.rst
+
+.. toctree::
     :maxdepth: 1
 
     agility/index.rst
@@ -17,7 +21,7 @@
 
 .. toctree::
 
-    devops/ssh.rst
+    code-review/index.rst
 
 .. toctree::
 
