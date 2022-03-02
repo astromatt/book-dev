@@ -10,6 +10,10 @@ Rationale
 * Systemy generowania dokumentacji
 * Code Review jako mechanizm przekazywania wiedzy
 * OpenAPI i SwaggerUI
+* CI/CD dokumentacji
+* Generowanie UML (Mermaid)
+* Generowanie diagramów klas, ERD
+* Spellchecking
 
 
 Architectural Decision Records
@@ -26,7 +30,6 @@ Architectural Decision Records
     * Good, because [argument b]
     * Bad, because [argument c]
 
-* … <!-- numbers of pros and cons can vary -->
 * Decision Outcome
 * Pros and Cons of the Options
 * References

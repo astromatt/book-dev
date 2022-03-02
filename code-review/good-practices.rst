@@ -26,118 +26,50 @@ Code Language
 * Special cases aren't special enough to break the rules.
 * Although practicality beats purity.
 * If the implementation is hard to explain, it's a bad idea.
+
+
+Case Study - Administrative Divisions
+-------------------------------------
 * In US: The states are **not administrative** divisions of the country, in that their powers and responsibilities are in no way assigned to them from above by federal legislation or the Constitution; rather they exercise all powers of government not delegated to the federal government by the Constitution.
 * Political divisions of the United States are the various recognized governing entities that together form the United States – states, the District of Columbia, territories and Indian reservations.
 * https://en.wikipedia.org/wiki/Administrative_division
 * https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country
 * https://en.wikipedia.org/wiki/Administrative_division
 
->>> class Obywatel:
-...     def get_wojewodztwo(self):
-...         pass
-...
-...     def get_powiat(self):
-...         pass
-...
-...     def get_gmina(self):
-...         pass
+.. code-block:: python
 
->>> class Citizen:
-...     def get_voivodeship(self):
-...         pass
-...
-...     def get_state(self):
-...         pass
-...
-...     def get_county(self):
-...         pass
-...
-...     def get_ceremonial_county(self):
-...         pass
-...
-...     def get_metropolitan_county(self):
-...         pass
-...
-...     def get_nonmetropolitan_county(self):
-...         pass
-...
-...     def get_district(self):
-...         pass
-...
-...     def get_civil_parish(self):
-...         pass
-...
+    class Obywatel:
+        getWojewodztwo()
+        getPowiat()
+        getGmina()
 
->>> class Obywatel:
-...     def get_PESEL(self):
-...         pass
-...
-...     def get_NIP(self):
-...         pass
+.. code-block:: python
+
+    class Citizen:
+        getVoivodeship()
+        getState()
+        getCounty()
+        getCeremonialCounty()
+        getMetropolitanCounty()
+        getDistrict()
+        getCivilParish()
 
 
->>> class Citizen:
-...     def get_SSN(self):
-...         ...
-...
-...     def get_VATEU(self):
-...         pass
+Identification Numbers
+----------------------
+* https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
 
->>> class Obywatel:
-...     def get_NIP(self):
-...         pass
-...
-...     def get_PESEL(self):
-...         pass
+.. code-block:: java
 
->>> class Citizen:
-...     def get_VATEU(self):
-...         pass
+    class Obywatel:
+        getPESEL()
+        getNIP()
 
-Stdnum https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
+.. code-block:: java
 
-Objects and instances
----------------------
-Creating string instance:
-
-``''`` is just a syntactic sugar:
-
->>> name1 = 'Mark Watney'
->>> name2 = str('Mark Watney')
->>> name1 == name2
-True
-
->>> name = 'Mark Watney'
->>> name.upper()
-'MARK WATNEY'
-
->>> str.upper('Mark Watney')
-'MARK WATNEY'
-
-Use case:
-
->>> from dataclasses import dataclass
->>>
->>>
->>> @dataclass
-... class Astronaut:
-...     firstname: str
-...     lastname: str
-...
-...     def say_hello(self):
-...         print(f'My name... {self.firstname} {self.lastname}')
->>>
->>>
->>> astro = Astronaut('Jose', 'Jimenez')
->>> astro.say_hello()
-My name... Jose Jimenez
->>>
->>> Astronaut.say_hello()
-Traceback (most recent call last):
-TypeError: say_hello() missing 1 required positional argument: 'self'
->>>
->>> Astronaut.say_hello(astro)
-My name... Jose Jimenez
+    class Citizen:
+        getSSN()
+        getVATEU()
 
 
 Tell - don't ask

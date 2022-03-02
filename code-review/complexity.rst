@@ -13,14 +13,10 @@ Complexity
 Rationale
 ---------
 * Podstawy optymalizacji i wydajności systemów
-* Złożoność obliczeniowa
-* Złożoność pamięciowa
-* Złożoność cyklometryczna
-
-* Computational Complexity
-* Memory Complexity
-* Cognitive Complexity
-* Cyclomatic Complexity
+* Computational Complexity (pol. złożoność obliczeniowa)
+* Memory Complexity (pol. złożoność pamięciowa)
+* Cognitive Complexity (pol. złożoność kognitywna)
+* Cyclomatic Complexity (pol. złożoność cyklometryczna)
 * Big O notation [#wikibigonotation]_
 * https://wiki.python.org/moin/TimeComplexity
 
