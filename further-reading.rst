@@ -5,6 +5,11 @@ Further Reading
 .. contents::
 
 
+Agility
+-------
+* https://www.youtube.com/watch?v=X2xuROuGBUk
+* https://www.youtube.com/watch?v=sWvS8GC2AO4
+
 Docker
 ------
 * https://docs.docker.com/desktop/windows/install/
@@ -42,7 +47,9 @@ Architecture
 * https://www.youtube.com/c/PatoArchitekci/videos
 * https://12factor.net/
 * https://www.thoughtworks.com/radar
-
+* https://www.youtube.com/watch?v=_X89vxbuExE
+* https://www.youtube.com/watch?v=yxZm0Fhn9Tk
+* https://www.youtube.com/watch?v=jo46-CP6ywU
 
 Testing
 -------

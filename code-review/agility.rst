@@ -18,6 +18,7 @@ Praktyki developerskie a praktyki projektowe
 
 .. figure:: img/agility-extreme-programming.png
 .. figure:: img/agile-division-methods.png
+.. figure:: img/spotify-engineering-culture-01.png
 
 
 Wartości biznesowe
@@ -29,8 +30,6 @@ Wartości biznesowe
 * Increase visibility
 * Lower costs
 * Increase product lifetime
-
-.. figure:: img/spotify-engineering-culture-01.png
 
 Lower time to market
 ^^^^^^^^^^^^^^^^^^^^
