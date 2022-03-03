@@ -132,7 +132,7 @@ Polish
     e. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
     f. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stałe,
        klasy, obiekty, co tylko chcesz
-    g. Nie korzystaj z modułów spoza standardowej biblioteki Pythona
+    g. Nie korzystaj z modułów spoza standardowej biblioteki
     h. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją
        techniczną, tj. "co Smok ma robić, a nie jak to ma robić"
     i. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
