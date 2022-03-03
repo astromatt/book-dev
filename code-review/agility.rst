@@ -164,8 +164,8 @@ Praktyki deweloperskie a wartości biznesowe
 Agile vs agility
 ----------------
 * Agility is achieved only by combining Business Practices and Technical Craftsmanship.
-* Agile is not only about Scrum.
-* Agile is Dead • Pragmatic Dave Thomas • GOTO 2015 [#ytAgileIsDead]_
+* Agile is not only about Scrum
+* Agile is Dead - Pragmatic Dave Thomas - GOTO 2015 [#ytAgileIsDead]_
 
 .. epigraph::
 
@@ -174,6 +174,24 @@ Agile vs agility
     -- Dave Thomas, 2007
 
 .. figure:: img/person-dave-thomas.jpg
+
+
+Konstytucja zespołu
+-------------------
+* Zestaw reguł wypracowanych przez zespół
+* Na początku mamy tylko jedną regułę:
+  "Nie można scalić kodu bez przejścia Code Review"
+* Wszystkie pozostałe reguły są próbą rozwiązania problemów, które pojawiły się podczas Code Review
+* Zawsze robimy Code Review
+* Podczas Code Review, nie tylko przeglądamy kod produkcyjny, ale także konfiguracje IaaC, CI/CD itp zakomitowaną (lub zmienioną) w danym Pull Request
+* Commitujemy również migracje schematu bazy danych + zawsze testy DBUnit
+* Wymagane 100% pokrycie publicznych metod
+* Testy metod prywatnych zalecane, ale nie wymagane
+* Nie wolno robić testów bez asercji
+* Nie wolno commitować skipniętych testów
+* Zawsze dostarczamy fixtures (dane) do testów
+* W testach Unit nie korzystamy z bazy danych (tylko mock lub stub)
+* Przy wybieraniu narzędzi dodatkowych (np. runner testów funkcjonalnych, runner testów obciążeniowych) wybieramy toole, które wspierają Configuration as a Code
 
 
 References

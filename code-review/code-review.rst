@@ -20,6 +20,16 @@ Rationale
 * Czytelność wyrażeń regularnych
 
 
+Pair Programming
+----------------
+* Pair Programming to Code Review prowadzone w realtime
+* Code with Me
+* Zabrać ze sobą notatnik, pisać temat dyskusji i numer linii i nazwę pliku / klasy / metody
+* Nie stosować Piar Programming by default
+* Zostawić to tylko trudnych miejsc w kodzie
+* Stratą dla firmy jest jak dwóch koderów siedzi i dobiera kolorki i odcienie tekstu w HTML
+
+
 Use Cases
 ---------
 * CR dla IaaS

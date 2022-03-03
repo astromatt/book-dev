@@ -37,6 +37,23 @@ Atlassian Ecosystem
 * https://dev.astrotech.io/jira/end-user/automation.html
 
 
+Uncle Bob
+---------
+* https://www.youtube.com/watch?v=hG4LH6P8Syk
+* https://www.youtube.com/watch?v=7EmboKQH8lM
+* https://www.youtube.com/watch?v=asLUTiJJqdE
+* https://www.youtube.com/playlist?list=PL2b66FwCCrNk0y8PLTKaAKHo2CE__jAMi
+* https://www.youtube.com/watch?v=oar-T2KovwE&list=PL2b66FwCCrNk0y8PLTKaAKHo2CE__jAMi&index=6
+* https://www.youtube.com/watch?v=2dKZ-dWaCiU
+* https://www.youtube.com/watch?v=7EmboKQH8lM&list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj
+* https://www.youtube.com/watch?v=zHiWqnTWsn4
+* https://www.youtube.com/watch?v=ecIWPzGEbFc
+* https://www.youtube.com/watch?v=4JihsBOBbdI
+* https://www.youtube.com/watch?v=t86v3N4OshQ
+* https://www.youtube.com/watch?v=Wibk0IfjfaI
+* https://www.youtube.com/c/Cleancoders/playlists
+
+
 Documentation
 -------------
 * https://petstore3.swagger.io/
@@ -51,12 +68,14 @@ Architecture
 * https://www.youtube.com/watch?v=yxZm0Fhn9Tk
 * https://www.youtube.com/watch?v=jo46-CP6ywU
 
+
 Testing
 -------
 * https://martinfowler.com/articles/microservice-testing/
 * https://pitest.org/
 * https://spockframework.org/
 * https://github.com/behave/behave
+* https://jbehave.org/
 
 
 SonarQube
@@ -65,11 +84,26 @@ SonarQube
 * https://dev.astrotech.io/sonarqube/index.html
 
 
+Automation
+----------
+* https://github.com/TouK/sputnik
+* https://www.sonarqube.org/developer-edition/
+
+Code Review
+-----------
+* https://www.jetbrains.com/code-with-me/
+* https://www.jetbrains.com/space/
+
+
+
 Database Migration
 ------------------
 * https://flywaydb.org/
 * https://liquibase.org/
 
+Database
+--------
+* https://www.dbunit.org/
 
 Matt's Books
 ------------
