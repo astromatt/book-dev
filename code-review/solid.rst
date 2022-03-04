@@ -16,7 +16,7 @@ Problems:
     * Rigidity - mixing higher level with low level implementation
     * Fragility - if you change something, some other thing will break
     * Coupling - interdependencies a.k.a "spaghetti code"
-    * No Reusability - cannot reuse code, and need to implement from scratch
+    * No Re-usability - cannot reuse code, and need to implement from scratch
 
 Patterns:
 
@@ -57,38 +57,67 @@ aligned with that responsibility.
 
 Bad:
 
->>> class Hero:
-...     def is_alive(self): ...
-...     def is_dead(self): ...
-...     def position_set(self): ...
-...     def position_get(self): ...
-...     def position_change(self): ...
-...     def damage_make(self): ...
-...     def damage_take(self): ...
-...     def texture_set(self): ...
-...     def texture_get(self): ...
+.. code-block:: python
+
+    class Hero:
+        is_alive()
+        is_dead()
+        position_set()
+        position_get()
+        position_change()
+        damage_make()
+        damage_take()
+        texture_set()
+        texture_get()
 
 Good:
 
->>> class HasPosition:
-...     def position_set(self): ...
-...     def position_get(self): ...
-...     def position_change(self): ...
->>>
->>> class HasHealth:
-...     def damage_take(self): ...
-...     def is_alive(self): ...
-...     def is_dead(self): ...
->>>
->>> class HasTexture:
-...     def texture_set(self): ...
-...     def texture_get(self): ...
->>>
->>> class CanAttack:
-...     def damage_make(self): ...
->>>
->>> class Hero(HasPosition, HasHealth, HasTexture, CanAttack):
-...     pass
+.. code-block:: python
+
+    class HasPosition:
+        position_set()
+        position_get()
+        position_change()
+
+    class HasHealth:
+        damage_take()
+        is_alive()
+        is_dead()
+
+    class HasTexture:
+        texture_set()
+        texture_get()
+
+    class CanAttack:
+        damage_make()
+
+    class Hero(HasPosition, HasHealth, HasTexture, CanAttack):
+        ...
+
+.. code-block:: python
+
+    class Position:
+        position_set()
+        position_get()
+        position_change()
+
+    class Health:
+        damage_take()
+        is_alive()
+        is_dead()
+
+    class Texture:
+        texture_set()
+        texture_get()
+
+    class Attack:
+        damage_make()
+
+    class Hero:
+        position: Position
+        health: Health
+        texture: Texture
+        attack: Attack
 
 Bad:
 
