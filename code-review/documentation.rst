@@ -88,8 +88,7 @@ Architectural Decision Records
     * https://www.history.nasa.gov/SP-4029/Apollo_11i_Timeline.htm
 
 
-
 Assignments
-===========
+-----------
 * Stwórz ADR dla Smoka
 * Pracujcie nad decyzją w grupach trzyosobowych

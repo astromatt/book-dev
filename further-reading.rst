@@ -67,6 +67,8 @@ Architecture
 * https://www.youtube.com/watch?v=_X89vxbuExE
 * https://www.youtube.com/watch?v=yxZm0Fhn9Tk
 * https://www.youtube.com/watch?v=jo46-CP6ywU
+* https://patoarchitekci.io/
+* https://www.youtube.com/c/PatoArchitekci/videos
 
 
 Testing
@@ -84,15 +86,25 @@ SonarQube
 * https://dev.astrotech.io/sonarqube/index.html
 
 
+Cloud IDE and Ecosystem
+-----------------------
+* https://github.com/features/codespaces
+* https://coder.com/
+* https://www.jetbrains.com/space/
+* https://www.jetbrains.com/remote-development/gateway/
+* https://www.jetbrains.com/space/roadmap/
+
+
 Automation
 ----------
 * https://github.com/TouK/sputnik
 * https://www.sonarqube.org/developer-edition/
 
+
 Code Review
 -----------
 * https://www.jetbrains.com/code-with-me/
-* https://www.jetbrains.com/space/
+
 
 
 
