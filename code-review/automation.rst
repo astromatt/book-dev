@@ -30,6 +30,11 @@ Instant Messanger:
 * Skupiamy się na niedziałających buildach, nie powtarzamy w nieskończoność, że coś nie działa
 * Może wykorzystać private message, a nie kanał zespołu
 
+.. figure:: img/bitbucket-settings.png
+.. figure:: img/bitbucket-task.gif
+.. figure:: img/devbook-gerrit-1.png
+.. figure:: img/devbook-gerrit-2.jpeg
+.. figure:: img/devbook-gerrit-3.png
 
 
 Further Reading
