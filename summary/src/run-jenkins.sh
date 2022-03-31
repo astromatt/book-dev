@@ -10,4 +10,4 @@ docker run \
     --publish 8080:8080 \
     --volume jenkins:/var/jenkins_home \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    jenkins/jenkins:alpine
+    jenkinsci/blueocean
