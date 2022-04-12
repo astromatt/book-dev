@@ -164,11 +164,11 @@ Jenkins
 
     services:
       jenkins:
-        image: jenkins/jenkins
+        image: jenkinsci/blueocean
         container_name: jenkins
         restart: "no"
         ports:
-          - "8100:8080"
+          - "8080:8080"
         networks:
           - ecosystem
         volumes:

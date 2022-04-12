@@ -8,15 +8,15 @@ Docker
 .. code-block:: console
 
     docker run  \
+        --name openldap-server \
         --rm \
         -p 389:389 \
         -p 636:636 \
         --env LDAP_ORGANISATION="My Company" \
         --env LDAP_DOMAIN="my-company.com" \
         --env LDAP_ADMIN_PASSWORD="MyPassword" \
-        --volume /tmp/openldap/data:/var/lib/ldap \
-        --volume /tmp/openldap/config:/etc/ldap/slapd.d \
-        --name openldap-server \
+        --volume /home/openldap/data:/var/lib/ldap \
+        --volume /home/openldap/config:/etc/ldap/slapd.d \
         osixia/openldap
 
 

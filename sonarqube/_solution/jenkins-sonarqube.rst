@@ -105,7 +105,7 @@ sudo chmod 666 /var/run/docker.sock
     --publish 8080:8080 \
     --volume /home/jenkins:/var/jenkins_home \
     --volume /var/run/docker.sock:/var/run/docker.sock \
-    jenkins/jenkins:alpine"
+    jenkinsci/blueocean"
 docker ps
 cat /home/jenkins/secrets/initialAdminPassword
 otwórz przeglądarkę na http://<TWOJE_IP>:8080/

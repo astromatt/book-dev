@@ -24,10 +24,9 @@ SonarQube LTS
         --rm \
         --network ecosystem \
         --publish 9000:9000 \
-        --volume /home/sonarqube/conf:/opt/sonarqube/conf \
-        --volume /home/sonarqube/data:/opt/sonarqube/data \
-        --volume /home/sonarqube/logs:/opt/sonarqube/logs \
-        --volume /home/sonarqube/extensions:/opt/sonarqube/extensions \
+        --volume sonarqube_data:/opt/sonarqube/data \
+        --volume sonarqube_logs:/opt/sonarqube/logs \
+        --volume sonarqube_extensions:/opt/sonarqube/extensions \
         sonarqube:lts
 
 

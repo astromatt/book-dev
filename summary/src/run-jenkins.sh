@@ -8,6 +8,6 @@ docker run \
     --rm \
     --network ecosystem \
     --publish 8080:8080 \
-    --volume jenkins:/var/jenkins_home \
+    --volume /home/jenkins:/var/jenkins_home \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     jenkinsci/blueocean

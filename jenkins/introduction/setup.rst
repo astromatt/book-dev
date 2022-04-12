@@ -28,7 +28,7 @@ Installing on Docker
             --publish 8080:8080 \
             --volume /home/jenkins:/var/jenkins_home \
             --volume /var/run/docker.sock:/var/run/docker.sock \
-            jenkins/jenkins
+            jenkinsci/blueocean
 
 #. Get admin password:
 
@@ -52,11 +52,11 @@ Installing using Docker Compose
 
         services:
             jenkins:
-                image: jenkins/jenkins
+                image: jenkinsci/blueocean
                 container_name: jenkins
                 restart: "no"
                 ports:
-                    - "8100:8080"
+                    - "8080:8080"
                 networks:
                     - ecosystem
                 volumes:

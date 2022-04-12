@@ -10,7 +10,7 @@ Jenkins
 #. Run SonarScanner analysis in Jenkins
 #. Use official Docker images:
 
-    * Jenkins ``jenkins/jenkins:alpine``
+    * Jenkins ``jenkinsci/blueocean``
     * SonarQube: ``sonarqube:latest``
     * SonarScanner: ``sonarsource/sonar-scanner-cli:latest``
 

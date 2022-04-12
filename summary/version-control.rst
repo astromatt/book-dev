@@ -22,7 +22,7 @@ Gitea
         --network ecosystem \
         --publish 3000:3000 \
         --publish 2222:22 \
-        --volume gitea:/data \
+        --volume /home/gitea:/data \
         --volume /etc/timezone:/etc/timezone:ro \
         --volume /etc/localtime:/etc/localtime:ro \
         gitea/gitea
@@ -49,8 +49,8 @@ Gitea Rootless
         --network ecosystem \
         --publish 3000:3000 \
         --publish 2222:22 \
-        --volume gitea_data:/var/lib/gitea \
-        --volume gitea_config:/etc/gitea \
+        --volume /home/gitea/data:/var/lib/gitea \
+        --volume /home/gitea/config:/etc/gitea \
         --volume /etc/timezone:/etc/timezone:ro \
         --volume /etc/localtime:/etc/localtime:ro \
         gitea/gitea:latest-rootless
