@@ -1,6 +1,8 @@
 docker network create ecosystem
-sudo chmod 666 /var/run/docker.sock
-sudo ln -s /var/lib/docker/volumes/jenkins/_data/ /var/jenkins_home
+sudo mkdir /home/jenkins
+sudo chown ubuntu:ubuntu /home/jenkins
+sudo chmod o+rw /var/run/docker.sock
+sudo ln -s /home/jenkins /var/jenkins_home
 
 docker run \
     --name jenkins \

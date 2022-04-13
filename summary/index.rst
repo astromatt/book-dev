@@ -17,3 +17,5 @@ Summary
     system-administration.rst
     version-control.rst
     virtualization.rst
+
+    _recap.rst

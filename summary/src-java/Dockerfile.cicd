@@ -1,0 +1,4 @@
+FROM alpine:3.15
+RUN apk add --no-cache docker git openjdk8 maven
+RUN adduser cicd --disabled-password -u 1000 -h /home
+COPY .m2 /home/.m2

@@ -1,3 +1,5 @@
+docker network create ecosystem
+
 docker run \
     --name sonarqube \
     --detach \
