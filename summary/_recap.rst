@@ -1,6 +1,16 @@
 Recap
 =====
 
+.. code-block:: console
+
+    sudo apt update
+    sudo apt install -y uidmap
+    curl https://get.docker.com/rootless |sh
+    echo 'export PATH=/home/ubuntu/bin:$PATH' >> ~/.profile
+    echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.profile
+    sudo mkdir -p /home/run/
+    sudo chown ubuntu:ubuntu /home/run
+
 
 Repository
 ----------

@@ -83,7 +83,7 @@ import subprocess
 import sys
 from datetime import date
 
-needs_sphinx = '3.3'
+needs_sphinx = '4.3'
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
@@ -149,6 +149,7 @@ exclude_patterns = [
     '**/_TODO.rst',
     'Thumbs.db',
     '.DS_Store',
+    '_architecture-decision-records'
 ]
 
 master_doc = 'index'
