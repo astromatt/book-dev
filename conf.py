@@ -149,7 +149,8 @@ exclude_patterns = [
     '**/_TODO.rst',
     'Thumbs.db',
     '.DS_Store',
-    '_architecture-decision-records'
+    '_architecture-decision-records',
+    '_migracja-ecosystem',
 ]
 
 master_doc = 'index'
