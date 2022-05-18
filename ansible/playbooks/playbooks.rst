@@ -24,7 +24,7 @@ Playbook
 
     - name: "Install Nginx"
       become: yes
-      yum:
+      package:
         name: nginx
         state: latest
 
@@ -96,9 +96,6 @@ Playbook
             - build-essential
             - git
             - nginx
-
-        - name: install pip
-          action: easy_install name=pip
 
         - name: install various libraries with pip
           action: pip name={{item}} state=present

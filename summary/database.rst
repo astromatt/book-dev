@@ -45,3 +45,15 @@ Database Migrations
 * Django Migrations
 * SQLAlchemy + Alembik - https://www.sqlalchemy.org https://alembic.sqlalchemy.org/en/latest/
 * Rails Migrations
+
+* DataGrip
+* JetBrains IDE(s) (IntelliJ IDEA, PhpStorm, etc.)
+* SQL Server Data Tools
+* DevArt SQL Source Control Plugin for SSMS
+* Redgate SQL Source Control Plugin for SSMS
+* Liquibase
+* Flyway
+* DB Change Manager
+* Database
+* YUNIQL
+* Evolve
