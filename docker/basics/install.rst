@@ -5,6 +5,11 @@ Install
 
 Versions
 ========
+* macOS: https://docs.docker.com/docker-for-mac/install/
+* Ubuntu: https://docs.docker.com/engine/getstarted/linux_install_help/
+* Linux: https://docs.docker.com/engine/installation/
+* Windows: https://docs.docker.com/docker-for-windows/
+
 .. glossary::
 
     LTS version
@@ -13,40 +18,34 @@ Versions
     Edge version
         Docker up-to-date (newest) version
 
-macOS
------
-* https://docs.docker.com/docker-for-mac/install/
+    Rootfull
+        Docker daemon is running with root privileges
 
+    Rootless
+        Docker daemon is running with user privileges
+
+
+Rootfull
+--------
 .. code-block:: console
 
-    $ curl https://get.docker.com |sh
+    $ curl https://get.docker.com |sudo sh
+    $ sudo usermod -aG docker $(whoami)
+    $ logout
 
-Ubuntu
-------
-* https://docs.docker.com/engine/getstarted/linux_install_help/
 
+Rootless
+--------
 .. code-block:: console
-    :caption: Preferred
-
-    $ curl https://get.docker.com |sh
-
-.. code-block:: console
-    :caption: Alternative
 
     $ sudo apt update
-    $ sudo apt install docker.io
-
-Linux
------
-* https://docs.docker.com/engine/installation/
-
-.. code-block:: console
-
-    $ curl https://get.docker.com |sh
-
-Windows
--------
-* https://docs.docker.com/docker-for-windows/
+    $ sudo apt install -y uidmap
+    $ curl https://get.docker.com/rootless |sh
+    $ echo 'export PATH=/home/ubuntu/bin:$PATH' >> ~/.bashrc
+    $ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
+    $ echo 'net.ipv4.ping_group_range = 0 2147483647' |sudo tee --append /etc/sysctl.conf
+    $ sudo sysctl --system
+    $ logout
 
 
 Logs

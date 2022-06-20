@@ -18,6 +18,7 @@ Adapters
 .. figure:: ../_img/docker-stack-05-kubernetes.png
 .. figure:: ../_img/docker-stack-06-architecture.png
 
+
 Bridge
 ------
 * https://docs.docker.com/network/bridge/

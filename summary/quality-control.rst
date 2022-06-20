@@ -166,6 +166,10 @@ Server side quality monitoring:
     * PMD https://pmd.github.io
     * Checkstyle https://checkstyle.sourceforge.io
 
+UI Testing:
+
+    * https://www.selenium.dev/
+
 Cloud based quality monitoring:
 
     * SonarCloud https://sonarcloud.io
@@ -175,7 +179,6 @@ Code Coverage:
 
     * JaCoCo https://www.jacoco.org/jacoco/
     * Cobertura http://cobertura.github.io/cobertura/
-
 
 Mutation Testing:
 
@@ -192,3 +195,5 @@ BDD Testing:
     * Lettuce http://lettuce.it
     * Cucumber https://cucumber.io
     * JBehave https://jbehave.org
+    * https://lettuce.readthedocs.io/en/latest/recipes/django-lxml.html
+    * https://behave.readthedocs.io/en/stable/
