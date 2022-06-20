@@ -1,10 +1,9 @@
-************
-About Docker
-************
+Docker About
+============
 
 
 What is docker?
-===============
+---------------
 * :cite:`DockerDocumentation`
 
 .. figure:: ../_img/docker-vs-lxc.png
@@ -21,7 +20,7 @@ What is docker?
 
 
 Architecture
-============
+------------
 .. glossary::
 
     Guest
@@ -34,8 +33,8 @@ Architecture
         Server running Docker Engine
 
 
-Docker image vs container
-=========================
+Image vs Container
+------------------
 .. glossary::
 
     Image
@@ -46,7 +45,7 @@ Docker image vs container
 
 
 Layers
-======
+------
 .. glossary::
 
     Layer
@@ -79,7 +78,7 @@ Layers
 
 
 Open Container Initiative
-=========================
+-------------------------
 * https://opencontainers.org
 
 The Open Container Initiative is an open governance structure for the
@@ -93,3 +92,39 @@ The Runtime Specification outlines how to run a "filesystem bundle" that
 is unpacked on disk. At a high-level an OCI implementation would download
 an OCI Image then unpack that image into an OCI Runtime filesystem bundle.
 At this point the OCI Runtime Bundle would be run by an OCI Runtime.
+
+
+Where Docker store logs
+-----------------------
+* Ubuntu (old using `upstart`) - ``/var/log/upstart/docker.log``
+* Ubuntu (new using `systemd`) - ``sudo journalctl -fu docker.service``
+* Amazon Linux AMI - ``/var/log/docker``
+* Boot2Docker - ``/var/log/docker.log``
+* Debian GNU/Linux - ``/var/log/daemon.log``
+* CentOS - ``/var/log/message | grep docker``
+* CoreOS - ``journalctl -u docker.service``
+* Fedora - ``journalctl -u docker.service``
+* Red Hat Enterprise Linux Server - ``/var/log/messages | grep docker``
+* OpenSuSE - ``journalctl -u docker.service``
+* OSX - ``~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/log/docker.log``
+* Windows - ``Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5) | Sort-Object Time``
+
+
+Where Docker store containers
+-----------------------------
+* Docker rootfull ``/var/lib/docker/containers``
+* Docker rootless ``~/.local/share/docker/``
+
+Docker rootfull:
+
+.. code-block:: console
+
+    $ docker info |grep 'Docker Root Dir'
+    Docker Root Dir: /var/lib/docker
+
+Docker rootless:
+
+.. code-block:: console
+
+    $ docker info |grep 'Docker Root Dir'
+    Docker Root Dir: /home/ubuntu/.local/share/docker

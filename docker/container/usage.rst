@@ -1,10 +1,9 @@
-***********
-Basic Usage
-***********
+Docker Usage
+============
 
 
 Search
-======
+------
 * https://hub.docker.com
 
 .. code-block:: console
@@ -13,7 +12,7 @@ Search
 
 
 Pulling from Docker Hub
-=======================
+-----------------------
 * Only pull
 * Will not run
 
@@ -23,8 +22,7 @@ Pulling from Docker Hub
 
 
 Operating system images
-=======================
-
+-----------------------
 .. code-block:: console
 
     $ docker images |sort
@@ -87,23 +85,3 @@ Ubuntu
     $ docker pull ubuntu:22.04
     $ docker pull ubuntu:latest
     $ docker pull ubuntu          # will pull latest
-
-
-Where docker store containers
-=============================
-* Docker rootfull ``/var/lib/docker/containers``
-* Docker rootless ``~/.local/share/docker/``
-
-Docker rootfull:
-
-.. code-block:: console
-
-    $ docker info |grep 'Docker Root Dir'
-    Docker Root Dir: /var/lib/docker
-
-Docker rootless:
-
-.. code-block:: console
-
-    $ docker info |grep 'Docker Root Dir'
-    Docker Root Dir: /home/ubuntu/.local/share/docker

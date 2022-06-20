@@ -1,6 +1,5 @@
-*******
-Volumes
-*******
+Docker Volumes
+==============
 
 * A data volume is a specially-designated directory within one or more containers that bypasses the Union File System.
 * Data volumes provide several useful features for persistent or shared data:
@@ -19,14 +18,14 @@ Volumes
 
 
 Creating persistent storage
-===========================
+---------------------------
 ``-v``, ``--volume`` - Bind mount a volume
 
 .. code-block:: console
 
     $ docker run -it -v /data alpine sh
     $ echo 'hello' > /data/hello.txt
-    # exit with ``ctrl+q+p``
+    # exit with ``ctrl+q + ctrl+p``
 
 .. code-block:: console
 
@@ -34,7 +33,7 @@ Creating persistent storage
 
 
 Attaching local dir to docker container
-=======================================
+---------------------------------------
 * Will mount ``/tmp/my_host`` from host to ``/data`` inside container
 
 .. code-block:: console
@@ -47,14 +46,14 @@ Attaching local dir to docker container
 
 
 Mount read-only filesystem
-==========================
+--------------------------
 .. code-block:: console
 
     $ docker run -v /home/myproject:/data:ro alpine sh
 
 
 Creating Volumes
-================
+----------------
 .. code-block:: console
 
     $ docker volume create -d flocker --opt o=size=20GB myvolume
@@ -62,7 +61,7 @@ Creating Volumes
 
 
 Volume container
-================
+----------------
 .. code-block:: console
 
     $ docker create -v /data --name dbstore postgres /bin/true

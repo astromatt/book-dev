@@ -1,10 +1,10 @@
-**********************
-Command Line Interface
-**********************
+Docker CLI
+==========
+* Command Line Interface
 
 
 Docker Management commands
-==========================
+--------------------------
 .. code-block:: text
 
     checkpoint  Manage checkpoints
@@ -24,7 +24,7 @@ Docker Management commands
 
 
 Docker commands
-===============
+---------------
 .. code-block:: text
 
     attach      Attach local standard input, output, and error streams to a running container
@@ -70,9 +70,8 @@ Docker commands
     wait        Block until one or more containers stop, then print their exit codes
 
 
-
 Important
-=========
+---------
 .. code-block:: text
     :caption: Docker Management commands
 

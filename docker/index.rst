@@ -1,5 +1,6 @@
 .. include:: README.rst
 
+
 *************
 Docker Basics
 *************
@@ -12,6 +13,7 @@ Docker Basics
     basics/install.rst
     basics/cli.rst
 
+
 *****************
 Docker Containers
 *****************
@@ -22,9 +24,13 @@ Docker Containers
 
     container/usage.rst
     container/run.rst
+    container/env.rst
+    container/expose.rst
     container/exec.rst
     container/network.rst
     container/volumes.rst
+    container/logs.rst
+
 
 *************
 Docker Images
@@ -34,8 +40,10 @@ Docker Images
     :numbered:
     :caption: Docker Images
 
+    image/dockerfile.rst
     image/build.rst
     image/registry.rst
+
 
 **************
 Docker Scaling
@@ -49,6 +57,7 @@ Docker Scaling
     scaling/docker-compose.rst
     scaling/techniques.rst
     scaling/kubernetes.rst
+
 
 **********
 References

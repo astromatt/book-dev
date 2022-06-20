@@ -1,10 +1,10 @@
-****
-Exec
-****
+Docker Exec
+===========
+* Execute
 
 
 Attach to running containers
-============================
+----------------------------
 * Attach to running container and execute another process of bash
 
 .. code-block:: console
@@ -14,14 +14,14 @@ Attach to running containers
 
 
 What application is running inside the container?
-=================================================
+-------------------------------------------------
 .. code-block:: console
 
     $ docker top CONTAINER_NAME_OR_ID
 
 
 Stop containers
-===============
+---------------
 * Filesystem inside container is ephemeral (it will be deleted after stop)
 * Allow container to close gracefully
 
@@ -31,7 +31,7 @@ Stop containers
 
 
 Kill container
-==============
+--------------
 * Terminate container instantly
 
 .. code-block:: console
@@ -40,7 +40,7 @@ Kill container
 
 
 Remove container
-================
+----------------
 * Remove container
 
     .. code-block:: console
@@ -60,14 +60,14 @@ Remove container
         $ docker run --rm -it alpine sh
 
 Inspect
-=======
+-------
 .. code-block:: console
 
     $ docker inspect alpine
 
 
 Update
-======
+------
 * Do not autostart ``alpine`` container after Docker engine restart (host reboot)
 
 .. code-block:: console
