@@ -1,26 +1,21 @@
 Docker Install
 ==============
-* macOS: https://docs.docker.com/docker-for-mac/install/
-* Ubuntu: https://docs.docker.com/engine/getstarted/linux_install_help/
-* Linux: https://docs.docker.com/engine/installation/
-* Windows: https://docs.docker.com/docker-for-windows/
-
 
 Versions
 --------
 .. glossary::
-
-    LTS version
-        Docker Long Term Support version
-
-    Edge version
-        Docker up-to-date (newest) version
 
     Rootfull
         Docker daemon is running with root privileges
 
     Rootless
         Docker daemon is running with user privileges
+
+    LTS version
+        Docker Long Term Support version
+
+    Edge version
+        Docker up-to-date (newest) version
 
 
 Rootfull
@@ -46,6 +41,14 @@ Rootless
     $ echo 'net.ipv4.ping_group_range = 0 2147483647' |sudo tee --append /etc/sysctl.conf
     $ sudo sysctl --system
     $ logout
+
+
+Further Reading
+---------------
+* macOS: https://docs.docker.com/docker-for-mac/install/
+* Ubuntu: https://docs.docker.com/engine/getstarted/linux_install_help/
+* Linux: https://docs.docker.com/engine/installation/
+* Windows: https://docs.docker.com/docker-for-windows/
 
 
 Assignments

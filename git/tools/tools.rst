@@ -5,6 +5,11 @@ Git Tools
 #. Skrypt robiący changelog pomiędzy wersjami (tagami) zaciągający dane z Jiry
 
 
+GitOps
+======
+* https://www.gitops.tech
+
+
 Repository Hosting
 ==================
 

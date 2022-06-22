@@ -132,6 +132,11 @@ Push
     $ git push
 
 
+Further Reading
+===============
+* https://www.gitops.tech
+
+
 Assignments
 ===========
 

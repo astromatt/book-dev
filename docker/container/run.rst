@@ -101,13 +101,9 @@ Limiting resources
 * https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details
 
 
-Use Cases
----------
-* https://12factor.net
-* https://www.gitops.tech
-
-
 Assignments
 -----------
 #. Wyświetl ``Ehlo World!`` z wnętrza kontenera ``alpine``
 #. Wyświetl listę działających i zakończonych kontenerów
+#. Podaj rozmiar obrazu ``nginx``
+#. Podaj rozmiar kontenera stworzonego na podstawie obrazu ``nginx``

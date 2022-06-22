@@ -56,6 +56,11 @@ Env-file
     DATABASE_PASSWORD=ares3
 
 
+Further Reading
+---------------
+* https://12factor.net
+
+
 Assignments
 -----------
 #. Stwórz plik ``test.env`` oraz ``prod.env``
