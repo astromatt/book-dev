@@ -3,6 +3,36 @@ Docker CLI
 * Command Line Interface
 
 
+Important
+---------
+.. code-block:: text
+    :caption: Docker commands
+
+    attach      Attach local standard input, output, and error streams to a running container
+    build       Build an image from a Dockerfile
+    exec        Run a command in a running container
+    images      List images
+    inspect     Return low-level information on Docker objects
+    kill        Kill one or more running containers
+    logs        Fetch the logs of a container
+    network     Manage networks
+    ps          List containers
+    rm          Remove one or more containers
+    rmi         Remove one or more images
+    run         Run a command in a new container
+    stop        Stop one or more running containers
+    top         Display the running processes of a container
+
+.. code-block:: text
+    :caption: Publishing
+
+    login       Log in to a Docker registry
+    logout      Log out from a Docker registry
+    pull        Pull an image or a repository from a registry
+    push        Push an image or a repository to a registry
+    search      Search the Docker Hub for images
+
+
 Docker Management commands
 --------------------------
 .. code-block:: text
@@ -68,37 +98,3 @@ Docker commands
     update      Update configuration of one or more containers
     version     Show the Docker version information
     wait        Block until one or more containers stop, then print their exit codes
-
-
-Important
----------
-.. code-block:: text
-    :caption: Docker Management commands
-
-    network     Manage networks
-
-.. code-block:: text
-    :caption: Publishing
-
-    login       Log in to a Docker registry
-    logout      Log out from a Docker registry
-    pull        Pull an image or a repository from a registry
-    push        Push an image or a repository to a registry
-    search      Search the Docker Hub for images
-
-.. code-block:: text
-    :caption: Docker commands
-
-    attach      Attach local standard input, output, and error streams to a running container
-    build       Build an image from a Dockerfile
-    exec        Run a command in a running container
-    images      List images
-    inspect     Return low-level information on Docker objects
-    kill        Kill one or more running containers
-    logs        Fetch the logs of a container
-    ps          List containers
-    rm          Remove one or more containers
-    rmi         Remove one or more images
-    run         Run a command in a new container
-    stop        Stop one or more running containers
-    top         Display the running processes of a container

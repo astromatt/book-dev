@@ -1,11 +1,9 @@
-******
 Agenda
-******
+======
 
-* :cite:`LinuxKernelDocumentation`
 
 Agile Bootcamp
-==============
+--------------
 .. csv-table:: Agile Bootcamp day 1 agenda
     :widths: 10, 25, 35
     :header: "Time", "Title", "Agenda"

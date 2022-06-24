@@ -1,6 +1,6 @@
 .. include:: README.rst
 
-************
+
 Introduction
 ************
 .. toctree::
@@ -11,7 +11,7 @@ Introduction
     introduction/agenda.rst
     introduction/vim.rst
 
-*****
+
 Linux
 *****
 .. toctree::
@@ -19,6 +19,7 @@ Linux
     :numbered:
     :caption: Linux
 
+    system/distributions.rst
     system/directory-structure.rst
     system/builtin-commands.rst
     system/environmental-variables.rst
@@ -35,7 +36,7 @@ Linux
     system/devices.rst
     system/x-window-system.rst
 
-*****************
+
 Shell Programming
 *****************
 .. toctree::
@@ -56,7 +57,7 @@ Shell Programming
     shell/regular-expressions.rst
     shell/multiprocessing.rst
 
-**********
+
 References
 **********
 .. toctree::

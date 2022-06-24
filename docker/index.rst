@@ -12,6 +12,7 @@ Docker Basics
     basics/about.rst
     basics/install.rst
     basics/cli.rst
+    basics/distributions.rst
 
 
 *****************
