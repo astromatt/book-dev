@@ -39,18 +39,22 @@ PS1
 
     Bash colors
 
-.. code-block:: console
+.. code-block:: sh
 
-    ## Prompt
+    # Colors
     red='\[\033[00;31m\]'
     green='\[\033[00;32m\]'
     blue='\[\033[00;36m\]'
     white='\[\033[00;39m\]'
 
-    export PS1="\n${green}$ ${white}"
+    # User Prompt
+    [ $UID != 0 ] && export PS1="\n${green}$ ${white}"
 
-    [ $SSH_CONNECTION ] && export PS1="\n${green}\h $ ${white}"
+    # Root Prompt
     [ $UID == 0 ] && export PS1="\n${red}# ${white}"
+
+    # Remote Prompt
+    [ $SSH_CONNECTION ] && export PS1="\n${green}\h $ ${white}"
 
 
 Commands

@@ -19,21 +19,22 @@ GRUB
 
 Runlevel
 --------
+* ``0``
+* ``1``
+* ``2``
+* ``3``
+* ``4``
+* ``5``
+* ``6``
 
 
 Paths
 -----
-* ``/etc/init.d``
-* ``/etc/rc.d``
-* ``/etc/rc0.d``
-* ``/etc/rc1.d``
-* ``/etc/rc2.d``
-* ``/etc/rc3.d``
-* ``/etc/rc4.d``
-* ``/etc/rc5.d``
-* ``/etc/rc6.d``
-* ``/etc/rcS.d``
-* ``/etc/rc.local``
+* ``/boot/vmlinuz``
+* ``/boot/initrd.img``
+* ``/boot/efi/``
+* ``/boot/grub/``
+* ``/boot/grub/grub.cfg``
 
 
 Commands

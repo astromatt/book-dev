@@ -34,7 +34,7 @@ Commands
 
 Variables
 ---------
-.. code-block:: console
+.. code-block:: sh
 
     PATH=/usr/sbin:/usr/bin:/sbin:/bin
 

@@ -28,4 +28,4 @@ Commands
     ``localedef``,      "(1)", "compile locale definition files"
     ``gettext``,        "(1)", "translate message"
     ``gettext``,        "(3)", "translate message"
-    ``update-locale``,  "(1)", "Modify global locale settings
+    ``update-locale``,  "(1)", "Modify global locale settings"
