@@ -1,15 +1,74 @@
-*******
 Crontab
-*******
+=======
+* Cron RUN_AS user
+* Default user for cron commands
+* Stderr and Stdout redirection
+* Email notifications
+
+
+Paths
+-----
+* ``/etc/cron.d/``
+* ``/etc/cron.daily/``
+* ``/etc/cron.hourly/``
+* ``/etc/cron.monthly/``
+* ``/etc/cron.weekly/``
+* ``/etc/crontab``
+* ``/var/spool/cron/crontabs/``
+* ``/etc/cron.allow`` - Allow User-Level Cron
+* ``/etc/cron.deny`` - Deny User-Level Cron
+
+
+Commands
+--------
+* ``crontab -e``
+* ``crontab -l``
+* ``sudo crontab -e``
+* ``export EDITOR=/usr/bin/vim``
 
 .. code-block:: console
 
+    $ export EDITOR=/usr/bin/vim
     $ crontab -e
-    $ crontab -l
-    $ sudo crontab -e
 
-Przykładowy crontab
-===================
+
+Variables
+---------
+.. code-block:: console
+
+    PATH=/usr/sbin:/usr/bin:/sbin:/bin
+
+
+Syntax
+------
+* ``*`` any value
+* ``,`` value list separator
+* ``-`` range of values
+* ``/`` step values
+
+Time
+----
+* minute: 0-60
+* hour: 0-23
+* day of month: 0-31
+* month: JAN-DEC / 0-12
+* day of week: SUN-SAT / 0-7 (Sunday = 0 or 7)
+
+
+Recurrence
+----------
+* ``@yearly`` - Run once a year, ``0 0 1 1 *``
+* ``@annually`` - Same as ``@yearly``
+* ``@monthly`` - Run once a month ``0 0 1 * *``
+* ``@weekly`` - Run once a week ``0 0 * * 0``
+* ``@daily`` - Run once a day ``0 0 * * *``
+* ``@midnight`` - Same as ``@daily``
+* ``@hourly`` - Run once an hour ``0 * * * *``
+* ``@reboot`` - Run once, at startup
+
+
+Example
+-------
 .. code-block:: text
 
     SHELL=/bin/sh
@@ -28,6 +87,9 @@ Przykładowy crontab
     47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
     52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 
+
+Use Case
+--------
 .. code-block:: text
 
     5 4 * * *       /bin/echo 'five past four a.m.'
@@ -49,60 +111,3 @@ Przykładowy crontab
     45 04 * * * /usr/sbin/chkrootkit && /usr/bin/updatedb
     00 06 * * * env DISPLAY=:0.0 gui_appname
     00 01 * * * ubuntu /home/ubuntu/script.sh
-
-
-Editing ``crontab``
-===================
-.. code-block:: console
-
-    export EDITOR=/usr/bin/vim
-
-
-Variables
----------
-.. code-block:: console
-
-    PATH=/usr/sbin:/usr/bin:/sbin:/bin
-
-Special characters
-------------------
-- ``*`` any value
-- ``,`` value list separator
-- ``-`` range of values
-- ``/`` step values
-
-Crontab formatting
-------------------
-- minute: 0-60
-- hour: 0-23
-- day of month: 0-31
-- month: JAN-DEC / 0-12
-- day of week: SUN-SAT / 0-7 (Sunday = 0 or 7)
-
-Short notation
---------------
-.. csv-table:: Short notation
-    :file: ../_data/crontab.csv
-    :widths: 20, 80
-    :header-rows: 1
-
-Allowing/Denying User-Level Cron
-================================
-- /etc/cron.allow
-- /etc/cron.deny
-
-Files and Directories
-=====================
-- /etc/crontab
-- /var/spool/crontab/
-- /etc/cron.d/
-- /etc/cron.daily/
-- /etc/cron.hourly/
-- /etc/cron.weekly/
-- /etc/cron.monthly/
-
-Other
-=====
-- z jakiego użytkownika są uruchamiane
-- przekierowanie outputu stdout i stderr
-- dostawanie maili

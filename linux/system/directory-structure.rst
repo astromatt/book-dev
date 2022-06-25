@@ -2,6 +2,39 @@ Directory Structure
 ===================
 
 
+Directory Structure
+-------------------
+.. csv-table:: Directory Structure
+    :widths: 20, 80
+    :header: "Path", "Description"
+
+    ``/``,                "Main directory"
+    ``/bin``,             "Built-in executable files"
+    ``/boot``,            "Boot files and kernel"
+    ``/etc``,             "Configuration directory"
+    ``/etc/init.d``,      "Runtime scripts"
+    ``/dev``,             "Devices and drivers"
+    ``/home``,            "User files"
+    ``/lib``,             "Shared libraries"
+    ``/opt``,             "Optional applications"
+    ``/root``,            "Superuser home directory"
+    ``/sbin``,            "Superuser built-in binary files"
+    ``/srv``,             "Optional services"
+    ``/tmp``,             "Temporary files (removed on startup)"
+    ``/usr``,             "User installed files"
+    ``/usr/bin``,         "Application executable files"
+    ``/usr/lib``,         "Applications data files"
+    ``/usr/local/bin``,   "User installed applications executable files"
+    ``/usr/local/sbin``,  "Superuser installed applications executable files"
+    ``/usr/sbin``,        "Application superuser executable files"
+    ``/usr/src``,         "Application source codes"
+    ``/var``,             "Installed applications files"
+    ``/var/lock``,        "Application lock files"
+    ``/var/log``,         "Applications and system log files"
+    ``/var/pid``,         "Application PID files"
+    ``/var/spool``,       "System spool files (crontab, mail, printer)"
+
+
 Root Directory
 --------------
 * Top Level Directory
@@ -280,8 +313,3 @@ Root Directory
     :scale: 100%
 
     Linux directory tree
-
-.. csv-table:: Directory Structure
-    :header-rows: 1
-    :widths: 20, 80
-    :file: ../_data/directory-structure.csv

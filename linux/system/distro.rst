@@ -1,6 +1,5 @@
 Linux Distributions
 ===================
-* :cite:`LinuxKernelDocumentation`
 
 
 Alpine

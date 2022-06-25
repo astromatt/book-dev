@@ -1,44 +1,50 @@
-**********
 Networking
-**********
-
-- /etc/hosts localhost
-- 127.0.0.1
-- ::1
-- /etc/hosts
-- /etc/resolv.conf
-- /etc/network/interfaces
-- /etc/if-up-down/
-
-Built-in
-========
-
-``ifconfig``
-------------
-
-``ip``
-------
-
-``route``
----------
-
-``netstat``
------------
-
-``iptables``
-------------
-
-Additional
 ==========
 
-``nc``
-------
 
-``wireshark``
--------------
+IPv4 vs IPv6
+------------
+* ``127.0.0.1``
+* ``::1``
 
-``nmap``
+
+Networks
 --------
+* NAT
+* SNAT
+* DNAT
+* VLAN
+* LAN
+* MAN
+* WAN
 
-``tcpdump``
------------
+
+Paths
+-----
+* ``/etc/hosts``
+* ``/etc/resolv.conf``
+* ``/var/mail``
+* ``/etc/network``
+* ``/etc/network/interfaces``
+* ``/etc/network/if-post-down.d/``
+* ``/etc/network/if-pre-up.d/``
+* ``/etc/network/if-up.d/``
+* ``/etc/if-up-down/``
+* ``/etc/wpa_supplicant.conf``
+
+
+Built-in
+--------
+* ``ifconfig``
+* ``ip``
+* ``route``
+* ``netstat``
+* ``iptables``
+
+
+Additional
+----------
+* ``nc``
+* ``wireshark``
+* ``nmap``
+* ``tcpdump``

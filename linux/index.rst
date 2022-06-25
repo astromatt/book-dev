@@ -1,15 +1,15 @@
 .. include:: README.rst
 
 
-Introduction
-************
+About
+*****
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Introduction
+    :caption: About
 
-    introduction/agenda.rst
-    introduction/vim.rst
+    about/agenda.rst
+    about/vim.rst
 
 
 Linux
@@ -19,22 +19,31 @@ Linux
     :numbered:
     :caption: Linux
 
-    system/distributions.rst
+    system/distro.rst
+    system/manuals.rst
     system/directory-structure.rst
-    system/builtin-commands.rst
-    system/environmental-variables.rst
+    system/files-and-dirs.rst
+    system/permissions.rst
+    system/packages.rst
+    system/environment-variables.rst
+    system/users-and-groups.rst
+    system/shell.rst
     system/crontab.rst
     system/logs.rst
+    system/security.rst
     system/ssh.rst
-    system/users-and-groups.rst
-    system/permissions.rst
+    system/locale.rst
+    system/date.rst
     system/filesystem.rst
     system/processes.rst
     system/signals.rst
-    system/booting.rst
+    system/boot.rst
+    system/services.rst
     system/networking.rst
     system/devices.rst
+    system/kernel.rst
     system/x-window-system.rst
+    system/backup.rst
 
 
 Shell Programming
@@ -44,6 +53,7 @@ Shell Programming
     :numbered:
     :caption: Shell Programming
 
+    shell/about.rst
     shell/interpreter.rst
     shell/variables.rst
     shell/conditionals.rst
@@ -56,13 +66,3 @@ Shell Programming
     shell/parameter-expansion.rst
     shell/regular-expressions.rst
     shell/multiprocessing.rst
-
-
-References
-**********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: References
-
-    _references/index.rst

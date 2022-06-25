@@ -1,6 +1,6 @@
-*******
 Signals
-*******
+=======
+
 
 .. csv-table:: signals
     :header: Number, Name
@@ -37,4 +37,3 @@ Signals
     29, SIGINFO
     30, SIGUSR1
     31, SIGUSR2
-
