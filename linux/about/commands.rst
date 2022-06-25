@@ -3,7 +3,7 @@ Commands
 
 .. csv-table:: Commands
     :header: "Command", "Type", "Description"
-    :widths: 20, 5, 75
+    :widths: 25, 75
 
     ``addgroup``,                "add a user or group to the system"
     ``adduser``,                 "add a user or group to the system"
