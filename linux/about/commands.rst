@@ -373,7 +373,7 @@ Commands
     :header: "Command", "Description"
     :widths: 20, 80
 
-    "``"``",                     ""
+    "``\"``",                    ""
     "``#``",                     ""
     "``$()``",                   ""
     "``'``",                     ""
