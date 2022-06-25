@@ -66,3 +66,13 @@ Shell Programming
     shell/parameter-expansion.rst
     shell/regular-expressions.rst
     shell/multiprocessing.rst
+
+
+Recap
+*****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Recap
+
+    about/commands.rst
