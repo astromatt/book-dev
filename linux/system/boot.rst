@@ -17,17 +17,6 @@ GRUB
 * Hard disk naming convention
 
 
-Runlevel
---------
-* ``0``
-* ``1``
-* ``2``
-* ``3``
-* ``4``
-* ``5``
-* ``6``
-
-
 Files
 -----
 * ``/boot/vmlinuz``
