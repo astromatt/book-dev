@@ -20,8 +20,8 @@ Variables
 
 Symbols
 -------
-* `````
-* ``"``
+* ` - tick mark
+* ``"`` - double quote
 
 .. csv-table:: Variables
     :header: "Command", "Description"

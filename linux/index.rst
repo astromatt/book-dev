@@ -69,11 +69,12 @@ Shell Programming
     shell/multiprocessing.rst
 
 
-Recap
-*****
+Summary
+*******
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Recap
+    :caption: Summary
 
-    about/commands.rst
+    summary/commands.rst
+    summary/shell-scripting.rst
