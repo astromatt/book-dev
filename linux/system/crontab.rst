@@ -1,37 +1,38 @@
 Crontab
 =======
-* Cron RUN_AS user
-* Default user for cron commands
-* ``1>/dev/null 2>&1`` Stderr and Stdout redirection
-* Email notifications
+* Execute scheduled commands
+* Can redirect Stderr and Stdout
+* Cron will email you not redirected output
 
 
-Output Redirect
----------------
-* ``1 > /dev/null`` - stdout to /dev/null
-* ``2 > /dev/null`` - stderr to /dev/null
-* ``1>/dev/null 2>&1`` - stdout to /dev/null and stderr to the same as stdout
-
-
-Paths
+Files
 -----
+* ``/etc/crontab``
+* ``/etc/cron.allow`` - Allow User-Level Cron
+* ``/etc/cron.deny`` - Deny User-Level Cron
+* ``cat /var/log/syslog`` - Logs
+
+Directories
+-----------
 * ``/etc/cron.d/``
 * ``/etc/cron.daily/``
 * ``/etc/cron.hourly/``
 * ``/etc/cron.monthly/``
 * ``/etc/cron.weekly/``
-* ``/etc/crontab``
 * ``/var/spool/cron/crontabs/``
-* ``/etc/cron.allow`` - Allow User-Level Cron
-* ``/etc/cron.deny`` - Deny User-Level Cron
+
+
+Output Redirect
+---------------
+* ``1 > /dev/null`` - stdout to ``/dev/null``
+* ``2 > /dev/null`` - stderr to ``/dev/null``
+* ``1>/dev/null 2>&1`` - stdout to ``/dev/null`` and stderr to the same as stdout
 
 
 Commands
 --------
 * ``crontab -e``
 * ``crontab -l``
-* ``sudo crontab -e``
-* ``export EDITOR=/usr/bin/vim``
 
 .. code-block:: console
 
@@ -53,9 +54,10 @@ Syntax
 * ``-`` range of values
 * ``/`` step values
 
+
 Time
 ----
-* minute: 0-60
+* minute: 0-59
 * hour: 0-23
 * day of month: 0-31
 * month: JAN-DEC / 0-12
@@ -64,14 +66,14 @@ Time
 
 Recurrence
 ----------
-* ``@yearly`` - Run once a year, ``0 0 1 1 *``
-* ``@annually`` - Same as ``@yearly``
-* ``@monthly`` - Run once a month ``0 0 1 * *``
-* ``@weekly`` - Run once a week ``0 0 * * 0``
-* ``@daily`` - Run once a day ``0 0 * * *``
-* ``@midnight`` - Same as ``@daily``
 * ``@hourly`` - Run once an hour ``0 * * * *``
+* ``@daily`` - Run once a day ``0 0 * * *``
+* ``@weekly`` - Run once a week ``0 0 * * 0``
+* ``@monthly`` - Run once a month ``0 0 1 * *``
+* ``@yearly`` - Run once a year, ``0 0 1 1 *``
 * ``@reboot`` - Run once, at startup
+* ``@midnight`` - Same as ``@daily``
+* ``@annually`` - Same as ``@yearly``
 
 
 Example
@@ -97,33 +99,52 @@ Example
 
 Use Case - 0x01
 ---------------
-.. code-block:: text
+* ``/var/spool/cron/crontabs/``
+* ``crontab -e``
 
-    5 4 * * *       /bin/echo 'five past four a.m.'
-    */10 * * * *    /bin/echo 'every ten minutes'
-    5-10 4 * * *    /bin/echo 'every minute from 5-10 past four a.m.'
-    * 4 * * *       /bin/echo 'every minute at 4 a.m.'
-    0 14 * * *      /bin/echo 'at 2 p.m.'
-    0 0 1 * *       /bin/echo 'at midnight of first day of month'
-    0 0 1 JAN *     /bin/echo 'at midnight of first day of January'
-    0 0 1 1 *       /bin/echo 'at midnight of first day of January'
-    0 0 * * SAT,SUN /bin/echo 'at midnight on weekends'
-    0 0 * * 0,6     /bin/echo 'at midnight on weekends'
+.. code-block:: text
 
     @midnight       /bin/echo 'at midnight'
     @daily          /bin/echo 'at midnight'
     @weekly         /bin/echo 'at midnight on Sunday'
 
-    45 04 * * * /usr/bin/updatedb
-    45 04 * * * /usr/sbin/chkrootkit && /usr/bin/updatedb
-    00 06 * * * env DISPLAY=:0.0 gui_appname
-    00 01 * * * ubuntu /home/ubuntu/script.sh
-
 
 Use Case - 0x02
 ---------------
+* ``/var/spool/cron/crontabs/``
+* ``crontab -e``
+
+.. code-block:: text
+
+    00 5 * * * /usr/bin/updatedb
+
+
+Use Case - 0x03
+---------------
+* ``/var/spool/cron/crontabs/``
+* ``crontab -e``
+
+.. code-block:: text
+
+    05 4 * * *       /bin/echo 'five past four a.m.'
+    */10 * * * *     /bin/echo 'every ten minutes'
+    05-10 4 * * *    /bin/echo 'every minute from 5-10 past four a.m.'
+    * 4 * * *        /bin/echo 'every minute at 4 a.m.'
+    00 14 * * *      /bin/echo 'at 2 p.m.'
+    00 0 1 * *       /bin/echo 'at midnight of first day of month'
+    00 0 1 JAN *     /bin/echo 'at midnight of first day of January'
+    00 0 1 1 *       /bin/echo 'at midnight of first day of January'
+    00 0 * * SAT,SUN /bin/echo 'at midnight on weekends'
+    00 0 * * 0,6     /bin/echo 'at midnight on weekends'
+
+
+Use Case - 0x04
+---------------
+* ``/var/spool/cron/crontabs/``
+* ``crontab -e``
+
 .. code-block:: text
 
     # Book Python
-    00  * * * * *     /Users/matt/Developer/book-python/.venv-py310/bin/python /Users/matt/Developer/book-python/_bin/make-notes.py 1>/dev/null 2>&1
-    05  * * * * *     /Users/matt/Developer/book-python/.venv-py310/bin/python /Users/matt/Developer/book-python/_bin/make-assignments.py 1>/dev/null 2>&1
+    00  * * * * *     /Users/mwatney/book-python/.venv-py310/bin/python /Users/mwatney/book-python/bin/make-notes.py 1>/dev/null 2>&1
+    05  * * * * *     /Users/mwatney/book-python/.venv-py310/bin/python /Users/mwatney/book-python/bin/make-assignments.py 1>/dev/null 2>&1

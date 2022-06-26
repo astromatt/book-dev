@@ -59,5 +59,5 @@ Config and Host Aliases
 SSHd
 ----
 * Disabling password authentication
-* ``/etc/ssh/ssh_config``
+* ``/etc/ssh/sshd_config``
 * ``sudo service sshd restart``

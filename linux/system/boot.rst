@@ -28,36 +28,31 @@ Runlevel
 * ``6``
 
 
-Paths
+Files
 -----
 * ``/boot/vmlinuz``
 * ``/boot/initrd.img``
+* ``/boot/grub/grub.cfg``
+
+
+Directories
+-----------
 * ``/boot/efi/``
 * ``/boot/grub/``
-* ``/boot/grub/grub.cfg``
 
 
 Commands
 --------
-.. csv-table:: System
-    :header: "Command", "Type", "Description"
-    :widths: 20, 5, 75
-
-    ``uptime``,         "",     "print time since last reboot"
-    ``vmstat``,         "(8)",  "Report virtual memory statistics"
-    ``shutdown``,       "(2)",  "shut down part of a full-duplex connection"
-    ``shutdown``,       "(8)",  "Halt, power-off or reboot the machine"
-    ``runlevel``,       "(8)",  "Print previous and current SysV runlevel"
-    ``readlink``,       "(1)",  "print resolved symbolic links or canonical file names"
-    ``readlink``,       "(2)",  "read value of a symbolic link"
-    ``reboot``,         "(2)",  "reboot or enable/disable Ctrl-Alt-Del"
-    ``reboot``,         "(8)",  "Halt, power-off or reboot the machine"
-    ``poweroff``,       "(8)",  "Halt, power-off or reboot the machine"
-    ``lsb_release``,    "(1)",  "print distribution-specific information"
-    ``free``,           "(1)",  "Display amount of free and used memory in the system"
-    ``halt``,           "(8)",  "Halt, power-off or reboot the machine"
-    ``hostname``,       "(1)",  "show or set the system's host name"
-    ``hostname``,       "(5)",  "Local hostname configuration file"
-    ``hostname``,       "(7)",  "hostname resolution description"
-    ``hostnamectl``,    "(1)",  "Control the system hostname"
-    ``suspend``,        "",     ""
+* ``uptime`` - print time since last reboot
+* ``vmstat`` - Report virtual memory statistics
+* ``shutdown`` - Halt, power-off or reboot the machine
+* ``runlevel`` - Print previous and current SysV runlevel
+* ``readlink`` - print resolved symbolic links or canonical file names
+* ``reboot`` - Halt, power-off or reboot the machine
+* ``poweroff`` - Halt, power-off or reboot the machine
+* ``lsb_release`` - print distribution-specific information
+* ``free`` - Display amount of free and used memory in the system
+* ``halt`` - Halt, power-off or reboot the machine
+* ``hostname`` - show or set the system's host name
+* ``hostnamectl`` - Control the system hostname
+* ``suspend`` -

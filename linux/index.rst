@@ -43,6 +43,7 @@ Linux
     system/devices.rst
     system/kernel.rst
     system/x-window-system.rst
+    system/compression.rst
     system/backup.rst
 
 

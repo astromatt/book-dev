@@ -28,7 +28,7 @@ Directory Structure
     ``/usr/local/sbin``,  "Superuser installed applications executable files"
     ``/usr/sbin``,        "Application superuser executable files"
     ``/usr/src``,         "Application source codes"
-    ``/var``,             "Installed applications files"
+    ``/var``,             "Means variable and this directory has always been intended to store data which changes over time (Installed applications files)"
     ``/var/lock``,        "Application lock files"
     ``/var/log``,         "Applications and system log files"
     ``/var/pid``,         "Application PID files"
