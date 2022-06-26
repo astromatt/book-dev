@@ -134,7 +134,7 @@ Commands
     "``kill``",                    "send signal to a process"
     "``killall``",                 "kill processes by name"
     "``kpartx``",                  "Create device maps from partition tables"
-    "``l`"`,                       ""
+    "``l``",                       ""
     "``la``",                      ""
     "``last``",                    "show a listing of last logged in users"
     "``ld``",                      "The GNU linker"
@@ -350,7 +350,7 @@ Commands
     "``vimdiff``",                 "edit between two and eight versions of a file with Vim and show differences"
     "``visudo``",                  "edit the sudoers file"
     "``vmstat``",                  "Report virtual memory statistics"
-    "``w`"`,                       "Show who is logged on and what they are doing"
+    "``w``",                       "Show who is logged on and what they are doing"
     "``wait``",                    "wait for process to change state"
     "``wall``",                    "write a message to all users"
     "``watch``",                   "execute a program periodically, showing output fullscreen"
@@ -412,3 +412,10 @@ Commands
     "``unset``",                 ""
     "``until``",                 ""
     "``while``",                 ""
+
+.. csv-table:: Shell Programming
+    :header: "Command", "Description"
+    :widths: 20, 80
+
+    "``\"``",                    ""
+    "``\```",                    ""
