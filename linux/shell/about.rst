@@ -20,14 +20,14 @@ Variables
 
 Symbols
 -------
-* ``\```
+* `````
+* ``"``
 
 .. csv-table:: Variables
     :header: "Command", "Description"
     :widths: 20, 80
 
     "``!``",     ""
-    "``\"``",    ""
     "``#``",     ""
     "``$()``",   ""
     "``&&``",    ""
