@@ -1,6 +1,8 @@
 Shell
 =====
 * colors
+* ``tab`` - autocomplete command, directories and files
+* ``tab+tab``
 
 
 Shells
@@ -25,8 +27,8 @@ Paths
 
 Keyboard Shortcuts
 ------------------
-* ``ctlr+o``
-* ``ctlr+r``
+* ``ctrl+o``
+* ``ctrl+r``
 
 
 Debugging

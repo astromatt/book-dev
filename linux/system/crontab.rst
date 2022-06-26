@@ -2,8 +2,15 @@ Crontab
 =======
 * Cron RUN_AS user
 * Default user for cron commands
-* Stderr and Stdout redirection
+* ``1>/dev/null 2>&1`` Stderr and Stdout redirection
 * Email notifications
+
+
+Output Redirect
+---------------
+* ``1 > /dev/null`` - stdout to /dev/null
+* ``2 > /dev/null`` - stderr to /dev/null
+* ``1>/dev/null 2>&1`` - stdout to /dev/null and stderr to the same as stdout
 
 
 Paths
@@ -88,8 +95,8 @@ Example
     52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 
 
-Use Case
---------
+Use Case - 0x01
+---------------
 .. code-block:: text
 
     5 4 * * *       /bin/echo 'five past four a.m.'
@@ -111,3 +118,12 @@ Use Case
     45 04 * * * /usr/sbin/chkrootkit && /usr/bin/updatedb
     00 06 * * * env DISPLAY=:0.0 gui_appname
     00 01 * * * ubuntu /home/ubuntu/script.sh
+
+
+Use Case - 0x02
+---------------
+.. code-block:: text
+
+    # Book Python
+    00  * * * * *     /Users/matt/Developer/book-python/.venv-py310/bin/python /Users/matt/Developer/book-python/_bin/make-notes.py 1>/dev/null 2>&1
+    05  * * * * *     /Users/matt/Developer/book-python/.venv-py310/bin/python /Users/matt/Developer/book-python/_bin/make-assignments.py 1>/dev/null 2>&1
