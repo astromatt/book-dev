@@ -195,8 +195,7 @@ if 'sphinxcontrib.bibtex' in extensions:
         'docker/_references/bibliography.bib',
         'git/_references/bibliography.bib',
         'jenkins/_references/bibliography.bib',
-        'jira/_references/bibliography.bib',
-        'linux/_references/bibliography.bib']
+        'jira/_references/bibliography.bib']
 
 
 if 'sphinx.ext.extlinks' in extensions:
