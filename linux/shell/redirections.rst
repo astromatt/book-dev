@@ -4,26 +4,27 @@ Redirection Commands
 
 Descriptors
 -----------
-* 0 is normally standard input (STDIN),
-* 1 is standard output (STDOUT),
-* 2 is standard error output (STDERR).
+* 0 or ``/dev/stdin`` - standard input
+* 1 or ``/dev/stdout`` - standard output
+* 2 or ``/dev/stderr`` - standard error
 
 
 Redirection
 -----------
 .. csv-table:: Redirection Commands [#1]_
-    :widths: 5, 15, 80
-    :header: "Sr.No.", "Command", "Description"
+    :widths: 20, 80
+    :header: "Command", "Description"
 
-    "1", `pgm > file`, "Output of pgm is redirected to file"
-    "2", `pgm < file`, "Program pgm reads its input from file"
-    "3", `pgm >> file`, "Output of pgm is appended to file"
-    "4", `n > file`, "Output from stream with descriptor n redirected to file"
-    "5", `n >> file`, "Output from stream with descriptor n appended to file"
-    "6", `n >& m`, "Merges output from stream n with stream m"
-    "7", `n <& m`, "Merges input from stream n with stream m"
-    "8", `<< tag`, "Standard input comes from here through next tag at the start of line"
-    "9", `|`, "Takes output from one program, or process, and sends it to another"
+    ``cmd > file``, "Output of cmd is redirected to file"
+    ``cmd < file``, "Program cmd reads its input from file"
+    ``cmd >> file``, "Output of cmd is appended to file"
+    ``n > file``, "Output from stream with descriptor n redirected to file"
+    ``n >> file``, "Output from stream with descriptor n appended to file"
+    ``n >& m``, "Merges output from stream n with stream m"
+    ``n >&-``, "Discards output from stream n"
+    ``n <& m``, "Merges input from stream n with stream m"
+    ``<< tag``, "Standard input comes from here through next tag at the start of line"
+    ``|``, "Takes output from one program, or process, and sends it to another"
 
 
 References

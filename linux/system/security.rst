@@ -15,6 +15,11 @@ Random
 
 Commands
 --------
+* ``head -c 100 /dev/urandom`` - read 100 bytes from ``/dev/urandom``
+* ``dd count=100 bs=1 if=/dev/urandom 2>/dev/null``
+* ``dd count=100 bs=1 if=/dev/urandom 2>&-``
+
+
 .. csv-table:: Security, Crypt and Hashing
     :header: "Command", "Type", "Description"
     :widths: 20, 5, 75
