@@ -6,7 +6,7 @@ Triggers
 Webhook
 =======
 * Webhook trigger for GitScm polling
-
+* ``<jenkins-url>/git/notifyCommit?url=<clone-url>``
 
 Cron
 ====
