@@ -76,6 +76,7 @@ Git Subrepositories
 
     subrepo/submodules.rst
     subrepo/subtree.rst
+    subrepo/sparse-checkout.rst
 
 ***********
 Git Tooling
