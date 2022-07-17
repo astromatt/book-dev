@@ -4,6 +4,7 @@ Git Sparse Checkout
 
 Monorepo
 --------
+* https://github.blog/tag/monorepo/
 * https://github.blog/2022-06-29-improve-git-monorepo-performance-with-a-file-system-monitor/
 
 
