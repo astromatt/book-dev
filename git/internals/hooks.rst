@@ -76,22 +76,25 @@ Branch Hook
     commitMsgOld=$(cat $commitMsgFile)
     commitMsgNew="$issueKey $commitMsgOld"
 
-    echo "Current Branch: $currentBranch"
-    echo "Jira Issue Key: $issueKey"
-    echo "Commit Msg Old: $commitMsgOld"
-    echo "Commit Msg New: $commitMsgNew"
-    echo "\n"
-
     if [ -z "$issueKey" ]; then
         echo "You are currently on a branch without JIRA issue ID in its name."
         echo "Changes were not committed."
+        echo ""
         echo "If you want to commit anyway, just remove executable rights for this hook:"
         echo "chmod -x .git/hooks/prepare-commit-msg"
+        echo ""
         echo "But remember to re-enable it later on, by executing:"
         echo "chmod +x .git/hooks/prepare-commit-msg"
         exit 1
     else
+        echo "Current Branch: $currentBranch"
+        echo "Jira Issue Key: $issueKey"
+        echo "Commit Msg Old: $commitMsgOld"
+        echo "Commit Msg New: $commitMsgNew"
+        echo ""
+
         echo $commitMsgNew > $commitMsgFile
+        exit 0
     fi
 
 
