@@ -70,7 +70,7 @@ Branch Hook
     PATTERN='[A-Z]{2,10}-[0-9]{1,6}'
 
     currentBranch=$(git branch --show-current)
-    issueKey=$(echo $currentBranch |egrep -o $PATTERN)
+    issueKey=$(echo $currentBranch |egrep --only-matching $PATTERN)
 
     commitMsgFile=$1
     commitMsgOld=$(cat $commitMsgFile)

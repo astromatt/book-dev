@@ -7,6 +7,7 @@ Summary
     :numbered:
     :caption: Summary
 
+    cicd-python.rst
     agility.rst
     binary-repository.rst
     continuous-integration.rst
