@@ -17,10 +17,29 @@ Date
     $ date -I
     1969-07-21
 
+    $ date -Iseconds
+    1969-07-21T02:56:15+00:00
+
 .. code-block:: console
 
     $ date +"%F %H:%M:%S %Z"
     1969-07-21 02:56:15 UTC
+
+.. code-block:: console
+
+    $ date +%s
+    1234567890
+
+    $ date -d @1234567890
+    Sat Feb 14 00:31:30 CET 2009
+
+.. code-block:: console
+
+    $ date -u
+    Mon Jul 21 02:56:15 UTC 1969
+
+    $ date -d '-10 min'
+    Mon Jul 21 02:46:15 UTC 1969
 
 .. code-block:: console
 
@@ -63,13 +82,13 @@ Commands
 * ``tzconfig`` -
 * ``tzselect`` - view timezones
 * ``tzselect`` - select a timezone
+* ``date`` - print or set the system date and time
 * ``date +%F`` -
-* ``date -I`` - ISO 8601  (YYY-MM-DD)
 * ``date --iso-8601``
 * ``date -Ins``
+* ``date -I`` - ISO 8601  (YYY-MM-DD)
 * ``date -Iseconds``
 * ``date +%s`` - timestamp, seconds since: 1970-01-01T00:00:00.000000+00:00
+* ``date -d @1234567890``
 * ``date --date='-90 minute' -Iseconds``
 * ``date --date='-10 min'`` -
-* ``date -d @1234567890``
-* ``date`` - print or set the system date and time
