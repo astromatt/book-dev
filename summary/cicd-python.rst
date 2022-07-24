@@ -189,7 +189,7 @@ Registry UI
     docker run \\
         --name registry-ui \\
         --detach \\
-        --restart=always \\
+        --restart always \\
         --network ecosystem \\
         --publish 8888:8888 \\
         --volume /home/ubuntu/registry-ui.yml:/opt/config.yml:ro \\
