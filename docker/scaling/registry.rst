@@ -89,7 +89,7 @@ Auth
     $ docker run \
         --detach \
         --name registry \
-        --restart=always \
+        --restart always \
         --net ecosystem \
         --publish 5000:5000 \
         --volume /home/registry/auth:/auth \
