@@ -96,9 +96,9 @@ Playbook
     $ ssh-keygen -f /home/ubuntu/.ssh/id_rsa -P ""
     $ cp /home/ubuntu/.ssh/id_rsa.pub /home/ubuntu/ansible/authorized_keys
 
-.. code-block:: console
+.. code-block:: sh
 
-    $ cat > /home/ubuntu/ansible/Dockerfile << EOF
+    cat > /home/ubuntu/ansible/Dockerfile << EOF
     FROM alpine
     EXPOSE 22/tcp
     COPY authorized_keys /home/myuser/.ssh/
@@ -122,9 +122,9 @@ Playbook
     $ docker run -dit --rm -p 2202:22 --name=two myhost
     $ docker run -dit --rm -p 2203:22 --name=three myhost
 
-.. code-block:: console
+.. code-block:: sh
 
-    $ cat > /home/ubuntu/ansible/hosts << EOF
+    cat > /home/ubuntu/ansible/hosts << EOF
     myservers:
       hosts:
 
@@ -154,9 +154,9 @@ Playbook
     $ ansible -i hosts all -m shell -a whoami
     $ ansible -i hosts all -m shell -a whoami -b
 
-.. code-block:: console
+.. code-block:: sh
 
-    $ cat > /home/ubuntu/ansible/nginx.conf << EOF
+    cat > /home/ubuntu/ansible/nginx.conf << EOF
     server {
       listen {{ http_port }};
       root /var/www;
@@ -167,9 +167,9 @@ Playbook
     }
     EOF
 
-.. code-block:: console
+.. code-block:: sh
 
-    $ cat > /home/ubuntu/ansible/nginx.yaml << EOF
+    cat > /home/ubuntu/ansible/nginx.yaml << EOF
     - name: Install and configure nginx
       hosts: all
       become: yes
