@@ -13,6 +13,111 @@ Paths
 * ``/etc/skel``
 
 
+Etc Passwd
+----------
+* File ``/etc/passwd``
+
+Structure:
+
+    * Username
+    * Password: ``x`` indicates that shadow passwords are used
+    * UID: User ID number
+    * GID: User's group ID number
+    * GECOS: Full name of the user
+    * Home directory
+    * Login shell
+
+.. code-block:: text
+
+    root:x:0:0:root:/root:/bin/bash
+    bin:x:1:1:bin:/bin:/sbin/nologin
+    daemon:x:2:2:daemon:/sbin:/sbin/nologin
+    adm:x:3:4:adm:/var/adm:/sbin/nologin
+    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+    halt:x:7:0:halt:/sbin:/sbin/halt
+    nobody:x:99:99:Nobody:/:/sbin/nologin
+    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+    watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
+    lewis:x:1001:1001:Melissa Lewis:/home/lewis:/bin/bash
+    martinez:x:1002:1002:Rick Martinez:/home/martinez:/bin/bash
+
+
+Etc Shadow
+----------
+* File ``/etc/shadow``
+
+Structure:
+
+    * Username: from ``/etc/passwd``
+    * Password
+    * Last Password Change: Days since 1970-01-01
+    * Minimum days between password changes: 0 - changed at any time
+    * Password validity: Days after which password must be changed, 99999 - many, many years
+    * Warning threshold: Days to warn user of an expiring password, 7 - full week
+    * Account inactive: Days after password expires and account is disabled
+    * Time since account is disabled: Days since 1970-01-01
+    * A reserved field for possible future use
+
+Password field (split by ``$``):
+
+    * algorithm
+    * salt
+    * password hash
+
+Password algorithms:
+
+    * ``1`` - MD5
+    * ``2a`` - Blowfish
+    * ``2y`` - Blowfish
+    * ``5`` - SHA-256
+    * ``6`` - SHA-512
+
+Password special chars:
+
+    * `` `` (blank entry) - password is not required to log in
+    * ``*`` (asterisk) - account is disabled, cannot be unlocked, no password has ever been set
+    * ``!`` (exclamation mark) - account is locked, can be unlocked, no password has ever been set
+    * ``!<password_hash>`` - account is locked, can be unlocked, but password is set
+    * ``!!`` (two exclamation marks) - account created, waiting for initial password to be set by admin
+
+.. code-block:: text
+
+    root:$6$Ke02nYgo.9v0SF4p$hjztYvo/M4buqO4oBX8KZTftjCn6fE4cV5o/I95QPekeQpITwFTRbDUBYBLIUx2mhorQoj9bLN8v.w6btE9xy1:16431:0:99999:7:::
+    adm:$6$5H0QpwprRiJQR19Y$bXGOh7dIfOWpUb/Tuqr7yQVCqL3UkrJns9.7msfvMg4ZO/PsFC5Tbt32PXAw9qRFEBs1254aLimFeNM8YsYOv.:16431:0:99999:7:::
+    watney:!!:16550::::::
+    lewis:$6$P9zn0KwR$tgfvvFWJJ5FKmoXiP5rXWOjwoEBOEoAuBi3EphRbJqqjWYvhEM2wa67L9XgQ7W591FxUNklkDIQsk4kijuhE50:16632:0:99999:7:::
+    martinez:$1$.QKDPc5E$SWlkjRWexrXYgc98F.:12825:0:90:5:30:13096:
+
+
+Etc Group
+---------
+* File ``/etc/group``
+
+Structure:
+
+    * Group Name: from ``/etc/passwd``
+    * Group Password: ``x`` indicates that shadow passwords are used)
+    * GID: Group ID
+    * Members: usernames from ``/etc/passwd``
+
+.. code-block:: text
+
+    root::0:root
+    other::1:
+    bin::2:root,bin,daemon
+    sys::3:root,bin,sys,adm
+    adm::4:root,adm,daemon
+    mail::6:root
+    astronauts::10:watney,lewis,martinez
+    daemon::12:root,daemon
+    sysadmin::14:martinez,lewis
+    mars::1000:watney
+    moon::1001:lewis
+    nobody::60001:
+    noaccess::60002:
+    nogroup::65534:
+
+
 useradd vs. adduser
 -------------------
 
