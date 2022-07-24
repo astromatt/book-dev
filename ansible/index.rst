@@ -25,7 +25,8 @@ Ad Hoc
     :numbered:
     :caption: Ad Hoc
 
-    ad-hoc/ad-hoc.rst
+    ad-hoc/about.rst
+    ad-hoc/use-cases.rst
 
 *********
 Playbooks

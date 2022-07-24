@@ -10,6 +10,7 @@ Alpine
 * Support: for 2 years
 * Latest: Edge
 * `Docker image <https://hub.docker.com/_/alpine?tab=tags&page=1&ordering=last_updated>`_
+* `Dockerfile <https://github.com/alpinelinux/docker-alpine/blob/edge/x86_64/Dockerfile>`_
 
 .. code-block:: console
 

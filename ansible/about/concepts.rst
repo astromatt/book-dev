@@ -24,7 +24,7 @@ Core concepts
 Control node
 ============
 * Any machine with Ansible installed.
-* You can run commands and playbooks, invoking /usr/bin/ansible or /usr/bin/ansible-playbook, from any control node.
+* You can run commands and playbooks, invoking ``/usr/bin/ansible`` or ``/usr/bin/ansible-playbook``, from any control node.
 * You can use any computer that has Python installed on it as a control node - laptops, shared desktops, and servers can all run Ansible.
 * However, you cannot use a Windows machine as a control node.
 * You can have multiple control nodes.
@@ -39,16 +39,17 @@ Managed nodes
 
 Inventory
 =========
+* Filename: ``hosts``
 * A list of managed nodes.
 * An inventory file is also sometimes called a "hostfile".
 * Your inventory can specify information like IP address for each managed node.
 * An inventory can also organize managed nodes, creating and nesting groups for easier scaling.
 * Default inventory file location ``/etc/ansible/hosts``
-* If any other location, then specify ``ansible -i hosts ...`` for file named hosts
+* If any other location, then specify ``ansible -i hosts ...`` for file named: ``hosts``
 * `More info <https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html>`_
 
 .. code-block:: ini
-    :caption: Inventory file
+    :caption: Inventory file named ``hosts``
 
     [dbservers]
     db01.example.com
@@ -101,8 +102,8 @@ Tasks
 .. code-block:: yaml
     :caption: Ansible tasks
 
-    - name: install httpd
-      package: name=apache2 state=latest
+    - name: Install
+      package: name=nginx state=latest
 
 
 Roles
@@ -112,14 +113,20 @@ Roles
 .. code-block:: yaml
     :caption: Ansible tasks
 
-    - name: install httpd
-      package: name=apache2 state=latest
+        - name: Install
+          package: name=nginx state=latest
 
-    - name: write apache config file
-      template: src=conf/httpd.j2 dest=/etc/httpd.conf
+        - name: Configuration
+          template: src=nginx.conf dest=/etc/nginx/http.d/default.conf
 
-    - name: start httpd
-      service: name=httpd state=running
+        - name: Setup
+          file: path=/var/www state=directory owner=myuser group=www-data mode=755
+
+        - name: Enable
+          service: name=nginx enabled=yes
+
+        - name: Start
+          command: nginx -c /etc/nginx/nginx.conf
 
 
 Playbook
@@ -129,34 +136,30 @@ Playbook
 * Playbooks are written in YAML and are easy to read, write, share and understand.
 
 .. code-block:: yaml
-    :caption: Ansible Playbook
+    :caption: ``nginx.yaml`` (ansible playbook)
 
-    - name: install and start apache
-      hosts: webservers
-      remote_user: myuser
-      become_method: sudo
-      become_user: root
-
+    - name: Install and configure nginx
+      hosts: all
+      become: yes
       vars:
         http_port: 80
-        max_clients: 200
-
       tasks:
-      - name: install httpd
-        apt: name=apache2 state=latest
-      - name: write apache config file
-        template: src=conf/httpd.j2 dest=/etc/httpd.conf
-      - name: start httpd
-        service: name=httpd state=running
-
-      handlers:
-      - name: restart http
-        service: name=httpd state=restarted
+        - name: Install
+          package: name=nginx state=latest
+        - name: Configuration
+          template: src=nginx.conf dest=/etc/nginx/http.d/default.conf
+        - name: Setup
+          file: path=/var/www state=directory owner=myuser group=www-data mode=755
+        - name: Enable
+          service: name=nginx enabled=yes
+        - name: Start
+          command: nginx -c /etc/nginx/nginx.conf
 
 
 Templates
 =========
-* Jinja2 templates (similar to Django templates)
+* Jinja2 templates
+* Similar to Django templates
 
 .. code-block:: jinja
 

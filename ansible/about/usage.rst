@@ -22,6 +22,47 @@ Arguments
                    [-a MODULE_ARGS] [-m MODULE_NAME]
                    pattern
 
+
+.. code-block:: console
+
+    $ ansible localhost -m shell -a 'whoami'
+    localhost | CHANGED | rc=0 >>
+    ubuntu
+
+    $ ansible localhost --become -m shell -a 'whoami'
+    localhost | CHANGED | rc=0 >>
+    root
+
+.. code-block:: console
+
+    $ ansible localhost -m shell -a 'python3 --version'
+    localhost | CHANGED | rc=0 >>
+    Python 3.10.4
+
+.. code-block:: console
+
+    $ ansible localhost --become -m shell -a 'apt install -y python3'
+    localhost | CHANGED | rc=0 >>
+    Reading package lists...
+    Building dependency tree...
+    Reading state information...
+    python3 is already the newest version (3.10.4-0ubuntu2).
+    python3 set to manually installed.
+    0 upgraded, 0 newly installed, 0 to remove and 47 not upgraded.
+
+    WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+.. code-block:: console
+
+    $ cat > hosts << EOF
+    [myserver]
+    127.0.0.1
+    EOF
+
+    $ ansible -i hosts myserver --become -m raw -a 'apt install -y python3'
+    $ ansible -i hosts all --become -m raw -a 'apt install -y python3'
+
+
 Positional arguments
 ====================
 * Define and run a single task 'playbook' against a set of hosts
@@ -29,6 +70,7 @@ Positional arguments
 .. code-block:: text
 
       pattern               host pattern
+
 
 Optional arguments
 ==================
@@ -132,6 +174,7 @@ Config
 * ``/etc/ansible/ansible.cfg`` – Config file, used if present
 * ``~/.ansible.cfg`` – User config file, overrides the default config if present
 * ``/etc/ansible/hosts`` - Default inventory file location, If any other location, then specify ``ansible -i hosts ...`` for file named hosts `More info <https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html>`_
+
 
 Ansible Pull
 ============

@@ -16,11 +16,12 @@ Inventory - Host file
 
     $ ansible -i ./hosts myserver -u ubuntu -a '/bin/grep PRETTY_NAME /etc/os-release'
     127.0.0.1 | CHANGED | rc=0 >>
-    PRETTY_NAME="Ubuntu 18.04.3 LTS"
+    PRETTY_NAME="Ubuntu 22.04 LTS"
 
     $ ansible -i ./hosts all -u ubuntu -a '/bin/grep PRETTY_NAME /etc/os-release'
     127.0.0.1 | CHANGED | rc=0 >>
-    PRETTY_NAME="Ubuntu 18.04.3 LTS"
+    PRETTY_NAME="Ubuntu 22.04 LTS"
+
 
 Syntax
 ======
@@ -51,76 +52,6 @@ Become (Run as root)
     $ ansible myserver -a '/usr/bin/whoami' -u ubuntu --become
     127.0.0.1 | CHANGED | rc=0 >>
     root
-
-
-Modules
-=======
-
-Console
--------
-* Use the run command modules as a last resort
-* ``command`` module is safer than ``shell``
-* ``command`` cannot evaluate variables
-
-.. code-block:: console
-    :caption: Console module
-
-    $ ansible myserver -a '/bin/date'
-    $ ansible myserver -a '/sbin/reboot'
-    $ ansible myserver -a '/sbin/reboot' -f 10
-    $ ansible myserver -a '/sbin/reboot' -f 10 -u root
-    $ ansible myserver -a '/sbin/reboot' -f 10 -u root --become
-
-Shell
------
-* ``shell`` can evaluate variables
-
-.. code-block:: console
-    :caption: shell module
-
-    $ ansible myserver -m shell -a 'echo $HOME'
-    $ ansible myserver -m shell -a 'echo $(/usr/bin/whoami) > /tmp/whoami'
-
-Copy
-----
-.. code-block:: console
-    :caption: copy
-
-    $ ansible myserver -m copy -a 'src=/etc/hosts dest=/tmp/hosts'
-
-File
-----
-.. code-block:: console
-    :caption: file module
-
-    $ ansible myserver -m file -a 'dest=/var/www mode=755 owner=myuser group=mygroup state=directory'
-
-Ping
-----
-.. code-block:: console
-
-    $ ansible myserver -m ping
-    localhost | SUCCESS => {
-        "changed": false,
-        "ping": "pong"
-    }
-
-User
-----
-.. code-block:: console
-    :caption: User module
-
-    $ ansible myserver -m user -a 'name=myuser password=<crypted password here>'
-    $ ansible myserver -m user -a 'name=myuser state=absent'
-
-Service
--------
-.. code-block:: console
-    :caption: Service module
-
-    $ ansible myserver -m service -a 'name=httpd state=started'
-    $ ansible myserver -m service -a 'name=httpd state=restarted'
-    $ ansible myserver -m service -a 'name=httpd state=stopped'
 
 
 Examples
