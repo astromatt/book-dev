@@ -13,6 +13,7 @@ Setup
     echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.profile
     echo 'export IP=$(curl -s ipecho.net/plain)' >> ~/.profile
     source ~/.profile
+    sudo ln -s /usr/bin/python3 /usr/bin/python
     docker network create ecosystem
 
 
@@ -60,7 +61,6 @@ Jenkins
     cat > /home/ubuntu/bin/run-jenkins << EOF
 
     chmod o+rw /run/user/1000/docker.sock
-    sudo ln -s /usr/bin/python3 /usr/bin/python
     sudo ln -s /home/ubuntu/.local/share/docker/volumes/jenkins_data/_data/ /var/jenkins_home
 
     docker run \\

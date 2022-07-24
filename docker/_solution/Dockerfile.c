@@ -2,7 +2,7 @@ FROM ubuntu
 
 RUN apt update && apt install -y git gcc make libpcap-dev \
 
-RUN git clone https://github.com/AstroTech/ecosystem-example-c /tmp \
+RUN git clone https://github.com/sages-pl/src-c.git /tmp \
     && cd /tmp \
     && ./configure \
     && make \
@@ -14,9 +14,9 @@ RUN git clone https://github.com/AstroTech/ecosystem-example-c /tmp \
 
 FROM alpine
 
-RUN apk add --no-cache git gcc musl-dev libpcap-dev make
+RUN apk add --no-cache git gcc make libpcap-dev musl-dev
 
-RUN git clone https://github.com/AstroTech/ecosystem-example-c /tmp \
+RUN git clone https://github.com/sages-pl/src-c.git /tmp \
     && cd /tmp \
     && ./configure \
     && make \

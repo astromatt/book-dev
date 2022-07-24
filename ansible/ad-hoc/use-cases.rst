@@ -173,8 +173,10 @@ Playbook
     - name: Install and configure nginx
       hosts: all
       become: yes
+
       vars:
         http_port: 80
+
       tasks:
         - name: Install
           package: name=nginx state=latest
