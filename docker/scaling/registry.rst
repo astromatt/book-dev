@@ -15,7 +15,7 @@ Run
         --detach \
         --name registry \
         --restart always \
-        --net ecosystem \
+        --network ecosystem \
         --publish 5000:5000 \
         --volume /home/registry:/var/lib/registry \
         registry:2
@@ -90,7 +90,7 @@ Auth
         --detach \
         --name registry \
         --restart always \
-        --net ecosystem \
+        --network ecosystem \
         --publish 5000:5000 \
         --volume /home/registry/auth:/auth \
         --volume /home/registry/certs:/certs \

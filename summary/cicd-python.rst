@@ -125,7 +125,7 @@ Docker Registry
         --detach \\
         --restart always \\
         --name registry \\
-        --net ecosystem \\
+        --network ecosystem \\
         --publish 5000:5000 \\
         --volume registry_data:/var/lib/registry \\
         registry:2
@@ -411,7 +411,7 @@ Tests
 .. code-block:: sh
 
     cat > run/test-report << EOF
-    docker run --rm --net ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+    docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
     EOF
 
 .. code-block:: sh

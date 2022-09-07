@@ -93,8 +93,8 @@ Connect new container to network
 .. code-block:: console
 
     $ docker network create mynetwork
-    $ docker run -d --net mynetwork --name host1 -it alpine sh
-    $ docker run -d --net mynetwork --name host2 -it alpine sh
+    $ docker run -d --network mynetwork --name host1 -it alpine sh
+    $ docker run -d --network mynetwork --name host2 -it alpine sh
 
 .. code-block:: console
 

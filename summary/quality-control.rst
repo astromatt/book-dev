@@ -146,7 +146,7 @@ Automation
 
     #!/bin/sh
 
-    docker run --rm --net ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
+    docker run --rm --network ecosystem -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
 
 .. code-block:: sh
     :caption: ``test-unit.sh``
