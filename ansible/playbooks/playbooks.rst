@@ -22,56 +22,28 @@ Playbook
 ========
 .. code-block:: yaml
 
-    - name: "Install Nginx"
+    - name: "Install and configure nginx"
+      hosts: all
       become: yes
-      package:
-        name: nginx
-        state: latest
 
-    - name: "Update Nginx config"
-      become: yes
-      copy:
-        src: ./data/nginx/nginx.conf
-        dest: /etc/nginx/nginx.conf
-      notify:
-        - restart nginx
+      vars:
+        http_port: 80
 
-    - name: Create sites-available directory
-      become: yes
-      file: path=/etc/nginx/sites-available state=directory
+      tasks:
+        - name: "Install"
+          package: name=nginx state=latest
 
-    - name: Create sites-enabled directory
-      become: yes
-      file: path=/etc/nginx/sites-enabled state=directory
+        - name: "Configuration"
+          template: src=nginx.conf dest=/etc/nginx/http.d/default.conf
 
-    - name: "Update Nginx default config"
-      become: yes
-      copy:
-        src: ./data/nginx/default
-        dest: /etc/nginx/sites-available/default
-      notify:
-        - restart nginx
+        - name: "Setup"
+          file: path=/var/www state=directory owner=myuser group=www-data mode=755
 
-    - name: "Enable Nginx site config"
-      become: yes
-      file:
-        src: /etc/nginx/sites-available/default
-        dest: /etc/nginx/sites-enabled/default
-        state: link
-      notify:
-        - restart nginx
+        - name: "Enable"
+          service: name=nginx enabled=yes
 
-    - name: Set httpd_can_network_connect flag on and keep it persistent across reboots
-      become: yes
-      seboolean:
-        name: httpd_can_network_connect
-        state: yes
-        persistent: yes
-      notify:
-        - restart nginx
-
-    - name: restart nginx
-      service: name=nginx state=restarted
+        - name: "Start"
+          command: nginx -c /etc/nginx/nginx.conf
 
 .. code-block:: yaml
 

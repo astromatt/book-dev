@@ -64,6 +64,53 @@ Install HTTPd server
         name: "{{ apache }}"
         state: absent
 
+Tasks
+-----
+.. code-block:: yaml
+
+    - name: "Install Nginx"
+      become: yes
+      package:
+        name: nginx
+        state: latest
+
+    - name: "Update Nginx config"
+      become: yes
+      copy:
+        src: ./conf/nginx-conf
+        dest: /etc/nginx/nginx.conf
+      notify:
+        - restart nginx
+
+    - name: "Create sites-available directory"
+      become: yes
+      file: path=/etc/nginx/sites-available state=directory
+
+    - name: "Create sites-enabled directory"
+      become: yes
+      file: path=/etc/nginx/sites-enabled state=directory
+
+    - name: "Update Nginx default config"
+      become: yes
+      copy:
+        src: ./conf/nginx-default
+        dest: /etc/nginx/sites-available/default
+      notify:
+        - restart nginx
+
+    - name: "Enable Nginx site config"
+      become: yes
+      file:
+        src: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+      notify:
+        - restart nginx
+
+    - name: "Restart nginx"
+      become: yes
+      service: name=nginx state=restarted
+
 
 Running Commands
 ================
