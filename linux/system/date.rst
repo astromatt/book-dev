@@ -43,7 +43,7 @@ Date Formatting
     "``%V``", "01, 02, ..., 53", "ISO 8601 week as a decimal number with Monday as the first day of the week. Week 01 is the week containing Jan 4"
 
 .. csv-table:: Leading Zero
-    :widths: 55, 15, 15, 15
+    :widths: 70, 15, 15
     :header: "Meaning", "With", "Without"
 
     "day",                          ``%d``, ``%-d``

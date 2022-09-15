@@ -1,4 +1,5 @@
 services:
+
   gitea:
     image: gitea/gitea:latest-rootless
     restart: always
@@ -24,9 +25,21 @@ services:
       - GITEA__database__USER=...
       - GITEA__database__PASSWD=...
 
+  jenkins:
+    image: jenkinsci/blueocean:1.25.7
+    restart: always
+    networks:
+      - ecosystem
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+      - /run/user/1000/docker.sock:/var/run/docker.sock
+
 volumes:
   gitea_config:
   gitea_data:
+  jenkins_data:
 
 networks:
   ecosystem:
