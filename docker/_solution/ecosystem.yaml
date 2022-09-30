@@ -1,3 +1,11 @@
+networks:
+  ecosystem:
+
+volumes:
+  gitea_config:
+  gitea_data:
+  jenkins_data:
+
 services:
 
   gitea:
@@ -36,10 +44,5 @@ services:
       - jenkins_data:/var/jenkins_home
       - /run/user/1000/docker.sock:/var/run/docker.sock
 
-volumes:
-  gitea_config:
-  gitea_data:
-  jenkins_data:
 
-networks:
-  ecosystem:
+# docker compose up
