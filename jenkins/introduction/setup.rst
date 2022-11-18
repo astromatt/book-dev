@@ -69,3 +69,8 @@ Installing using Docker Compose
 
         $ cd /home/
         $ docker-compose -f jenkins.yaml up -d
+
+
+Config
+======
+* https://www.jenkins.io/doc/book/managing/system-properties/
