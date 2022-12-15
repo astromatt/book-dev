@@ -75,3 +75,13 @@ Tests
     :caption: Tests
 
     tests/tests.rst
+
+*********
+Use Cases
+*********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Use Cases
+
+    usecase/ec2.rst

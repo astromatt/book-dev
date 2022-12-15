@@ -16,6 +16,7 @@
     architecture/index.rst
     puppet/index.rst
     ansible/index.rst
+    terraform/index.rst
     sonarqube/index.rst
     vagrant/index.rst
 
