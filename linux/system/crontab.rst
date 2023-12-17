@@ -3,6 +3,7 @@ Crontab
 * Execute scheduled commands
 * Can redirect Stderr and Stdout
 * Cron will email you not redirected output
+* https://cron.help/
 
 
 Files
@@ -11,6 +12,7 @@ Files
 * ``/etc/cron.allow`` - Allow User-Level Cron
 * ``/etc/cron.deny`` - Deny User-Level Cron
 * ``cat /var/log/syslog`` - Logs
+
 
 Directories
 -----------
@@ -49,6 +51,7 @@ Variables
 
 Syntax
 ------
+* https://cron.help/
 * ``*`` any value
 * ``,`` value list separator
 * ``-`` range of values

@@ -29,6 +29,7 @@ Linux
     system/users-and-groups.rst
     system/shell.rst
     system/crontab.rst
+    system/systemd-timer.rst
     system/logs.rst
     system/security.rst
     system/ssh.rst
