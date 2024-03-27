@@ -301,19 +301,19 @@ Remove Service and Timers
 
     $ sudo systemctl stop $NAME.timer
     $ sudo systemctl disable $NAME.timer
-    $ sudo rm /etc/systemd/system/$NAME.timer
-    $ sudo rm /etc/systemd/system/$NAME.timer
-    $ sudo rm /usr/lib/systemd/system/$NAME.timer
-    $ sudo rm /usr/lib/systemd/system/$NAME.timer
-    $ sudo rm rm ~/.config/systemd/$NAME.timer
+    $ sudo rm -f /etc/systemd/system/$NAME.timer
+    $ sudo rm -f /etc/systemd/system/$NAME.timer
+    $ sudo rm -f /usr/lib/systemd/system/$NAME.timer
+    $ sudo rm -f /usr/lib/systemd/system/$NAME.timer
+    $ sudo rm -f ~/.config/systemd/$NAME.timer
 
     $ sudo systemctl stop $NAME.service
     $ sudo systemctl disable $NAME.service
-    $ sudo rm /etc/systemd/system/$NAME.service
-    $ sudo rm /etc/systemd/system/$NAME.service
-    $ sudo rm /usr/lib/systemd/system/$NAME.service
-    $ sudo rm /usr/lib/systemd/system/$NAME.service
-    $ sudo rm rm ~/.config/systemd/$NAME.service
+    $ sudo rm -f /etc/systemd/system/$NAME.service
+    $ sudo rm -f /etc/systemd/system/$NAME.service
+    $ sudo rm -f /usr/lib/systemd/system/$NAME.service
+    $ sudo rm -f /usr/lib/systemd/system/$NAME.service
+    $ sudo rm -f ~/.config/systemd/$NAME.service
 
     $ sudo systemctl daemon-reload
     $ sudo systemctl reset-failed
