@@ -293,16 +293,27 @@ Monthly
     $ sudo systemctl list-timers
 
 
-Remove Service
---------------
+Remove Service and Timers
+-------------------------
 .. code-block:: console
 
-    $ sudosystemctl stop myservice
-    $ sudosystemctl disable myservice
-    $ sudorm /etc/systemd/system/myservice
-    $ sudorm /etc/systemd/system/myservice # and symlinks that might be related
-    $ sudorm /usr/lib/systemd/system/myservice
-    $ sudorm /usr/lib/systemd/system/myservice # and symlinks that might be related
-    $ sudorm rm ~/.config/systemd/myservice
+    $ NAME="myservice"
+
+    $ sudo systemctl stop $NAME.timer
+    $ sudo systemctl disable $NAME.timer
+    $ sudo rm /etc/systemd/system/$NAME.timer
+    $ sudo rm /etc/systemd/system/$NAME.timer
+    $ sudo rm /usr/lib/systemd/system/$NAME.timer
+    $ sudo rm /usr/lib/systemd/system/$NAME.timer
+    $ sudo rm rm ~/.config/systemd/$NAME.timer
+
+    $ sudo systemctl stop $NAME.service
+    $ sudo systemctl disable $NAME.service
+    $ sudo rm /etc/systemd/system/$NAME.service
+    $ sudo rm /etc/systemd/system/$NAME.service
+    $ sudo rm /usr/lib/systemd/system/$NAME.service
+    $ sudo rm /usr/lib/systemd/system/$NAME.service
+    $ sudo rm rm ~/.config/systemd/$NAME.service
+
     $ sudo systemctl daemon-reload
     $ sudo systemctl reset-failed
