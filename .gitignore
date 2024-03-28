@@ -1,16 +1,51 @@
-## Temporary
-_tmp/
+## Secrets
+_secrets
+.secrets
+preprod.env
+production.env
+prod.env
 
-## Compiled and environmental
-__pycache__/
-.mypy_cache/
-*.pyc
-~$*
-*.spec
-.ipynb_checkpoints
+## Temporary
+_backup
+_tmp
+.backup
+.tmp
+
+## Python Virtualenv
+venv/
+venv-*/
+_venv
+_venv-py
+.venv/
 .venv-*/
 
-## Distribution / packaging
+## IDE
+.idea
+.fleet
+.vscode
+
+## Django
+_static
+_media
+.static
+.media
+*.sqlite3
+*.db
+
+## Sphinx, Mkdocs
+_build
+.build
+_cache/
+.cache/
+
+## Python Cache
+.pytest_cache/
+.mypy_cache/
+**/.ipynb_checkpoints/
+
+## Python Compiled
+__pycache__/
+*.pyc
 build/
 dist/
 downloads/
@@ -21,20 +56,10 @@ sdist/
 *.egg-info/
 *.egg
 
-## Django
-*.log
-*.sqlite3
-*.sqlite3-journal
-_media
-
-## Sphinx documentation
-docs/_build/
-_build/
-.build/
-.slide/
-
-## IDE
-.idea
-
 ## OS
+~$*
 .DS_Store
+
+## JavaScript
+**/node_modules/
+**/.expo
