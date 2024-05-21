@@ -149,3 +149,13 @@ Ubuntu
     :align: center
 
     `Long term support and interim releases <https://ubuntu.com/about/release-cycle>`_
+
+
+Ubuntu Core
+-----------
+* Advantage: Ubuntu Core is a minimalistic version of Ubuntu, designed for IoT devices
+* Size: 431 MB
+* Release: every 2 years
+* Support: 10 years (extended)
+* https://cdimage.ubuntu.com/ubuntu-core/24/stable/
+* https://ubuntu.com/core
