@@ -1,5 +1,6 @@
 Linux Distributions
 ===================
+* Linux in 100 seconds https://youtu.be/LKCVKw9CzFo
 
 
 Alpine

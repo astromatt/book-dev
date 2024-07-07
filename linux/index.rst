@@ -68,6 +68,7 @@ Shell Programming
     shell/parameter-expansion.rst
     shell/regular-expressions.rst
     shell/multiprocessing.rst
+    shell/trap.rst
 
 
 Summary
