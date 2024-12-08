@@ -30,19 +30,26 @@ Remove file from history
 
 Change user or email
 ====================
+* ``git config user.name "Mark Watney"``
+* ``git config user.email "mwatney@nasa.gov"``
+* ``git config --global user.name "Mark Watney"``
+* ``git config --global user.email "mwatney@nasa.gov"``
+
 .. code-block:: sh
 
     git filter-branch --commit-filter '
 
-        if [ "$GIT_COMMITTER_NAME" = "mharasymczuk" ]; then
-            GIT_COMMITTER_NAME="Matt Harasymczuk";
-            GIT_COMMITTER_EMAIL="book@astronaut.center";
+        if [ "$GIT_COMMITTER_NAME" = "Mark W." ]; then
+            GIT_COMMITTER_NAME="Mark Watney";
+            GIT_COMMITTER_EMAIL="mwatney@nasa.gov";
         fi
 
-        if [ "GIT_AUTHOR_NAME" = "mharasymczuk" ]; then
-            GIT_AUTHOR_NAME="Matt Harasymczuk";
-            GIT_AUTHOR_EMAIL="book@astronaut.center";
+        if [ "GIT_AUTHOR_NAME" = "Mark W." ]; then
+            GIT_AUTHOR_NAME="Mark Watney";
+            GIT_AUTHOR_EMAIL="mwatney@nasa.gov";
         fi
 
         git commit-tree "$@";
         ' HEAD
+
+    git push --force
