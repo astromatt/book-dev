@@ -83,7 +83,7 @@ import subprocess
 import sys
 from datetime import date
 
-needs_sphinx = '4.3'
+needs_sphinx = '8.2'
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
