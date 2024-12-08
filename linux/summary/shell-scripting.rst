@@ -43,9 +43,3 @@ Shell Scripting
     "``unset``",                 ""
     "``until``",                 ""
     "``while``",                 ""
-
-.. csv-table:: Shell Programming
-    :header: "Command", "Description"
-    :widths: 20, 80
-
-    "``\"``",                    ""

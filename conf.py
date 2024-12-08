@@ -3,7 +3,8 @@ author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 
 language = 'en'
-html_theme = 'sphinx_rtd_theme'
+html_theme = "nature"
+# html_theme = 'sphinx_rtd_theme'
 html_baseurl = 'https://dev.astrotech.io'
 
 todo_emit_warnings = False
@@ -83,10 +84,10 @@ import subprocess
 import sys
 from datetime import date
 
-needs_sphinx = '8.2'
+needs_sphinx = '8.1'
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.md': 'markdown',
+    #'.md': 'markdown',
 }
 
 sys.path.insert(0, os.path.abspath('_extensions'))
@@ -220,14 +221,14 @@ html_favicon = '_static/favicon.png'
 html_context = {}
 html_copy_source = False
 
-html_context.update({
-    'css_files': ['_static/light.css', '_static/print.css'],
-    'script_files': ['_static/jquery.min.js', '_static/onload.js']})
+# html_context.update({
+#     'css_files': ['_static/light.css', '_static/print.css'],
+#     'script_files': ['_static/jquery.min.js', '_static/onload.js']})
 
-if html_theme == 'thesis':
-    html_context.update({
-        'css_files': ['_static/theme-overrides.css'],
-        'script_files': []})
+# if html_theme == 'thesis':
+#     html_context.update({
+#         'css_files': ['_static/theme-overrides.css'],
+#         'script_files': []})
 
 
 if 'sphinx.ext.mathjax' in extensions:
