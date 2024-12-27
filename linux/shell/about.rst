@@ -1,6 +1,7 @@
 About
 =====
 * https://www.computerhope.com/unix/ush.htm
+* https://steinbaugh.com/posts/posix.html
 
 
 Variables
