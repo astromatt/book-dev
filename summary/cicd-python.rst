@@ -56,6 +56,8 @@ Gitea
 
 Jenkins
 -------
+* https://github.com/jenkinsci/configuration-as-code-plugin
+
 .. code-block:: sh
 
     cat > /home/ubuntu/bin/run-jenkins << EOF

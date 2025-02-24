@@ -8,7 +8,7 @@ Continuous Integration
 Jenkins
 -------
 * ``jenkins/jenkins:alpine`` - jenkins latest
-* ``jenkinsci/blueocean`` - jenkins:lts + blue ocean
+* https://github.com/jenkinsci/configuration-as-code-plugin
 
 .. literalinclude:: src/run-jenkins.sh
     :language: sh

@@ -73,4 +73,5 @@ Installing using Docker Compose
 
 Config
 ======
+* https://github.com/jenkinsci/configuration-as-code-plugin
 * https://www.jenkins.io/doc/book/managing/system-properties/
